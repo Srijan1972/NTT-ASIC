@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="ntt-kernel.cpp" path="/home/sg9109/Documents/hls-design/ntt-kernel.cpp"/>
+    <originFiles name="ntt-kernel.h" path="/home/sg9109/Documents/hls-design/ntt-kernel.h"/>
+  </source>
+  <testbench>
+    <originFiles name="ntt-test.cpp" path="/home/sg9109/Documents/hls-design/ntt-test.cpp"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

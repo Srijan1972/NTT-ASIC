@@ -1,0 +1,75 @@
+{
+    "1": {
+        "name": "ntt_kernel_Pipeline_WRITE_BACK_LOOP",
+        "file": "hls-design\/ntt-kernel.cpp",
+        "fileloc": "104",
+        "instructions": "25",
+        "total_instructions": "25",
+        "calls": "",
+        "basicblocks": "4",
+        "loads": {
+            "L": "2"
+        },
+        "stores": {
+            "L": "2"
+        },
+        "loops": {
+            "L": "1"
+        }
+    },
+    "2": {
+        "name": "ntt_kernel_Pipeline_BUTTERFLY_LOOP",
+        "file": "hls-design\/ntt-kernel.cpp",
+        "fileloc": "85",
+        "instructions": "61",
+        "total_instructions": "61",
+        "calls": "",
+        "basicblocks": "4",
+        "loads": {
+            "L": "3"
+        },
+        "stores": {
+            "L": "4"
+        },
+        "loops": {
+            "L": "1"
+        }
+    },
+    "3": {
+        "name": "ntt_kernel_Pipeline_PERMUTE_LOOP",
+        "file": "hls-design\/ntt-kernel.cpp",
+        "fileloc": "70",
+        "instructions": "38",
+        "total_instructions": "38",
+        "calls": "",
+        "basicblocks": "4",
+        "loads": {
+            "L": "1"
+        },
+        "stores": {
+            "L": "3"
+        },
+        "loops": {
+            "L": "1"
+        }
+    },
+    "0": {
+        "name": "ntt_kernel",
+        "file": "ntt-kernel.cpp",
+        "fileloc": "38",
+        "instructions": "110",
+        "total_instructions": "234",
+        "calls": "3 2 1",
+        "basicblocks": "10",
+        "loads": {
+            "L": "3"
+        },
+        "stores": {
+            "L": "6"
+        },
+        "loops": {
+            "L": "1",
+            "N": "2"
+        }
+    }
+}

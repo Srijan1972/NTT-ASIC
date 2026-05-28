@@ -1,0 +1,10 @@
+INFO: [SIM 2] *************** CSIM start ***************
+INFO: [SIM 4] CSIM will launch GCC as the compiler.
+   Compiling ../../../ntt-test.cpp in debug mode
+   Generating csim.exe
+>> Initializing Testbench for N = 256, Batch Size = 4, q = 8380417 ...
+>> Launching HLS NTT Kernel Simulation...
+--------------------------------------------------
+>> TEST PASSED SUCCESSFULLY! Hardware matches Software Reference.
+INFO: [SIM 1] CSim done with 0 errors.
+INFO: [SIM 3] *************** CSIM finish ***************

@@ -1,0 +1,46 @@
+{
+  "0": {
+    "basicblocks": 37,
+    "calls": "1 2 3",
+    "file": "ntt-kernel.cpp",
+    "fileloc": 38,
+    "instructions": 116,
+    "loads": {
+      "L": 3,
+      "T": 3
+    },
+    "name": "ntt_kernel",
+    "stores": {
+      "L": 3,
+      "T": 1
+    },
+    "total_instructions": 151
+  },
+  "1": {
+    "basicblocks": 4,
+    "calls": "",
+    "file": "ntt-kernel.cpp",
+    "fileloc": 24,
+    "instructions": 18,
+    "name": "mod_mul",
+    "total_instructions": 18
+  },
+  "2": {
+    "basicblocks": 4,
+    "calls": "",
+    "file": "ntt-kernel.cpp",
+    "fileloc": 13,
+    "instructions": 8,
+    "name": "mod_add",
+    "total_instructions": 8
+  },
+  "3": {
+    "basicblocks": 4,
+    "calls": "",
+    "file": "ntt-kernel.cpp",
+    "fileloc": 19,
+    "instructions": 9,
+    "name": "mod_sub",
+    "total_instructions": 9
+  }
+}
