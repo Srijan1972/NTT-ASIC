@@ -33,7 +33,7 @@ uint32_t bit_reverse(uint32_t x, int log2n) {
 
 // Naive O(n^2) Software Reference for the Negacyclic NTT
 // y[k] = Σ_{n=0}^{N-1} x[n] · ψ^{(2k+1)·n} (mod q)
-void naive_negacyclic_ntt(const data_t* x, data_t* y, data_t q, data_t psi, int n) {
+void naive_negacyclic_ntt(const uint32_t* x, uint32_t* y, uint32_t q, uint32_t psi, int n) {
     for (int k = 0; k < n; ++k) {
         uint64_t sum = 0;
         for (int i = 0; i < n; ++i) {
@@ -61,8 +61,8 @@ void naive_negacyclic_ntt(const data_t* x, data_t* y, data_t q, data_t psi, int 
 // -----------------------------------------------------------------------------
 int main() {
     // Test Configurations (Using standard Kyber Parameters for validation)
-    const data_t q = 8380417;           // Prime Modulus
-    const data_t psi = 1753;            // Primitive 2N-th root of unity (17^256 ≡ -1 mod 3329)
+    const uint32_t q = 8380417;           // Prime Modulus
+    const uint32_t psi = 1753;            // Primitive 2N-th root of unity (17^256 ≡ -1 mod 3329)
     const int n = 256;                  // Dynamic polynomial size (must be <= MAX_N)
     const int batch_size = 4;           // Test processing a batch of 4 polynomials
 
@@ -73,12 +73,12 @@ int main() {
               << ", Batch Size = " << batch_size << ", q = " << q << " ..." << std::endl;
 
     // Allocate host memory buffers
-    std::vector<data_t> x_input(batch_size * n);
-    std::vector<data_t> x_hw_result(batch_size * n);
-    std::vector<data_t> x_sw_ref(batch_size * n);
+    std::vector<uint32_t> x_input(batch_size * n);
+    std::vector<uint32_t> x_hw_result(batch_size * n);
+    std::vector<uint32_t> x_sw_ref(batch_size * n);
 
-    std::vector<data_t> bit_rev_idx(n);
-    std::vector<data_t> twiddles(n - 1);
+    std::vector<uint32_t> bit_rev_idx(n);
+    std::vector<uint32_t> twiddles(n - 1);
 
     // 1. Generate Input Permutation Table (Bit-Reversal Indices)
     for (int i = 0; i < n; ++i) {
@@ -100,7 +100,7 @@ int main() {
         for (int j = 0; j < length; ++j) {
             int power = (2 * j + 1) * (n / (2 * length));
             // Convert to Montgomery Domain: (twiddle * R) mod q
-            twiddles[offset + j] = static_cast<data_t>((psi_powers[power] * Rq) % q);
+            twiddles[offset + j] = static_cast<uint32_t>((psi_powers[power] * Rq) % q);
         }
         offset += length;
         length *= 2;

@@ -19,14 +19,14 @@
         </SummaryOfTimingAnalysis>
         <SummaryOfOverallLatency>
             <unit>clock cycles</unit>
-            <Best-caseLatency>572</Best-caseLatency>
-            <Average-caseLatency>51557960098</Average-caseLatency>
-            <Worst-caseLatency>824778425410</Worst-caseLatency>
-            <Best-caseRealTimeLatency>5.720 us</Best-caseRealTimeLatency>
-            <Average-caseRealTimeLatency>515.580 sec</Average-caseRealTimeLatency>
-            <Worst-caseRealTimeLatency>8.2e+03 sec</Worst-caseRealTimeLatency>
-            <Interval-min>573</Interval-min>
-            <Interval-max>824778425411</Interval-max>
+            <Best-caseLatency>2208</Best-caseLatency>
+            <Average-caseLatency>716294</Average-caseLatency>
+            <Worst-caseLatency>5313790</Worst-caseLatency>
+            <Best-caseRealTimeLatency>22.080 us</Best-caseRealTimeLatency>
+            <Average-caseRealTimeLatency>7.163 ms</Average-caseRealTimeLatency>
+            <Worst-caseRealTimeLatency>53.138 ms</Worst-caseRealTimeLatency>
+            <Interval-min>2209</Interval-min>
+            <Interval-max>5313791</Interval-max>
         </SummaryOfOverallLatency>
         <SummaryOfLoopLatency>
             <BATCH_LOOP>
@@ -39,20 +39,20 @@
                 </TripCount>
                 <Latency>
                     <range>
-                        <min>571</min>
-                        <max>824778425409</max>
+                        <min>1938</min>
+                        <max>5309680</max>
                     </range>
                 </Latency>
                 <AbsoluteTimeLatency>
                     <range>
-                        <min>5710</min>
-                        <max>8247784254090</max>
+                        <min>19380</min>
+                        <max>53096800</max>
                     </range>
                 </AbsoluteTimeLatency>
                 <IterationLatency>
                     <range>
-                        <min>570</min>
-                        <max>51548651588</max>
+                        <min>1938</min>
+                        <max>331855</max>
                     </range>
                 </IterationLatency>
                 <InstanceList/>
@@ -61,80 +61,46 @@
                     <TripCount>
                         <range>
                             <min>1</min>
-                            <max>16</max>
+                            <max>12</max>
                         </range>
                     </TripCount>
                     <Latency>
                         <range>
-                            <min>22</min>
-                            <max>51548520480</max>
+                            <min>1668</min>
+                            <max>319536</max>
                         </range>
                     </Latency>
                     <AbsoluteTimeLatency>
                         <range>
-                            <min>220</min>
-                            <max>515485204800</max>
+                            <min>16680</min>
+                            <max>3195360</max>
                         </range>
                     </AbsoluteTimeLatency>
                     <IterationLatency>
                         <range>
-                            <min>22</min>
-                            <max>3221782530</max>
+                            <min>1668</min>
+                            <max>26628</max>
                         </range>
                     </IterationLatency>
                     <InstanceList/>
-                    <BLOCK_LOOP>
-                        <Slack>7.30</Slack>
-                        <TripCount>
-                            <range>
-                                <min>1</min>
-                                <max>32768</max>
-                            </range>
-                        </TripCount>
-                        <Latency>
-                            <range>
-                                <min>20</min>
-                                <max>3221782528</max>
-                            </range>
-                        </Latency>
-                        <AbsoluteTimeLatency>
-                            <range>
-                                <min>200</min>
-                                <max>32217825280</max>
-                            </range>
-                        </AbsoluteTimeLatency>
-                        <IterationLatency>
-                            <range>
-                                <min>20</min>
-                                <max>98321</max>
-                            </range>
-                        </IterationLatency>
-                        <InstanceList/>
-                    </BLOCK_LOOP>
                 </STAGE_LOOP>
             </BATCH_LOOP>
         </SummaryOfLoopLatency>
         <SummaryOfViolations>
             <IssueType>-</IssueType>
             <ViolationType>-</ViolationType>
-            <SourceLocation>hls-design/ntt-kernel.cpp:59</SourceLocation>
+            <SourceLocation>hls-design/ntt-kernel.cpp:97</SourceLocation>
             <SummaryOfLoopViolations>
                 <BATCH_LOOP>
                     <Name>BATCH_LOOP</Name>
                     <IssueType>-</IssueType>
                     <ViolationType>-</ViolationType>
-                    <SourceLocation>hls-design/ntt-kernel.cpp:59</SourceLocation>
+                    <SourceLocation>hls-design/ntt-kernel.cpp:97</SourceLocation>
                     <STAGE_LOOP>
                         <Name>STAGE_LOOP</Name>
                         <IssueType>-</IssueType>
                         <ViolationType>-</ViolationType>
-                        <SourceLocation>hls-design/ntt-kernel.cpp:79</SourceLocation>
-                        <BLOCK_LOOP>
-                            <Name>BLOCK_LOOP</Name>
-                            <IssueType>-</IssueType>
-                            <ViolationType>-</ViolationType>
-                            <SourceLocation>hls-design/ntt-kernel.cpp:82</SourceLocation>
-                        </BLOCK_LOOP>
+                        <SourceLocation>hls-design/ntt-kernel.cpp:121</SourceLocation>
                     </STAGE_LOOP>
                 </BATCH_LOOP>
             </SummaryOfLoopViolations>
@@ -142,10 +108,10 @@
     </PerformanceEstimates>
     <AreaEstimates>
         <Resources>
-            <BRAM_18K>128</BRAM_18K>
+            <BRAM_18K>47</BRAM_18K>
             <DSP>7</DSP>
-            <FF>5063</FF>
-            <LUT>5208</LUT>
+            <FF>4670</FF>
+            <LUT>5808</LUT>
             <URAM>0</URAM>
         </Resources>
         <AvailableResources>
@@ -2003,35 +1969,56 @@
             <ModuleName>ntt_kernel</ModuleName>
             <InstancesList>
                 <Instance>
-                    <InstName>grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250</InstName>
+                    <InstName>grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287</InstName>
+                    <ModuleName>ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP</ModuleName>
+                    <IsCompInst>true</IsCompInst>
+                    <ID>287</ID>
+                    <BindInstances>add_ln84_fu_124_p2</BindInstances>
+                </Instance>
+                <Instance>
+                    <InstName>grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296</InstName>
+                    <ModuleName>ntt_kernel_Pipeline_CACHE_PSI_LOOP</ModuleName>
+                    <IsCompInst>true</IsCompInst>
+                    <ID>296</ID>
+                    <BindInstances>add_ln91_fu_124_p2</BindInstances>
+                </Instance>
+                <Instance>
+                    <InstName>grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305</InstName>
+                    <ModuleName>ntt_kernel_Pipeline_BURST_READ_LOOP</ModuleName>
+                    <IsCompInst>true</IsCompInst>
+                    <ID>305</ID>
+                    <BindInstances>add_ln103_fu_112_p2</BindInstances>
+                </Instance>
+                <Instance>
+                    <InstName>grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_314</InstName>
                     <ModuleName>ntt_kernel_Pipeline_PERMUTE_LOOP</ModuleName>
                     <IsCompInst>true</IsCompInst>
-                    <ID>250</ID>
-                    <BindInstances>add_ln70_fu_172_p2 add_ln73_fu_189_p2 add_ln73_1_fu_205_p2</BindInstances>
+                    <ID>314</ID>
+                    <BindInstances>add_ln110_fu_116_p2</BindInstances>
                 </Instance>
                 <Instance>
-                    <InstName>grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263</InstName>
-                    <ModuleName>ntt_kernel_Pipeline_BUTTERFLY_LOOP</ModuleName>
+                    <InstName>grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322</InstName>
+                    <ModuleName>ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP</ModuleName>
                     <IsCompInst>true</IsCompInst>
-                    <ID>263</ID>
-                    <BindInstances>add_ln85_fu_186_p2 add_ln92_fu_196_p2 mul_32ns_32ns_64_1_1_U8 mul_32s_32s_32_1_1_U9 mul_32ns_32ns_64_1_1_U8 add_ln30_fu_250_p2 sub_ln31_fu_275_p2 res_fu_286_p2 sub_ln16_fu_302_p2 add_ln21_fu_321_p2 sub_ln21_fu_332_p2</BindInstances>
+                    <ID>322</ID>
+                    <BindInstances>step_2_fu_257_p2 idx1_fu_307_p2 add_ln134_fu_283_p2 mul_32ns_32ns_64_4_1_U17 mul_32s_32s_32_4_1_U18 mul_32ns_32ns_64_4_1_U17 add_64ns_64ns_64_2_1_U19 sub_ln44_fu_391_p2 res_fu_404_p2 sub_ln11_fu_433_p2 add_ln16_fu_454_p2 out_v_fu_467_p2</BindInstances>
                 </Instance>
                 <Instance>
-                    <InstName>grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278</InstName>
+                    <InstName>grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341</InstName>
                     <ModuleName>ntt_kernel_Pipeline_WRITE_BACK_LOOP</ModuleName>
                     <IsCompInst>true</IsCompInst>
-                    <ID>278</ID>
-                    <BindInstances>add_ln104_fu_125_p2</BindInstances>
+                    <ID>341</ID>
+                    <BindInstances>add_ln165_fu_150_p2</BindInstances>
                 </Instance>
             </InstancesList>
-            <BindInstances>local_x_U add_ln59_2_fu_370_p2 add_ln59_3_fu_375_p2 add_ln59_1_fu_380_p2 add_ln59_fu_392_p2 add_ln82_fu_438_p2 add_ln82_1_fu_505_p2 offset_1_fu_510_p2 control_s_axi_U gmem0_m_axi_U gmem1_m_axi_U gmem2_m_axi_U</BindInstances>
+            <BindInstances>local_twiddles_U local_psi_U ping_U pong_U burst_buffer_U sub_fu_372_p2 add_ln97_2_fu_487_p2 add_ln97_1_fu_501_p2 add_ln97_fu_515_p2 stage_1_fu_536_p2 sub53_fu_553_p2 offset_1_fu_560_p2 control_s_axi_U gmem0_m_axi_U gmem1_m_axi_U gmem2_m_axi_U</BindInstances>
         </TopModule>
     </RTLDesignHierarchy>
     <ModuleInformation>
         <Module>
-            <Name>ntt_kernel_Pipeline_PERMUTE_LOOP</Name>
+            <Name>ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP</Name>
             <Loops>
-                <PERMUTE_LOOP/>
+                <CACHE_TWIDDLES_LOOP/>
             </Loops>
             <PerformanceEstimates>
                 <SummaryOfTimingAnalysis>
@@ -2040,53 +2027,53 @@
                     <EstimatedClockPeriod>7.300</EstimatedClockPeriod>
                 </SummaryOfTimingAnalysis>
                 <SummaryOfOverallLatency>
-                    <Best-caseLatency>269</Best-caseLatency>
-                    <Average-caseLatency>32909</Average-caseLatency>
-                    <Worst-caseLatency>65549</Worst-caseLatency>
-                    <Best-caseRealTimeLatency>2.690 us</Best-caseRealTimeLatency>
-                    <Average-caseRealTimeLatency>0.329 ms</Average-caseRealTimeLatency>
-                    <Worst-caseRealTimeLatency>0.655 ms</Worst-caseRealTimeLatency>
-                    <PipelineInitiationInterval>269 ~ 65549</PipelineInitiationInterval>
+                    <Best-caseLatency>258</Best-caseLatency>
+                    <Average-caseLatency>2178</Average-caseLatency>
+                    <Worst-caseLatency>4098</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>2.580 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>21.780 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>40.980 us</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>258 ~ 4098</PipelineInitiationInterval>
                     <PipelineType>no</PipelineType>
                 </SummaryOfOverallLatency>
                 <SummaryOfLoopLatency>
-                    <PERMUTE_LOOP>
-                        <Name>PERMUTE_LOOP</Name>
+                    <CACHE_TWIDDLES_LOOP>
+                        <Name>CACHE_TWIDDLES_LOOP</Name>
                         <Slack>7.30</Slack>
                         <TripCount>
                             <range>
-                                <min>256</min>
-                                <max>65536</max>
+                                <min>255</min>
+                                <max>4095</max>
                             </range>
                         </TripCount>
-                        <Latency>267 ~ 65547</Latency>
-                        <AbsoluteTimeLatency>2.670 us ~ 0.655 ms</AbsoluteTimeLatency>
+                        <Latency>256 ~ 4096</Latency>
+                        <AbsoluteTimeLatency>2.560 us ~ 40.960 us</AbsoluteTimeLatency>
                         <PipelineII>1</PipelineII>
-                        <PipelineDepth>13</PipelineDepth>
+                        <PipelineDepth>3</PipelineDepth>
                         <PipelineType>yes</PipelineType>
                         <InstanceList/>
-                    </PERMUTE_LOOP>
+                    </CACHE_TWIDDLES_LOOP>
                 </SummaryOfLoopLatency>
                 <SummaryOfViolations>
                     <IssueType>-</IssueType>
                     <ViolationType>-</ViolationType>
-                    <SourceLocation>hls-design/ntt-kernel.cpp:70</SourceLocation>
+                    <SourceLocation>hls-design/ntt-kernel.cpp:84</SourceLocation>
                     <SummaryOfLoopViolations>
-                        <PERMUTE_LOOP>
-                            <Name>PERMUTE_LOOP</Name>
+                        <CACHE_TWIDDLES_LOOP>
+                            <Name>CACHE_TWIDDLES_LOOP</Name>
                             <IssueType>-</IssueType>
                             <ViolationType>-</ViolationType>
-                            <SourceLocation>hls-design/ntt-kernel.cpp:70</SourceLocation>
-                        </PERMUTE_LOOP>
+                            <SourceLocation>hls-design/ntt-kernel.cpp:84</SourceLocation>
+                        </CACHE_TWIDDLES_LOOP>
                     </SummaryOfLoopViolations>
                 </SummaryOfViolations>
             </PerformanceEstimates>
             <AreaEstimates>
                 <Resources>
-                    <FF>251</FF>
+                    <FF>76</FF>
                     <AVAIL_FF>234240</AVAIL_FF>
                     <UTIL_FF>~0</UTIL_FF>
-                    <LUT>272</LUT>
+                    <LUT>108</LUT>
                     <AVAIL_LUT>117120</AVAIL_LUT>
                     <UTIL_LUT>~0</UTIL_LUT>
                     <BRAM_18K>0</BRAM_18K>
@@ -2101,15 +2088,13 @@
                 </Resources>
             </AreaEstimates>
             <BindNodes>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="PERMUTE_LOOP" OPTYPE="add" PRAGMA="" RTLNAME="add_ln70_fu_172_p2" SOURCE="hls-design/ntt-kernel.cpp:70" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln70"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="PERMUTE_LOOP" OPTYPE="add" PRAGMA="" RTLNAME="add_ln73_fu_189_p2" SOURCE="hls-design/ntt-kernel.cpp:73" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln73"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="PERMUTE_LOOP" OPTYPE="add" PRAGMA="" RTLNAME="add_ln73_1_fu_205_p2" SOURCE="hls-design/ntt-kernel.cpp:73" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln73_1"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="CACHE_TWIDDLES_LOOP" OPTYPE="add" PRAGMA="" RTLNAME="add_ln84_fu_124_p2" SOURCE="hls-design/ntt-kernel.cpp:84" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln84"/>
             </BindNodes>
         </Module>
         <Module>
-            <Name>ntt_kernel_Pipeline_BUTTERFLY_LOOP</Name>
+            <Name>ntt_kernel_Pipeline_CACHE_PSI_LOOP</Name>
             <Loops>
-                <BUTTERFLY_LOOP/>
+                <CACHE_PSI_LOOP/>
             </Loops>
             <PerformanceEstimates>
                 <SummaryOfTimingAnalysis>
@@ -2118,44 +2103,273 @@
                     <EstimatedClockPeriod>7.300</EstimatedClockPeriod>
                 </SummaryOfTimingAnalysis>
                 <SummaryOfOverallLatency>
-                    <Best-caseLatency>9</Best-caseLatency>
-                    <Average-caseLatency>49158</Average-caseLatency>
-                    <Worst-caseLatency>98310</Worst-caseLatency>
-                    <Best-caseRealTimeLatency>90.000 ns</Best-caseRealTimeLatency>
-                    <Average-caseRealTimeLatency>0.492 ms</Average-caseRealTimeLatency>
-                    <Worst-caseRealTimeLatency>0.983 ms</Worst-caseRealTimeLatency>
-                    <PipelineInitiationInterval>9 ~ 98310</PipelineInitiationInterval>
+                    <Best-caseLatency>259</Best-caseLatency>
+                    <Average-caseLatency>2179</Average-caseLatency>
+                    <Worst-caseLatency>4099</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>2.590 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>21.790 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>40.990 us</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>259 ~ 4099</PipelineInitiationInterval>
                     <PipelineType>no</PipelineType>
                 </SummaryOfOverallLatency>
                 <SummaryOfLoopLatency>
-                    <BUTTERFLY_LOOP>
-                        <Name>BUTTERFLY_LOOP</Name>
+                    <CACHE_PSI_LOOP>
+                        <Name>CACHE_PSI_LOOP</Name>
                         <Slack>7.30</Slack>
                         <TripCount>
                             <range>
-                                <min>1</min>
-                                <max>32768</max>
+                                <min>256</min>
+                                <max>4096</max>
                             </range>
                         </TripCount>
-                        <Latency>7 ~ 98308</Latency>
-                        <AbsoluteTimeLatency>70.000 ns ~ 0.983 ms</AbsoluteTimeLatency>
-                        <PipelineII>3</PipelineII>
-                        <PipelineDepth>8</PipelineDepth>
+                        <Latency>257 ~ 4097</Latency>
+                        <AbsoluteTimeLatency>2.570 us ~ 40.970 us</AbsoluteTimeLatency>
+                        <PipelineII>1</PipelineII>
+                        <PipelineDepth>3</PipelineDepth>
                         <PipelineType>yes</PipelineType>
                         <InstanceList/>
-                    </BUTTERFLY_LOOP>
+                    </CACHE_PSI_LOOP>
                 </SummaryOfLoopLatency>
                 <SummaryOfViolations>
                     <IssueType>-</IssueType>
                     <ViolationType>-</ViolationType>
-                    <SourceLocation>hls-design/ntt-kernel.cpp:85</SourceLocation>
+                    <SourceLocation>hls-design/ntt-kernel.cpp:91</SourceLocation>
                     <SummaryOfLoopViolations>
-                        <BUTTERFLY_LOOP>
-                            <Name>BUTTERFLY_LOOP</Name>
+                        <CACHE_PSI_LOOP>
+                            <Name>CACHE_PSI_LOOP</Name>
+                            <IssueType>-</IssueType>
+                            <ViolationType>-</ViolationType>
+                            <SourceLocation>hls-design/ntt-kernel.cpp:91</SourceLocation>
+                        </CACHE_PSI_LOOP>
+                    </SummaryOfLoopViolations>
+                </SummaryOfViolations>
+            </PerformanceEstimates>
+            <AreaEstimates>
+                <Resources>
+                    <FF>56</FF>
+                    <AVAIL_FF>234240</AVAIL_FF>
+                    <UTIL_FF>~0</UTIL_FF>
+                    <LUT>108</LUT>
+                    <AVAIL_LUT>117120</AVAIL_LUT>
+                    <UTIL_LUT>~0</UTIL_LUT>
+                    <BRAM_18K>0</BRAM_18K>
+                    <AVAIL_BRAM>288</AVAIL_BRAM>
+                    <UTIL_BRAM>0</UTIL_BRAM>
+                    <DSP>0</DSP>
+                    <AVAIL_DSP>1248</AVAIL_DSP>
+                    <UTIL_DSP>0</UTIL_DSP>
+                    <URAM>0</URAM>
+                    <AVAIL_URAM>64</AVAIL_URAM>
+                    <UTIL_URAM>0</UTIL_URAM>
+                </Resources>
+            </AreaEstimates>
+            <BindNodes>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="CACHE_PSI_LOOP" OPTYPE="add" PRAGMA="" RTLNAME="add_ln91_fu_124_p2" SOURCE="hls-design/ntt-kernel.cpp:91" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln91"/>
+            </BindNodes>
+        </Module>
+        <Module>
+            <Name>ntt_kernel_Pipeline_BURST_READ_LOOP</Name>
+            <Loops>
+                <BURST_READ_LOOP/>
+            </Loops>
+            <PerformanceEstimates>
+                <SummaryOfTimingAnalysis>
+                    <TargetClockPeriod>10.00</TargetClockPeriod>
+                    <ClockUncertainty>2.70</ClockUncertainty>
+                    <EstimatedClockPeriod>7.300</EstimatedClockPeriod>
+                </SummaryOfTimingAnalysis>
+                <SummaryOfOverallLatency>
+                    <Best-caseLatency>259</Best-caseLatency>
+                    <Average-caseLatency>2179</Average-caseLatency>
+                    <Worst-caseLatency>4099</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>2.590 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>21.790 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>40.990 us</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>259 ~ 4099</PipelineInitiationInterval>
+                    <PipelineType>no</PipelineType>
+                </SummaryOfOverallLatency>
+                <SummaryOfLoopLatency>
+                    <BURST_READ_LOOP>
+                        <Name>BURST_READ_LOOP</Name>
+                        <Slack>7.30</Slack>
+                        <TripCount>
+                            <range>
+                                <min>256</min>
+                                <max>4096</max>
+                            </range>
+                        </TripCount>
+                        <Latency>257 ~ 4097</Latency>
+                        <AbsoluteTimeLatency>2.570 us ~ 40.970 us</AbsoluteTimeLatency>
+                        <PipelineII>1</PipelineII>
+                        <PipelineDepth>3</PipelineDepth>
+                        <PipelineType>yes</PipelineType>
+                        <InstanceList/>
+                    </BURST_READ_LOOP>
+                </SummaryOfLoopLatency>
+                <SummaryOfViolations>
+                    <IssueType>-</IssueType>
+                    <ViolationType>-</ViolationType>
+                    <SourceLocation>hls-design/ntt-kernel.cpp:103</SourceLocation>
+                    <SummaryOfLoopViolations>
+                        <BURST_READ_LOOP>
+                            <Name>BURST_READ_LOOP</Name>
+                            <IssueType>-</IssueType>
+                            <ViolationType>-</ViolationType>
+                            <SourceLocation>hls-design/ntt-kernel.cpp:103</SourceLocation>
+                        </BURST_READ_LOOP>
+                    </SummaryOfLoopViolations>
+                </SummaryOfViolations>
+            </PerformanceEstimates>
+            <AreaEstimates>
+                <Resources>
+                    <FF>76</FF>
+                    <AVAIL_FF>234240</AVAIL_FF>
+                    <UTIL_FF>~0</UTIL_FF>
+                    <LUT>107</LUT>
+                    <AVAIL_LUT>117120</AVAIL_LUT>
+                    <UTIL_LUT>~0</UTIL_LUT>
+                    <BRAM_18K>0</BRAM_18K>
+                    <AVAIL_BRAM>288</AVAIL_BRAM>
+                    <UTIL_BRAM>0</UTIL_BRAM>
+                    <DSP>0</DSP>
+                    <AVAIL_DSP>1248</AVAIL_DSP>
+                    <UTIL_DSP>0</UTIL_DSP>
+                    <URAM>0</URAM>
+                    <AVAIL_URAM>64</AVAIL_URAM>
+                    <UTIL_URAM>0</UTIL_URAM>
+                </Resources>
+            </AreaEstimates>
+            <BindNodes>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="BURST_READ_LOOP" OPTYPE="add" PRAGMA="" RTLNAME="add_ln103_fu_112_p2" SOURCE="hls-design/ntt-kernel.cpp:103" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln103"/>
+            </BindNodes>
+        </Module>
+        <Module>
+            <Name>ntt_kernel_Pipeline_PERMUTE_LOOP</Name>
+            <Loops>
+                <PERMUTE_LOOP/>
+            </Loops>
+            <PerformanceEstimates>
+                <SummaryOfTimingAnalysis>
+                    <TargetClockPeriod>10.00</TargetClockPeriod>
+                    <ClockUncertainty>2.70</ClockUncertainty>
+                    <EstimatedClockPeriod>2.474</EstimatedClockPeriod>
+                </SummaryOfTimingAnalysis>
+                <SummaryOfOverallLatency>
+                    <Best-caseLatency>259</Best-caseLatency>
+                    <Average-caseLatency>2179</Average-caseLatency>
+                    <Worst-caseLatency>4099</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>2.590 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>21.790 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>40.990 us</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>259 ~ 4099</PipelineInitiationInterval>
+                    <PipelineType>no</PipelineType>
+                </SummaryOfOverallLatency>
+                <SummaryOfLoopLatency>
+                    <PERMUTE_LOOP>
+                        <Name>PERMUTE_LOOP</Name>
+                        <Slack>7.30</Slack>
+                        <TripCount>
+                            <range>
+                                <min>256</min>
+                                <max>4096</max>
+                            </range>
+                        </TripCount>
+                        <Latency>257 ~ 4097</Latency>
+                        <AbsoluteTimeLatency>2.570 us ~ 40.970 us</AbsoluteTimeLatency>
+                        <PipelineII>1</PipelineII>
+                        <PipelineDepth>3</PipelineDepth>
+                        <PipelineType>yes</PipelineType>
+                        <InstanceList/>
+                    </PERMUTE_LOOP>
+                </SummaryOfLoopLatency>
+                <SummaryOfViolations>
+                    <IssueType>-</IssueType>
+                    <ViolationType>-</ViolationType>
+                    <SourceLocation>hls-design/ntt-kernel.cpp:110</SourceLocation>
+                    <SummaryOfLoopViolations>
+                        <PERMUTE_LOOP>
+                            <Name>PERMUTE_LOOP</Name>
+                            <IssueType>-</IssueType>
+                            <ViolationType>-</ViolationType>
+                            <SourceLocation>hls-design/ntt-kernel.cpp:110</SourceLocation>
+                        </PERMUTE_LOOP>
+                    </SummaryOfLoopViolations>
+                </SummaryOfViolations>
+            </PerformanceEstimates>
+            <AreaEstimates>
+                <Resources>
+                    <FF>44</FF>
+                    <AVAIL_FF>234240</AVAIL_FF>
+                    <UTIL_FF>~0</UTIL_FF>
+                    <LUT>96</LUT>
+                    <AVAIL_LUT>117120</AVAIL_LUT>
+                    <UTIL_LUT>~0</UTIL_LUT>
+                    <BRAM_18K>0</BRAM_18K>
+                    <AVAIL_BRAM>288</AVAIL_BRAM>
+                    <UTIL_BRAM>0</UTIL_BRAM>
+                    <DSP>0</DSP>
+                    <AVAIL_DSP>1248</AVAIL_DSP>
+                    <UTIL_DSP>0</UTIL_DSP>
+                    <URAM>0</URAM>
+                    <AVAIL_URAM>64</AVAIL_URAM>
+                    <UTIL_URAM>0</UTIL_URAM>
+                </Resources>
+            </AreaEstimates>
+            <BindNodes>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="PERMUTE_LOOP" OPTYPE="add" PRAGMA="" RTLNAME="add_ln110_fu_116_p2" SOURCE="hls-design/ntt-kernel.cpp:110" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln110"/>
+            </BindNodes>
+        </Module>
+        <Module>
+            <Name>ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP</Name>
+            <Loops>
+                <FLATTENED_BUTTERFLY_LOOP/>
+            </Loops>
+            <PerformanceEstimates>
+                <SummaryOfTimingAnalysis>
+                    <TargetClockPeriod>10.00</TargetClockPeriod>
+                    <ClockUncertainty>2.70</ClockUncertainty>
+                    <EstimatedClockPeriod>6.108</EstimatedClockPeriod>
+                </SummaryOfTimingAnalysis>
+                <SummaryOfOverallLatency>
+                    <Best-caseLatency>1666</Best-caseLatency>
+                    <Average-caseLatency>14146</Average-caseLatency>
+                    <Worst-caseLatency>26626</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>16.660 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>0.141 ms</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>0.266 ms</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>1666 ~ 26626</PipelineInitiationInterval>
+                    <PipelineType>no</PipelineType>
+                </SummaryOfOverallLatency>
+                <SummaryOfLoopLatency>
+                    <FLATTENED_BUTTERFLY_LOOP>
+                        <Name>FLATTENED_BUTTERFLY_LOOP</Name>
+                        <Slack>7.30</Slack>
+                        <TripCount>
+                            <range>
+                                <min>128</min>
+                                <max>2048</max>
+                            </range>
+                        </TripCount>
+                        <Latency>1664 ~ 26624</Latency>
+                        <AbsoluteTimeLatency>16.640 us ~ 0.266 ms</AbsoluteTimeLatency>
+                        <PipelineII>13</PipelineII>
+                        <PipelineDepth>14</PipelineDepth>
+                        <PipelineType>yes</PipelineType>
+                        <InstanceList/>
+                    </FLATTENED_BUTTERFLY_LOOP>
+                </SummaryOfLoopLatency>
+                <SummaryOfViolations>
+                    <IssueType>-</IssueType>
+                    <ViolationType>-</ViolationType>
+                    <SourceLocation>hls-design/ntt-kernel.cpp:126</SourceLocation>
+                    <SummaryOfLoopViolations>
+                        <FLATTENED_BUTTERFLY_LOOP>
+                            <Name>FLATTENED_BUTTERFLY_LOOP</Name>
                             <IssueType>II Violation</IssueType>
-                            <ViolationType>Resource Limitation</ViolationType>
-                            <SourceLocation>hls-design/ntt-kernel.cpp:85</SourceLocation>
-                        </BUTTERFLY_LOOP>
+                            <ViolationType>Memory Dependency</ViolationType>
+                            <IterationDistance>1</IterationDistance>
+                            <SourceLocation>hls-design/ntt-kernel.cpp:126</SourceLocation>
+                        </FLATTENED_BUTTERFLY_LOOP>
                     </SummaryOfLoopViolations>
                 </SummaryOfViolations>
             </PerformanceEstimates>
@@ -2164,12 +2378,12 @@
                     <DSP>7</DSP>
                     <AVAIL_DSP>1248</AVAIL_DSP>
                     <UTIL_DSP>~0</UTIL_DSP>
-                    <FF>474</FF>
+                    <FF>363</FF>
                     <AVAIL_FF>234240</AVAIL_FF>
                     <UTIL_FF>~0</UTIL_FF>
-                    <LUT>862</LUT>
+                    <LUT>1250</LUT>
                     <AVAIL_LUT>117120</AVAIL_LUT>
-                    <UTIL_LUT>~0</UTIL_LUT>
+                    <UTIL_LUT>1</UTIL_LUT>
                     <BRAM_18K>0</BRAM_18K>
                     <AVAIL_BRAM>288</AVAIL_BRAM>
                     <UTIL_BRAM>0</UTIL_BRAM>
@@ -2179,17 +2393,18 @@
                 </Resources>
             </AreaEstimates>
             <BindNodes>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="BUTTERFLY_LOOP" OPTYPE="add" PRAGMA="" RTLNAME="add_ln85_fu_186_p2" SOURCE="hls-design/ntt-kernel.cpp:85" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln85"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="BUTTERFLY_LOOP" OPTYPE="add" PRAGMA="" RTLNAME="add_ln92_fu_196_p2" SOURCE="hls-design/ntt-kernel.cpp:92" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln92"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="4" ID="" IMPL="auto" LATENCY="0" LOOP="BUTTERFLY_LOOP" OPTYPE="mul" PRAGMA="" RTLNAME="mul_32ns_32ns_64_1_1_U8" SOURCE="hls-design/ntt-kernel.cpp:26" STORAGESUBTYPE="" URAM="0" VARIABLE="ab"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="3" ID="" IMPL="auto" LATENCY="0" LOOP="BUTTERFLY_LOOP" OPTYPE="mul" PRAGMA="" RTLNAME="mul_32s_32s_32_1_1_U9" SOURCE="hls-design/ntt-kernel.cpp:28" STORAGESUBTYPE="" URAM="0" VARIABLE="m"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="4" ID="" IMPL="auto" LATENCY="0" LOOP="BUTTERFLY_LOOP" OPTYPE="mul" PRAGMA="" RTLNAME="mul_32ns_32ns_64_1_1_U8" SOURCE="hls-design/ntt-kernel.cpp:29" STORAGESUBTYPE="" URAM="0" VARIABLE="mq"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="BUTTERFLY_LOOP" OPTYPE="add" PRAGMA="" RTLNAME="add_ln30_fu_250_p2" SOURCE="hls-design/ntt-kernel.cpp:30" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln30"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="BUTTERFLY_LOOP" OPTYPE="sub" PRAGMA="" RTLNAME="sub_ln31_fu_275_p2" SOURCE="hls-design/ntt-kernel.cpp:31" STORAGESUBTYPE="" URAM="0" VARIABLE="sub_ln31"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="BUTTERFLY_LOOP" OPTYPE="add" PRAGMA="" RTLNAME="res_fu_286_p2" SOURCE="hls-design/ntt-kernel.cpp:15" STORAGESUBTYPE="" URAM="0" VARIABLE="res"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="BUTTERFLY_LOOP" OPTYPE="sub" PRAGMA="" RTLNAME="sub_ln16_fu_302_p2" SOURCE="hls-design/ntt-kernel.cpp:16" STORAGESUBTYPE="" URAM="0" VARIABLE="sub_ln16"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="BUTTERFLY_LOOP" OPTYPE="add" PRAGMA="" RTLNAME="add_ln21_fu_321_p2" SOURCE="hls-design/ntt-kernel.cpp:21" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln21"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="BUTTERFLY_LOOP" OPTYPE="sub" PRAGMA="" RTLNAME="sub_ln21_fu_332_p2" SOURCE="hls-design/ntt-kernel.cpp:21" STORAGESUBTYPE="" URAM="0" VARIABLE="sub_ln21"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="FLATTENED_BUTTERFLY_LOOP" OPTYPE="add" PRAGMA="" RTLNAME="step_2_fu_257_p2" SOURCE="hls-design/ntt-kernel.cpp:126" STORAGESUBTYPE="" URAM="0" VARIABLE="step_2"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="FLATTENED_BUTTERFLY_LOOP" OPTYPE="add" PRAGMA="" RTLNAME="idx1_fu_307_p2" SOURCE="hls-design/ntt-kernel.cpp:132" STORAGESUBTYPE="" URAM="0" VARIABLE="idx1"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="FLATTENED_BUTTERFLY_LOOP" OPTYPE="add" PRAGMA="" RTLNAME="add_ln134_fu_283_p2" SOURCE="hls-design/ntt-kernel.cpp:134" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln134"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="4" ID="" IMPL="dsp" LATENCY="0" LOOP="FLATTENED_BUTTERFLY_LOOP" OPTYPE="mul" PRAGMA="yes" RTLNAME="mul_32ns_32ns_64_4_1_U17" SOURCE="hls-design/ntt-kernel.cpp:24" STORAGESUBTYPE="" URAM="0" VARIABLE="ab"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="3" ID="" IMPL="dsp" LATENCY="0" LOOP="FLATTENED_BUTTERFLY_LOOP" OPTYPE="mul" PRAGMA="yes" RTLNAME="mul_32s_32s_32_4_1_U18" SOURCE="hls-design/ntt-kernel.cpp:29" STORAGESUBTYPE="" URAM="0" VARIABLE="m"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="4" ID="" IMPL="dsp" LATENCY="0" LOOP="FLATTENED_BUTTERFLY_LOOP" OPTYPE="mul" PRAGMA="yes" RTLNAME="mul_32ns_32ns_64_4_1_U17" SOURCE="hls-design/ntt-kernel.cpp:33" STORAGESUBTYPE="" URAM="0" VARIABLE="mq"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="FLATTENED_BUTTERFLY_LOOP" OPTYPE="add" PRAGMA="yes" RTLNAME="add_64ns_64ns_64_2_1_U19" SOURCE="hls-design/ntt-kernel.cpp:37" STORAGESUBTYPE="" URAM="0" VARIABLE="sum"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="FLATTENED_BUTTERFLY_LOOP" OPTYPE="sub" PRAGMA="" RTLNAME="sub_ln44_fu_391_p2" SOURCE="hls-design/ntt-kernel.cpp:44" STORAGESUBTYPE="" URAM="0" VARIABLE="sub_ln44"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="FLATTENED_BUTTERFLY_LOOP" OPTYPE="add" PRAGMA="" RTLNAME="res_fu_404_p2" SOURCE="hls-design/ntt-kernel.cpp:10" STORAGESUBTYPE="" URAM="0" VARIABLE="res"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="FLATTENED_BUTTERFLY_LOOP" OPTYPE="sub" PRAGMA="" RTLNAME="sub_ln11_fu_433_p2" SOURCE="hls-design/ntt-kernel.cpp:11" STORAGESUBTYPE="" URAM="0" VARIABLE="sub_ln11"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="FLATTENED_BUTTERFLY_LOOP" OPTYPE="add" PRAGMA="" RTLNAME="add_ln16_fu_454_p2" SOURCE="hls-design/ntt-kernel.cpp:16" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln16"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="FLATTENED_BUTTERFLY_LOOP" OPTYPE="sub" PRAGMA="" RTLNAME="out_v_fu_467_p2" SOURCE="hls-design/ntt-kernel.cpp:16" STORAGESUBTYPE="" URAM="0" VARIABLE="out_v"/>
             </BindNodes>
         </Module>
         <Module>
@@ -2205,12 +2420,12 @@
                 </SummaryOfTimingAnalysis>
                 <SummaryOfOverallLatency>
                     <Best-caseLatency>259</Best-caseLatency>
-                    <Average-caseLatency>32899</Average-caseLatency>
-                    <Worst-caseLatency>65539</Worst-caseLatency>
+                    <Average-caseLatency>2179</Average-caseLatency>
+                    <Worst-caseLatency>4099</Worst-caseLatency>
                     <Best-caseRealTimeLatency>2.590 us</Best-caseRealTimeLatency>
-                    <Average-caseRealTimeLatency>0.329 ms</Average-caseRealTimeLatency>
-                    <Worst-caseRealTimeLatency>0.655 ms</Worst-caseRealTimeLatency>
-                    <PipelineInitiationInterval>259 ~ 65539</PipelineInitiationInterval>
+                    <Average-caseRealTimeLatency>21.790 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>40.990 us</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>259 ~ 4099</PipelineInitiationInterval>
                     <PipelineType>no</PipelineType>
                 </SummaryOfOverallLatency>
                 <SummaryOfLoopLatency>
@@ -2220,11 +2435,11 @@
                         <TripCount>
                             <range>
                                 <min>256</min>
-                                <max>65536</max>
+                                <max>4096</max>
                             </range>
                         </TripCount>
-                        <Latency>257 ~ 65537</Latency>
-                        <AbsoluteTimeLatency>2.570 us ~ 0.655 ms</AbsoluteTimeLatency>
+                        <Latency>257 ~ 4097</Latency>
+                        <AbsoluteTimeLatency>2.570 us ~ 40.970 us</AbsoluteTimeLatency>
                         <PipelineII>1</PipelineII>
                         <PipelineDepth>3</PipelineDepth>
                         <PipelineType>yes</PipelineType>
@@ -2234,23 +2449,23 @@
                 <SummaryOfViolations>
                     <IssueType>-</IssueType>
                     <ViolationType>-</ViolationType>
-                    <SourceLocation>hls-design/ntt-kernel.cpp:104</SourceLocation>
+                    <SourceLocation>hls-design/ntt-kernel.cpp:165</SourceLocation>
                     <SummaryOfLoopViolations>
                         <WRITE_BACK_LOOP>
                             <Name>WRITE_BACK_LOOP</Name>
                             <IssueType>-</IssueType>
                             <ViolationType>-</ViolationType>
-                            <SourceLocation>hls-design/ntt-kernel.cpp:104</SourceLocation>
+                            <SourceLocation>hls-design/ntt-kernel.cpp:165</SourceLocation>
                         </WRITE_BACK_LOOP>
                     </SummaryOfLoopViolations>
                 </SummaryOfViolations>
             </PerformanceEstimates>
             <AreaEstimates>
                 <Resources>
-                    <FF>54</FF>
+                    <FF>50</FF>
                     <AVAIL_FF>234240</AVAIL_FF>
                     <UTIL_FF>~0</UTIL_FF>
-                    <LUT>112</LUT>
+                    <LUT>140</LUT>
                     <AVAIL_LUT>117120</AVAIL_LUT>
                     <UTIL_LUT>~0</UTIL_LUT>
                     <BRAM_18K>0</BRAM_18K>
@@ -2265,16 +2480,14 @@
                 </Resources>
             </AreaEstimates>
             <BindNodes>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="WRITE_BACK_LOOP" OPTYPE="add" PRAGMA="" RTLNAME="add_ln104_fu_125_p2" SOURCE="hls-design/ntt-kernel.cpp:104" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln104"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="WRITE_BACK_LOOP" OPTYPE="add" PRAGMA="" RTLNAME="add_ln165_fu_150_p2" SOURCE="hls-design/ntt-kernel.cpp:165" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln165"/>
             </BindNodes>
         </Module>
         <Module>
             <Name>ntt_kernel</Name>
             <Loops>
                 <BATCH_LOOP>
-                    <STAGE_LOOP>
-                        <BLOCK_LOOP/>
-                    </STAGE_LOOP>
+                    <STAGE_LOOP/>
                 </BATCH_LOOP>
             </Loops>
             <PerformanceEstimates>
@@ -2284,13 +2497,13 @@
                     <EstimatedClockPeriod>7.300</EstimatedClockPeriod>
                 </SummaryOfTimingAnalysis>
                 <SummaryOfOverallLatency>
-                    <Best-caseLatency>572</Best-caseLatency>
-                    <Average-caseLatency>51557960098</Average-caseLatency>
-                    <Worst-caseLatency>824778425410</Worst-caseLatency>
-                    <Best-caseRealTimeLatency>5.720 us</Best-caseRealTimeLatency>
-                    <Average-caseRealTimeLatency>515.580 sec</Average-caseRealTimeLatency>
-                    <Worst-caseRealTimeLatency>8.2e+03 sec</Worst-caseRealTimeLatency>
-                    <PipelineInitiationInterval>573 ~ 824778425411</PipelineInitiationInterval>
+                    <Best-caseLatency>2208</Best-caseLatency>
+                    <Average-caseLatency>716294</Average-caseLatency>
+                    <Worst-caseLatency>5313790</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>22.080 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>7.163 ms</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>53.138 ms</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>2209 ~ 5313791</PipelineInitiationInterval>
                     <PipelineType>no</PipelineType>
                 </SummaryOfOverallLatency>
                 <SummaryOfLoopLatency>
@@ -2303,19 +2516,20 @@
                                 <max>16</max>
                             </range>
                         </TripCount>
-                        <Latency>571 ~ 824778425409</Latency>
-                        <AbsoluteTimeLatency>5.710 us ~ 8.2e+03 sec</AbsoluteTimeLatency>
+                        <Latency>1938 ~ 5309680</Latency>
+                        <AbsoluteTimeLatency>19.380 us ~ 53.097 ms</AbsoluteTimeLatency>
                         <IterationLatency>
                             <range>
-                                <min>570</min>
-                                <max>51548651588</max>
+                                <min>1938</min>
+                                <max>331855</max>
                             </range>
                         </IterationLatency>
-                        <PipelineDepth>570 ~ 51548651588</PipelineDepth>
+                        <PipelineDepth>1938 ~ 331855</PipelineDepth>
                         <PipelineType>no</PipelineType>
                         <InstanceList>
-                            <Instance>grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250</Instance>
-                            <Instance>grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278</Instance>
+                            <Instance>grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305</Instance>
+                            <Instance>grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_314</Instance>
+                            <Instance>grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341</Instance>
                         </InstanceList>
                         <STAGE_LOOP>
                             <Name>STAGE_LOOP</Name>
@@ -2323,67 +2537,40 @@
                             <TripCount>
                                 <range>
                                     <min>1</min>
-                                    <max>16</max>
+                                    <max>12</max>
                                 </range>
                             </TripCount>
-                            <Latency>22 ~ 51548520480</Latency>
-                            <AbsoluteTimeLatency>0.220 us ~ 515.485 sec</AbsoluteTimeLatency>
+                            <Latency>1668 ~ 319536</Latency>
+                            <AbsoluteTimeLatency>16.680 us ~ 3.195 ms</AbsoluteTimeLatency>
                             <IterationLatency>
                                 <range>
-                                    <min>22</min>
-                                    <max>3221782530</max>
+                                    <min>1668</min>
+                                    <max>26628</max>
                                 </range>
                             </IterationLatency>
-                            <PipelineDepth>22 ~ 3221782530</PipelineDepth>
+                            <PipelineDepth>1668 ~ 26628</PipelineDepth>
                             <PipelineType>no</PipelineType>
-                            <InstanceList/>
-                            <BLOCK_LOOP>
-                                <Name>BLOCK_LOOP</Name>
-                                <Slack>7.30</Slack>
-                                <TripCount>
-                                    <range>
-                                        <min>1</min>
-                                        <max>32768</max>
-                                    </range>
-                                </TripCount>
-                                <Latency>20 ~ 3221782528</Latency>
-                                <AbsoluteTimeLatency>0.200 us ~ 32.218 sec</AbsoluteTimeLatency>
-                                <IterationLatency>
-                                    <range>
-                                        <min>20</min>
-                                        <max>98321</max>
-                                    </range>
-                                </IterationLatency>
-                                <PipelineDepth>20 ~ 98321</PipelineDepth>
-                                <PipelineType>no</PipelineType>
-                                <InstanceList>
-                                    <Instance>grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263</Instance>
-                                </InstanceList>
-                            </BLOCK_LOOP>
+                            <InstanceList>
+                                <Instance>grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322</Instance>
+                            </InstanceList>
                         </STAGE_LOOP>
                     </BATCH_LOOP>
                 </SummaryOfLoopLatency>
                 <SummaryOfViolations>
                     <IssueType>-</IssueType>
                     <ViolationType>-</ViolationType>
-                    <SourceLocation>hls-design/ntt-kernel.cpp:59</SourceLocation>
+                    <SourceLocation>hls-design/ntt-kernel.cpp:97</SourceLocation>
                     <SummaryOfLoopViolations>
                         <BATCH_LOOP>
                             <Name>BATCH_LOOP</Name>
                             <IssueType>-</IssueType>
                             <ViolationType>-</ViolationType>
-                            <SourceLocation>hls-design/ntt-kernel.cpp:59</SourceLocation>
+                            <SourceLocation>hls-design/ntt-kernel.cpp:97</SourceLocation>
                             <STAGE_LOOP>
                                 <Name>STAGE_LOOP</Name>
                                 <IssueType>-</IssueType>
                                 <ViolationType>-</ViolationType>
-                                <SourceLocation>hls-design/ntt-kernel.cpp:79</SourceLocation>
-                                <BLOCK_LOOP>
-                                    <Name>BLOCK_LOOP</Name>
-                                    <IssueType>-</IssueType>
-                                    <ViolationType>-</ViolationType>
-                                    <SourceLocation>hls-design/ntt-kernel.cpp:82</SourceLocation>
-                                </BLOCK_LOOP>
+                                <SourceLocation>hls-design/ntt-kernel.cpp:121</SourceLocation>
                             </STAGE_LOOP>
                         </BATCH_LOOP>
                     </SummaryOfLoopViolations>
@@ -2391,16 +2578,16 @@
             </PerformanceEstimates>
             <AreaEstimates>
                 <Resources>
-                    <BRAM_18K>128</BRAM_18K>
+                    <BRAM_18K>47</BRAM_18K>
                     <AVAIL_BRAM>288</AVAIL_BRAM>
-                    <UTIL_BRAM>44</UTIL_BRAM>
+                    <UTIL_BRAM>16</UTIL_BRAM>
                     <DSP>7</DSP>
                     <AVAIL_DSP>1248</AVAIL_DSP>
                     <UTIL_DSP>~0</UTIL_DSP>
-                    <FF>5063</FF>
+                    <FF>4670</FF>
                     <AVAIL_FF>234240</AVAIL_FF>
-                    <UTIL_FF>2</UTIL_FF>
-                    <LUT>5208</LUT>
+                    <UTIL_FF>1</UTIL_FF>
+                    <LUT>5808</LUT>
                     <AVAIL_LUT>117120</AVAIL_LUT>
                     <UTIL_LUT>4</UTIL_LUT>
                     <URAM>0</URAM>
@@ -2409,14 +2596,18 @@
                 </Resources>
             </AreaEstimates>
             <BindNodes>
-                <BindNode BINDTYPE="storage" BRAM="116" BUNDLEDNAME="" DISPNAME="bind_storage ram_2p" DSP="0" ID="" IMPL="bram" LATENCY="1" LOOP="" OPTYPE="ram_2p" PRAGMA="yes" RTLNAME="local_x_U" SOURCE="hls-design/ntt-kernel.cpp:66" STORAGESIZE="32 65536 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_2p array" URAM="0" VARIABLE="local_x"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="BATCH_LOOP" OPTYPE="add" PRAGMA="" RTLNAME="add_ln59_2_fu_370_p2" SOURCE="hls-design/ntt-kernel.cpp:59" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln59_2"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="BATCH_LOOP" OPTYPE="add" PRAGMA="" RTLNAME="add_ln59_3_fu_375_p2" SOURCE="hls-design/ntt-kernel.cpp:59" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln59_3"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="BATCH_LOOP" OPTYPE="add" PRAGMA="" RTLNAME="add_ln59_1_fu_380_p2" SOURCE="hls-design/ntt-kernel.cpp:59" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln59_1"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="BATCH_LOOP" OPTYPE="add" PRAGMA="" RTLNAME="add_ln59_fu_392_p2" SOURCE="hls-design/ntt-kernel.cpp:59" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln59"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="STAGE_LOOP" OPTYPE="add" PRAGMA="" RTLNAME="add_ln82_fu_438_p2" SOURCE="hls-design/ntt-kernel.cpp:82" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln82"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="BLOCK_LOOP" OPTYPE="add" PRAGMA="" RTLNAME="add_ln82_1_fu_505_p2" SOURCE="hls-design/ntt-kernel.cpp:82" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln82_1"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="STAGE_LOOP" OPTYPE="add" PRAGMA="" RTLNAME="offset_1_fu_510_p2" SOURCE="hls-design/ntt-kernel.cpp:100" STORAGESUBTYPE="" URAM="0" VARIABLE="offset_1"/>
+                <BindNode BINDTYPE="storage" BRAM="8" BUNDLEDNAME="" DISPNAME="bind_storage ram_2p" DSP="0" ID="" IMPL="bram" LATENCY="1" LOOP="" OPTYPE="ram_2p" PRAGMA="yes" RTLNAME="local_twiddles_U" SOURCE="hls-design/ntt-kernel.cpp:72" STORAGESIZE="32 4096 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_2p array" URAM="0" VARIABLE="local_twiddles"/>
+                <BindNode BINDTYPE="storage" BRAM="3" BUNDLEDNAME="" DISPNAME="bind_storage ram_2p" DSP="0" ID="" IMPL="bram" LATENCY="1" LOOP="" OPTYPE="ram_2p" PRAGMA="yes" RTLNAME="local_psi_U" SOURCE="hls-design/ntt-kernel.cpp:74" STORAGESIZE="12 4096 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_2p array" URAM="0" VARIABLE="local_psi"/>
+                <BindNode BINDTYPE="storage" BRAM="8" BUNDLEDNAME="" DISPNAME="bind_storage ram_2p" DSP="0" ID="" IMPL="bram" LATENCY="1" LOOP="" OPTYPE="ram_2p" PRAGMA="yes" RTLNAME="ping_U" SOURCE="hls-design/ntt-kernel.cpp:78" STORAGESIZE="32 4096 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_2p array" URAM="0" VARIABLE="ping"/>
+                <BindNode BINDTYPE="storage" BRAM="8" BUNDLEDNAME="" DISPNAME="bind_storage ram_2p" DSP="0" ID="" IMPL="bram" LATENCY="1" LOOP="" OPTYPE="ram_2p" PRAGMA="yes" RTLNAME="pong_U" SOURCE="hls-design/ntt-kernel.cpp:80" STORAGESIZE="32 4096 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_2p array" URAM="0" VARIABLE="pong"/>
+                <BindNode BINDTYPE="storage" BRAM="8" BUNDLEDNAME="" DISPNAME="bind_storage ram_1p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_1p" PRAGMA="" RTLNAME="burst_buffer_U" SOURCE="hls-design/ntt-kernel.cpp:102" STORAGESIZE="32 4096 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_1p array" URAM="0" VARIABLE="burst_buffer"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="sub_fu_372_p2" SOURCE="hls-design/ntt-kernel.cpp:51" STORAGESUBTYPE="" URAM="0" VARIABLE="sub"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="BATCH_LOOP" OPTYPE="add" PRAGMA="" RTLNAME="add_ln97_2_fu_487_p2" SOURCE="hls-design/ntt-kernel.cpp:97" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln97_2"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="BATCH_LOOP" OPTYPE="add" PRAGMA="" RTLNAME="add_ln97_1_fu_501_p2" SOURCE="hls-design/ntt-kernel.cpp:97" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln97_1"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="BATCH_LOOP" OPTYPE="add" PRAGMA="" RTLNAME="add_ln97_fu_515_p2" SOURCE="hls-design/ntt-kernel.cpp:97" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln97"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="STAGE_LOOP" OPTYPE="add" PRAGMA="" RTLNAME="stage_1_fu_536_p2" SOURCE="" STORAGESUBTYPE="" URAM="0" VARIABLE="stage_1"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="STAGE_LOOP" OPTYPE="add" PRAGMA="" RTLNAME="sub53_fu_553_p2" SOURCE="hls-design/ntt-kernel.cpp:121" STORAGESUBTYPE="" URAM="0" VARIABLE="sub53"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="STAGE_LOOP" OPTYPE="add" PRAGMA="" RTLNAME="offset_1_fu_560_p2" SOURCE="hls-design/ntt-kernel.cpp:159" STORAGESUBTYPE="" URAM="0" VARIABLE="offset_1"/>
                 <BindNode BINDTYPE="adapter" BRAM="0" BUNDLEDNAME="control" DISPNAME="bind_adapter " DSP="0" ID="" IMPL="" LATENCY="" LOOP="" OPTYPE="" PRAGMA="" RTLNAME="control_s_axi_U" SOURCE="" STORAGESIZE="" STORAGESUBTYPE="s_axilite" STORAGEUSAGE="interface" URAM="0" VARIABLE=""/>
                 <BindNode BINDTYPE="adapter" BRAM="4" BUNDLEDNAME="gmem0" DISPNAME="bind_adapter " DSP="0" ID="" IMPL="" LATENCY="" LOOP="" OPTYPE="" PRAGMA="" RTLNAME="gmem0_m_axi_U" SOURCE="" STORAGESIZE="" STORAGESUBTYPE="m_axi" STORAGEUSAGE="interface" URAM="0" VARIABLE=""/>
                 <BindNode BINDTYPE="adapter" BRAM="4" BUNDLEDNAME="gmem1" DISPNAME="bind_adapter " DSP="0" ID="" IMPL="" LATENCY="" LOOP="" OPTYPE="" PRAGMA="" RTLNAME="gmem1_m_axi_U" SOURCE="" STORAGESIZE="" STORAGESUBTYPE="m_axi" STORAGEUSAGE="interface" URAM="0" VARIABLE=""/>
@@ -2425,7 +2616,9 @@
         </Module>
     </ModuleInformation>
     <FIFOInformation/>
-    <UserConfigCommands/>
+    <UserConfigCommands>
+        <config_export flow="impl" vivado_clock="10"/>
+    </UserConfigCommands>
     <Args>
         <Arg ArgName="x" index="0" direction="inout" srcType="unsigned int*" srcSize="32">
             <hwRefs>
@@ -2898,50 +3091,63 @@
             <item name="Inferred Burst Summary">
                 <table>
                     <keys size="6">HW Interface, Direction, Length, Width, Loop, Loop Location</keys>
-                    <column name="m_axi_gmem0">write, variable, 32, WRITE_BACK_LOOP, hls-design/ntt-kernel.cpp:104:26</column>
-                    <column name="m_axi_gmem1">read, variable, 32, PERMUTE_LOOP, hls-design/ntt-kernel.cpp:70:16</column>
-                    <column name="m_axi_gmem2">read, variable, 32, BUTTERFLY_LOOP, hls-design/ntt-kernel.cpp:85:18</column>
+                    <column name="m_axi_gmem0">read, variable, 32, BURST_READ_LOOP, hls-design/ntt-kernel.cpp:103:23</column>
+                    <column name="m_axi_gmem0">write, variable, 32, WRITE_BACK_LOOP, hls-design/ntt-kernel.cpp:165:23</column>
+                    <column name="m_axi_gmem1">read, variable, 32, CACHE_PSI_LOOP, hls-design/ntt-kernel.cpp:91:18</column>
+                    <column name="m_axi_gmem2">read, variable, 32, CACHE_TWIDDLES_LOOP, hls-design/ntt-kernel.cpp:84:23</column>
                 </table>
             </item>
             <item name="All M_AXI Variable Accesses">
                 <table>
                     <keys size="10">HW Interface, Variable, Access Location, Direction, Burst Status, Length, Loop, Loop Location, Resolution, Problem</keys>
-                    <column name="m_axi_gmem0">x, hls-design/ntt-kernel.cpp:73:15, read, Fail, , PERMUTE_LOOP, hls-design/ntt-kernel.cpp:70:16, 214-229, Could not analyze pattern</column>
-                    <column name="m_axi_gmem0">x, hls-design/ntt-kernel.cpp:107:22, write, Widen Fail, , WRITE_BACK_LOOP, hls-design/ntt-kernel.cpp:104:26, 214-353, Could not widen since type i32 size is greater than or equal to the max_widen_bitwidth threshold of 0</column>
-                    <column name="m_axi_gmem0">x, hls-design/ntt-kernel.cpp:107:22, write, Fail, , , , 214-231, Access is clobbered by load</column>
-                    <column name="m_axi_gmem0">x, hls-design/ntt-kernel.cpp:107:22, write, Inferred, variable, WRITE_BACK_LOOP, hls-design/ntt-kernel.cpp:104:26, , </column>
-                    <column name="m_axi_gmem1">psi_powers, hls-design/ntt-kernel.cpp:73:32, read, Widen Fail, , PERMUTE_LOOP, hls-design/ntt-kernel.cpp:70:16, 214-353, Could not widen since type i32 size is greater than or equal to the max_widen_bitwidth threshold of 0</column>
-                    <column name="m_axi_gmem1">psi_powers, hls-design/ntt-kernel.cpp:73:32, read, Fail, , BATCH_LOOP, hls-design/ntt-kernel.cpp:59:14, 214-229, Could not analyze pattern</column>
-                    <column name="m_axi_gmem1">psi_powers, hls-design/ntt-kernel.cpp:73:32, read, Inferred, variable, PERMUTE_LOOP, hls-design/ntt-kernel.cpp:70:16, , </column>
-                    <column name="m_axi_gmem2">twiddles, hls-design/ntt-kernel.cpp:90:19, read, Widen Fail, , BUTTERFLY_LOOP, hls-design/ntt-kernel.cpp:85:18, 214-353, Could not widen since type i32 size is greater than or equal to the max_widen_bitwidth threshold of 0</column>
-                    <column name="m_axi_gmem2">twiddles, hls-design/ntt-kernel.cpp:90:19, read, Inferred, variable, BUTTERFLY_LOOP, hls-design/ntt-kernel.cpp:85:18, , </column>
+                    <column name="m_axi_gmem0">x, hls-design/ntt-kernel.cpp:106:20, read, Widen Fail, , BURST_READ_LOOP, hls-design/ntt-kernel.cpp:103:23, 214-353, Could not widen since type i32 size is greater than or equal to the max_widen_bitwidth threshold of 0</column>
+                    <column name="m_axi_gmem0">x, hls-design/ntt-kernel.cpp:106:20, read, Fail, , , , 214-231, Access is clobbered by store</column>
+                    <column name="m_axi_gmem0">x, hls-design/ntt-kernel.cpp:106:20, read, Inferred, variable, BURST_READ_LOOP, hls-design/ntt-kernel.cpp:103:23, , </column>
+                    <column name="m_axi_gmem0">x, hls-design/ntt-kernel.cpp:165:46, write, Widen Fail, , WRITE_BACK_LOOP, hls-design/ntt-kernel.cpp:165:23, 214-353, Could not widen since type i32 size is greater than or equal to the max_widen_bitwidth threshold of 0</column>
+                    <column name="m_axi_gmem0">x, hls-design/ntt-kernel.cpp:165:46, write, Fail, , , , 214-231, Access is clobbered by load</column>
+                    <column name="m_axi_gmem0">x, hls-design/ntt-kernel.cpp:165:46, write, Inferred, variable, WRITE_BACK_LOOP, hls-design/ntt-kernel.cpp:165:23, , </column>
+                    <column name="m_axi_gmem1">psi_powers, hls-design/ntt-kernel.cpp:94:17, read, Widen Fail, , CACHE_PSI_LOOP, hls-design/ntt-kernel.cpp:91:18, 214-353, Could not widen since type i32 size is greater than or equal to the max_widen_bitwidth threshold of 0</column>
+                    <column name="m_axi_gmem1">psi_powers, hls-design/ntt-kernel.cpp:94:17, read, Inferred, variable, CACHE_PSI_LOOP, hls-design/ntt-kernel.cpp:91:18, , </column>
+                    <column name="m_axi_gmem2">twiddles, hls-design/ntt-kernel.cpp:87:22, read, Widen Fail, , CACHE_TWIDDLES_LOOP, hls-design/ntt-kernel.cpp:84:23, 214-353, Could not widen since type i32 size is greater than or equal to the max_widen_bitwidth threshold of 0</column>
+                    <column name="m_axi_gmem2">twiddles, hls-design/ntt-kernel.cpp:87:22, read, Inferred, variable, CACHE_TWIDDLES_LOOP, hls-design/ntt-kernel.cpp:84:23, , </column>
                 </table>
             </item>
         </section>
     </ReportBurst>
     <PragmaReport>
-        <Pragma type="inline" location="hls-design/ntt-kernel.cpp:14" status="valid" parentFunction="mod_add" variable="" isDirective="0" options=""/>
-        <Pragma type="inline" location="hls-design/ntt-kernel.cpp:20" status="valid" parentFunction="mod_sub" variable="" isDirective="0" options=""/>
-        <Pragma type="inline" location="hls-design/ntt-kernel.cpp:25" status="valid" parentFunction="mod_mul" variable="" isDirective="0" options=""/>
-        <Pragma type="interface" location="hls-design/ntt-kernel.cpp:48" status="valid" parentFunction="ntt_kernel" variable="x" isDirective="0" options="m_axi port=x bundle=gmem0 depth=65536"/>
-        <Pragma type="interface" location="hls-design/ntt-kernel.cpp:49" status="valid" parentFunction="ntt_kernel" variable="psi_powers" isDirective="0" options="m_axi port=psi_powers bundle=gmem1 depth=65536"/>
-        <Pragma type="interface" location="hls-design/ntt-kernel.cpp:50" status="valid" parentFunction="ntt_kernel" variable="twiddles" isDirective="0" options="m_axi port=twiddles bundle=gmem2 depth=65535"/>
-        <Pragma type="interface" location="hls-design/ntt-kernel.cpp:53" status="valid" parentFunction="ntt_kernel" variable="q" isDirective="0" options="s_axilite port=q bundle=control"/>
-        <Pragma type="interface" location="hls-design/ntt-kernel.cpp:54" status="valid" parentFunction="ntt_kernel" variable="q_inv" isDirective="0" options="s_axilite port=q_inv bundle=control"/>
-        <Pragma type="interface" location="hls-design/ntt-kernel.cpp:55" status="valid" parentFunction="ntt_kernel" variable="batch_size" isDirective="0" options="s_axilite port=batch_size bundle=control"/>
-        <Pragma type="interface" location="hls-design/ntt-kernel.cpp:56" status="valid" parentFunction="ntt_kernel" variable="n" isDirective="0" options="s_axilite port=n bundle=control"/>
-        <Pragma type="interface" location="hls-design/ntt-kernel.cpp:57" status="valid" parentFunction="ntt_kernel" variable="return" isDirective="0" options="s_axilite port=return bundle=control"/>
-        <Pragma type="loop_tripcount" location="hls-design/ntt-kernel.cpp:61" status="valid" parentFunction="ntt_kernel" variable="" isDirective="0" options="min=1 max=16"/>
-        <Pragma type="bind_storage" location="hls-design/ntt-kernel.cpp:67" status="valid" parentFunction="ntt_kernel" variable="local_x" isDirective="0" options="variable=local_x type=ram_2p impl=bram"/>
-        <Pragma type="pipeline" location="hls-design/ntt-kernel.cpp:71" status="valid" parentFunction="ntt_kernel" variable="" isDirective="0" options="II=1"/>
-        <Pragma type="loop_tripcount" location="hls-design/ntt-kernel.cpp:72" status="valid" parentFunction="ntt_kernel" variable="" isDirective="0" options="min=256 max=65536"/>
-        <Pragma type="loop_tripcount" location="hls-design/ntt-kernel.cpp:80" status="valid" parentFunction="ntt_kernel" variable="" isDirective="0" options="min=1 max=16"/>
-        <Pragma type="loop_tripcount" location="hls-design/ntt-kernel.cpp:83" status="valid" parentFunction="ntt_kernel" variable="" isDirective="0" options="min=1 max=32768"/>
-        <Pragma type="pipeline" location="hls-design/ntt-kernel.cpp:86" status="valid" parentFunction="ntt_kernel" variable="" isDirective="0" options="II=1"/>
-        <Pragma type="loop_tripcount" location="hls-design/ntt-kernel.cpp:87" status="valid" parentFunction="ntt_kernel" variable="" isDirective="0" options="min=1 max=32768"/>
-        <Pragma type="dependence" location="hls-design/ntt-kernel.cpp:88" status="valid" parentFunction="ntt_kernel" variable="local_x" isDirective="0" options="variable=local_x array inter false"/>
-        <Pragma type="pipeline" location="hls-design/ntt-kernel.cpp:105" status="valid" parentFunction="ntt_kernel" variable="" isDirective="0" options="II=1"/>
-        <Pragma type="loop_tripcount" location="hls-design/ntt-kernel.cpp:106" status="valid" parentFunction="ntt_kernel" variable="" isDirective="0" options="min=256 max=65536"/>
+        <Pragma type="inline" location="hls-design/ntt-kernel.cpp:9" status="valid" parentFunction="mod_add" variable="" isDirective="0" options=""/>
+        <Pragma type="inline" location="hls-design/ntt-kernel.cpp:15" status="valid" parentFunction="mod_sub" variable="" isDirective="0" options=""/>
+        <Pragma type="inline" location="hls-design/ntt-kernel.cpp:21" status="valid" parentFunction="mod_mul" variable="" isDirective="0" options=""/>
+        <Pragma type="bind_op" location="hls-design/ntt-kernel.cpp:25" status="valid" parentFunction="mod_mul" variable="ab" isDirective="0" options="variable=ab op=mul impl=dsp latency=3"/>
+        <Pragma type="bind_op" location="hls-design/ntt-kernel.cpp:30" status="valid" parentFunction="mod_mul" variable="m" isDirective="0" options="variable=m op=mul impl=dsp latency=3"/>
+        <Pragma type="bind_op" location="hls-design/ntt-kernel.cpp:34" status="valid" parentFunction="mod_mul" variable="mq" isDirective="0" options="variable=mq op=mul impl=dsp latency=3"/>
+        <Pragma type="bind_op" location="hls-design/ntt-kernel.cpp:38" status="valid" parentFunction="mod_mul" variable="sum" isDirective="0" options="variable=sum op=add impl=fabric latency=1"/>
+        <Pragma type="interface" location="hls-design/ntt-kernel.cpp:61" status="valid" parentFunction="ntt_kernel" variable="x" isDirective="0" options="m_axi port=x bundle=gmem0 depth=65536"/>
+        <Pragma type="interface" location="hls-design/ntt-kernel.cpp:62" status="valid" parentFunction="ntt_kernel" variable="psi_powers" isDirective="0" options="m_axi port=psi_powers bundle=gmem1 depth=4096"/>
+        <Pragma type="interface" location="hls-design/ntt-kernel.cpp:63" status="valid" parentFunction="ntt_kernel" variable="twiddles" isDirective="0" options="m_axi port=twiddles bundle=gmem2 depth=4096"/>
+        <Pragma type="interface" location="hls-design/ntt-kernel.cpp:66" status="valid" parentFunction="ntt_kernel" variable="q" isDirective="0" options="s_axilite port=q bundle=control"/>
+        <Pragma type="interface" location="hls-design/ntt-kernel.cpp:67" status="valid" parentFunction="ntt_kernel" variable="q_inv" isDirective="0" options="s_axilite port=q_inv bundle=control"/>
+        <Pragma type="interface" location="hls-design/ntt-kernel.cpp:68" status="valid" parentFunction="ntt_kernel" variable="batch_size" isDirective="0" options="s_axilite port=batch_size bundle=control"/>
+        <Pragma type="interface" location="hls-design/ntt-kernel.cpp:69" status="valid" parentFunction="ntt_kernel" variable="n" isDirective="0" options="s_axilite port=n bundle=control"/>
+        <Pragma type="interface" location="hls-design/ntt-kernel.cpp:70" status="valid" parentFunction="ntt_kernel" variable="return" isDirective="0" options="s_axilite port=return bundle=control"/>
+        <Pragma type="bind_storage" location="hls-design/ntt-kernel.cpp:73" status="valid" parentFunction="ntt_kernel" variable="local_twiddles" isDirective="0" options="variable=local_twiddles type=ram_2p impl=bram"/>
+        <Pragma type="bind_storage" location="hls-design/ntt-kernel.cpp:75" status="valid" parentFunction="ntt_kernel" variable="local_psi" isDirective="0" options="variable=local_psi type=ram_2p impl=bram"/>
+        <Pragma type="bind_storage" location="hls-design/ntt-kernel.cpp:79" status="valid" parentFunction="ntt_kernel" variable="ping" isDirective="0" options="variable=ping type=ram_2p impl=bram"/>
+        <Pragma type="bind_storage" location="hls-design/ntt-kernel.cpp:81" status="valid" parentFunction="ntt_kernel" variable="pong" isDirective="0" options="variable=pong type=ram_2p impl=bram"/>
+        <Pragma type="pipeline" location="hls-design/ntt-kernel.cpp:85" status="valid" parentFunction="ntt_kernel" variable="" isDirective="0" options="II=1"/>
+        <Pragma type="loop_tripcount" location="hls-design/ntt-kernel.cpp:86" status="valid" parentFunction="ntt_kernel" variable="" isDirective="0" options="min=255 max=4095"/>
+        <Pragma type="pipeline" location="hls-design/ntt-kernel.cpp:92" status="valid" parentFunction="ntt_kernel" variable="" isDirective="0" options="II=1"/>
+        <Pragma type="loop_tripcount" location="hls-design/ntt-kernel.cpp:93" status="valid" parentFunction="ntt_kernel" variable="" isDirective="0" options="min=256 max=4096"/>
+        <Pragma type="loop_tripcount" location="hls-design/ntt-kernel.cpp:98" status="valid" parentFunction="ntt_kernel" variable="" isDirective="0" options="min=1 max=16"/>
+        <Pragma type="pipeline" location="hls-design/ntt-kernel.cpp:104" status="valid" parentFunction="ntt_kernel" variable="" isDirective="0" options="II=1"/>
+        <Pragma type="loop_tripcount" location="hls-design/ntt-kernel.cpp:105" status="valid" parentFunction="ntt_kernel" variable="" isDirective="0" options="min=256 max=4096"/>
+        <Pragma type="pipeline" location="hls-design/ntt-kernel.cpp:111" status="valid" parentFunction="ntt_kernel" variable="" isDirective="0" options="II=1"/>
+        <Pragma type="loop_tripcount" location="hls-design/ntt-kernel.cpp:112" status="valid" parentFunction="ntt_kernel" variable="" isDirective="0" options="min=256 max=4096"/>
+        <Pragma type="loop_tripcount" location="hls-design/ntt-kernel.cpp:122" status="valid" parentFunction="ntt_kernel" variable="" isDirective="0" options="min=1 max=12"/>
+        <Pragma type="pipeline" location="hls-design/ntt-kernel.cpp:127" status="valid" parentFunction="ntt_kernel" variable="" isDirective="0" options="II=1"/>
+        <Pragma type="loop_tripcount" location="hls-design/ntt-kernel.cpp:128" status="valid" parentFunction="ntt_kernel" variable="" isDirective="0" options="min=128 max=2048"/>
+        <Pragma type="pipeline" location="hls-design/ntt-kernel.cpp:166" status="valid" parentFunction="ntt_kernel" variable="" isDirective="0" options="II=1"/>
+        <Pragma type="loop_tripcount" location="hls-design/ntt-kernel.cpp:167" status="valid" parentFunction="ntt_kernel" variable="" isDirective="0" options="min=256 max=4096"/>
     </PragmaReport>
 </profile>
 

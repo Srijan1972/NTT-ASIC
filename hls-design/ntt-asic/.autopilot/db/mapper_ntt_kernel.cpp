@@ -255,18 +255,18 @@ __xlx_x__tmp_vec.push_back(((Byte<4>*)__xlx_apatb_param_x)[i]);
   int __xlx_offset_byte_param_x = 0*4;
   // Collect __xlx_psi_powers__tmp_vec
 std::vector<Byte<4>> __xlx_psi_powers__tmp_vec;
-for (size_t i = 0; i < 65536; ++i){
+for (size_t i = 0; i < 4096; ++i){
 __xlx_psi_powers__tmp_vec.push_back(((Byte<4>*)__xlx_apatb_param_psi_powers)[i]);
 }
-  int __xlx_size_param_psi_powers = 65536;
+  int __xlx_size_param_psi_powers = 4096;
   int __xlx_offset_param_psi_powers = 0;
   int __xlx_offset_byte_param_psi_powers = 0*4;
   // Collect __xlx_twiddles__tmp_vec
 std::vector<Byte<4>> __xlx_twiddles__tmp_vec;
-for (size_t i = 0; i < 65535; ++i){
+for (size_t i = 0; i < 4096; ++i){
 __xlx_twiddles__tmp_vec.push_back(((Byte<4>*)__xlx_apatb_param_twiddles)[i]);
 }
-  int __xlx_size_param_twiddles = 65535;
+  int __xlx_size_param_twiddles = 4096;
   int __xlx_offset_param_twiddles = 0;
   int __xlx_offset_byte_param_twiddles = 0*4;
   // DUT call

@@ -9,14 +9,14 @@
 		<module_structure>Sequential</module_structure>
 		<ret_bitwidth>0</ret_bitwidth>
 		<ports class_id="2" tracking_level="0" version="0">
-			<count>7</count>
+			<count>4</count>
 			<item_version>0</item_version>
 			<item class_id="3" tracking_level="1" version="0" object_id="_1">
 				<Value class_id="4" tracking_level="0" version="0">
 					<Obj class_id="5" tracking_level="0" version="0">
 						<type>1</type>
 						<id>1</id>
-						<name>gmem1</name>
+						<name>n</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -34,13 +34,13 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>2208643982</coreId>
+						<coreId>3621216858</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
-					<bitwidth>32</bitwidth>
+					<bitwidth>31</bitwidth>
 				</Value>
 				<direction>0</direction>
-				<if_type>4</if_type>
+				<if_type>0</if_type>
 				<array_size>0</array_size>
 				<bit_vecs class_id="7" tracking_level="0" version="0">
 					<count>0</count>
@@ -52,7 +52,7 @@
 					<Obj>
 						<type>1</type>
 						<id>2</id>
-						<name>gmem0</name>
+						<name>local_psi</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -70,14 +70,14 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>0</coreId>
+						<coreId>1629888613</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
-					<bitwidth>32</bitwidth>
+					<bitwidth>12</bitwidth>
 				</Value>
 				<direction>0</direction>
-				<if_type>4</if_type>
-				<array_size>0</array_size>
+				<if_type>1</if_type>
+				<array_size>4096</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -88,7 +88,7 @@
 					<Obj>
 						<type>1</type>
 						<id>3</id>
-						<name>n</name>
+						<name>burst_buffer</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -106,14 +106,14 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>0</coreId>
+						<coreId>1931489584</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>32</bitwidth>
 				</Value>
 				<direction>0</direction>
-				<if_type>0</if_type>
-				<array_size>0</array_size>
+				<if_type>1</if_type>
+				<array_size>4096</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -124,7 +124,7 @@
 					<Obj>
 						<type>1</type>
 						<id>4</id>
-						<name>sext_ln70</name>
+						<name>ping</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -142,122 +142,14 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>0</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>62</bitwidth>
-				</Value>
-				<direction>0</direction>
-				<if_type>0</if_type>
-				<array_size>0</array_size>
-				<bit_vecs>
-					<count>0</count>
-					<item_version>0</item_version>
-				</bit_vecs>
-			</item>
-			<item class_id_reference="3" object_id="_5">
-				<Value>
-					<Obj>
-						<type>1</type>
-						<id>5</id>
-						<name>phi_mul1</name>
-						<fileName></fileName>
-						<fileDirectory></fileDirectory>
-						<lineNumber>0</lineNumber>
-						<contextFuncName></contextFuncName>
-						<contextNormFuncName></contextNormFuncName>
-						<inlineStackInfo>
-							<count>0</count>
-							<item_version>0</item_version>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control></control>
-						<opType></opType>
-						<implIndex></implIndex>
-						<coreName></coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>105</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>32</bitwidth>
-				</Value>
-				<direction>0</direction>
-				<if_type>0</if_type>
-				<array_size>0</array_size>
-				<bit_vecs>
-					<count>0</count>
-					<item_version>0</item_version>
-				</bit_vecs>
-			</item>
-			<item class_id_reference="3" object_id="_6">
-				<Value>
-					<Obj>
-						<type>1</type>
-						<id>6</id>
-						<name>x</name>
-						<fileName></fileName>
-						<fileDirectory></fileDirectory>
-						<lineNumber>0</lineNumber>
-						<contextFuncName></contextFuncName>
-						<contextNormFuncName></contextNormFuncName>
-						<inlineStackInfo>
-							<count>0</count>
-							<item_version>0</item_version>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control></control>
-						<opType></opType>
-						<implIndex></implIndex>
-						<coreName></coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>0</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>64</bitwidth>
-				</Value>
-				<direction>0</direction>
-				<if_type>0</if_type>
-				<array_size>0</array_size>
-				<bit_vecs>
-					<count>0</count>
-					<item_version>0</item_version>
-				</bit_vecs>
-			</item>
-			<item class_id_reference="3" object_id="_7">
-				<Value>
-					<Obj>
-						<type>1</type>
-						<id>7</id>
-						<name>local_x</name>
-						<fileName></fileName>
-						<fileDirectory></fileDirectory>
-						<lineNumber>0</lineNumber>
-						<contextFuncName></contextFuncName>
-						<contextNormFuncName></contextNormFuncName>
-						<inlineStackInfo>
-							<count>0</count>
-							<item_version>0</item_version>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control></control>
-						<opType></opType>
-						<implIndex></implIndex>
-						<coreName></coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>2020173413</coreId>
+						<coreId>757935405</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>32</bitwidth>
 				</Value>
 				<direction>1</direction>
 				<if_type>1</if_type>
-				<array_size>65536</array_size>
+				<array_size>4096</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -265,17 +157,17 @@
 			</item>
 		</ports>
 		<nodes class_id="8" tracking_level="0" version="0">
-			<count>30</count>
+			<count>20</count>
 			<item_version>0</item_version>
-			<item class_id="9" tracking_level="1" version="0" object_id="_8">
+			<item class_id="9" tracking_level="1" version="0" object_id="_5">
 				<Value>
 					<Obj>
 						<type>0</type>
-						<id>8</id>
+						<id>5</id>
 						<name>i</name>
 						<fileName>hls-design/ntt-kernel.cpp</fileName>
 						<fileDirectory>/home/sg9109/Documents</fileDirectory>
-						<lineNumber>70</lineNumber>
+						<lineNumber>110</lineNumber>
 						<contextFuncName>ntt_kernel</contextFuncName>
 						<contextNormFuncName>ntt_kernel</contextNormFuncName>
 						<inlineStackInfo>
@@ -291,7 +183,7 @@
 											<first>hls-design/ntt-kernel.cpp</first>
 											<second>ntt_kernel</second>
 										</first>
-										<second>70</second>
+										<second>110</second>
 									</item>
 								</second>
 							</item>
@@ -304,15 +196,15 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>17</coreId>
+						<coreId>0</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
-					<bitwidth>17</bitwidth>
+					<bitwidth>13</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>1</count>
 					<item_version>0</item_version>
-					<item>51</item>
+					<item>35</item>
 				</oprand_edges>
 				<opcode>alloca</opcode>
 				<m_Display>0</m_Display>
@@ -323,140 +215,11 @@
 				<m_topoIndex>1</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
-			<item class_id_reference="9" object_id="_9">
+			<item class_id_reference="9" object_id="_6">
 				<Value>
 					<Obj>
 						<type>0</type>
-						<id>9</id>
-						<name>x_read</name>
-						<fileName></fileName>
-						<fileDirectory></fileDirectory>
-						<lineNumber>0</lineNumber>
-						<contextFuncName></contextFuncName>
-						<contextNormFuncName></contextNormFuncName>
-						<inlineStackInfo>
-							<count>0</count>
-							<item_version>0</item_version>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control></control>
-						<opType></opType>
-						<implIndex></implIndex>
-						<coreName></coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>0</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>64</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>2</count>
-					<item_version>0</item_version>
-					<item>53</item>
-					<item>54</item>
-				</oprand_edges>
-				<opcode>read</opcode>
-				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>0</m_isOnCriticalPath>
-				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>0.00</m_delay>
-				<m_topoIndex>2</m_topoIndex>
-				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
-			</item>
-			<item class_id_reference="9" object_id="_10">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>10</id>
-						<name>phi_mul1_read</name>
-						<fileName></fileName>
-						<fileDirectory></fileDirectory>
-						<lineNumber>0</lineNumber>
-						<contextFuncName></contextFuncName>
-						<contextNormFuncName></contextNormFuncName>
-						<inlineStackInfo>
-							<count>0</count>
-							<item_version>0</item_version>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control></control>
-						<opType></opType>
-						<implIndex></implIndex>
-						<coreName></coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>0</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>32</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>2</count>
-					<item_version>0</item_version>
-					<item>56</item>
-					<item>57</item>
-				</oprand_edges>
-				<opcode>read</opcode>
-				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>0</m_isOnCriticalPath>
-				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>0.00</m_delay>
-				<m_topoIndex>3</m_topoIndex>
-				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
-			</item>
-			<item class_id_reference="9" object_id="_11">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>11</id>
-						<name>sext_ln70_read</name>
-						<fileName></fileName>
-						<fileDirectory></fileDirectory>
-						<lineNumber>0</lineNumber>
-						<contextFuncName></contextFuncName>
-						<contextNormFuncName></contextNormFuncName>
-						<inlineStackInfo>
-							<count>0</count>
-							<item_version>0</item_version>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control></control>
-						<opType></opType>
-						<implIndex></implIndex>
-						<coreName></coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>20</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>62</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>2</count>
-					<item_version>0</item_version>
-					<item>59</item>
-					<item>60</item>
-				</oprand_edges>
-				<opcode>read</opcode>
-				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>0</m_isOnCriticalPath>
-				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>0.00</m_delay>
-				<m_topoIndex>4</m_topoIndex>
-				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
-			</item>
-			<item class_id_reference="9" object_id="_12">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>12</id>
+						<id>8</id>
 						<name>n_read</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
@@ -475,16 +238,16 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>0</coreId>
+						<coreId>4294967295</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
-					<bitwidth>32</bitwidth>
+					<bitwidth>31</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>2</count>
 					<item_version>0</item_version>
-					<item>61</item>
-					<item>62</item>
+					<item>37</item>
+					<item>38</item>
 				</oprand_edges>
 				<opcode>read</opcode>
 				<m_Display>0</m_Display>
@@ -492,60 +255,18 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>5</m_topoIndex>
+				<m_topoIndex>2</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
-			<item class_id_reference="9" object_id="_13">
+			<item class_id_reference="9" object_id="_7">
 				<Value>
 					<Obj>
 						<type>0</type>
-						<id>13</id>
-						<name>sext_ln70_cast</name>
-						<fileName></fileName>
-						<fileDirectory></fileDirectory>
-						<lineNumber>0</lineNumber>
-						<contextFuncName></contextFuncName>
-						<contextNormFuncName></contextNormFuncName>
-						<inlineStackInfo>
-							<count>0</count>
-							<item_version>0</item_version>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control></control>
-						<opType></opType>
-						<implIndex></implIndex>
-						<coreName></coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>1919252069</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>64</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>1</count>
-					<item_version>0</item_version>
-					<item>63</item>
-				</oprand_edges>
-				<opcode>sext</opcode>
-				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>0</m_isOnCriticalPath>
-				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>0.00</m_delay>
-				<m_topoIndex>6</m_topoIndex>
-				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
-			</item>
-			<item class_id_reference="9" object_id="_14">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>17</id>
-						<name>i_write_ln70</name>
+						<id>9</id>
+						<name>i_write_ln110</name>
 						<fileName>hls-design/ntt-kernel.cpp</fileName>
 						<fileDirectory>/home/sg9109/Documents</fileDirectory>
-						<lineNumber>70</lineNumber>
+						<lineNumber>110</lineNumber>
 						<contextFuncName>ntt_kernel</contextFuncName>
 						<contextNormFuncName>ntt_kernel</contextNormFuncName>
 						<inlineStackInfo>
@@ -561,7 +282,7 @@
 											<first>hls-design/ntt-kernel.cpp</first>
 											<second>ntt_kernel</second>
 										</first>
-										<second>70</second>
+										<second>110</second>
 									</item>
 								</second>
 							</item>
@@ -574,7 +295,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1918989856</coreId>
+						<coreId>0</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -582,8 +303,8 @@
 				<oprand_edges>
 					<count>2</count>
 					<item_version>0</item_version>
-					<item>65</item>
-					<item>66</item>
+					<item>40</item>
+					<item>41</item>
 				</oprand_edges>
 				<opcode>store</opcode>
 				<m_Display>0</m_Display>
@@ -591,14 +312,14 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.42</m_delay>
-				<m_topoIndex>7</m_topoIndex>
+				<m_topoIndex>3</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
-			<item class_id_reference="9" object_id="_15">
+			<item class_id_reference="9" object_id="_8">
 				<Value>
 					<Obj>
 						<type>0</type>
-						<id>18</id>
+						<id>10</id>
 						<name>br_ln0</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
@@ -617,7 +338,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>543516788</coreId>
+						<coreId>1043616617</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -625,7 +346,7 @@
 				<oprand_edges>
 					<count>1</count>
 					<item_version>0</item_version>
-					<item>67</item>
+					<item>42</item>
 				</oprand_edges>
 				<opcode>br</opcode>
 				<m_Display>0</m_Display>
@@ -633,18 +354,18 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>8</m_topoIndex>
+				<m_topoIndex>4</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
-			<item class_id_reference="9" object_id="_16">
+			<item class_id_reference="9" object_id="_9">
 				<Value>
 					<Obj>
 						<type>0</type>
-						<id>20</id>
+						<id>12</id>
 						<name>i_2</name>
 						<fileName>hls-design/ntt-kernel.cpp</fileName>
 						<fileDirectory>/home/sg9109/Documents</fileDirectory>
-						<lineNumber>70</lineNumber>
+						<lineNumber>110</lineNumber>
 						<contextFuncName>ntt_kernel</contextFuncName>
 						<contextNormFuncName>ntt_kernel</contextNormFuncName>
 						<inlineStackInfo>
@@ -660,7 +381,7 @@
 											<first>hls-design/ntt-kernel.cpp</first>
 											<second>ntt_kernel</second>
 										</first>
-										<second>70</second>
+										<second>110</second>
 									</item>
 								</second>
 							</item>
@@ -673,16 +394,16 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1852793701</coreId>
+						<coreId>1667853600</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
-					<bitwidth>17</bitwidth>
+					<bitwidth>13</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>2</count>
 					<item_version>0</item_version>
-					<item>68</item>
-					<item>206</item>
+					<item>43</item>
+					<item>111</item>
 				</oprand_edges>
 				<opcode>load</opcode>
 				<m_Display>0</m_Display>
@@ -690,18 +411,18 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>9</m_topoIndex>
+				<m_topoIndex>5</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
-			<item class_id_reference="9" object_id="_17">
+			<item class_id_reference="9" object_id="_10">
 				<Value>
 					<Obj>
 						<type>0</type>
-						<id>23</id>
-						<name>zext_ln70_1</name>
+						<id>13</id>
+						<name>zext_ln110_1</name>
 						<fileName>hls-design/ntt-kernel.cpp</fileName>
 						<fileDirectory>/home/sg9109/Documents</fileDirectory>
-						<lineNumber>70</lineNumber>
+						<lineNumber>110</lineNumber>
 						<contextFuncName>ntt_kernel</contextFuncName>
 						<contextNormFuncName>ntt_kernel</contextNormFuncName>
 						<inlineStackInfo>
@@ -717,7 +438,7 @@
 											<first>hls-design/ntt-kernel.cpp</first>
 											<second>ntt_kernel</second>
 										</first>
-										<second>70</second>
+										<second>110</second>
 									</item>
 								</second>
 							</item>
@@ -730,15 +451,243 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1801676136</coreId>
+						<coreId>1769238117</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
-					<bitwidth>32</bitwidth>
+					<bitwidth>31</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>1</count>
 					<item_version>0</item_version>
-					<item>69</item>
+					<item>44</item>
+				</oprand_edges>
+				<opcode>zext</opcode>
+				<m_Display>0</m_Display>
+				<m_isOnCriticalPath>0</m_isOnCriticalPath>
+				<m_isLCDNode>0</m_isLCDNode>
+				<m_isStartOfPath>0</m_isStartOfPath>
+				<m_delay>0.00</m_delay>
+				<m_topoIndex>6</m_topoIndex>
+				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
+			</item>
+			<item class_id_reference="9" object_id="_11">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>14</id>
+						<name>icmp_ln110</name>
+						<fileName>hls-design/ntt-kernel.cpp</fileName>
+						<fileDirectory>/home/sg9109/Documents</fileDirectory>
+						<lineNumber>110</lineNumber>
+						<contextFuncName>ntt_kernel</contextFuncName>
+						<contextNormFuncName>ntt_kernel</contextNormFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>/home/sg9109/Documents</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>hls-design/ntt-kernel.cpp</first>
+											<second>ntt_kernel</second>
+										</first>
+										<second>110</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<control></control>
+						<opType></opType>
+						<implIndex></implIndex>
+						<coreName></coreName>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>1210203513</coreId>
+						<rtlModuleName></rtlModuleName>
+					</Obj>
+					<bitwidth>1</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>2</count>
+					<item_version>0</item_version>
+					<item>45</item>
+					<item>46</item>
+				</oprand_edges>
+				<opcode>icmp</opcode>
+				<m_Display>0</m_Display>
+				<m_isOnCriticalPath>0</m_isOnCriticalPath>
+				<m_isLCDNode>0</m_isLCDNode>
+				<m_isStartOfPath>0</m_isStartOfPath>
+				<m_delay>1.00</m_delay>
+				<m_topoIndex>7</m_topoIndex>
+				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
+			</item>
+			<item class_id_reference="9" object_id="_12">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>15</id>
+						<name>add_ln110</name>
+						<fileName>hls-design/ntt-kernel.cpp</fileName>
+						<fileDirectory>/home/sg9109/Documents</fileDirectory>
+						<lineNumber>110</lineNumber>
+						<contextFuncName>ntt_kernel</contextFuncName>
+						<contextNormFuncName>ntt_kernel</contextNormFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>/home/sg9109/Documents</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>hls-design/ntt-kernel.cpp</first>
+											<second>ntt_kernel</second>
+										</first>
+										<second>110</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<control></control>
+						<opType></opType>
+						<implIndex></implIndex>
+						<coreName></coreName>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>758460466</coreId>
+						<rtlModuleName></rtlModuleName>
+					</Obj>
+					<bitwidth>13</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>2</count>
+					<item_version>0</item_version>
+					<item>47</item>
+					<item>49</item>
+				</oprand_edges>
+				<opcode>add</opcode>
+				<m_Display>0</m_Display>
+				<m_isOnCriticalPath>0</m_isOnCriticalPath>
+				<m_isLCDNode>0</m_isLCDNode>
+				<m_isStartOfPath>0</m_isStartOfPath>
+				<m_delay>0.82</m_delay>
+				<m_topoIndex>8</m_topoIndex>
+				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
+			</item>
+			<item class_id_reference="9" object_id="_13">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>16</id>
+						<name>br_ln110</name>
+						<fileName>hls-design/ntt-kernel.cpp</fileName>
+						<fileDirectory>/home/sg9109/Documents</fileDirectory>
+						<lineNumber>110</lineNumber>
+						<contextFuncName>ntt_kernel</contextFuncName>
+						<contextNormFuncName>ntt_kernel</contextNormFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>/home/sg9109/Documents</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>hls-design/ntt-kernel.cpp</first>
+											<second>ntt_kernel</second>
+										</first>
+										<second>110</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<control></control>
+						<opType></opType>
+						<implIndex></implIndex>
+						<coreName></coreName>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>1953065059</coreId>
+						<rtlModuleName></rtlModuleName>
+					</Obj>
+					<bitwidth>0</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>3</count>
+					<item_version>0</item_version>
+					<item>50</item>
+					<item>51</item>
+					<item>52</item>
+				</oprand_edges>
+				<opcode>br</opcode>
+				<m_Display>0</m_Display>
+				<m_isOnCriticalPath>0</m_isOnCriticalPath>
+				<m_isLCDNode>0</m_isLCDNode>
+				<m_isStartOfPath>0</m_isStartOfPath>
+				<m_delay>0.00</m_delay>
+				<m_topoIndex>9</m_topoIndex>
+				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
+			</item>
+			<item class_id_reference="9" object_id="_14">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>18</id>
+						<name>zext_ln110</name>
+						<fileName>hls-design/ntt-kernel.cpp</fileName>
+						<fileDirectory>/home/sg9109/Documents</fileDirectory>
+						<lineNumber>110</lineNumber>
+						<contextFuncName>ntt_kernel</contextFuncName>
+						<contextNormFuncName>ntt_kernel</contextNormFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>/home/sg9109/Documents</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>hls-design/ntt-kernel.cpp</first>
+											<second>ntt_kernel</second>
+										</first>
+										<second>110</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<control></control>
+						<opType></opType>
+						<implIndex></implIndex>
+						<coreName></coreName>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>1330405189</coreId>
+						<rtlModuleName></rtlModuleName>
+					</Obj>
+					<bitwidth>64</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>1</count>
+					<item_version>0</item_version>
+					<item>53</item>
 				</oprand_edges>
 				<opcode>zext</opcode>
 				<m_Display>0</m_Display>
@@ -749,15 +698,15 @@
 				<m_topoIndex>10</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
-			<item class_id_reference="9" object_id="_18">
+			<item class_id_reference="9" object_id="_15">
 				<Value>
 					<Obj>
 						<type>0</type>
-						<id>24</id>
-						<name>icmp_ln70</name>
+						<id>22</id>
+						<name>local_psi_addr</name>
 						<fileName>hls-design/ntt-kernel.cpp</fileName>
 						<fileDirectory>/home/sg9109/Documents</fileDirectory>
-						<lineNumber>70</lineNumber>
+						<lineNumber>113</lineNumber>
 						<contextFuncName>ntt_kernel</contextFuncName>
 						<contextNormFuncName>ntt_kernel</contextNormFuncName>
 						<inlineStackInfo>
@@ -773,7 +722,7 @@
 											<first>hls-design/ntt-kernel.cpp</first>
 											<second>ntt_kernel</second>
 										</first>
-										<second>70</second>
+										<second>113</second>
 									</item>
 								</second>
 							</item>
@@ -786,150 +735,36 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1634493984</coreId>
+						<coreId>1295780106</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
-					<bitwidth>1</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>2</count>
-					<item_version>0</item_version>
-					<item>70</item>
-					<item>71</item>
-				</oprand_edges>
-				<opcode>icmp</opcode>
-				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>0</m_isOnCriticalPath>
-				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.01</m_delay>
-				<m_topoIndex>11</m_topoIndex>
-				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
-			</item>
-			<item class_id_reference="9" object_id="_19">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>25</id>
-						<name>add_ln70</name>
-						<fileName>hls-design/ntt-kernel.cpp</fileName>
-						<fileDirectory>/home/sg9109/Documents</fileDirectory>
-						<lineNumber>70</lineNumber>
-						<contextFuncName>ntt_kernel</contextFuncName>
-						<contextNormFuncName>ntt_kernel</contextNormFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>/home/sg9109/Documents</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>hls-design/ntt-kernel.cpp</first>
-											<second>ntt_kernel</second>
-										</first>
-										<second>70</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control></control>
-						<opType></opType>
-						<implIndex></implIndex>
-						<coreName></coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>808592690</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>17</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>2</count>
-					<item_version>0</item_version>
-					<item>72</item>
-					<item>74</item>
-				</oprand_edges>
-				<opcode>add</opcode>
-				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>0</m_isOnCriticalPath>
-				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>0.86</m_delay>
-				<m_topoIndex>12</m_topoIndex>
-				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
-			</item>
-			<item class_id_reference="9" object_id="_20">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>26</id>
-						<name>br_ln70</name>
-						<fileName>hls-design/ntt-kernel.cpp</fileName>
-						<fileDirectory>/home/sg9109/Documents</fileDirectory>
-						<lineNumber>70</lineNumber>
-						<contextFuncName>ntt_kernel</contextFuncName>
-						<contextNormFuncName>ntt_kernel</contextNormFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>/home/sg9109/Documents</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>hls-design/ntt-kernel.cpp</first>
-											<second>ntt_kernel</second>
-										</first>
-										<second>70</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control></control>
-						<opType></opType>
-						<implIndex></implIndex>
-						<coreName></coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>575620686</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>0</bitwidth>
+					<bitwidth>12</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>3</count>
 					<item_version>0</item_version>
-					<item>75</item>
-					<item>76</item>
-					<item>77</item>
+					<item>54</item>
+					<item>56</item>
+					<item>57</item>
 				</oprand_edges>
-				<opcode>br</opcode>
+				<opcode>getelementptr</opcode>
 				<m_Display>0</m_Display>
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>13</m_topoIndex>
+				<m_topoIndex>11</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
-			<item class_id_reference="9" object_id="_21">
+			<item class_id_reference="9" object_id="_16">
 				<Value>
 					<Obj>
 						<type>0</type>
-						<id>28</id>
-						<name>gmem1_addr</name>
+						<id>23</id>
+						<name>local_psi_load</name>
 						<fileName>hls-design/ntt-kernel.cpp</fileName>
 						<fileDirectory>/home/sg9109/Documents</fileDirectory>
-						<lineNumber>70</lineNumber>
+						<lineNumber>113</lineNumber>
 						<contextFuncName>ntt_kernel</contextFuncName>
 						<contextNormFuncName>ntt_kernel</contextNormFuncName>
 						<inlineStackInfo>
@@ -945,7 +780,7 @@
 											<first>hls-design/ntt-kernel.cpp</first>
 											<second>ntt_kernel</second>
 										</first>
-										<second>70</second>
+										<second>113</second>
 									</item>
 								</second>
 							</item>
@@ -958,16 +793,129 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>574452846</coreId>
+						<coreId>1030647657</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
-					<bitwidth>32</bitwidth>
+					<bitwidth>12</bitwidth>
 				</Value>
 				<oprand_edges>
-					<count>2</count>
+					<count>1</count>
 					<item_version>0</item_version>
-					<item>78</item>
-					<item>79</item>
+					<item>58</item>
+				</oprand_edges>
+				<opcode>load</opcode>
+				<m_Display>0</m_Display>
+				<m_isOnCriticalPath>0</m_isOnCriticalPath>
+				<m_isLCDNode>0</m_isLCDNode>
+				<m_isStartOfPath>0</m_isStartOfPath>
+				<m_delay>1.23</m_delay>
+				<m_topoIndex>12</m_topoIndex>
+				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
+			</item>
+			<item class_id_reference="9" object_id="_17">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>24</id>
+						<name>zext_ln113</name>
+						<fileName>hls-design/ntt-kernel.cpp</fileName>
+						<fileDirectory>/home/sg9109/Documents</fileDirectory>
+						<lineNumber>113</lineNumber>
+						<contextFuncName>ntt_kernel</contextFuncName>
+						<contextNormFuncName>ntt_kernel</contextNormFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>/home/sg9109/Documents</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>hls-design/ntt-kernel.cpp</first>
+											<second>ntt_kernel</second>
+										</first>
+										<second>113</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<control></control>
+						<opType></opType>
+						<implIndex></implIndex>
+						<coreName></coreName>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>808591443</coreId>
+						<rtlModuleName></rtlModuleName>
+					</Obj>
+					<bitwidth>64</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>1</count>
+					<item_version>0</item_version>
+					<item>59</item>
+				</oprand_edges>
+				<opcode>zext</opcode>
+				<m_Display>0</m_Display>
+				<m_isOnCriticalPath>0</m_isOnCriticalPath>
+				<m_isLCDNode>0</m_isLCDNode>
+				<m_isStartOfPath>0</m_isStartOfPath>
+				<m_delay>0.00</m_delay>
+				<m_topoIndex>14</m_topoIndex>
+				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
+			</item>
+			<item class_id_reference="9" object_id="_18">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>25</id>
+						<name>burst_buffer_addr</name>
+						<fileName>hls-design/ntt-kernel.cpp</fileName>
+						<fileDirectory>/home/sg9109/Documents</fileDirectory>
+						<lineNumber>113</lineNumber>
+						<contextFuncName>ntt_kernel</contextFuncName>
+						<contextNormFuncName>ntt_kernel</contextNormFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>/home/sg9109/Documents</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>hls-design/ntt-kernel.cpp</first>
+											<second>ntt_kernel</second>
+										</first>
+										<second>113</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<control></control>
+						<opType></opType>
+						<implIndex></implIndex>
+						<coreName></coreName>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>572669287</coreId>
+						<rtlModuleName></rtlModuleName>
+					</Obj>
+					<bitwidth>12</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>3</count>
+					<item_version>0</item_version>
+					<item>60</item>
+					<item>61</item>
+					<item>62</item>
 				</oprand_edges>
 				<opcode>getelementptr</opcode>
 				<m_Display>0</m_Display>
@@ -978,15 +926,15 @@
 				<m_topoIndex>15</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
-			<item class_id_reference="9" object_id="_22">
+			<item class_id_reference="9" object_id="_19">
 				<Value>
 					<Obj>
 						<type>0</type>
-						<id>29</id>
-						<name>zext_ln70</name>
+						<id>26</id>
+						<name>burst_buffer_load</name>
 						<fileName>hls-design/ntt-kernel.cpp</fileName>
 						<fileDirectory>/home/sg9109/Documents</fileDirectory>
-						<lineNumber>70</lineNumber>
+						<lineNumber>113</lineNumber>
 						<contextFuncName>ntt_kernel</contextFuncName>
 						<contextNormFuncName>ntt_kernel</contextNormFuncName>
 						<inlineStackInfo>
@@ -1002,7 +950,7 @@
 											<first>hls-design/ntt-kernel.cpp</first>
 											<second>ntt_kernel</second>
 										</first>
-										<second>70</second>
+										<second>113</second>
 									</item>
 								</second>
 							</item>
@@ -1015,91 +963,34 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1752460921</coreId>
+						<coreId>1885414944</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
-					<bitwidth>64</bitwidth>
+					<bitwidth>32</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>1</count>
 					<item_version>0</item_version>
-					<item>80</item>
+					<item>63</item>
 				</oprand_edges>
-				<opcode>zext</opcode>
+				<opcode>load</opcode>
 				<m_Display>0</m_Display>
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>0.00</m_delay>
-				<m_topoIndex>27</m_topoIndex>
-				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
-			</item>
-			<item class_id_reference="9" object_id="_23">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>33</id>
-						<name>gmem1_addr_read</name>
-						<fileName>hls-design/ntt-kernel.cpp</fileName>
-						<fileDirectory>/home/sg9109/Documents</fileDirectory>
-						<lineNumber>73</lineNumber>
-						<contextFuncName>ntt_kernel</contextFuncName>
-						<contextNormFuncName>ntt_kernel</contextNormFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>/home/sg9109/Documents</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>hls-design/ntt-kernel.cpp</first>
-											<second>ntt_kernel</second>
-										</first>
-										<second>73</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control></control>
-						<opType></opType>
-						<implIndex></implIndex>
-						<coreName></coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>1734439795</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>32</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>2</count>
-					<item_version>0</item_version>
-					<item>82</item>
-					<item>83</item>
-				</oprand_edges>
-				<opcode>read</opcode>
-				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>0</m_isOnCriticalPath>
-				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>7.30</m_delay>
+				<m_delay>1.23</m_delay>
 				<m_topoIndex>16</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
-			<item class_id_reference="9" object_id="_24">
+			<item class_id_reference="9" object_id="_20">
 				<Value>
 					<Obj>
 						<type>0</type>
-						<id>34</id>
-						<name>add_ln73</name>
+						<id>27</id>
+						<name>ping_addr</name>
 						<fileName>hls-design/ntt-kernel.cpp</fileName>
 						<fileDirectory>/home/sg9109/Documents</fileDirectory>
-						<lineNumber>73</lineNumber>
+						<lineNumber>113</lineNumber>
 						<contextFuncName>ntt_kernel</contextFuncName>
 						<contextNormFuncName>ntt_kernel</contextNormFuncName>
 						<inlineStackInfo>
@@ -1115,7 +1006,7 @@
 											<first>hls-design/ntt-kernel.cpp</first>
 											<second>ntt_kernel</second>
 										</first>
-										<second>73</second>
+										<second>113</second>
 									</item>
 								</second>
 							</item>
@@ -1128,76 +1019,19 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1563769145</coreId>
+						<coreId>1094925171</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
-					<bitwidth>32</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>2</count>
-					<item_version>0</item_version>
-					<item>84</item>
-					<item>85</item>
-				</oprand_edges>
-				<opcode>add</opcode>
-				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>0</m_isOnCriticalPath>
-				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.01</m_delay>
-				<m_topoIndex>17</m_topoIndex>
-				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
-			</item>
-			<item class_id_reference="9" object_id="_25">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>35</id>
-						<name>shl_ln1</name>
-						<fileName>hls-design/ntt-kernel.cpp</fileName>
-						<fileDirectory>/home/sg9109/Documents</fileDirectory>
-						<lineNumber>73</lineNumber>
-						<contextFuncName>ntt_kernel</contextFuncName>
-						<contextNormFuncName>ntt_kernel</contextNormFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>/home/sg9109/Documents</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>hls-design/ntt-kernel.cpp</first>
-											<second>ntt_kernel</second>
-										</first>
-										<second>73</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control></control>
-						<opType></opType>
-						<implIndex></implIndex>
-						<coreName></coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>540767087</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>34</bitwidth>
+					<bitwidth>12</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>3</count>
 					<item_version>0</item_version>
-					<item>87</item>
-					<item>88</item>
-					<item>90</item>
+					<item>64</item>
+					<item>65</item>
+					<item>66</item>
 				</oprand_edges>
-				<opcode>bitconcatenate</opcode>
+				<opcode>getelementptr</opcode>
 				<m_Display>0</m_Display>
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
@@ -1206,15 +1040,15 @@
 				<m_topoIndex>18</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
-			<item class_id_reference="9" object_id="_26">
+			<item class_id_reference="9" object_id="_21">
 				<Value>
 					<Obj>
 						<type>0</type>
-						<id>36</id>
-						<name>zext_ln73</name>
+						<id>28</id>
+						<name>ping_addr_write_ln113</name>
 						<fileName>hls-design/ntt-kernel.cpp</fileName>
 						<fileDirectory>/home/sg9109/Documents</fileDirectory>
-						<lineNumber>73</lineNumber>
+						<lineNumber>113</lineNumber>
 						<contextFuncName>ntt_kernel</contextFuncName>
 						<contextNormFuncName>ntt_kernel</contextNormFuncName>
 						<inlineStackInfo>
@@ -1230,7 +1064,7 @@
 											<first>hls-design/ntt-kernel.cpp</first>
 											<second>ntt_kernel</second>
 										</first>
-										<second>73</second>
+										<second>113</second>
 									</item>
 								</second>
 							</item>
@@ -1243,466 +1077,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1650418785</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>64</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>1</count>
-					<item_version>0</item_version>
-					<item>91</item>
-				</oprand_edges>
-				<opcode>zext</opcode>
-				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>0</m_isOnCriticalPath>
-				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>0.00</m_delay>
-				<m_topoIndex>19</m_topoIndex>
-				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
-			</item>
-			<item class_id_reference="9" object_id="_27">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>37</id>
-						<name>add_ln73_1</name>
-						<fileName>hls-design/ntt-kernel.cpp</fileName>
-						<fileDirectory>/home/sg9109/Documents</fileDirectory>
-						<lineNumber>73</lineNumber>
-						<contextFuncName>ntt_kernel</contextFuncName>
-						<contextNormFuncName>ntt_kernel</contextNormFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>/home/sg9109/Documents</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>hls-design/ntt-kernel.cpp</first>
-											<second>ntt_kernel</second>
-										</first>
-										<second>73</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control></control>
-						<opType></opType>
-						<implIndex></implIndex>
-						<coreName></coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>1701273971</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>64</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>2</count>
-					<item_version>0</item_version>
-					<item>92</item>
-					<item>93</item>
-				</oprand_edges>
-				<opcode>add</opcode>
-				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>0</m_isOnCriticalPath>
-				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.08</m_delay>
-				<m_topoIndex>20</m_topoIndex>
-				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
-			</item>
-			<item class_id_reference="9" object_id="_28">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>38</id>
-						<name>trunc_ln2</name>
-						<fileName>hls-design/ntt-kernel.cpp</fileName>
-						<fileDirectory>/home/sg9109/Documents</fileDirectory>
-						<lineNumber>73</lineNumber>
-						<contextFuncName>ntt_kernel</contextFuncName>
-						<contextNormFuncName>ntt_kernel</contextNormFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>/home/sg9109/Documents</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>hls-design/ntt-kernel.cpp</first>
-											<second>ntt_kernel</second>
-										</first>
-										<second>73</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control></control>
-						<opType></opType>
-						<implIndex></implIndex>
-						<coreName></coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>1663056755</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>62</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>4</count>
-					<item_version>0</item_version>
-					<item>95</item>
-					<item>96</item>
-					<item>98</item>
-					<item>100</item>
-				</oprand_edges>
-				<opcode>partselect</opcode>
-				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>0</m_isOnCriticalPath>
-				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>0.00</m_delay>
-				<m_topoIndex>21</m_topoIndex>
-				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
-			</item>
-			<item class_id_reference="9" object_id="_29">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>39</id>
-						<name>sext_ln73</name>
-						<fileName>hls-design/ntt-kernel.cpp</fileName>
-						<fileDirectory>/home/sg9109/Documents</fileDirectory>
-						<lineNumber>73</lineNumber>
-						<contextFuncName>ntt_kernel</contextFuncName>
-						<contextNormFuncName>ntt_kernel</contextNormFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>/home/sg9109/Documents</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>hls-design/ntt-kernel.cpp</first>
-											<second>ntt_kernel</second>
-										</first>
-										<second>73</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control></control>
-						<opType></opType>
-						<implIndex></implIndex>
-						<coreName></coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>1936942413</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>64</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>1</count>
-					<item_version>0</item_version>
-					<item>101</item>
-				</oprand_edges>
-				<opcode>sext</opcode>
-				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>0</m_isOnCriticalPath>
-				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>0.00</m_delay>
-				<m_topoIndex>22</m_topoIndex>
-				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
-			</item>
-			<item class_id_reference="9" object_id="_30">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>40</id>
-						<name>gmem0_addr</name>
-						<fileName>hls-design/ntt-kernel.cpp</fileName>
-						<fileDirectory>/home/sg9109/Documents</fileDirectory>
-						<lineNumber>73</lineNumber>
-						<contextFuncName>ntt_kernel</contextFuncName>
-						<contextNormFuncName>ntt_kernel</contextNormFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>/home/sg9109/Documents</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>hls-design/ntt-kernel.cpp</first>
-											<second>ntt_kernel</second>
-										</first>
-										<second>73</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control></control>
-						<opType></opType>
-						<implIndex></implIndex>
-						<coreName></coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>1717924464</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>32</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>2</count>
-					<item_version>0</item_version>
-					<item>102</item>
-					<item>103</item>
-				</oprand_edges>
-				<opcode>getelementptr</opcode>
-				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>0</m_isOnCriticalPath>
-				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>0.00</m_delay>
-				<m_topoIndex>23</m_topoIndex>
-				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
-			</item>
-			<item class_id_reference="9" object_id="_31">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>41</id>
-						<name>gmem0_load_req</name>
-						<fileName>hls-design/ntt-kernel.cpp</fileName>
-						<fileDirectory>/home/sg9109/Documents</fileDirectory>
-						<lineNumber>73</lineNumber>
-						<contextFuncName>ntt_kernel</contextFuncName>
-						<contextNormFuncName>ntt_kernel</contextNormFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>/home/sg9109/Documents</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>hls-design/ntt-kernel.cpp</first>
-											<second>ntt_kernel</second>
-										</first>
-										<second>73</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control></control>
-						<opType></opType>
-						<implIndex></implIndex>
-						<coreName></coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>1914708526</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>1</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>3</count>
-					<item_version>0</item_version>
-					<item>105</item>
-					<item>106</item>
-					<item>107</item>
-				</oprand_edges>
-				<opcode>readreq</opcode>
-				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>0</m_isOnCriticalPath>
-				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>7.30</m_delay>
-				<m_topoIndex>24</m_topoIndex>
-				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
-			</item>
-			<item class_id_reference="9" object_id="_32">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>42</id>
-						<name>gmem0_addr_read</name>
-						<fileName>hls-design/ntt-kernel.cpp</fileName>
-						<fileDirectory>/home/sg9109/Documents</fileDirectory>
-						<lineNumber>73</lineNumber>
-						<contextFuncName>ntt_kernel</contextFuncName>
-						<contextNormFuncName>ntt_kernel</contextNormFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>/home/sg9109/Documents</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>hls-design/ntt-kernel.cpp</first>
-											<second>ntt_kernel</second>
-										</first>
-										<second>73</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control></control>
-						<opType></opType>
-						<implIndex></implIndex>
-						<coreName></coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>1868767232</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>32</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>3</count>
-					<item_version>0</item_version>
-					<item>109</item>
-					<item>110</item>
-					<item>205</item>
-				</oprand_edges>
-				<opcode>read</opcode>
-				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>0</m_isOnCriticalPath>
-				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>7.30</m_delay>
-				<m_topoIndex>25</m_topoIndex>
-				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
-			</item>
-			<item class_id_reference="9" object_id="_33">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>43</id>
-						<name>local_x_addr</name>
-						<fileName>hls-design/ntt-kernel.cpp</fileName>
-						<fileDirectory>/home/sg9109/Documents</fileDirectory>
-						<lineNumber>73</lineNumber>
-						<contextFuncName>ntt_kernel</contextFuncName>
-						<contextNormFuncName>ntt_kernel</contextNormFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>/home/sg9109/Documents</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>hls-design/ntt-kernel.cpp</first>
-											<second>ntt_kernel</second>
-										</first>
-										<second>73</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control></control>
-						<opType></opType>
-						<implIndex></implIndex>
-						<coreName></coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>1702258035</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>16</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>3</count>
-					<item_version>0</item_version>
-					<item>111</item>
-					<item>113</item>
-					<item>114</item>
-				</oprand_edges>
-				<opcode>getelementptr</opcode>
-				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>0</m_isOnCriticalPath>
-				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>0.00</m_delay>
-				<m_topoIndex>28</m_topoIndex>
-				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
-			</item>
-			<item class_id_reference="9" object_id="_34">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>44</id>
-						<name>local_x_addr_write_ln73</name>
-						<fileName>hls-design/ntt-kernel.cpp</fileName>
-						<fileDirectory>/home/sg9109/Documents</fileDirectory>
-						<lineNumber>73</lineNumber>
-						<contextFuncName>ntt_kernel</contextFuncName>
-						<contextNormFuncName>ntt_kernel</contextNormFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>/home/sg9109/Documents</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>hls-design/ntt-kernel.cpp</first>
-											<second>ntt_kernel</second>
-										</first>
-										<second>73</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control></control>
-						<opType></opType>
-						<implIndex></implIndex>
-						<coreName></coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>0</coreId>
+						<coreId>790766141</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -1710,8 +1085,8 @@
 				<oprand_edges>
 					<count>2</count>
 					<item_version>0</item_version>
-					<item>115</item>
-					<item>116</item>
+					<item>67</item>
+					<item>68</item>
 				</oprand_edges>
 				<opcode>store</opcode>
 				<m_Display>0</m_Display>
@@ -1719,18 +1094,18 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>1.23</m_delay>
-				<m_topoIndex>29</m_topoIndex>
+				<m_topoIndex>19</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
-			<item class_id_reference="9" object_id="_35">
+			<item class_id_reference="9" object_id="_22">
 				<Value>
 					<Obj>
 						<type>0</type>
-						<id>45</id>
-						<name>i_write_ln70</name>
+						<id>29</id>
+						<name>i_write_ln110</name>
 						<fileName>hls-design/ntt-kernel.cpp</fileName>
 						<fileDirectory>/home/sg9109/Documents</fileDirectory>
-						<lineNumber>70</lineNumber>
+						<lineNumber>110</lineNumber>
 						<contextFuncName>ntt_kernel</contextFuncName>
 						<contextNormFuncName>ntt_kernel</contextNormFuncName>
 						<inlineStackInfo>
@@ -1746,7 +1121,7 @@
 											<first>hls-design/ntt-kernel.cpp</first>
 											<second>ntt_kernel</second>
 										</first>
-										<second>70</second>
+										<second>110</second>
 									</item>
 								</second>
 							</item>
@@ -1759,7 +1134,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>0</coreId>
+						<coreId>1769239916</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -1767,10 +1142,10 @@
 				<oprand_edges>
 					<count>4</count>
 					<item_version>0</item_version>
-					<item>117</item>
-					<item>118</item>
-					<item>207</item>
-					<item>208</item>
+					<item>69</item>
+					<item>70</item>
+					<item>112</item>
+					<item>113</item>
 				</oprand_edges>
 				<opcode>store</opcode>
 				<m_Display>0</m_Display>
@@ -1778,18 +1153,18 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.42</m_delay>
-				<m_topoIndex>14</m_topoIndex>
+				<m_topoIndex>13</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
-			<item class_id_reference="9" object_id="_36">
+			<item class_id_reference="9" object_id="_23">
 				<Value>
 					<Obj>
 						<type>0</type>
-						<id>46</id>
-						<name>br_ln70</name>
+						<id>30</id>
+						<name>br_ln110</name>
 						<fileName>hls-design/ntt-kernel.cpp</fileName>
 						<fileDirectory>/home/sg9109/Documents</fileDirectory>
-						<lineNumber>70</lineNumber>
+						<lineNumber>110</lineNumber>
 						<contextFuncName>ntt_kernel</contextFuncName>
 						<contextNormFuncName>ntt_kernel</contextNormFuncName>
 						<inlineStackInfo>
@@ -1805,7 +1180,7 @@
 											<first>hls-design/ntt-kernel.cpp</first>
 											<second>ntt_kernel</second>
 										</first>
-										<second>70</second>
+										<second>110</second>
 									</item>
 								</second>
 							</item>
@@ -1818,7 +1193,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>0</coreId>
+						<coreId>1835627552</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -1826,7 +1201,7 @@
 				<oprand_edges>
 					<count>1</count>
 					<item_version>0</item_version>
-					<item>119</item>
+					<item>71</item>
 				</oprand_edges>
 				<opcode>br</opcode>
 				<m_Display>0</m_Display>
@@ -1834,14 +1209,14 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>30</m_topoIndex>
+				<m_topoIndex>20</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
-			<item class_id_reference="9" object_id="_37">
+			<item class_id_reference="9" object_id="_24">
 				<Value>
 					<Obj>
 						<type>0</type>
-						<id>48</id>
+						<id>32</id>
 						<name>_ln0</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
@@ -1860,7 +1235,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>0</coreId>
+						<coreId>1869833586</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -1875,18 +1250,18 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>26</m_topoIndex>
+				<m_topoIndex>17</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 		</nodes>
 		<consts class_id="15" tracking_level="0" version="0">
-			<count>7</count>
+			<count>4</count>
 			<item_version>0</item_version>
-			<item class_id="16" tracking_level="1" version="0" object_id="_38">
+			<item class_id="16" tracking_level="1" version="0" object_id="_25">
 				<Value>
 					<Obj>
 						<type>2</type>
-						<id>50</id>
+						<id>34</id>
 						<name>empty</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
@@ -1905,7 +1280,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>3155671472</coreId>
+						<coreId>1701064051</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>32</bitwidth>
@@ -1913,11 +1288,11 @@
 				<const_type>0</const_type>
 				<content>1</content>
 			</item>
-			<item class_id_reference="16" object_id="_39">
+			<item class_id_reference="16" object_id="_26">
 				<Value>
 					<Obj>
 						<type>2</type>
-						<id>64</id>
+						<id>39</id>
 						<name>empty</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
@@ -1936,19 +1311,19 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1246922293</coreId>
+						<coreId>774905914</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
-					<bitwidth>17</bitwidth>
+					<bitwidth>13</bitwidth>
 				</Value>
 				<const_type>0</const_type>
 				<content>0</content>
 			</item>
-			<item class_id_reference="16" object_id="_40">
+			<item class_id_reference="16" object_id="_27">
 				<Value>
 					<Obj>
 						<type>2</type>
-						<id>73</id>
+						<id>48</id>
 						<name>empty</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
@@ -1967,19 +1342,19 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>0</coreId>
+						<coreId>1931489840</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
-					<bitwidth>17</bitwidth>
+					<bitwidth>13</bitwidth>
 				</Value>
 				<const_type>0</const_type>
 				<content>1</content>
 			</item>
-			<item class_id_reference="16" object_id="_41">
+			<item class_id_reference="16" object_id="_28">
 				<Value>
 					<Obj>
 						<type>2</type>
-						<id>89</id>
+						<id>55</id>
 						<name>empty</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
@@ -1998,100 +1373,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>0</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>2</bitwidth>
-				</Value>
-				<const_type>0</const_type>
-				<content>0</content>
-			</item>
-			<item class_id_reference="16" object_id="_42">
-				<Value>
-					<Obj>
-						<type>2</type>
-						<id>97</id>
-						<name>empty</name>
-						<fileName></fileName>
-						<fileDirectory></fileDirectory>
-						<lineNumber>0</lineNumber>
-						<contextFuncName></contextFuncName>
-						<contextNormFuncName></contextNormFuncName>
-						<inlineStackInfo>
-							<count>0</count>
-							<item_version>0</item_version>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control></control>
-						<opType></opType>
-						<implIndex></implIndex>
-						<coreName></coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>3155778960</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>32</bitwidth>
-				</Value>
-				<const_type>0</const_type>
-				<content>2</content>
-			</item>
-			<item class_id_reference="16" object_id="_43">
-				<Value>
-					<Obj>
-						<type>2</type>
-						<id>99</id>
-						<name>empty</name>
-						<fileName></fileName>
-						<fileDirectory></fileDirectory>
-						<lineNumber>0</lineNumber>
-						<contextFuncName></contextFuncName>
-						<contextNormFuncName></contextNormFuncName>
-						<inlineStackInfo>
-							<count>0</count>
-							<item_version>0</item_version>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control></control>
-						<opType></opType>
-						<implIndex></implIndex>
-						<coreName></coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>0</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>32</bitwidth>
-				</Value>
-				<const_type>0</const_type>
-				<content>63</content>
-			</item>
-			<item class_id_reference="16" object_id="_44">
-				<Value>
-					<Obj>
-						<type>2</type>
-						<id>112</id>
-						<name>empty</name>
-						<fileName></fileName>
-						<fileDirectory></fileDirectory>
-						<lineNumber>0</lineNumber>
-						<contextFuncName></contextFuncName>
-						<contextNormFuncName></contextNormFuncName>
-						<inlineStackInfo>
-							<count>0</count>
-							<item_version>0</item_version>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control></control>
-						<opType></opType>
-						<implIndex></implIndex>
-						<coreName></coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>3155780736</coreId>
+						<coreId>1819243365</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>64</bitwidth>
@@ -2103,10 +1385,10 @@
 		<blocks class_id="17" tracking_level="0" version="0">
 			<count>4</count>
 			<item_version>0</item_version>
-			<item class_id="18" tracking_level="1" version="0" object_id="_45">
+			<item class_id="18" tracking_level="1" version="0" object_id="_29">
 				<Obj>
 					<type>3</type>
-					<id>19</id>
+					<id>11</id>
 					<name>newFuncRoot</name>
 					<fileName></fileName>
 					<fileDirectory></fileDirectory>
@@ -2125,27 +1407,23 @@
 					<coreName></coreName>
 					<isStorage>0</isStorage>
 					<storageDepth>0</storageDepth>
-					<coreId>4294967295</coreId>
+					<coreId>0</coreId>
 					<rtlModuleName></rtlModuleName>
 				</Obj>
 				<node_objs>
-					<count>8</count>
+					<count>4</count>
 					<item_version>0</item_version>
+					<item>5</item>
 					<item>8</item>
 					<item>9</item>
 					<item>10</item>
-					<item>11</item>
-					<item>12</item>
-					<item>13</item>
-					<item>17</item>
-					<item>18</item>
 				</node_objs>
 			</item>
-			<item class_id_reference="18" object_id="_46">
+			<item class_id_reference="18" object_id="_30">
 				<Obj>
 					<type>3</type>
-					<id>27</id>
-					<name>for.inc</name>
+					<id>17</id>
+					<name>for.inc42</name>
 					<fileName></fileName>
 					<fileDirectory></fileDirectory>
 					<lineNumber>0</lineNumber>
@@ -2163,70 +1441,64 @@
 					<coreName></coreName>
 					<isStorage>0</isStorage>
 					<storageDepth>0</storageDepth>
-					<coreId>4294967295</coreId>
+					<coreId>0</coreId>
 					<rtlModuleName></rtlModuleName>
 				</Obj>
 				<node_objs>
 					<count>5</count>
 					<item_version>0</item_version>
-					<item>20</item>
+					<item>12</item>
+					<item>13</item>
+					<item>14</item>
+					<item>15</item>
+					<item>16</item>
+				</node_objs>
+			</item>
+			<item class_id_reference="18" object_id="_31">
+				<Obj>
+					<type>3</type>
+					<id>31</id>
+					<name>for.inc42.split</name>
+					<fileName></fileName>
+					<fileDirectory></fileDirectory>
+					<lineNumber>0</lineNumber>
+					<contextFuncName></contextFuncName>
+					<contextNormFuncName></contextNormFuncName>
+					<inlineStackInfo>
+						<count>0</count>
+						<item_version>0</item_version>
+					</inlineStackInfo>
+					<originalName></originalName>
+					<rtlName></rtlName>
+					<control></control>
+					<opType></opType>
+					<implIndex></implIndex>
+					<coreName></coreName>
+					<isStorage>0</isStorage>
+					<storageDepth>0</storageDepth>
+					<coreId>0</coreId>
+					<rtlModuleName></rtlModuleName>
+				</Obj>
+				<node_objs>
+					<count>10</count>
+					<item_version>0</item_version>
+					<item>18</item>
+					<item>22</item>
 					<item>23</item>
 					<item>24</item>
 					<item>25</item>
 					<item>26</item>
-				</node_objs>
-			</item>
-			<item class_id_reference="18" object_id="_47">
-				<Obj>
-					<type>3</type>
-					<id>47</id>
-					<name>for.inc.split</name>
-					<fileName></fileName>
-					<fileDirectory></fileDirectory>
-					<lineNumber>0</lineNumber>
-					<contextFuncName></contextFuncName>
-					<contextNormFuncName></contextNormFuncName>
-					<inlineStackInfo>
-						<count>0</count>
-						<item_version>0</item_version>
-					</inlineStackInfo>
-					<originalName></originalName>
-					<rtlName></rtlName>
-					<control></control>
-					<opType></opType>
-					<implIndex></implIndex>
-					<coreName></coreName>
-					<isStorage>0</isStorage>
-					<storageDepth>0</storageDepth>
-					<coreId>4294967295</coreId>
-					<rtlModuleName></rtlModuleName>
-				</Obj>
-				<node_objs>
-					<count>16</count>
-					<item_version>0</item_version>
+					<item>27</item>
 					<item>28</item>
 					<item>29</item>
-					<item>33</item>
-					<item>34</item>
-					<item>35</item>
-					<item>36</item>
-					<item>37</item>
-					<item>38</item>
-					<item>39</item>
-					<item>40</item>
-					<item>41</item>
-					<item>42</item>
-					<item>43</item>
-					<item>44</item>
-					<item>45</item>
-					<item>46</item>
+					<item>30</item>
 				</node_objs>
 			</item>
-			<item class_id_reference="18" object_id="_48">
+			<item class_id_reference="18" object_id="_32">
 				<Obj>
 					<type>3</type>
-					<id>49</id>
-					<name>for.cond9.preheader.exitStub</name>
+					<id>33</id>
+					<name>STAGE_LOOP.loopexit.exitStub</name>
 					<fileName></fileName>
 					<fileDirectory></fileDirectory>
 					<lineNumber>0</lineNumber>
@@ -2244,395 +1516,290 @@
 					<coreName></coreName>
 					<isStorage>0</isStorage>
 					<storageDepth>0</storageDepth>
-					<coreId>4294967295</coreId>
+					<coreId>0</coreId>
 					<rtlModuleName></rtlModuleName>
 				</Obj>
 				<node_objs>
 					<count>1</count>
 					<item_version>0</item_version>
-					<item>48</item>
+					<item>32</item>
 				</node_objs>
 			</item>
 		</blocks>
 		<edges class_id="19" tracking_level="0" version="0">
-			<count>54</count>
+			<count>39</count>
 			<item_version>0</item_version>
-			<item class_id="20" tracking_level="1" version="0" object_id="_49">
-				<id>51</id>
+			<item class_id="20" tracking_level="1" version="0" object_id="_33">
+				<id>35</id>
 				<edge_type>1</edge_type>
-				<source_obj>50</source_obj>
+				<source_obj>34</source_obj>
+				<sink_obj>5</sink_obj>
+				<is_back_edge>0</is_back_edge>
+			</item>
+			<item class_id_reference="20" object_id="_34">
+				<id>38</id>
+				<edge_type>1</edge_type>
+				<source_obj>1</source_obj>
 				<sink_obj>8</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
-			<item class_id_reference="20" object_id="_50">
-				<id>54</id>
+			<item class_id_reference="20" object_id="_35">
+				<id>40</id>
 				<edge_type>1</edge_type>
-				<source_obj>6</source_obj>
+				<source_obj>39</source_obj>
 				<sink_obj>9</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
-			<item class_id_reference="20" object_id="_51">
-				<id>57</id>
+			<item class_id_reference="20" object_id="_36">
+				<id>41</id>
 				<edge_type>1</edge_type>
 				<source_obj>5</source_obj>
+				<sink_obj>9</sink_obj>
+				<is_back_edge>0</is_back_edge>
+			</item>
+			<item class_id_reference="20" object_id="_37">
+				<id>42</id>
+				<edge_type>2</edge_type>
+				<source_obj>17</source_obj>
 				<sink_obj>10</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
-			<item class_id_reference="20" object_id="_52">
-				<id>60</id>
+			<item class_id_reference="20" object_id="_38">
+				<id>43</id>
 				<edge_type>1</edge_type>
-				<source_obj>4</source_obj>
-				<sink_obj>11</sink_obj>
-				<is_back_edge>0</is_back_edge>
-			</item>
-			<item class_id_reference="20" object_id="_53">
-				<id>62</id>
-				<edge_type>1</edge_type>
-				<source_obj>3</source_obj>
+				<source_obj>5</source_obj>
 				<sink_obj>12</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
-			<item class_id_reference="20" object_id="_54">
-				<id>63</id>
+			<item class_id_reference="20" object_id="_39">
+				<id>44</id>
 				<edge_type>1</edge_type>
-				<source_obj>11</source_obj>
+				<source_obj>12</source_obj>
 				<sink_obj>13</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
-			<item class_id_reference="20" object_id="_55">
-				<id>65</id>
+			<item class_id_reference="20" object_id="_40">
+				<id>45</id>
 				<edge_type>1</edge_type>
-				<source_obj>64</source_obj>
-				<sink_obj>17</sink_obj>
+				<source_obj>13</source_obj>
+				<sink_obj>14</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
-			<item class_id_reference="20" object_id="_56">
-				<id>66</id>
+			<item class_id_reference="20" object_id="_41">
+				<id>46</id>
 				<edge_type>1</edge_type>
 				<source_obj>8</source_obj>
-				<sink_obj>17</sink_obj>
+				<sink_obj>14</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
-			<item class_id_reference="20" object_id="_57">
-				<id>67</id>
+			<item class_id_reference="20" object_id="_42">
+				<id>47</id>
+				<edge_type>1</edge_type>
+				<source_obj>12</source_obj>
+				<sink_obj>15</sink_obj>
+				<is_back_edge>0</is_back_edge>
+			</item>
+			<item class_id_reference="20" object_id="_43">
+				<id>49</id>
+				<edge_type>1</edge_type>
+				<source_obj>48</source_obj>
+				<sink_obj>15</sink_obj>
+				<is_back_edge>0</is_back_edge>
+			</item>
+			<item class_id_reference="20" object_id="_44">
+				<id>50</id>
+				<edge_type>1</edge_type>
+				<source_obj>14</source_obj>
+				<sink_obj>16</sink_obj>
+				<is_back_edge>0</is_back_edge>
+			</item>
+			<item class_id_reference="20" object_id="_45">
+				<id>51</id>
 				<edge_type>2</edge_type>
-				<source_obj>27</source_obj>
+				<source_obj>31</source_obj>
+				<sink_obj>16</sink_obj>
+				<is_back_edge>0</is_back_edge>
+			</item>
+			<item class_id_reference="20" object_id="_46">
+				<id>52</id>
+				<edge_type>2</edge_type>
+				<source_obj>33</source_obj>
+				<sink_obj>16</sink_obj>
+				<is_back_edge>0</is_back_edge>
+			</item>
+			<item class_id_reference="20" object_id="_47">
+				<id>53</id>
+				<edge_type>1</edge_type>
+				<source_obj>12</source_obj>
 				<sink_obj>18</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
-			<item class_id_reference="20" object_id="_58">
-				<id>68</id>
+			<item class_id_reference="20" object_id="_48">
+				<id>54</id>
 				<edge_type>1</edge_type>
-				<source_obj>8</source_obj>
-				<sink_obj>20</sink_obj>
+				<source_obj>2</source_obj>
+				<sink_obj>22</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
-			<item class_id_reference="20" object_id="_59">
-				<id>69</id>
+			<item class_id_reference="20" object_id="_49">
+				<id>56</id>
 				<edge_type>1</edge_type>
-				<source_obj>20</source_obj>
+				<source_obj>55</source_obj>
+				<sink_obj>22</sink_obj>
+				<is_back_edge>0</is_back_edge>
+			</item>
+			<item class_id_reference="20" object_id="_50">
+				<id>57</id>
+				<edge_type>1</edge_type>
+				<source_obj>18</source_obj>
+				<sink_obj>22</sink_obj>
+				<is_back_edge>0</is_back_edge>
+			</item>
+			<item class_id_reference="20" object_id="_51">
+				<id>58</id>
+				<edge_type>1</edge_type>
+				<source_obj>22</source_obj>
 				<sink_obj>23</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
-			<item class_id_reference="20" object_id="_60">
-				<id>70</id>
+			<item class_id_reference="20" object_id="_52">
+				<id>59</id>
 				<edge_type>1</edge_type>
 				<source_obj>23</source_obj>
 				<sink_obj>24</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
-			<item class_id_reference="20" object_id="_61">
-				<id>71</id>
+			<item class_id_reference="20" object_id="_53">
+				<id>60</id>
 				<edge_type>1</edge_type>
-				<source_obj>12</source_obj>
-				<sink_obj>24</sink_obj>
+				<source_obj>3</source_obj>
+				<sink_obj>25</sink_obj>
+				<is_back_edge>0</is_back_edge>
+			</item>
+			<item class_id_reference="20" object_id="_54">
+				<id>61</id>
+				<edge_type>1</edge_type>
+				<source_obj>55</source_obj>
+				<sink_obj>25</sink_obj>
+				<is_back_edge>0</is_back_edge>
+			</item>
+			<item class_id_reference="20" object_id="_55">
+				<id>62</id>
+				<edge_type>1</edge_type>
+				<source_obj>24</source_obj>
+				<sink_obj>25</sink_obj>
+				<is_back_edge>0</is_back_edge>
+			</item>
+			<item class_id_reference="20" object_id="_56">
+				<id>63</id>
+				<edge_type>1</edge_type>
+				<source_obj>25</source_obj>
+				<sink_obj>26</sink_obj>
+				<is_back_edge>0</is_back_edge>
+			</item>
+			<item class_id_reference="20" object_id="_57">
+				<id>64</id>
+				<edge_type>1</edge_type>
+				<source_obj>4</source_obj>
+				<sink_obj>27</sink_obj>
+				<is_back_edge>0</is_back_edge>
+			</item>
+			<item class_id_reference="20" object_id="_58">
+				<id>65</id>
+				<edge_type>1</edge_type>
+				<source_obj>55</source_obj>
+				<sink_obj>27</sink_obj>
+				<is_back_edge>0</is_back_edge>
+			</item>
+			<item class_id_reference="20" object_id="_59">
+				<id>66</id>
+				<edge_type>1</edge_type>
+				<source_obj>18</source_obj>
+				<sink_obj>27</sink_obj>
+				<is_back_edge>0</is_back_edge>
+			</item>
+			<item class_id_reference="20" object_id="_60">
+				<id>67</id>
+				<edge_type>1</edge_type>
+				<source_obj>26</source_obj>
+				<sink_obj>28</sink_obj>
+				<is_back_edge>0</is_back_edge>
+			</item>
+			<item class_id_reference="20" object_id="_61">
+				<id>68</id>
+				<edge_type>1</edge_type>
+				<source_obj>27</source_obj>
+				<sink_obj>28</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_62">
-				<id>72</id>
+				<id>69</id>
 				<edge_type>1</edge_type>
-				<source_obj>20</source_obj>
-				<sink_obj>25</sink_obj>
-				<is_back_edge>0</is_back_edge>
-			</item>
-			<item class_id_reference="20" object_id="_63">
-				<id>74</id>
-				<edge_type>1</edge_type>
-				<source_obj>73</source_obj>
-				<sink_obj>25</sink_obj>
-				<is_back_edge>0</is_back_edge>
-			</item>
-			<item class_id_reference="20" object_id="_64">
-				<id>75</id>
-				<edge_type>1</edge_type>
-				<source_obj>24</source_obj>
-				<sink_obj>26</sink_obj>
-				<is_back_edge>0</is_back_edge>
-			</item>
-			<item class_id_reference="20" object_id="_65">
-				<id>76</id>
-				<edge_type>2</edge_type>
-				<source_obj>49</source_obj>
-				<sink_obj>26</sink_obj>
-				<is_back_edge>0</is_back_edge>
-			</item>
-			<item class_id_reference="20" object_id="_66">
-				<id>77</id>
-				<edge_type>2</edge_type>
-				<source_obj>47</source_obj>
-				<sink_obj>26</sink_obj>
-				<is_back_edge>0</is_back_edge>
-			</item>
-			<item class_id_reference="20" object_id="_67">
-				<id>78</id>
-				<edge_type>1</edge_type>
-				<source_obj>1</source_obj>
-				<sink_obj>28</sink_obj>
-				<is_back_edge>0</is_back_edge>
-			</item>
-			<item class_id_reference="20" object_id="_68">
-				<id>79</id>
-				<edge_type>1</edge_type>
-				<source_obj>13</source_obj>
-				<sink_obj>28</sink_obj>
-				<is_back_edge>0</is_back_edge>
-			</item>
-			<item class_id_reference="20" object_id="_69">
-				<id>80</id>
-				<edge_type>1</edge_type>
-				<source_obj>20</source_obj>
+				<source_obj>15</source_obj>
 				<sink_obj>29</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
-			<item class_id_reference="20" object_id="_70">
-				<id>83</id>
+			<item class_id_reference="20" object_id="_63">
+				<id>70</id>
 				<edge_type>1</edge_type>
-				<source_obj>28</source_obj>
+				<source_obj>5</source_obj>
+				<sink_obj>29</sink_obj>
+				<is_back_edge>0</is_back_edge>
+			</item>
+			<item class_id_reference="20" object_id="_64">
+				<id>71</id>
+				<edge_type>2</edge_type>
+				<source_obj>17</source_obj>
+				<sink_obj>30</sink_obj>
+				<is_back_edge>0</is_back_edge>
+			</item>
+			<item class_id_reference="20" object_id="_65">
+				<id>107</id>
+				<edge_type>2</edge_type>
+				<source_obj>11</source_obj>
+				<sink_obj>17</sink_obj>
+				<is_back_edge>0</is_back_edge>
+			</item>
+			<item class_id_reference="20" object_id="_66">
+				<id>108</id>
+				<edge_type>2</edge_type>
+				<source_obj>17</source_obj>
 				<sink_obj>33</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
-			<item class_id_reference="20" object_id="_71">
-				<id>84</id>
-				<edge_type>1</edge_type>
-				<source_obj>33</source_obj>
-				<sink_obj>34</sink_obj>
+			<item class_id_reference="20" object_id="_67">
+				<id>109</id>
+				<edge_type>2</edge_type>
+				<source_obj>17</source_obj>
+				<sink_obj>31</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
-			<item class_id_reference="20" object_id="_72">
-				<id>85</id>
-				<edge_type>1</edge_type>
-				<source_obj>10</source_obj>
-				<sink_obj>34</sink_obj>
-				<is_back_edge>0</is_back_edge>
-			</item>
-			<item class_id_reference="20" object_id="_73">
-				<id>88</id>
-				<edge_type>1</edge_type>
-				<source_obj>34</source_obj>
-				<sink_obj>35</sink_obj>
-				<is_back_edge>0</is_back_edge>
-			</item>
-			<item class_id_reference="20" object_id="_74">
-				<id>90</id>
-				<edge_type>1</edge_type>
-				<source_obj>89</source_obj>
-				<sink_obj>35</sink_obj>
-				<is_back_edge>0</is_back_edge>
-			</item>
-			<item class_id_reference="20" object_id="_75">
-				<id>91</id>
-				<edge_type>1</edge_type>
-				<source_obj>35</source_obj>
-				<sink_obj>36</sink_obj>
-				<is_back_edge>0</is_back_edge>
-			</item>
-			<item class_id_reference="20" object_id="_76">
-				<id>92</id>
-				<edge_type>1</edge_type>
-				<source_obj>36</source_obj>
-				<sink_obj>37</sink_obj>
-				<is_back_edge>0</is_back_edge>
-			</item>
-			<item class_id_reference="20" object_id="_77">
-				<id>93</id>
-				<edge_type>1</edge_type>
-				<source_obj>9</source_obj>
-				<sink_obj>37</sink_obj>
-				<is_back_edge>0</is_back_edge>
-			</item>
-			<item class_id_reference="20" object_id="_78">
-				<id>96</id>
-				<edge_type>1</edge_type>
-				<source_obj>37</source_obj>
-				<sink_obj>38</sink_obj>
-				<is_back_edge>0</is_back_edge>
-			</item>
-			<item class_id_reference="20" object_id="_79">
-				<id>98</id>
-				<edge_type>1</edge_type>
-				<source_obj>97</source_obj>
-				<sink_obj>38</sink_obj>
-				<is_back_edge>0</is_back_edge>
-			</item>
-			<item class_id_reference="20" object_id="_80">
-				<id>100</id>
-				<edge_type>1</edge_type>
-				<source_obj>99</source_obj>
-				<sink_obj>38</sink_obj>
-				<is_back_edge>0</is_back_edge>
-			</item>
-			<item class_id_reference="20" object_id="_81">
-				<id>101</id>
-				<edge_type>1</edge_type>
-				<source_obj>38</source_obj>
-				<sink_obj>39</sink_obj>
-				<is_back_edge>0</is_back_edge>
-			</item>
-			<item class_id_reference="20" object_id="_82">
-				<id>102</id>
-				<edge_type>1</edge_type>
-				<source_obj>2</source_obj>
-				<sink_obj>40</sink_obj>
-				<is_back_edge>0</is_back_edge>
-			</item>
-			<item class_id_reference="20" object_id="_83">
-				<id>103</id>
-				<edge_type>1</edge_type>
-				<source_obj>39</source_obj>
-				<sink_obj>40</sink_obj>
-				<is_back_edge>0</is_back_edge>
-			</item>
-			<item class_id_reference="20" object_id="_84">
-				<id>106</id>
-				<edge_type>1</edge_type>
-				<source_obj>40</source_obj>
-				<sink_obj>41</sink_obj>
-				<is_back_edge>0</is_back_edge>
-			</item>
-			<item class_id_reference="20" object_id="_85">
-				<id>107</id>
-				<edge_type>1</edge_type>
-				<source_obj>50</source_obj>
-				<sink_obj>41</sink_obj>
-				<is_back_edge>0</is_back_edge>
-			</item>
-			<item class_id_reference="20" object_id="_86">
+			<item class_id_reference="20" object_id="_68">
 				<id>110</id>
-				<edge_type>1</edge_type>
-				<source_obj>40</source_obj>
-				<sink_obj>42</sink_obj>
-				<is_back_edge>0</is_back_edge>
-			</item>
-			<item class_id_reference="20" object_id="_87">
-				<id>111</id>
-				<edge_type>1</edge_type>
-				<source_obj>7</source_obj>
-				<sink_obj>43</sink_obj>
-				<is_back_edge>0</is_back_edge>
-			</item>
-			<item class_id_reference="20" object_id="_88">
-				<id>113</id>
-				<edge_type>1</edge_type>
-				<source_obj>112</source_obj>
-				<sink_obj>43</sink_obj>
-				<is_back_edge>0</is_back_edge>
-			</item>
-			<item class_id_reference="20" object_id="_89">
-				<id>114</id>
-				<edge_type>1</edge_type>
-				<source_obj>29</source_obj>
-				<sink_obj>43</sink_obj>
-				<is_back_edge>0</is_back_edge>
-			</item>
-			<item class_id_reference="20" object_id="_90">
-				<id>115</id>
-				<edge_type>1</edge_type>
-				<source_obj>42</source_obj>
-				<sink_obj>44</sink_obj>
-				<is_back_edge>0</is_back_edge>
-			</item>
-			<item class_id_reference="20" object_id="_91">
-				<id>116</id>
-				<edge_type>1</edge_type>
-				<source_obj>43</source_obj>
-				<sink_obj>44</sink_obj>
-				<is_back_edge>0</is_back_edge>
-			</item>
-			<item class_id_reference="20" object_id="_92">
-				<id>117</id>
-				<edge_type>1</edge_type>
-				<source_obj>25</source_obj>
-				<sink_obj>45</sink_obj>
-				<is_back_edge>0</is_back_edge>
-			</item>
-			<item class_id_reference="20" object_id="_93">
-				<id>118</id>
-				<edge_type>1</edge_type>
-				<source_obj>8</source_obj>
-				<sink_obj>45</sink_obj>
-				<is_back_edge>0</is_back_edge>
-			</item>
-			<item class_id_reference="20" object_id="_94">
-				<id>119</id>
 				<edge_type>2</edge_type>
-				<source_obj>27</source_obj>
-				<sink_obj>46</sink_obj>
-				<is_back_edge>0</is_back_edge>
-			</item>
-			<item class_id_reference="20" object_id="_95">
-				<id>201</id>
-				<edge_type>2</edge_type>
-				<source_obj>19</source_obj>
-				<sink_obj>27</sink_obj>
-				<is_back_edge>0</is_back_edge>
-			</item>
-			<item class_id_reference="20" object_id="_96">
-				<id>202</id>
-				<edge_type>2</edge_type>
-				<source_obj>27</source_obj>
-				<sink_obj>47</sink_obj>
-				<is_back_edge>0</is_back_edge>
-			</item>
-			<item class_id_reference="20" object_id="_97">
-				<id>203</id>
-				<edge_type>2</edge_type>
-				<source_obj>27</source_obj>
-				<sink_obj>49</sink_obj>
-				<is_back_edge>0</is_back_edge>
-			</item>
-			<item class_id_reference="20" object_id="_98">
-				<id>204</id>
-				<edge_type>2</edge_type>
-				<source_obj>47</source_obj>
-				<sink_obj>27</sink_obj>
+				<source_obj>31</source_obj>
+				<sink_obj>17</sink_obj>
 				<is_back_edge>1</is_back_edge>
 			</item>
-			<item class_id_reference="20" object_id="_99">
-				<id>205</id>
+			<item class_id_reference="20" object_id="_69">
+				<id>111</id>
 				<edge_type>4</edge_type>
-				<source_obj>41</source_obj>
-				<sink_obj>42</sink_obj>
+				<source_obj>9</source_obj>
+				<sink_obj>12</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
-			<item class_id_reference="20" object_id="_100">
-				<id>206</id>
+			<item class_id_reference="20" object_id="_70">
+				<id>112</id>
 				<edge_type>4</edge_type>
-				<source_obj>17</source_obj>
-				<sink_obj>20</sink_obj>
+				<source_obj>9</source_obj>
+				<sink_obj>29</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
-			<item class_id_reference="20" object_id="_101">
-				<id>207</id>
+			<item class_id_reference="20" object_id="_71">
+				<id>113</id>
 				<edge_type>4</edge_type>
-				<source_obj>17</source_obj>
-				<sink_obj>45</sink_obj>
-				<is_back_edge>0</is_back_edge>
-			</item>
-			<item class_id_reference="20" object_id="_102">
-				<id>208</id>
-				<edge_type>4</edge_type>
-				<source_obj>20</source_obj>
-				<sink_obj>45</sink_obj>
+				<source_obj>12</source_obj>
+				<sink_obj>29</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 		</edges>
@@ -2640,7 +1807,7 @@
 	<cdfg_regions class_id="21" tracking_level="0" version="0">
 		<count>4</count>
 		<item_version>0</item_version>
-		<item class_id="22" tracking_level="1" version="0" object_id="_103">
+		<item class_id="22" tracking_level="1" version="0" object_id="_72">
 			<mId>1</mId>
 			<mTag>ntt_kernel_Pipeline_PERMUTE_LOOP</mTag>
 			<mNormTag>ntt_kernel_Pipeline_PERMUTE_LOOP</mNormTag>
@@ -2660,12 +1827,12 @@
 			<mDepth>-1</mDepth>
 			<mMinTripCount>-1</mMinTripCount>
 			<mMaxTripCount>-1</mMaxTripCount>
-			<mMinLatency>269</mMinLatency>
-			<mMaxLatency>65549</mMaxLatency>
+			<mMinLatency>259</mMinLatency>
+			<mMaxLatency>4099</mMaxLatency>
 			<mIsDfPipe>0</mIsDfPipe>
 			<mDfPipe class_id="-1"></mDfPipe>
 		</item>
-		<item class_id_reference="22" object_id="_104">
+		<item class_id_reference="22" object_id="_73">
 			<mId>2</mId>
 			<mTag>Entry</mTag>
 			<mNormTag>Entry</mNormTag>
@@ -2677,7 +1844,7 @@
 			<basic_blocks>
 				<count>1</count>
 				<item_version>0</item_version>
-				<item>19</item>
+				<item>11</item>
 			</basic_blocks>
 			<mII>-1</mII>
 			<mDepth>-1</mDepth>
@@ -2688,7 +1855,7 @@
 			<mIsDfPipe>0</mIsDfPipe>
 			<mDfPipe class_id="-1"></mDfPipe>
 		</item>
-		<item class_id_reference="22" object_id="_105">
+		<item class_id_reference="22" object_id="_74">
 			<mId>3</mId>
 			<mTag>PERMUTE_LOOP</mTag>
 			<mNormTag>PERMUTE_LOOP</mNormTag>
@@ -2700,19 +1867,19 @@
 			<basic_blocks>
 				<count>2</count>
 				<item_version>0</item_version>
-				<item>27</item>
-				<item>47</item>
+				<item>17</item>
+				<item>31</item>
 			</basic_blocks>
 			<mII>1</mII>
-			<mDepth>13</mDepth>
+			<mDepth>3</mDepth>
 			<mMinTripCount>256</mMinTripCount>
-			<mMaxTripCount>65536</mMaxTripCount>
-			<mMinLatency>267</mMinLatency>
-			<mMaxLatency>65547</mMaxLatency>
+			<mMaxTripCount>4096</mMaxTripCount>
+			<mMinLatency>257</mMinLatency>
+			<mMaxLatency>4097</mMaxLatency>
 			<mIsDfPipe>0</mIsDfPipe>
 			<mDfPipe class_id="-1"></mDfPipe>
 		</item>
-		<item class_id_reference="22" object_id="_106">
+		<item class_id_reference="22" object_id="_75">
 			<mId>4</mId>
 			<mTag>Return</mTag>
 			<mNormTag>Return</mNormTag>
@@ -2724,7 +1891,7 @@
 			<basic_blocks>
 				<count>1</count>
 				<item_version>0</item_version>
-				<item>49</item>
+				<item>33</item>
 			</basic_blocks>
 			<mII>-1</mII>
 			<mDepth>-1</mDepth>
@@ -2739,11 +1906,18 @@
 	<fsm class_id="-1"></fsm>
 	<res class_id="-1"></res>
 	<node_label_latency class_id="26" tracking_level="0" version="0">
-		<count>30</count>
+		<count>20</count>
 		<item_version>0</item_version>
 		<item class_id="27" tracking_level="0" version="0">
-			<first>8</first>
+			<first>5</first>
 			<second class_id="28" tracking_level="0" version="0">
+				<first>0</first>
+				<second>0</second>
+			</second>
+		</item>
+		<item>
+			<first>8</first>
+			<second>
 				<first>0</first>
 				<second>0</second>
 			</second>
@@ -2757,13 +1931,6 @@
 		</item>
 		<item>
 			<first>10</first>
-			<second>
-				<first>0</first>
-				<second>0</second>
-			</second>
-		</item>
-		<item>
-			<first>11</first>
 			<second>
 				<first>0</first>
 				<second>0</second>
@@ -2784,7 +1951,21 @@
 			</second>
 		</item>
 		<item>
-			<first>17</first>
+			<first>14</first>
+			<second>
+				<first>0</first>
+				<second>0</second>
+			</second>
+		</item>
+		<item>
+			<first>15</first>
+			<second>
+				<first>0</first>
+				<second>0</second>
+			</second>
+		</item>
+		<item>
+			<first>16</first>
 			<second>
 				<first>0</first>
 				<second>0</second>
@@ -2798,7 +1979,7 @@
 			</second>
 		</item>
 		<item>
-			<first>20</first>
+			<first>22</first>
 			<second>
 				<first>0</first>
 				<second>0</second>
@@ -2808,146 +1989,62 @@
 			<first>23</first>
 			<second>
 				<first>0</first>
-				<second>0</second>
+				<second>1</second>
 			</second>
 		</item>
 		<item>
 			<first>24</first>
 			<second>
-				<first>0</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>25</first>
 			<second>
-				<first>0</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>26</first>
 			<second>
-				<first>0</first>
+				<first>1</first>
+				<second>1</second>
+			</second>
+		</item>
+		<item>
+			<first>27</first>
+			<second>
+				<first>2</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>28</first>
 			<second>
-				<first>1</first>
+				<first>2</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>29</first>
 			<second>
-				<first>12</first>
-				<second>0</second>
-			</second>
-		</item>
-		<item>
-			<first>33</first>
-			<second>
-				<first>1</first>
-				<second>0</second>
-			</second>
-		</item>
-		<item>
-			<first>34</first>
-			<second>
-				<first>2</first>
-				<second>0</second>
-			</second>
-		</item>
-		<item>
-			<first>35</first>
-			<second>
-				<first>2</first>
-				<second>0</second>
-			</second>
-		</item>
-		<item>
-			<first>36</first>
-			<second>
-				<first>2</first>
-				<second>0</second>
-			</second>
-		</item>
-		<item>
-			<first>37</first>
-			<second>
-				<first>2</first>
-				<second>0</second>
-			</second>
-		</item>
-		<item>
-			<first>38</first>
-			<second>
-				<first>2</first>
-				<second>0</second>
-			</second>
-		</item>
-		<item>
-			<first>39</first>
-			<second>
-				<first>2</first>
-				<second>0</second>
-			</second>
-		</item>
-		<item>
-			<first>40</first>
-			<second>
-				<first>2</first>
-				<second>0</second>
-			</second>
-		</item>
-		<item>
-			<first>41</first>
-			<second>
-				<first>3</first>
-				<second>7</second>
-			</second>
-		</item>
-		<item>
-			<first>42</first>
-			<second>
-				<first>11</first>
-				<second>0</second>
-			</second>
-		</item>
-		<item>
-			<first>43</first>
-			<second>
-				<first>12</first>
-				<second>0</second>
-			</second>
-		</item>
-		<item>
-			<first>44</first>
-			<second>
-				<first>12</first>
-				<second>0</second>
-			</second>
-		</item>
-		<item>
-			<first>45</first>
-			<second>
 				<first>0</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
-			<first>46</first>
+			<first>30</first>
 			<second>
-				<first>12</first>
+				<first>2</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
-			<first>48</first>
+			<first>32</first>
 			<second>
-				<first>11</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
@@ -2956,28 +2053,28 @@
 		<count>4</count>
 		<item_version>0</item_version>
 		<item class_id="30" tracking_level="0" version="0">
-			<first>19</first>
+			<first>11</first>
 			<second class_id="31" tracking_level="0" version="0">
 				<first>0</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
-			<first>27</first>
+			<first>17</first>
 			<second>
 				<first>1</first>
 				<second>1</second>
 			</second>
 		</item>
 		<item>
-			<first>47</first>
+			<first>31</first>
 			<second>
 				<first>1</first>
-				<second>13</second>
+				<second>3</second>
 			</second>
 		</item>
 		<item>
-			<first>49</first>
+			<first>33</first>
 			<second>
 				<first>2</first>
 				<second>2</second>
@@ -2987,13 +2084,13 @@
 	<regions class_id="32" tracking_level="0" version="0">
 		<count>1</count>
 		<item_version>0</item_version>
-		<item class_id="33" tracking_level="1" version="0" object_id="_107">
+		<item class_id="33" tracking_level="1" version="0" object_id="_76">
 			<region_name>PERMUTE_LOOP</region_name>
 			<basic_blocks>
 				<count>2</count>
 				<item_version>0</item_version>
-				<item>27</item>
-				<item>47</item>
+				<item>17</item>
+				<item>31</item>
 			</basic_blocks>
 			<nodes>
 				<count>0</count>
@@ -3002,7 +2099,7 @@
 			<anchor_node>-1</anchor_node>
 			<region_type>8</region_type>
 			<interval>1</interval>
-			<pipe_depth>13</pipe_depth>
+			<pipe_depth>3</pipe_depth>
 			<mDBIIViolationVec class_id="34" tracking_level="0" version="0">
 				<count>0</count>
 				<item_version>0</item_version>

@@ -16,8 +16,29 @@
       ]
     },
     "slx": false,
+    "sourceFile": "/home/sg9109/Documents/hls-design/ntt-asic/directives.tcl",
+    "sourceLine": 7,
+    "success": true
+  },
+  {
+    "functionLabel": "",
+    "functionName": "ntt_kernel",
+    "id": 1,
+    "ifcond": "",
+    "insert_position": "",
+    "label": "",
+    "pragma": {
+      "name": "TOP",
+      "option": [
+        {
+          "name": "name",
+          "value": "ntt_kernel"
+        }
+      ]
+    },
+    "slx": false,
     "sourceFile": "/home/sg9109/Documents/hls-design/ntt-asic/csynth.tcl",
-    "sourceLine": 16,
+    "sourceLine": 18,
     "success": true
   }
 ]

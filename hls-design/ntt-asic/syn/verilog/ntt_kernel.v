@@ -6,7 +6,7 @@
 
 `timescale 1 ns / 1 ps 
 
-(* CORE_GENERATION_INFO="ntt_kernel_ntt_kernel,hls_ip_2023_2,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xck26-sfvc784-2LV-c,HLS_INPUT_CLOCK=10.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=7.300000,HLS_SYN_LAT=51557960098,HLS_SYN_TPT=none,HLS_SYN_MEM=128,HLS_SYN_DSP=0,HLS_SYN_FF=5063,HLS_SYN_LUT=5208,HLS_VERSION=2023_2}" *)
+(* CORE_GENERATION_INFO="ntt_kernel_ntt_kernel,hls_ip_2023_2,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xck26-sfvc784-2LV-c,HLS_INPUT_CLOCK=10.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=7.300000,HLS_SYN_LAT=716294,HLS_SYN_TPT=none,HLS_SYN_MEM=47,HLS_SYN_DSP=0,HLS_SYN_FF=4670,HLS_SYN_LUT=5808,HLS_VERSION=2023_2}" *)
 
 module ntt_kernel (
         ap_clk,
@@ -166,38 +166,40 @@ module ntt_kernel (
         interrupt
 );
 
-parameter    ap_ST_fsm_state1 = 32'd1;
-parameter    ap_ST_fsm_state2 = 32'd2;
-parameter    ap_ST_fsm_state3 = 32'd4;
-parameter    ap_ST_fsm_state4 = 32'd8;
-parameter    ap_ST_fsm_state5 = 32'd16;
-parameter    ap_ST_fsm_state6 = 32'd32;
-parameter    ap_ST_fsm_state7 = 32'd64;
-parameter    ap_ST_fsm_state8 = 32'd128;
-parameter    ap_ST_fsm_state9 = 32'd256;
-parameter    ap_ST_fsm_state10 = 32'd512;
-parameter    ap_ST_fsm_state11 = 32'd1024;
-parameter    ap_ST_fsm_state12 = 32'd2048;
-parameter    ap_ST_fsm_state13 = 32'd4096;
-parameter    ap_ST_fsm_state14 = 32'd8192;
-parameter    ap_ST_fsm_state15 = 32'd16384;
-parameter    ap_ST_fsm_state16 = 32'd32768;
-parameter    ap_ST_fsm_state17 = 32'd65536;
-parameter    ap_ST_fsm_state18 = 32'd131072;
-parameter    ap_ST_fsm_state19 = 32'd262144;
-parameter    ap_ST_fsm_state20 = 32'd524288;
-parameter    ap_ST_fsm_state21 = 32'd1048576;
-parameter    ap_ST_fsm_state22 = 32'd2097152;
-parameter    ap_ST_fsm_state23 = 32'd4194304;
-parameter    ap_ST_fsm_state24 = 32'd8388608;
-parameter    ap_ST_fsm_state25 = 32'd16777216;
-parameter    ap_ST_fsm_state26 = 32'd33554432;
-parameter    ap_ST_fsm_state27 = 32'd67108864;
-parameter    ap_ST_fsm_state28 = 32'd134217728;
-parameter    ap_ST_fsm_state29 = 32'd268435456;
-parameter    ap_ST_fsm_state30 = 32'd536870912;
-parameter    ap_ST_fsm_state31 = 32'd1073741824;
-parameter    ap_ST_fsm_state32 = 32'd2147483648;
+parameter    ap_ST_fsm_state1 = 34'd1;
+parameter    ap_ST_fsm_state2 = 34'd2;
+parameter    ap_ST_fsm_state3 = 34'd4;
+parameter    ap_ST_fsm_state4 = 34'd8;
+parameter    ap_ST_fsm_state5 = 34'd16;
+parameter    ap_ST_fsm_state6 = 34'd32;
+parameter    ap_ST_fsm_state7 = 34'd64;
+parameter    ap_ST_fsm_state8 = 34'd128;
+parameter    ap_ST_fsm_state9 = 34'd256;
+parameter    ap_ST_fsm_state10 = 34'd512;
+parameter    ap_ST_fsm_state11 = 34'd1024;
+parameter    ap_ST_fsm_state12 = 34'd2048;
+parameter    ap_ST_fsm_state13 = 34'd4096;
+parameter    ap_ST_fsm_state14 = 34'd8192;
+parameter    ap_ST_fsm_state15 = 34'd16384;
+parameter    ap_ST_fsm_state16 = 34'd32768;
+parameter    ap_ST_fsm_state17 = 34'd65536;
+parameter    ap_ST_fsm_state18 = 34'd131072;
+parameter    ap_ST_fsm_state19 = 34'd262144;
+parameter    ap_ST_fsm_state20 = 34'd524288;
+parameter    ap_ST_fsm_state21 = 34'd1048576;
+parameter    ap_ST_fsm_state22 = 34'd2097152;
+parameter    ap_ST_fsm_state23 = 34'd4194304;
+parameter    ap_ST_fsm_state24 = 34'd8388608;
+parameter    ap_ST_fsm_state25 = 34'd16777216;
+parameter    ap_ST_fsm_state26 = 34'd33554432;
+parameter    ap_ST_fsm_state27 = 34'd67108864;
+parameter    ap_ST_fsm_state28 = 34'd134217728;
+parameter    ap_ST_fsm_state29 = 34'd268435456;
+parameter    ap_ST_fsm_state30 = 34'd536870912;
+parameter    ap_ST_fsm_state31 = 34'd1073741824;
+parameter    ap_ST_fsm_state32 = 34'd2147483648;
+parameter    ap_ST_fsm_state33 = 34'd4294967296;
+parameter    ap_ST_fsm_state34 = 34'd8589934592;
 parameter    C_S_AXI_CONTROL_DATA_WIDTH = 32;
 parameter    C_S_AXI_CONTROL_ADDR_WIDTH = 7;
 parameter    C_S_AXI_DATA_WIDTH = 32;
@@ -403,7 +405,7 @@ output   interrupt;
 wire    ap_start;
 reg    ap_done;
 reg    ap_idle;
-(* fsm_encoding = "none" *) reg   [31:0] ap_CS_fsm;
+(* fsm_encoding = "none" *) reg   [33:0] ap_CS_fsm;
 wire    ap_CS_fsm_state1;
 reg    ap_ready;
 wire   [63:0] x;
@@ -413,220 +415,279 @@ wire   [31:0] q;
 wire   [31:0] q_inv;
 wire   [31:0] batch_size;
 wire   [31:0] n;
-reg    gmem0_blk_n_AW;
-wire    ap_CS_fsm_state25;
-reg    gmem0_blk_n_B;
-wire    ap_CS_fsm_state32;
-reg    gmem1_blk_n_AR;
-wire    ap_CS_fsm_state3;
-reg   [0:0] icmp_ln59_reg_611;
-reg    gmem2_blk_n_AR;
-wire    ap_CS_fsm_state15;
-reg   [31:0] n_read_reg_547;
-reg   [31:0] batch_size_read_reg_555;
-reg   [31:0] q_inv_read_reg_560;
-reg   [31:0] q_read_reg_565;
-reg   [63:0] twiddles_read_reg_571;
-reg   [63:0] x_read_reg_576;
-wire  signed [63:0] sext_ln59_fu_297_p1;
-reg  signed [63:0] sext_ln59_reg_582;
-wire  signed [61:0] trunc_ln1_fu_301_p4;
-reg   [61:0] trunc_ln1_reg_587;
-reg   [63:0] gmem1_addr_reg_592;
-wire   [31:0] zext_ln59_1_fu_329_p1;
-reg   [31:0] zext_ln59_1_reg_597;
-wire   [61:0] zext_ln59_fu_333_p1;
-reg   [61:0] zext_ln59_reg_603;
-wire   [0:0] icmp_ln59_fu_359_p2;
-wire    ap_CS_fsm_state2;
-wire   [31:0] add_ln59_2_fu_370_p2;
-reg   [31:0] add_ln59_2_reg_621;
-wire   [61:0] add_ln59_3_fu_375_p2;
-reg   [61:0] add_ln59_3_reg_626;
-wire   [30:0] add_ln59_1_fu_380_p2;
-reg   [30:0] add_ln59_1_reg_631;
-wire   [63:0] add_ln59_fu_392_p2;
-reg   [63:0] add_ln59_reg_636;
-wire    ap_CS_fsm_state11;
-wire  signed [31:0] length_1_fu_412_p2;
-reg  signed [31:0] length_1_reg_644;
+reg    gmem0_blk_n_AR;
 wire    ap_CS_fsm_state13;
-wire  signed [63:0] sext_ln82_fu_418_p1;
-reg  signed [63:0] sext_ln82_reg_649;
-wire   [15:0] trunc_ln82_fu_422_p1;
-reg   [15:0] trunc_ln82_reg_654;
-wire  signed [61:0] trunc_ln5_fu_443_p4;
-reg   [61:0] trunc_ln5_reg_659;
-reg   [63:0] gmem2_addr_reg_664;
-wire   [31:0] zext_ln82_fu_471_p1;
-reg   [31:0] zext_ln82_reg_669;
-reg   [61:0] trunc_ln6_reg_674;
-wire   [15:0] trunc_ln82_1_fu_501_p1;
-reg   [15:0] trunc_ln82_1_reg_683;
-wire    ap_CS_fsm_state14;
-wire   [63:0] add_ln82_1_fu_505_p2;
-reg   [63:0] add_ln82_1_reg_688;
-wire   [31:0] offset_1_fu_510_p2;
-reg   [15:0] local_x_address0;
-reg    local_x_ce0;
-wire   [31:0] local_x_q0;
-reg   [15:0] local_x_address1;
-reg    local_x_ce1;
-reg    local_x_we1;
-reg   [31:0] local_x_d1;
-wire   [31:0] local_x_q1;
-wire    grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_ap_start;
-wire    grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_ap_done;
-wire    grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_ap_idle;
-wire    grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_ap_ready;
-wire    grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem1_AWVALID;
-wire   [63:0] grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem1_AWADDR;
-wire   [0:0] grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem1_AWID;
-wire   [31:0] grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem1_AWLEN;
-wire   [2:0] grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem1_AWSIZE;
-wire   [1:0] grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem1_AWBURST;
-wire   [1:0] grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem1_AWLOCK;
-wire   [3:0] grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem1_AWCACHE;
-wire   [2:0] grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem1_AWPROT;
-wire   [3:0] grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem1_AWQOS;
-wire   [3:0] grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem1_AWREGION;
-wire   [0:0] grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem1_AWUSER;
-wire    grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem1_WVALID;
-wire   [31:0] grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem1_WDATA;
-wire   [3:0] grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem1_WSTRB;
-wire    grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem1_WLAST;
-wire   [0:0] grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem1_WID;
-wire   [0:0] grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem1_WUSER;
-wire    grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem1_ARVALID;
-wire   [63:0] grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem1_ARADDR;
-wire   [0:0] grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem1_ARID;
-wire   [31:0] grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem1_ARLEN;
-wire   [2:0] grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem1_ARSIZE;
-wire   [1:0] grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem1_ARBURST;
-wire   [1:0] grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem1_ARLOCK;
-wire   [3:0] grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem1_ARCACHE;
-wire   [2:0] grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem1_ARPROT;
-wire   [3:0] grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem1_ARQOS;
-wire   [3:0] grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem1_ARREGION;
-wire   [0:0] grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem1_ARUSER;
-wire    grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem1_RREADY;
-wire    grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem1_BREADY;
-wire    grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem0_AWVALID;
-wire   [63:0] grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem0_AWADDR;
-wire   [0:0] grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem0_AWID;
-wire   [31:0] grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem0_AWLEN;
-wire   [2:0] grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem0_AWSIZE;
-wire   [1:0] grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem0_AWBURST;
-wire   [1:0] grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem0_AWLOCK;
-wire   [3:0] grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem0_AWCACHE;
-wire   [2:0] grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem0_AWPROT;
-wire   [3:0] grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem0_AWQOS;
-wire   [3:0] grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem0_AWREGION;
-wire   [0:0] grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem0_AWUSER;
-wire    grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem0_WVALID;
-wire   [31:0] grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem0_WDATA;
-wire   [3:0] grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem0_WSTRB;
-wire    grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem0_WLAST;
-wire   [0:0] grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem0_WID;
-wire   [0:0] grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem0_WUSER;
-wire    grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem0_ARVALID;
-wire   [63:0] grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem0_ARADDR;
-wire   [0:0] grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem0_ARID;
-wire   [31:0] grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem0_ARLEN;
-wire   [2:0] grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem0_ARSIZE;
-wire   [1:0] grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem0_ARBURST;
-wire   [1:0] grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem0_ARLOCK;
-wire   [3:0] grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem0_ARCACHE;
-wire   [2:0] grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem0_ARPROT;
-wire   [3:0] grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem0_ARQOS;
-wire   [3:0] grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem0_ARREGION;
-wire   [0:0] grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem0_ARUSER;
-wire    grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem0_RREADY;
-wire    grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem0_BREADY;
-wire   [15:0] grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_local_x_address1;
-wire    grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_local_x_ce1;
-wire    grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_local_x_we1;
-wire   [31:0] grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_local_x_d1;
-wire    grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_ap_start;
-wire    grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_ap_done;
-wire    grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_ap_idle;
-wire    grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_ap_ready;
-wire    grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_m_axi_gmem2_AWVALID;
-wire   [63:0] grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_m_axi_gmem2_AWADDR;
-wire   [0:0] grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_m_axi_gmem2_AWID;
-wire   [31:0] grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_m_axi_gmem2_AWLEN;
-wire   [2:0] grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_m_axi_gmem2_AWSIZE;
-wire   [1:0] grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_m_axi_gmem2_AWBURST;
-wire   [1:0] grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_m_axi_gmem2_AWLOCK;
-wire   [3:0] grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_m_axi_gmem2_AWCACHE;
-wire   [2:0] grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_m_axi_gmem2_AWPROT;
-wire   [3:0] grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_m_axi_gmem2_AWQOS;
-wire   [3:0] grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_m_axi_gmem2_AWREGION;
-wire   [0:0] grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_m_axi_gmem2_AWUSER;
-wire    grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_m_axi_gmem2_WVALID;
-wire   [31:0] grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_m_axi_gmem2_WDATA;
-wire   [3:0] grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_m_axi_gmem2_WSTRB;
-wire    grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_m_axi_gmem2_WLAST;
-wire   [0:0] grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_m_axi_gmem2_WID;
-wire   [0:0] grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_m_axi_gmem2_WUSER;
-wire    grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_m_axi_gmem2_ARVALID;
-wire   [63:0] grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_m_axi_gmem2_ARADDR;
-wire   [0:0] grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_m_axi_gmem2_ARID;
-wire   [31:0] grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_m_axi_gmem2_ARLEN;
-wire   [2:0] grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_m_axi_gmem2_ARSIZE;
-wire   [1:0] grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_m_axi_gmem2_ARBURST;
-wire   [1:0] grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_m_axi_gmem2_ARLOCK;
-wire   [3:0] grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_m_axi_gmem2_ARCACHE;
-wire   [2:0] grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_m_axi_gmem2_ARPROT;
-wire   [3:0] grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_m_axi_gmem2_ARQOS;
-wire   [3:0] grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_m_axi_gmem2_ARREGION;
-wire   [0:0] grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_m_axi_gmem2_ARUSER;
-wire    grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_m_axi_gmem2_RREADY;
-wire    grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_m_axi_gmem2_BREADY;
-wire   [15:0] grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_local_x_address0;
-wire    grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_local_x_ce0;
-wire   [15:0] grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_local_x_address1;
-wire    grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_local_x_ce1;
-wire    grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_local_x_we1;
-wire   [31:0] grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_local_x_d1;
-wire    grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278_ap_start;
-wire    grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278_ap_done;
-wire    grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278_ap_idle;
-wire    grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278_ap_ready;
-wire    grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278_m_axi_gmem0_AWVALID;
-wire   [63:0] grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278_m_axi_gmem0_AWADDR;
-wire   [0:0] grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278_m_axi_gmem0_AWID;
-wire   [31:0] grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278_m_axi_gmem0_AWLEN;
-wire   [2:0] grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278_m_axi_gmem0_AWSIZE;
-wire   [1:0] grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278_m_axi_gmem0_AWBURST;
-wire   [1:0] grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278_m_axi_gmem0_AWLOCK;
-wire   [3:0] grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278_m_axi_gmem0_AWCACHE;
-wire   [2:0] grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278_m_axi_gmem0_AWPROT;
-wire   [3:0] grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278_m_axi_gmem0_AWQOS;
-wire   [3:0] grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278_m_axi_gmem0_AWREGION;
-wire   [0:0] grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278_m_axi_gmem0_AWUSER;
-wire    grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278_m_axi_gmem0_WVALID;
-wire   [31:0] grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278_m_axi_gmem0_WDATA;
-wire   [3:0] grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278_m_axi_gmem0_WSTRB;
-wire    grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278_m_axi_gmem0_WLAST;
-wire   [0:0] grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278_m_axi_gmem0_WID;
-wire   [0:0] grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278_m_axi_gmem0_WUSER;
-wire    grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278_m_axi_gmem0_ARVALID;
-wire   [63:0] grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278_m_axi_gmem0_ARADDR;
-wire   [0:0] grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278_m_axi_gmem0_ARID;
-wire   [31:0] grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278_m_axi_gmem0_ARLEN;
-wire   [2:0] grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278_m_axi_gmem0_ARSIZE;
-wire   [1:0] grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278_m_axi_gmem0_ARBURST;
-wire   [1:0] grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278_m_axi_gmem0_ARLOCK;
-wire   [3:0] grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278_m_axi_gmem0_ARCACHE;
-wire   [2:0] grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278_m_axi_gmem0_ARPROT;
-wire   [3:0] grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278_m_axi_gmem0_ARQOS;
-wire   [3:0] grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278_m_axi_gmem0_ARREGION;
-wire   [0:0] grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278_m_axi_gmem0_ARUSER;
-wire    grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278_m_axi_gmem0_RREADY;
-wire    grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278_m_axi_gmem0_BREADY;
-wire   [15:0] grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278_local_x_address0;
-wire    grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278_local_x_ce0;
+reg    gmem0_blk_n_AW;
+wire    ap_CS_fsm_state27;
+reg    gmem0_blk_n_B;
+wire    ap_CS_fsm_state34;
+reg    gmem1_blk_n_AR;
+wire    ap_CS_fsm_state2;
+reg    gmem2_blk_n_AR;
+wire  signed [61:0] grp_fu_353_p4;
+reg   [61:0] reg_362;
+wire    ap_CS_fsm_state25;
+reg   [31:0] n_read_reg_611;
+reg   [31:0] batch_size_read_reg_620;
+reg   [31:0] q_inv_read_reg_625;
+reg   [31:0] q_read_reg_630;
+reg   [63:0] x_read_reg_636;
+wire   [30:0] trunc_ln51_fu_368_p1;
+reg   [30:0] trunc_ln51_reg_641;
+wire   [31:0] sub_fu_372_p2;
+reg   [31:0] sub_reg_647;
+reg   [61:0] trunc_ln1_reg_652;
+wire   [30:0] empty_fu_398_p3;
+reg   [30:0] empty_reg_658;
+wire   [0:0] icmp_ln91_fu_406_p2;
+reg   [0:0] icmp_ln91_reg_663;
+reg   [61:0] trunc_ln2_reg_667;
+wire   [30:0] empty_38_fu_422_p3;
+reg   [30:0] empty_38_reg_673;
+reg   [30:0] half_n_reg_678;
+wire   [31:0] zext_ln84_fu_460_p1;
+wire   [31:0] zext_ln91_fu_474_p1;
+reg   [31:0] zext_ln91_reg_698;
+wire   [61:0] zext_ln97_fu_478_p1;
+reg   [61:0] zext_ln97_reg_704;
+wire    ap_CS_fsm_state11;
+wire   [61:0] add_ln97_2_fu_487_p2;
+reg   [61:0] add_ln97_2_reg_709;
+wire    ap_CS_fsm_state12;
+wire   [30:0] add_ln97_1_fu_501_p2;
+reg   [30:0] add_ln97_1_reg_717;
+wire   [63:0] add_ln97_fu_515_p2;
+reg   [63:0] add_ln97_reg_722;
+wire   [31:0] stage_1_fu_536_p2;
+reg   [31:0] stage_1_reg_735;
+wire   [11:0] trunc_ln121_fu_543_p1;
+reg   [11:0] trunc_ln121_reg_741;
+wire   [11:0] trunc_ln121_1_fu_548_p1;
+reg   [11:0] trunc_ln121_1_reg_746;
+wire   [11:0] sub53_fu_553_p2;
+reg   [11:0] sub53_reg_751;
+wire   [31:0] offset_1_fu_560_p2;
+reg   [31:0] offset_1_reg_756;
+wire   [0:0] use_ping_as_input_1_fu_566_p2;
+reg   [0:0] use_ping_as_input_1_reg_761;
+wire   [31:0] length_1_fu_572_p2;
+reg   [31:0] length_1_reg_766;
+reg    local_twiddles_ce0;
+wire   [31:0] local_twiddles_q0;
+reg    local_twiddles_ce1;
+reg    local_twiddles_we1;
+reg    local_psi_ce0;
+wire   [11:0] local_psi_q0;
+reg    local_psi_ce1;
+reg    local_psi_we1;
+reg   [11:0] ping_address0;
+reg    ping_ce0;
+wire   [31:0] ping_q0;
+reg   [11:0] ping_address1;
+reg    ping_ce1;
+reg    ping_we1;
+reg   [31:0] ping_d1;
+wire   [31:0] ping_q1;
+reg   [11:0] pong_address0;
+reg    pong_ce0;
+wire   [31:0] pong_q0;
+reg    pong_ce1;
+reg    pong_we1;
+wire   [31:0] pong_q1;
+reg   [11:0] burst_buffer_address0;
+reg    burst_buffer_ce0;
+reg    burst_buffer_we0;
+wire   [31:0] burst_buffer_q0;
+wire    grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287_ap_start;
+wire    grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287_ap_done;
+wire    grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287_ap_idle;
+wire    grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287_ap_ready;
+wire    grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287_m_axi_gmem2_AWVALID;
+wire   [63:0] grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287_m_axi_gmem2_AWADDR;
+wire   [0:0] grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287_m_axi_gmem2_AWID;
+wire   [31:0] grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287_m_axi_gmem2_AWLEN;
+wire   [2:0] grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287_m_axi_gmem2_AWSIZE;
+wire   [1:0] grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287_m_axi_gmem2_AWBURST;
+wire   [1:0] grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287_m_axi_gmem2_AWLOCK;
+wire   [3:0] grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287_m_axi_gmem2_AWCACHE;
+wire   [2:0] grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287_m_axi_gmem2_AWPROT;
+wire   [3:0] grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287_m_axi_gmem2_AWQOS;
+wire   [3:0] grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287_m_axi_gmem2_AWREGION;
+wire   [0:0] grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287_m_axi_gmem2_AWUSER;
+wire    grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287_m_axi_gmem2_WVALID;
+wire   [31:0] grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287_m_axi_gmem2_WDATA;
+wire   [3:0] grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287_m_axi_gmem2_WSTRB;
+wire    grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287_m_axi_gmem2_WLAST;
+wire   [0:0] grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287_m_axi_gmem2_WID;
+wire   [0:0] grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287_m_axi_gmem2_WUSER;
+wire    grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287_m_axi_gmem2_ARVALID;
+wire   [63:0] grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287_m_axi_gmem2_ARADDR;
+wire   [0:0] grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287_m_axi_gmem2_ARID;
+wire   [31:0] grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287_m_axi_gmem2_ARLEN;
+wire   [2:0] grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287_m_axi_gmem2_ARSIZE;
+wire   [1:0] grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287_m_axi_gmem2_ARBURST;
+wire   [1:0] grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287_m_axi_gmem2_ARLOCK;
+wire   [3:0] grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287_m_axi_gmem2_ARCACHE;
+wire   [2:0] grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287_m_axi_gmem2_ARPROT;
+wire   [3:0] grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287_m_axi_gmem2_ARQOS;
+wire   [3:0] grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287_m_axi_gmem2_ARREGION;
+wire   [0:0] grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287_m_axi_gmem2_ARUSER;
+wire    grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287_m_axi_gmem2_RREADY;
+wire    grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287_m_axi_gmem2_BREADY;
+wire   [11:0] grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287_local_twiddles_address1;
+wire    grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287_local_twiddles_ce1;
+wire    grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287_local_twiddles_we1;
+wire   [31:0] grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287_local_twiddles_d1;
+wire    grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296_ap_start;
+wire    grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296_ap_done;
+wire    grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296_ap_idle;
+wire    grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296_ap_ready;
+wire    grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296_m_axi_gmem1_AWVALID;
+wire   [63:0] grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296_m_axi_gmem1_AWADDR;
+wire   [0:0] grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296_m_axi_gmem1_AWID;
+wire   [31:0] grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296_m_axi_gmem1_AWLEN;
+wire   [2:0] grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296_m_axi_gmem1_AWSIZE;
+wire   [1:0] grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296_m_axi_gmem1_AWBURST;
+wire   [1:0] grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296_m_axi_gmem1_AWLOCK;
+wire   [3:0] grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296_m_axi_gmem1_AWCACHE;
+wire   [2:0] grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296_m_axi_gmem1_AWPROT;
+wire   [3:0] grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296_m_axi_gmem1_AWQOS;
+wire   [3:0] grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296_m_axi_gmem1_AWREGION;
+wire   [0:0] grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296_m_axi_gmem1_AWUSER;
+wire    grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296_m_axi_gmem1_WVALID;
+wire   [31:0] grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296_m_axi_gmem1_WDATA;
+wire   [3:0] grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296_m_axi_gmem1_WSTRB;
+wire    grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296_m_axi_gmem1_WLAST;
+wire   [0:0] grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296_m_axi_gmem1_WID;
+wire   [0:0] grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296_m_axi_gmem1_WUSER;
+wire    grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296_m_axi_gmem1_ARVALID;
+wire   [63:0] grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296_m_axi_gmem1_ARADDR;
+wire   [0:0] grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296_m_axi_gmem1_ARID;
+wire   [31:0] grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296_m_axi_gmem1_ARLEN;
+wire   [2:0] grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296_m_axi_gmem1_ARSIZE;
+wire   [1:0] grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296_m_axi_gmem1_ARBURST;
+wire   [1:0] grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296_m_axi_gmem1_ARLOCK;
+wire   [3:0] grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296_m_axi_gmem1_ARCACHE;
+wire   [2:0] grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296_m_axi_gmem1_ARPROT;
+wire   [3:0] grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296_m_axi_gmem1_ARQOS;
+wire   [3:0] grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296_m_axi_gmem1_ARREGION;
+wire   [0:0] grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296_m_axi_gmem1_ARUSER;
+wire    grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296_m_axi_gmem1_RREADY;
+wire    grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296_m_axi_gmem1_BREADY;
+wire   [11:0] grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296_local_psi_address1;
+wire    grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296_local_psi_ce1;
+wire    grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296_local_psi_we1;
+wire   [11:0] grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296_local_psi_d1;
+wire    grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_ap_start;
+wire    grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_ap_done;
+wire    grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_ap_idle;
+wire    grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_ap_ready;
+wire    grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_m_axi_gmem0_AWVALID;
+wire   [63:0] grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_m_axi_gmem0_AWADDR;
+wire   [0:0] grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_m_axi_gmem0_AWID;
+wire   [31:0] grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_m_axi_gmem0_AWLEN;
+wire   [2:0] grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_m_axi_gmem0_AWSIZE;
+wire   [1:0] grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_m_axi_gmem0_AWBURST;
+wire   [1:0] grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_m_axi_gmem0_AWLOCK;
+wire   [3:0] grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_m_axi_gmem0_AWCACHE;
+wire   [2:0] grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_m_axi_gmem0_AWPROT;
+wire   [3:0] grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_m_axi_gmem0_AWQOS;
+wire   [3:0] grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_m_axi_gmem0_AWREGION;
+wire   [0:0] grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_m_axi_gmem0_AWUSER;
+wire    grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_m_axi_gmem0_WVALID;
+wire   [31:0] grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_m_axi_gmem0_WDATA;
+wire   [3:0] grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_m_axi_gmem0_WSTRB;
+wire    grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_m_axi_gmem0_WLAST;
+wire   [0:0] grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_m_axi_gmem0_WID;
+wire   [0:0] grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_m_axi_gmem0_WUSER;
+wire    grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_m_axi_gmem0_ARVALID;
+wire   [63:0] grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_m_axi_gmem0_ARADDR;
+wire   [0:0] grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_m_axi_gmem0_ARID;
+wire   [31:0] grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_m_axi_gmem0_ARLEN;
+wire   [2:0] grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_m_axi_gmem0_ARSIZE;
+wire   [1:0] grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_m_axi_gmem0_ARBURST;
+wire   [1:0] grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_m_axi_gmem0_ARLOCK;
+wire   [3:0] grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_m_axi_gmem0_ARCACHE;
+wire   [2:0] grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_m_axi_gmem0_ARPROT;
+wire   [3:0] grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_m_axi_gmem0_ARQOS;
+wire   [3:0] grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_m_axi_gmem0_ARREGION;
+wire   [0:0] grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_m_axi_gmem0_ARUSER;
+wire    grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_m_axi_gmem0_RREADY;
+wire    grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_m_axi_gmem0_BREADY;
+wire   [11:0] grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_burst_buffer_address0;
+wire    grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_burst_buffer_ce0;
+wire    grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_burst_buffer_we0;
+wire   [31:0] grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_burst_buffer_d0;
+wire    grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_314_ap_start;
+wire    grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_314_ap_done;
+wire    grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_314_ap_idle;
+wire    grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_314_ap_ready;
+wire   [11:0] grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_314_local_psi_address0;
+wire    grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_314_local_psi_ce0;
+wire   [11:0] grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_314_burst_buffer_address0;
+wire    grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_314_burst_buffer_ce0;
+wire   [11:0] grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_314_ping_address1;
+wire    grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_314_ping_ce1;
+wire    grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_314_ping_we1;
+wire   [31:0] grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_314_ping_d1;
+wire    grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322_ap_start;
+wire    grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322_ap_done;
+wire    grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322_ap_idle;
+wire    grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322_ap_ready;
+wire   [11:0] grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322_local_twiddles_address0;
+wire    grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322_local_twiddles_ce0;
+wire   [11:0] grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322_ping_address0;
+wire    grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322_ping_ce0;
+wire   [11:0] grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322_ping_address1;
+wire    grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322_ping_ce1;
+wire    grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322_ping_we1;
+wire   [31:0] grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322_ping_d1;
+wire   [11:0] grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322_pong_address0;
+wire    grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322_pong_ce0;
+wire   [11:0] grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322_pong_address1;
+wire    grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322_pong_ce1;
+wire    grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322_pong_we1;
+wire   [31:0] grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322_pong_d1;
+wire    grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_ap_start;
+wire    grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_ap_done;
+wire    grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_ap_idle;
+wire    grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_ap_ready;
+wire    grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_m_axi_gmem0_AWVALID;
+wire   [63:0] grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_m_axi_gmem0_AWADDR;
+wire   [0:0] grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_m_axi_gmem0_AWID;
+wire   [31:0] grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_m_axi_gmem0_AWLEN;
+wire   [2:0] grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_m_axi_gmem0_AWSIZE;
+wire   [1:0] grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_m_axi_gmem0_AWBURST;
+wire   [1:0] grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_m_axi_gmem0_AWLOCK;
+wire   [3:0] grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_m_axi_gmem0_AWCACHE;
+wire   [2:0] grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_m_axi_gmem0_AWPROT;
+wire   [3:0] grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_m_axi_gmem0_AWQOS;
+wire   [3:0] grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_m_axi_gmem0_AWREGION;
+wire   [0:0] grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_m_axi_gmem0_AWUSER;
+wire    grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_m_axi_gmem0_WVALID;
+wire   [31:0] grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_m_axi_gmem0_WDATA;
+wire   [3:0] grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_m_axi_gmem0_WSTRB;
+wire    grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_m_axi_gmem0_WLAST;
+wire   [0:0] grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_m_axi_gmem0_WID;
+wire   [0:0] grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_m_axi_gmem0_WUSER;
+wire    grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_m_axi_gmem0_ARVALID;
+wire   [63:0] grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_m_axi_gmem0_ARADDR;
+wire   [0:0] grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_m_axi_gmem0_ARID;
+wire   [31:0] grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_m_axi_gmem0_ARLEN;
+wire   [2:0] grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_m_axi_gmem0_ARSIZE;
+wire   [1:0] grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_m_axi_gmem0_ARBURST;
+wire   [1:0] grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_m_axi_gmem0_ARLOCK;
+wire   [3:0] grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_m_axi_gmem0_ARCACHE;
+wire   [2:0] grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_m_axi_gmem0_ARPROT;
+wire   [3:0] grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_m_axi_gmem0_ARQOS;
+wire   [3:0] grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_m_axi_gmem0_ARREGION;
+wire   [0:0] grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_m_axi_gmem0_ARUSER;
+wire    grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_m_axi_gmem0_RREADY;
+wire    grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_m_axi_gmem0_BREADY;
+wire   [11:0] grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_ping_address0;
+wire    grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_ping_ce0;
+wire   [11:0] grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_pong_address0;
+wire    grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_pong_ce0;
 reg    gmem0_AWVALID;
 wire    gmem0_AWREADY;
 reg   [63:0] gmem0_AWADDR;
@@ -635,6 +696,8 @@ reg    gmem0_WVALID;
 wire    gmem0_WREADY;
 reg    gmem0_ARVALID;
 wire    gmem0_ARREADY;
+reg   [63:0] gmem0_ARADDR;
+reg   [31:0] gmem0_ARLEN;
 wire    gmem0_RVALID;
 reg    gmem0_RREADY;
 wire   [31:0] gmem0_RDATA;
@@ -663,45 +726,42 @@ reg    gmem2_RREADY;
 wire   [31:0] gmem2_RDATA;
 wire   [8:0] gmem2_RFIFONUM;
 wire    gmem2_BVALID;
-reg   [31:0] offset_reg_215;
-wire   [0:0] icmp_ln82_fu_496_p2;
-wire    ap_CS_fsm_state12;
-reg   [31:0] length_reg_227;
-reg   [63:0] i_1_reg_239;
+reg   [31:0] offset_reg_241;
 wire    ap_CS_fsm_state24;
-wire   [0:0] icmp_ln79_fu_397_p2;
-reg    grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_ap_start_reg;
-reg    grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_ap_start_reg;
-wire    ap_CS_fsm_state23;
-reg    grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278_ap_start_reg;
+reg    ap_block_state24_on_subcall_done;
 wire    ap_CS_fsm_state26;
-wire    ap_CS_fsm_state27;
-wire  signed [63:0] sext_ln70_fu_311_p1;
-wire  signed [63:0] sext_ln85_fu_453_p1;
-wire  signed [63:0] sext_ln104_fu_516_p1;
-reg    ap_block_state3_io;
-reg   [31:0] phi_mul1_fu_138;
-reg   [61:0] phi_mul_fu_142;
-reg   [30:0] b_fu_146;
-wire  signed [31:0] trunc_ln38_fu_287_p0;
-wire  signed [31:0] cmp213_fu_291_p0;
-wire  signed [31:0] sext_ln59_fu_297_p0;
-wire   [0:0] cmp213_fu_291_p2;
-wire   [30:0] trunc_ln38_fu_287_p1;
-wire   [30:0] empty_fu_321_p3;
-wire  signed [31:0] zext_ln59_fu_333_p0;
-wire   [31:0] zext_ln59_2_fu_355_p1;
-wire   [63:0] shl_ln_fu_385_p3;
-wire   [33:0] shl_ln82_1_fu_426_p3;
-wire  signed [63:0] sext_ln82_1_fu_434_p1;
-wire   [63:0] add_ln82_fu_438_p2;
-wire   [0:0] cmp1915_fu_406_p2;
-wire   [30:0] trunc_ln79_fu_402_p1;
-wire   [30:0] empty_30_fu_463_p3;
-reg   [31:0] ap_NS_fsm;
+reg   [0:0] use_ping_as_input_reg_252;
+reg   [31:0] stage_reg_264;
+reg   [31:0] length_reg_276;
+reg    grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287_ap_start_reg;
+wire    ap_CS_fsm_state10;
+reg    grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296_ap_start_reg;
+reg    grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_ap_start_reg;
+wire    ap_CS_fsm_state21;
+wire    ap_CS_fsm_state22;
+reg    grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_314_ap_start_reg;
+wire    ap_CS_fsm_state23;
+reg    grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322_ap_start_reg;
+wire   [0:0] icmp_ln121_fu_531_p2;
+reg    grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_ap_start_reg;
+wire    ap_CS_fsm_state28;
+wire    ap_CS_fsm_state29;
+wire  signed [63:0] sext_ln84_fu_450_p1;
+wire  signed [63:0] sext_ln91_fu_464_p1;
+wire  signed [63:0] sext_ln103_fu_520_p1;
+wire  signed [63:0] sext_ln165_fu_586_p1;
+reg    ap_block_state2_io;
+reg   [61:0] phi_mul_fu_146;
+reg   [30:0] b_fu_150;
+wire   [0:0] icmp_ln84_fu_382_p2;
+wire   [30:0] trunc_ln84_fu_378_p1;
+wire   [31:0] zext_ln97_1_fu_492_p1;
+wire   [63:0] shl_ln_fu_507_p3;
+wire   [0:0] icmp_ln97_fu_496_p2;
+reg   [33:0] ap_NS_fsm;
 reg    ap_ST_fsm_state1_blk;
-wire    ap_ST_fsm_state2_blk;
-reg    ap_ST_fsm_state3_blk;
+reg    ap_ST_fsm_state2_blk;
+wire    ap_ST_fsm_state3_blk;
 wire    ap_ST_fsm_state4_blk;
 wire    ap_ST_fsm_state5_blk;
 wire    ap_ST_fsm_state6_blk;
@@ -709,209 +769,168 @@ wire    ap_ST_fsm_state7_blk;
 wire    ap_ST_fsm_state8_blk;
 wire    ap_ST_fsm_state9_blk;
 wire    ap_ST_fsm_state10_blk;
-wire    ap_ST_fsm_state11_blk;
-reg    ap_ST_fsm_state12_blk;
-wire    ap_ST_fsm_state13_blk;
+reg    ap_block_state11_on_subcall_done;
+reg    ap_ST_fsm_state11_blk;
+wire    ap_ST_fsm_state12_blk;
+reg    ap_ST_fsm_state13_blk;
 wire    ap_ST_fsm_state14_blk;
-reg    ap_ST_fsm_state15_blk;
+wire    ap_ST_fsm_state15_blk;
 wire    ap_ST_fsm_state16_blk;
 wire    ap_ST_fsm_state17_blk;
 wire    ap_ST_fsm_state18_blk;
 wire    ap_ST_fsm_state19_blk;
 wire    ap_ST_fsm_state20_blk;
 wire    ap_ST_fsm_state21_blk;
-wire    ap_ST_fsm_state22_blk;
+reg    ap_ST_fsm_state22_blk;
 wire    ap_ST_fsm_state23_blk;
 reg    ap_ST_fsm_state24_blk;
-reg    ap_ST_fsm_state25_blk;
-wire    ap_ST_fsm_state26_blk;
+wire    ap_ST_fsm_state25_blk;
+reg    ap_ST_fsm_state26_blk;
 reg    ap_ST_fsm_state27_blk;
 wire    ap_ST_fsm_state28_blk;
-wire    ap_ST_fsm_state29_blk;
+reg    ap_ST_fsm_state29_blk;
 wire    ap_ST_fsm_state30_blk;
 wire    ap_ST_fsm_state31_blk;
-reg    ap_ST_fsm_state32_blk;
+wire    ap_ST_fsm_state32_blk;
+wire    ap_ST_fsm_state33_blk;
+reg    ap_ST_fsm_state34_blk;
 wire    ap_ce_reg;
 
 // power-on initialization
 initial begin
-#0 ap_CS_fsm = 32'd1;
-#0 grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_ap_start_reg = 1'b0;
-#0 grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_ap_start_reg = 1'b0;
-#0 grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278_ap_start_reg = 1'b0;
-#0 phi_mul1_fu_138 = 32'd0;
-#0 phi_mul_fu_142 = 62'd0;
-#0 b_fu_146 = 31'd0;
+#0 ap_CS_fsm = 34'd1;
+#0 grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287_ap_start_reg = 1'b0;
+#0 grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296_ap_start_reg = 1'b0;
+#0 grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_ap_start_reg = 1'b0;
+#0 grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_314_ap_start_reg = 1'b0;
+#0 grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322_ap_start_reg = 1'b0;
+#0 grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_ap_start_reg = 1'b0;
+#0 phi_mul_fu_146 = 62'd0;
+#0 b_fu_150 = 31'd0;
 end
 
-ntt_kernel_local_x_RAM_2P_BRAM_1R1W #(
+ntt_kernel_local_twiddles_RAM_2P_BRAM_1R1W #(
     .DataWidth( 32 ),
-    .AddressRange( 65536 ),
-    .AddressWidth( 16 ))
-local_x_U(
+    .AddressRange( 4096 ),
+    .AddressWidth( 12 ))
+local_twiddles_U(
     .clk(ap_clk),
     .reset(ap_rst_n_inv),
-    .address0(local_x_address0),
-    .ce0(local_x_ce0),
-    .q0(local_x_q0),
-    .address1(local_x_address1),
-    .ce1(local_x_ce1),
-    .we1(local_x_we1),
-    .d1(local_x_d1),
-    .q1(local_x_q1)
+    .address0(grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322_local_twiddles_address0),
+    .ce0(local_twiddles_ce0),
+    .q0(local_twiddles_q0),
+    .address1(grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287_local_twiddles_address1),
+    .ce1(local_twiddles_ce1),
+    .we1(local_twiddles_we1),
+    .d1(grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287_local_twiddles_d1)
 );
 
-ntt_kernel_ntt_kernel_Pipeline_PERMUTE_LOOP grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250(
-    .ap_clk(ap_clk),
-    .ap_rst(ap_rst_n_inv),
-    .ap_start(grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_ap_start),
-    .ap_done(grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_ap_done),
-    .ap_idle(grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_ap_idle),
-    .ap_ready(grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_ap_ready),
-    .m_axi_gmem1_AWVALID(grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem1_AWVALID),
-    .m_axi_gmem1_AWREADY(1'b0),
-    .m_axi_gmem1_AWADDR(grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem1_AWADDR),
-    .m_axi_gmem1_AWID(grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem1_AWID),
-    .m_axi_gmem1_AWLEN(grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem1_AWLEN),
-    .m_axi_gmem1_AWSIZE(grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem1_AWSIZE),
-    .m_axi_gmem1_AWBURST(grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem1_AWBURST),
-    .m_axi_gmem1_AWLOCK(grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem1_AWLOCK),
-    .m_axi_gmem1_AWCACHE(grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem1_AWCACHE),
-    .m_axi_gmem1_AWPROT(grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem1_AWPROT),
-    .m_axi_gmem1_AWQOS(grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem1_AWQOS),
-    .m_axi_gmem1_AWREGION(grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem1_AWREGION),
-    .m_axi_gmem1_AWUSER(grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem1_AWUSER),
-    .m_axi_gmem1_WVALID(grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem1_WVALID),
-    .m_axi_gmem1_WREADY(1'b0),
-    .m_axi_gmem1_WDATA(grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem1_WDATA),
-    .m_axi_gmem1_WSTRB(grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem1_WSTRB),
-    .m_axi_gmem1_WLAST(grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem1_WLAST),
-    .m_axi_gmem1_WID(grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem1_WID),
-    .m_axi_gmem1_WUSER(grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem1_WUSER),
-    .m_axi_gmem1_ARVALID(grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem1_ARVALID),
-    .m_axi_gmem1_ARREADY(gmem1_ARREADY),
-    .m_axi_gmem1_ARADDR(grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem1_ARADDR),
-    .m_axi_gmem1_ARID(grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem1_ARID),
-    .m_axi_gmem1_ARLEN(grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem1_ARLEN),
-    .m_axi_gmem1_ARSIZE(grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem1_ARSIZE),
-    .m_axi_gmem1_ARBURST(grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem1_ARBURST),
-    .m_axi_gmem1_ARLOCK(grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem1_ARLOCK),
-    .m_axi_gmem1_ARCACHE(grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem1_ARCACHE),
-    .m_axi_gmem1_ARPROT(grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem1_ARPROT),
-    .m_axi_gmem1_ARQOS(grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem1_ARQOS),
-    .m_axi_gmem1_ARREGION(grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem1_ARREGION),
-    .m_axi_gmem1_ARUSER(grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem1_ARUSER),
-    .m_axi_gmem1_RVALID(gmem1_RVALID),
-    .m_axi_gmem1_RREADY(grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem1_RREADY),
-    .m_axi_gmem1_RDATA(gmem1_RDATA),
-    .m_axi_gmem1_RLAST(1'b0),
-    .m_axi_gmem1_RID(1'd0),
-    .m_axi_gmem1_RFIFONUM(gmem1_RFIFONUM),
-    .m_axi_gmem1_RUSER(1'd0),
-    .m_axi_gmem1_RRESP(2'd0),
-    .m_axi_gmem1_BVALID(1'b0),
-    .m_axi_gmem1_BREADY(grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem1_BREADY),
-    .m_axi_gmem1_BRESP(2'd0),
-    .m_axi_gmem1_BID(1'd0),
-    .m_axi_gmem1_BUSER(1'd0),
-    .m_axi_gmem0_AWVALID(grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem0_AWVALID),
-    .m_axi_gmem0_AWREADY(1'b0),
-    .m_axi_gmem0_AWADDR(grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem0_AWADDR),
-    .m_axi_gmem0_AWID(grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem0_AWID),
-    .m_axi_gmem0_AWLEN(grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem0_AWLEN),
-    .m_axi_gmem0_AWSIZE(grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem0_AWSIZE),
-    .m_axi_gmem0_AWBURST(grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem0_AWBURST),
-    .m_axi_gmem0_AWLOCK(grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem0_AWLOCK),
-    .m_axi_gmem0_AWCACHE(grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem0_AWCACHE),
-    .m_axi_gmem0_AWPROT(grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem0_AWPROT),
-    .m_axi_gmem0_AWQOS(grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem0_AWQOS),
-    .m_axi_gmem0_AWREGION(grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem0_AWREGION),
-    .m_axi_gmem0_AWUSER(grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem0_AWUSER),
-    .m_axi_gmem0_WVALID(grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem0_WVALID),
-    .m_axi_gmem0_WREADY(1'b0),
-    .m_axi_gmem0_WDATA(grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem0_WDATA),
-    .m_axi_gmem0_WSTRB(grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem0_WSTRB),
-    .m_axi_gmem0_WLAST(grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem0_WLAST),
-    .m_axi_gmem0_WID(grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem0_WID),
-    .m_axi_gmem0_WUSER(grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem0_WUSER),
-    .m_axi_gmem0_ARVALID(grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem0_ARVALID),
-    .m_axi_gmem0_ARREADY(gmem0_ARREADY),
-    .m_axi_gmem0_ARADDR(grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem0_ARADDR),
-    .m_axi_gmem0_ARID(grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem0_ARID),
-    .m_axi_gmem0_ARLEN(grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem0_ARLEN),
-    .m_axi_gmem0_ARSIZE(grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem0_ARSIZE),
-    .m_axi_gmem0_ARBURST(grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem0_ARBURST),
-    .m_axi_gmem0_ARLOCK(grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem0_ARLOCK),
-    .m_axi_gmem0_ARCACHE(grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem0_ARCACHE),
-    .m_axi_gmem0_ARPROT(grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem0_ARPROT),
-    .m_axi_gmem0_ARQOS(grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem0_ARQOS),
-    .m_axi_gmem0_ARREGION(grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem0_ARREGION),
-    .m_axi_gmem0_ARUSER(grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem0_ARUSER),
-    .m_axi_gmem0_RVALID(gmem0_RVALID),
-    .m_axi_gmem0_RREADY(grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem0_RREADY),
-    .m_axi_gmem0_RDATA(gmem0_RDATA),
-    .m_axi_gmem0_RLAST(1'b0),
-    .m_axi_gmem0_RID(1'd0),
-    .m_axi_gmem0_RFIFONUM(gmem0_RFIFONUM),
-    .m_axi_gmem0_RUSER(1'd0),
-    .m_axi_gmem0_RRESP(2'd0),
-    .m_axi_gmem0_BVALID(1'b0),
-    .m_axi_gmem0_BREADY(grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem0_BREADY),
-    .m_axi_gmem0_BRESP(2'd0),
-    .m_axi_gmem0_BID(1'd0),
-    .m_axi_gmem0_BUSER(1'd0),
-    .n(n_read_reg_547),
-    .sext_ln70(trunc_ln1_reg_587),
-    .phi_mul1(phi_mul1_fu_138),
-    .x(x_read_reg_576),
-    .local_x_address1(grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_local_x_address1),
-    .local_x_ce1(grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_local_x_ce1),
-    .local_x_we1(grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_local_x_we1),
-    .local_x_d1(grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_local_x_d1)
+ntt_kernel_local_psi_RAM_2P_BRAM_1R1W #(
+    .DataWidth( 12 ),
+    .AddressRange( 4096 ),
+    .AddressWidth( 12 ))
+local_psi_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .address0(grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_314_local_psi_address0),
+    .ce0(local_psi_ce0),
+    .q0(local_psi_q0),
+    .address1(grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296_local_psi_address1),
+    .ce1(local_psi_ce1),
+    .we1(local_psi_we1),
+    .d1(grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296_local_psi_d1)
 );
 
-ntt_kernel_ntt_kernel_Pipeline_BUTTERFLY_LOOP grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263(
+ntt_kernel_ping_RAM_2P_BRAM_1R1W #(
+    .DataWidth( 32 ),
+    .AddressRange( 4096 ),
+    .AddressWidth( 12 ))
+ping_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .address0(ping_address0),
+    .ce0(ping_ce0),
+    .q0(ping_q0),
+    .address1(ping_address1),
+    .ce1(ping_ce1),
+    .we1(ping_we1),
+    .d1(ping_d1),
+    .q1(ping_q1)
+);
+
+ntt_kernel_ping_RAM_2P_BRAM_1R1W #(
+    .DataWidth( 32 ),
+    .AddressRange( 4096 ),
+    .AddressWidth( 12 ))
+pong_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .address0(pong_address0),
+    .ce0(pong_ce0),
+    .q0(pong_q0),
+    .address1(grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322_pong_address1),
+    .ce1(pong_ce1),
+    .we1(pong_we1),
+    .d1(grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322_pong_d1),
+    .q1(pong_q1)
+);
+
+ntt_kernel_burst_buffer_RAM_AUTO_1R1W #(
+    .DataWidth( 32 ),
+    .AddressRange( 4096 ),
+    .AddressWidth( 12 ))
+burst_buffer_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .address0(burst_buffer_address0),
+    .ce0(burst_buffer_ce0),
+    .we0(burst_buffer_we0),
+    .d0(grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_burst_buffer_d0),
+    .q0(burst_buffer_q0)
+);
+
+ntt_kernel_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287(
     .ap_clk(ap_clk),
     .ap_rst(ap_rst_n_inv),
-    .ap_start(grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_ap_start),
-    .ap_done(grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_ap_done),
-    .ap_idle(grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_ap_idle),
-    .ap_ready(grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_ap_ready),
-    .m_axi_gmem2_AWVALID(grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_m_axi_gmem2_AWVALID),
+    .ap_start(grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287_ap_start),
+    .ap_done(grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287_ap_done),
+    .ap_idle(grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287_ap_idle),
+    .ap_ready(grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287_ap_ready),
+    .m_axi_gmem2_AWVALID(grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287_m_axi_gmem2_AWVALID),
     .m_axi_gmem2_AWREADY(1'b0),
-    .m_axi_gmem2_AWADDR(grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_m_axi_gmem2_AWADDR),
-    .m_axi_gmem2_AWID(grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_m_axi_gmem2_AWID),
-    .m_axi_gmem2_AWLEN(grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_m_axi_gmem2_AWLEN),
-    .m_axi_gmem2_AWSIZE(grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_m_axi_gmem2_AWSIZE),
-    .m_axi_gmem2_AWBURST(grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_m_axi_gmem2_AWBURST),
-    .m_axi_gmem2_AWLOCK(grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_m_axi_gmem2_AWLOCK),
-    .m_axi_gmem2_AWCACHE(grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_m_axi_gmem2_AWCACHE),
-    .m_axi_gmem2_AWPROT(grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_m_axi_gmem2_AWPROT),
-    .m_axi_gmem2_AWQOS(grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_m_axi_gmem2_AWQOS),
-    .m_axi_gmem2_AWREGION(grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_m_axi_gmem2_AWREGION),
-    .m_axi_gmem2_AWUSER(grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_m_axi_gmem2_AWUSER),
-    .m_axi_gmem2_WVALID(grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_m_axi_gmem2_WVALID),
+    .m_axi_gmem2_AWADDR(grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287_m_axi_gmem2_AWADDR),
+    .m_axi_gmem2_AWID(grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287_m_axi_gmem2_AWID),
+    .m_axi_gmem2_AWLEN(grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287_m_axi_gmem2_AWLEN),
+    .m_axi_gmem2_AWSIZE(grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287_m_axi_gmem2_AWSIZE),
+    .m_axi_gmem2_AWBURST(grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287_m_axi_gmem2_AWBURST),
+    .m_axi_gmem2_AWLOCK(grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287_m_axi_gmem2_AWLOCK),
+    .m_axi_gmem2_AWCACHE(grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287_m_axi_gmem2_AWCACHE),
+    .m_axi_gmem2_AWPROT(grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287_m_axi_gmem2_AWPROT),
+    .m_axi_gmem2_AWQOS(grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287_m_axi_gmem2_AWQOS),
+    .m_axi_gmem2_AWREGION(grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287_m_axi_gmem2_AWREGION),
+    .m_axi_gmem2_AWUSER(grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287_m_axi_gmem2_AWUSER),
+    .m_axi_gmem2_WVALID(grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287_m_axi_gmem2_WVALID),
     .m_axi_gmem2_WREADY(1'b0),
-    .m_axi_gmem2_WDATA(grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_m_axi_gmem2_WDATA),
-    .m_axi_gmem2_WSTRB(grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_m_axi_gmem2_WSTRB),
-    .m_axi_gmem2_WLAST(grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_m_axi_gmem2_WLAST),
-    .m_axi_gmem2_WID(grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_m_axi_gmem2_WID),
-    .m_axi_gmem2_WUSER(grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_m_axi_gmem2_WUSER),
-    .m_axi_gmem2_ARVALID(grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_m_axi_gmem2_ARVALID),
+    .m_axi_gmem2_WDATA(grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287_m_axi_gmem2_WDATA),
+    .m_axi_gmem2_WSTRB(grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287_m_axi_gmem2_WSTRB),
+    .m_axi_gmem2_WLAST(grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287_m_axi_gmem2_WLAST),
+    .m_axi_gmem2_WID(grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287_m_axi_gmem2_WID),
+    .m_axi_gmem2_WUSER(grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287_m_axi_gmem2_WUSER),
+    .m_axi_gmem2_ARVALID(grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287_m_axi_gmem2_ARVALID),
     .m_axi_gmem2_ARREADY(gmem2_ARREADY),
-    .m_axi_gmem2_ARADDR(grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_m_axi_gmem2_ARADDR),
-    .m_axi_gmem2_ARID(grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_m_axi_gmem2_ARID),
-    .m_axi_gmem2_ARLEN(grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_m_axi_gmem2_ARLEN),
-    .m_axi_gmem2_ARSIZE(grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_m_axi_gmem2_ARSIZE),
-    .m_axi_gmem2_ARBURST(grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_m_axi_gmem2_ARBURST),
-    .m_axi_gmem2_ARLOCK(grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_m_axi_gmem2_ARLOCK),
-    .m_axi_gmem2_ARCACHE(grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_m_axi_gmem2_ARCACHE),
-    .m_axi_gmem2_ARPROT(grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_m_axi_gmem2_ARPROT),
-    .m_axi_gmem2_ARQOS(grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_m_axi_gmem2_ARQOS),
-    .m_axi_gmem2_ARREGION(grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_m_axi_gmem2_ARREGION),
-    .m_axi_gmem2_ARUSER(grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_m_axi_gmem2_ARUSER),
+    .m_axi_gmem2_ARADDR(grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287_m_axi_gmem2_ARADDR),
+    .m_axi_gmem2_ARID(grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287_m_axi_gmem2_ARID),
+    .m_axi_gmem2_ARLEN(grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287_m_axi_gmem2_ARLEN),
+    .m_axi_gmem2_ARSIZE(grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287_m_axi_gmem2_ARSIZE),
+    .m_axi_gmem2_ARBURST(grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287_m_axi_gmem2_ARBURST),
+    .m_axi_gmem2_ARLOCK(grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287_m_axi_gmem2_ARLOCK),
+    .m_axi_gmem2_ARCACHE(grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287_m_axi_gmem2_ARCACHE),
+    .m_axi_gmem2_ARPROT(grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287_m_axi_gmem2_ARPROT),
+    .m_axi_gmem2_ARQOS(grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287_m_axi_gmem2_ARQOS),
+    .m_axi_gmem2_ARREGION(grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287_m_axi_gmem2_ARREGION),
+    .m_axi_gmem2_ARUSER(grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287_m_axi_gmem2_ARUSER),
     .m_axi_gmem2_RVALID(gmem2_RVALID),
-    .m_axi_gmem2_RREADY(grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_m_axi_gmem2_RREADY),
+    .m_axi_gmem2_RREADY(grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287_m_axi_gmem2_RREADY),
     .m_axi_gmem2_RDATA(gmem2_RDATA),
     .m_axi_gmem2_RLAST(1'b0),
     .m_axi_gmem2_RID(1'd0),
@@ -919,69 +938,240 @@ ntt_kernel_ntt_kernel_Pipeline_BUTTERFLY_LOOP grp_ntt_kernel_Pipeline_BUTTERFLY_
     .m_axi_gmem2_RUSER(1'd0),
     .m_axi_gmem2_RRESP(2'd0),
     .m_axi_gmem2_BVALID(1'b0),
-    .m_axi_gmem2_BREADY(grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_m_axi_gmem2_BREADY),
+    .m_axi_gmem2_BREADY(grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287_m_axi_gmem2_BREADY),
     .m_axi_gmem2_BRESP(2'd0),
     .m_axi_gmem2_BID(1'd0),
     .m_axi_gmem2_BUSER(1'd0),
-    .length_r(length_reg_227),
-    .sext_ln85(trunc_ln5_reg_659),
-    .local_x_address0(grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_local_x_address0),
-    .local_x_ce0(grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_local_x_ce0),
-    .local_x_q0(local_x_q0),
-    .local_x_address1(grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_local_x_address1),
-    .local_x_ce1(grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_local_x_ce1),
-    .local_x_we1(grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_local_x_we1),
-    .local_x_d1(grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_local_x_d1),
-    .local_x_q1(local_x_q1),
-    .empty_23(trunc_ln82_1_reg_683),
-    .empty(trunc_ln82_reg_654),
-    .q_inv(q_inv_read_reg_560),
-    .conv5_i(q_read_reg_565),
-    .q(q_read_reg_565)
+    .sub(sub_reg_647),
+    .sext_ln84(trunc_ln1_reg_652),
+    .local_twiddles_address1(grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287_local_twiddles_address1),
+    .local_twiddles_ce1(grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287_local_twiddles_ce1),
+    .local_twiddles_we1(grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287_local_twiddles_we1),
+    .local_twiddles_d1(grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287_local_twiddles_d1)
 );
 
-ntt_kernel_ntt_kernel_Pipeline_WRITE_BACK_LOOP grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278(
+ntt_kernel_ntt_kernel_Pipeline_CACHE_PSI_LOOP grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296(
     .ap_clk(ap_clk),
     .ap_rst(ap_rst_n_inv),
-    .ap_start(grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278_ap_start),
-    .ap_done(grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278_ap_done),
-    .ap_idle(grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278_ap_idle),
-    .ap_ready(grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278_ap_ready),
-    .m_axi_gmem0_AWVALID(grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278_m_axi_gmem0_AWVALID),
+    .ap_start(grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296_ap_start),
+    .ap_done(grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296_ap_done),
+    .ap_idle(grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296_ap_idle),
+    .ap_ready(grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296_ap_ready),
+    .m_axi_gmem1_AWVALID(grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296_m_axi_gmem1_AWVALID),
+    .m_axi_gmem1_AWREADY(1'b0),
+    .m_axi_gmem1_AWADDR(grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296_m_axi_gmem1_AWADDR),
+    .m_axi_gmem1_AWID(grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296_m_axi_gmem1_AWID),
+    .m_axi_gmem1_AWLEN(grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296_m_axi_gmem1_AWLEN),
+    .m_axi_gmem1_AWSIZE(grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296_m_axi_gmem1_AWSIZE),
+    .m_axi_gmem1_AWBURST(grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296_m_axi_gmem1_AWBURST),
+    .m_axi_gmem1_AWLOCK(grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296_m_axi_gmem1_AWLOCK),
+    .m_axi_gmem1_AWCACHE(grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296_m_axi_gmem1_AWCACHE),
+    .m_axi_gmem1_AWPROT(grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296_m_axi_gmem1_AWPROT),
+    .m_axi_gmem1_AWQOS(grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296_m_axi_gmem1_AWQOS),
+    .m_axi_gmem1_AWREGION(grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296_m_axi_gmem1_AWREGION),
+    .m_axi_gmem1_AWUSER(grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296_m_axi_gmem1_AWUSER),
+    .m_axi_gmem1_WVALID(grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296_m_axi_gmem1_WVALID),
+    .m_axi_gmem1_WREADY(1'b0),
+    .m_axi_gmem1_WDATA(grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296_m_axi_gmem1_WDATA),
+    .m_axi_gmem1_WSTRB(grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296_m_axi_gmem1_WSTRB),
+    .m_axi_gmem1_WLAST(grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296_m_axi_gmem1_WLAST),
+    .m_axi_gmem1_WID(grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296_m_axi_gmem1_WID),
+    .m_axi_gmem1_WUSER(grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296_m_axi_gmem1_WUSER),
+    .m_axi_gmem1_ARVALID(grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296_m_axi_gmem1_ARVALID),
+    .m_axi_gmem1_ARREADY(gmem1_ARREADY),
+    .m_axi_gmem1_ARADDR(grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296_m_axi_gmem1_ARADDR),
+    .m_axi_gmem1_ARID(grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296_m_axi_gmem1_ARID),
+    .m_axi_gmem1_ARLEN(grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296_m_axi_gmem1_ARLEN),
+    .m_axi_gmem1_ARSIZE(grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296_m_axi_gmem1_ARSIZE),
+    .m_axi_gmem1_ARBURST(grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296_m_axi_gmem1_ARBURST),
+    .m_axi_gmem1_ARLOCK(grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296_m_axi_gmem1_ARLOCK),
+    .m_axi_gmem1_ARCACHE(grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296_m_axi_gmem1_ARCACHE),
+    .m_axi_gmem1_ARPROT(grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296_m_axi_gmem1_ARPROT),
+    .m_axi_gmem1_ARQOS(grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296_m_axi_gmem1_ARQOS),
+    .m_axi_gmem1_ARREGION(grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296_m_axi_gmem1_ARREGION),
+    .m_axi_gmem1_ARUSER(grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296_m_axi_gmem1_ARUSER),
+    .m_axi_gmem1_RVALID(gmem1_RVALID),
+    .m_axi_gmem1_RREADY(grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296_m_axi_gmem1_RREADY),
+    .m_axi_gmem1_RDATA(gmem1_RDATA),
+    .m_axi_gmem1_RLAST(1'b0),
+    .m_axi_gmem1_RID(1'd0),
+    .m_axi_gmem1_RFIFONUM(gmem1_RFIFONUM),
+    .m_axi_gmem1_RUSER(1'd0),
+    .m_axi_gmem1_RRESP(2'd0),
+    .m_axi_gmem1_BVALID(1'b0),
+    .m_axi_gmem1_BREADY(grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296_m_axi_gmem1_BREADY),
+    .m_axi_gmem1_BRESP(2'd0),
+    .m_axi_gmem1_BID(1'd0),
+    .m_axi_gmem1_BUSER(1'd0),
+    .n(n_read_reg_611),
+    .sext_ln91(trunc_ln2_reg_667),
+    .local_psi_address1(grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296_local_psi_address1),
+    .local_psi_ce1(grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296_local_psi_ce1),
+    .local_psi_we1(grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296_local_psi_we1),
+    .local_psi_d1(grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296_local_psi_d1)
+);
+
+ntt_kernel_ntt_kernel_Pipeline_BURST_READ_LOOP grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305(
+    .ap_clk(ap_clk),
+    .ap_rst(ap_rst_n_inv),
+    .ap_start(grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_ap_start),
+    .ap_done(grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_ap_done),
+    .ap_idle(grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_ap_idle),
+    .ap_ready(grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_ap_ready),
+    .m_axi_gmem0_AWVALID(grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_m_axi_gmem0_AWVALID),
+    .m_axi_gmem0_AWREADY(1'b0),
+    .m_axi_gmem0_AWADDR(grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_m_axi_gmem0_AWADDR),
+    .m_axi_gmem0_AWID(grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_m_axi_gmem0_AWID),
+    .m_axi_gmem0_AWLEN(grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_m_axi_gmem0_AWLEN),
+    .m_axi_gmem0_AWSIZE(grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_m_axi_gmem0_AWSIZE),
+    .m_axi_gmem0_AWBURST(grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_m_axi_gmem0_AWBURST),
+    .m_axi_gmem0_AWLOCK(grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_m_axi_gmem0_AWLOCK),
+    .m_axi_gmem0_AWCACHE(grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_m_axi_gmem0_AWCACHE),
+    .m_axi_gmem0_AWPROT(grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_m_axi_gmem0_AWPROT),
+    .m_axi_gmem0_AWQOS(grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_m_axi_gmem0_AWQOS),
+    .m_axi_gmem0_AWREGION(grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_m_axi_gmem0_AWREGION),
+    .m_axi_gmem0_AWUSER(grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_m_axi_gmem0_AWUSER),
+    .m_axi_gmem0_WVALID(grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_m_axi_gmem0_WVALID),
+    .m_axi_gmem0_WREADY(1'b0),
+    .m_axi_gmem0_WDATA(grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_m_axi_gmem0_WDATA),
+    .m_axi_gmem0_WSTRB(grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_m_axi_gmem0_WSTRB),
+    .m_axi_gmem0_WLAST(grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_m_axi_gmem0_WLAST),
+    .m_axi_gmem0_WID(grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_m_axi_gmem0_WID),
+    .m_axi_gmem0_WUSER(grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_m_axi_gmem0_WUSER),
+    .m_axi_gmem0_ARVALID(grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_m_axi_gmem0_ARVALID),
+    .m_axi_gmem0_ARREADY(gmem0_ARREADY),
+    .m_axi_gmem0_ARADDR(grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_m_axi_gmem0_ARADDR),
+    .m_axi_gmem0_ARID(grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_m_axi_gmem0_ARID),
+    .m_axi_gmem0_ARLEN(grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_m_axi_gmem0_ARLEN),
+    .m_axi_gmem0_ARSIZE(grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_m_axi_gmem0_ARSIZE),
+    .m_axi_gmem0_ARBURST(grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_m_axi_gmem0_ARBURST),
+    .m_axi_gmem0_ARLOCK(grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_m_axi_gmem0_ARLOCK),
+    .m_axi_gmem0_ARCACHE(grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_m_axi_gmem0_ARCACHE),
+    .m_axi_gmem0_ARPROT(grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_m_axi_gmem0_ARPROT),
+    .m_axi_gmem0_ARQOS(grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_m_axi_gmem0_ARQOS),
+    .m_axi_gmem0_ARREGION(grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_m_axi_gmem0_ARREGION),
+    .m_axi_gmem0_ARUSER(grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_m_axi_gmem0_ARUSER),
+    .m_axi_gmem0_RVALID(gmem0_RVALID),
+    .m_axi_gmem0_RREADY(grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_m_axi_gmem0_RREADY),
+    .m_axi_gmem0_RDATA(gmem0_RDATA),
+    .m_axi_gmem0_RLAST(1'b0),
+    .m_axi_gmem0_RID(1'd0),
+    .m_axi_gmem0_RFIFONUM(gmem0_RFIFONUM),
+    .m_axi_gmem0_RUSER(1'd0),
+    .m_axi_gmem0_RRESP(2'd0),
+    .m_axi_gmem0_BVALID(1'b0),
+    .m_axi_gmem0_BREADY(grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_m_axi_gmem0_BREADY),
+    .m_axi_gmem0_BRESP(2'd0),
+    .m_axi_gmem0_BID(1'd0),
+    .m_axi_gmem0_BUSER(1'd0),
+    .n(trunc_ln51_reg_641),
+    .sext_ln103(reg_362),
+    .burst_buffer_address0(grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_burst_buffer_address0),
+    .burst_buffer_ce0(grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_burst_buffer_ce0),
+    .burst_buffer_we0(grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_burst_buffer_we0),
+    .burst_buffer_d0(grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_burst_buffer_d0)
+);
+
+ntt_kernel_ntt_kernel_Pipeline_PERMUTE_LOOP grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_314(
+    .ap_clk(ap_clk),
+    .ap_rst(ap_rst_n_inv),
+    .ap_start(grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_314_ap_start),
+    .ap_done(grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_314_ap_done),
+    .ap_idle(grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_314_ap_idle),
+    .ap_ready(grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_314_ap_ready),
+    .n(trunc_ln51_reg_641),
+    .local_psi_address0(grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_314_local_psi_address0),
+    .local_psi_ce0(grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_314_local_psi_ce0),
+    .local_psi_q0(local_psi_q0),
+    .burst_buffer_address0(grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_314_burst_buffer_address0),
+    .burst_buffer_ce0(grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_314_burst_buffer_ce0),
+    .burst_buffer_q0(burst_buffer_q0),
+    .ping_address1(grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_314_ping_address1),
+    .ping_ce1(grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_314_ping_ce1),
+    .ping_we1(grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_314_ping_we1),
+    .ping_d1(grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_314_ping_d1)
+);
+
+ntt_kernel_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322(
+    .ap_clk(ap_clk),
+    .ap_rst(ap_rst_n_inv),
+    .ap_start(grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322_ap_start),
+    .ap_done(grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322_ap_done),
+    .ap_idle(grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322_ap_idle),
+    .ap_ready(grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322_ap_ready),
+    .half_n(half_n_reg_678),
+    .sub53(sub53_reg_751),
+    .stage(stage_reg_264),
+    .stage_1(stage_1_reg_735),
+    .empty_29(trunc_ln121_1_reg_746),
+    .empty(trunc_ln121_reg_741),
+    .local_twiddles_address0(grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322_local_twiddles_address0),
+    .local_twiddles_ce0(grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322_local_twiddles_ce0),
+    .local_twiddles_q0(local_twiddles_q0),
+    .ping_address0(grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322_ping_address0),
+    .ping_ce0(grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322_ping_ce0),
+    .ping_q0(ping_q0),
+    .ping_address1(grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322_ping_address1),
+    .ping_ce1(grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322_ping_ce1),
+    .ping_we1(grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322_ping_we1),
+    .ping_d1(grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322_ping_d1),
+    .ping_q1(ping_q1),
+    .pong_address0(grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322_pong_address0),
+    .pong_ce0(grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322_pong_ce0),
+    .pong_q0(pong_q0),
+    .pong_address1(grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322_pong_address1),
+    .pong_ce1(grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322_pong_ce1),
+    .pong_we1(grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322_pong_we1),
+    .pong_d1(grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322_pong_d1),
+    .pong_q1(pong_q1),
+    .use_ping_as_input(use_ping_as_input_reg_252),
+    .q_inv(q_inv_read_reg_625),
+    .conv5_i(q_read_reg_630),
+    .q(q_read_reg_630)
+);
+
+ntt_kernel_ntt_kernel_Pipeline_WRITE_BACK_LOOP grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341(
+    .ap_clk(ap_clk),
+    .ap_rst(ap_rst_n_inv),
+    .ap_start(grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_ap_start),
+    .ap_done(grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_ap_done),
+    .ap_idle(grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_ap_idle),
+    .ap_ready(grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_ap_ready),
+    .m_axi_gmem0_AWVALID(grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_m_axi_gmem0_AWVALID),
     .m_axi_gmem0_AWREADY(gmem0_AWREADY),
-    .m_axi_gmem0_AWADDR(grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278_m_axi_gmem0_AWADDR),
-    .m_axi_gmem0_AWID(grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278_m_axi_gmem0_AWID),
-    .m_axi_gmem0_AWLEN(grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278_m_axi_gmem0_AWLEN),
-    .m_axi_gmem0_AWSIZE(grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278_m_axi_gmem0_AWSIZE),
-    .m_axi_gmem0_AWBURST(grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278_m_axi_gmem0_AWBURST),
-    .m_axi_gmem0_AWLOCK(grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278_m_axi_gmem0_AWLOCK),
-    .m_axi_gmem0_AWCACHE(grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278_m_axi_gmem0_AWCACHE),
-    .m_axi_gmem0_AWPROT(grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278_m_axi_gmem0_AWPROT),
-    .m_axi_gmem0_AWQOS(grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278_m_axi_gmem0_AWQOS),
-    .m_axi_gmem0_AWREGION(grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278_m_axi_gmem0_AWREGION),
-    .m_axi_gmem0_AWUSER(grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278_m_axi_gmem0_AWUSER),
-    .m_axi_gmem0_WVALID(grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278_m_axi_gmem0_WVALID),
+    .m_axi_gmem0_AWADDR(grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_m_axi_gmem0_AWADDR),
+    .m_axi_gmem0_AWID(grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_m_axi_gmem0_AWID),
+    .m_axi_gmem0_AWLEN(grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_m_axi_gmem0_AWLEN),
+    .m_axi_gmem0_AWSIZE(grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_m_axi_gmem0_AWSIZE),
+    .m_axi_gmem0_AWBURST(grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_m_axi_gmem0_AWBURST),
+    .m_axi_gmem0_AWLOCK(grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_m_axi_gmem0_AWLOCK),
+    .m_axi_gmem0_AWCACHE(grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_m_axi_gmem0_AWCACHE),
+    .m_axi_gmem0_AWPROT(grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_m_axi_gmem0_AWPROT),
+    .m_axi_gmem0_AWQOS(grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_m_axi_gmem0_AWQOS),
+    .m_axi_gmem0_AWREGION(grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_m_axi_gmem0_AWREGION),
+    .m_axi_gmem0_AWUSER(grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_m_axi_gmem0_AWUSER),
+    .m_axi_gmem0_WVALID(grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_m_axi_gmem0_WVALID),
     .m_axi_gmem0_WREADY(gmem0_WREADY),
-    .m_axi_gmem0_WDATA(grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278_m_axi_gmem0_WDATA),
-    .m_axi_gmem0_WSTRB(grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278_m_axi_gmem0_WSTRB),
-    .m_axi_gmem0_WLAST(grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278_m_axi_gmem0_WLAST),
-    .m_axi_gmem0_WID(grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278_m_axi_gmem0_WID),
-    .m_axi_gmem0_WUSER(grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278_m_axi_gmem0_WUSER),
-    .m_axi_gmem0_ARVALID(grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278_m_axi_gmem0_ARVALID),
+    .m_axi_gmem0_WDATA(grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_m_axi_gmem0_WDATA),
+    .m_axi_gmem0_WSTRB(grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_m_axi_gmem0_WSTRB),
+    .m_axi_gmem0_WLAST(grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_m_axi_gmem0_WLAST),
+    .m_axi_gmem0_WID(grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_m_axi_gmem0_WID),
+    .m_axi_gmem0_WUSER(grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_m_axi_gmem0_WUSER),
+    .m_axi_gmem0_ARVALID(grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_m_axi_gmem0_ARVALID),
     .m_axi_gmem0_ARREADY(1'b0),
-    .m_axi_gmem0_ARADDR(grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278_m_axi_gmem0_ARADDR),
-    .m_axi_gmem0_ARID(grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278_m_axi_gmem0_ARID),
-    .m_axi_gmem0_ARLEN(grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278_m_axi_gmem0_ARLEN),
-    .m_axi_gmem0_ARSIZE(grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278_m_axi_gmem0_ARSIZE),
-    .m_axi_gmem0_ARBURST(grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278_m_axi_gmem0_ARBURST),
-    .m_axi_gmem0_ARLOCK(grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278_m_axi_gmem0_ARLOCK),
-    .m_axi_gmem0_ARCACHE(grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278_m_axi_gmem0_ARCACHE),
-    .m_axi_gmem0_ARPROT(grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278_m_axi_gmem0_ARPROT),
-    .m_axi_gmem0_ARQOS(grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278_m_axi_gmem0_ARQOS),
-    .m_axi_gmem0_ARREGION(grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278_m_axi_gmem0_ARREGION),
-    .m_axi_gmem0_ARUSER(grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278_m_axi_gmem0_ARUSER),
+    .m_axi_gmem0_ARADDR(grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_m_axi_gmem0_ARADDR),
+    .m_axi_gmem0_ARID(grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_m_axi_gmem0_ARID),
+    .m_axi_gmem0_ARLEN(grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_m_axi_gmem0_ARLEN),
+    .m_axi_gmem0_ARSIZE(grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_m_axi_gmem0_ARSIZE),
+    .m_axi_gmem0_ARBURST(grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_m_axi_gmem0_ARBURST),
+    .m_axi_gmem0_ARLOCK(grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_m_axi_gmem0_ARLOCK),
+    .m_axi_gmem0_ARCACHE(grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_m_axi_gmem0_ARCACHE),
+    .m_axi_gmem0_ARPROT(grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_m_axi_gmem0_ARPROT),
+    .m_axi_gmem0_ARQOS(grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_m_axi_gmem0_ARQOS),
+    .m_axi_gmem0_ARREGION(grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_m_axi_gmem0_ARREGION),
+    .m_axi_gmem0_ARUSER(grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_m_axi_gmem0_ARUSER),
     .m_axi_gmem0_RVALID(1'b0),
-    .m_axi_gmem0_RREADY(grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278_m_axi_gmem0_RREADY),
+    .m_axi_gmem0_RREADY(grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_m_axi_gmem0_RREADY),
     .m_axi_gmem0_RDATA(32'd0),
     .m_axi_gmem0_RLAST(1'b0),
     .m_axi_gmem0_RID(1'd0),
@@ -989,15 +1179,19 @@ ntt_kernel_ntt_kernel_Pipeline_WRITE_BACK_LOOP grp_ntt_kernel_Pipeline_WRITE_BAC
     .m_axi_gmem0_RUSER(1'd0),
     .m_axi_gmem0_RRESP(2'd0),
     .m_axi_gmem0_BVALID(gmem0_BVALID),
-    .m_axi_gmem0_BREADY(grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278_m_axi_gmem0_BREADY),
+    .m_axi_gmem0_BREADY(grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_m_axi_gmem0_BREADY),
     .m_axi_gmem0_BRESP(2'd0),
     .m_axi_gmem0_BID(1'd0),
     .m_axi_gmem0_BUSER(1'd0),
-    .n(n_read_reg_547),
-    .sext_ln104(trunc_ln6_reg_674),
-    .local_x_address0(grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278_local_x_address0),
-    .local_x_ce0(grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278_local_x_ce0),
-    .local_x_q0(local_x_q0)
+    .n(n_read_reg_611),
+    .sext_ln165(reg_362),
+    .ping_address0(grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_ping_address0),
+    .ping_ce0(grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_ping_ce0),
+    .ping_q0(ping_q0),
+    .pong_address0(grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_pong_address0),
+    .pong_ce0(grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_pong_ce0),
+    .pong_q0(pong_q0),
+    .use_ping_as_input(use_ping_as_input_reg_252)
 );
 
 ntt_kernel_control_s_axi #(
@@ -1110,8 +1304,8 @@ gmem0_m_axi_U(
     .ACLK_EN(1'b1),
     .I_ARVALID(gmem0_ARVALID),
     .I_ARREADY(gmem0_ARREADY),
-    .I_ARADDR(grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem0_ARADDR),
-    .I_ARLEN(grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem0_ARLEN),
+    .I_ARADDR(gmem0_ARADDR),
+    .I_ARLEN(gmem0_ARLEN),
     .I_RVALID(gmem0_RVALID),
     .I_RREADY(gmem0_RREADY),
     .I_RDATA(gmem0_RDATA),
@@ -1122,8 +1316,8 @@ gmem0_m_axi_U(
     .I_AWLEN(gmem0_AWLEN),
     .I_WVALID(gmem0_WVALID),
     .I_WREADY(gmem0_WREADY),
-    .I_WDATA(grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278_m_axi_gmem0_WDATA),
-    .I_WSTRB(grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278_m_axi_gmem0_WSTRB),
+    .I_WDATA(grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_m_axi_gmem0_WDATA),
+    .I_WSTRB(grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_m_axi_gmem0_WSTRB),
     .I_BVALID(gmem0_BVALID),
     .I_BREADY(gmem0_BREADY)
 );
@@ -1318,166 +1512,203 @@ end
 
 always @ (posedge ap_clk) begin
     if (ap_rst_n_inv == 1'b1) begin
-        grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_ap_start_reg <= 1'b0;
+        grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_ap_start_reg <= 1'b0;
+    end else begin
+        if ((1'b1 == ap_CS_fsm_state21)) begin
+            grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_ap_start_reg <= 1'b1;
+        end else if ((grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_ap_ready == 1'b1)) begin
+            grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_ap_start_reg <= 1'b0;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst_n_inv == 1'b1) begin
+        grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296_ap_start_reg <= 1'b0;
+    end else begin
+        if ((1'b1 == ap_CS_fsm_state10)) begin
+            grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296_ap_start_reg <= 1'b1;
+        end else if ((grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296_ap_ready == 1'b1)) begin
+            grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296_ap_start_reg <= 1'b0;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst_n_inv == 1'b1) begin
+        grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287_ap_start_reg <= 1'b0;
+    end else begin
+        if ((1'b1 == ap_CS_fsm_state10)) begin
+            grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287_ap_start_reg <= 1'b1;
+        end else if ((grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287_ap_ready == 1'b1)) begin
+            grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287_ap_start_reg <= 1'b0;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst_n_inv == 1'b1) begin
+        grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322_ap_start_reg <= 1'b0;
+    end else begin
+        if (((icmp_ln121_fu_531_p2 == 1'd1) & (1'b1 == ap_CS_fsm_state25))) begin
+            grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322_ap_start_reg <= 1'b1;
+        end else if ((grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322_ap_ready == 1'b1)) begin
+            grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322_ap_start_reg <= 1'b0;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst_n_inv == 1'b1) begin
+        grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_314_ap_start_reg <= 1'b0;
     end else begin
         if ((1'b1 == ap_CS_fsm_state23)) begin
-            grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_ap_start_reg <= 1'b1;
-        end else if ((grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_ap_ready == 1'b1)) begin
-            grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_ap_start_reg <= 1'b0;
+            grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_314_ap_start_reg <= 1'b1;
+        end else if ((grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_314_ap_ready == 1'b1)) begin
+            grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_314_ap_start_reg <= 1'b0;
         end
     end
 end
 
 always @ (posedge ap_clk) begin
     if (ap_rst_n_inv == 1'b1) begin
-        grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_ap_start_reg <= 1'b0;
+        grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_ap_start_reg <= 1'b0;
     end else begin
-        if ((1'b1 == ap_CS_fsm_state11)) begin
-            grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_ap_start_reg <= 1'b1;
-        end else if ((grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_ap_ready == 1'b1)) begin
-            grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_ap_start_reg <= 1'b0;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278_ap_start_reg <= 1'b0;
-    end else begin
-        if ((1'b1 == ap_CS_fsm_state26)) begin
-            grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278_ap_start_reg <= 1'b1;
-        end else if ((grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278_ap_ready == 1'b1)) begin
-            grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278_ap_start_reg <= 1'b0;
+        if ((1'b1 == ap_CS_fsm_state28)) begin
+            grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_ap_start_reg <= 1'b1;
+        end else if ((grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_ap_ready == 1'b1)) begin
+            grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_ap_start_reg <= 1'b0;
         end
     end
 end
 
 always @ (posedge ap_clk) begin
     if (((ap_start == 1'b1) & (1'b1 == ap_CS_fsm_state1))) begin
-        b_fu_146 <= 31'd0;
-    end else if (((icmp_ln79_fu_397_p2 == 1'd0) & (1'b1 == ap_CS_fsm_state13))) begin
-        b_fu_146 <= add_ln59_1_reg_631;
+        b_fu_150 <= 31'd0;
+    end else if (((icmp_ln121_fu_531_p2 == 1'd0) & (1'b1 == ap_CS_fsm_state25))) begin
+        b_fu_150 <= add_ln97_1_reg_717;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((icmp_ln79_fu_397_p2 == 1'd1) & (1'b1 == ap_CS_fsm_state13))) begin
-        i_1_reg_239 <= 64'd0;
-    end else if (((grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state24))) begin
-        i_1_reg_239 <= add_ln82_1_reg_688;
+    if (((grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state26))) begin
+        length_reg_276 <= length_1_reg_766;
+    end else if (((1'b0 == ap_block_state24_on_subcall_done) & (1'b1 == ap_CS_fsm_state24))) begin
+        length_reg_276 <= 32'd1;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state12))) begin
-        length_reg_227 <= 32'd1;
-    end else if (((icmp_ln82_fu_496_p2 == 1'd0) & (1'b1 == ap_CS_fsm_state14))) begin
-        length_reg_227 <= length_1_reg_644;
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (((grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state12))) begin
-        offset_reg_215 <= 32'd0;
-    end else if (((icmp_ln82_fu_496_p2 == 1'd0) & (1'b1 == ap_CS_fsm_state14))) begin
-        offset_reg_215 <= offset_1_fu_510_p2;
+    if (((grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state26))) begin
+        offset_reg_241 <= offset_1_reg_756;
+    end else if (((1'b0 == ap_block_state24_on_subcall_done) & (1'b1 == ap_CS_fsm_state24))) begin
+        offset_reg_241 <= 32'd0;
     end
 end
 
 always @ (posedge ap_clk) begin
     if (((ap_start == 1'b1) & (1'b1 == ap_CS_fsm_state1))) begin
-        phi_mul1_fu_138 <= 32'd0;
-    end else if (((icmp_ln79_fu_397_p2 == 1'd0) & (1'b1 == ap_CS_fsm_state13))) begin
-        phi_mul1_fu_138 <= add_ln59_2_reg_621;
+        phi_mul_fu_146 <= 62'd0;
+    end else if (((icmp_ln121_fu_531_p2 == 1'd0) & (1'b1 == ap_CS_fsm_state25))) begin
+        phi_mul_fu_146 <= add_ln97_2_reg_709;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((ap_start == 1'b1) & (1'b1 == ap_CS_fsm_state1))) begin
-        phi_mul_fu_142 <= 62'd0;
-    end else if (((icmp_ln79_fu_397_p2 == 1'd0) & (1'b1 == ap_CS_fsm_state13))) begin
-        phi_mul_fu_142 <= add_ln59_3_reg_626;
+    if (((grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state26))) begin
+        stage_reg_264 <= stage_1_reg_735;
+    end else if (((1'b0 == ap_block_state24_on_subcall_done) & (1'b1 == ap_CS_fsm_state24))) begin
+        stage_reg_264 <= 32'd0;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if ((1'b1 == ap_CS_fsm_state3)) begin
-        add_ln59_1_reg_631 <= add_ln59_1_fu_380_p2;
-        add_ln59_2_reg_621 <= add_ln59_2_fu_370_p2;
-        add_ln59_3_reg_626 <= add_ln59_3_fu_375_p2;
+    if (((grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state26))) begin
+        use_ping_as_input_reg_252 <= use_ping_as_input_1_reg_761;
+    end else if (((1'b0 == ap_block_state24_on_subcall_done) & (1'b1 == ap_CS_fsm_state24))) begin
+        use_ping_as_input_reg_252 <= 1'd1;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if ((1'b1 == ap_CS_fsm_state11)) begin
-        add_ln59_reg_636 <= add_ln59_fu_392_p2;
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if ((1'b1 == ap_CS_fsm_state14)) begin
-        add_ln82_1_reg_688 <= add_ln82_1_fu_505_p2;
-        trunc_ln82_1_reg_683 <= trunc_ln82_1_fu_501_p1;
+    if ((1'b1 == ap_CS_fsm_state12)) begin
+        add_ln97_1_reg_717 <= add_ln97_1_fu_501_p2;
+        add_ln97_2_reg_709 <= add_ln97_2_fu_487_p2;
+        add_ln97_reg_722 <= add_ln97_fu_515_p2;
     end
 end
 
 always @ (posedge ap_clk) begin
     if ((1'b1 == ap_CS_fsm_state1)) begin
-        batch_size_read_reg_555 <= batch_size;
-        gmem1_addr_reg_592 <= sext_ln70_fu_311_p1;
-        n_read_reg_547 <= n;
-        q_inv_read_reg_560 <= q_inv;
-        q_read_reg_565 <= q;
-        sext_ln59_reg_582 <= sext_ln59_fu_297_p1;
-        trunc_ln1_reg_587 <= {{psi_powers[63:2]}};
-        twiddles_read_reg_571 <= twiddles;
-        x_read_reg_576 <= x;
-        zext_ln59_1_reg_597[30 : 0] <= zext_ln59_1_fu_329_p1[30 : 0];
-        zext_ln59_reg_603[31 : 0] <= zext_ln59_fu_333_p1[31 : 0];
+        batch_size_read_reg_620 <= batch_size;
+        empty_38_reg_673 <= empty_38_fu_422_p3;
+        empty_reg_658 <= empty_fu_398_p3;
+        half_n_reg_678 <= {{n[31:1]}};
+        icmp_ln91_reg_663 <= icmp_ln91_fu_406_p2;
+        n_read_reg_611 <= n;
+        q_inv_read_reg_625 <= q_inv;
+        q_read_reg_630 <= q;
+        sub_reg_647 <= sub_fu_372_p2;
+        trunc_ln1_reg_652 <= {{twiddles[63:2]}};
+        trunc_ln2_reg_667 <= {{psi_powers[63:2]}};
+        trunc_ln51_reg_641 <= trunc_ln51_fu_368_p1;
+        x_read_reg_636 <= x;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if ((1'b1 == ap_CS_fsm_state13)) begin
-        gmem2_addr_reg_664 <= sext_ln85_fu_453_p1;
-        length_1_reg_644[31 : 1] <= length_1_fu_412_p2[31 : 1];
-        sext_ln82_reg_649[63 : 1] <= sext_ln82_fu_418_p1[63 : 1];
-        trunc_ln5_reg_659 <= {{add_ln82_fu_438_p2[63:2]}};
-        trunc_ln6_reg_674 <= {{add_ln59_reg_636[63:2]}};
-        trunc_ln82_reg_654 <= trunc_ln82_fu_422_p1;
-        zext_ln82_reg_669[30 : 0] <= zext_ln82_fu_471_p1[30 : 0];
+    if ((1'b1 == ap_CS_fsm_state25)) begin
+        length_1_reg_766[31 : 1] <= length_1_fu_572_p2[31 : 1];
+        offset_1_reg_756 <= offset_1_fu_560_p2;
+        stage_1_reg_735 <= stage_1_fu_536_p2;
+        sub53_reg_751 <= sub53_fu_553_p2;
+        trunc_ln121_1_reg_746 <= trunc_ln121_1_fu_548_p1;
+        trunc_ln121_reg_741 <= trunc_ln121_fu_543_p1;
+        use_ping_as_input_1_reg_761 <= use_ping_as_input_1_fu_566_p2;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (((1'b1 == ap_CS_fsm_state25) | (1'b1 == ap_CS_fsm_state13))) begin
+        reg_362 <= {{add_ln97_reg_722[63:2]}};
     end
 end
 
 always @ (posedge ap_clk) begin
     if ((1'b1 == ap_CS_fsm_state2)) begin
-        icmp_ln59_reg_611 <= icmp_ln59_fu_359_p2;
+        zext_ln91_reg_698[30 : 0] <= zext_ln91_fu_474_p1[30 : 0];
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if ((1'b1 == ap_CS_fsm_state11)) begin
+        zext_ln97_reg_704[31 : 0] <= zext_ln97_fu_478_p1[31 : 0];
     end
 end
 
 assign ap_ST_fsm_state10_blk = 1'b0;
 
-assign ap_ST_fsm_state11_blk = 1'b0;
-
 always @ (*) begin
-    if ((grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_ap_done == 1'b0)) begin
-        ap_ST_fsm_state12_blk = 1'b1;
+    if ((1'b1 == ap_block_state11_on_subcall_done)) begin
+        ap_ST_fsm_state11_blk = 1'b1;
     end else begin
-        ap_ST_fsm_state12_blk = 1'b0;
+        ap_ST_fsm_state11_blk = 1'b0;
     end
 end
 
-assign ap_ST_fsm_state13_blk = 1'b0;
+assign ap_ST_fsm_state12_blk = 1'b0;
+
+always @ (*) begin
+    if ((gmem0_ARREADY == 1'b0)) begin
+        ap_ST_fsm_state13_blk = 1'b1;
+    end else begin
+        ap_ST_fsm_state13_blk = 1'b0;
+    end
+end
 
 assign ap_ST_fsm_state14_blk = 1'b0;
 
-always @ (*) begin
-    if ((gmem2_ARREADY == 1'b0)) begin
-        ap_ST_fsm_state15_blk = 1'b1;
-    end else begin
-        ap_ST_fsm_state15_blk = 1'b0;
-    end
-end
+assign ap_ST_fsm_state15_blk = 1'b0;
 
 assign ap_ST_fsm_state16_blk = 1'b0;
 
@@ -1499,30 +1730,36 @@ assign ap_ST_fsm_state20_blk = 1'b0;
 
 assign ap_ST_fsm_state21_blk = 1'b0;
 
-assign ap_ST_fsm_state22_blk = 1'b0;
+always @ (*) begin
+    if ((grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_ap_done == 1'b0)) begin
+        ap_ST_fsm_state22_blk = 1'b1;
+    end else begin
+        ap_ST_fsm_state22_blk = 1'b0;
+    end
+end
 
 assign ap_ST_fsm_state23_blk = 1'b0;
 
 always @ (*) begin
-    if ((grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_ap_done == 1'b0)) begin
+    if ((1'b1 == ap_block_state24_on_subcall_done)) begin
         ap_ST_fsm_state24_blk = 1'b1;
     end else begin
         ap_ST_fsm_state24_blk = 1'b0;
     end
 end
 
+assign ap_ST_fsm_state25_blk = 1'b0;
+
 always @ (*) begin
-    if ((gmem0_AWREADY == 1'b0)) begin
-        ap_ST_fsm_state25_blk = 1'b1;
+    if ((grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322_ap_done == 1'b0)) begin
+        ap_ST_fsm_state26_blk = 1'b1;
     end else begin
-        ap_ST_fsm_state25_blk = 1'b0;
+        ap_ST_fsm_state26_blk = 1'b0;
     end
 end
 
-assign ap_ST_fsm_state26_blk = 1'b0;
-
 always @ (*) begin
-    if ((grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278_ap_done == 1'b0)) begin
+    if ((gmem0_AWREADY == 1'b0)) begin
         ap_ST_fsm_state27_blk = 1'b1;
     end else begin
         ap_ST_fsm_state27_blk = 1'b0;
@@ -1531,29 +1768,39 @@ end
 
 assign ap_ST_fsm_state28_blk = 1'b0;
 
-assign ap_ST_fsm_state29_blk = 1'b0;
+always @ (*) begin
+    if ((grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_ap_done == 1'b0)) begin
+        ap_ST_fsm_state29_blk = 1'b1;
+    end else begin
+        ap_ST_fsm_state29_blk = 1'b0;
+    end
+end
 
-assign ap_ST_fsm_state2_blk = 1'b0;
+always @ (*) begin
+    if ((1'b1 == ap_block_state2_io)) begin
+        ap_ST_fsm_state2_blk = 1'b1;
+    end else begin
+        ap_ST_fsm_state2_blk = 1'b0;
+    end
+end
 
 assign ap_ST_fsm_state30_blk = 1'b0;
 
 assign ap_ST_fsm_state31_blk = 1'b0;
 
+assign ap_ST_fsm_state32_blk = 1'b0;
+
+assign ap_ST_fsm_state33_blk = 1'b0;
+
 always @ (*) begin
     if ((gmem0_BVALID == 1'b0)) begin
-        ap_ST_fsm_state32_blk = 1'b1;
+        ap_ST_fsm_state34_blk = 1'b1;
     end else begin
-        ap_ST_fsm_state32_blk = 1'b0;
+        ap_ST_fsm_state34_blk = 1'b0;
     end
 end
 
-always @ (*) begin
-    if ((1'b1 == ap_block_state3_io)) begin
-        ap_ST_fsm_state3_blk = 1'b1;
-    end else begin
-        ap_ST_fsm_state3_blk = 1'b0;
-    end
-end
+assign ap_ST_fsm_state3_blk = 1'b0;
 
 assign ap_ST_fsm_state4_blk = 1'b0;
 
@@ -1568,7 +1815,7 @@ assign ap_ST_fsm_state8_blk = 1'b0;
 assign ap_ST_fsm_state9_blk = 1'b0;
 
 always @ (*) begin
-    if (((1'b0 == ap_block_state3_io) & (icmp_ln59_reg_611 == 1'd0) & (1'b1 == ap_CS_fsm_state3))) begin
+    if (((1'b1 == ap_CS_fsm_state12) & (icmp_ln97_fu_496_p2 == 1'd0))) begin
         ap_done = 1'b1;
     end else begin
         ap_done = 1'b0;
@@ -1584,7 +1831,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((1'b0 == ap_block_state3_io) & (icmp_ln59_reg_611 == 1'd0) & (1'b1 == ap_CS_fsm_state3))) begin
+    if (((1'b1 == ap_CS_fsm_state12) & (icmp_ln97_fu_496_p2 == 1'd0))) begin
         ap_ready = 1'b1;
     end else begin
         ap_ready = 1'b0;
@@ -1592,71 +1839,129 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state12) | (1'b1 == ap_CS_fsm_state11))) begin
-        gmem0_ARVALID = grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem0_ARVALID;
+    if (((icmp_ln91_reg_663 == 1'd1) & (1'b1 == ap_CS_fsm_state24))) begin
+        burst_buffer_address0 = grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_314_burst_buffer_address0;
+    end else if ((1'b1 == ap_CS_fsm_state22)) begin
+        burst_buffer_address0 = grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_burst_buffer_address0;
+    end else begin
+        burst_buffer_address0 = 'bx;
+    end
+end
+
+always @ (*) begin
+    if (((icmp_ln91_reg_663 == 1'd1) & (1'b1 == ap_CS_fsm_state24))) begin
+        burst_buffer_ce0 = grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_314_burst_buffer_ce0;
+    end else if ((1'b1 == ap_CS_fsm_state22)) begin
+        burst_buffer_ce0 = grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_burst_buffer_ce0;
+    end else begin
+        burst_buffer_ce0 = 1'b0;
+    end
+end
+
+always @ (*) begin
+    if ((1'b1 == ap_CS_fsm_state22)) begin
+        burst_buffer_we0 = grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_burst_buffer_we0;
+    end else begin
+        burst_buffer_we0 = 1'b0;
+    end
+end
+
+always @ (*) begin
+    if (((gmem0_ARREADY == 1'b1) & (1'b1 == ap_CS_fsm_state13))) begin
+        gmem0_ARADDR = sext_ln103_fu_520_p1;
+    end else if (((1'b1 == ap_CS_fsm_state22) | (1'b1 == ap_CS_fsm_state21))) begin
+        gmem0_ARADDR = grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_m_axi_gmem0_ARADDR;
+    end else begin
+        gmem0_ARADDR = 'bx;
+    end
+end
+
+always @ (*) begin
+    if (((gmem0_ARREADY == 1'b1) & (1'b1 == ap_CS_fsm_state13))) begin
+        gmem0_ARLEN = n_read_reg_611;
+    end else if (((1'b1 == ap_CS_fsm_state22) | (1'b1 == ap_CS_fsm_state21))) begin
+        gmem0_ARLEN = grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_m_axi_gmem0_ARLEN;
+    end else begin
+        gmem0_ARLEN = 'bx;
+    end
+end
+
+always @ (*) begin
+    if (((gmem0_ARREADY == 1'b1) & (1'b1 == ap_CS_fsm_state13))) begin
+        gmem0_ARVALID = 1'b1;
+    end else if (((1'b1 == ap_CS_fsm_state22) | (1'b1 == ap_CS_fsm_state21))) begin
+        gmem0_ARVALID = grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_m_axi_gmem0_ARVALID;
     end else begin
         gmem0_ARVALID = 1'b0;
     end
 end
 
 always @ (*) begin
-    if (((gmem0_AWREADY == 1'b1) & (1'b1 == ap_CS_fsm_state25))) begin
-        gmem0_AWADDR = sext_ln104_fu_516_p1;
-    end else if (((1'b1 == ap_CS_fsm_state27) | (1'b1 == ap_CS_fsm_state26))) begin
-        gmem0_AWADDR = grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278_m_axi_gmem0_AWADDR;
+    if (((gmem0_AWREADY == 1'b1) & (1'b1 == ap_CS_fsm_state27))) begin
+        gmem0_AWADDR = sext_ln165_fu_586_p1;
+    end else if (((1'b1 == ap_CS_fsm_state29) | (1'b1 == ap_CS_fsm_state28))) begin
+        gmem0_AWADDR = grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_m_axi_gmem0_AWADDR;
     end else begin
         gmem0_AWADDR = 'bx;
     end
 end
 
 always @ (*) begin
-    if (((gmem0_AWREADY == 1'b1) & (1'b1 == ap_CS_fsm_state25))) begin
-        gmem0_AWLEN = zext_ln59_1_reg_597;
-    end else if (((1'b1 == ap_CS_fsm_state27) | (1'b1 == ap_CS_fsm_state26))) begin
-        gmem0_AWLEN = grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278_m_axi_gmem0_AWLEN;
+    if (((gmem0_AWREADY == 1'b1) & (1'b1 == ap_CS_fsm_state27))) begin
+        gmem0_AWLEN = zext_ln91_reg_698;
+    end else if (((1'b1 == ap_CS_fsm_state29) | (1'b1 == ap_CS_fsm_state28))) begin
+        gmem0_AWLEN = grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_m_axi_gmem0_AWLEN;
     end else begin
         gmem0_AWLEN = 'bx;
     end
 end
 
 always @ (*) begin
-    if (((gmem0_AWREADY == 1'b1) & (1'b1 == ap_CS_fsm_state25))) begin
+    if (((gmem0_AWREADY == 1'b1) & (1'b1 == ap_CS_fsm_state27))) begin
         gmem0_AWVALID = 1'b1;
-    end else if (((1'b1 == ap_CS_fsm_state27) | (1'b1 == ap_CS_fsm_state26))) begin
-        gmem0_AWVALID = grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278_m_axi_gmem0_AWVALID;
+    end else if (((1'b1 == ap_CS_fsm_state29) | (1'b1 == ap_CS_fsm_state28))) begin
+        gmem0_AWVALID = grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_m_axi_gmem0_AWVALID;
     end else begin
         gmem0_AWVALID = 1'b0;
     end
 end
 
 always @ (*) begin
-    if (((gmem0_BVALID == 1'b1) & (1'b1 == ap_CS_fsm_state32))) begin
+    if (((gmem0_BVALID == 1'b1) & (1'b1 == ap_CS_fsm_state34))) begin
         gmem0_BREADY = 1'b1;
-    end else if (((1'b1 == ap_CS_fsm_state27) | (1'b1 == ap_CS_fsm_state26))) begin
-        gmem0_BREADY = grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278_m_axi_gmem0_BREADY;
+    end else if (((1'b1 == ap_CS_fsm_state29) | (1'b1 == ap_CS_fsm_state28))) begin
+        gmem0_BREADY = grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_m_axi_gmem0_BREADY;
     end else begin
         gmem0_BREADY = 1'b0;
     end
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state12) | (1'b1 == ap_CS_fsm_state11))) begin
-        gmem0_RREADY = grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem0_RREADY;
+    if (((1'b1 == ap_CS_fsm_state22) | (1'b1 == ap_CS_fsm_state21))) begin
+        gmem0_RREADY = grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_m_axi_gmem0_RREADY;
     end else begin
         gmem0_RREADY = 1'b0;
     end
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state27) | (1'b1 == ap_CS_fsm_state26))) begin
-        gmem0_WVALID = grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278_m_axi_gmem0_WVALID;
+    if (((1'b1 == ap_CS_fsm_state29) | (1'b1 == ap_CS_fsm_state28))) begin
+        gmem0_WVALID = grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_m_axi_gmem0_WVALID;
     end else begin
         gmem0_WVALID = 1'b0;
     end
 end
 
 always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state25)) begin
+    if ((1'b1 == ap_CS_fsm_state13)) begin
+        gmem0_blk_n_AR = m_axi_gmem0_ARREADY;
+    end else begin
+        gmem0_blk_n_AR = 1'b1;
+    end
+end
+
+always @ (*) begin
+    if ((1'b1 == ap_CS_fsm_state27)) begin
         gmem0_blk_n_AW = m_axi_gmem0_AWREADY;
     end else begin
         gmem0_blk_n_AW = 1'b1;
@@ -1664,7 +1969,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state32)) begin
+    if ((1'b1 == ap_CS_fsm_state34)) begin
         gmem0_blk_n_B = m_axi_gmem0_BVALID;
     end else begin
         gmem0_blk_n_B = 1'b1;
@@ -1672,45 +1977,45 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((1'b0 == ap_block_state3_io) & (icmp_ln59_reg_611 == 1'd1) & (1'b1 == ap_CS_fsm_state3))) begin
-        gmem1_ARADDR = gmem1_addr_reg_592;
-    end else if (((1'b1 == ap_CS_fsm_state12) | (1'b1 == ap_CS_fsm_state11))) begin
-        gmem1_ARADDR = grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem1_ARADDR;
+    if (((1'b0 == ap_block_state2_io) & (1'b1 == ap_CS_fsm_state2))) begin
+        gmem1_ARADDR = sext_ln91_fu_464_p1;
+    end else if (((1'b1 == ap_CS_fsm_state10) | (1'b1 == ap_CS_fsm_state11))) begin
+        gmem1_ARADDR = grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296_m_axi_gmem1_ARADDR;
     end else begin
         gmem1_ARADDR = 'bx;
     end
 end
 
 always @ (*) begin
-    if (((1'b0 == ap_block_state3_io) & (icmp_ln59_reg_611 == 1'd1) & (1'b1 == ap_CS_fsm_state3))) begin
-        gmem1_ARLEN = zext_ln59_1_reg_597;
-    end else if (((1'b1 == ap_CS_fsm_state12) | (1'b1 == ap_CS_fsm_state11))) begin
-        gmem1_ARLEN = grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem1_ARLEN;
+    if (((1'b0 == ap_block_state2_io) & (1'b1 == ap_CS_fsm_state2))) begin
+        gmem1_ARLEN = zext_ln91_fu_474_p1;
+    end else if (((1'b1 == ap_CS_fsm_state10) | (1'b1 == ap_CS_fsm_state11))) begin
+        gmem1_ARLEN = grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296_m_axi_gmem1_ARLEN;
     end else begin
         gmem1_ARLEN = 'bx;
     end
 end
 
 always @ (*) begin
-    if (((1'b0 == ap_block_state3_io) & (icmp_ln59_reg_611 == 1'd1) & (1'b1 == ap_CS_fsm_state3))) begin
+    if (((1'b0 == ap_block_state2_io) & (1'b1 == ap_CS_fsm_state2))) begin
         gmem1_ARVALID = 1'b1;
-    end else if (((1'b1 == ap_CS_fsm_state12) | (1'b1 == ap_CS_fsm_state11))) begin
-        gmem1_ARVALID = grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem1_ARVALID;
+    end else if (((1'b1 == ap_CS_fsm_state10) | (1'b1 == ap_CS_fsm_state11))) begin
+        gmem1_ARVALID = grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296_m_axi_gmem1_ARVALID;
     end else begin
         gmem1_ARVALID = 1'b0;
     end
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state12) | (1'b1 == ap_CS_fsm_state11))) begin
-        gmem1_RREADY = grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_m_axi_gmem1_RREADY;
+    if (((1'b1 == ap_CS_fsm_state10) | (1'b1 == ap_CS_fsm_state11))) begin
+        gmem1_RREADY = grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296_m_axi_gmem1_RREADY;
     end else begin
         gmem1_RREADY = 1'b0;
     end
 end
 
 always @ (*) begin
-    if (((icmp_ln59_reg_611 == 1'd1) & (1'b1 == ap_CS_fsm_state3))) begin
+    if ((1'b1 == ap_CS_fsm_state2)) begin
         gmem1_blk_n_AR = m_axi_gmem1_ARREADY;
     end else begin
         gmem1_blk_n_AR = 1'b1;
@@ -1718,45 +2023,45 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((gmem2_ARREADY == 1'b1) & (1'b1 == ap_CS_fsm_state15))) begin
-        gmem2_ARADDR = gmem2_addr_reg_664;
-    end else if (((1'b1 == ap_CS_fsm_state23) | (1'b1 == ap_CS_fsm_state24))) begin
-        gmem2_ARADDR = grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_m_axi_gmem2_ARADDR;
+    if (((1'b0 == ap_block_state2_io) & (1'b1 == ap_CS_fsm_state2))) begin
+        gmem2_ARADDR = sext_ln84_fu_450_p1;
+    end else if (((1'b1 == ap_CS_fsm_state10) | (1'b1 == ap_CS_fsm_state11))) begin
+        gmem2_ARADDR = grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287_m_axi_gmem2_ARADDR;
     end else begin
         gmem2_ARADDR = 'bx;
     end
 end
 
 always @ (*) begin
-    if (((gmem2_ARREADY == 1'b1) & (1'b1 == ap_CS_fsm_state15))) begin
-        gmem2_ARLEN = zext_ln82_reg_669;
-    end else if (((1'b1 == ap_CS_fsm_state23) | (1'b1 == ap_CS_fsm_state24))) begin
-        gmem2_ARLEN = grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_m_axi_gmem2_ARLEN;
+    if (((1'b0 == ap_block_state2_io) & (1'b1 == ap_CS_fsm_state2))) begin
+        gmem2_ARLEN = zext_ln84_fu_460_p1;
+    end else if (((1'b1 == ap_CS_fsm_state10) | (1'b1 == ap_CS_fsm_state11))) begin
+        gmem2_ARLEN = grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287_m_axi_gmem2_ARLEN;
     end else begin
         gmem2_ARLEN = 'bx;
     end
 end
 
 always @ (*) begin
-    if (((gmem2_ARREADY == 1'b1) & (1'b1 == ap_CS_fsm_state15))) begin
+    if (((1'b0 == ap_block_state2_io) & (1'b1 == ap_CS_fsm_state2))) begin
         gmem2_ARVALID = 1'b1;
-    end else if (((1'b1 == ap_CS_fsm_state23) | (1'b1 == ap_CS_fsm_state24))) begin
-        gmem2_ARVALID = grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_m_axi_gmem2_ARVALID;
+    end else if (((1'b1 == ap_CS_fsm_state10) | (1'b1 == ap_CS_fsm_state11))) begin
+        gmem2_ARVALID = grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287_m_axi_gmem2_ARVALID;
     end else begin
         gmem2_ARVALID = 1'b0;
     end
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state23) | (1'b1 == ap_CS_fsm_state24))) begin
-        gmem2_RREADY = grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_m_axi_gmem2_RREADY;
+    if (((1'b1 == ap_CS_fsm_state10) | (1'b1 == ap_CS_fsm_state11))) begin
+        gmem2_RREADY = grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287_m_axi_gmem2_RREADY;
     end else begin
         gmem2_RREADY = 1'b0;
     end
 end
 
 always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state15)) begin
+    if ((1'b1 == ap_CS_fsm_state2)) begin
         gmem2_blk_n_AR = m_axi_gmem2_ARREADY;
     end else begin
         gmem2_blk_n_AR = 1'b1;
@@ -1764,62 +2069,146 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state27)) begin
-        local_x_address0 = grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278_local_x_address0;
-    end else if ((1'b1 == ap_CS_fsm_state24)) begin
-        local_x_address0 = grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_local_x_address0;
+    if (((icmp_ln91_reg_663 == 1'd1) & (1'b1 == ap_CS_fsm_state24))) begin
+        local_psi_ce0 = grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_314_local_psi_ce0;
     end else begin
-        local_x_address0 = 'bx;
+        local_psi_ce0 = 1'b0;
     end
 end
 
 always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state24)) begin
-        local_x_address1 = grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_local_x_address1;
-    end else if ((1'b1 == ap_CS_fsm_state12)) begin
-        local_x_address1 = grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_local_x_address1;
+    if ((1'b1 == ap_CS_fsm_state11)) begin
+        local_psi_ce1 = grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296_local_psi_ce1;
     end else begin
-        local_x_address1 = 'bx;
+        local_psi_ce1 = 1'b0;
     end
 end
 
 always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state27)) begin
-        local_x_ce0 = grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278_local_x_ce0;
-    end else if ((1'b1 == ap_CS_fsm_state24)) begin
-        local_x_ce0 = grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_local_x_ce0;
+    if ((1'b1 == ap_CS_fsm_state11)) begin
+        local_psi_we1 = grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296_local_psi_we1;
     end else begin
-        local_x_ce0 = 1'b0;
+        local_psi_we1 = 1'b0;
     end
 end
 
 always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state24)) begin
-        local_x_ce1 = grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_local_x_ce1;
-    end else if ((1'b1 == ap_CS_fsm_state12)) begin
-        local_x_ce1 = grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_local_x_ce1;
+    if ((1'b1 == ap_CS_fsm_state26)) begin
+        local_twiddles_ce0 = grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322_local_twiddles_ce0;
     end else begin
-        local_x_ce1 = 1'b0;
+        local_twiddles_ce0 = 1'b0;
     end
 end
 
 always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state24)) begin
-        local_x_d1 = grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_local_x_d1;
-    end else if ((1'b1 == ap_CS_fsm_state12)) begin
-        local_x_d1 = grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_local_x_d1;
+    if ((1'b1 == ap_CS_fsm_state11)) begin
+        local_twiddles_ce1 = grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287_local_twiddles_ce1;
     end else begin
-        local_x_d1 = 'bx;
+        local_twiddles_ce1 = 1'b0;
     end
 end
 
 always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state24)) begin
-        local_x_we1 = grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_local_x_we1;
-    end else if ((1'b1 == ap_CS_fsm_state12)) begin
-        local_x_we1 = grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_local_x_we1;
+    if ((1'b1 == ap_CS_fsm_state11)) begin
+        local_twiddles_we1 = grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287_local_twiddles_we1;
     end else begin
-        local_x_we1 = 1'b0;
+        local_twiddles_we1 = 1'b0;
+    end
+end
+
+always @ (*) begin
+    if ((1'b1 == ap_CS_fsm_state29)) begin
+        ping_address0 = grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_ping_address0;
+    end else if ((1'b1 == ap_CS_fsm_state26)) begin
+        ping_address0 = grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322_ping_address0;
+    end else begin
+        ping_address0 = 'bx;
+    end
+end
+
+always @ (*) begin
+    if ((1'b1 == ap_CS_fsm_state26)) begin
+        ping_address1 = grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322_ping_address1;
+    end else if (((icmp_ln91_reg_663 == 1'd1) & (1'b1 == ap_CS_fsm_state24))) begin
+        ping_address1 = grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_314_ping_address1;
+    end else begin
+        ping_address1 = 'bx;
+    end
+end
+
+always @ (*) begin
+    if ((1'b1 == ap_CS_fsm_state29)) begin
+        ping_ce0 = grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_ping_ce0;
+    end else if ((1'b1 == ap_CS_fsm_state26)) begin
+        ping_ce0 = grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322_ping_ce0;
+    end else begin
+        ping_ce0 = 1'b0;
+    end
+end
+
+always @ (*) begin
+    if ((1'b1 == ap_CS_fsm_state26)) begin
+        ping_ce1 = grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322_ping_ce1;
+    end else if (((icmp_ln91_reg_663 == 1'd1) & (1'b1 == ap_CS_fsm_state24))) begin
+        ping_ce1 = grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_314_ping_ce1;
+    end else begin
+        ping_ce1 = 1'b0;
+    end
+end
+
+always @ (*) begin
+    if ((1'b1 == ap_CS_fsm_state26)) begin
+        ping_d1 = grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322_ping_d1;
+    end else if (((icmp_ln91_reg_663 == 1'd1) & (1'b1 == ap_CS_fsm_state24))) begin
+        ping_d1 = grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_314_ping_d1;
+    end else begin
+        ping_d1 = 'bx;
+    end
+end
+
+always @ (*) begin
+    if ((1'b1 == ap_CS_fsm_state26)) begin
+        ping_we1 = grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322_ping_we1;
+    end else if (((icmp_ln91_reg_663 == 1'd1) & (1'b1 == ap_CS_fsm_state24))) begin
+        ping_we1 = grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_314_ping_we1;
+    end else begin
+        ping_we1 = 1'b0;
+    end
+end
+
+always @ (*) begin
+    if ((1'b1 == ap_CS_fsm_state29)) begin
+        pong_address0 = grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_pong_address0;
+    end else if ((1'b1 == ap_CS_fsm_state26)) begin
+        pong_address0 = grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322_pong_address0;
+    end else begin
+        pong_address0 = 'bx;
+    end
+end
+
+always @ (*) begin
+    if ((1'b1 == ap_CS_fsm_state29)) begin
+        pong_ce0 = grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_pong_ce0;
+    end else if ((1'b1 == ap_CS_fsm_state26)) begin
+        pong_ce0 = grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322_pong_ce0;
+    end else begin
+        pong_ce0 = 1'b0;
+    end
+end
+
+always @ (*) begin
+    if ((1'b1 == ap_CS_fsm_state26)) begin
+        pong_ce1 = grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322_pong_ce1;
+    end else begin
+        pong_ce1 = 1'b0;
+    end
+end
+
+always @ (*) begin
+    if ((1'b1 == ap_CS_fsm_state26)) begin
+        pong_we1 = grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322_pong_we1;
+    end else begin
+        pong_we1 = 1'b0;
     end
 end
 
@@ -1833,16 +2222,14 @@ always @ (*) begin
             end
         end
         ap_ST_fsm_state2 : begin
-            ap_NS_fsm = ap_ST_fsm_state3;
+            if (((1'b0 == ap_block_state2_io) & (1'b1 == ap_CS_fsm_state2))) begin
+                ap_NS_fsm = ap_ST_fsm_state3;
+            end else begin
+                ap_NS_fsm = ap_ST_fsm_state2;
+            end
         end
         ap_ST_fsm_state3 : begin
-            if (((1'b0 == ap_block_state3_io) & (icmp_ln59_reg_611 == 1'd0) & (1'b1 == ap_CS_fsm_state3))) begin
-                ap_NS_fsm = ap_ST_fsm_state1;
-            end else if (((1'b0 == ap_block_state3_io) & (icmp_ln59_reg_611 == 1'd1) & (1'b1 == ap_CS_fsm_state3))) begin
-                ap_NS_fsm = ap_ST_fsm_state4;
-            end else begin
-                ap_NS_fsm = ap_ST_fsm_state3;
-            end
+            ap_NS_fsm = ap_ST_fsm_state4;
         end
         ap_ST_fsm_state4 : begin
             ap_NS_fsm = ap_ST_fsm_state5;
@@ -1866,35 +2253,33 @@ always @ (*) begin
             ap_NS_fsm = ap_ST_fsm_state11;
         end
         ap_ST_fsm_state11 : begin
-            ap_NS_fsm = ap_ST_fsm_state12;
+            if (((1'b0 == ap_block_state11_on_subcall_done) & (1'b1 == ap_CS_fsm_state11))) begin
+                ap_NS_fsm = ap_ST_fsm_state12;
+            end else begin
+                ap_NS_fsm = ap_ST_fsm_state11;
+            end
         end
         ap_ST_fsm_state12 : begin
-            if (((grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state12))) begin
-                ap_NS_fsm = ap_ST_fsm_state13;
+            if (((1'b1 == ap_CS_fsm_state12) & (icmp_ln97_fu_496_p2 == 1'd0))) begin
+                ap_NS_fsm = ap_ST_fsm_state1;
+            end else if (((icmp_ln91_reg_663 == 1'd0) & (1'b1 == ap_CS_fsm_state12) & (icmp_ln97_fu_496_p2 == 1'd1))) begin
+                ap_NS_fsm = ap_ST_fsm_state24;
             end else begin
-                ap_NS_fsm = ap_ST_fsm_state12;
+                ap_NS_fsm = ap_ST_fsm_state13;
             end
         end
         ap_ST_fsm_state13 : begin
-            if (((icmp_ln79_fu_397_p2 == 1'd1) & (1'b1 == ap_CS_fsm_state13))) begin
+            if (((gmem0_ARREADY == 1'b1) & (1'b1 == ap_CS_fsm_state13))) begin
                 ap_NS_fsm = ap_ST_fsm_state14;
             end else begin
-                ap_NS_fsm = ap_ST_fsm_state25;
+                ap_NS_fsm = ap_ST_fsm_state13;
             end
         end
         ap_ST_fsm_state14 : begin
-            if (((icmp_ln82_fu_496_p2 == 1'd0) & (1'b1 == ap_CS_fsm_state14))) begin
-                ap_NS_fsm = ap_ST_fsm_state13;
-            end else begin
-                ap_NS_fsm = ap_ST_fsm_state15;
-            end
+            ap_NS_fsm = ap_ST_fsm_state15;
         end
         ap_ST_fsm_state15 : begin
-            if (((gmem2_ARREADY == 1'b1) & (1'b1 == ap_CS_fsm_state15))) begin
-                ap_NS_fsm = ap_ST_fsm_state16;
-            end else begin
-                ap_NS_fsm = ap_ST_fsm_state15;
-            end
+            ap_NS_fsm = ap_ST_fsm_state16;
         end
         ap_ST_fsm_state16 : begin
             ap_NS_fsm = ap_ST_fsm_state17;
@@ -1915,30 +2300,38 @@ always @ (*) begin
             ap_NS_fsm = ap_ST_fsm_state22;
         end
         ap_ST_fsm_state22 : begin
-            ap_NS_fsm = ap_ST_fsm_state23;
+            if (((grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state22))) begin
+                ap_NS_fsm = ap_ST_fsm_state23;
+            end else begin
+                ap_NS_fsm = ap_ST_fsm_state22;
+            end
         end
         ap_ST_fsm_state23 : begin
             ap_NS_fsm = ap_ST_fsm_state24;
         end
         ap_ST_fsm_state24 : begin
-            if (((grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state24))) begin
-                ap_NS_fsm = ap_ST_fsm_state14;
+            if (((1'b0 == ap_block_state24_on_subcall_done) & (1'b1 == ap_CS_fsm_state24))) begin
+                ap_NS_fsm = ap_ST_fsm_state25;
             end else begin
                 ap_NS_fsm = ap_ST_fsm_state24;
             end
         end
         ap_ST_fsm_state25 : begin
-            if (((gmem0_AWREADY == 1'b1) & (1'b1 == ap_CS_fsm_state25))) begin
-                ap_NS_fsm = ap_ST_fsm_state26;
+            if (((icmp_ln121_fu_531_p2 == 1'd0) & (1'b1 == ap_CS_fsm_state25))) begin
+                ap_NS_fsm = ap_ST_fsm_state27;
             end else begin
-                ap_NS_fsm = ap_ST_fsm_state25;
+                ap_NS_fsm = ap_ST_fsm_state26;
             end
         end
         ap_ST_fsm_state26 : begin
-            ap_NS_fsm = ap_ST_fsm_state27;
+            if (((grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state26))) begin
+                ap_NS_fsm = ap_ST_fsm_state25;
+            end else begin
+                ap_NS_fsm = ap_ST_fsm_state26;
+            end
         end
         ap_ST_fsm_state27 : begin
-            if (((grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state27))) begin
+            if (((gmem0_AWREADY == 1'b1) & (1'b1 == ap_CS_fsm_state27))) begin
                 ap_NS_fsm = ap_ST_fsm_state28;
             end else begin
                 ap_NS_fsm = ap_ST_fsm_state27;
@@ -1948,7 +2341,11 @@ always @ (*) begin
             ap_NS_fsm = ap_ST_fsm_state29;
         end
         ap_ST_fsm_state29 : begin
-            ap_NS_fsm = ap_ST_fsm_state30;
+            if (((grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state29))) begin
+                ap_NS_fsm = ap_ST_fsm_state30;
+            end else begin
+                ap_NS_fsm = ap_ST_fsm_state29;
+            end
         end
         ap_ST_fsm_state30 : begin
             ap_NS_fsm = ap_ST_fsm_state31;
@@ -1957,10 +2354,16 @@ always @ (*) begin
             ap_NS_fsm = ap_ST_fsm_state32;
         end
         ap_ST_fsm_state32 : begin
-            if (((gmem0_BVALID == 1'b1) & (1'b1 == ap_CS_fsm_state32))) begin
-                ap_NS_fsm = ap_ST_fsm_state2;
+            ap_NS_fsm = ap_ST_fsm_state33;
+        end
+        ap_ST_fsm_state33 : begin
+            ap_NS_fsm = ap_ST_fsm_state34;
+        end
+        ap_ST_fsm_state34 : begin
+            if (((gmem0_BVALID == 1'b1) & (1'b1 == ap_CS_fsm_state34))) begin
+                ap_NS_fsm = ap_ST_fsm_state12;
             end else begin
-                ap_NS_fsm = ap_ST_fsm_state32;
+                ap_NS_fsm = ap_ST_fsm_state34;
             end
         end
         default : begin
@@ -1969,19 +2372,15 @@ always @ (*) begin
     endcase
 end
 
-assign add_ln59_1_fu_380_p2 = (b_fu_146 + 31'd1);
+assign add_ln97_1_fu_501_p2 = (b_fu_150 + 31'd1);
 
-assign add_ln59_2_fu_370_p2 = (phi_mul1_fu_138 + n_read_reg_547);
+assign add_ln97_2_fu_487_p2 = (phi_mul_fu_146 + zext_ln97_reg_704);
 
-assign add_ln59_3_fu_375_p2 = (phi_mul_fu_142 + zext_ln59_reg_603);
-
-assign add_ln59_fu_392_p2 = (shl_ln_fu_385_p3 + x_read_reg_576);
-
-assign add_ln82_1_fu_505_p2 = ($signed(sext_ln82_reg_649) + $signed(i_1_reg_239));
-
-assign add_ln82_fu_438_p2 = ($signed(sext_ln82_1_fu_434_p1) + $signed(twiddles_read_reg_571));
+assign add_ln97_fu_515_p2 = (shl_ln_fu_507_p3 + x_read_reg_636);
 
 assign ap_CS_fsm_state1 = ap_CS_fsm[32'd0];
+
+assign ap_CS_fsm_state10 = ap_CS_fsm[32'd9];
 
 assign ap_CS_fsm_state11 = ap_CS_fsm[32'd10];
 
@@ -1989,11 +2388,11 @@ assign ap_CS_fsm_state12 = ap_CS_fsm[32'd11];
 
 assign ap_CS_fsm_state13 = ap_CS_fsm[32'd12];
 
-assign ap_CS_fsm_state14 = ap_CS_fsm[32'd13];
-
-assign ap_CS_fsm_state15 = ap_CS_fsm[32'd14];
-
 assign ap_CS_fsm_state2 = ap_CS_fsm[32'd1];
+
+assign ap_CS_fsm_state21 = ap_CS_fsm[32'd20];
+
+assign ap_CS_fsm_state22 = ap_CS_fsm[32'd21];
 
 assign ap_CS_fsm_state23 = ap_CS_fsm[32'd22];
 
@@ -2005,92 +2404,96 @@ assign ap_CS_fsm_state26 = ap_CS_fsm[32'd25];
 
 assign ap_CS_fsm_state27 = ap_CS_fsm[32'd26];
 
-assign ap_CS_fsm_state3 = ap_CS_fsm[32'd2];
+assign ap_CS_fsm_state28 = ap_CS_fsm[32'd27];
 
-assign ap_CS_fsm_state32 = ap_CS_fsm[32'd31];
+assign ap_CS_fsm_state29 = ap_CS_fsm[32'd28];
+
+assign ap_CS_fsm_state34 = ap_CS_fsm[32'd33];
 
 always @ (*) begin
-    ap_block_state3_io = ((gmem1_ARREADY == 1'b0) & (icmp_ln59_reg_611 == 1'd1));
+    ap_block_state11_on_subcall_done = ((grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296_ap_done == 1'b0) | (grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287_ap_done == 1'b0));
+end
+
+always @ (*) begin
+    ap_block_state24_on_subcall_done = ((grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_314_ap_done == 1'b0) & (icmp_ln91_reg_663 == 1'd1));
+end
+
+always @ (*) begin
+    ap_block_state2_io = ((gmem2_ARREADY == 1'b0) | (gmem1_ARREADY == 1'b0));
 end
 
 always @ (*) begin
     ap_rst_n_inv = ~ap_rst_n;
 end
 
-assign cmp1915_fu_406_p2 = (($signed(length_reg_227) > $signed(32'd0)) ? 1'b1 : 1'b0);
+assign empty_38_fu_422_p3 = ((icmp_ln91_fu_406_p2[0:0] == 1'b1) ? trunc_ln51_fu_368_p1 : 31'd0);
 
-assign cmp213_fu_291_p0 = n;
+assign empty_fu_398_p3 = ((icmp_ln84_fu_382_p2[0:0] == 1'b1) ? trunc_ln84_fu_378_p1 : 31'd0);
 
-assign cmp213_fu_291_p2 = (($signed(cmp213_fu_291_p0) > $signed(32'd0)) ? 1'b1 : 1'b0);
+assign grp_fu_353_p4 = {{add_ln97_reg_722[63:2]}};
 
-assign empty_30_fu_463_p3 = ((cmp1915_fu_406_p2[0:0] == 1'b1) ? trunc_ln79_fu_402_p1 : 31'd0);
+assign grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_ap_start = grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_ap_start_reg;
 
-assign empty_fu_321_p3 = ((cmp213_fu_291_p2[0:0] == 1'b1) ? trunc_ln38_fu_287_p1 : 31'd0);
+assign grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296_ap_start = grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296_ap_start_reg;
 
-assign grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_ap_start = grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_ap_start_reg;
+assign grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287_ap_start = grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287_ap_start_reg;
 
-assign grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_ap_start = grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_ap_start_reg;
+assign grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322_ap_start = grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322_ap_start_reg;
 
-assign grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278_ap_start = grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278_ap_start_reg;
+assign grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_314_ap_start = grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_314_ap_start_reg;
 
-assign icmp_ln59_fu_359_p2 = (($signed(zext_ln59_2_fu_355_p1) < $signed(batch_size_read_reg_555)) ? 1'b1 : 1'b0);
+assign grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_ap_start = grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_ap_start_reg;
 
-assign icmp_ln79_fu_397_p2 = (($signed(length_reg_227) < $signed(n_read_reg_547)) ? 1'b1 : 1'b0);
+assign icmp_ln121_fu_531_p2 = (($signed(length_reg_276) < $signed(n_read_reg_611)) ? 1'b1 : 1'b0);
 
-assign icmp_ln82_fu_496_p2 = (($signed(i_1_reg_239) < $signed(sext_ln59_reg_582)) ? 1'b1 : 1'b0);
+assign icmp_ln84_fu_382_p2 = (($signed(sub_fu_372_p2) > $signed(32'd0)) ? 1'b1 : 1'b0);
 
-assign length_1_fu_412_p2 = length_reg_227 << 32'd1;
+assign icmp_ln91_fu_406_p2 = (($signed(n) > $signed(32'd0)) ? 1'b1 : 1'b0);
 
-assign offset_1_fu_510_p2 = (length_reg_227 + offset_reg_215);
+assign icmp_ln97_fu_496_p2 = (($signed(zext_ln97_1_fu_492_p1) < $signed(batch_size_read_reg_620)) ? 1'b1 : 1'b0);
 
-assign sext_ln104_fu_516_p1 = $signed(trunc_ln6_reg_674);
+assign length_1_fu_572_p2 = length_reg_276 << 32'd1;
 
-assign sext_ln59_fu_297_p0 = n;
+assign offset_1_fu_560_p2 = (length_reg_276 + offset_reg_241);
 
-assign sext_ln59_fu_297_p1 = sext_ln59_fu_297_p0;
+assign sext_ln103_fu_520_p1 = grp_fu_353_p4;
 
-assign sext_ln70_fu_311_p1 = trunc_ln1_fu_301_p4;
+assign sext_ln165_fu_586_p1 = $signed(reg_362);
 
-assign sext_ln82_1_fu_434_p1 = $signed(shl_ln82_1_fu_426_p3);
+assign sext_ln84_fu_450_p1 = $signed(trunc_ln1_reg_652);
 
-assign sext_ln82_fu_418_p1 = length_1_fu_412_p2;
+assign sext_ln91_fu_464_p1 = $signed(trunc_ln2_reg_667);
 
-assign sext_ln85_fu_453_p1 = trunc_ln5_fu_443_p4;
+assign shl_ln_fu_507_p3 = {{phi_mul_fu_146}, {2'd0}};
 
-assign shl_ln82_1_fu_426_p3 = {{offset_reg_215}, {2'd0}};
+assign stage_1_fu_536_p2 = (stage_reg_264 + 32'd1);
 
-assign shl_ln_fu_385_p3 = {{phi_mul_fu_142}, {2'd0}};
+assign sub53_fu_553_p2 = ($signed(trunc_ln121_1_fu_548_p1) + $signed(12'd4095));
 
-assign trunc_ln1_fu_301_p4 = {{psi_powers[63:2]}};
+assign sub_fu_372_p2 = ($signed(n) + $signed(32'd4294967295));
 
-assign trunc_ln38_fu_287_p0 = n;
+assign trunc_ln121_1_fu_548_p1 = length_reg_276[11:0];
 
-assign trunc_ln38_fu_287_p1 = trunc_ln38_fu_287_p0[30:0];
+assign trunc_ln121_fu_543_p1 = offset_reg_241[11:0];
 
-assign trunc_ln5_fu_443_p4 = {{add_ln82_fu_438_p2[63:2]}};
+assign trunc_ln51_fu_368_p1 = n[30:0];
 
-assign trunc_ln79_fu_402_p1 = length_reg_227[30:0];
+assign trunc_ln84_fu_378_p1 = sub_fu_372_p2[30:0];
 
-assign trunc_ln82_1_fu_501_p1 = i_1_reg_239[15:0];
+assign use_ping_as_input_1_fu_566_p2 = (use_ping_as_input_reg_252 ^ 1'd1);
 
-assign trunc_ln82_fu_422_p1 = length_reg_227[15:0];
+assign zext_ln84_fu_460_p1 = empty_reg_658;
 
-assign zext_ln59_1_fu_329_p1 = empty_fu_321_p3;
+assign zext_ln91_fu_474_p1 = empty_38_reg_673;
 
-assign zext_ln59_2_fu_355_p1 = b_fu_146;
+assign zext_ln97_1_fu_492_p1 = b_fu_150;
 
-assign zext_ln59_fu_333_p0 = n;
-
-assign zext_ln59_fu_333_p1 = $unsigned(zext_ln59_fu_333_p0);
-
-assign zext_ln82_fu_471_p1 = empty_30_fu_463_p3;
+assign zext_ln97_fu_478_p1 = n_read_reg_611;
 
 always @ (posedge ap_clk) begin
-    zext_ln59_1_reg_597[31] <= 1'b0;
-    zext_ln59_reg_603[61:32] <= 30'b000000000000000000000000000000;
-    length_1_reg_644[0] <= 1'b0;
-    sext_ln82_reg_649[0] <= 1'b0;
-    zext_ln82_reg_669[31] <= 1'b0;
+    zext_ln91_reg_698[31] <= 1'b0;
+    zext_ln97_reg_704[61:32] <= 30'b000000000000000000000000000000;
+    length_1_reg_766[0] <= 1'b0;
 end
 
 endmodule //ntt_kernel

@@ -59,7 +59,7 @@ IFLAG += -D__SIM_FIR__
 IFLAG += -D__SIM_DDS__
 
 IFLAG += -D__DSP48E2__
-IFLAG += -g
+AP_ENABLE_OPTIMIZED := 1
 DFLAG += -D__xilinx_ip_top= -DAESL_TB
 CCFLAG += -Werror=return-type
 CCFLAG += -Wno-abi
@@ -75,12 +75,12 @@ all: $(TARGET)
 
 $(ObjDir)/ntt-test.o: ../../../ntt-test.cpp $(ObjDir)/.dir
 	$(Echo) "   Compiling ../../../ntt-test.cpp in $(BuildMode) mode" $(AVE_DIR_DLOG)
-	$(Verb)  $(CC) ${CCFLAG} -c -MMD -Wno-unknown-pragmas -Wno-unknown-pragmas  $(IFLAG) $(DFLAG) $< -o $@ ; \
+	$(Verb)  $(CC) ${CCFLAG} -c -MMD -Wno-unknown-pragmas -Wno-unknown-pragmas  $(IFLAG) $(DFLAG) -DNDEBUG $< -o $@ ; \
 
 -include $(ObjDir)/ntt-test.d
 
 $(ObjDir)/ntt-kernel.o: ../../../ntt-kernel.cpp $(ObjDir)/.dir
 	$(Echo) "   Compiling ../../../ntt-kernel.cpp in $(BuildMode) mode" $(AVE_DIR_DLOG)
-	$(Verb)  $(CC) ${CCFLAG} -c -MMD  $(IFLAG) $(DFLAG) $< -o $@ ; \
+	$(Verb)  $(CC) ${CCFLAG} -c -MMD  $(IFLAG) $(DFLAG) -DNDEBUG $< -o $@ ; \
 
 -include $(ObjDir)/ntt-kernel.d

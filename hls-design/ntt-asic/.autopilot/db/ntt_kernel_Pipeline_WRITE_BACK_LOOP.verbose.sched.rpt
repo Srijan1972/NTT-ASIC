@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'ntt_kernel_Pipeline_WRITE_BACK_LOOP'
 ================================================================
-* Date:           Thu May 28 14:13:15 2026
+* Date:           Mon Jun  1 21:40:40 2026
 
 * Version:        2023.2 (Build 4023990 on Oct 11 2023)
 * Project:        hls-design
@@ -25,24 +25,24 @@
 
 + Latency: 
     * Summary: 
-    +---------+---------+----------+----------+-----+-------+---------+
-    |  Latency (cycles) |  Latency (absolute) |   Interval  | Pipeline|
-    |   min   |   max   |    min   |    max   | min |  max  |   Type  |
-    +---------+---------+----------+----------+-----+-------+---------+
-    |      259|    65539|  2.590 us|  0.655 ms|  259|  65539|       no|
-    +---------+---------+----------+----------+-----+-------+---------+
+    +---------+---------+----------+-----------+-----+------+---------+
+    |  Latency (cycles) |  Latency (absolute)  |  Interval  | Pipeline|
+    |   min   |   max   |    min   |    max    | min |  max |   Type  |
+    +---------+---------+----------+-----------+-----+------+---------+
+    |      259|     4099|  2.590 us|  40.990 us|  259|  4099|       no|
+    +---------+---------+----------+-----------+-----+------+---------+
 
     + Detail: 
         * Instance: 
         N/A
 
         * Loop: 
-        +-------------------+---------+---------+----------+-----------+-----------+-------------+----------+
-        |                   |  Latency (cycles) | Iteration|  Initiation Interval  |     Trip    |          |
-        |     Loop Name     |   min   |   max   |  Latency |  achieved |   target  |    Count    | Pipelined|
-        +-------------------+---------+---------+----------+-----------+-----------+-------------+----------+
-        |- WRITE_BACK_LOOP  |      257|    65537|         3|          1|          1|  256 ~ 65536|       yes|
-        +-------------------+---------+---------+----------+-----------+-----------+-------------+----------+
+        +-------------------+---------+---------+----------+-----------+-----------+------------+----------+
+        |                   |  Latency (cycles) | Iteration|  Initiation Interval  |    Trip    |          |
+        |     Loop Name     |   min   |   max   |  Latency |  achieved |   target  |    Count   | Pipelined|
+        +-------------------+---------+---------+----------+-----------+-----------+------------+----------+
+        |- WRITE_BACK_LOOP  |      257|     4097|         3|          1|          1|  256 ~ 4096|       yes|
+        +-------------------+---------+---------+----------+-----------+-----------+------------+----------+
 
 ============================================================
 + Verbose Summary: Synthesis Manager
@@ -86,36 +86,42 @@ IsGatedGlobalClock: 0
 * FSM state operations: 
 
 State 1 <SV = 0> <Delay = 1.87>
-ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%i = alloca i32 1" [hls-design/ntt-kernel.cpp:104]   --->   Operation 6 'alloca' 'i' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%sext_ln104_read = read i62 @_ssdm_op_Read.ap_auto.i62, i62 %sext_ln104"   --->   Operation 7 'read' 'sext_ln104_read' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%n_read = read i32 @_ssdm_op_Read.ap_auto.i32, i32 %n"   --->   Operation 8 'read' 'n_read' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%sext_ln104_cast = sext i62 %sext_ln104_read"   --->   Operation 9 'sext' 'sext_ln104_cast' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i32 %local_x, i64 666, i64 22, i64 18446744073709551615"   --->   Operation 10 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %gmem0, void @empty_10, i32 0, i32 0, void @empty, i32 0, i32 65536, void @empty_0, void @empty_1, void @empty, i32 16, i32 16, i32 16, i32 16, void @empty, void @empty, i32 4294967295, i32 0"   --->   Operation 11 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 12 [1/1] (0.42ns)   --->   "%store_ln104 = store i17 0, i17 %i" [hls-design/ntt-kernel.cpp:104]   --->   Operation 12 'store' 'store_ln104' <Predicate = true> <Delay = 0.42>
-ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%br_ln0 = br void %for.inc62"   --->   Operation 13 'br' 'br_ln0' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%i_1 = load i17 %i" [hls-design/ntt-kernel.cpp:104]   --->   Operation 14 'load' 'i_1' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 15 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %gmem0"   --->   Operation 15 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%zext_ln104_1 = zext i17 %i_1" [hls-design/ntt-kernel.cpp:104]   --->   Operation 16 'zext' 'zext_ln104_1' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 17 [1/1] (1.01ns)   --->   "%icmp_ln104 = icmp_slt  i32 %zext_ln104_1, i32 %n_read" [hls-design/ntt-kernel.cpp:104]   --->   Operation 17 'icmp' 'icmp_ln104' <Predicate = true> <Delay = 1.01> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.01> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
-ST_1 : Operation 18 [1/1] (0.86ns)   --->   "%add_ln104 = add i17 %i_1, i17 1" [hls-design/ntt-kernel.cpp:104]   --->   Operation 18 'add' 'add_ln104' <Predicate = true> <Delay = 0.86> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.86> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
-ST_1 : Operation 19 [1/1] (0.00ns)   --->   "%br_ln104 = br i1 %icmp_ln104, void %for.inc65.loopexit.exitStub, void %for.inc62.split" [hls-design/ntt-kernel.cpp:104]   --->   Operation 19 'br' 'br_ln104' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 20 [1/1] (0.00ns)   --->   "%zext_ln104 = zext i17 %i_1" [hls-design/ntt-kernel.cpp:104]   --->   Operation 20 'zext' 'zext_ln104' <Predicate = (icmp_ln104)> <Delay = 0.00>
-ST_1 : Operation 21 [1/1] (0.00ns)   --->   "%local_x_addr = getelementptr i32 %local_x, i64 0, i64 %zext_ln104" [hls-design/ntt-kernel.cpp:107]   --->   Operation 21 'getelementptr' 'local_x_addr' <Predicate = (icmp_ln104)> <Delay = 0.00>
-ST_1 : Operation 22 [2/2] (1.23ns)   --->   "%local_x_load = load i16 %local_x_addr" [hls-design/ntt-kernel.cpp:107]   --->   Operation 22 'load' 'local_x_load' <Predicate = (icmp_ln104)> <Delay = 1.23> <CoreInst = "RAM_2P_BRAM">   --->   Core 94 'RAM_2P_BRAM' <Latency = 1> <II = 1> <Delay = 1.23> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 65536> <RAM>
-ST_1 : Operation 23 [1/1] (0.42ns)   --->   "%store_ln104 = store i17 %add_ln104, i17 %i" [hls-design/ntt-kernel.cpp:104]   --->   Operation 23 'store' 'store_ln104' <Predicate = (icmp_ln104)> <Delay = 0.42>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%i = alloca i32 1" [hls-design/ntt-kernel.cpp:165]   --->   Operation 6 'alloca' 'i' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%use_ping_as_input_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %use_ping_as_input"   --->   Operation 7 'read' 'use_ping_as_input_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%sext_ln165_read = read i62 @_ssdm_op_Read.ap_auto.i62, i62 %sext_ln165"   --->   Operation 8 'read' 'sext_ln165_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%n_read = read i32 @_ssdm_op_Read.ap_auto.i32, i32 %n"   --->   Operation 9 'read' 'n_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%sext_ln165_cast = sext i62 %sext_ln165_read"   --->   Operation 10 'sext' 'sext_ln165_cast' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i32 %pong, i64 666, i64 22, i64 18446744073709551615"   --->   Operation 11 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i32 %ping, i64 666, i64 22, i64 18446744073709551615"   --->   Operation 12 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %gmem0, void @empty_9, i32 0, i32 0, void @empty_22, i32 0, i32 65536, void @empty_6, void @empty_21, void @empty_22, i32 16, i32 16, i32 16, i32 16, void @empty_22, void @empty_22, i32 4294967295, i32 0"   --->   Operation 13 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 14 [1/1] (0.42ns)   --->   "%store_ln165 = store i13 0, i13 %i" [hls-design/ntt-kernel.cpp:165]   --->   Operation 14 'store' 'store_ln165' <Predicate = true> <Delay = 0.42>
+ST_1 : Operation 15 [1/1] (0.00ns)   --->   "%br_ln0 = br void %for.body96"   --->   Operation 15 'br' 'br_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%i_1 = load i13 %i" [hls-design/ntt-kernel.cpp:165]   --->   Operation 16 'load' 'i_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 17 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %gmem0"   --->   Operation 17 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 18 [1/1] (0.00ns)   --->   "%zext_ln165_1 = zext i13 %i_1" [hls-design/ntt-kernel.cpp:165]   --->   Operation 18 'zext' 'zext_ln165_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 19 [1/1] (1.01ns)   --->   "%icmp_ln165 = icmp_slt  i32 %zext_ln165_1, i32 %n_read" [hls-design/ntt-kernel.cpp:165]   --->   Operation 19 'icmp' 'icmp_ln165' <Predicate = true> <Delay = 1.01> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.01> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 20 [1/1] (0.82ns)   --->   "%add_ln165 = add i13 %i_1, i13 1" [hls-design/ntt-kernel.cpp:165]   --->   Operation 20 'add' 'add_ln165' <Predicate = true> <Delay = 0.82> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.82> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 21 [1/1] (0.00ns)   --->   "%br_ln165 = br i1 %icmp_ln165, void %for.inc113.loopexit.exitStub, void %for.body96.split_ifconv" [hls-design/ntt-kernel.cpp:165]   --->   Operation 21 'br' 'br_ln165' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 22 [1/1] (0.00ns)   --->   "%zext_ln165 = zext i13 %i_1" [hls-design/ntt-kernel.cpp:165]   --->   Operation 22 'zext' 'zext_ln165' <Predicate = (icmp_ln165)> <Delay = 0.00>
+ST_1 : Operation 23 [1/1] (0.00ns)   --->   "%ping_addr = getelementptr i32 %ping, i64 0, i64 %zext_ln165" [hls-design/ntt-kernel.cpp:169]   --->   Operation 23 'getelementptr' 'ping_addr' <Predicate = (icmp_ln165 & use_ping_as_input_read)> <Delay = 0.00>
+ST_1 : Operation 24 [2/2] (1.23ns)   --->   "%ping_load = load i12 %ping_addr" [hls-design/ntt-kernel.cpp:169]   --->   Operation 24 'load' 'ping_load' <Predicate = (icmp_ln165 & use_ping_as_input_read)> <Delay = 1.23> <CoreInst = "RAM_2P_BRAM">   --->   Core 94 'RAM_2P_BRAM' <Latency = 1> <II = 1> <Delay = 1.23> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 4096> <RAM>
+ST_1 : Operation 25 [1/1] (0.00ns)   --->   "%pong_addr = getelementptr i32 %pong, i64 0, i64 %zext_ln165" [hls-design/ntt-kernel.cpp:171]   --->   Operation 25 'getelementptr' 'pong_addr' <Predicate = (icmp_ln165 & !use_ping_as_input_read)> <Delay = 0.00>
+ST_1 : Operation 26 [2/2] (1.23ns)   --->   "%pong_load = load i12 %pong_addr" [hls-design/ntt-kernel.cpp:171]   --->   Operation 26 'load' 'pong_load' <Predicate = (icmp_ln165 & !use_ping_as_input_read)> <Delay = 1.23> <CoreInst = "RAM_2P_BRAM">   --->   Core 94 'RAM_2P_BRAM' <Latency = 1> <II = 1> <Delay = 1.23> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 4096> <RAM>
+ST_1 : Operation 27 [1/1] (0.42ns)   --->   "%store_ln165 = store i13 %add_ln165, i13 %i" [hls-design/ntt-kernel.cpp:165]   --->   Operation 27 'store' 'store_ln165' <Predicate = (icmp_ln165)> <Delay = 0.42>
 
-State 2 <SV = 1> <Delay = 1.23>
-ST_2 : Operation 24 [1/2] (1.23ns)   --->   "%local_x_load = load i16 %local_x_addr" [hls-design/ntt-kernel.cpp:107]   --->   Operation 24 'load' 'local_x_load' <Predicate = true> <Delay = 1.23> <CoreInst = "RAM_2P_BRAM">   --->   Core 94 'RAM_2P_BRAM' <Latency = 1> <II = 1> <Delay = 1.23> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 65536> <RAM>
-ST_2 : Operation 31 [1/1] (0.00ns)   --->   "%ret_ln0 = ret"   --->   Operation 31 'ret' 'ret_ln0' <Predicate = (!icmp_ln104)> <Delay = 0.00>
+State 2 <SV = 1> <Delay = 1.68>
+ST_2 : Operation 28 [1/2] (1.23ns)   --->   "%ping_load = load i12 %ping_addr" [hls-design/ntt-kernel.cpp:169]   --->   Operation 28 'load' 'ping_load' <Predicate = (use_ping_as_input_read)> <Delay = 1.23> <CoreInst = "RAM_2P_BRAM">   --->   Core 94 'RAM_2P_BRAM' <Latency = 1> <II = 1> <Delay = 1.23> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 4096> <RAM>
+ST_2 : Operation 29 [1/2] (1.23ns)   --->   "%pong_load = load i12 %pong_addr" [hls-design/ntt-kernel.cpp:171]   --->   Operation 29 'load' 'pong_load' <Predicate = (!use_ping_as_input_read)> <Delay = 1.23> <CoreInst = "RAM_2P_BRAM">   --->   Core 94 'RAM_2P_BRAM' <Latency = 1> <II = 1> <Delay = 1.23> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 4096> <RAM>
+ST_2 : Operation 30 [1/1] (0.44ns)   --->   "%storereflowmerge = select i1 %use_ping_as_input_read, i32 %ping_load, i32 %pong_load" [hls-design/ntt-kernel.cpp:169]   --->   Operation 30 'select' 'storereflowmerge' <Predicate = true> <Delay = 0.44> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.44> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 37 [1/1] (0.00ns)   --->   "%ret_ln0 = ret"   --->   Operation 37 'ret' 'ret_ln0' <Predicate = (!icmp_ln165)> <Delay = 0.00>
 
 State 3 <SV = 2> <Delay = 7.30>
-ST_3 : Operation 25 [1/1] (0.00ns)   --->   "%gmem0_addr = getelementptr i32 %gmem0, i64 %sext_ln104_cast" [hls-design/ntt-kernel.cpp:104]   --->   Operation 25 'getelementptr' 'gmem0_addr' <Predicate = true> <Delay = 0.00>
-ST_3 : Operation 26 [1/1] (0.00ns)   --->   "%specpipeline_ln105 = specpipeline void @_ssdm_op_SpecPipeline, i32 1, i32 0, i32 0, i32 0, void @empty" [hls-design/ntt-kernel.cpp:105]   --->   Operation 26 'specpipeline' 'specpipeline_ln105' <Predicate = true> <Delay = 0.00>
-ST_3 : Operation 27 [1/1] (0.00ns)   --->   "%speclooptripcount_ln106 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 256, i64 65536, i64 32896" [hls-design/ntt-kernel.cpp:106]   --->   Operation 27 'speclooptripcount' 'speclooptripcount_ln106' <Predicate = true> <Delay = 0.00>
-ST_3 : Operation 28 [1/1] (0.00ns)   --->   "%specloopname_ln104 = specloopname void @_ssdm_op_SpecLoopName, void @empty_19" [hls-design/ntt-kernel.cpp:104]   --->   Operation 28 'specloopname' 'specloopname_ln104' <Predicate = true> <Delay = 0.00>
-ST_3 : Operation 29 [1/1] (7.30ns)   --->   "%write_ln107 = write void @_ssdm_op_Write.m_axi.p1i32, i32 %gmem0_addr, i32 %local_x_load, i4 15" [hls-design/ntt-kernel.cpp:107]   --->   Operation 29 'write' 'write_ln107' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
-ST_3 : Operation 30 [1/1] (0.00ns)   --->   "%br_ln104 = br void %for.inc62" [hls-design/ntt-kernel.cpp:104]   --->   Operation 30 'br' 'br_ln104' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 31 [1/1] (0.00ns)   --->   "%gmem0_addr = getelementptr i32 %gmem0, i64 %sext_ln165_cast" [hls-design/ntt-kernel.cpp:165]   --->   Operation 31 'getelementptr' 'gmem0_addr' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 32 [1/1] (0.00ns)   --->   "%specpipeline_ln166 = specpipeline void @_ssdm_op_SpecPipeline, i32 1, i32 0, i32 0, i32 0, void @empty_22" [hls-design/ntt-kernel.cpp:166]   --->   Operation 32 'specpipeline' 'specpipeline_ln166' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 33 [1/1] (0.00ns)   --->   "%speclooptripcount_ln167 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 256, i64 4096, i64 2176" [hls-design/ntt-kernel.cpp:167]   --->   Operation 33 'speclooptripcount' 'speclooptripcount_ln167' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 34 [1/1] (0.00ns)   --->   "%specloopname_ln165 = specloopname void @_ssdm_op_SpecLoopName, void @empty_26" [hls-design/ntt-kernel.cpp:165]   --->   Operation 34 'specloopname' 'specloopname_ln165' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 35 [1/1] (7.30ns)   --->   "%write_ln165 = write void @_ssdm_op_Write.m_axi.p1i32, i32 %gmem0_addr, i32 %storereflowmerge, i4 15" [hls-design/ntt-kernel.cpp:165]   --->   Operation 35 'write' 'write_ln165' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_3 : Operation 36 [1/1] (0.00ns)   --->   "%br_ln165 = br void %for.body96" [hls-design/ntt-kernel.cpp:165]   --->   Operation 36 'br' 'br_ln165' <Predicate = true> <Delay = 0.00>
 
 
 ============================================================
@@ -125,19 +131,20 @@ Target clock period: 10.000ns, clock uncertainty: 2.700ns.
 
  <State 1>: 1.870ns
 The critical path consists of the following:
-	'store' operation 0 bit ('store_ln104', hls-design/ntt-kernel.cpp:104) of constant 0 on local variable 'i', hls-design/ntt-kernel.cpp:104 [11]  (0.427 ns)
-	'load' operation 17 bit ('i', hls-design/ntt-kernel.cpp:104) on local variable 'i', hls-design/ntt-kernel.cpp:104 [14]  (0.000 ns)
-	'icmp' operation 1 bit ('icmp_ln104', hls-design/ntt-kernel.cpp:104) [17]  (1.016 ns)
-	'store' operation 0 bit ('store_ln104', hls-design/ntt-kernel.cpp:104) of variable 'add_ln104', hls-design/ntt-kernel.cpp:104 on local variable 'i', hls-design/ntt-kernel.cpp:104 [29]  (0.427 ns)
+	'store' operation 0 bit ('store_ln165', hls-design/ntt-kernel.cpp:165) of constant 0 on local variable 'i', hls-design/ntt-kernel.cpp:165 [15]  (0.427 ns)
+	'load' operation 13 bit ('i', hls-design/ntt-kernel.cpp:165) on local variable 'i', hls-design/ntt-kernel.cpp:165 [18]  (0.000 ns)
+	'icmp' operation 1 bit ('icmp_ln165', hls-design/ntt-kernel.cpp:165) [21]  (1.016 ns)
+	'store' operation 0 bit ('store_ln165', hls-design/ntt-kernel.cpp:165) of variable 'add_ln165', hls-design/ntt-kernel.cpp:165 on local variable 'i', hls-design/ntt-kernel.cpp:165 [36]  (0.427 ns)
 
- <State 2>: 1.237ns
+ <State 2>: 1.686ns
 The critical path consists of the following:
-	'load' operation 32 bit ('local_x_load', hls-design/ntt-kernel.cpp:107) on array 'local_x' [27]  (1.237 ns)
+	'load' operation 32 bit ('ping_load', hls-design/ntt-kernel.cpp:169) on array 'ping' [31]  (1.237 ns)
+	'select' operation 32 bit ('storereflowmerge', hls-design/ntt-kernel.cpp:169) [34]  (0.449 ns)
 
  <State 3>: 7.300ns
 The critical path consists of the following:
-	'getelementptr' operation 32 bit ('gmem0_addr', hls-design/ntt-kernel.cpp:104) [21]  (0.000 ns)
-	bus write operation ('write_ln107', hls-design/ntt-kernel.cpp:107) on port 'gmem0' (hls-design/ntt-kernel.cpp:107) [28]  (7.300 ns)
+	'getelementptr' operation 32 bit ('gmem0_addr', hls-design/ntt-kernel.cpp:165) [25]  (0.000 ns)
+	bus write operation ('write_ln165', hls-design/ntt-kernel.cpp:165) on port 'gmem0' (hls-design/ntt-kernel.cpp:165) [35]  (7.300 ns)
 
 
 ============================================================

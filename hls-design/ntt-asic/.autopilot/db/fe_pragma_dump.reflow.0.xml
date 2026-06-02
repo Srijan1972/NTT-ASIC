@@ -1,24 +1,35 @@
 <pragmas>
-<pragma file="hls-design/ntt-kernel.cpp" line="25" pragmaType="inline" parentfunction="mod_mul" off="0" region="0" recursive="0"/>
-<pragma file="hls-design/ntt-kernel.cpp" line="14" pragmaType="inline" parentfunction="mod_add" off="0" region="0" recursive="0"/>
-<pragma file="hls-design/ntt-kernel.cpp" line="20" pragmaType="inline" parentfunction="mod_sub" off="0" region="0" recursive="0"/>
-<pragma file="hls-design/ntt-kernel.cpp" line="61" pragmaType="loop_tripcount" parentfunction="ntt_kernel" min="1" max="16" avg="8"/>
-<pragma file="hls-design/ntt-kernel.cpp" line="71" pragmaType="pipeline" parentfunction="ntt_kernel" off="0" ii="1" rewind="0" style=""/>
-<pragma file="hls-design/ntt-kernel.cpp" line="72" pragmaType="loop_tripcount" parentfunction="ntt_kernel" min="256" max="65536" avg="32896"/>
-<pragma file="hls-design/ntt-kernel.cpp" line="80" pragmaType="loop_tripcount" parentfunction="ntt_kernel" min="1" max="16" avg="8"/>
-<pragma file="hls-design/ntt-kernel.cpp" line="105" pragmaType="pipeline" parentfunction="ntt_kernel" off="0" ii="1" rewind="0" style=""/>
-<pragma file="hls-design/ntt-kernel.cpp" line="106" pragmaType="loop_tripcount" parentfunction="ntt_kernel" min="256" max="65536" avg="32896"/>
-<pragma file="hls-design/ntt-kernel.cpp" line="83" pragmaType="loop_tripcount" parentfunction="ntt_kernel" min="1" max="32768" avg="16384"/>
-<pragma file="hls-design/ntt-kernel.cpp" line="86" pragmaType="pipeline" parentfunction="ntt_kernel" off="0" ii="1" rewind="0" style=""/>
-<pragma file="hls-design/ntt-kernel.cpp" line="87" pragmaType="loop_tripcount" parentfunction="ntt_kernel" min="1" max="32768" avg="16384"/>
-<pragma file="hls-design/ntt-kernel.cpp" line="48" pragmaType="interface" parentfunction="ntt_kernel" mode="m_axi" port="x" bundle="gmem0" offset="" name="" depth="65536" num_read_outstanding="-1" num_write_outstanding="-1" max_burst_read_length="-1" max_burst_write_length="-1" latency="-1" max_widen_bitwidth="-1" channel=""/>
-<pragma file="hls-design/ntt-kernel.cpp" line="49" pragmaType="interface" parentfunction="ntt_kernel" mode="m_axi" port="psi_powers" bundle="gmem1" offset="" name="" depth="65536" num_read_outstanding="-1" num_write_outstanding="-1" max_burst_read_length="-1" max_burst_write_length="-1" latency="-1" max_widen_bitwidth="-1" channel=""/>
-<pragma file="hls-design/ntt-kernel.cpp" line="50" pragmaType="interface" parentfunction="ntt_kernel" mode="m_axi" port="twiddles" bundle="gmem2" offset="" name="" depth="65535" num_read_outstanding="-1" num_write_outstanding="-1" max_burst_read_length="-1" max_burst_write_length="-1" latency="-1" max_widen_bitwidth="-1" channel=""/>
-<pragma file="hls-design/ntt-kernel.cpp" line="53" pragmaType="interface" parentfunction="ntt_kernel" mode="s_axilite" port="q" bundle="control" offset="-1" name="" clock="" impl="" register="0"/>
-<pragma file="hls-design/ntt-kernel.cpp" line="54" pragmaType="interface" parentfunction="ntt_kernel" mode="s_axilite" port="q_inv" bundle="control" offset="-1" name="" clock="" impl="" register="0"/>
-<pragma file="hls-design/ntt-kernel.cpp" line="55" pragmaType="interface" parentfunction="ntt_kernel" mode="s_axilite" port="batch_size" bundle="control" offset="-1" name="" clock="" impl="" register="0"/>
-<pragma file="hls-design/ntt-kernel.cpp" line="56" pragmaType="interface" parentfunction="ntt_kernel" mode="s_axilite" port="n" bundle="control" offset="-1" name="" clock="" impl="" register="0"/>
-<pragma file="hls-design/ntt-kernel.cpp" line="57" pragmaType="interface" parentfunction="ntt_kernel" mode="s_axilite" port="" bundle="control" offset="-1" name="" clock="" impl="" register="0"/>
-<pragma file="hls-design/ntt-kernel.cpp" line="67" pragmaType="bind_storage" parentfunction="ntt_kernel" op="666" impl="22" latency="-1" variable="local_x"/>
-<pragma file="hls-design/ntt-kernel.cpp" line="88" pragmaType="dependence" parentfunction="ntt_kernel" class="array" direction="NODIR" type="inter" distance="0" variable="local_x"/>
+<pragma file="hls-design/ntt-kernel.cpp" line="21" pragmaType="inline" parentfunction="mod_mul" off="0" region="0" recursive="0"/>
+<pragma file="hls-design/ntt-kernel.cpp" line="25" pragmaType="bind_op" parentfunction="mod_mul" op="12" impl="3" latency="3"/>
+<pragma file="hls-design/ntt-kernel.cpp" line="30" pragmaType="bind_op" parentfunction="mod_mul" op="12" impl="3" latency="3"/>
+<pragma file="hls-design/ntt-kernel.cpp" line="34" pragmaType="bind_op" parentfunction="mod_mul" op="12" impl="3" latency="3"/>
+<pragma file="hls-design/ntt-kernel.cpp" line="38" pragmaType="bind_op" parentfunction="mod_mul" op="8" impl="4" latency="1"/>
+<pragma file="hls-design/ntt-kernel.cpp" line="9" pragmaType="inline" parentfunction="mod_add" off="0" region="0" recursive="0"/>
+<pragma file="hls-design/ntt-kernel.cpp" line="15" pragmaType="inline" parentfunction="mod_sub" off="0" region="0" recursive="0"/>
+<pragma file="hls-design/ntt-kernel.cpp" line="98" pragmaType="loop_tripcount" parentfunction="ntt_kernel" min="1" max="16" avg="8"/>
+<pragma file="hls-design/ntt-kernel.cpp" line="104" pragmaType="pipeline" parentfunction="ntt_kernel" off="0" ii="1" rewind="0" style=""/>
+<pragma file="hls-design/ntt-kernel.cpp" line="105" pragmaType="loop_tripcount" parentfunction="ntt_kernel" min="256" max="4096" avg="2176"/>
+<pragma file="hls-design/ntt-kernel.cpp" line="111" pragmaType="pipeline" parentfunction="ntt_kernel" off="0" ii="1" rewind="0" style=""/>
+<pragma file="hls-design/ntt-kernel.cpp" line="112" pragmaType="loop_tripcount" parentfunction="ntt_kernel" min="256" max="4096" avg="2176"/>
+<pragma file="hls-design/ntt-kernel.cpp" line="122" pragmaType="loop_tripcount" parentfunction="ntt_kernel" min="1" max="12" avg="6"/>
+<pragma file="hls-design/ntt-kernel.cpp" line="166" pragmaType="pipeline" parentfunction="ntt_kernel" off="0" ii="1" rewind="0" style=""/>
+<pragma file="hls-design/ntt-kernel.cpp" line="167" pragmaType="loop_tripcount" parentfunction="ntt_kernel" min="256" max="4096" avg="2176"/>
+<pragma file="hls-design/ntt-kernel.cpp" line="127" pragmaType="pipeline" parentfunction="ntt_kernel" off="0" ii="1" rewind="0" style=""/>
+<pragma file="hls-design/ntt-kernel.cpp" line="128" pragmaType="loop_tripcount" parentfunction="ntt_kernel" min="128" max="2048" avg="1088"/>
+<pragma file="hls-design/ntt-kernel.cpp" line="92" pragmaType="pipeline" parentfunction="ntt_kernel" off="0" ii="1" rewind="0" style=""/>
+<pragma file="hls-design/ntt-kernel.cpp" line="93" pragmaType="loop_tripcount" parentfunction="ntt_kernel" min="256" max="4096" avg="2176"/>
+<pragma file="hls-design/ntt-kernel.cpp" line="85" pragmaType="pipeline" parentfunction="ntt_kernel" off="0" ii="1" rewind="0" style=""/>
+<pragma file="hls-design/ntt-kernel.cpp" line="86" pragmaType="loop_tripcount" parentfunction="ntt_kernel" min="255" max="4095" avg="2175"/>
+<pragma file="hls-design/ntt-kernel.cpp" line="61" pragmaType="interface" parentfunction="ntt_kernel" mode="m_axi" port="x" bundle="gmem0" offset="" name="" depth="65536" num_read_outstanding="-1" num_write_outstanding="-1" max_burst_read_length="-1" max_burst_write_length="-1" latency="-1" max_widen_bitwidth="-1" channel=""/>
+<pragma file="hls-design/ntt-kernel.cpp" line="62" pragmaType="interface" parentfunction="ntt_kernel" mode="m_axi" port="psi_powers" bundle="gmem1" offset="" name="" depth="4096" num_read_outstanding="-1" num_write_outstanding="-1" max_burst_read_length="-1" max_burst_write_length="-1" latency="-1" max_widen_bitwidth="-1" channel=""/>
+<pragma file="hls-design/ntt-kernel.cpp" line="63" pragmaType="interface" parentfunction="ntt_kernel" mode="m_axi" port="twiddles" bundle="gmem2" offset="" name="" depth="4096" num_read_outstanding="-1" num_write_outstanding="-1" max_burst_read_length="-1" max_burst_write_length="-1" latency="-1" max_widen_bitwidth="-1" channel=""/>
+<pragma file="hls-design/ntt-kernel.cpp" line="66" pragmaType="interface" parentfunction="ntt_kernel" mode="s_axilite" port="q" bundle="control" offset="-1" name="" clock="" impl="" register="0"/>
+<pragma file="hls-design/ntt-kernel.cpp" line="67" pragmaType="interface" parentfunction="ntt_kernel" mode="s_axilite" port="q_inv" bundle="control" offset="-1" name="" clock="" impl="" register="0"/>
+<pragma file="hls-design/ntt-kernel.cpp" line="68" pragmaType="interface" parentfunction="ntt_kernel" mode="s_axilite" port="batch_size" bundle="control" offset="-1" name="" clock="" impl="" register="0"/>
+<pragma file="hls-design/ntt-kernel.cpp" line="69" pragmaType="interface" parentfunction="ntt_kernel" mode="s_axilite" port="n" bundle="control" offset="-1" name="" clock="" impl="" register="0"/>
+<pragma file="hls-design/ntt-kernel.cpp" line="70" pragmaType="interface" parentfunction="ntt_kernel" mode="s_axilite" port="" bundle="control" offset="-1" name="" clock="" impl="" register="0"/>
+<pragma file="hls-design/ntt-kernel.cpp" line="73" pragmaType="bind_storage" parentfunction="ntt_kernel" op="666" impl="22" latency="-1" variable="local_twiddles"/>
+<pragma file="hls-design/ntt-kernel.cpp" line="75" pragmaType="bind_storage" parentfunction="ntt_kernel" op="666" impl="22" latency="-1" variable="local_psi"/>
+<pragma file="hls-design/ntt-kernel.cpp" line="79" pragmaType="bind_storage" parentfunction="ntt_kernel" op="666" impl="22" latency="-1" variable="ping"/>
+<pragma file="hls-design/ntt-kernel.cpp" line="81" pragmaType="bind_storage" parentfunction="ntt_kernel" op="666" impl="22" latency="-1" variable="pong"/>
 </pragmas>

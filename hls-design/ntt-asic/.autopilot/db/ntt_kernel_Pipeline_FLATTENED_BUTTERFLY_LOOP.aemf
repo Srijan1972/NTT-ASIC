@@ -1,0 +1,1336 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cdfg:DBCdfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cdfg="http://www.autoesl.com/DBCdfg" timeStamp="1780364441690">
+  <ports id="1" name="half_n" type="PortType" coreId="0" bitwidth="31">
+    <dataOutputObjs>read</dataOutputObjs>
+  </ports>
+  <ports id="2" name="sub53" type="PortType" coreId="1629888613" bitwidth="12">
+    <dataOutputObjs>read</dataOutputObjs>
+  </ports>
+  <ports id="3" name="stage" type="PortType" coreId="1629888613" bitwidth="32">
+    <dataOutputObjs>read</dataOutputObjs>
+  </ports>
+  <ports id="4" name="stage_1" type="PortType" coreId="0" bitwidth="32">
+    <dataOutputObjs>read</dataOutputObjs>
+  </ports>
+  <ports id="5" name="empty_29" type="PortType" coreId="4294967283" bitwidth="12">
+    <dataOutputObjs>read</dataOutputObjs>
+  </ports>
+  <ports id="6" name="empty" type="PortType" coreId="0" bitwidth="12">
+    <dataOutputObjs>read</dataOutputObjs>
+  </ports>
+  <ports id="7" name="local_twiddles" type="PortType" coreName="RAM_2P_BRAM" coreId="1230004036" bitwidth="32" iftype="IfTypeRegister" arraysize="4096">
+    <dataOutputObjs>getelementptr</dataOutputObjs>
+  </ports>
+  <ports id="8" name="ping" type="PortType" coreName="RAM_2P_BRAM" coreId="1868767266" bitwidth="32" direction="DirInOut" iftype="IfTypeRegister" arraysize="4096">
+    <dataInputObjs>getelementptr</dataInputObjs>
+    <dataInputObjs>getelementptr</dataInputObjs>
+    <dataOutputObjs>getelementptr</dataOutputObjs>
+    <dataOutputObjs>getelementptr</dataOutputObjs>
+  </ports>
+  <ports id="9" name="pong" type="PortType" coreName="RAM_2P_BRAM" coreId="574449505" bitwidth="32" direction="DirInOut" iftype="IfTypeRegister" arraysize="4096">
+    <dataInputObjs>getelementptr</dataInputObjs>
+    <dataInputObjs>getelementptr</dataInputObjs>
+    <dataOutputObjs>getelementptr</dataOutputObjs>
+    <dataOutputObjs>getelementptr</dataOutputObjs>
+  </ports>
+  <ports id="10" name="use_ping_as_input" type="PortType" coreId="1919905125" bitwidth="1">
+    <dataOutputObjs>read</dataOutputObjs>
+  </ports>
+  <ports id="11" name="q_inv" type="PortType" originalName="q_inv" coreId="1819243365" bitwidth="32">
+    <dataOutputObjs>read</dataOutputObjs>
+  </ports>
+  <ports id="12" name="conv5_i" type="PortType" coreId="1936683105" bitwidth="32">
+    <dataOutputObjs>read</dataOutputObjs>
+  </ports>
+  <ports id="13" name="q" type="PortType" originalName="q" coreId="1700159331" bitwidth="32">
+    <dataOutputObjs>read</dataOutputObjs>
+  </ports>
+  <edges id="121" source_obj="//@ports.12" sink_obj="//@blocks.0/@node_objs.1"/>
+  <edges id="123" source_obj="//@ports.11" sink_obj="//@blocks.0/@node_objs.2"/>
+  <edges id="125" source_obj="//@ports.10" sink_obj="//@blocks.0/@node_objs.3"/>
+  <edges id="128" source_obj="//@ports.9" sink_obj="//@blocks.0/@node_objs.4"/>
+  <edges id="131" source_obj="//@ports.5" sink_obj="//@blocks.0/@node_objs.5"/>
+  <edges id="133" source_obj="//@ports.4" sink_obj="//@blocks.0/@node_objs.6"/>
+  <edges id="135" source_obj="//@ports.3" sink_obj="//@blocks.0/@node_objs.7"/>
+  <edges id="137" source_obj="//@ports.2" sink_obj="//@blocks.0/@node_objs.8"/>
+  <edges id="139" source_obj="//@ports.1" sink_obj="//@blocks.0/@node_objs.9"/>
+  <edges id="142" source_obj="//@ports.0" sink_obj="//@blocks.0/@node_objs.10"/>
+  <edges id="143" source_obj="//@blocks.0/@node_objs.2" sink_obj="//@blocks.0/@node_objs.11"/>
+  <edges id="146" source_obj="//@blocks.0/@node_objs.0" sink_obj="//@blocks.0/@node_objs.12"/>
+  <edges id="147" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.0" sink_obj="//@blocks.0/@node_objs.13"/>
+  <edges id="148" source_obj="//@blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.0"/>
+  <edges id="149" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.1"/>
+  <edges id="150" source_obj="//@regions.0/@basic_blocks.0/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.2"/>
+  <edges id="151" source_obj="//@blocks.0/@node_objs.10" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.2"/>
+  <edges id="152" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.3"/>
+  <edges id="155" source_obj="//@regions.0/@basic_blocks.0/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="156" edge_type="CtrlEdge" source_obj="//@blocks.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="157" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="158" source_obj="//@regions.0/@basic_blocks.0/@node_objs.3" sink_obj="//@regions.0/@basic_blocks.4/@node_objs.0"/>
+  <edges id="159" source_obj="//@blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.4/@node_objs.0"/>
+  <edges id="160" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.0" sink_obj="//@regions.0/@basic_blocks.4/@node_objs.1"/>
+  <edges id="161" source_obj="//@regions.0/@basic_blocks.1/@node_objs.44" sink_obj="//@regions.0/@basic_blocks.3/@node_objs.0"/>
+  <edges id="162" source_obj="//@regions.0/@basic_blocks.1/@node_objs.19" sink_obj="//@regions.0/@basic_blocks.3/@node_objs.0"/>
+  <edges id="163" source_obj="//@regions.0/@basic_blocks.1/@node_objs.48" sink_obj="//@regions.0/@basic_blocks.3/@node_objs.1"/>
+  <edges id="164" source_obj="//@regions.0/@basic_blocks.1/@node_objs.21" sink_obj="//@regions.0/@basic_blocks.3/@node_objs.1"/>
+  <edges id="165" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.4" sink_obj="//@regions.0/@basic_blocks.3/@node_objs.2"/>
+  <edges id="166" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="167" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.1"/>
+  <edges id="168" source_obj="//@regions.0/@basic_blocks.1/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.2"/>
+  <edges id="169" source_obj="//@blocks.0/@node_objs.9" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.2"/>
+  <edges id="170" source_obj="//@regions.0/@basic_blocks.1/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.3"/>
+  <edges id="171" source_obj="//@blocks.0/@node_objs.8" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.3"/>
+  <edges id="172" source_obj="//@regions.0/@basic_blocks.1/@node_objs.3" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.4"/>
+  <edges id="173" source_obj="//@blocks.0/@node_objs.7" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.4"/>
+  <edges id="174" source_obj="//@regions.0/@basic_blocks.1/@node_objs.4" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.5"/>
+  <edges id="175" source_obj="//@regions.0/@basic_blocks.1/@node_objs.5" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.6"/>
+  <edges id="176" source_obj="//@regions.0/@basic_blocks.1/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.6"/>
+  <edges id="177" source_obj="//@blocks.0/@node_objs.6" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.7"/>
+  <edges id="178" source_obj="//@regions.0/@basic_blocks.1/@node_objs.5" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.7"/>
+  <edges id="179" source_obj="//@regions.0/@basic_blocks.1/@node_objs.7" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.8"/>
+  <edges id="180" source_obj="//@regions.0/@basic_blocks.1/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.8"/>
+  <edges id="181" source_obj="//@regions.0/@basic_blocks.1/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.9"/>
+  <edges id="182" source_obj="//@blocks.0/@node_objs.5" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.9"/>
+  <edges id="183" source_obj="//@regions.0/@basic_blocks.1/@node_objs.9" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.10"/>
+  <edges id="184" source_obj="//@ports.6" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.11"/>
+  <edges id="187" source_obj="//@regions.0/@basic_blocks.1/@node_objs.10" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.11"/>
+  <edges id="188" source_obj="//@regions.0/@basic_blocks.1/@node_objs.11" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.12"/>
+  <edges id="189" source_obj="//@regions.0/@basic_blocks.1/@node_objs.6" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.13"/>
+  <edges id="190" source_obj="//@regions.0/@basic_blocks.1/@node_objs.8" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.14"/>
+  <edges id="191" source_obj="//@ports.7" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.15"/>
+  <edges id="193" source_obj="//@regions.0/@basic_blocks.1/@node_objs.13" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.15"/>
+  <edges id="194" source_obj="//@regions.0/@basic_blocks.1/@node_objs.15" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.16"/>
+  <edges id="195" source_obj="//@ports.7" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.17"/>
+  <edges id="197" source_obj="//@regions.0/@basic_blocks.1/@node_objs.14" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.17"/>
+  <edges id="198" source_obj="//@regions.0/@basic_blocks.1/@node_objs.17" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.18"/>
+  <edges id="199" source_obj="//@ports.8" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.19"/>
+  <edges id="201" source_obj="//@regions.0/@basic_blocks.1/@node_objs.13" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.19"/>
+  <edges id="202" source_obj="//@regions.0/@basic_blocks.1/@node_objs.19" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.20"/>
+  <edges id="203" source_obj="//@ports.8" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.21"/>
+  <edges id="205" source_obj="//@regions.0/@basic_blocks.1/@node_objs.14" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.21"/>
+  <edges id="206" source_obj="//@regions.0/@basic_blocks.1/@node_objs.21" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.22"/>
+  <edges id="207" source_obj="//@blocks.0/@node_objs.4" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.23"/>
+  <edges id="208" source_obj="//@regions.0/@basic_blocks.1/@node_objs.16" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.23"/>
+  <edges id="209" source_obj="//@regions.0/@basic_blocks.1/@node_objs.20" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.23"/>
+  <edges id="210" source_obj="//@blocks.0/@node_objs.4" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.24"/>
+  <edges id="211" source_obj="//@regions.0/@basic_blocks.1/@node_objs.18" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.24"/>
+  <edges id="212" source_obj="//@regions.0/@basic_blocks.1/@node_objs.22" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.24"/>
+  <edges id="213" source_obj="//@regions.0/@basic_blocks.1/@node_objs.24" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.25"/>
+  <edges id="214" source_obj="//@regions.0/@basic_blocks.1/@node_objs.12" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.26"/>
+  <edges id="215" source_obj="//@regions.0/@basic_blocks.1/@node_objs.25" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.27"/>
+  <edges id="216" source_obj="//@regions.0/@basic_blocks.1/@node_objs.26" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.27"/>
+  <edges id="217" source_obj="//@regions.0/@basic_blocks.1/@node_objs.27" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.28"/>
+  <edges id="218" source_obj="//@regions.0/@basic_blocks.1/@node_objs.28" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.29"/>
+  <edges id="219" source_obj="//@blocks.0/@node_objs.3" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.29"/>
+  <edges id="220" source_obj="//@regions.0/@basic_blocks.1/@node_objs.29" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.30"/>
+  <edges id="221" source_obj="//@regions.0/@basic_blocks.1/@node_objs.30" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.31"/>
+  <edges id="222" source_obj="//@blocks.0/@node_objs.11" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.31"/>
+  <edges id="223" source_obj="//@regions.0/@basic_blocks.1/@node_objs.31" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.32"/>
+  <edges id="224" source_obj="//@regions.0/@basic_blocks.1/@node_objs.27" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.32"/>
+  <edges id="227" source_obj="//@regions.0/@basic_blocks.1/@node_objs.32" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.33"/>
+  <edges id="232" source_obj="//@regions.0/@basic_blocks.1/@node_objs.33" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.34"/>
+  <edges id="233" source_obj="//@blocks.0/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.34"/>
+  <edges id="234" source_obj="//@regions.0/@basic_blocks.1/@node_objs.34" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.35"/>
+  <edges id="237" source_obj="//@regions.0/@basic_blocks.1/@node_objs.33" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.36"/>
+  <edges id="238" source_obj="//@blocks.0/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.36"/>
+  <edges id="239" source_obj="//@regions.0/@basic_blocks.1/@node_objs.35" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.37"/>
+  <edges id="240" source_obj="//@regions.0/@basic_blocks.1/@node_objs.36" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.37"/>
+  <edges id="241" source_obj="//@regions.0/@basic_blocks.1/@node_objs.33" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.37"/>
+  <edges id="242" source_obj="//@regions.0/@basic_blocks.1/@node_objs.37" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.38"/>
+  <edges id="243" source_obj="//@regions.0/@basic_blocks.1/@node_objs.23" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.38"/>
+  <edges id="244" source_obj="//@regions.0/@basic_blocks.1/@node_objs.38" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.39"/>
+  <edges id="245" source_obj="//@blocks.0/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.39"/>
+  <edges id="246" source_obj="//@regions.0/@basic_blocks.1/@node_objs.39" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.40"/>
+  <edges id="248" source_obj="//@regions.0/@basic_blocks.1/@node_objs.38" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.41"/>
+  <edges id="249" source_obj="//@regions.0/@basic_blocks.1/@node_objs.23" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.41"/>
+  <edges id="250" source_obj="//@regions.0/@basic_blocks.1/@node_objs.40" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.42"/>
+  <edges id="251" source_obj="//@regions.0/@basic_blocks.1/@node_objs.41" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.42"/>
+  <edges id="252" source_obj="//@regions.0/@basic_blocks.1/@node_objs.38" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.43"/>
+  <edges id="253" source_obj="//@blocks.0/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.43"/>
+  <edges id="254" source_obj="//@regions.0/@basic_blocks.1/@node_objs.42" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.44"/>
+  <edges id="255" source_obj="//@regions.0/@basic_blocks.1/@node_objs.43" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.44"/>
+  <edges id="256" source_obj="//@regions.0/@basic_blocks.1/@node_objs.38" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.44"/>
+  <edges id="257" source_obj="//@regions.0/@basic_blocks.1/@node_objs.23" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.45"/>
+  <edges id="258" source_obj="//@regions.0/@basic_blocks.1/@node_objs.37" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.45"/>
+  <edges id="259" source_obj="//@regions.0/@basic_blocks.1/@node_objs.23" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.46"/>
+  <edges id="260" source_obj="//@blocks.0/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.46"/>
+  <edges id="261" source_obj="//@regions.0/@basic_blocks.1/@node_objs.45" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.47"/>
+  <edges id="262" source_obj="//@regions.0/@basic_blocks.1/@node_objs.46" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.47"/>
+  <edges id="263" source_obj="//@regions.0/@basic_blocks.1/@node_objs.23" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.47"/>
+  <edges id="264" source_obj="//@regions.0/@basic_blocks.1/@node_objs.47" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.48"/>
+  <edges id="265" source_obj="//@regions.0/@basic_blocks.1/@node_objs.37" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.48"/>
+  <edges id="266" source_obj="//@blocks.0/@node_objs.4" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.49"/>
+  <edges id="267" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.2" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.49"/>
+  <edges id="268" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.3" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.49"/>
+  <edges id="269" source_obj="//@regions.0/@basic_blocks.1/@node_objs.44" sink_obj="//@regions.0/@basic_blocks.2/@node_objs.0"/>
+  <edges id="270" source_obj="//@regions.0/@basic_blocks.1/@node_objs.15" sink_obj="//@regions.0/@basic_blocks.2/@node_objs.0"/>
+  <edges id="271" source_obj="//@regions.0/@basic_blocks.1/@node_objs.48" sink_obj="//@regions.0/@basic_blocks.2/@node_objs.1"/>
+  <edges id="272" source_obj="//@regions.0/@basic_blocks.1/@node_objs.17" sink_obj="//@regions.0/@basic_blocks.2/@node_objs.1"/>
+  <edges id="273" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.4" sink_obj="//@regions.0/@basic_blocks.2/@node_objs.2"/>
+  <edges id="366" edge_type="CtrlEdge" source_obj="//@blocks.0" sink_obj="//@regions.0/@basic_blocks.0"/>
+  <edges id="367" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.0" sink_obj="//@regions.0/@basic_blocks.1"/>
+  <edges id="368" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.0" sink_obj="//@blocks.1"/>
+  <edges id="369" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.1" sink_obj="//@regions.0/@basic_blocks.3"/>
+  <edges id="370" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.1" sink_obj="//@regions.0/@basic_blocks.2"/>
+  <edges id="371" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.2" sink_obj="//@regions.0/@basic_blocks.4"/>
+  <edges id="372" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.3" sink_obj="//@regions.0/@basic_blocks.4"/>
+  <edges id="373" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.4" sink_obj="//@regions.0/@basic_blocks.0" is_back_edge="1"/>
+  <edges id="374" edge_type="VirtEdge" source_obj="//@regions.0/@basic_blocks.2/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.2/@node_objs.1"/>
+  <edges id="375" edge_type="VirtEdge" source_obj="//@regions.0/@basic_blocks.3/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.3/@node_objs.1"/>
+  <edges id="376" edge_type="VirtEdge" source_obj="//@regions.0/@basic_blocks.1/@node_objs.20" sink_obj="//@regions.0/@basic_blocks.3/@node_objs.0"/>
+  <edges id="377" edge_type="VirtEdge" source_obj="//@regions.0/@basic_blocks.1/@node_objs.22" sink_obj="//@regions.0/@basic_blocks.3/@node_objs.1"/>
+  <edges id="378" edge_type="VirtEdge" source_obj="//@regions.0/@basic_blocks.1/@node_objs.16" sink_obj="//@regions.0/@basic_blocks.2/@node_objs.0"/>
+  <edges id="379" edge_type="VirtEdge" source_obj="//@regions.0/@basic_blocks.1/@node_objs.18" sink_obj="//@regions.0/@basic_blocks.2/@node_objs.1"/>
+  <edges id="380" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.12" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.0"/>
+  <edges id="381" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.12" sink_obj="//@regions.0/@basic_blocks.4/@node_objs.0"/>
+  <edges id="382" edge_type="VirtEdge" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.4/@node_objs.0"/>
+  <edges id="2147483647" source_obj="//@regions.0/@basic_blocks.2/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.18" is_back_edge="1"/>
+  <edges id="-191" source_obj="//@regions.0/@basic_blocks.1/@node_objs.15" sink_obj="//@ports.7"/>
+  <edges id="-195" source_obj="//@regions.0/@basic_blocks.1/@node_objs.17" sink_obj="//@ports.7"/>
+  <edges id="-199" source_obj="//@regions.0/@basic_blocks.1/@node_objs.19" sink_obj="//@ports.8"/>
+  <edges id="-203" source_obj="//@regions.0/@basic_blocks.1/@node_objs.21" sink_obj="//@ports.8"/>
+  <blocks id="31" name="newFuncRoot" type="BlockType">
+    <controlOutputObjs>for.body52</controlOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="14" name="step" lineNumber="126" originalName="step" fileName="hls-design/ntt-kernel.cpp" fileDirectory="../." coreId="1635131494" contextFuncName="ntt_kernel" bitwidth="30" opcode="alloca" m_display="0" m_topoIndex="1" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="hls-design/ntt-kernel.cpp" linenumber="126" fileDirectory="/home/sg9109/Documents" functionName="ntt_kernel"/>
+      <dataOutputObjs>store</dataOutputObjs>
+      <dataOutputObjs>load</dataOutputObjs>
+      <dataOutputObjs>store</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="15" name="q_read" coreId="1095517755" bitwidth="32" opcode="read" m_display="0" m_topoIndex="2" m_clusterGroupNumber="-1">
+      <dataInputObjs>q</dataInputObjs>
+      <dataOutputObjs>icmp</dataOutputObjs>
+      <dataOutputObjs>sub</dataOutputObjs>
+      <dataOutputObjs>icmp</dataOutputObjs>
+      <dataOutputObjs>sub</dataOutputObjs>
+      <dataOutputObjs>add</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="16" name="conv5_i_read" coreId="1920098592" bitwidth="32" opcode="read" m_display="0" m_topoIndex="3" m_clusterGroupNumber="-1">
+      <dataInputObjs>conv5_i</dataInputObjs>
+      <dataOutputObjs>zext</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="17" name="q_inv_read" coreId="1635021673" bitwidth="32" opcode="read" m_display="0" m_topoIndex="4" m_clusterGroupNumber="-1">
+      <dataInputObjs>q_inv</dataInputObjs>
+      <dataOutputObjs>mul</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="18" name="use_ping_as_input_read" coreId="1330596898" bitwidth="1" opcode="read" m_display="0" m_topoIndex="5" m_clusterGroupNumber="-1">
+      <dataInputObjs>use_ping_as_input</dataInputObjs>
+      <dataOutputObjs>select</dataOutputObjs>
+      <dataOutputObjs>select</dataOutputObjs>
+      <dataOutputObjs>br</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="19" name="tmp" coreId="1869635878" bitwidth="12" opcode="read" m_display="0" m_topoIndex="6" m_clusterGroupNumber="-1">
+      <dataInputObjs>empty</dataInputObjs>
+      <dataOutputObjs>add</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="20" name="tmp_1" coreId="1330405189" bitwidth="12" opcode="read" m_display="0" m_topoIndex="7" m_clusterGroupNumber="-1">
+      <dataInputObjs>empty_29</dataInputObjs>
+      <dataOutputObjs>add</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="21" name="stage_1_read" coreId="1953391988" bitwidth="32" opcode="read" m_display="0" m_topoIndex="8" m_clusterGroupNumber="-1">
+      <dataInputObjs>stage_1</dataInputObjs>
+      <dataOutputObjs>shl</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="22" name="stage_read" coreId="1869767529" bitwidth="32" opcode="read" m_display="0" m_topoIndex="9" m_clusterGroupNumber="-1">
+      <dataInputObjs>stage</dataInputObjs>
+      <dataOutputObjs>lshr</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="23" name="sub53_read" coreId="1031369833" bitwidth="12" opcode="read" m_display="0" m_topoIndex="10" m_clusterGroupNumber="-1">
+      <dataInputObjs>sub53</dataInputObjs>
+      <dataOutputObjs>and</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="24" name="half_n_read" coreId="574454132" bitwidth="31" opcode="read" m_display="0" m_topoIndex="11" m_clusterGroupNumber="-1">
+      <dataInputObjs>half_n</dataInputObjs>
+      <dataOutputObjs>icmp</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="25" name="conv5_i_cast" rtlName="conv5_i_cast_fu_235_p1" coreId="1701606756" bitwidth="64" opcode="zext" m_display="0" m_topoIndex="12" m_clusterGroupNumber="-1">
+      <dataInputObjs>read</dataInputObjs>
+      <dataOutputObjs>mul</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="29" name="step_write_ln126" lineNumber="126" fileName="hls-design/ntt-kernel.cpp" fileDirectory="../." coreId="1145004905" contextFuncName="ntt_kernel" opcode="store" m_display="0" m_delay="0.42" m_topoIndex="13" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="hls-design/ntt-kernel.cpp" linenumber="126" fileDirectory="/home/sg9109/Documents" functionName="ntt_kernel"/>
+      <dataInputObjs>alloca</dataInputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="30" name="br_ln0" coreId="997484326" opcode="br" m_display="0" m_topoIndex="14" m_clusterGroupNumber="-1">
+      <controlInputObjs>for.body52</controlInputObjs>
+    </node_objs>
+    <fileValidLineNumbers fileName="hls-design/ntt-kernel.cpp">
+      <validLinenumbers>126</validLinenumbers>
+    </fileValidLineNumbers>
+  </blocks>
+  <blocks id="116" name="for.inc89.loopexit.exitStub" type="BlockType">
+    <controlInputObjs>for.body52</controlInputObjs>
+    <controlOutputObjs>br</controlOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="115" name="_ln0" coreId="3433057744" opcode="ret" m_display="0" m_topoIndex="31" m_clusterGroupNumber="-1"/>
+  </blocks>
+  <regions anchor_node="-1" region_type="8" interval="13" typeName="Pipeline" iiViolation="Memory Dependency;mFailedII=12;mDependenceDistancedII=1;mLimitedResource=0;nodes=105__,59__;" id="402" pipe_depth="14" RegionName="FLATTENED_BUTTERFLY_LOOP">
+    <basic_blocks id="37" name="for.body52" type="BlockType">
+      <controlInputObjs>newFuncRoot</controlInputObjs>
+      <controlInputObjs>for.inc84</controlInputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <controlOutputObjs>fpga_resource_hint.if.end.3</controlOutputObjs>
+      <controlOutputObjs>for.inc89.loopexit.exitStub</controlOutputObjs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="32" name="step_1" lineNumber="126" originalName="step" fileName="hls-design/ntt-kernel.cpp" fileDirectory="../." coreId="1679844453" contextFuncName="ntt_kernel" bitwidth="30" opcode="load" m_display="0" m_topoIndex="15" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="hls-design/ntt-kernel.cpp" linenumber="126" fileDirectory="/home/sg9109/Documents" functionName="ntt_kernel"/>
+        <dataInputObjs>alloca</dataInputObjs>
+        <dataOutputObjs>zext</dataOutputObjs>
+        <dataOutputObjs>add</dataOutputObjs>
+        <dataOutputObjs>zext</dataOutputObjs>
+        <dataOutputObjs>trunc</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="33" name="zext_ln126_1" lineNumber="126" fileName="hls-design/ntt-kernel.cpp" fileDirectory="../." rtlName="zext_ln126_1_fu_247_p1" coreId="840979276" contextFuncName="ntt_kernel" bitwidth="31" opcode="zext" m_display="0" m_topoIndex="16" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="hls-design/ntt-kernel.cpp" linenumber="126" fileDirectory="/home/sg9109/Documents" functionName="ntt_kernel"/>
+        <dataInputObjs>load</dataInputObjs>
+        <dataOutputObjs>icmp</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="34" name="icmp_ln126" lineNumber="126" fileName="hls-design/ntt-kernel.cpp" fileDirectory="../." rtlName="icmp_ln126_fu_251_p2" coreName="Cmp" implIndex="auto" control="no" opType="icmp" coreId="9" contextFuncName="ntt_kernel" bitwidth="1" opcode="icmp" m_display="0" m_delay="1.0" m_topoIndex="17" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="hls-design/ntt-kernel.cpp" linenumber="126" fileDirectory="/home/sg9109/Documents" functionName="ntt_kernel"/>
+        <dataInputObjs>zext</dataInputObjs>
+        <dataInputObjs>read</dataInputObjs>
+        <dataOutputObjs>br</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="35" name="step_2" lineNumber="126" originalName="step" fileName="hls-design/ntt-kernel.cpp" fileDirectory="../." rtlName="step_2_fu_257_p2" coreName="Adder" implIndex="fabric" control="no" opType="add" coreId="1" contextFuncName="ntt_kernel" bitwidth="30" opcode="add" m_display="0" m_delay="0.99" m_topoIndex="18" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="hls-design/ntt-kernel.cpp" linenumber="126" fileDirectory="/home/sg9109/Documents" functionName="ntt_kernel"/>
+        <dataInputObjs>load</dataInputObjs>
+        <dataOutputObjs>store</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="36" name="br_ln126" lineNumber="126" fileName="hls-design/ntt-kernel.cpp" fileDirectory="../." coreId="1868785011" contextFuncName="ntt_kernel" opcode="br" m_display="0" m_topoIndex="19" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="hls-design/ntt-kernel.cpp" linenumber="126" fileDirectory="/home/sg9109/Documents" functionName="ntt_kernel"/>
+        <dataInputObjs>icmp</dataInputObjs>
+        <controlInputObjs>for.inc89.loopexit.exitStub</controlInputObjs>
+        <controlInputObjs>fpga_resource_hint.if.end.3</controlInputObjs>
+      </node_objs>
+      <fileValidLineNumbers fileName="hls-design/ntt-kernel.cpp">
+        <validLinenumbers>126</validLinenumbers>
+      </fileValidLineNumbers>
+    </basic_blocks>
+    <basic_blocks id="103" name="fpga_resource_hint.if.end.3" type="BlockType">
+      <controlInputObjs>for.body52</controlInputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <controlOutputObjs>if.then73</controlOutputObjs>
+      <controlOutputObjs>if.else78</controlOutputObjs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="38" name="zext_ln126" lineNumber="126" fileName="hls-design/ntt-kernel.cpp" fileDirectory="../." rtlName="zext_ln126_fu_263_p1" coreId="1769239141" contextFuncName="ntt_kernel" bitwidth="32" opcode="zext" m_display="0" m_topoIndex="20" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="hls-design/ntt-kernel.cpp" linenumber="126" fileDirectory="/home/sg9109/Documents" functionName="ntt_kernel"/>
+        <dataInputObjs>load</dataInputObjs>
+        <dataOutputObjs>lshr</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="39" name="trunc_ln126" lineNumber="126" fileName="hls-design/ntt-kernel.cpp" fileDirectory="../." rtlName="trunc_ln126_fu_267_p1" coreId="1445744719" contextFuncName="ntt_kernel" bitwidth="12" opcode="trunc" m_display="0" m_topoIndex="21" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="hls-design/ntt-kernel.cpp" linenumber="126" fileDirectory="/home/sg9109/Documents" functionName="ntt_kernel"/>
+        <dataInputObjs>load</dataInputObjs>
+        <dataOutputObjs>and</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="43" name="j" lineNumber="130" originalName="j" fileName="hls-design/ntt-kernel.cpp" fileDirectory="../." rtlName="j_fu_271_p2" coreName="LogicGate" implIndex="auto" control="no" opType="and" coreId="74" contextFuncName="ntt_kernel" bitwidth="12" opcode="and" m_display="0" m_delay="0.32" m_topoIndex="22" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="hls-design/ntt-kernel.cpp" linenumber="130" fileDirectory="/home/sg9109/Documents" functionName="ntt_kernel"/>
+        <dataInputObjs>trunc</dataInputObjs>
+        <dataInputObjs>read</dataInputObjs>
+        <dataOutputObjs>add</dataOutputObjs>
+        <dataOutputObjs>add</dataOutputObjs>
+        <dataOutputObjs>add</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="44" name="lshr_ln131" lineNumber="131" fileName="hls-design/ntt-kernel.cpp" fileDirectory="../." rtlName="lshr_ln131_fu_277_p2" coreName="Shifter" implIndex="auto_pipe" control="no" opType="lshr" coreId="75" contextFuncName="ntt_kernel" bitwidth="32" opcode="lshr" m_display="0" m_delay="1.38" m_topoIndex="23" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="hls-design/ntt-kernel.cpp" linenumber="131" fileDirectory="/home/sg9109/Documents" functionName="ntt_kernel"/>
+        <dataInputObjs>zext</dataInputObjs>
+        <dataInputObjs>read</dataInputObjs>
+        <dataOutputObjs>shl</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="45" name="i" lineNumber="131" originalName="i" fileName="hls-design/ntt-kernel.cpp" fileDirectory="../." rtlName="i_fu_299_p2" coreName="Shifter" implIndex="auto_pipe" control="no" opType="shl" coreId="75" contextFuncName="ntt_kernel" bitwidth="32" opcode="shl" nodeLabel="1.0" m_display="0" m_delay="1.38" m_topoIndex="32" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="hls-design/ntt-kernel.cpp" linenumber="131" fileDirectory="/home/sg9109/Documents" functionName="ntt_kernel"/>
+        <dataInputObjs>lshr</dataInputObjs>
+        <dataInputObjs>read</dataInputObjs>
+        <dataOutputObjs>trunc</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="46" name="trunc_ln131" lineNumber="131" fileName="hls-design/ntt-kernel.cpp" fileDirectory="../." rtlName="trunc_ln131_fu_303_p1" coreId="6107440" contextFuncName="ntt_kernel" bitwidth="12" opcode="trunc" nodeLabel="1.0" m_display="0" m_topoIndex="33" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="hls-design/ntt-kernel.cpp" linenumber="131" fileDirectory="/home/sg9109/Documents" functionName="ntt_kernel"/>
+        <dataInputObjs>shl</dataInputObjs>
+        <dataOutputObjs>add</dataOutputObjs>
+        <dataOutputObjs>add</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="47" name="idx1" lineNumber="132" originalName="idx1" fileName="hls-design/ntt-kernel.cpp" fileDirectory="../." rtlName="idx1_fu_307_p2" coreName="Adder" implIndex="fabric" control="no" opType="add" coreId="1" contextFuncName="ntt_kernel" bitwidth="12" opcode="add" nodeLabel="1.0" m_display="0" m_delay="0.8" m_topoIndex="34" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="hls-design/ntt-kernel.cpp" linenumber="132" fileDirectory="/home/sg9109/Documents" functionName="ntt_kernel"/>
+        <dataInputObjs>trunc</dataInputObjs>
+        <dataInputObjs>and</dataInputObjs>
+        <dataOutputObjs>zext</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="48" name="add_ln133" lineNumber="133" fileName="hls-design/ntt-kernel.cpp" fileDirectory="../." rtlName="add_ln133_fu_312_p2" coreName="TAddSub" implIndex="tadder" control="no" opType="all" coreId="10" contextFuncName="ntt_kernel" bitwidth="12" opcode="add" nodeLabel="1.0" m_display="0" m_topoIndex="35" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="hls-design/ntt-kernel.cpp" linenumber="133" fileDirectory="/home/sg9109/Documents" functionName="ntt_kernel"/>
+        <dataInputObjs>read</dataInputObjs>
+        <dataInputObjs>trunc</dataInputObjs>
+        <dataOutputObjs>add</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="49" name="idx2" lineNumber="133" originalName="idx2" fileName="hls-design/ntt-kernel.cpp" fileDirectory="../." rtlName="idx2_fu_317_p2" coreName="TAddSub" implIndex="tadder" control="no" opType="all" coreId="10" contextFuncName="ntt_kernel" bitwidth="12" opcode="add" nodeLabel="1.0" m_display="0" m_delay="0.86" m_topoIndex="36" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="hls-design/ntt-kernel.cpp" linenumber="133" fileDirectory="/home/sg9109/Documents" functionName="ntt_kernel"/>
+        <dataInputObjs>add</dataInputObjs>
+        <dataInputObjs>and</dataInputObjs>
+        <dataOutputObjs>zext</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="50" name="add_ln134" lineNumber="134" fileName="hls-design/ntt-kernel.cpp" fileDirectory="../." rtlName="add_ln134_fu_283_p2" coreName="Adder" implIndex="fabric" control="no" opType="add" coreId="1" contextFuncName="ntt_kernel" bitwidth="12" opcode="add" m_display="0" m_delay="0.8" m_topoIndex="24" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="hls-design/ntt-kernel.cpp" linenumber="134" fileDirectory="/home/sg9109/Documents" functionName="ntt_kernel"/>
+        <dataInputObjs>and</dataInputObjs>
+        <dataInputObjs>read</dataInputObjs>
+        <dataOutputObjs>zext</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="51" name="zext_ln134" lineNumber="134" fileName="hls-design/ntt-kernel.cpp" fileDirectory="../." rtlName="zext_ln134_fu_289_p1" coreId="1869357159" contextFuncName="ntt_kernel" bitwidth="64" opcode="zext" m_display="0" m_topoIndex="25" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="hls-design/ntt-kernel.cpp" linenumber="134" fileDirectory="/home/sg9109/Documents" functionName="ntt_kernel"/>
+        <dataInputObjs>add</dataInputObjs>
+        <dataOutputObjs>getelementptr</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="52" name="local_twiddles_addr" lineNumber="134" fileName="hls-design/ntt-kernel.cpp" fileDirectory="../." coreId="1797259357" contextFuncName="ntt_kernel" bitwidth="12" opcode="getelementptr" m_display="0" m_topoIndex="26" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="hls-design/ntt-kernel.cpp" linenumber="134" fileDirectory="/home/sg9109/Documents" functionName="ntt_kernel"/>
+        <dataInputObjs>local_twiddles</dataInputObjs>
+        <dataInputObjs>zext</dataInputObjs>
+        <dataOutputObjs>load</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="53" name="twiddle" lineNumber="134" originalName="twiddle" fileName="hls-design/ntt-kernel.cpp" fileDirectory="../." coreName="RAM_2P_BRAM" implIndex="bram" control="no" opType="ram_2p" coreId="94" contextFuncName="ntt_kernel" bitwidth="32" opcode="load" nodeLatency="1" m_display="0" m_delay="1.23" m_topoIndex="27" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="hls-design/ntt-kernel.cpp" linenumber="134" fileDirectory="/home/sg9109/Documents" functionName="ntt_kernel"/>
+        <dataInputObjs>getelementptr</dataInputObjs>
+        <dataOutputObjs>zext</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="54" name="zext_ln139" lineNumber="139" fileName="hls-design/ntt-kernel.cpp" fileDirectory="../." rtlName="zext_ln139_fu_322_p1" coreId="541345096" contextFuncName="ntt_kernel" bitwidth="64" opcode="zext" nodeLabel="1.0" m_display="0" m_topoIndex="37" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="hls-design/ntt-kernel.cpp" linenumber="139" fileDirectory="/home/sg9109/Documents" functionName="ntt_kernel"/>
+        <dataInputObjs>add</dataInputObjs>
+        <dataOutputObjs>getelementptr</dataOutputObjs>
+        <dataOutputObjs>getelementptr</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="55" name="zext_ln140" lineNumber="140" fileName="hls-design/ntt-kernel.cpp" fileDirectory="../." rtlName="zext_ln140_fu_328_p1" coreId="1769107308" contextFuncName="ntt_kernel" bitwidth="64" opcode="zext" nodeLabel="1.0" m_display="0" m_topoIndex="38" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="hls-design/ntt-kernel.cpp" linenumber="140" fileDirectory="/home/sg9109/Documents" functionName="ntt_kernel"/>
+        <dataInputObjs>add</dataInputObjs>
+        <dataOutputObjs>getelementptr</dataOutputObjs>
+        <dataOutputObjs>getelementptr</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="56" name="ping_addr" lineNumber="139" fileName="hls-design/ntt-kernel.cpp" fileDirectory="../." coreId="788537856" contextFuncName="ntt_kernel" bitwidth="12" opcode="getelementptr" nodeLabel="1.0" m_display="0" m_topoIndex="39" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="hls-design/ntt-kernel.cpp" linenumber="139" fileDirectory="/home/sg9109/Documents" functionName="ntt_kernel"/>
+        <dataInputObjs>ping</dataInputObjs>
+        <dataInputObjs>zext</dataInputObjs>
+        <dataOutputObjs>load</dataOutputObjs>
+        <dataOutputObjs>store</dataOutputObjs>
+        <dataOutputObjs>ping</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="57" name="u" lineNumber="139" originalName="u" fileName="hls-design/ntt-kernel.cpp" fileDirectory="../." coreName="RAM_2P_BRAM" implIndex="bram" control="no" opType="ram_2p" coreId="94" contextFuncName="ntt_kernel" bitwidth="32" opcode="load" nodeLabel="1.0" nodeLatency="1" m_display="0" m_delay="1.23" m_topoIndex="40" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="hls-design/ntt-kernel.cpp" linenumber="139" fileDirectory="/home/sg9109/Documents" functionName="ntt_kernel"/>
+        <dataInputObjs>getelementptr</dataInputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="58" name="ping_addr_1" lineNumber="140" fileName="hls-design/ntt-kernel.cpp" fileDirectory="../." coreId="1735279920" contextFuncName="ntt_kernel" bitwidth="12" opcode="getelementptr" nodeLabel="1.0" m_display="0" m_topoIndex="41" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="hls-design/ntt-kernel.cpp" linenumber="140" fileDirectory="/home/sg9109/Documents" functionName="ntt_kernel"/>
+        <dataInputObjs>ping</dataInputObjs>
+        <dataInputObjs>zext</dataInputObjs>
+        <dataOutputObjs>load</dataOutputObjs>
+        <dataOutputObjs>store</dataOutputObjs>
+        <dataOutputObjs>ping</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="59" name="v" lineNumber="140" originalName="v" fileName="hls-design/ntt-kernel.cpp" fileDirectory="../." coreName="RAM_2P_BRAM" implIndex="bram" control="no" opType="ram_2p" coreId="94" contextFuncName="ntt_kernel" bitwidth="32" opcode="load" nodeLabel="1.0" nodeLatency="1" m_display="1" m_delay="1.23" m_isLCDNode="true" m_isStartOfPath="true" m_topoIndex="42" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="hls-design/ntt-kernel.cpp" linenumber="140" fileDirectory="/home/sg9109/Documents" functionName="ntt_kernel"/>
+        <dataInputObjs>getelementptr</dataInputObjs>
+        <dataInputObjs>store</dataInputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="60" name="pong_addr" lineNumber="142" fileName="hls-design/ntt-kernel.cpp" fileDirectory="../." coreId="842211438" contextFuncName="ntt_kernel" bitwidth="12" opcode="getelementptr" nodeLabel="1.0" m_display="0" m_topoIndex="43" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="hls-design/ntt-kernel.cpp" linenumber="142" fileDirectory="/home/sg9109/Documents" functionName="ntt_kernel"/>
+        <dataInputObjs>pong</dataInputObjs>
+        <dataInputObjs>zext</dataInputObjs>
+        <dataOutputObjs>store</dataOutputObjs>
+        <dataOutputObjs>load</dataOutputObjs>
+        <dataOutputObjs>pong</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="61" name="u_1" lineNumber="142" originalName="u" fileName="hls-design/ntt-kernel.cpp" fileDirectory="../." coreName="RAM_2P_BRAM" implIndex="bram" control="no" opType="ram_2p" coreId="94" contextFuncName="ntt_kernel" bitwidth="32" opcode="load" nodeLabel="1.0" nodeLatency="1" m_display="0" m_delay="1.23" m_topoIndex="44" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="hls-design/ntt-kernel.cpp" linenumber="142" fileDirectory="/home/sg9109/Documents" functionName="ntt_kernel"/>
+        <dataInputObjs>getelementptr</dataInputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="62" name="pong_addr_1" lineNumber="143" fileName="hls-design/ntt-kernel.cpp" fileDirectory="../." coreId="825303101" contextFuncName="ntt_kernel" bitwidth="12" opcode="getelementptr" nodeLabel="1.0" m_display="0" m_topoIndex="45" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="hls-design/ntt-kernel.cpp" linenumber="143" fileDirectory="/home/sg9109/Documents" functionName="ntt_kernel"/>
+        <dataInputObjs>pong</dataInputObjs>
+        <dataInputObjs>zext</dataInputObjs>
+        <dataOutputObjs>store</dataOutputObjs>
+        <dataOutputObjs>load</dataOutputObjs>
+        <dataOutputObjs>pong</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="63" name="v_1" lineNumber="143" originalName="v" fileName="hls-design/ntt-kernel.cpp" fileDirectory="../." coreName="RAM_2P_BRAM" implIndex="bram" control="no" opType="ram_2p" coreId="94" contextFuncName="ntt_kernel" bitwidth="32" opcode="load" nodeLabel="1.0" nodeLatency="1" m_display="0" m_delay="1.23" m_topoIndex="46" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="hls-design/ntt-kernel.cpp" linenumber="143" fileDirectory="/home/sg9109/Documents" functionName="ntt_kernel"/>
+        <dataInputObjs>getelementptr</dataInputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="64" name="u_2" lineNumber="139" originalName="u" fileName="hls-design/ntt-kernel.cpp" fileDirectory="../." rtlName="u_2_fu_365_p3" coreName="Sel" implIndex="auto_sel" control="no" opType="select" coreId="73" contextFuncName="ntt_kernel" bitwidth="32" opcode="select" nodeLabel="12.0" m_display="0" m_delay="0.44" m_topoIndex="56" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="hls-design/ntt-kernel.cpp" linenumber="139" fileDirectory="/home/sg9109/Documents" functionName="ntt_kernel"/>
+        <dataInputObjs>read</dataInputObjs>
+        <dataInputObjs>load</dataInputObjs>
+        <dataInputObjs>load</dataInputObjs>
+        <dataOutputObjs>add</dataOutputObjs>
+        <dataOutputObjs>icmp</dataOutputObjs>
+        <dataOutputObjs>icmp</dataOutputObjs>
+        <dataOutputObjs>add</dataOutputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="65" name="v_2" lineNumber="140" originalName="v" fileName="hls-design/ntt-kernel.cpp" fileDirectory="../." rtlName="v_2_fu_334_p3" coreName="Sel" implIndex="auto_sel" control="no" opType="select" coreId="73" contextFuncName="ntt_kernel" bitwidth="32" opcode="select" nodeLabel="2.0" m_display="1" m_delay="0.44" m_isLCDNode="true" m_topoIndex="47" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="hls-design/ntt-kernel.cpp" linenumber="140" fileDirectory="/home/sg9109/Documents" functionName="ntt_kernel"/>
+        <dataInputObjs>read</dataInputObjs>
+        <dataInputObjs>load</dataInputObjs>
+        <dataInputObjs>load</dataInputObjs>
+        <dataOutputObjs>zext</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="67" name="zext_ln24" lineNumber="24" fileName="hls-design/ntt-kernel.cpp" fileDirectory="../." rtlName="zext_ln24_fu_341_p1" coreId="1040683557" contextFuncName="mod_mul" bitwidth="64" opcode="zext" nodeLabel="2.0" m_display="1" m_isLCDNode="true" m_topoIndex="48" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="hls-design/ntt-kernel.cpp" linenumber="24" fileDirectory="/home/sg9109/Documents" functionName="mod_mul"/>
+        <inlineStackInfo fileName="hls-design/ntt-kernel.cpp" linenumber="146" fileDirectory="/home/sg9109/Documents" functionName="ntt_kernel"/>
+        <dataInputObjs>select</dataInputObjs>
+        <dataOutputObjs>mul</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="68" name="zext_ln24_1" lineNumber="24" fileName="hls-design/ntt-kernel.cpp" fileDirectory="../." rtlName="zext_ln24_1_fu_346_p1" coreId="3433781176" contextFuncName="mod_mul" bitwidth="64" opcode="zext" nodeLabel="2.0" m_display="0" m_topoIndex="49" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="hls-design/ntt-kernel.cpp" linenumber="24" fileDirectory="/home/sg9109/Documents" functionName="mod_mul"/>
+        <inlineStackInfo fileName="hls-design/ntt-kernel.cpp" linenumber="146" fileDirectory="/home/sg9109/Documents" functionName="ntt_kernel"/>
+        <dataInputObjs>load</dataInputObjs>
+        <dataOutputObjs>mul</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="69" name="ab" lineNumber="24" originalName="ab" fileName="hls-design/ntt-kernel.cpp" fileDirectory="../." rtlName="mul_32ns_32ns_64_4_1_U17" coreName="Mul_DSP" implIndex="dsp" control="yes" opType="mul" coreId="5" contextFuncName="mod_mul" bitwidth="64" opcode="mul" nodeLabel="2.0" nodeLatency="3" m_display="1" m_delay="2.29" m_isLCDNode="true" m_topoIndex="50" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="hls-design/ntt-kernel.cpp" linenumber="24" fileDirectory="/home/sg9109/Documents" functionName="mod_mul"/>
+        <inlineStackInfo fileName="hls-design/ntt-kernel.cpp" linenumber="146" fileDirectory="/home/sg9109/Documents" functionName="ntt_kernel"/>
+        <dataInputObjs>zext</dataInputObjs>
+        <dataInputObjs>zext</dataInputObjs>
+        <dataOutputObjs>trunc</dataOutputObjs>
+        <dataOutputObjs>add</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="72" name="ab_low" lineNumber="28" originalName="ab_low" fileName="hls-design/ntt-kernel.cpp" fileDirectory="../." rtlName="grp_fu_231_p0" coreId="3433722688" contextFuncName="mod_mul" bitwidth="32" opcode="trunc" nodeLabel="5.0" m_display="1" m_isLCDNode="true" m_topoIndex="51" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="hls-design/ntt-kernel.cpp" linenumber="28" fileDirectory="/home/sg9109/Documents" functionName="mod_mul"/>
+        <inlineStackInfo fileName="hls-design/ntt-kernel.cpp" linenumber="146" fileDirectory="/home/sg9109/Documents" functionName="ntt_kernel"/>
+        <dataInputObjs>mul</dataInputObjs>
+        <dataOutputObjs>mul</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="74" name="m" lineNumber="29" originalName="m" fileName="hls-design/ntt-kernel.cpp" fileDirectory="../." rtlName="mul_32s_32s_32_4_1_U18" coreName="Mul_DSP" implIndex="dsp" control="yes" opType="mul" coreId="5" contextFuncName="mod_mul" bitwidth="32" opcode="mul" nodeLabel="5.0" nodeLatency="3" m_display="1" m_delay="2.29" m_isLCDNode="true" m_topoIndex="52" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="hls-design/ntt-kernel.cpp" linenumber="29" fileDirectory="/home/sg9109/Documents" functionName="mod_mul"/>
+        <inlineStackInfo fileName="hls-design/ntt-kernel.cpp" linenumber="146" fileDirectory="/home/sg9109/Documents" functionName="ntt_kernel"/>
+        <dataInputObjs>trunc</dataInputObjs>
+        <dataInputObjs>read</dataInputObjs>
+        <dataOutputObjs>zext</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="78" name="zext_ln33" lineNumber="33" fileName="hls-design/ntt-kernel.cpp" fileDirectory="../." rtlName="zext_ln33_fu_355_p1" coreId="3433778784" contextFuncName="mod_mul" bitwidth="64" opcode="zext" nodeLabel="8.0" m_display="1" m_isLCDNode="true" m_topoIndex="53" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="hls-design/ntt-kernel.cpp" linenumber="33" fileDirectory="/home/sg9109/Documents" functionName="mod_mul"/>
+        <inlineStackInfo fileName="hls-design/ntt-kernel.cpp" linenumber="146" fileDirectory="/home/sg9109/Documents" functionName="ntt_kernel"/>
+        <dataInputObjs>mul</dataInputObjs>
+        <dataOutputObjs>mul</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="79" name="mq" lineNumber="33" originalName="mq" fileName="hls-design/ntt-kernel.cpp" fileDirectory="../." rtlName="mul_32ns_32ns_64_4_1_U17" coreName="Mul_DSP" implIndex="dsp" control="yes" opType="mul" coreId="5" contextFuncName="mod_mul" bitwidth="64" opcode="mul" nodeLabel="8.0" nodeLatency="3" m_display="1" m_delay="2.29" m_isLCDNode="true" m_topoIndex="54" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="hls-design/ntt-kernel.cpp" linenumber="33" fileDirectory="/home/sg9109/Documents" functionName="mod_mul"/>
+        <inlineStackInfo fileName="hls-design/ntt-kernel.cpp" linenumber="146" fileDirectory="/home/sg9109/Documents" functionName="ntt_kernel"/>
+        <dataInputObjs>zext</dataInputObjs>
+        <dataInputObjs>zext</dataInputObjs>
+        <dataOutputObjs>add</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="83" name="sum" lineNumber="37" originalName="sum" fileName="hls-design/ntt-kernel.cpp" fileDirectory="../." rtlName="add_64ns_64ns_64_2_1_U19" coreName="Adder" implIndex="fabric" control="yes" opType="add" coreId="1" contextFuncName="mod_mul" bitwidth="64" opcode="add" nodeLabel="11.0" nodeLatency="1" m_display="1" m_delay="0.92" m_isLCDNode="true" m_topoIndex="55" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="hls-design/ntt-kernel.cpp" linenumber="37" fileDirectory="/home/sg9109/Documents" functionName="mod_mul"/>
+        <inlineStackInfo fileName="hls-design/ntt-kernel.cpp" linenumber="146" fileDirectory="/home/sg9109/Documents" functionName="ntt_kernel"/>
+        <dataInputObjs>mul</dataInputObjs>
+        <dataInputObjs>mul</dataInputObjs>
+        <dataOutputObjs>partselect</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="86" name="t" lineNumber="41" originalName="t" fileName="hls-design/ntt-kernel.cpp" fileDirectory="../." rtlName="t_fu_370_p4" coreId="0" contextFuncName="mod_mul" bitwidth="32" opcode="partselect" nodeLabel="12.0" m_display="1" m_isLCDNode="true" m_topoIndex="57" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="hls-design/ntt-kernel.cpp" linenumber="41" fileDirectory="/home/sg9109/Documents" functionName="mod_mul"/>
+        <inlineStackInfo fileName="hls-design/ntt-kernel.cpp" linenumber="146" fileDirectory="/home/sg9109/Documents" functionName="ntt_kernel"/>
+        <dataInputObjs>add</dataInputObjs>
+        <dataOutputObjs>icmp</dataOutputObjs>
+        <dataOutputObjs>sub</dataOutputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="87" name="icmp_ln44" lineNumber="44" fileName="hls-design/ntt-kernel.cpp" fileDirectory="../." rtlName="icmp_ln44_fu_380_p2" coreName="Cmp" implIndex="auto" control="no" opType="icmp" coreId="9" contextFuncName="mod_mul" bitwidth="1" opcode="icmp" nodeLabel="12.0" m_display="0" m_delay="1.01" m_topoIndex="58" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="hls-design/ntt-kernel.cpp" linenumber="44" fileDirectory="/home/sg9109/Documents" functionName="mod_mul"/>
+        <inlineStackInfo fileName="hls-design/ntt-kernel.cpp" linenumber="146" fileDirectory="/home/sg9109/Documents" functionName="ntt_kernel"/>
+        <dataInputObjs>partselect</dataInputObjs>
+        <dataInputObjs>read</dataInputObjs>
+        <dataOutputObjs>xor</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="88" name="xor_ln44" lineNumber="44" fileName="hls-design/ntt-kernel.cpp" fileDirectory="../." rtlName="xor_ln44_fu_385_p2" coreName="LogicGate" implIndex="auto" control="no" opType="xor" coreId="74" contextFuncName="mod_mul" bitwidth="1" opcode="xor" nodeLabel="12.0" m_display="0" m_topoIndex="59" m_clusterGroupNumber="1">
+        <inlineStackInfo fileName="hls-design/ntt-kernel.cpp" linenumber="44" fileDirectory="/home/sg9109/Documents" functionName="mod_mul"/>
+        <inlineStackInfo fileName="hls-design/ntt-kernel.cpp" linenumber="146" fileDirectory="/home/sg9109/Documents" functionName="ntt_kernel"/>
+        <dataInputObjs>icmp</dataInputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="89" name="sub_ln44" lineNumber="44" fileName="hls-design/ntt-kernel.cpp" fileDirectory="../." rtlName="sub_ln44_fu_391_p2" coreName="Adder" implIndex="fabric" control="no" opType="sub" coreId="1" contextFuncName="mod_mul" bitwidth="32" opcode="sub" nodeLabel="12.0" m_display="0" m_delay="1.01" m_topoIndex="60" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="hls-design/ntt-kernel.cpp" linenumber="44" fileDirectory="/home/sg9109/Documents" functionName="mod_mul"/>
+        <inlineStackInfo fileName="hls-design/ntt-kernel.cpp" linenumber="146" fileDirectory="/home/sg9109/Documents" functionName="ntt_kernel"/>
+        <dataInputObjs>partselect</dataInputObjs>
+        <dataInputObjs>read</dataInputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="90" name="t_1" lineNumber="44" originalName="t" fileName="hls-design/ntt-kernel.cpp" fileDirectory="../." rtlName="t_1_fu_396_p3" coreName="Sel" implIndex="auto_sel" control="no" opType="select" coreId="73" contextFuncName="mod_mul" bitwidth="32" opcode="select" nodeLabel="12.0" m_display="1" m_delay="0.44" m_isLCDNode="true" m_topoIndex="61" m_clusterGroupNumber="1">
+        <inlineStackInfo fileName="hls-design/ntt-kernel.cpp" linenumber="44" fileDirectory="/home/sg9109/Documents" functionName="mod_mul"/>
+        <inlineStackInfo fileName="hls-design/ntt-kernel.cpp" linenumber="146" fileDirectory="/home/sg9109/Documents" functionName="ntt_kernel"/>
+        <dataInputObjs>xor</dataInputObjs>
+        <dataInputObjs>sub</dataInputObjs>
+        <dataInputObjs>partselect</dataInputObjs>
+        <dataOutputObjs>add</dataOutputObjs>
+        <dataOutputObjs>icmp</dataOutputObjs>
+        <dataOutputObjs>sub</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="91" name="res" lineNumber="10" originalName="res" fileName="hls-design/ntt-kernel.cpp" fileDirectory="../." rtlName="res_fu_404_p2" coreName="Adder" implIndex="fabric" control="no" opType="add" coreId="1" contextFuncName="mod_add" bitwidth="32" opcode="add" nodeLabel="12.0" m_display="1" m_delay="1.01" m_isLCDNode="true" m_topoIndex="62" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="hls-design/ntt-kernel.cpp" linenumber="10" fileDirectory="/home/sg9109/Documents" functionName="mod_add"/>
+        <inlineStackInfo fileName="hls-design/ntt-kernel.cpp" linenumber="147" fileDirectory="/home/sg9109/Documents" functionName="ntt_kernel"/>
+        <dataInputObjs>select</dataInputObjs>
+        <dataInputObjs>select</dataInputObjs>
+        <dataOutputObjs>icmp</dataOutputObjs>
+        <dataOutputObjs>icmp</dataOutputObjs>
+        <dataOutputObjs>sub</dataOutputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="92" name="icmp_ln11" lineNumber="11" fileName="hls-design/ntt-kernel.cpp" fileDirectory="../." rtlName="icmp_ln11_fu_410_p2" coreName="Cmp" implIndex="auto" control="no" opType="icmp" coreId="9" contextFuncName="mod_add" bitwidth="1" opcode="icmp" nodeLabel="12.0" m_display="0" m_delay="1.01" m_topoIndex="63" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="hls-design/ntt-kernel.cpp" linenumber="11" fileDirectory="/home/sg9109/Documents" functionName="mod_add"/>
+        <inlineStackInfo fileName="hls-design/ntt-kernel.cpp" linenumber="147" fileDirectory="/home/sg9109/Documents" functionName="ntt_kernel"/>
+        <dataInputObjs>add</dataInputObjs>
+        <dataInputObjs>read</dataInputObjs>
+        <dataOutputObjs>xor</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="93" name="xor_ln11" lineNumber="11" fileName="hls-design/ntt-kernel.cpp" fileDirectory="../." rtlName="xor_ln11_fu_415_p2" coreName="LogicGate" implIndex="auto" control="no" opType="xor" coreId="74" contextFuncName="mod_add" bitwidth="1" opcode="xor" nodeLabel="12.0" m_display="0" m_topoIndex="64" m_clusterGroupNumber="2">
+        <inlineStackInfo fileName="hls-design/ntt-kernel.cpp" linenumber="11" fileDirectory="/home/sg9109/Documents" functionName="mod_add"/>
+        <inlineStackInfo fileName="hls-design/ntt-kernel.cpp" linenumber="147" fileDirectory="/home/sg9109/Documents" functionName="ntt_kernel"/>
+        <dataInputObjs>icmp</dataInputObjs>
+        <dataOutputObjs>or</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="94" name="icmp_ln11_1" lineNumber="11" fileName="hls-design/ntt-kernel.cpp" fileDirectory="../." rtlName="icmp_ln11_1_fu_421_p2" coreName="Cmp" implIndex="auto" control="no" opType="icmp" coreId="9" contextFuncName="mod_add" bitwidth="1" opcode="icmp" nodeLabel="12.0" m_display="0" m_delay="1.01" m_topoIndex="65" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="hls-design/ntt-kernel.cpp" linenumber="11" fileDirectory="/home/sg9109/Documents" functionName="mod_add"/>
+        <inlineStackInfo fileName="hls-design/ntt-kernel.cpp" linenumber="147" fileDirectory="/home/sg9109/Documents" functionName="ntt_kernel"/>
+        <dataInputObjs>add</dataInputObjs>
+        <dataInputObjs>select</dataInputObjs>
+        <dataOutputObjs>or</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="95" name="or_ln11" lineNumber="11" fileName="hls-design/ntt-kernel.cpp" fileDirectory="../." rtlName="or_ln11_fu_427_p2" coreName="LogicGate" implIndex="auto" control="no" opType="or" coreId="74" contextFuncName="mod_add" bitwidth="1" opcode="or" nodeLabel="12.0" m_display="0" m_topoIndex="66" m_clusterGroupNumber="2">
+        <inlineStackInfo fileName="hls-design/ntt-kernel.cpp" linenumber="11" fileDirectory="/home/sg9109/Documents" functionName="mod_add"/>
+        <inlineStackInfo fileName="hls-design/ntt-kernel.cpp" linenumber="147" fileDirectory="/home/sg9109/Documents" functionName="ntt_kernel"/>
+        <dataInputObjs>xor</dataInputObjs>
+        <dataInputObjs>icmp</dataInputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="96" name="sub_ln11" lineNumber="11" fileName="hls-design/ntt-kernel.cpp" fileDirectory="../." rtlName="sub_ln11_fu_433_p2" coreName="Adder" implIndex="fabric" control="no" opType="sub" coreId="1" contextFuncName="mod_add" bitwidth="32" opcode="sub" nodeLabel="12.0" m_display="0" m_delay="1.01" m_topoIndex="67" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="hls-design/ntt-kernel.cpp" linenumber="11" fileDirectory="/home/sg9109/Documents" functionName="mod_add"/>
+        <inlineStackInfo fileName="hls-design/ntt-kernel.cpp" linenumber="147" fileDirectory="/home/sg9109/Documents" functionName="ntt_kernel"/>
+        <dataInputObjs>add</dataInputObjs>
+        <dataInputObjs>read</dataInputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="97" name="out_u" lineNumber="11" originalName="out_u" fileName="hls-design/ntt-kernel.cpp" fileDirectory="../." rtlName="out_u_fu_438_p3" coreName="Sel" implIndex="auto_sel" control="no" opType="select" coreId="73" contextFuncName="mod_add" bitwidth="32" opcode="select" nodeLabel="12.0" m_display="1" m_delay="0.44" m_isLCDNode="true" m_topoIndex="68" m_clusterGroupNumber="2">
+        <inlineStackInfo fileName="hls-design/ntt-kernel.cpp" linenumber="11" fileDirectory="/home/sg9109/Documents" functionName="mod_add"/>
+        <inlineStackInfo fileName="hls-design/ntt-kernel.cpp" linenumber="147" fileDirectory="/home/sg9109/Documents" functionName="ntt_kernel"/>
+        <dataInputObjs>or</dataInputObjs>
+        <dataInputObjs>sub</dataInputObjs>
+        <dataInputObjs>add</dataInputObjs>
+        <dataOutputObjs>store</dataOutputObjs>
+        <dataOutputObjs>store</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="98" name="icmp_ln16" lineNumber="16" fileName="hls-design/ntt-kernel.cpp" fileDirectory="../." rtlName="icmp_ln16_fu_448_p2" coreName="Cmp" implIndex="auto" control="no" opType="icmp" coreId="9" contextFuncName="mod_sub" bitwidth="1" opcode="icmp" nodeLabel="12.0" m_display="0" m_delay="1.01" m_topoIndex="69" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="hls-design/ntt-kernel.cpp" linenumber="16" fileDirectory="/home/sg9109/Documents" functionName="mod_sub"/>
+        <inlineStackInfo fileName="hls-design/ntt-kernel.cpp" linenumber="148" fileDirectory="/home/sg9109/Documents" functionName="ntt_kernel"/>
+        <dataInputObjs>select</dataInputObjs>
+        <dataInputObjs>select</dataInputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="99" name="add_ln16" lineNumber="16" fileName="hls-design/ntt-kernel.cpp" fileDirectory="../." rtlName="add_ln16_fu_454_p2" coreName="Adder" implIndex="fabric" control="no" opType="add" coreId="1" contextFuncName="mod_sub" bitwidth="32" opcode="add" nodeLabel="12.0" m_display="0" m_delay="1.01" m_topoIndex="70" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="hls-design/ntt-kernel.cpp" linenumber="16" fileDirectory="/home/sg9109/Documents" functionName="mod_sub"/>
+        <inlineStackInfo fileName="hls-design/ntt-kernel.cpp" linenumber="148" fileDirectory="/home/sg9109/Documents" functionName="ntt_kernel"/>
+        <dataInputObjs>select</dataInputObjs>
+        <dataInputObjs>read</dataInputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="100" name="select_ln16" lineNumber="16" fileName="hls-design/ntt-kernel.cpp" fileDirectory="../." rtlName="select_ln16_fu_459_p3" coreName="Sel" implIndex="auto_sel" control="no" opType="select" coreId="73" contextFuncName="mod_sub" bitwidth="32" opcode="select" nodeLabel="12.0" m_display="0" m_topoIndex="71" m_clusterGroupNumber="3">
+        <inlineStackInfo fileName="hls-design/ntt-kernel.cpp" linenumber="16" fileDirectory="/home/sg9109/Documents" functionName="mod_sub"/>
+        <inlineStackInfo fileName="hls-design/ntt-kernel.cpp" linenumber="148" fileDirectory="/home/sg9109/Documents" functionName="ntt_kernel"/>
+        <dataInputObjs>icmp</dataInputObjs>
+        <dataInputObjs>add</dataInputObjs>
+        <dataInputObjs>select</dataInputObjs>
+        <dataOutputObjs>sub</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="101" name="out_v" lineNumber="16" originalName="out_v" fileName="hls-design/ntt-kernel.cpp" fileDirectory="../." rtlName="out_v_fu_467_p2" coreName="Adder" implIndex="fabric" control="no" opType="sub" coreId="1" contextFuncName="mod_sub" bitwidth="32" opcode="sub" nodeLabel="12.0" m_display="0" m_delay="1.01" m_topoIndex="72" m_clusterGroupNumber="3">
+        <inlineStackInfo fileName="hls-design/ntt-kernel.cpp" linenumber="16" fileDirectory="/home/sg9109/Documents" functionName="mod_sub"/>
+        <inlineStackInfo fileName="hls-design/ntt-kernel.cpp" linenumber="148" fileDirectory="/home/sg9109/Documents" functionName="ntt_kernel"/>
+        <dataInputObjs>select</dataInputObjs>
+        <dataInputObjs>select</dataInputObjs>
+        <dataOutputObjs>store</dataOutputObjs>
+        <dataOutputObjs>store</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="102" name="br_ln151" lineNumber="151" fileName="hls-design/ntt-kernel.cpp" fileDirectory="../." coreId="3433484144" contextFuncName="ntt_kernel" opcode="br" m_display="0" m_topoIndex="28" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="hls-design/ntt-kernel.cpp" linenumber="151" fileDirectory="/home/sg9109/Documents" functionName="ntt_kernel"/>
+        <dataInputObjs>read</dataInputObjs>
+        <controlInputObjs>if.else78</controlInputObjs>
+        <controlInputObjs>if.then73</controlInputObjs>
+      </node_objs>
+      <fileValidLineNumbers fileName="hls-design/ntt-kernel.cpp">
+        <validLinenumbers>126</validLinenumbers>
+        <validLinenumbers>130</validLinenumbers>
+        <validLinenumbers>131</validLinenumbers>
+        <validLinenumbers>132</validLinenumbers>
+        <validLinenumbers>133</validLinenumbers>
+        <validLinenumbers>134</validLinenumbers>
+        <validLinenumbers>139</validLinenumbers>
+        <validLinenumbers>140</validLinenumbers>
+        <validLinenumbers>142</validLinenumbers>
+        <validLinenumbers>143</validLinenumbers>
+        <validLinenumbers>24</validLinenumbers>
+        <validLinenumbers>28</validLinenumbers>
+        <validLinenumbers>29</validLinenumbers>
+        <validLinenumbers>33</validLinenumbers>
+        <validLinenumbers>37</validLinenumbers>
+        <validLinenumbers>41</validLinenumbers>
+        <validLinenumbers>44</validLinenumbers>
+        <validLinenumbers>10</validLinenumbers>
+        <validLinenumbers>11</validLinenumbers>
+        <validLinenumbers>16</validLinenumbers>
+        <validLinenumbers>151</validLinenumbers>
+        <validLinenumbers>146</validLinenumbers>
+        <validLinenumbers>147</validLinenumbers>
+        <validLinenumbers>148</validLinenumbers>
+      </fileValidLineNumbers>
+    </basic_blocks>
+    <basic_blocks id="107" name="if.else78" type="BlockType">
+      <controlInputObjs>fpga_resource_hint.if.end.3</controlInputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <controlOutputObjs>for.inc84</controlOutputObjs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="104" name="ping_addr_write_ln155" lineNumber="155" fileName="hls-design/ntt-kernel.cpp" fileDirectory="../." coreName="RAM_2P_BRAM" implIndex="bram" control="no" opType="ram_2p" coreId="94" contextFuncName="ntt_kernel" opcode="store" nodeLabel="12.0" m_display="1" m_delay="1.23" m_isLCDNode="true" m_topoIndex="73" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="hls-design/ntt-kernel.cpp" linenumber="155" fileDirectory="/home/sg9109/Documents" functionName="ntt_kernel"/>
+        <dataInputObjs>select</dataInputObjs>
+        <dataInputObjs>getelementptr</dataInputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="105" name="ping_addr_1_write_ln156" lineNumber="156" fileName="hls-design/ntt-kernel.cpp" fileDirectory="../." coreName="RAM_2P_BRAM" implIndex="bram" control="no" opType="ram_2p" coreId="94" contextFuncName="ntt_kernel" opcode="store" nodeLabel="13.0" m_display="1" m_delay="1.23" m_isLCDNode="true" m_topoIndex="75" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="hls-design/ntt-kernel.cpp" linenumber="156" fileDirectory="/home/sg9109/Documents" functionName="ntt_kernel"/>
+        <dataInputObjs>sub</dataInputObjs>
+        <dataInputObjs>getelementptr</dataInputObjs>
+        <dataOutputObjs>load</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="106" name="br_ln0" coreId="3433484336" opcode="br" nodeLabel="13.0" m_display="0" m_topoIndex="76" m_clusterGroupNumber="-1">
+        <controlInputObjs>for.inc84</controlInputObjs>
+      </node_objs>
+      <fileValidLineNumbers fileName="hls-design/ntt-kernel.cpp">
+        <validLinenumbers>155</validLinenumbers>
+        <validLinenumbers>156</validLinenumbers>
+      </fileValidLineNumbers>
+    </basic_blocks>
+    <basic_blocks id="111" name="if.then73" type="BlockType">
+      <controlInputObjs>fpga_resource_hint.if.end.3</controlInputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <controlOutputObjs>for.inc84</controlOutputObjs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="108" name="pong_addr_write_ln152" lineNumber="152" fileName="hls-design/ntt-kernel.cpp" fileDirectory="../." coreName="RAM_2P_BRAM" implIndex="bram" control="no" opType="ram_2p" coreId="94" contextFuncName="ntt_kernel" opcode="store" nodeLabel="12.0" m_display="0" m_delay="1.23" m_topoIndex="74" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="hls-design/ntt-kernel.cpp" linenumber="152" fileDirectory="/home/sg9109/Documents" functionName="ntt_kernel"/>
+        <dataInputObjs>select</dataInputObjs>
+        <dataInputObjs>getelementptr</dataInputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="109" name="pong_addr_1_write_ln153" lineNumber="153" fileName="hls-design/ntt-kernel.cpp" fileDirectory="../." coreName="RAM_2P_BRAM" implIndex="bram" control="no" opType="ram_2p" coreId="94" contextFuncName="ntt_kernel" opcode="store" nodeLabel="13.0" m_display="0" m_delay="1.23" m_topoIndex="77" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="hls-design/ntt-kernel.cpp" linenumber="153" fileDirectory="/home/sg9109/Documents" functionName="ntt_kernel"/>
+        <dataInputObjs>sub</dataInputObjs>
+        <dataInputObjs>getelementptr</dataInputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="110" name="br_ln154" lineNumber="154" fileName="hls-design/ntt-kernel.cpp" fileDirectory="../." coreId="3433495328" contextFuncName="ntt_kernel" opcode="br" nodeLabel="13.0" m_display="0" m_topoIndex="78" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="hls-design/ntt-kernel.cpp" linenumber="154" fileDirectory="/home/sg9109/Documents" functionName="ntt_kernel"/>
+        <controlInputObjs>for.inc84</controlInputObjs>
+      </node_objs>
+      <fileValidLineNumbers fileName="hls-design/ntt-kernel.cpp">
+        <validLinenumbers>152</validLinenumbers>
+        <validLinenumbers>153</validLinenumbers>
+        <validLinenumbers>154</validLinenumbers>
+      </fileValidLineNumbers>
+    </basic_blocks>
+    <basic_blocks id="114" name="for.inc84" type="BlockType">
+      <controlInputObjs>if.else78</controlInputObjs>
+      <controlInputObjs>if.then73</controlInputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <controlOutputObjs>for.body52</controlOutputObjs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="112" name="step_write_ln126" lineNumber="126" fileName="hls-design/ntt-kernel.cpp" fileDirectory="../." coreId="1701998445" contextFuncName="ntt_kernel" opcode="store" m_display="0" m_delay="0.42" m_topoIndex="29" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="hls-design/ntt-kernel.cpp" linenumber="126" fileDirectory="/home/sg9109/Documents" functionName="ntt_kernel"/>
+        <dataInputObjs>add</dataInputObjs>
+        <dataInputObjs>alloca</dataInputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="113" name="br_ln126" lineNumber="126" fileName="hls-design/ntt-kernel.cpp" fileDirectory="../." coreId="4294967295" contextFuncName="ntt_kernel" opcode="br" m_display="0" m_topoIndex="30" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="hls-design/ntt-kernel.cpp" linenumber="126" fileDirectory="/home/sg9109/Documents" functionName="ntt_kernel"/>
+        <controlInputObjs>for.body52</controlInputObjs>
+      </node_objs>
+      <fileValidLineNumbers fileName="hls-design/ntt-kernel.cpp">
+        <validLinenumbers>126</validLinenumbers>
+      </fileValidLineNumbers>
+    </basic_blocks>
+  </regions>
+  <ScheduleInfo time="0"/>
+  <ScheduleInfo time="1"/>
+  <ScheduleInfo time="2"/>
+  <ScheduleInfo time="3"/>
+  <ScheduleInfo time="4"/>
+  <ScheduleInfo time="5"/>
+  <ScheduleInfo time="6"/>
+  <ScheduleInfo time="7"/>
+  <ScheduleInfo time="8"/>
+  <ScheduleInfo time="9"/>
+  <ScheduleInfo time="10"/>
+  <ScheduleInfo time="11"/>
+  <ScheduleInfo time="12"/>
+  <ScheduleInfo time="13"/>
+  <regnodes realName="j_reg_519">
+    <nodeIds>43</nodeIds>
+  </regnodes>
+  <regnodes realName="ab_low_reg_587">
+    <nodeIds>72</nodeIds>
+  </regnodes>
+  <regnodes realName="mq_reg_597">
+    <nodeIds>79</nodeIds>
+  </regnodes>
+  <regnodes realName="pong_addr_1_reg_556">
+    <nodeIds>62</nodeIds>
+  </regnodes>
+  <regnodes realName="ping_addr_1_reg_545">
+    <nodeIds>58</nodeIds>
+  </regnodes>
+  <regnodes realName="twiddle_reg_535">
+    <nodeIds>53</nodeIds>
+  </regnodes>
+  <regnodes realName="u_1_reg_567">
+    <nodeIds>61</nodeIds>
+  </regnodes>
+  <regnodes realName="q_read_reg_480">
+    <nodeIds>15</nodeIds>
+  </regnodes>
+  <regnodes realName="local_twiddles_addr_reg_530">
+    <nodeIds>52</nodeIds>
+  </regnodes>
+  <regnodes realName="zext_ln33_reg_592">
+    <nodeIds>78</nodeIds>
+  </regnodes>
+  <regnodes realName="tmp_1_reg_500">
+    <nodeIds>20</nodeIds>
+  </regnodes>
+  <regnodes realName="out_v_reg_602">
+    <nodeIds>101</nodeIds>
+  </regnodes>
+  <regnodes realName="ab_reg_582">
+    <nodeIds>69</nodeIds>
+  </regnodes>
+  <regnodes realName="stage_1_read_reg_505">
+    <nodeIds>21</nodeIds>
+  </regnodes>
+  <regnodes realName="q_inv_read_reg_489">
+    <nodeIds>17</nodeIds>
+  </regnodes>
+  <regnodes realName="step_reg_473">
+    <nodeIds>14</nodeIds>
+  </regnodes>
+  <regnodes realName="lshr_ln131_reg_525">
+    <nodeIds>44</nodeIds>
+  </regnodes>
+  <regnodes realName="use_ping_as_input_read_reg_494">
+    <nodeIds>18</nodeIds>
+  </regnodes>
+  <regnodes realName="u_reg_562">
+    <nodeIds>57</nodeIds>
+  </regnodes>
+  <regnodes realName="zext_ln24_1_reg_577">
+    <nodeIds>68</nodeIds>
+  </regnodes>
+  <regnodes realName="conv5_i_cast_reg_510">
+    <nodeIds>25</nodeIds>
+  </regnodes>
+  <regnodes realName="pong_addr_reg_551">
+    <nodeIds>60</nodeIds>
+  </regnodes>
+  <regnodes realName="zext_ln24_reg_572">
+    <nodeIds>67</nodeIds>
+  </regnodes>
+  <regnodes realName="ping_addr_reg_540">
+    <nodeIds>56</nodeIds>
+  </regnodes>
+  <regnodes realName="icmp_ln126_reg_515">
+    <nodeIds>34</nodeIds>
+  </regnodes>
+  <expressionNodes realName="add_ln16_fu_454">
+    <nodeIds>99</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="pong_addr_1_gep_fu_219">
+    <nodeIds>62</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="j_fu_271">
+    <nodeIds>43</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="icmp_ln16_fu_448">
+    <nodeIds>98</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="select_ln16_fu_459">
+    <nodeIds>100</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="icmp_ln126_fu_251">
+    <nodeIds>34</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="ping_addr_1_gep_fu_194">
+    <nodeIds>58</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="zext_ln140_fu_328">
+    <nodeIds>55</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="i_fu_299">
+    <nodeIds>45</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="lshr_ln131_fu_277">
+    <nodeIds>44</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="trunc_ln126_fu_267">
+    <nodeIds>39</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="zext_ln134_fu_289">
+    <nodeIds>51</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="idx1_fu_307">
+    <nodeIds>47</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="step_2_fu_257">
+    <nodeIds>35</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="zext_ln126_fu_263">
+    <nodeIds>38</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="zext_ln24_fu_341">
+    <nodeIds>67</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="add_ln134_fu_283">
+    <nodeIds>50</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="trunc_ln131_fu_303">
+    <nodeIds>46</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="zext_ln139_fu_322">
+    <nodeIds>54</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="ping_addr_gep_fu_177">
+    <nodeIds>56</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="xor_ln11_fu_415">
+    <nodeIds>93</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="out_v_fu_467">
+    <nodeIds>101</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="t_fu_370">
+    <nodeIds>86</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="pong_addr_gep_fu_202">
+    <nodeIds>60</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="add_ln133_fu_312">
+    <nodeIds>48</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="icmp_ln11_fu_410">
+    <nodeIds>92</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="xor_ln44_fu_385">
+    <nodeIds>88</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="or_ln11_fu_427">
+    <nodeIds>95</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="v_2_fu_334">
+    <nodeIds>65</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="local_twiddles_addr_gep_fu_164">
+    <nodeIds>52</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="res_fu_404">
+    <nodeIds>91</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="zext_ln126_1_fu_247">
+    <nodeIds>33</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="zext_ln33_fu_355">
+    <nodeIds>78</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="icmp_ln44_fu_380">
+    <nodeIds>87</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="sub_ln44_fu_391">
+    <nodeIds>89</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="u_2_fu_365">
+    <nodeIds>64</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="ab_low_fu_350">
+    <nodeIds>72</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="icmp_ln11_1_fu_421">
+    <nodeIds>94</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="idx2_fu_317">
+    <nodeIds>49</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="step_fu_100">
+    <nodeIds>14</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="sub_ln11_fu_433">
+    <nodeIds>96</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="t_1_fu_396">
+    <nodeIds>90</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="conv5_i_cast_fu_235">
+    <nodeIds>25</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="out_u_fu_438">
+    <nodeIds>97</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="zext_ln24_1_fu_346">
+    <nodeIds>68</nodeIds>
+  </expressionNodes>
+  <moduleNodes realName="grp_fu_360">
+    <nodeIds>83</nodeIds>
+  </moduleNodes>
+  <moduleNodes realName="grp_fu_227">
+    <nodeIds>69</nodeIds>
+    <nodeIds>79</nodeIds>
+  </moduleNodes>
+  <moduleNodes realName="grp_fu_231">
+    <nodeIds>74</nodeIds>
+  </moduleNodes>
+  <ioNodes realName="half_n_read_read_fu_158">
+    <nodeIds>24</nodeIds>
+  </ioNodes>
+  <ioNodes realName="q_inv_read_read_fu_116">
+    <nodeIds>17</nodeIds>
+  </ioNodes>
+  <ioNodes realName="tmp_read_fu_128">
+    <nodeIds>19</nodeIds>
+  </ioNodes>
+  <ioNodes realName="tmp_1_read_fu_134">
+    <nodeIds>20</nodeIds>
+  </ioNodes>
+  <ioNodes realName="store_ln126_store_fu_294">
+    <nodeIds>112</nodeIds>
+  </ioNodes>
+  <ioNodes realName="stage_1_read_read_fu_140">
+    <nodeIds>21</nodeIds>
+  </ioNodes>
+  <ioNodes realName="use_ping_as_input_read_read_fu_122">
+    <nodeIds>18</nodeIds>
+  </ioNodes>
+  <ioNodes realName="store_ln126_store_fu_239">
+    <nodeIds>29</nodeIds>
+  </ioNodes>
+  <ioNodes realName="conv5_i_read_read_fu_110">
+    <nodeIds>16</nodeIds>
+  </ioNodes>
+  <ioNodes realName="step_1_load_fu_244">
+    <nodeIds>32</nodeIds>
+  </ioNodes>
+  <ioNodes realName="stage_read_read_fu_146">
+    <nodeIds>22</nodeIds>
+  </ioNodes>
+  <ioNodes realName="sub53_read_read_fu_152">
+    <nodeIds>23</nodeIds>
+  </ioNodes>
+  <ioNodes realName="q_read_read_fu_104">
+    <nodeIds>15</nodeIds>
+  </ioNodes>
+  <memoryPorts dataString="local_twiddles">
+    <nodeIds>53</nodeIds>
+  </memoryPorts>
+  <memoryPorts dataString="ping">
+    <nodeIds>59</nodeIds>
+  </memoryPorts>
+  <memoryPorts dataString="ping" portID="1">
+    <nodeIds>57</nodeIds>
+    <nodeIds>104</nodeIds>
+    <nodeIds>105</nodeIds>
+  </memoryPorts>
+  <memoryPorts dataString="pong">
+    <nodeIds>63</nodeIds>
+  </memoryPorts>
+  <memoryPorts dataString="pong" portID="1">
+    <nodeIds>61</nodeIds>
+    <nodeIds>108</nodeIds>
+    <nodeIds>109</nodeIds>
+  </memoryPorts>
+  <ioPorts name="conv5_i">
+    <contents name="read">
+      <nodeIds>16</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="empty">
+    <contents name="read">
+      <nodeIds>19</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="empty_29">
+    <contents name="read">
+      <nodeIds>20</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="half_n">
+    <contents name="read">
+      <nodeIds>24</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="local_twiddles(p0)">
+    <contents name="load">
+      <nodeIds>53</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="ping(p0)">
+    <contents name="load">
+      <nodeIds>59</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="ping(p1)">
+    <contents name="load">
+      <nodeIds>57</nodeIds>
+    </contents>
+    <contents name="store">
+      <nodeIds>104</nodeIds>
+      <nodeIds>105</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="pong(p0)">
+    <contents name="load">
+      <nodeIds>63</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="pong(p1)">
+    <contents name="load">
+      <nodeIds>61</nodeIds>
+    </contents>
+    <contents name="store">
+      <nodeIds>108</nodeIds>
+      <nodeIds>109</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="q">
+    <contents name="read">
+      <nodeIds>15</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="q_inv">
+    <contents name="read">
+      <nodeIds>17</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="stage">
+    <contents name="read">
+      <nodeIds>22</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="stage_1">
+    <contents name="read">
+      <nodeIds>21</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="sub53">
+    <contents name="read">
+      <nodeIds>23</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="use_ping_as_input">
+    <contents name="read">
+      <nodeIds>18</nodeIds>
+    </contents>
+  </ioPorts>
+  <fsm>
+    <states id="1">
+      <operations id="14" stage="1" latency="1"/>
+      <operations id="15" stage="1" latency="1"/>
+      <operations id="16" stage="1" latency="1"/>
+      <operations id="17" stage="1" latency="1"/>
+      <operations id="18" stage="1" latency="1"/>
+      <operations id="19" stage="1" latency="1"/>
+      <operations id="20" stage="1" latency="1"/>
+      <operations id="21" stage="1" latency="1"/>
+      <operations id="22" stage="1" latency="1"/>
+      <operations id="23" stage="1" latency="1"/>
+      <operations id="24" stage="1" latency="1"/>
+      <operations id="25" stage="1" latency="1"/>
+      <operations id="26" stage="1" latency="1"/>
+      <operations id="27" stage="1" latency="1"/>
+      <operations id="28" stage="1" latency="1"/>
+      <operations id="29" stage="1" latency="1"/>
+      <operations id="30" stage="1" latency="1"/>
+      <operations id="32" stage="1" latency="1"/>
+      <operations id="33" stage="1" latency="1"/>
+      <operations id="34" stage="1" latency="1"/>
+      <operations id="35" stage="1" latency="1"/>
+      <operations id="36" stage="1" latency="1"/>
+      <operations id="38" stage="1" latency="1"/>
+      <operations id="39" stage="1" latency="1"/>
+      <operations id="43" stage="1" latency="1"/>
+      <operations id="44" stage="1" latency="1"/>
+      <operations id="50" stage="1" latency="1"/>
+      <operations id="51" stage="1" latency="1"/>
+      <operations id="52" stage="1" latency="1"/>
+      <operations id="53" stage="2" latency="2"/>
+      <operations id="102" stage="1" latency="1"/>
+      <operations id="112" stage="1" latency="1"/>
+      <operations id="113" stage="1" latency="1"/>
+      <operations id="115" stage="1" latency="1"/>
+    </states>
+    <states id="2">
+      <operations id="45" stage="1" latency="1"/>
+      <operations id="46" stage="1" latency="1"/>
+      <operations id="47" stage="1" latency="1"/>
+      <operations id="48" stage="1" latency="1"/>
+      <operations id="49" stage="1" latency="1"/>
+      <operations id="53" stage="1" latency="2"/>
+      <operations id="54" stage="1" latency="1"/>
+      <operations id="55" stage="1" latency="1"/>
+      <operations id="56" stage="1" latency="1"/>
+      <operations id="57" stage="2" latency="2"/>
+      <operations id="58" stage="1" latency="1"/>
+      <operations id="59" stage="2" latency="2"/>
+      <operations id="60" stage="1" latency="1"/>
+      <operations id="61" stage="2" latency="2"/>
+      <operations id="62" stage="1" latency="1"/>
+      <operations id="63" stage="2" latency="2"/>
+    </states>
+    <states id="3">
+      <operations id="57" stage="1" latency="2"/>
+      <operations id="59" stage="1" latency="2"/>
+      <operations id="61" stage="1" latency="2"/>
+      <operations id="63" stage="1" latency="2"/>
+      <operations id="65" stage="1" latency="1"/>
+      <operations id="67" stage="1" latency="1"/>
+      <operations id="68" stage="1" latency="1"/>
+      <operations id="69" stage="4" latency="4"/>
+    </states>
+    <states id="4">
+      <operations id="69" stage="3" latency="4"/>
+    </states>
+    <states id="5">
+      <operations id="69" stage="2" latency="4"/>
+    </states>
+    <states id="6">
+      <operations id="69" stage="1" latency="4"/>
+      <operations id="70" stage="1" latency="1"/>
+      <operations id="72" stage="1" latency="1"/>
+      <operations id="74" stage="4" latency="4"/>
+    </states>
+    <states id="7">
+      <operations id="74" stage="3" latency="4"/>
+    </states>
+    <states id="8">
+      <operations id="74" stage="2" latency="4"/>
+    </states>
+    <states id="9">
+      <operations id="74" stage="1" latency="4"/>
+      <operations id="75" stage="1" latency="1"/>
+      <operations id="78" stage="1" latency="1"/>
+      <operations id="79" stage="4" latency="4"/>
+    </states>
+    <states id="10">
+      <operations id="79" stage="3" latency="4"/>
+    </states>
+    <states id="11">
+      <operations id="79" stage="2" latency="4"/>
+    </states>
+    <states id="12">
+      <operations id="79" stage="1" latency="4"/>
+      <operations id="80" stage="1" latency="1"/>
+      <operations id="83" stage="2" latency="2"/>
+    </states>
+    <states id="13">
+      <operations id="40" stage="1" latency="1"/>
+      <operations id="41" stage="1" latency="1"/>
+      <operations id="42" stage="1" latency="1"/>
+      <operations id="64" stage="1" latency="1"/>
+      <operations id="66" stage="1" latency="1"/>
+      <operations id="71" stage="1" latency="1"/>
+      <operations id="73" stage="1" latency="1"/>
+      <operations id="76" stage="1" latency="1"/>
+      <operations id="77" stage="1" latency="1"/>
+      <operations id="81" stage="1" latency="1"/>
+      <operations id="82" stage="1" latency="1"/>
+      <operations id="83" stage="1" latency="2"/>
+      <operations id="84" stage="1" latency="1"/>
+      <operations id="85" stage="1" latency="1"/>
+      <operations id="86" stage="1" latency="1"/>
+      <operations id="87" stage="1" latency="1"/>
+      <operations id="88" stage="1" latency="1"/>
+      <operations id="89" stage="1" latency="1"/>
+      <operations id="90" stage="1" latency="1"/>
+      <operations id="91" stage="1" latency="1"/>
+      <operations id="92" stage="1" latency="1"/>
+      <operations id="93" stage="1" latency="1"/>
+      <operations id="94" stage="1" latency="1"/>
+      <operations id="95" stage="1" latency="1"/>
+      <operations id="96" stage="1" latency="1"/>
+      <operations id="97" stage="1" latency="1"/>
+      <operations id="98" stage="1" latency="1"/>
+      <operations id="99" stage="1" latency="1"/>
+      <operations id="100" stage="1" latency="1"/>
+      <operations id="101" stage="1" latency="1"/>
+      <operations id="104" stage="1" latency="1"/>
+      <operations id="108" stage="1" latency="1"/>
+    </states>
+    <states id="14">
+      <operations id="105" stage="1" latency="1"/>
+      <operations id="106" stage="1" latency="1"/>
+      <operations id="109" stage="1" latency="1"/>
+      <operations id="110" stage="1" latency="1"/>
+    </states>
+    <transitions inState="2" outState="3">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="3" outState="4">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="4" outState="5">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="5" outState="6">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="6" outState="7">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="7" outState="8">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="8" outState="9">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="9" outState="10">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="10" outState="11">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="11" outState="12">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="12" outState="13">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="13" outState="14">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="1" outState="2">
+      <condition id="-1"/>
+    </transitions>
+  </fsm>
+  <CFGRegionsRoot>
+    <cfgRegions mId="1" mTag="ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1" mMinLatency="1666" mMaxLatency="26626">
+      <subRegions>2</subRegions>
+      <subRegions>3</subRegions>
+      <subRegions>4</subRegions>
+      <mDfPipe/>
+    </cfgRegions>
+    <cfgRegions mId="2" mTag="Entry" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1">
+      <basicBlocks>31</basicBlocks>
+      <mDfPipe/>
+    </cfgRegions>
+    <cfgRegions mId="3" mTag="FLATTENED_BUTTERFLY_LOOP" mII="13" mDepth="14" mMinTripCount="128" mMaxTripCount="2048" mMinLatency="1664" mMaxLatency="26624" mType="1">
+      <basicBlocks>37</basicBlocks>
+      <basicBlocks>103</basicBlocks>
+      <basicBlocks>107</basicBlocks>
+      <basicBlocks>111</basicBlocks>
+      <basicBlocks>114</basicBlocks>
+      <mDfPipe/>
+    </cfgRegions>
+    <cfgRegions mId="4" mTag="Return" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1">
+      <basicBlocks>116</basicBlocks>
+      <mDfPipe/>
+    </cfgRegions>
+  </CFGRegionsRoot>
+</cdfg:DBCdfg>

@@ -1182,7 +1182,7 @@ void apatb_ntt_kernel_hw(void* __xlx_apatb_param_x, void* __xlx_apatb_param_psi_
 #endif
   };
   port8.param = { __xlx_apatb_param_psi_powers };
-  port8.nbytes = { 262144 };
+  port8.nbytes = { 16384 };
   port8.offset = {  };
   port8.hasWrite = { false };
 
@@ -1206,7 +1206,7 @@ void apatb_ntt_kernel_hw(void* __xlx_apatb_param_x, void* __xlx_apatb_param_psi_
 #endif
   };
   port9.param = { __xlx_apatb_param_twiddles };
-  port9.nbytes = { 262140 };
+  port9.nbytes = { 16384 };
   port9.offset = {  };
   port9.hasWrite = { false };
 

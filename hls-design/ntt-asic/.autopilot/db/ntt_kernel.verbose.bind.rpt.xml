@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'ntt_kernel'" level="0">
-<item name = "Date">Thu May 28 14:13:15 2026
+<item name = "Date">Mon Jun  1 21:40:40 2026
 </item>
 <item name = "Version">2023.2 (Build 4023990 on Oct 11 2023)</item>
 <item name = "Project">hls-design</item>
@@ -24,23 +24,25 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">572, 824778425410, 5.720 us, 8.2e+03 sec, 573, 824778425411, no</column>
+<column name="">2208, 5313790, 22.080 us, 53.138 ms, 2209, 5313791, no</column>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
-<column name="grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250">ntt_kernel_Pipeline_PERMUTE_LOOP, 269, 65549, 2.690 us, 0.655 ms, 269, 65549, no</column>
-<column name="grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263">ntt_kernel_Pipeline_BUTTERFLY_LOOP, 9, 98310, 90.000 ns, 0.983 ms, 9, 98310, no</column>
-<column name="grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278">ntt_kernel_Pipeline_WRITE_BACK_LOOP, 259, 65539, 2.590 us, 0.655 ms, 259, 65539, no</column>
+<column name="grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287">ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP, 258, 4098, 2.580 us, 40.980 us, 258, 4098, no</column>
+<column name="grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296">ntt_kernel_Pipeline_CACHE_PSI_LOOP, 259, 4099, 2.590 us, 40.990 us, 259, 4099, no</column>
+<column name="grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305">ntt_kernel_Pipeline_BURST_READ_LOOP, 259, 4099, 2.590 us, 40.990 us, 259, 4099, no</column>
+<column name="grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_314">ntt_kernel_Pipeline_PERMUTE_LOOP, 259, 4099, 2.590 us, 40.990 us, 259, 4099, no</column>
+<column name="grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322">ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP, 1666, 26626, 16.660 us, 0.266 ms, 1666, 26626, no</column>
+<column name="grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341">ntt_kernel_Pipeline_WRITE_BACK_LOOP, 259, 4099, 2.590 us, 40.990 us, 259, 4099, no</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- BATCH_LOOP">571, 824778425409, 570 ~ 51548651588, -, -, 1 ~ 16, no</column>
-<column name=" + STAGE_LOOP">22, 51548520480, 22 ~ 3221782530, -, -, 1 ~ 16, no</column>
-<column name="  ++ BLOCK_LOOP">20, 3221782528, 20 ~ 98321, -, -, 1 ~ 32768, no</column>
+<column name="- BATCH_LOOP">1938, 5309680, 1938 ~ 331855, -, -, 1 ~ 16, no</column>
+<column name=" + STAGE_LOOP">1668, 319536, 1668 ~ 26628, -, -, 1 ~ 12, no</column>
 </table>
 </item>
 </section>

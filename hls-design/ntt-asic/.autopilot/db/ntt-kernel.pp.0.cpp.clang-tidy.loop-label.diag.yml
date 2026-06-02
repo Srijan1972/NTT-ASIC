@@ -1,9 +1,269 @@
 ---
 MainSourceFile:  /home/sg9109/Documents/hls-design/ntt-asic/.autopilot/db/ntt-kernel.pp.0.cpp
 Diagnostics:     
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_127_1:  '
+    FileOffset:      127
+    FilePath:        /eda/xilinx/Vitis_HLS/2023.2/common/technology/autopilot/hls_vector.h
+    Replacements:    
+      - FilePath:        /home/sg9109/Documents/hls-design/ntt-asic/.autopilot/db/ntt-kernel.pp.0.cpp
+        Offset:          538953
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_127_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_143_1:  '
+    FileOffset:      143
+    FilePath:        /eda/xilinx/Vitis_HLS/2023.2/common/technology/autopilot/hls_vector.h
+    Replacements:    
+      - FilePath:        /home/sg9109/Documents/hls-design/ntt-asic/.autopilot/db/ntt-kernel.pp.0.cpp
+        Offset:          539370
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_143_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_169_1:  '
+    FileOffset:      169
+    FilePath:        /eda/xilinx/Vitis_HLS/2023.2/common/technology/autopilot/hls_vector.h
+    Replacements:    
+      - FilePath:        /home/sg9109/Documents/hls-design/ntt-asic/.autopilot/db/ntt-kernel.pp.0.cpp
+        Offset:          539844
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_169_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_170_1:  '
+    FileOffset:      170
+    FilePath:        /eda/xilinx/Vitis_HLS/2023.2/common/technology/autopilot/hls_vector.h
+    Replacements:    
+      - FilePath:        /home/sg9109/Documents/hls-design/ntt-asic/.autopilot/db/ntt-kernel.pp.0.cpp
+        Offset:          540142
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_170_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_198_1:  '
+    FileOffset:      198
+    FilePath:        /eda/xilinx/Vitis_HLS/2023.2/common/technology/autopilot/hls_vector.h
+    Replacements:    
+      - FilePath:        /home/sg9109/Documents/hls-design/ntt-asic/.autopilot/db/ntt-kernel.pp.0.cpp
+        Offset:          540891
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_198_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_199_1:  '
+    FileOffset:      199
+    FilePath:        /eda/xilinx/Vitis_HLS/2023.2/common/technology/autopilot/hls_vector.h
+    Replacements:    
+      - FilePath:        /home/sg9109/Documents/hls-design/ntt-asic/.autopilot/db/ntt-kernel.pp.0.cpp
+        Offset:          541227
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_199_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_200_1:  '
+    FileOffset:      200
+    FilePath:        /eda/xilinx/Vitis_HLS/2023.2/common/technology/autopilot/hls_vector.h
+    Replacements:    
+      - FilePath:        /home/sg9109/Documents/hls-design/ntt-asic/.autopilot/db/ntt-kernel.pp.0.cpp
+        Offset:          541563
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_200_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_201_1:  '
+    FileOffset:      201
+    FilePath:        /eda/xilinx/Vitis_HLS/2023.2/common/technology/autopilot/hls_vector.h
+    Replacements:    
+      - FilePath:        /home/sg9109/Documents/hls-design/ntt-asic/.autopilot/db/ntt-kernel.pp.0.cpp
+        Offset:          541899
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_201_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_202_1:  '
+    FileOffset:      202
+    FilePath:        /eda/xilinx/Vitis_HLS/2023.2/common/technology/autopilot/hls_vector.h
+    Replacements:    
+      - FilePath:        /home/sg9109/Documents/hls-design/ntt-asic/.autopilot/db/ntt-kernel.pp.0.cpp
+        Offset:          542235
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_202_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_203_1:  '
+    FileOffset:      203
+    FilePath:        /eda/xilinx/Vitis_HLS/2023.2/common/technology/autopilot/hls_vector.h
+    Replacements:    
+      - FilePath:        /home/sg9109/Documents/hls-design/ntt-asic/.autopilot/db/ntt-kernel.pp.0.cpp
+        Offset:          542571
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_203_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_204_1:  '
+    FileOffset:      204
+    FilePath:        /eda/xilinx/Vitis_HLS/2023.2/common/technology/autopilot/hls_vector.h
+    Replacements:    
+      - FilePath:        /home/sg9109/Documents/hls-design/ntt-asic/.autopilot/db/ntt-kernel.pp.0.cpp
+        Offset:          542907
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_204_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_205_1:  '
+    FileOffset:      205
+    FilePath:        /eda/xilinx/Vitis_HLS/2023.2/common/technology/autopilot/hls_vector.h
+    Replacements:    
+      - FilePath:        /home/sg9109/Documents/hls-design/ntt-asic/.autopilot/db/ntt-kernel.pp.0.cpp
+        Offset:          543243
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_205_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_206_1:  '
+    FileOffset:      206
+    FilePath:        /eda/xilinx/Vitis_HLS/2023.2/common/technology/autopilot/hls_vector.h
+    Replacements:    
+      - FilePath:        /home/sg9109/Documents/hls-design/ntt-asic/.autopilot/db/ntt-kernel.pp.0.cpp
+        Offset:          543580
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_206_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_207_1:  '
+    FileOffset:      207
+    FilePath:        /eda/xilinx/Vitis_HLS/2023.2/common/technology/autopilot/hls_vector.h
+    Replacements:    
+      - FilePath:        /home/sg9109/Documents/hls-design/ntt-asic/.autopilot/db/ntt-kernel.pp.0.cpp
+        Offset:          543918
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_207_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_222_1:  '
+    FileOffset:      222
+    FilePath:        /eda/xilinx/Vitis_HLS/2023.2/common/technology/autopilot/hls_vector.h
+    Replacements:    
+      - FilePath:        /home/sg9109/Documents/hls-design/ntt-asic/.autopilot/db/ntt-kernel.pp.0.cpp
+        Offset:          544318
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_222_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_223_1:  '
+    FileOffset:      223
+    FilePath:        /eda/xilinx/Vitis_HLS/2023.2/common/technology/autopilot/hls_vector.h
+    Replacements:    
+      - FilePath:        /home/sg9109/Documents/hls-design/ntt-asic/.autopilot/db/ntt-kernel.pp.0.cpp
+        Offset:          544635
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_223_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_224_1:  '
+    FileOffset:      224
+    FilePath:        /eda/xilinx/Vitis_HLS/2023.2/common/technology/autopilot/hls_vector.h
+    Replacements:    
+      - FilePath:        /home/sg9109/Documents/hls-design/ntt-asic/.autopilot/db/ntt-kernel.pp.0.cpp
+        Offset:          544951
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_224_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_225_1:  '
+    FileOffset:      225
+    FilePath:        /eda/xilinx/Vitis_HLS/2023.2/common/technology/autopilot/hls_vector.h
+    Replacements:    
+      - FilePath:        /home/sg9109/Documents/hls-design/ntt-asic/.autopilot/db/ntt-kernel.pp.0.cpp
+        Offset:          545266
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_225_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_226_1:  '
+    FileOffset:      226
+    FilePath:        /eda/xilinx/Vitis_HLS/2023.2/common/technology/autopilot/hls_vector.h
+    Replacements:    
+      - FilePath:        /home/sg9109/Documents/hls-design/ntt-asic/.autopilot/db/ntt-kernel.pp.0.cpp
+        Offset:          545582
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_226_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_256_1:  '
+    FileOffset:      256
+    FilePath:        /eda/xilinx/Vitis_HLS/2023.2/common/technology/autopilot/hls_vector.h
+    Replacements:    
+      - FilePath:        /home/sg9109/Documents/hls-design/ntt-asic/.autopilot/db/ntt-kernel.pp.0.cpp
+        Offset:          546017
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_256_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_257_1:  '
+    FileOffset:      257
+    FilePath:        /eda/xilinx/Vitis_HLS/2023.2/common/technology/autopilot/hls_vector.h
+    Replacements:    
+      - FilePath:        /home/sg9109/Documents/hls-design/ntt-asic/.autopilot/db/ntt-kernel.pp.0.cpp
+        Offset:          546421
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_257_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_258_1:  '
+    FileOffset:      258
+    FilePath:        /eda/xilinx/Vitis_HLS/2023.2/common/technology/autopilot/hls_vector.h
+    Replacements:    
+      - FilePath:        /home/sg9109/Documents/hls-design/ntt-asic/.autopilot/db/ntt-kernel.pp.0.cpp
+        Offset:          546827
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_258_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_259_1:  '
+    FileOffset:      259
+    FilePath:        /eda/xilinx/Vitis_HLS/2023.2/common/technology/autopilot/hls_vector.h
+    Replacements:    
+      - FilePath:        /home/sg9109/Documents/hls-design/ntt-asic/.autopilot/db/ntt-kernel.pp.0.cpp
+        Offset:          547233
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_259_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_260_1:  '
+    FileOffset:      260
+    FilePath:        /eda/xilinx/Vitis_HLS/2023.2/common/technology/autopilot/hls_vector.h
+    Replacements:    
+      - FilePath:        /home/sg9109/Documents/hls-design/ntt-asic/.autopilot/db/ntt-kernel.pp.0.cpp
+        Offset:          547639
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_260_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_261_1:  '
+    FileOffset:      261
+    FilePath:        /eda/xilinx/Vitis_HLS/2023.2/common/technology/autopilot/hls_vector.h
+    Replacements:    
+      - FilePath:        /home/sg9109/Documents/hls-design/ntt-asic/.autopilot/db/ntt-kernel.pp.0.cpp
+        Offset:          548044
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_261_1: '
+  - DiagnosticName:  clang-diagnostic-error
+    Message:         'Invalid Directive: for current device, mul + dsp is invalid combination for bind_op'
+    FileOffset:      25
+    FilePath:        /home/sg9109/Documents/hls-design/ntt-kernel.cpp
+    Replacements:    
+  - DiagnosticName:  clang-diagnostic-error
+    Message:         'Invalid Directive: for current device, mul + dsp is invalid combination for bind_op'
+    FileOffset:      30
+    FilePath:        /home/sg9109/Documents/hls-design/ntt-kernel.cpp
+    Replacements:    
+  - DiagnosticName:  clang-diagnostic-error
+    Message:         'Invalid Directive: for current device, mul + dsp is invalid combination for bind_op'
+    FileOffset:      34
+    FilePath:        /home/sg9109/Documents/hls-design/ntt-kernel.cpp
+    Replacements:    
+  - DiagnosticName:  clang-diagnostic-error
+    Message:         'Invalid Directive: for current device, add + fabric is invalid combination for bind_op'
+    FileOffset:      38
+    FilePath:        /home/sg9109/Documents/hls-design/ntt-kernel.cpp
+    Replacements:    
   - DiagnosticName:  clang-diagnostic-error
     Message:         'Invalid Directive: for current device, ram_2p + bram is invalid combination for BIND_STORAGE''s option ''type + impl'''
-    FileOffset:      67
+    FileOffset:      73
+    FilePath:        /home/sg9109/Documents/hls-design/ntt-kernel.cpp
+    Replacements:    
+  - DiagnosticName:  clang-diagnostic-error
+    Message:         'Invalid Directive: for current device, ram_2p + bram is invalid combination for BIND_STORAGE''s option ''type + impl'''
+    FileOffset:      75
+    FilePath:        /home/sg9109/Documents/hls-design/ntt-kernel.cpp
+    Replacements:    
+  - DiagnosticName:  clang-diagnostic-error
+    Message:         'Invalid Directive: for current device, ram_2p + bram is invalid combination for BIND_STORAGE''s option ''type + impl'''
+    FileOffset:      79
+    FilePath:        /home/sg9109/Documents/hls-design/ntt-kernel.cpp
+    Replacements:    
+  - DiagnosticName:  clang-diagnostic-error
+    Message:         'Invalid Directive: for current device, ram_2p + bram is invalid combination for BIND_STORAGE''s option ''type + impl'''
+    FileOffset:      81
     FilePath:        /home/sg9109/Documents/hls-design/ntt-kernel.cpp
     Replacements:    
 ...

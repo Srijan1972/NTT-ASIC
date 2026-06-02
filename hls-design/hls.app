@@ -1,8 +1,8 @@
-<project xmlns="com.autoesl.autopilot.project" top="ntt_kernel" name="hls-design" projectType="C/C++">
+<project xmlns="com.autoesl.autopilot.project" name="hls-design" top="ntt_kernel" projectType="C/C++">
     <includePaths/>
     <libraryPaths/>
     <Simulation>
-        <SimFlow name="csim" csimMode="0" lastCsimMode="0"/>
+        <SimFlow name="csim" optimizeCompile="true" clean="true" csimMode="0" lastCsimMode="0"/>
     </Simulation>
     <files xmlns="">
         <file name="hls-design/ntt-kernel.cpp" sc="0" tb="false" cflags="" csimflags="" blackbox="false"/>

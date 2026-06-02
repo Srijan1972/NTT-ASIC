@@ -13,7 +13,7 @@
 						"AP_START": { "actual": "ap_start"}
 					}
 				},
-				"grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263/grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_activity": {
+				"grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305/grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_activity": {
 					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
 					"ports": {
 						"AP_CLK": { "actual": "ap_clk"},
@@ -23,7 +23,7 @@
 						"AP_START": { "actual": "ap_start"}
 					}
 				},
-				"grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250/grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_activity": {
+				"grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296/grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296_activity": {
 					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
 					"ports": {
 						"AP_CLK": { "actual": "ap_clk"},
@@ -33,7 +33,37 @@
 						"AP_START": { "actual": "ap_start"}
 					}
 				},
-				"grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278/grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278_activity": {
+				"grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287/grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_314/grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_314_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341/grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_activity": {
 					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
 					"ports": {
 						"AP_CLK": { "actual": "ap_clk"},

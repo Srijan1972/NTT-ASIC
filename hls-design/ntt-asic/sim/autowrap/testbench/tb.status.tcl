@@ -1,0 +1,1 @@
+set ::AESL_AUTOSIM::gTopFileName /home/sg9109/Documents/hls-design/ntt-asic/./sim/autowrap/testbench/ntt-kernel.cpp_pre.cpp.tb.cpp

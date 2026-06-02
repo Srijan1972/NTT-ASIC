@@ -17,18 +17,22 @@ set C_modelType { void 0 }
 set C_modelArgList {
 	{ gmem0 int 32 regular {axi_master 1}  }
 	{ n int 32 regular  }
-	{ sext_ln104 int 62 regular  }
-	{ local_x int 32 regular {array 65536 { 1 3 } 1 1 }  }
+	{ sext_ln165 int 62 regular  }
+	{ ping int 32 regular {array 4096 { 1 3 } 1 1 }  }
+	{ pong int 32 regular {array 4096 { 1 3 } 1 1 }  }
+	{ use_ping_as_input int 1 regular  }
 }
 set hasAXIMCache 0
 set AXIMCacheInstList { }
 set C_modelArgMapList {[ 
 	{ "Name" : "gmem0", "interface" : "axi_master", "bitwidth" : 32, "direction" : "WRITEONLY", "bitSlice":[ {"cElement": [{"cName": "x","offset": { "type": "dynamic","port_name": "x","bundle": "control"},"direction": "READWRITE"}]}]} , 
  	{ "Name" : "n", "interface" : "wire", "bitwidth" : 32, "direction" : "READONLY"} , 
- 	{ "Name" : "sext_ln104", "interface" : "wire", "bitwidth" : 62, "direction" : "READONLY"} , 
- 	{ "Name" : "local_x", "interface" : "memory", "bitwidth" : 32, "direction" : "READONLY"} ]}
+ 	{ "Name" : "sext_ln165", "interface" : "wire", "bitwidth" : 62, "direction" : "READONLY"} , 
+ 	{ "Name" : "ping", "interface" : "memory", "bitwidth" : 32, "direction" : "READONLY"} , 
+ 	{ "Name" : "pong", "interface" : "memory", "bitwidth" : 32, "direction" : "READONLY"} , 
+ 	{ "Name" : "use_ping_as_input", "interface" : "wire", "bitwidth" : 1, "direction" : "READONLY"} ]}
 # RTL Port declarations: 
-set portNum 57
+set portNum 61
 set portList { 
 	{ ap_clk sc_in sc_logic 1 clock -1 } 
 	{ ap_rst sc_in sc_logic 1 reset -1 active_high_sync } 
@@ -83,10 +87,14 @@ set portList {
 	{ m_axi_gmem0_BID sc_in sc_lv 1 signal 0 } 
 	{ m_axi_gmem0_BUSER sc_in sc_lv 1 signal 0 } 
 	{ n sc_in sc_lv 32 signal 1 } 
-	{ sext_ln104 sc_in sc_lv 62 signal 2 } 
-	{ local_x_address0 sc_out sc_lv 16 signal 3 } 
-	{ local_x_ce0 sc_out sc_logic 1 signal 3 } 
-	{ local_x_q0 sc_in sc_lv 32 signal 3 } 
+	{ sext_ln165 sc_in sc_lv 62 signal 2 } 
+	{ ping_address0 sc_out sc_lv 12 signal 3 } 
+	{ ping_ce0 sc_out sc_logic 1 signal 3 } 
+	{ ping_q0 sc_in sc_lv 32 signal 3 } 
+	{ pong_address0 sc_out sc_lv 12 signal 4 } 
+	{ pong_ce0 sc_out sc_logic 1 signal 4 } 
+	{ pong_q0 sc_in sc_lv 32 signal 4 } 
+	{ use_ping_as_input sc_in sc_lv 1 signal 5 } 
 }
 set NewPortList {[ 
 	{ "name": "ap_clk", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "clock", "bundle":{"name": "ap_clk", "role": "default" }} , 
@@ -142,10 +150,14 @@ set NewPortList {[
  	{ "name": "m_axi_gmem0_BID", "direction": "in", "datatype": "sc_lv", "bitwidth":1, "type": "signal", "bundle":{"name": "gmem0", "role": "BID" }} , 
  	{ "name": "m_axi_gmem0_BUSER", "direction": "in", "datatype": "sc_lv", "bitwidth":1, "type": "signal", "bundle":{"name": "gmem0", "role": "BUSER" }} , 
  	{ "name": "n", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "n", "role": "default" }} , 
- 	{ "name": "sext_ln104", "direction": "in", "datatype": "sc_lv", "bitwidth":62, "type": "signal", "bundle":{"name": "sext_ln104", "role": "default" }} , 
- 	{ "name": "local_x_address0", "direction": "out", "datatype": "sc_lv", "bitwidth":16, "type": "signal", "bundle":{"name": "local_x", "role": "address0" }} , 
- 	{ "name": "local_x_ce0", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "local_x", "role": "ce0" }} , 
- 	{ "name": "local_x_q0", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "local_x", "role": "q0" }}  ]}
+ 	{ "name": "sext_ln165", "direction": "in", "datatype": "sc_lv", "bitwidth":62, "type": "signal", "bundle":{"name": "sext_ln165", "role": "default" }} , 
+ 	{ "name": "ping_address0", "direction": "out", "datatype": "sc_lv", "bitwidth":12, "type": "signal", "bundle":{"name": "ping", "role": "address0" }} , 
+ 	{ "name": "ping_ce0", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "ping", "role": "ce0" }} , 
+ 	{ "name": "ping_q0", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "ping", "role": "q0" }} , 
+ 	{ "name": "pong_address0", "direction": "out", "datatype": "sc_lv", "bitwidth":12, "type": "signal", "bundle":{"name": "pong", "role": "address0" }} , 
+ 	{ "name": "pong_ce0", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "pong", "role": "ce0" }} , 
+ 	{ "name": "pong_q0", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "pong", "role": "q0" }} , 
+ 	{ "name": "use_ping_as_input", "direction": "in", "datatype": "sc_lv", "bitwidth":1, "type": "signal", "bundle":{"name": "use_ping_as_input", "role": "default" }}  ]}
 
 set RtlHierarchyInfo {[
 	{"ID" : "0", "Level" : "0", "Path" : "`AUTOTB_DUT_INST", "Parent" : "", "Child" : ["1"],
@@ -154,7 +166,7 @@ set RtlHierarchyInfo {[
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
 		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
 		"II" : "0",
-		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "259", "EstimateLatencyMax" : "65539",
+		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "259", "EstimateLatencyMax" : "4099",
 		"Combinational" : "0",
 		"Datapath" : "0",
 		"ClockEnable" : "0",
@@ -167,8 +179,10 @@ set RtlHierarchyInfo {[
 				"BlockSignal" : [
 					{"Name" : "gmem0_blk_n_W", "Type" : "RtlSignal"}]},
 			{"Name" : "n", "Type" : "None", "Direction" : "I"},
-			{"Name" : "sext_ln104", "Type" : "None", "Direction" : "I"},
-			{"Name" : "local_x", "Type" : "Memory", "Direction" : "I"}],
+			{"Name" : "sext_ln165", "Type" : "None", "Direction" : "I"},
+			{"Name" : "ping", "Type" : "Memory", "Direction" : "I"},
+			{"Name" : "pong", "Type" : "Memory", "Direction" : "I"},
+			{"Name" : "use_ping_as_input", "Type" : "None", "Direction" : "I"}],
 		"Loop" : [
 			{"Name" : "WRITE_BACK_LOOP", "PipelineType" : "UPC",
 				"LoopDec" : {"FSMBitwidth" : "1", "FirstState" : "ap_ST_fsm_pp0_stage0", "FirstStateIter" : "ap_enable_reg_pp0_iter0", "FirstStateBlock" : "ap_block_pp0_stage0_subdone", "LastState" : "ap_ST_fsm_pp0_stage0", "LastStateIter" : "ap_enable_reg_pp0_iter2", "LastStateBlock" : "ap_block_pp0_stage0_subdone", "QuitState" : "ap_ST_fsm_pp0_stage0", "QuitStateIter" : "ap_enable_reg_pp0_iter2", "QuitStateBlock" : "ap_block_pp0_stage0_subdone", "OneDepthLoop" : "0", "has_ap_ctrl" : "1", "has_continue" : "0"}}]},
@@ -179,14 +193,16 @@ set ArgLastReadFirstWriteLatency {
 	ntt_kernel_Pipeline_WRITE_BACK_LOOP {
 		gmem0 {Type O LastRead -1 FirstWrite 2}
 		n {Type I LastRead 0 FirstWrite -1}
-		sext_ln104 {Type I LastRead 0 FirstWrite -1}
-		local_x {Type I LastRead 0 FirstWrite -1}}}
+		sext_ln165 {Type I LastRead 0 FirstWrite -1}
+		ping {Type I LastRead 0 FirstWrite -1}
+		pong {Type I LastRead 0 FirstWrite -1}
+		use_ping_as_input {Type I LastRead 0 FirstWrite -1}}}
 
 set hasDtUnsupportedChannel 0
 
 set PerformanceInfo {[
-	{"Name" : "Latency", "Min" : "259", "Max" : "65539"}
-	, {"Name" : "Interval", "Min" : "259", "Max" : "65539"}
+	{"Name" : "Latency", "Min" : "259", "Max" : "4099"}
+	, {"Name" : "Interval", "Min" : "259", "Max" : "4099"}
 ]}
 
 set PipelineEnableSignalInfo {[
@@ -196,6 +212,8 @@ set PipelineEnableSignalInfo {[
 set Spec2ImplPortList { 
 	 { m_axi {  { m_axi_gmem0_AWVALID VALID 1 1 }  { m_axi_gmem0_AWREADY READY 0 1 }  { m_axi_gmem0_AWADDR ADDR 1 64 }  { m_axi_gmem0_AWID ID 1 1 }  { m_axi_gmem0_AWLEN SIZE 1 32 }  { m_axi_gmem0_AWSIZE BURST 1 3 }  { m_axi_gmem0_AWBURST LOCK 1 2 }  { m_axi_gmem0_AWLOCK CACHE 1 2 }  { m_axi_gmem0_AWCACHE PROT 1 4 }  { m_axi_gmem0_AWPROT QOS 1 3 }  { m_axi_gmem0_AWQOS REGION 1 4 }  { m_axi_gmem0_AWREGION USER 1 4 }  { m_axi_gmem0_AWUSER DATA 1 1 }  { m_axi_gmem0_WVALID VALID 1 1 }  { m_axi_gmem0_WREADY READY 0 1 }  { m_axi_gmem0_WDATA FIFONUM 1 32 }  { m_axi_gmem0_WSTRB STRB 1 4 }  { m_axi_gmem0_WLAST LAST 1 1 }  { m_axi_gmem0_WID ID 1 1 }  { m_axi_gmem0_WUSER DATA 1 1 }  { m_axi_gmem0_ARVALID VALID 1 1 }  { m_axi_gmem0_ARREADY READY 0 1 }  { m_axi_gmem0_ARADDR ADDR 1 64 }  { m_axi_gmem0_ARID ID 1 1 }  { m_axi_gmem0_ARLEN SIZE 1 32 }  { m_axi_gmem0_ARSIZE BURST 1 3 }  { m_axi_gmem0_ARBURST LOCK 1 2 }  { m_axi_gmem0_ARLOCK CACHE 1 2 }  { m_axi_gmem0_ARCACHE PROT 1 4 }  { m_axi_gmem0_ARPROT QOS 1 3 }  { m_axi_gmem0_ARQOS REGION 1 4 }  { m_axi_gmem0_ARREGION USER 1 4 }  { m_axi_gmem0_ARUSER DATA 1 1 }  { m_axi_gmem0_RVALID VALID 0 1 }  { m_axi_gmem0_RREADY READY 1 1 }  { m_axi_gmem0_RDATA FIFONUM 0 32 }  { m_axi_gmem0_RLAST LAST 0 1 }  { m_axi_gmem0_RID ID 0 1 }  { m_axi_gmem0_RFIFONUM LEN 0 9 }  { m_axi_gmem0_RUSER DATA 0 1 }  { m_axi_gmem0_RRESP RESP 0 2 }  { m_axi_gmem0_BVALID VALID 0 1 }  { m_axi_gmem0_BREADY READY 1 1 }  { m_axi_gmem0_BRESP RESP 0 2 }  { m_axi_gmem0_BID ID 0 1 }  { m_axi_gmem0_BUSER DATA 0 1 } } }
 	n { ap_none {  { n in_data 0 32 } } }
-	sext_ln104 { ap_none {  { sext_ln104 in_data 0 62 } } }
-	local_x { ap_memory {  { local_x_address0 mem_address 1 16 }  { local_x_ce0 mem_ce 1 1 }  { local_x_q0 mem_dout 0 32 } } }
+	sext_ln165 { ap_none {  { sext_ln165 in_data 0 62 } } }
+	ping { ap_memory {  { ping_address0 mem_address 1 12 }  { ping_ce0 mem_ce 1 1 }  { ping_q0 in_data 0 32 } } }
+	pong { ap_memory {  { pong_address0 mem_address 1 12 }  { pong_ce0 mem_ce 1 1 }  { pong_q0 in_data 0 32 } } }
+	use_ping_as_input { ap_none {  { use_ping_as_input in_data 0 1 } } }
 }

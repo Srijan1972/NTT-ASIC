@@ -1,49 +1,49 @@
 --- !Passed
 Pass:            inline
 Name:            AlwaysInline
-DebugLoc:        { File: hls-design/ntt-kernel.cpp, Line: 95, Column: 32 }
+DebugLoc:        { File: hls-design/ntt-kernel.cpp, Line: 146, Column: 27 }
 Function:        ntt_kernel
 Args:            
   - String:          'Inlining function '''
   - Callee:          'mod_mul(unsigned int, unsigned int, unsigned int, unsigned int)'
-    DebugLoc:        { File: hls-design/ntt-kernel.cpp, Line: 24, Column: 0 }
+    DebugLoc:        { File: hls-design/ntt-kernel.cpp, Line: 19, Column: 0 }
   - String:          ''' into '''
   - Caller:          ntt_kernel
-    DebugLoc:        { File: hls-design/ntt-kernel.cpp, Line: 46, Column: 0 }
+    DebugLoc:        { File: hls-design/ntt-kernel.cpp, Line: 59, Column: 0 }
   - String:          ''''
 ...
 --- !Passed
 Pass:            inline
 Name:            AlwaysInline
-DebugLoc:        { File: hls-design/ntt-kernel.cpp, Line: 97, Column: 47 }
+DebugLoc:        { File: hls-design/ntt-kernel.cpp, Line: 148, Column: 31 }
 Function:        ntt_kernel
 Args:            
   - String:          'Inlining function '''
   - Callee:          'mod_sub(unsigned int, unsigned int, unsigned int)'
-    DebugLoc:        { File: hls-design/ntt-kernel.cpp, Line: 19, Column: 0 }
+    DebugLoc:        { File: hls-design/ntt-kernel.cpp, Line: 14, Column: 0 }
   - String:          ''' into '''
   - Caller:          ntt_kernel
-    DebugLoc:        { File: hls-design/ntt-kernel.cpp, Line: 46, Column: 0 }
+    DebugLoc:        { File: hls-design/ntt-kernel.cpp, Line: 59, Column: 0 }
   - String:          ''''
 ...
 --- !Passed
 Pass:            inline
 Name:            AlwaysInline
-DebugLoc:        { File: hls-design/ntt-kernel.cpp, Line: 96, Column: 38 }
+DebugLoc:        { File: hls-design/ntt-kernel.cpp, Line: 147, Column: 31 }
 Function:        ntt_kernel
 Args:            
   - String:          'Inlining function '''
   - Callee:          'mod_add(unsigned int, unsigned int, unsigned int)'
-    DebugLoc:        { File: hls-design/ntt-kernel.cpp, Line: 13, Column: 0 }
+    DebugLoc:        { File: hls-design/ntt-kernel.cpp, Line: 8, Column: 0 }
   - String:          ''' into '''
   - Caller:          ntt_kernel
-    DebugLoc:        { File: hls-design/ntt-kernel.cpp, Line: 46, Column: 0 }
+    DebugLoc:        { File: hls-design/ntt-kernel.cpp, Line: 59, Column: 0 }
   - String:          ''''
 ...
 --- !Passed
 Pass:            reflow-burst-inference
 Name:            BurstInferred
-DebugLoc:        { File: hls-design/ntt-kernel.cpp, Line: 70, Column: 16 }
+DebugLoc:        { File: hls-design/ntt-kernel.cpp, Line: 84, Column: 23 }
 Function:        ntt_kernel
 Args:            
   - String:          'Sequential '
@@ -53,28 +53,28 @@ Args:
   - String:          ' length'
   - String:          ' has been inferred'
   - String:          ' _XLX_SEP_ '
-  - AccessID:        psi_powers5seq
-  - ArrayName:       psi_powers
+  - AccessID:        twiddles5seq
+  - ArrayName:       twiddles
   - String:          ' '
-  - BundleName:      gmem1
+  - BundleName:      gmem2
   - String:          ' '
-  - LoopName:        PERMUTE_LOOP
+  - LoopName:        CACHE_TWIDDLES_LOOP
   - String:          ' '
-  - LoopLoc:         'hls-design/ntt-kernel.cpp:70:16'
+  - LoopLoc:         'hls-design/ntt-kernel.cpp:84:23'
   - String:          ' '
   - Function:        ntt_kernel
-    DebugLoc:        { File: hls-design/ntt-kernel.cpp, Line: 46, Column: 0 }
+    DebugLoc:        { File: hls-design/ntt-kernel.cpp, Line: 59, Column: 0 }
   - String:          ' '
   - String:          ' _XLX_SEP_ '
   - OrigAccess:      load
-    DebugLoc:        { File: hls-design/ntt-kernel.cpp, Line: 73, Column: 32 }
+    DebugLoc:        { File: hls-design/ntt-kernel.cpp, Line: 87, Column: 22 }
   - OrigDirection:   read
   - OrigID:          for.inc.load.4
 ...
 --- !Passed
 Pass:            reflow-burst-inference
 Name:            BurstInferred
-DebugLoc:        { File: hls-design/ntt-kernel.cpp, Line: 85, Column: 18 }
+DebugLoc:        { File: hls-design/ntt-kernel.cpp, Line: 91, Column: 18 }
 Function:        ntt_kernel
 Args:            
   - String:          'Sequential '
@@ -84,28 +84,59 @@ Args:
   - String:          ' length'
   - String:          ' has been inferred'
   - String:          ' _XLX_SEP_ '
-  - AccessID:        scevgepseq
-  - ArrayName:       twiddles
+  - AccessID:        psi_powers6seq
+  - ArrayName:       psi_powers
   - String:          ' '
-  - BundleName:      gmem2
+  - BundleName:      gmem1
   - String:          ' '
-  - LoopName:        BUTTERFLY_LOOP
+  - LoopName:        CACHE_PSI_LOOP
   - String:          ' '
-  - LoopLoc:         'hls-design/ntt-kernel.cpp:85:18'
+  - LoopLoc:         'hls-design/ntt-kernel.cpp:91:18'
   - String:          ' '
   - Function:        ntt_kernel
-    DebugLoc:        { File: hls-design/ntt-kernel.cpp, Line: 46, Column: 0 }
+    DebugLoc:        { File: hls-design/ntt-kernel.cpp, Line: 59, Column: 0 }
   - String:          ' '
   - String:          ' _XLX_SEP_ '
   - OrigAccess:      load
-    DebugLoc:        { File: hls-design/ntt-kernel.cpp, Line: 90, Column: 19 }
+    DebugLoc:        { File: hls-design/ntt-kernel.cpp, Line: 94, Column: 17 }
   - OrigDirection:   read
-  - OrigID:          for.body21.load.8
+  - OrigID:          for.inc12.load.4
 ...
 --- !Passed
 Pass:            reflow-burst-inference
 Name:            BurstInferred
-DebugLoc:        { File: hls-design/ntt-kernel.cpp, Line: 104, Column: 26 }
+DebugLoc:        { File: hls-design/ntt-kernel.cpp, Line: 103, Column: 23 }
+Function:        ntt_kernel
+Args:            
+  - String:          'Sequential '
+  - Direction:       read
+  - String:          ' of '
+  - Length:          variable
+  - String:          ' length'
+  - String:          ' has been inferred'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        scevgep7seq
+  - ArrayName:       x
+  - String:          ' '
+  - BundleName:      gmem0
+  - String:          ' '
+  - LoopName:        BURST_READ_LOOP
+  - String:          ' '
+  - LoopLoc:         'hls-design/ntt-kernel.cpp:103:23'
+  - String:          ' '
+  - Function:        ntt_kernel
+    DebugLoc:        { File: hls-design/ntt-kernel.cpp, Line: 59, Column: 0 }
+  - String:          ' '
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      load
+    DebugLoc:        { File: hls-design/ntt-kernel.cpp, Line: 106, Column: 20 }
+  - OrigDirection:   read
+  - OrigID:          for.inc28.load.7
+...
+--- !Passed
+Pass:            reflow-burst-inference
+Name:            BurstInferred
+DebugLoc:        { File: hls-design/ntt-kernel.cpp, Line: 165, Column: 23 }
 Function:        ntt_kernel
 Args:            
   - String:          'Sequential '
@@ -115,157 +146,88 @@ Args:
   - String:          ' length'
   - String:          ' has been inferred'
   - String:          ' _XLX_SEP_ '
-  - AccessID:        scevgep6seq
+  - AccessID:        scevgep8seq
   - ArrayName:       x
   - String:          ' '
   - BundleName:      gmem0
   - String:          ' '
   - LoopName:        WRITE_BACK_LOOP
   - String:          ' '
-  - LoopLoc:         'hls-design/ntt-kernel.cpp:104:26'
+  - LoopLoc:         'hls-design/ntt-kernel.cpp:165:23'
   - String:          ' '
   - Function:        ntt_kernel
-    DebugLoc:        { File: hls-design/ntt-kernel.cpp, Line: 46, Column: 0 }
+    DebugLoc:        { File: hls-design/ntt-kernel.cpp, Line: 59, Column: 0 }
   - String:          ' '
   - String:          ' _XLX_SEP_ '
   - OrigAccess:      store
-    DebugLoc:        { File: hls-design/ntt-kernel.cpp, Line: 107, Column: 22 }
+    DebugLoc:        { File: hls-design/ntt-kernel.cpp, Line: 165, Column: 46 }
   - OrigDirection:   write
-  - OrigID:          for.inc62.store.9
+  - OrigID:          for.inc110.store.2
 ...
 --- !Missed
 Pass:            reflow-burst-inference
 Name:            CouldNotAnalyzeBoundsPattern
-DebugLoc:        { File: hls-design/ntt-kernel.cpp, Line: 82, Column: 14 }
-Function:        ntt_kernel
-Args:            
-  - String:          Could not analyze the loop bounds
-  - String:          ' _XLX_SEP_ '
-  - LoopName:        BLOCK_LOOP
-  - String:          ' '
-  - LoopLoc:         'hls-design/ntt-kernel.cpp:82:14'
-  - String:          ' '
-  - Function:        ntt_kernel
-    DebugLoc:        { File: hls-design/ntt-kernel.cpp, Line: 46, Column: 0 }
-  - String:          ' '
-...
---- !Missed
-Pass:            reflow-burst-inference
-Name:            CouldNotAnalyzeBoundsPattern
-DebugLoc:        { File: hls-design/ntt-kernel.cpp, Line: 79, Column: 21 }
+DebugLoc:        { File: hls-design/ntt-kernel.cpp, Line: 121, Column: 18 }
 Function:        ntt_kernel
 Args:            
   - String:          Could not analyze the loop bounds
   - String:          ' _XLX_SEP_ '
   - LoopName:        STAGE_LOOP
   - String:          ' '
-  - LoopLoc:         'hls-design/ntt-kernel.cpp:79:21'
+  - LoopLoc:         'hls-design/ntt-kernel.cpp:121:18'
   - String:          ' '
   - Function:        ntt_kernel
-    DebugLoc:        { File: hls-design/ntt-kernel.cpp, Line: 46, Column: 0 }
-  - String:          ' '
-...
---- !Missed
-Pass:            reflow-burst-inference
-Name:            CouldNotAnalyzePattern
-DebugLoc:        { File: hls-design/ntt-kernel.cpp, Line: 73, Column: 15 }
-Function:        ntt_kernel
-Args:            
-  - String:          Could not analyze pattern
-  - String:          ' _XLX_SEP_ '
-  - OrigAccess:      load
-    DebugLoc:        { File: hls-design/ntt-kernel.cpp, Line: 73, Column: 15 }
-  - OrigDirection:   read
-  - OrigID:          for.inc.load.8
-  - ArrayName:       x
-  - String:          ' '
-  - BundleName:      gmem0
-  - String:          ' '
-  - LoopName:        PERMUTE_LOOP
-  - String:          ' '
-  - LoopLoc:         'hls-design/ntt-kernel.cpp:70:16'
-  - String:          ' '
-  - Function:        ntt_kernel
-    DebugLoc:        { File: hls-design/ntt-kernel.cpp, Line: 46, Column: 0 }
-  - String:          ' '
-...
---- !Missed
-Pass:            reflow-burst-inference
-Name:            CouldNotAnalyzePattern
-DebugLoc:        { File: hls-design/ntt-kernel.cpp, Line: 70, Column: 16 }
-Function:        ntt_kernel
-Args:            
-  - String:          Could not analyze pattern
-  - String:          ' _XLX_SEP_ '
-  - OrigAccess:      call
-    DebugLoc:        { File: hls-design/ntt-kernel.cpp, Line: 70, Column: 16 }
-  - OrigDirection:   read
-  - OrigID:          psi_powers5seq
-  - ArrayName:       psi_powers
-  - String:          ' '
-  - BundleName:      gmem1
-  - String:          ' '
-  - LoopName:        BATCH_LOOP
-  - String:          ' '
-  - LoopLoc:         'hls-design/ntt-kernel.cpp:59:14'
-  - String:          ' '
-  - Function:        ntt_kernel
-    DebugLoc:        { File: hls-design/ntt-kernel.cpp, Line: 46, Column: 0 }
+    DebugLoc:        { File: hls-design/ntt-kernel.cpp, Line: 59, Column: 0 }
   - String:          ' '
 ...
 --- !Missed
 Pass:            reflow-burst-inference
 Name:            AccessClobbered
-DebugLoc:        { File: hls-design/ntt-kernel.cpp, Line: 104, Column: 26 }
+DebugLoc:        { File: hls-design/ntt-kernel.cpp, Line: 103, Column: 23 }
 Function:        ntt_kernel
 Args:            
   - String:          'Access is clobbered by '
-  - ClobberedBy:     load
-    DebugLoc:        { File: hls-design/ntt-kernel.cpp, Line: 73, Column: 15 }
+  - ClobberedBy:     store
+    DebugLoc:        { File: hls-design/ntt-kernel.cpp, Line: 165, Column: 46 }
   - String:          ' _XLX_SEP_ '
   - OrigAccess:      call
-    DebugLoc:        { File: hls-design/ntt-kernel.cpp, Line: 104, Column: 26 }
-  - OrigDirection:   write
-  - OrigID:          scevgep6seq
+    DebugLoc:        { File: hls-design/ntt-kernel.cpp, Line: 103, Column: 23 }
+  - OrigDirection:   read
+  - OrigID:          scevgep7seq
   - ArrayName:       x
   - String:          ' '
   - BundleName:      gmem0
   - String:          ' '
   - Function:        ntt_kernel
-    DebugLoc:        { File: hls-design/ntt-kernel.cpp, Line: 46, Column: 0 }
+    DebugLoc:        { File: hls-design/ntt-kernel.cpp, Line: 59, Column: 0 }
   - String:          ' '
 ...
 --- !Missed
-Pass:            reflow-burst-widen
-Name:            GreaterOrEqualThreshold
-DebugLoc:        { File: hls-design/ntt-kernel.cpp, Line: 85, Column: 18 }
+Pass:            reflow-burst-inference
+Name:            AccessClobbered
+DebugLoc:        { File: hls-design/ntt-kernel.cpp, Line: 165, Column: 23 }
 Function:        ntt_kernel
 Args:            
-  - String:          'Could not widen since type '
-  - Type:            i32
-  - String:          ' size is greater than or equal to the max_widen_bitwidth threshold of '
-  - Threshold:       '0'
+  - String:          'Access is clobbered by '
+  - ClobberedBy:     load
+    DebugLoc:        { File: hls-design/ntt-kernel.cpp, Line: 106, Column: 20 }
   - String:          ' _XLX_SEP_ '
   - OrigAccess:      call
-    DebugLoc:        { File: hls-design/ntt-kernel.cpp, Line: 85, Column: 18 }
-  - OrigDirection:   read
-  - OrigID:          scevgepseq
-  - ArrayName:       twiddles
+    DebugLoc:        { File: hls-design/ntt-kernel.cpp, Line: 165, Column: 23 }
+  - OrigDirection:   write
+  - OrigID:          scevgep8seq
+  - ArrayName:       x
   - String:          ' '
-  - BundleName:      gmem2
-  - String:          ' '
-  - LoopName:        BUTTERFLY_LOOP
-  - String:          ' '
-  - LoopLoc:         'hls-design/ntt-kernel.cpp:85:18'
+  - BundleName:      gmem0
   - String:          ' '
   - Function:        ntt_kernel
-    DebugLoc:        { File: hls-design/ntt-kernel.cpp, Line: 46, Column: 0 }
+    DebugLoc:        { File: hls-design/ntt-kernel.cpp, Line: 59, Column: 0 }
   - String:          ' '
 ...
 --- !Missed
 Pass:            reflow-burst-widen
 Name:            GreaterOrEqualThreshold
-DebugLoc:        { File: hls-design/ntt-kernel.cpp, Line: 104, Column: 26 }
+DebugLoc:        { File: hls-design/ntt-kernel.cpp, Line: 165, Column: 23 }
 Function:        ntt_kernel
 Args:            
   - String:          'Could not widen since type '
@@ -274,25 +236,25 @@ Args:
   - Threshold:       '0'
   - String:          ' _XLX_SEP_ '
   - OrigAccess:      call
-    DebugLoc:        { File: hls-design/ntt-kernel.cpp, Line: 104, Column: 26 }
+    DebugLoc:        { File: hls-design/ntt-kernel.cpp, Line: 165, Column: 23 }
   - OrigDirection:   write
-  - OrigID:          scevgep6seq
+  - OrigID:          scevgep8seq
   - ArrayName:       x
   - String:          ' '
   - BundleName:      gmem0
   - String:          ' '
   - LoopName:        WRITE_BACK_LOOP
   - String:          ' '
-  - LoopLoc:         'hls-design/ntt-kernel.cpp:104:26'
+  - LoopLoc:         'hls-design/ntt-kernel.cpp:165:23'
   - String:          ' '
   - Function:        ntt_kernel
-    DebugLoc:        { File: hls-design/ntt-kernel.cpp, Line: 46, Column: 0 }
+    DebugLoc:        { File: hls-design/ntt-kernel.cpp, Line: 59, Column: 0 }
   - String:          ' '
 ...
 --- !Missed
 Pass:            reflow-burst-widen
 Name:            GreaterOrEqualThreshold
-DebugLoc:        { File: hls-design/ntt-kernel.cpp, Line: 70, Column: 16 }
+DebugLoc:        { File: hls-design/ntt-kernel.cpp, Line: 103, Column: 23 }
 Function:        ntt_kernel
 Args:            
   - String:          'Could not widen since type '
@@ -301,37 +263,79 @@ Args:
   - Threshold:       '0'
   - String:          ' _XLX_SEP_ '
   - OrigAccess:      call
-    DebugLoc:        { File: hls-design/ntt-kernel.cpp, Line: 70, Column: 16 }
+    DebugLoc:        { File: hls-design/ntt-kernel.cpp, Line: 103, Column: 23 }
   - OrigDirection:   read
-  - OrigID:          psi_powers5seq
+  - OrigID:          scevgep7seq
+  - ArrayName:       x
+  - String:          ' '
+  - BundleName:      gmem0
+  - String:          ' '
+  - LoopName:        BURST_READ_LOOP
+  - String:          ' '
+  - LoopLoc:         'hls-design/ntt-kernel.cpp:103:23'
+  - String:          ' '
+  - Function:        ntt_kernel
+    DebugLoc:        { File: hls-design/ntt-kernel.cpp, Line: 59, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-widen
+Name:            GreaterOrEqualThreshold
+DebugLoc:        { File: hls-design/ntt-kernel.cpp, Line: 91, Column: 18 }
+Function:        ntt_kernel
+Args:            
+  - String:          'Could not widen since type '
+  - Type:            i32
+  - String:          ' size is greater than or equal to the max_widen_bitwidth threshold of '
+  - Threshold:       '0'
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      call
+    DebugLoc:        { File: hls-design/ntt-kernel.cpp, Line: 91, Column: 18 }
+  - OrigDirection:   read
+  - OrigID:          psi_powers6seq
   - ArrayName:       psi_powers
   - String:          ' '
   - BundleName:      gmem1
   - String:          ' '
-  - LoopName:        PERMUTE_LOOP
+  - LoopName:        CACHE_PSI_LOOP
   - String:          ' '
-  - LoopLoc:         'hls-design/ntt-kernel.cpp:70:16'
+  - LoopLoc:         'hls-design/ntt-kernel.cpp:91:18'
   - String:          ' '
   - Function:        ntt_kernel
-    DebugLoc:        { File: hls-design/ntt-kernel.cpp, Line: 46, Column: 0 }
+    DebugLoc:        { File: hls-design/ntt-kernel.cpp, Line: 59, Column: 0 }
   - String:          ' '
 ...
---- !Failure
-Pass:            reflow-occurrence-inference
-Name:            NonComputableLoopForm
-DebugLoc:        { File: hls-design/ntt-kernel.cpp, Line: 79, Column: 21 }
+--- !Missed
+Pass:            reflow-burst-widen
+Name:            GreaterOrEqualThreshold
+DebugLoc:        { File: hls-design/ntt-kernel.cpp, Line: 84, Column: 23 }
 Function:        ntt_kernel
 Args:            
-  - String:          'Could not analyze occurrence information within '''
-  - LoopName:        STAGE_LOOP
-  - String:          '''('
-  - LoopLoc:         'hls-design/ntt-kernel.cpp:79:21'
-  - String:          ') . Requires loop in simplify form and with single exit.'
+  - String:          'Could not widen since type '
+  - Type:            i32
+  - String:          ' size is greater than or equal to the max_widen_bitwidth threshold of '
+  - Threshold:       '0'
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      call
+    DebugLoc:        { File: hls-design/ntt-kernel.cpp, Line: 84, Column: 23 }
+  - OrigDirection:   read
+  - OrigID:          twiddles5seq
+  - ArrayName:       twiddles
+  - String:          ' '
+  - BundleName:      gmem2
+  - String:          ' '
+  - LoopName:        CACHE_TWIDDLES_LOOP
+  - String:          ' '
+  - LoopLoc:         'hls-design/ntt-kernel.cpp:84:23'
+  - String:          ' '
+  - Function:        ntt_kernel
+    DebugLoc:        { File: hls-design/ntt-kernel.cpp, Line: 59, Column: 0 }
+  - String:          ' '
 ...
 --- !Passed
 Pass:            reflow-burst-summary
 Name:            BurstInferredVerboseSummary
-DebugLoc:        { File: hls-design/ntt-kernel.cpp, Line: 70, Column: 16 }
+DebugLoc:        { File: hls-design/ntt-kernel.cpp, Line: 84, Column: 23 }
 Function:        ntt_kernel
 Args:            
   - String:          'Multiple burst '
@@ -346,20 +350,20 @@ Args:
   - AccessID:        seq
   - ArrayName:       ''
   - String:          ' '
-  - BundleName:      gmem1
+  - BundleName:      gmem2
   - String:          ' '
-  - LoopName:        PERMUTE_LOOP
+  - LoopName:        CACHE_TWIDDLES_LOOP
   - String:          ' '
-  - LoopLoc:         'hls-design/ntt-kernel.cpp:70:16'
+  - LoopLoc:         'hls-design/ntt-kernel.cpp:84:23'
   - String:          ' '
   - Function:        ntt_kernel
-    DebugLoc:        { File: hls-design/ntt-kernel.cpp, Line: 46, Column: 0 }
+    DebugLoc:        { File: hls-design/ntt-kernel.cpp, Line: 59, Column: 0 }
   - String:          ' '
 ...
 --- !Passed
 Pass:            reflow-burst-summary
 Name:            BurstInferredSummary
-DebugLoc:        { File: hls-design/ntt-kernel.cpp, Line: 70, Column: 16 }
+DebugLoc:        { File: hls-design/ntt-kernel.cpp, Line: 84, Column: 23 }
 Function:        ntt_kernel
 Args:            
   - String:          'Multiple burst '
@@ -369,9 +373,59 @@ Args:
   - String:          ' length and bit width '
   - Width:           '32'
   - String:          ' in loop '''
-  - LoopName:        PERMUTE_LOOP
+  - LoopName:        CACHE_TWIDDLES_LOOP
   - String:          '''('
-  - LoopLoc:         'hls-design/ntt-kernel.cpp:70:16'
+  - LoopLoc:         'hls-design/ntt-kernel.cpp:84:23'
+  - String:          ')'
+  - String:          ' has been inferred on bundle '''
+  - BundleName:      gmem2
+  - String:          '''.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredVerboseSummary
+DebugLoc:        { File: hls-design/ntt-kernel.cpp, Line: 91, Column: 18 }
+Function:        ntt_kernel
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       reads
+  - String:          ' of '
+  - Length:          variable
+  - String:          ' length and bit width '
+  - Width:           '32'
+  - String:          ' has been inferred.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        seq1
+  - ArrayName:       ''
+  - String:          ' '
+  - BundleName:      gmem1
+  - String:          ' '
+  - LoopName:        CACHE_PSI_LOOP
+  - String:          ' '
+  - LoopLoc:         'hls-design/ntt-kernel.cpp:91:18'
+  - String:          ' '
+  - Function:        ntt_kernel
+    DebugLoc:        { File: hls-design/ntt-kernel.cpp, Line: 59, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredSummary
+DebugLoc:        { File: hls-design/ntt-kernel.cpp, Line: 91, Column: 18 }
+Function:        ntt_kernel
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       reads
+  - String:          ' of '
+  - Length:          variable
+  - String:          ' length and bit width '
+  - Width:           '32'
+  - String:          ' in loop '''
+  - LoopName:        CACHE_PSI_LOOP
+  - String:          '''('
+  - LoopLoc:         'hls-design/ntt-kernel.cpp:91:18'
   - String:          ')'
   - String:          ' has been inferred on bundle '''
   - BundleName:      gmem1
@@ -381,7 +435,7 @@ Args:
 --- !Passed
 Pass:            reflow-burst-summary
 Name:            BurstInferredVerboseSummary
-DebugLoc:        { File: hls-design/ntt-kernel.cpp, Line: 85, Column: 18 }
+DebugLoc:        { File: hls-design/ntt-kernel.cpp, Line: 103, Column: 23 }
 Function:        ntt_kernel
 Args:            
   - String:          'Multiple burst '
@@ -396,20 +450,20 @@ Args:
   - AccessID:        seq2
   - ArrayName:       ''
   - String:          ' '
-  - BundleName:      gmem2
+  - BundleName:      gmem0
   - String:          ' '
-  - LoopName:        BUTTERFLY_LOOP
+  - LoopName:        BURST_READ_LOOP
   - String:          ' '
-  - LoopLoc:         'hls-design/ntt-kernel.cpp:85:18'
+  - LoopLoc:         'hls-design/ntt-kernel.cpp:103:23'
   - String:          ' '
   - Function:        ntt_kernel
-    DebugLoc:        { File: hls-design/ntt-kernel.cpp, Line: 46, Column: 0 }
+    DebugLoc:        { File: hls-design/ntt-kernel.cpp, Line: 59, Column: 0 }
   - String:          ' '
 ...
 --- !Passed
 Pass:            reflow-burst-summary
 Name:            BurstInferredSummary
-DebugLoc:        { File: hls-design/ntt-kernel.cpp, Line: 85, Column: 18 }
+DebugLoc:        { File: hls-design/ntt-kernel.cpp, Line: 103, Column: 23 }
 Function:        ntt_kernel
 Args:            
   - String:          'Multiple burst '
@@ -419,19 +473,19 @@ Args:
   - String:          ' length and bit width '
   - Width:           '32'
   - String:          ' in loop '''
-  - LoopName:        BUTTERFLY_LOOP
+  - LoopName:        BURST_READ_LOOP
   - String:          '''('
-  - LoopLoc:         'hls-design/ntt-kernel.cpp:85:18'
+  - LoopLoc:         'hls-design/ntt-kernel.cpp:103:23'
   - String:          ')'
   - String:          ' has been inferred on bundle '''
-  - BundleName:      gmem2
+  - BundleName:      gmem0
   - String:          '''.'
   - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
 ...
 --- !Passed
 Pass:            reflow-burst-summary
 Name:            BurstInferredVerboseSummary
-DebugLoc:        { File: hls-design/ntt-kernel.cpp, Line: 104, Column: 26 }
+DebugLoc:        { File: hls-design/ntt-kernel.cpp, Line: 165, Column: 23 }
 Function:        ntt_kernel
 Args:            
   - String:          'Multiple burst '
@@ -443,23 +497,23 @@ Args:
   - String:          ' has been inferred.'
   - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
   - String:          ' _XLX_SEP_ '
-  - AccessID:        seq1
+  - AccessID:        seq3
   - ArrayName:       ''
   - String:          ' '
   - BundleName:      gmem0
   - String:          ' '
   - LoopName:        WRITE_BACK_LOOP
   - String:          ' '
-  - LoopLoc:         'hls-design/ntt-kernel.cpp:104:26'
+  - LoopLoc:         'hls-design/ntt-kernel.cpp:165:23'
   - String:          ' '
   - Function:        ntt_kernel
-    DebugLoc:        { File: hls-design/ntt-kernel.cpp, Line: 46, Column: 0 }
+    DebugLoc:        { File: hls-design/ntt-kernel.cpp, Line: 59, Column: 0 }
   - String:          ' '
 ...
 --- !Passed
 Pass:            reflow-burst-summary
 Name:            BurstInferredSummary
-DebugLoc:        { File: hls-design/ntt-kernel.cpp, Line: 104, Column: 26 }
+DebugLoc:        { File: hls-design/ntt-kernel.cpp, Line: 165, Column: 23 }
 Function:        ntt_kernel
 Args:            
   - String:          'Multiple burst '
@@ -471,7 +525,7 @@ Args:
   - String:          ' in loop '''
   - LoopName:        WRITE_BACK_LOOP
   - String:          '''('
-  - LoopLoc:         'hls-design/ntt-kernel.cpp:104:26'
+  - LoopLoc:         'hls-design/ntt-kernel.cpp:165:23'
   - String:          ')'
   - String:          ' has been inferred on bundle '''
   - BundleName:      gmem0

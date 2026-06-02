@@ -1,3 +1,149 @@
-/home/sg9109/Documents/hls-design/ntt-asic/.autopilot/db/ntt-kernel.pp.0.cpp:459:48: error: Invalid Directive: for current device, ram_2p + bram is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
-#pragma HLS BIND_STORAGE variable=local_x type=ram_2p impl=bram
-                                               ^
+/home/sg9109/Documents/hls-design/ntt-asic/.autopilot/db/ntt-kernel.pp.0.cpp:20369:5: warning: Added loop label VITIS_LOOP_127_1:   [xilinx-label-all-loops]
+    for (size_t i = 0; i < N; ++i) {
+    ^~~
+    VITIS_LOOP_127_1: 
+/home/sg9109/Documents/hls-design/ntt-asic/.autopilot/db/ntt-kernel.pp.0.cpp:20369:5: note: FIX-IT applied suggested code changes
+/home/sg9109/Documents/hls-design/ntt-asic/.autopilot/db/ntt-kernel.pp.0.cpp:20385:5: warning: Added loop label VITIS_LOOP_143_1:   [xilinx-label-all-loops]
+    for (size_t i = 0; i < N; ++i) {
+    ^~~
+    VITIS_LOOP_143_1: 
+/home/sg9109/Documents/hls-design/ntt-asic/.autopilot/db/ntt-kernel.pp.0.cpp:20385:5: note: FIX-IT applied suggested code changes
+/home/sg9109/Documents/hls-design/ntt-asic/.autopilot/db/ntt-kernel.pp.0.cpp:20401:60: warning: Added loop label VITIS_LOOP_169_1:   [xilinx-label-all-loops]
+  [[gnu::always_inline]] vector &operator ++() { pragma(); for (size_t i = 0; i < N; ++i) {
+                                                           ^~~
+                                                           VITIS_LOOP_169_1: 
+/home/sg9109/Documents/hls-design/ntt-asic/.autopilot/db/ntt-kernel.pp.0.cpp:20401:60: note: FIX-IT applied suggested code changes
+/home/sg9109/Documents/hls-design/ntt-asic/.autopilot/db/ntt-kernel.pp.0.cpp:20406:60: warning: Added loop label VITIS_LOOP_170_1:   [xilinx-label-all-loops]
+  [[gnu::always_inline]] vector &operator --() { pragma(); for (size_t i = 0; i < N; ++i) {
+                                                           ^~~
+                                                           VITIS_LOOP_170_1: 
+/home/sg9109/Documents/hls-design/ntt-asic/.autopilot/db/ntt-kernel.pp.0.cpp:20406:60: note: FIX-IT applied suggested code changes
+/home/sg9109/Documents/hls-design/ntt-asic/.autopilot/db/ntt-kernel.pp.0.cpp:20415:91: warning: Added loop label VITIS_LOOP_198_1:   [xilinx-label-all-loops]
+  [[gnu::always_inline]] vector &operator +=(const vector &rhs) { pragma(); rhs.pragma(); for (size_t i = 0; i < N; ++i) {
+                                                                                          ^~~
+                                                                                          VITIS_LOOP_198_1: 
+/home/sg9109/Documents/hls-design/ntt-asic/.autopilot/db/ntt-kernel.pp.0.cpp:20415:91: note: FIX-IT applied suggested code changes
+/home/sg9109/Documents/hls-design/ntt-asic/.autopilot/db/ntt-kernel.pp.0.cpp:20420:91: warning: Added loop label VITIS_LOOP_199_1:   [xilinx-label-all-loops]
+  [[gnu::always_inline]] vector &operator -=(const vector &rhs) { pragma(); rhs.pragma(); for (size_t i = 0; i < N; ++i) {
+                                                                                          ^~~
+                                                                                          VITIS_LOOP_199_1: 
+/home/sg9109/Documents/hls-design/ntt-asic/.autopilot/db/ntt-kernel.pp.0.cpp:20420:91: note: FIX-IT applied suggested code changes
+/home/sg9109/Documents/hls-design/ntt-asic/.autopilot/db/ntt-kernel.pp.0.cpp:20425:91: warning: Added loop label VITIS_LOOP_200_1:   [xilinx-label-all-loops]
+  [[gnu::always_inline]] vector &operator *=(const vector &rhs) { pragma(); rhs.pragma(); for (size_t i = 0; i < N; ++i) {
+                                                                                          ^~~
+                                                                                          VITIS_LOOP_200_1: 
+/home/sg9109/Documents/hls-design/ntt-asic/.autopilot/db/ntt-kernel.pp.0.cpp:20425:91: note: FIX-IT applied suggested code changes
+/home/sg9109/Documents/hls-design/ntt-asic/.autopilot/db/ntt-kernel.pp.0.cpp:20430:91: warning: Added loop label VITIS_LOOP_201_1:   [xilinx-label-all-loops]
+  [[gnu::always_inline]] vector &operator /=(const vector &rhs) { pragma(); rhs.pragma(); for (size_t i = 0; i < N; ++i) {
+                                                                                          ^~~
+                                                                                          VITIS_LOOP_201_1: 
+/home/sg9109/Documents/hls-design/ntt-asic/.autopilot/db/ntt-kernel.pp.0.cpp:20430:91: note: FIX-IT applied suggested code changes
+/home/sg9109/Documents/hls-design/ntt-asic/.autopilot/db/ntt-kernel.pp.0.cpp:20435:91: warning: Added loop label VITIS_LOOP_202_1:   [xilinx-label-all-loops]
+  [[gnu::always_inline]] vector &operator %=(const vector &rhs) { pragma(); rhs.pragma(); for (size_t i = 0; i < N; ++i) {
+                                                                                          ^~~
+                                                                                          VITIS_LOOP_202_1: 
+/home/sg9109/Documents/hls-design/ntt-asic/.autopilot/db/ntt-kernel.pp.0.cpp:20435:91: note: FIX-IT applied suggested code changes
+/home/sg9109/Documents/hls-design/ntt-asic/.autopilot/db/ntt-kernel.pp.0.cpp:20440:91: warning: Added loop label VITIS_LOOP_203_1:   [xilinx-label-all-loops]
+  [[gnu::always_inline]] vector &operator &=(const vector &rhs) { pragma(); rhs.pragma(); for (size_t i = 0; i < N; ++i) {
+                                                                                          ^~~
+                                                                                          VITIS_LOOP_203_1: 
+/home/sg9109/Documents/hls-design/ntt-asic/.autopilot/db/ntt-kernel.pp.0.cpp:20440:91: note: FIX-IT applied suggested code changes
+/home/sg9109/Documents/hls-design/ntt-asic/.autopilot/db/ntt-kernel.pp.0.cpp:20445:91: warning: Added loop label VITIS_LOOP_204_1:   [xilinx-label-all-loops]
+  [[gnu::always_inline]] vector &operator |=(const vector &rhs) { pragma(); rhs.pragma(); for (size_t i = 0; i < N; ++i) {
+                                                                                          ^~~
+                                                                                          VITIS_LOOP_204_1: 
+/home/sg9109/Documents/hls-design/ntt-asic/.autopilot/db/ntt-kernel.pp.0.cpp:20445:91: note: FIX-IT applied suggested code changes
+/home/sg9109/Documents/hls-design/ntt-asic/.autopilot/db/ntt-kernel.pp.0.cpp:20450:91: warning: Added loop label VITIS_LOOP_205_1:   [xilinx-label-all-loops]
+  [[gnu::always_inline]] vector &operator ^=(const vector &rhs) { pragma(); rhs.pragma(); for (size_t i = 0; i < N; ++i) {
+                                                                                          ^~~
+                                                                                          VITIS_LOOP_205_1: 
+/home/sg9109/Documents/hls-design/ntt-asic/.autopilot/db/ntt-kernel.pp.0.cpp:20450:91: note: FIX-IT applied suggested code changes
+/home/sg9109/Documents/hls-design/ntt-asic/.autopilot/db/ntt-kernel.pp.0.cpp:20455:92: warning: Added loop label VITIS_LOOP_206_1:   [xilinx-label-all-loops]
+  [[gnu::always_inline]] vector &operator <<=(const vector &rhs) { pragma(); rhs.pragma(); for (size_t i = 0; i < N; ++i) {
+                                                                                           ^~~
+                                                                                           VITIS_LOOP_206_1: 
+/home/sg9109/Documents/hls-design/ntt-asic/.autopilot/db/ntt-kernel.pp.0.cpp:20455:92: note: FIX-IT applied suggested code changes
+/home/sg9109/Documents/hls-design/ntt-asic/.autopilot/db/ntt-kernel.pp.0.cpp:20460:92: warning: Added loop label VITIS_LOOP_207_1:   [xilinx-label-all-loops]
+  [[gnu::always_inline]] vector &operator >>=(const vector &rhs) { pragma(); rhs.pragma(); for (size_t i = 0; i < N; ++i) {
+                                                                                           ^~~
+                                                                                           VITIS_LOOP_207_1: 
+/home/sg9109/Documents/hls-design/ntt-asic/.autopilot/db/ntt-kernel.pp.0.cpp:20460:92: note: FIX-IT applied suggested code changes
+/home/sg9109/Documents/hls-design/ntt-asic/.autopilot/db/ntt-kernel.pp.0.cpp:20466:76: warning: Added loop label VITIS_LOOP_222_1:   [xilinx-label-all-loops]
+  [[gnu::always_inline]] T reduce_add() const { pragma(); T res = data[0]; for (size_t i = 1; i < N; ++i) {
+                                                                           ^~~
+                                                                           VITIS_LOOP_222_1: 
+/home/sg9109/Documents/hls-design/ntt-asic/.autopilot/db/ntt-kernel.pp.0.cpp:20466:76: note: FIX-IT applied suggested code changes
+/home/sg9109/Documents/hls-design/ntt-asic/.autopilot/db/ntt-kernel.pp.0.cpp:20471:77: warning: Added loop label VITIS_LOOP_223_1:   [xilinx-label-all-loops]
+  [[gnu::always_inline]] T reduce_mult() const { pragma(); T res = data[0]; for (size_t i = 1; i < N; ++i) {
+                                                                            ^~~
+                                                                            VITIS_LOOP_223_1: 
+/home/sg9109/Documents/hls-design/ntt-asic/.autopilot/db/ntt-kernel.pp.0.cpp:20471:77: note: FIX-IT applied suggested code changes
+/home/sg9109/Documents/hls-design/ntt-asic/.autopilot/db/ntt-kernel.pp.0.cpp:20476:76: warning: Added loop label VITIS_LOOP_224_1:   [xilinx-label-all-loops]
+  [[gnu::always_inline]] T reduce_and() const { pragma(); T res = data[0]; for (size_t i = 1; i < N; ++i) {
+                                                                           ^~~
+                                                                           VITIS_LOOP_224_1: 
+/home/sg9109/Documents/hls-design/ntt-asic/.autopilot/db/ntt-kernel.pp.0.cpp:20476:76: note: FIX-IT applied suggested code changes
+/home/sg9109/Documents/hls-design/ntt-asic/.autopilot/db/ntt-kernel.pp.0.cpp:20481:75: warning: Added loop label VITIS_LOOP_225_1:   [xilinx-label-all-loops]
+  [[gnu::always_inline]] T reduce_or() const { pragma(); T res = data[0]; for (size_t i = 1; i < N; ++i) {
+                                                                          ^~~
+                                                                          VITIS_LOOP_225_1: 
+/home/sg9109/Documents/hls-design/ntt-asic/.autopilot/db/ntt-kernel.pp.0.cpp:20481:75: note: FIX-IT applied suggested code changes
+/home/sg9109/Documents/hls-design/ntt-asic/.autopilot/db/ntt-kernel.pp.0.cpp:20486:76: warning: Added loop label VITIS_LOOP_226_1:   [xilinx-label-all-loops]
+  [[gnu::always_inline]] T reduce_xor() const { pragma(); T res = data[0]; for (size_t i = 1; i < N; ++i) {
+                                                                           ^~~
+                                                                           VITIS_LOOP_226_1: 
+/home/sg9109/Documents/hls-design/ntt-asic/.autopilot/db/ntt-kernel.pp.0.cpp:20486:76: note: FIX-IT applied suggested code changes
+/home/sg9109/Documents/hls-design/ntt-asic/.autopilot/db/ntt-kernel.pp.0.cpp:20492:117: warning: Added loop label VITIS_LOOP_256_1:   [xilinx-label-all-loops]
+  [[gnu::always_inline]] friend bool operator <(const vector &lhs, const vector &rhs) { lhs.pragma(); rhs.pragma(); for (size_t i = 0; i < N; ++i) {
+                                                                                                                    ^~~
+                                                                                                                    VITIS_LOOP_256_1: 
+/home/sg9109/Documents/hls-design/ntt-asic/.autopilot/db/ntt-kernel.pp.0.cpp:20492:117: note: FIX-IT applied suggested code changes
+/home/sg9109/Documents/hls-design/ntt-asic/.autopilot/db/ntt-kernel.pp.0.cpp:20497:118: warning: Added loop label VITIS_LOOP_257_1:   [xilinx-label-all-loops]
+  [[gnu::always_inline]] friend bool operator <=(const vector &lhs, const vector &rhs) { lhs.pragma(); rhs.pragma(); for (size_t i = 0; i < N; ++i) {
+                                                                                                                     ^~~
+                                                                                                                     VITIS_LOOP_257_1: 
+/home/sg9109/Documents/hls-design/ntt-asic/.autopilot/db/ntt-kernel.pp.0.cpp:20497:118: note: FIX-IT applied suggested code changes
+/home/sg9109/Documents/hls-design/ntt-asic/.autopilot/db/ntt-kernel.pp.0.cpp:20502:118: warning: Added loop label VITIS_LOOP_258_1:   [xilinx-label-all-loops]
+  [[gnu::always_inline]] friend bool operator ==(const vector &lhs, const vector &rhs) { lhs.pragma(); rhs.pragma(); for (size_t i = 0; i < N; ++i) {
+                                                                                                                     ^~~
+                                                                                                                     VITIS_LOOP_258_1: 
+/home/sg9109/Documents/hls-design/ntt-asic/.autopilot/db/ntt-kernel.pp.0.cpp:20502:118: note: FIX-IT applied suggested code changes
+/home/sg9109/Documents/hls-design/ntt-asic/.autopilot/db/ntt-kernel.pp.0.cpp:20507:118: warning: Added loop label VITIS_LOOP_259_1:   [xilinx-label-all-loops]
+  [[gnu::always_inline]] friend bool operator !=(const vector &lhs, const vector &rhs) { lhs.pragma(); rhs.pragma(); for (size_t i = 0; i < N; ++i) {
+                                                                                                                     ^~~
+                                                                                                                     VITIS_LOOP_259_1: 
+/home/sg9109/Documents/hls-design/ntt-asic/.autopilot/db/ntt-kernel.pp.0.cpp:20507:118: note: FIX-IT applied suggested code changes
+/home/sg9109/Documents/hls-design/ntt-asic/.autopilot/db/ntt-kernel.pp.0.cpp:20512:118: warning: Added loop label VITIS_LOOP_260_1:   [xilinx-label-all-loops]
+  [[gnu::always_inline]] friend bool operator >=(const vector &lhs, const vector &rhs) { lhs.pragma(); rhs.pragma(); for (size_t i = 0; i < N; ++i) {
+                                                                                                                     ^~~
+                                                                                                                     VITIS_LOOP_260_1: 
+/home/sg9109/Documents/hls-design/ntt-asic/.autopilot/db/ntt-kernel.pp.0.cpp:20512:118: note: FIX-IT applied suggested code changes
+/home/sg9109/Documents/hls-design/ntt-asic/.autopilot/db/ntt-kernel.pp.0.cpp:20517:117: warning: Added loop label VITIS_LOOP_261_1:   [xilinx-label-all-loops]
+  [[gnu::always_inline]] friend bool operator >(const vector &lhs, const vector &rhs) { lhs.pragma(); rhs.pragma(); for (size_t i = 0; i < N; ++i) {
+                                                                                                                    ^~~
+                                                                                                                    VITIS_LOOP_261_1: 
+/home/sg9109/Documents/hls-design/ntt-asic/.autopilot/db/ntt-kernel.pp.0.cpp:20517:117: note: FIX-IT applied suggested code changes
+/home/sg9109/Documents/hls-design/ntt-asic/.autopilot/db/ntt-kernel.pp.0.cpp:20575:9: error: Invalid Directive: for current device, mul + dsp is invalid combination for bind_op [clang-diagnostic-error]
+#pragma HLS BIND_OP variable=ab op=mul impl=dsp latency=3
+        ^
+/home/sg9109/Documents/hls-design/ntt-asic/.autopilot/db/ntt-kernel.pp.0.cpp:20580:9: error: Invalid Directive: for current device, mul + dsp is invalid combination for bind_op [clang-diagnostic-error]
+#pragma HLS BIND_OP variable=m op=mul impl=dsp latency=3
+        ^
+/home/sg9109/Documents/hls-design/ntt-asic/.autopilot/db/ntt-kernel.pp.0.cpp:20584:9: error: Invalid Directive: for current device, mul + dsp is invalid combination for bind_op [clang-diagnostic-error]
+#pragma HLS BIND_OP variable=mq op=mul impl=dsp latency=3
+        ^
+/home/sg9109/Documents/hls-design/ntt-asic/.autopilot/db/ntt-kernel.pp.0.cpp:20588:9: error: Invalid Directive: for current device, add + fabric is invalid combination for bind_op [clang-diagnostic-error]
+#pragma HLS BIND_OP variable=sum op=add impl=fabric latency=1
+        ^
+/home/sg9109/Documents/hls-design/ntt-asic/.autopilot/db/ntt-kernel.pp.0.cpp:20631:55: error: Invalid Directive: for current device, ram_2p + bram is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+#pragma HLS BIND_STORAGE variable=local_twiddles type=ram_2p impl=bram
+                                                      ^
+/home/sg9109/Documents/hls-design/ntt-asic/.autopilot/db/ntt-kernel.pp.0.cpp:20633:50: error: Invalid Directive: for current device, ram_2p + bram is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+#pragma HLS BIND_STORAGE variable=local_psi type=ram_2p impl=bram
+                                                 ^
+/home/sg9109/Documents/hls-design/ntt-asic/.autopilot/db/ntt-kernel.pp.0.cpp:20637:45: error: Invalid Directive: for current device, ram_2p + bram is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+#pragma HLS BIND_STORAGE variable=ping type=ram_2p impl=bram
+                                            ^
+/home/sg9109/Documents/hls-design/ntt-asic/.autopilot/db/ntt-kernel.pp.0.cpp:20639:45: error: Invalid Directive: for current device, ram_2p + bram is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+#pragma HLS BIND_STORAGE variable=pong type=ram_2p impl=bram
+                                            ^

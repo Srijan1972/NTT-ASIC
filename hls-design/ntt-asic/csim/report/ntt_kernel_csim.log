@@ -1,6 +1,7 @@
 INFO: [SIM 2] *************** CSIM start ***************
 INFO: [SIM 4] CSIM will launch GCC as the compiler.
-   Compiling ../../../ntt-kernel.cpp in debug mode
+   Compiling ../../../ntt-test.cpp in release mode
+   Compiling ../../../ntt-kernel.cpp in release mode
    Generating csim.exe
 >> Initializing Testbench for N = 256, Batch Size = 4, q = 8380417 ...
 >> Launching HLS NTT Kernel Simulation...

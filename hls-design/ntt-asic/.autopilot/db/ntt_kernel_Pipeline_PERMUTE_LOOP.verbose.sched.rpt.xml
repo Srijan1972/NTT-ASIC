@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'ntt_kernel_Pipeline_PERMUTE_LOOP'" level="0">
-<item name = "Date">Thu May 28 14:13:15 2026
+<item name = "Date">Mon Jun  1 21:40:40 2026
 </item>
 <item name = "Version">2023.2 (Build 4023990 on Oct 11 2023)</item>
 <item name = "Project">hls-design</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">10.00 ns, 7.300 ns, 2.70 ns</column>
+<column name="ap_clk">10.00 ns, 2.474 ns, 2.70 ns</column>
 </table>
 </item>
 </section>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">269, 65549, 2.690 us, 0.655 ms, 269, 65549, no</column>
+<column name="">259, 4099, 2.590 us, 40.990 us, 259, 4099, no</column>
 </table>
 </item>
 <item name = "Detail">
@@ -35,7 +35,7 @@
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- PERMUTE_LOOP">267, 65547, 13, 1, 1, 256 ~ 65536, yes</column>
+<column name="- PERMUTE_LOOP">257, 4097, 3, 1, 1, 256 ~ 4096, yes</column>
 </table>
 </item>
 </section>

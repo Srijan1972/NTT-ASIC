@@ -4,7 +4,7 @@
 == Synthesis Summary Report of 'ntt_kernel'
 ================================================================
 + General Information: 
-    * Date:           Thu May 28 14:13:16 2026
+    * Date:           Mon Jun  1 21:40:42 2026
     * Version:        2023.2 (Build 4023990 on Oct 11 2023)
     * Project:        hls-design
     * Solution:       ntt-asic (Vivado IP Flow Target)
@@ -15,21 +15,26 @@
 + Performance & Resource Estimates: 
     
     PS: '+' for module; 'o' for loop; '*' for dataflow
-    +------------------------------------------+------+------+--------------+-----------+-------------+--------------+-------+----------+-----------+---------+-----------+-----------+-----+
-    |                  Modules                 | Issue|      |   Latency    |  Latency  |  Iteration  |              |  Trip |          |           |         |           |           |     |
-    |                  & Loops                 | Type | Slack|   (cycles)   |    (ns)   |   Latency   |   Interval   | Count | Pipelined|   BRAM    |   DSP   |     FF    |    LUT    | URAM|
-    +------------------------------------------+------+------+--------------+-----------+-------------+--------------+-------+----------+-----------+---------+-----------+-----------+-----+
-    |+ ntt_kernel                              |     -|  0.00|  824778425410|  8.248e+12|            -|  824778425411|      -|        no|  128 (44%)|  7 (~0%)|  5063 (2%)|  5208 (4%)|    -|
-    | o BATCH_LOOP                             |     -|  7.30|  824778425409|  8.248e+12|  51548651588|             -|     16|        no|          -|        -|          -|          -|    -|
-    |  + ntt_kernel_Pipeline_PERMUTE_LOOP      |     -|  0.00|         65549|  6.555e+05|            -|         65549|      -|        no|          -|        -|  251 (~0%)|  272 (~0%)|    -|
-    |   o PERMUTE_LOOP                         |     -|  7.30|         65547|  6.555e+05|           13|             1|  65536|       yes|          -|        -|          -|          -|    -|
-    |  + ntt_kernel_Pipeline_WRITE_BACK_LOOP   |     -|  0.00|         65539|  6.554e+05|            -|         65539|      -|        no|          -|        -|   54 (~0%)|  112 (~0%)|    -|
-    |   o WRITE_BACK_LOOP                      |     -|  7.30|         65537|  6.554e+05|            3|             1|  65536|       yes|          -|        -|          -|          -|    -|
-    |  o STAGE_LOOP                            |     -|  7.30|   51548520480|  5.155e+11|   3221782530|             -|     16|        no|          -|        -|          -|          -|    -|
-    |   o BLOCK_LOOP                           |     -|  7.30|    3221782528|  3.222e+10|        98321|             -|  32768|        no|          -|        -|          -|          -|    -|
-    |    + ntt_kernel_Pipeline_BUTTERFLY_LOOP  |     -|  0.00|         98310|  9.831e+05|            -|         98310|      -|        no|          -|  7 (~0%)|  474 (~0%)|  862 (~0%)|    -|
-    |     o BUTTERFLY_LOOP                     |    II|  7.30|         98308|  9.831e+05|            8|             3|  32768|       yes|          -|        -|          -|          -|    -|
-    +------------------------------------------+------+------+--------------+-----------+-------------+--------------+-------+----------+-----------+---------+-----------+-----------+-----+
+    +---------------------------------------------------+------+------+---------+-----------+----------+---------+------+----------+----------+---------+-----------+-----------+-----+
+    |                      Modules                      | Issue|      | Latency |  Latency  | Iteration|         | Trip |          |          |         |           |           |     |
+    |                      & Loops                      | Type | Slack| (cycles)|    (ns)   |  Latency | Interval| Count| Pipelined|   BRAM   |   DSP   |     FF    |    LUT    | URAM|
+    +---------------------------------------------------+------+------+---------+-----------+----------+---------+------+----------+----------+---------+-----------+-----------+-----+
+    |+ ntt_kernel                                       |     -|  0.00|  5313790|  5.314e+07|         -|  5313791|     -|        no|  47 (16%)|  7 (~0%)|  4670 (1%)|  5808 (4%)|    -|
+    | + ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP         |     -|  0.00|     4098|  4.098e+04|         -|     4098|     -|        no|         -|        -|   76 (~0%)|  108 (~0%)|    -|
+    |  o CACHE_TWIDDLES_LOOP                            |     -|  7.30|     4096|  4.096e+04|         3|        1|  4095|       yes|         -|        -|          -|          -|    -|
+    | + ntt_kernel_Pipeline_CACHE_PSI_LOOP              |     -|  0.00|     4099|  4.099e+04|         -|     4099|     -|        no|         -|        -|   56 (~0%)|  108 (~0%)|    -|
+    |  o CACHE_PSI_LOOP                                 |     -|  7.30|     4097|  4.097e+04|         3|        1|  4096|       yes|         -|        -|          -|          -|    -|
+    | o BATCH_LOOP                                      |     -|  7.30|  5309680|  5.310e+07|    331855|        -|    16|        no|         -|        -|          -|          -|    -|
+    |  + ntt_kernel_Pipeline_BURST_READ_LOOP            |     -|  0.00|     4099|  4.099e+04|         -|     4099|     -|        no|         -|        -|   76 (~0%)|  107 (~0%)|    -|
+    |   o BURST_READ_LOOP                               |     -|  7.30|     4097|  4.097e+04|         3|        1|  4096|       yes|         -|        -|          -|          -|    -|
+    |  + ntt_kernel_Pipeline_PERMUTE_LOOP               |     -|  4.83|     4099|  4.099e+04|         -|     4099|     -|        no|         -|        -|   44 (~0%)|   96 (~0%)|    -|
+    |   o PERMUTE_LOOP                                  |     -|  7.30|     4097|  4.097e+04|         3|        1|  4096|       yes|         -|        -|          -|          -|    -|
+    |  + ntt_kernel_Pipeline_WRITE_BACK_LOOP            |     -|  0.00|     4099|  4.099e+04|         -|     4099|     -|        no|         -|        -|   50 (~0%)|  140 (~0%)|    -|
+    |   o WRITE_BACK_LOOP                               |     -|  7.30|     4097|  4.097e+04|         3|        1|  4096|       yes|         -|        -|          -|          -|    -|
+    |  o STAGE_LOOP                                     |     -|  7.30|   319536|  3.195e+06|     26628|        -|    12|        no|         -|        -|          -|          -|    -|
+    |   + ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP  |     -|  1.19|    26626|  2.663e+05|         -|    26626|     -|        no|         -|  7 (~0%)|  363 (~0%)|  1250 (1%)|    -|
+    |    o FLATTENED_BUTTERFLY_LOOP                     |    II|  7.30|    26624|  2.662e+05|        14|       13|  2048|       yes|         -|        -|          -|          -|    -|
+    +---------------------------------------------------+------+------+---------+-----------+----------+---------+------+----------+----------+---------+-----------+-----------+-----+
 
 
 ================================================================
@@ -125,111 +130,133 @@
  Note: All burst requests might be further partitioned into multiple requests during RTL generation based on max_read_burst_length or max_write_burst_length settings.
 
 * Inferred Burst Summary
-+--------------+-----------+----------+-------+-----------------+----------------------------------+
-| HW Interface | Direction | Length   | Width | Loop            | Loop Location                    |
-+--------------+-----------+----------+-------+-----------------+----------------------------------+
-| m_axi_gmem0  | write     | variable | 32    | WRITE_BACK_LOOP | hls-design/ntt-kernel.cpp:104:26 |
-| m_axi_gmem1  | read      | variable | 32    | PERMUTE_LOOP    | hls-design/ntt-kernel.cpp:70:16  |
-| m_axi_gmem2  | read      | variable | 32    | BUTTERFLY_LOOP  | hls-design/ntt-kernel.cpp:85:18  |
-+--------------+-----------+----------+-------+-----------------+----------------------------------+
++--------------+-----------+----------+-------+---------------------+----------------------------------+
+| HW Interface | Direction | Length   | Width | Loop                | Loop Location                    |
++--------------+-----------+----------+-------+---------------------+----------------------------------+
+| m_axi_gmem0  | read      | variable | 32    | BURST_READ_LOOP     | hls-design/ntt-kernel.cpp:103:23 |
+| m_axi_gmem0  | write     | variable | 32    | WRITE_BACK_LOOP     | hls-design/ntt-kernel.cpp:165:23 |
+| m_axi_gmem1  | read      | variable | 32    | CACHE_PSI_LOOP      | hls-design/ntt-kernel.cpp:91:18  |
+| m_axi_gmem2  | read      | variable | 32    | CACHE_TWIDDLES_LOOP | hls-design/ntt-kernel.cpp:84:23  |
++--------------+-----------+----------+-------+---------------------+----------------------------------+
 
 * All M_AXI Variable Accesses
-+--------------+------------+----------------------------------+-----------+--------------+----------+-----------------+----------------------------------+------------+-------------------------------------------------------------------------------------------------------+
-| HW Interface | Variable   | Access Location                  | Direction | Burst Status | Length   | Loop            | Loop Location                    | Resolution | Problem                                                                                               |
-+--------------+------------+----------------------------------+-----------+--------------+----------+-----------------+----------------------------------+------------+-------------------------------------------------------------------------------------------------------+
-| m_axi_gmem0  | x          | hls-design/ntt-kernel.cpp:73:15  | read      | Fail         |          | PERMUTE_LOOP    | hls-design/ntt-kernel.cpp:70:16  | 214-229    | Could not analyze pattern                                                                             |
-| m_axi_gmem0  | x          | hls-design/ntt-kernel.cpp:107:22 | write     | Widen Fail   |          | WRITE_BACK_LOOP | hls-design/ntt-kernel.cpp:104:26 | 214-353    | Could not widen since type i32 size is greater than or equal to the max_widen_bitwidth threshold of 0 |
-| m_axi_gmem0  | x          | hls-design/ntt-kernel.cpp:107:22 | write     | Fail         |          |                 |                                  | 214-231    | Access is clobbered by load                                                                           |
-| m_axi_gmem0  | x          | hls-design/ntt-kernel.cpp:107:22 | write     | Inferred     | variable | WRITE_BACK_LOOP | hls-design/ntt-kernel.cpp:104:26 |            |                                                                                                       |
-| m_axi_gmem1  | psi_powers | hls-design/ntt-kernel.cpp:73:32  | read      | Widen Fail   |          | PERMUTE_LOOP    | hls-design/ntt-kernel.cpp:70:16  | 214-353    | Could not widen since type i32 size is greater than or equal to the max_widen_bitwidth threshold of 0 |
-| m_axi_gmem1  | psi_powers | hls-design/ntt-kernel.cpp:73:32  | read      | Fail         |          | BATCH_LOOP      | hls-design/ntt-kernel.cpp:59:14  | 214-229    | Could not analyze pattern                                                                             |
-| m_axi_gmem1  | psi_powers | hls-design/ntt-kernel.cpp:73:32  | read      | Inferred     | variable | PERMUTE_LOOP    | hls-design/ntt-kernel.cpp:70:16  |            |                                                                                                       |
-| m_axi_gmem2  | twiddles   | hls-design/ntt-kernel.cpp:90:19  | read      | Widen Fail   |          | BUTTERFLY_LOOP  | hls-design/ntt-kernel.cpp:85:18  | 214-353    | Could not widen since type i32 size is greater than or equal to the max_widen_bitwidth threshold of 0 |
-| m_axi_gmem2  | twiddles   | hls-design/ntt-kernel.cpp:90:19  | read      | Inferred     | variable | BUTTERFLY_LOOP  | hls-design/ntt-kernel.cpp:85:18  |            |                                                                                                       |
-+--------------+------------+----------------------------------+-----------+--------------+----------+-----------------+----------------------------------+------------+-------------------------------------------------------------------------------------------------------+
++--------------+------------+----------------------------------+-----------+--------------+----------+---------------------+----------------------------------+------------+-------------------------------------------------------------------------------------------------------+
+| HW Interface | Variable   | Access Location                  | Direction | Burst Status | Length   | Loop                | Loop Location                    | Resolution | Problem                                                                                               |
++--------------+------------+----------------------------------+-----------+--------------+----------+---------------------+----------------------------------+------------+-------------------------------------------------------------------------------------------------------+
+| m_axi_gmem0  | x          | hls-design/ntt-kernel.cpp:106:20 | read      | Widen Fail   |          | BURST_READ_LOOP     | hls-design/ntt-kernel.cpp:103:23 | 214-353    | Could not widen since type i32 size is greater than or equal to the max_widen_bitwidth threshold of 0 |
+| m_axi_gmem0  | x          | hls-design/ntt-kernel.cpp:106:20 | read      | Fail         |          |                     |                                  | 214-231    | Access is clobbered by store                                                                          |
+| m_axi_gmem0  | x          | hls-design/ntt-kernel.cpp:106:20 | read      | Inferred     | variable | BURST_READ_LOOP     | hls-design/ntt-kernel.cpp:103:23 |            |                                                                                                       |
+| m_axi_gmem0  | x          | hls-design/ntt-kernel.cpp:165:46 | write     | Widen Fail   |          | WRITE_BACK_LOOP     | hls-design/ntt-kernel.cpp:165:23 | 214-353    | Could not widen since type i32 size is greater than or equal to the max_widen_bitwidth threshold of 0 |
+| m_axi_gmem0  | x          | hls-design/ntt-kernel.cpp:165:46 | write     | Fail         |          |                     |                                  | 214-231    | Access is clobbered by load                                                                           |
+| m_axi_gmem0  | x          | hls-design/ntt-kernel.cpp:165:46 | write     | Inferred     | variable | WRITE_BACK_LOOP     | hls-design/ntt-kernel.cpp:165:23 |            |                                                                                                       |
+| m_axi_gmem1  | psi_powers | hls-design/ntt-kernel.cpp:94:17  | read      | Widen Fail   |          | CACHE_PSI_LOOP      | hls-design/ntt-kernel.cpp:91:18  | 214-353    | Could not widen since type i32 size is greater than or equal to the max_widen_bitwidth threshold of 0 |
+| m_axi_gmem1  | psi_powers | hls-design/ntt-kernel.cpp:94:17  | read      | Inferred     | variable | CACHE_PSI_LOOP      | hls-design/ntt-kernel.cpp:91:18  |            |                                                                                                       |
+| m_axi_gmem2  | twiddles   | hls-design/ntt-kernel.cpp:87:22  | read      | Widen Fail   |          | CACHE_TWIDDLES_LOOP | hls-design/ntt-kernel.cpp:84:23  | 214-353    | Could not widen since type i32 size is greater than or equal to the max_widen_bitwidth threshold of 0 |
+| m_axi_gmem2  | twiddles   | hls-design/ntt-kernel.cpp:87:22  | read      | Inferred     | variable | CACHE_TWIDDLES_LOOP | hls-design/ntt-kernel.cpp:84:23  |            |                                                                                                       |
++--------------+------------+----------------------------------+-----------+--------------+----------+---------------------+----------------------------------+------------+-------------------------------------------------------------------------------------------------------+
 
     * Resolution URL: docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=XXX-YYY.html (replace XXX-YYY with column value)
 
 ================================================================
 == Bind Op Report
 ================================================================
-+----------------------------------------+-----+--------+------------+-----+--------+---------+
-| Name                                   | DSP | Pragma | Variable   | Op  | Impl   | Latency |
-+----------------------------------------+-----+--------+------------+-----+--------+---------+
-| + ntt_kernel                           | 7   |        |            |     |        |         |
-|   add_ln59_2_fu_370_p2                 |     |        | add_ln59_2 | add | fabric | 0       |
-|   add_ln59_3_fu_375_p2                 |     |        | add_ln59_3 | add | fabric | 0       |
-|   add_ln59_1_fu_380_p2                 |     |        | add_ln59_1 | add | fabric | 0       |
-|   add_ln59_fu_392_p2                   |     |        | add_ln59   | add | fabric | 0       |
-|   add_ln82_fu_438_p2                   |     |        | add_ln82   | add | fabric | 0       |
-|   add_ln82_1_fu_505_p2                 |     |        | add_ln82_1 | add | fabric | 0       |
-|   offset_1_fu_510_p2                   |     |        | offset_1   | add | fabric | 0       |
-|  + ntt_kernel_Pipeline_PERMUTE_LOOP    | 0   |        |            |     |        |         |
-|    add_ln70_fu_172_p2                  |     |        | add_ln70   | add | fabric | 0       |
-|    add_ln73_fu_189_p2                  |     |        | add_ln73   | add | fabric | 0       |
-|    add_ln73_1_fu_205_p2                |     |        | add_ln73_1 | add | fabric | 0       |
-|  + ntt_kernel_Pipeline_BUTTERFLY_LOOP  | 7   |        |            |     |        |         |
-|    add_ln85_fu_186_p2                  |     |        | add_ln85   | add | fabric | 0       |
-|    add_ln92_fu_196_p2                  |     |        | add_ln92   | add | fabric | 0       |
-|    mul_32ns_32ns_64_1_1_U8             | 4   |        | ab         | mul | auto   | 0       |
-|    mul_32s_32s_32_1_1_U9               | 3   |        | m          | mul | auto   | 0       |
-|    mul_32ns_32ns_64_1_1_U8             | 4   |        | mq         | mul | auto   | 0       |
-|    add_ln30_fu_250_p2                  |     |        | add_ln30   | add | fabric | 0       |
-|    sub_ln31_fu_275_p2                  |     |        | sub_ln31   | sub | fabric | 0       |
-|    res_fu_286_p2                       |     |        | res        | add | fabric | 0       |
-|    sub_ln16_fu_302_p2                  |     |        | sub_ln16   | sub | fabric | 0       |
-|    add_ln21_fu_321_p2                  |     |        | add_ln21   | add | fabric | 0       |
-|    sub_ln21_fu_332_p2                  |     |        | sub_ln21   | sub | fabric | 0       |
-|  + ntt_kernel_Pipeline_WRITE_BACK_LOOP | 0   |        |            |     |        |         |
-|    add_ln104_fu_125_p2                 |     |        | add_ln104  | add | fabric | 0       |
-+----------------------------------------+-----+--------+------------+-----+--------+---------+
++-------------------------------------------------+-----+--------+------------+-----+--------+---------+
+| Name                                            | DSP | Pragma | Variable   | Op  | Impl   | Latency |
++-------------------------------------------------+-----+--------+------------+-----+--------+---------+
+| + ntt_kernel                                    | 7   |        |            |     |        |         |
+|   sub_fu_372_p2                                 |     |        | sub        | add | fabric | 0       |
+|   add_ln97_2_fu_487_p2                          |     |        | add_ln97_2 | add | fabric | 0       |
+|   add_ln97_1_fu_501_p2                          |     |        | add_ln97_1 | add | fabric | 0       |
+|   add_ln97_fu_515_p2                            |     |        | add_ln97   | add | fabric | 0       |
+|   stage_1_fu_536_p2                             |     |        | stage_1    | add | fabric | 0       |
+|   sub53_fu_553_p2                               |     |        | sub53      | add | fabric | 0       |
+|   offset_1_fu_560_p2                            |     |        | offset_1   | add | fabric | 0       |
+|  + ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP      | 0   |        |            |     |        |         |
+|    add_ln84_fu_124_p2                           |     |        | add_ln84   | add | fabric | 0       |
+|  + ntt_kernel_Pipeline_CACHE_PSI_LOOP           | 0   |        |            |     |        |         |
+|    add_ln91_fu_124_p2                           |     |        | add_ln91   | add | fabric | 0       |
+|  + ntt_kernel_Pipeline_BURST_READ_LOOP          | 0   |        |            |     |        |         |
+|    add_ln103_fu_112_p2                          |     |        | add_ln103  | add | fabric | 0       |
+|  + ntt_kernel_Pipeline_PERMUTE_LOOP             | 0   |        |            |     |        |         |
+|    add_ln110_fu_116_p2                          |     |        | add_ln110  | add | fabric | 0       |
+|  + ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP | 7   |        |            |     |        |         |
+|    step_2_fu_257_p2                             |     |        | step_2     | add | fabric | 0       |
+|    idx1_fu_307_p2                               |     |        | idx1       | add | fabric | 0       |
+|    add_ln134_fu_283_p2                          |     |        | add_ln134  | add | fabric | 0       |
+|    mul_32ns_32ns_64_4_1_U17                     | 4   | yes    | ab         | mul | dsp    | 0       |
+|    mul_32s_32s_32_4_1_U18                       | 3   | yes    | m          | mul | dsp    | 0       |
+|    mul_32ns_32ns_64_4_1_U17                     | 4   | yes    | mq         | mul | dsp    | 0       |
+|    add_64ns_64ns_64_2_1_U19                     |     | yes    | sum        | add | fabric | 0       |
+|    sub_ln44_fu_391_p2                           |     |        | sub_ln44   | sub | fabric | 0       |
+|    res_fu_404_p2                                |     |        | res        | add | fabric | 0       |
+|    sub_ln11_fu_433_p2                           |     |        | sub_ln11   | sub | fabric | 0       |
+|    add_ln16_fu_454_p2                           |     |        | add_ln16   | add | fabric | 0       |
+|    out_v_fu_467_p2                              |     |        | out_v      | sub | fabric | 0       |
+|  + ntt_kernel_Pipeline_WRITE_BACK_LOOP          | 0   |        |            |     |        |         |
+|    add_ln165_fu_150_p2                          |     |        | add_ln165  | add | fabric | 0       |
++-------------------------------------------------+-----+--------+------------+-----+--------+---------+
 
 
 ================================================================
 == Storage Report
 ================================================================
-+-------------------+--------------+-----------+------+------+--------+----------+------+---------+------------------+
-| Name              | Usage        | Type      | BRAM | URAM | Pragma | Variable | Impl | Latency | Bitwidth, Depth, |
-|                   |              |           |      |      |        |          |      |         | Banks            |
-+-------------------+--------------+-----------+------+------+--------+----------+------+---------+------------------+
-| + ntt_kernel      |              |           | 128  | 0    |        |          |      |         |                  |
-|   control_s_axi_U | interface    | s_axilite |      |      |        |          |      |         |                  |
-|   gmem0_m_axi_U   | interface    | m_axi     | 4    |      |        |          |      |         |                  |
-|   gmem1_m_axi_U   | interface    | m_axi     | 4    |      |        |          |      |         |                  |
-|   gmem2_m_axi_U   | interface    | m_axi     | 4    |      |        |          |      |         |                  |
-|   local_x_U       | ram_2p array |           | 116  |      | yes    | local_x  | bram | 1       | 32, 65536, 1     |
-+-------------------+--------------+-----------+------+------+--------+----------+------+---------+------------------+
++--------------------+--------------+-----------+------+------+--------+----------------+------+---------+------------------+
+| Name               | Usage        | Type      | BRAM | URAM | Pragma | Variable       | Impl | Latency | Bitwidth, Depth, |
+|                    |              |           |      |      |        |                |      |         | Banks            |
++--------------------+--------------+-----------+------+------+--------+----------------+------+---------+------------------+
+| + ntt_kernel       |              |           | 47   | 0    |        |                |      |         |                  |
+|   control_s_axi_U  | interface    | s_axilite |      |      |        |                |      |         |                  |
+|   gmem0_m_axi_U    | interface    | m_axi     | 4    |      |        |                |      |         |                  |
+|   gmem1_m_axi_U    | interface    | m_axi     | 4    |      |        |                |      |         |                  |
+|   gmem2_m_axi_U    | interface    | m_axi     | 4    |      |        |                |      |         |                  |
+|   local_twiddles_U | ram_2p array |           | 8    |      | yes    | local_twiddles | bram | 1       | 32, 4096, 1      |
+|   local_psi_U      | ram_2p array |           | 3    |      | yes    | local_psi      | bram | 1       | 12, 4096, 1      |
+|   ping_U           | ram_2p array |           | 8    |      | yes    | ping           | bram | 1       | 32, 4096, 1      |
+|   pong_U           | ram_2p array |           | 8    |      | yes    | pong           | bram | 1       | 32, 4096, 1      |
+|   burst_buffer_U   | ram_1p array |           | 8    |      |        | burst_buffer   | auto | 1       | 32, 4096, 1      |
++--------------------+--------------+-----------+------+------+--------+----------------+------+---------+------------------+
 
 
 ================================================================
 == Pragma Report
 ================================================================
 * Valid Pragma Syntax
-+----------------+------------------------------------------------+--------------------------------------------------------+
-| Type           | Options                                        | Location                                               |
-+----------------+------------------------------------------------+--------------------------------------------------------+
-| inline         |                                                | hls-design/ntt-kernel.cpp:14 in mod_add                |
-| inline         |                                                | hls-design/ntt-kernel.cpp:20 in mod_sub                |
-| inline         |                                                | hls-design/ntt-kernel.cpp:25 in mod_mul                |
-| interface      | m_axi port=x bundle=gmem0 depth=65536          | hls-design/ntt-kernel.cpp:48 in ntt_kernel, x          |
-| interface      | m_axi port=psi_powers bundle=gmem1 depth=65536 | hls-design/ntt-kernel.cpp:49 in ntt_kernel, psi_powers |
-| interface      | m_axi port=twiddles bundle=gmem2 depth=65535   | hls-design/ntt-kernel.cpp:50 in ntt_kernel, twiddles   |
-| interface      | s_axilite port=q bundle=control                | hls-design/ntt-kernel.cpp:53 in ntt_kernel, q          |
-| interface      | s_axilite port=q_inv bundle=control            | hls-design/ntt-kernel.cpp:54 in ntt_kernel, q_inv      |
-| interface      | s_axilite port=batch_size bundle=control       | hls-design/ntt-kernel.cpp:55 in ntt_kernel, batch_size |
-| interface      | s_axilite port=n bundle=control                | hls-design/ntt-kernel.cpp:56 in ntt_kernel, n          |
-| interface      | s_axilite port=return bundle=control           | hls-design/ntt-kernel.cpp:57 in ntt_kernel, return     |
-| loop_tripcount | min=1 max=16                                   | hls-design/ntt-kernel.cpp:61 in ntt_kernel             |
-| bind_storage   | variable=local_x type=ram_2p impl=bram         | hls-design/ntt-kernel.cpp:67 in ntt_kernel, local_x    |
-| pipeline       | II=1                                           | hls-design/ntt-kernel.cpp:71 in ntt_kernel             |
-| loop_tripcount | min=256 max=65536                              | hls-design/ntt-kernel.cpp:72 in ntt_kernel             |
-| loop_tripcount | min=1 max=16                                   | hls-design/ntt-kernel.cpp:80 in ntt_kernel             |
-| loop_tripcount | min=1 max=32768                                | hls-design/ntt-kernel.cpp:83 in ntt_kernel             |
-| pipeline       | II=1                                           | hls-design/ntt-kernel.cpp:86 in ntt_kernel             |
-| loop_tripcount | min=1 max=32768                                | hls-design/ntt-kernel.cpp:87 in ntt_kernel             |
-| dependence     | variable=local_x array inter false             | hls-design/ntt-kernel.cpp:88 in ntt_kernel, local_x    |
-| pipeline       | II=1                                           | hls-design/ntt-kernel.cpp:105 in ntt_kernel            |
-| loop_tripcount | min=256 max=65536                              | hls-design/ntt-kernel.cpp:106 in ntt_kernel            |
-+----------------+------------------------------------------------+--------------------------------------------------------+
++----------------+-----------------------------------------------+------------------------------------------------------------+
+| Type           | Options                                       | Location                                                   |
++----------------+-----------------------------------------------+------------------------------------------------------------+
+| inline         |                                               | hls-design/ntt-kernel.cpp:9 in mod_add                     |
+| inline         |                                               | hls-design/ntt-kernel.cpp:15 in mod_sub                    |
+| inline         |                                               | hls-design/ntt-kernel.cpp:21 in mod_mul                    |
+| bind_op        | variable=ab op=mul impl=dsp latency=3         | hls-design/ntt-kernel.cpp:25 in mod_mul, ab                |
+| bind_op        | variable=m op=mul impl=dsp latency=3          | hls-design/ntt-kernel.cpp:30 in mod_mul, m                 |
+| bind_op        | variable=mq op=mul impl=dsp latency=3         | hls-design/ntt-kernel.cpp:34 in mod_mul, mq                |
+| bind_op        | variable=sum op=add impl=fabric latency=1     | hls-design/ntt-kernel.cpp:38 in mod_mul, sum               |
+| interface      | m_axi port=x bundle=gmem0 depth=65536         | hls-design/ntt-kernel.cpp:61 in ntt_kernel, x              |
+| interface      | m_axi port=psi_powers bundle=gmem1 depth=4096 | hls-design/ntt-kernel.cpp:62 in ntt_kernel, psi_powers     |
+| interface      | m_axi port=twiddles bundle=gmem2 depth=4096   | hls-design/ntt-kernel.cpp:63 in ntt_kernel, twiddles       |
+| interface      | s_axilite port=q bundle=control               | hls-design/ntt-kernel.cpp:66 in ntt_kernel, q              |
+| interface      | s_axilite port=q_inv bundle=control           | hls-design/ntt-kernel.cpp:67 in ntt_kernel, q_inv          |
+| interface      | s_axilite port=batch_size bundle=control      | hls-design/ntt-kernel.cpp:68 in ntt_kernel, batch_size     |
+| interface      | s_axilite port=n bundle=control               | hls-design/ntt-kernel.cpp:69 in ntt_kernel, n              |
+| interface      | s_axilite port=return bundle=control          | hls-design/ntt-kernel.cpp:70 in ntt_kernel, return         |
+| bind_storage   | variable=local_twiddles type=ram_2p impl=bram | hls-design/ntt-kernel.cpp:73 in ntt_kernel, local_twiddles |
+| bind_storage   | variable=local_psi type=ram_2p impl=bram      | hls-design/ntt-kernel.cpp:75 in ntt_kernel, local_psi      |
+| bind_storage   | variable=ping type=ram_2p impl=bram           | hls-design/ntt-kernel.cpp:79 in ntt_kernel, ping           |
+| bind_storage   | variable=pong type=ram_2p impl=bram           | hls-design/ntt-kernel.cpp:81 in ntt_kernel, pong           |
+| pipeline       | II=1                                          | hls-design/ntt-kernel.cpp:85 in ntt_kernel                 |
+| loop_tripcount | min=255 max=4095                              | hls-design/ntt-kernel.cpp:86 in ntt_kernel                 |
+| pipeline       | II=1                                          | hls-design/ntt-kernel.cpp:92 in ntt_kernel                 |
+| loop_tripcount | min=256 max=4096                              | hls-design/ntt-kernel.cpp:93 in ntt_kernel                 |
+| loop_tripcount | min=1 max=16                                  | hls-design/ntt-kernel.cpp:98 in ntt_kernel                 |
+| pipeline       | II=1                                          | hls-design/ntt-kernel.cpp:104 in ntt_kernel                |
+| loop_tripcount | min=256 max=4096                              | hls-design/ntt-kernel.cpp:105 in ntt_kernel                |
+| pipeline       | II=1                                          | hls-design/ntt-kernel.cpp:111 in ntt_kernel                |
+| loop_tripcount | min=256 max=4096                              | hls-design/ntt-kernel.cpp:112 in ntt_kernel                |
+| loop_tripcount | min=1 max=12                                  | hls-design/ntt-kernel.cpp:122 in ntt_kernel                |
+| pipeline       | II=1                                          | hls-design/ntt-kernel.cpp:127 in ntt_kernel                |
+| loop_tripcount | min=128 max=2048                              | hls-design/ntt-kernel.cpp:128 in ntt_kernel                |
+| pipeline       | II=1                                          | hls-design/ntt-kernel.cpp:166 in ntt_kernel                |
+| loop_tripcount | min=256 max=4096                              | hls-design/ntt-kernel.cpp:167 in ntt_kernel                |
++----------------+-----------------------------------------------+------------------------------------------------------------+
 
 

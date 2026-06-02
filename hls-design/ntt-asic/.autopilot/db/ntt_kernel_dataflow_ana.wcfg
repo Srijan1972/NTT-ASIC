@@ -37,53 +37,101 @@
          <obj_property name="Render_Data">/apatb_ntt_kernel_top/AESL_inst_ntt_kernel//AESL_inst_ntt_kernel_activity.dataflowTxWaveData.Cycles</obj_property>
          <obj_property name="Value_Data">/apatb_ntt_kernel_top/AESL_inst_ntt_kernel//AESL_inst_ntt_kernel_activity.dataflowTxWaveData.OutStanding</obj_property>
          <obj_property name="Detail_Data">/apatb_ntt_kernel_top/AESL_inst_ntt_kernel//AESL_inst_ntt_kernel_activity.dataflowTxTooltipData</obj_property>
-         <wvobject type="group" fp_name="/apatb_ntt_kernel_top/AESL_inst_ntt_kernel/grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250/grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_activity">
-            <obj_property name="label">grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_activity</obj_property>
+         <wvobject type="group" fp_name="/apatb_ntt_kernel_top/AESL_inst_ntt_kernel/grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287/grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287_activity">
+            <obj_property name="label">grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287_activity</obj_property>
             <obj_property name="DisplayName">label</obj_property>
             <obj_property name="UseFullPath">true</obj_property>
-            <obj_property name="ElementShortName">grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_activity</obj_property>
-            <obj_property name="ObjectShortName">grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_activity</obj_property>
+            <obj_property name="ElementShortName">grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287_activity</obj_property>
+            <obj_property name="ObjectShortName">grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287_activity</obj_property>
             <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
             <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
             <obj_property name="EnumTransactionColorTable">0=blank ffff=blank 0bad=#FF0000</obj_property>
             <obj_property name="UseCustomSignalColor">true</obj_property>
             <obj_property name="CustomSignalColor">turquoise</obj_property>
             <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
-            <obj_property name="Render_Data">/apatb_ntt_kernel_top/AESL_inst_ntt_kernel/grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250/grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_activity.dataflowTxWaveData.Cycles</obj_property>
-            <obj_property name="Value_Data">/apatb_ntt_kernel_top/AESL_inst_ntt_kernel/grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250/grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_activity.dataflowTxWaveData.OutStanding</obj_property>
-            <obj_property name="Detail_Data">/apatb_ntt_kernel_top/AESL_inst_ntt_kernel/grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250/grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_activity.dataflowTxTooltipData</obj_property>
+            <obj_property name="Render_Data">/apatb_ntt_kernel_top/AESL_inst_ntt_kernel/grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287/grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287_activity.dataflowTxWaveData.Cycles</obj_property>
+            <obj_property name="Value_Data">/apatb_ntt_kernel_top/AESL_inst_ntt_kernel/grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287/grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287_activity.dataflowTxWaveData.OutStanding</obj_property>
+            <obj_property name="Detail_Data">/apatb_ntt_kernel_top/AESL_inst_ntt_kernel/grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287/grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287_activity.dataflowTxTooltipData</obj_property>
          </wvobject>
-         <wvobject type="group" fp_name="/apatb_ntt_kernel_top/AESL_inst_ntt_kernel/grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263/grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_activity">
-            <obj_property name="label">grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_activity</obj_property>
+         <wvobject type="group" fp_name="/apatb_ntt_kernel_top/AESL_inst_ntt_kernel/grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296/grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296_activity">
+            <obj_property name="label">grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296_activity</obj_property>
             <obj_property name="DisplayName">label</obj_property>
             <obj_property name="UseFullPath">true</obj_property>
-            <obj_property name="ElementShortName">grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_activity</obj_property>
-            <obj_property name="ObjectShortName">grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_activity</obj_property>
+            <obj_property name="ElementShortName">grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296_activity</obj_property>
+            <obj_property name="ObjectShortName">grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296_activity</obj_property>
             <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
             <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
             <obj_property name="EnumTransactionColorTable">0=blank ffff=blank 0bad=#FF0000</obj_property>
             <obj_property name="UseCustomSignalColor">true</obj_property>
             <obj_property name="CustomSignalColor">turquoise</obj_property>
             <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
-            <obj_property name="Render_Data">/apatb_ntt_kernel_top/AESL_inst_ntt_kernel/grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263/grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_activity.dataflowTxWaveData.Cycles</obj_property>
-            <obj_property name="Value_Data">/apatb_ntt_kernel_top/AESL_inst_ntt_kernel/grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263/grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_activity.dataflowTxWaveData.OutStanding</obj_property>
-            <obj_property name="Detail_Data">/apatb_ntt_kernel_top/AESL_inst_ntt_kernel/grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263/grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_activity.dataflowTxTooltipData</obj_property>
+            <obj_property name="Render_Data">/apatb_ntt_kernel_top/AESL_inst_ntt_kernel/grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296/grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296_activity.dataflowTxWaveData.Cycles</obj_property>
+            <obj_property name="Value_Data">/apatb_ntt_kernel_top/AESL_inst_ntt_kernel/grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296/grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296_activity.dataflowTxWaveData.OutStanding</obj_property>
+            <obj_property name="Detail_Data">/apatb_ntt_kernel_top/AESL_inst_ntt_kernel/grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296/grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296_activity.dataflowTxTooltipData</obj_property>
          </wvobject>
-         <wvobject type="group" fp_name="/apatb_ntt_kernel_top/AESL_inst_ntt_kernel/grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278/grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278_activity">
-            <obj_property name="label">grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278_activity</obj_property>
+         <wvobject type="group" fp_name="/apatb_ntt_kernel_top/AESL_inst_ntt_kernel/grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305/grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_activity">
+            <obj_property name="label">grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_activity</obj_property>
             <obj_property name="DisplayName">label</obj_property>
             <obj_property name="UseFullPath">true</obj_property>
-            <obj_property name="ElementShortName">grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278_activity</obj_property>
-            <obj_property name="ObjectShortName">grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278_activity</obj_property>
+            <obj_property name="ElementShortName">grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_activity</obj_property>
+            <obj_property name="ObjectShortName">grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_activity</obj_property>
             <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
             <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
             <obj_property name="EnumTransactionColorTable">0=blank ffff=blank 0bad=#FF0000</obj_property>
             <obj_property name="UseCustomSignalColor">true</obj_property>
             <obj_property name="CustomSignalColor">turquoise</obj_property>
             <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
-            <obj_property name="Render_Data">/apatb_ntt_kernel_top/AESL_inst_ntt_kernel/grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278/grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278_activity.dataflowTxWaveData.Cycles</obj_property>
-            <obj_property name="Value_Data">/apatb_ntt_kernel_top/AESL_inst_ntt_kernel/grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278/grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278_activity.dataflowTxWaveData.OutStanding</obj_property>
-            <obj_property name="Detail_Data">/apatb_ntt_kernel_top/AESL_inst_ntt_kernel/grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278/grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278_activity.dataflowTxTooltipData</obj_property>
+            <obj_property name="Render_Data">/apatb_ntt_kernel_top/AESL_inst_ntt_kernel/grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305/grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_activity.dataflowTxWaveData.Cycles</obj_property>
+            <obj_property name="Value_Data">/apatb_ntt_kernel_top/AESL_inst_ntt_kernel/grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305/grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_activity.dataflowTxWaveData.OutStanding</obj_property>
+            <obj_property name="Detail_Data">/apatb_ntt_kernel_top/AESL_inst_ntt_kernel/grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305/grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_activity.dataflowTxTooltipData</obj_property>
+         </wvobject>
+         <wvobject type="group" fp_name="/apatb_ntt_kernel_top/AESL_inst_ntt_kernel/grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_314/grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_314_activity">
+            <obj_property name="label">grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_314_activity</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <obj_property name="UseFullPath">true</obj_property>
+            <obj_property name="ElementShortName">grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_314_activity</obj_property>
+            <obj_property name="ObjectShortName">grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_314_activity</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+            <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+            <obj_property name="EnumTransactionColorTable">0=blank ffff=blank 0bad=#FF0000</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+            <obj_property name="CustomSignalColor">turquoise</obj_property>
+            <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
+            <obj_property name="Render_Data">/apatb_ntt_kernel_top/AESL_inst_ntt_kernel/grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_314/grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_314_activity.dataflowTxWaveData.Cycles</obj_property>
+            <obj_property name="Value_Data">/apatb_ntt_kernel_top/AESL_inst_ntt_kernel/grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_314/grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_314_activity.dataflowTxWaveData.OutStanding</obj_property>
+            <obj_property name="Detail_Data">/apatb_ntt_kernel_top/AESL_inst_ntt_kernel/grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_314/grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_314_activity.dataflowTxTooltipData</obj_property>
+         </wvobject>
+         <wvobject type="group" fp_name="/apatb_ntt_kernel_top/AESL_inst_ntt_kernel/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322_activity">
+            <obj_property name="label">grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322_activity</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <obj_property name="UseFullPath">true</obj_property>
+            <obj_property name="ElementShortName">grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322_activity</obj_property>
+            <obj_property name="ObjectShortName">grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322_activity</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+            <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+            <obj_property name="EnumTransactionColorTable">0=blank ffff=blank 0bad=#FF0000</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+            <obj_property name="CustomSignalColor">turquoise</obj_property>
+            <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
+            <obj_property name="Render_Data">/apatb_ntt_kernel_top/AESL_inst_ntt_kernel/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322_activity.dataflowTxWaveData.Cycles</obj_property>
+            <obj_property name="Value_Data">/apatb_ntt_kernel_top/AESL_inst_ntt_kernel/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322_activity.dataflowTxWaveData.OutStanding</obj_property>
+            <obj_property name="Detail_Data">/apatb_ntt_kernel_top/AESL_inst_ntt_kernel/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322_activity.dataflowTxTooltipData</obj_property>
+         </wvobject>
+         <wvobject type="group" fp_name="/apatb_ntt_kernel_top/AESL_inst_ntt_kernel/grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341/grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_activity">
+            <obj_property name="label">grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_activity</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <obj_property name="UseFullPath">true</obj_property>
+            <obj_property name="ElementShortName">grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_activity</obj_property>
+            <obj_property name="ObjectShortName">grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_activity</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+            <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+            <obj_property name="EnumTransactionColorTable">0=blank ffff=blank 0bad=#FF0000</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+            <obj_property name="CustomSignalColor">turquoise</obj_property>
+            <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
+            <obj_property name="Render_Data">/apatb_ntt_kernel_top/AESL_inst_ntt_kernel/grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341/grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_activity.dataflowTxWaveData.Cycles</obj_property>
+            <obj_property name="Value_Data">/apatb_ntt_kernel_top/AESL_inst_ntt_kernel/grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341/grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_activity.dataflowTxWaveData.OutStanding</obj_property>
+            <obj_property name="Detail_Data">/apatb_ntt_kernel_top/AESL_inst_ntt_kernel/grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341/grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_activity.dataflowTxTooltipData</obj_property>
          </wvobject>
       </wvobject>
    </wvobject>
@@ -94,17 +142,29 @@
    <wvobject type="group" fp_name="AESL_inst_ntt_kernel_group">
       <obj_property name="label">AESL_inst_ntt_kernel</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-      <wvobject type="protoinst" fp_name="/apatb_ntt_kernel_top/AESL_inst_ntt_kernel/grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250/grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_activity">
-         <obj_property name="ElementShortName">grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_activity</obj_property>
-         <obj_property name="ObjectShortName">grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_activity</obj_property>
+      <wvobject type="protoinst" fp_name="/apatb_ntt_kernel_top/AESL_inst_ntt_kernel/grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287/grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287_activity">
+         <obj_property name="ElementShortName">grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287_activity</obj_property>
+         <obj_property name="ObjectShortName">grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287_activity</obj_property>
       </wvobject>
-      <wvobject type="protoinst" fp_name="/apatb_ntt_kernel_top/AESL_inst_ntt_kernel/grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263/grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_activity">
-         <obj_property name="ElementShortName">grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_activity</obj_property>
-         <obj_property name="ObjectShortName">grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_activity</obj_property>
+      <wvobject type="protoinst" fp_name="/apatb_ntt_kernel_top/AESL_inst_ntt_kernel/grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296/grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296_activity">
+         <obj_property name="ElementShortName">grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296_activity</obj_property>
+         <obj_property name="ObjectShortName">grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296_activity</obj_property>
       </wvobject>
-      <wvobject type="protoinst" fp_name="/apatb_ntt_kernel_top/AESL_inst_ntt_kernel/grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278/grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278_activity">
-         <obj_property name="ElementShortName">grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278_activity</obj_property>
-         <obj_property name="ObjectShortName">grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278_activity</obj_property>
+      <wvobject type="protoinst" fp_name="/apatb_ntt_kernel_top/AESL_inst_ntt_kernel/grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305/grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_activity">
+         <obj_property name="ElementShortName">grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_activity</obj_property>
+         <obj_property name="ObjectShortName">grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_activity</obj_property>
+      </wvobject>
+      <wvobject type="protoinst" fp_name="/apatb_ntt_kernel_top/AESL_inst_ntt_kernel/grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_314/grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_314_activity">
+         <obj_property name="ElementShortName">grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_314_activity</obj_property>
+         <obj_property name="ObjectShortName">grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_314_activity</obj_property>
+      </wvobject>
+      <wvobject type="protoinst" fp_name="/apatb_ntt_kernel_top/AESL_inst_ntt_kernel/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322_activity">
+         <obj_property name="ElementShortName">grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322_activity</obj_property>
+         <obj_property name="ObjectShortName">grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322_activity</obj_property>
+      </wvobject>
+      <wvobject type="protoinst" fp_name="/apatb_ntt_kernel_top/AESL_inst_ntt_kernel/grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341/grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_activity">
+         <obj_property name="ElementShortName">grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_activity</obj_property>
+         <obj_property name="ObjectShortName">grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_activity</obj_property>
       </wvobject>
       <wvobject type="group" fp_name="AESL_inst_ntt_kernel_Handshake_group">
          <obj_property name="label">Block-level handshake</obj_property>
@@ -122,61 +182,121 @@
             <obj_property name="ObjectShortName">ap_done</obj_property>
          </wvobject>
       </wvobject>
-      <wvobject type="group" fp_name="grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_group">
-         <obj_property name="label">grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250</obj_property>
+      <wvobject type="group" fp_name="grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287_group">
+         <obj_property name="label">grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287</obj_property>
          <obj_property name="DisplayName">label</obj_property>
-         <wvobject type="group" fp_name="grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250_Handshake_group">
+         <wvobject type="group" fp_name="grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287_Handshake_group">
             <obj_property name="label">Block-level handshake</obj_property>
             <obj_property name="DisplayName">label</obj_property>
-            <wvobject type="logic" fp_name="/apatb_ntt_kernel_top/AESL_inst_ntt_kernel/grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250/ap_start">
+            <wvobject type="logic" fp_name="/apatb_ntt_kernel_top/AESL_inst_ntt_kernel/grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287/ap_start">
                <obj_property name="ElementShortName">ap_start</obj_property>
                <obj_property name="ObjectShortName">ap_start</obj_property>
             </wvobject>
-            <wvobject type="logic" fp_name="/apatb_ntt_kernel_top/AESL_inst_ntt_kernel/grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250/ap_ready">
+            <wvobject type="logic" fp_name="/apatb_ntt_kernel_top/AESL_inst_ntt_kernel/grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287/ap_ready">
                <obj_property name="ElementShortName">ap_ready</obj_property>
                <obj_property name="ObjectShortName">ap_ready</obj_property>
             </wvobject>
-            <wvobject type="logic" fp_name="/apatb_ntt_kernel_top/AESL_inst_ntt_kernel/grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_250/ap_done">
+            <wvobject type="logic" fp_name="/apatb_ntt_kernel_top/AESL_inst_ntt_kernel/grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287/ap_done">
                <obj_property name="ElementShortName">ap_done</obj_property>
                <obj_property name="ObjectShortName">ap_done</obj_property>
             </wvobject>
          </wvobject>
       </wvobject>
-      <wvobject type="group" fp_name="grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_group">
-         <obj_property name="label">grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263</obj_property>
+      <wvobject type="group" fp_name="grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296_group">
+         <obj_property name="label">grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296</obj_property>
          <obj_property name="DisplayName">label</obj_property>
-         <wvobject type="group" fp_name="grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263_Handshake_group">
+         <wvobject type="group" fp_name="grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296_Handshake_group">
             <obj_property name="label">Block-level handshake</obj_property>
             <obj_property name="DisplayName">label</obj_property>
-            <wvobject type="logic" fp_name="/apatb_ntt_kernel_top/AESL_inst_ntt_kernel/grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263/ap_start">
+            <wvobject type="logic" fp_name="/apatb_ntt_kernel_top/AESL_inst_ntt_kernel/grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296/ap_start">
                <obj_property name="ElementShortName">ap_start</obj_property>
                <obj_property name="ObjectShortName">ap_start</obj_property>
             </wvobject>
-            <wvobject type="logic" fp_name="/apatb_ntt_kernel_top/AESL_inst_ntt_kernel/grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263/ap_ready">
+            <wvobject type="logic" fp_name="/apatb_ntt_kernel_top/AESL_inst_ntt_kernel/grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296/ap_ready">
                <obj_property name="ElementShortName">ap_ready</obj_property>
                <obj_property name="ObjectShortName">ap_ready</obj_property>
             </wvobject>
-            <wvobject type="logic" fp_name="/apatb_ntt_kernel_top/AESL_inst_ntt_kernel/grp_ntt_kernel_Pipeline_BUTTERFLY_LOOP_fu_263/ap_done">
+            <wvobject type="logic" fp_name="/apatb_ntt_kernel_top/AESL_inst_ntt_kernel/grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296/ap_done">
                <obj_property name="ElementShortName">ap_done</obj_property>
                <obj_property name="ObjectShortName">ap_done</obj_property>
             </wvobject>
          </wvobject>
       </wvobject>
-      <wvobject type="group" fp_name="grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278_group">
-         <obj_property name="label">grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278</obj_property>
+      <wvobject type="group" fp_name="grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_group">
+         <obj_property name="label">grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305</obj_property>
          <obj_property name="DisplayName">label</obj_property>
-         <wvobject type="group" fp_name="grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278_Handshake_group">
+         <wvobject type="group" fp_name="grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305_Handshake_group">
             <obj_property name="label">Block-level handshake</obj_property>
             <obj_property name="DisplayName">label</obj_property>
-            <wvobject type="logic" fp_name="/apatb_ntt_kernel_top/AESL_inst_ntt_kernel/grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278/ap_start">
+            <wvobject type="logic" fp_name="/apatb_ntt_kernel_top/AESL_inst_ntt_kernel/grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305/ap_start">
                <obj_property name="ElementShortName">ap_start</obj_property>
                <obj_property name="ObjectShortName">ap_start</obj_property>
             </wvobject>
-            <wvobject type="logic" fp_name="/apatb_ntt_kernel_top/AESL_inst_ntt_kernel/grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278/ap_ready">
+            <wvobject type="logic" fp_name="/apatb_ntt_kernel_top/AESL_inst_ntt_kernel/grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305/ap_ready">
                <obj_property name="ElementShortName">ap_ready</obj_property>
                <obj_property name="ObjectShortName">ap_ready</obj_property>
             </wvobject>
-            <wvobject type="logic" fp_name="/apatb_ntt_kernel_top/AESL_inst_ntt_kernel/grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_278/ap_done">
+            <wvobject type="logic" fp_name="/apatb_ntt_kernel_top/AESL_inst_ntt_kernel/grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305/ap_done">
+               <obj_property name="ElementShortName">ap_done</obj_property>
+               <obj_property name="ObjectShortName">ap_done</obj_property>
+            </wvobject>
+         </wvobject>
+      </wvobject>
+      <wvobject type="group" fp_name="grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_314_group">
+         <obj_property name="label">grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_314</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject type="group" fp_name="grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_314_Handshake_group">
+            <obj_property name="label">Block-level handshake</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="logic" fp_name="/apatb_ntt_kernel_top/AESL_inst_ntt_kernel/grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_314/ap_start">
+               <obj_property name="ElementShortName">ap_start</obj_property>
+               <obj_property name="ObjectShortName">ap_start</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_ntt_kernel_top/AESL_inst_ntt_kernel/grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_314/ap_ready">
+               <obj_property name="ElementShortName">ap_ready</obj_property>
+               <obj_property name="ObjectShortName">ap_ready</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_ntt_kernel_top/AESL_inst_ntt_kernel/grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_314/ap_done">
+               <obj_property name="ElementShortName">ap_done</obj_property>
+               <obj_property name="ObjectShortName">ap_done</obj_property>
+            </wvobject>
+         </wvobject>
+      </wvobject>
+      <wvobject type="group" fp_name="grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322_group">
+         <obj_property name="label">grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject type="group" fp_name="grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322_Handshake_group">
+            <obj_property name="label">Block-level handshake</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="logic" fp_name="/apatb_ntt_kernel_top/AESL_inst_ntt_kernel/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/ap_start">
+               <obj_property name="ElementShortName">ap_start</obj_property>
+               <obj_property name="ObjectShortName">ap_start</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_ntt_kernel_top/AESL_inst_ntt_kernel/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/ap_ready">
+               <obj_property name="ElementShortName">ap_ready</obj_property>
+               <obj_property name="ObjectShortName">ap_ready</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_ntt_kernel_top/AESL_inst_ntt_kernel/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/ap_done">
+               <obj_property name="ElementShortName">ap_done</obj_property>
+               <obj_property name="ObjectShortName">ap_done</obj_property>
+            </wvobject>
+         </wvobject>
+      </wvobject>
+      <wvobject type="group" fp_name="grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_group">
+         <obj_property name="label">grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject type="group" fp_name="grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341_Handshake_group">
+            <obj_property name="label">Block-level handshake</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="logic" fp_name="/apatb_ntt_kernel_top/AESL_inst_ntt_kernel/grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341/ap_start">
+               <obj_property name="ElementShortName">ap_start</obj_property>
+               <obj_property name="ObjectShortName">ap_start</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_ntt_kernel_top/AESL_inst_ntt_kernel/grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341/ap_ready">
+               <obj_property name="ElementShortName">ap_ready</obj_property>
+               <obj_property name="ObjectShortName">ap_ready</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_ntt_kernel_top/AESL_inst_ntt_kernel/grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341/ap_done">
                <obj_property name="ElementShortName">ap_done</obj_property>
                <obj_property name="ObjectShortName">ap_done</obj_property>
             </wvobject>

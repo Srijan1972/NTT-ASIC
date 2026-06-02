@@ -60,10 +60,14 @@ module ntt_kernel_ntt_kernel_Pipeline_WRITE_BACK_LOOP (
         m_axi_gmem0_BID,
         m_axi_gmem0_BUSER,
         n,
-        sext_ln104,
-        local_x_address0,
-        local_x_ce0,
-        local_x_q0
+        sext_ln165,
+        ping_address0,
+        ping_ce0,
+        ping_q0,
+        pong_address0,
+        pong_ce0,
+        pong_q0,
+        use_ping_as_input
 );
 
 parameter    ap_ST_fsm_pp0_stage0 = 1'd1;
@@ -121,14 +125,19 @@ input  [1:0] m_axi_gmem0_BRESP;
 input  [0:0] m_axi_gmem0_BID;
 input  [0:0] m_axi_gmem0_BUSER;
 input  [31:0] n;
-input  [61:0] sext_ln104;
-output  [15:0] local_x_address0;
-output   local_x_ce0;
-input  [31:0] local_x_q0;
+input  [61:0] sext_ln165;
+output  [11:0] ping_address0;
+output   ping_ce0;
+input  [31:0] ping_q0;
+output  [11:0] pong_address0;
+output   pong_ce0;
+input  [31:0] pong_q0;
+input  [0:0] use_ping_as_input;
 
 reg ap_idle;
 reg m_axi_gmem0_WVALID;
-reg local_x_ce0;
+reg ping_ce0;
+reg pong_ce0;
 
 (* fsm_encoding = "none" *) reg   [0:0] ap_CS_fsm;
 wire    ap_CS_fsm_pp0_stage0;
@@ -137,21 +146,22 @@ reg    ap_enable_reg_pp0_iter1;
 reg    ap_enable_reg_pp0_iter2;
 reg    ap_idle_pp0;
 reg    ap_block_pp0_stage0_subdone;
-wire   [0:0] icmp_ln104_fu_119_p2;
+wire   [0:0] icmp_ln165_fu_144_p2;
 reg    ap_condition_exit_pp0_iter0_stage0;
 wire    ap_loop_exit_ready;
 reg    ap_ready_int;
 reg    gmem0_blk_n_W;
 wire    ap_block_pp0_stage0;
 reg    ap_block_pp0_stage0_11001;
-reg   [31:0] local_x_load_reg_168;
-wire   [63:0] zext_ln104_fu_131_p1;
+wire   [31:0] storereflowmerge_fu_167_p3;
+reg   [31:0] storereflowmerge_reg_211;
+wire   [63:0] zext_ln165_fu_156_p1;
 wire    ap_block_pp0_stage0_01001;
-reg   [16:0] i_fu_66;
-wire   [16:0] add_ln104_fu_125_p2;
+reg   [12:0] i_fu_72;
+wire   [12:0] add_ln165_fu_150_p2;
 wire    ap_loop_init;
-reg   [16:0] ap_sig_allocacmp_i_1;
-wire   [31:0] zext_ln104_1_fu_115_p1;
+reg   [12:0] ap_sig_allocacmp_i_1;
+wire   [31:0] zext_ln165_1_fu_140_p1;
 reg    ap_done_reg;
 wire    ap_continue_int;
 reg    ap_done_int;
@@ -166,7 +176,7 @@ initial begin
 #0 ap_CS_fsm = 1'd1;
 #0 ap_enable_reg_pp0_iter1 = 1'b0;
 #0 ap_enable_reg_pp0_iter2 = 1'b0;
-#0 i_fu_66 = 17'd0;
+#0 i_fu_72 = 13'd0;
 #0 ap_done_reg = 1'b0;
 end
 
@@ -199,7 +209,7 @@ always @ (posedge ap_clk) begin
     end else begin
         if ((ap_continue_int == 1'b1)) begin
             ap_done_reg <= 1'b0;
-        end else if (((1'b0 == ap_block_pp0_stage0_subdone) & (1'b1 == ap_CS_fsm_pp0_stage0) & (ap_loop_exit_ready_pp0_iter1_reg == 1'b1))) begin
+        end else if (((1'b0 == ap_block_pp0_stage0_subdone) & (ap_loop_exit_ready_pp0_iter1_reg == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
             ap_done_reg <= 1'b1;
         end
     end
@@ -229,10 +239,10 @@ end
 
 always @ (posedge ap_clk) begin
     if (((1'b0 == ap_block_pp0_stage0_11001) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
-        if (((icmp_ln104_fu_119_p2 == 1'd1) & (ap_enable_reg_pp0_iter0 == 1'b1))) begin
-            i_fu_66 <= add_ln104_fu_125_p2;
+        if (((icmp_ln165_fu_144_p2 == 1'd1) & (ap_enable_reg_pp0_iter0 == 1'b1))) begin
+            i_fu_72 <= add_ln165_fu_150_p2;
         end else if ((ap_loop_init == 1'b1)) begin
-            i_fu_66 <= 17'd0;
+            i_fu_72 <= 13'd0;
         end
     end
 end
@@ -240,12 +250,12 @@ end
 always @ (posedge ap_clk) begin
     if (((1'b0 == ap_block_pp0_stage0_11001) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
         ap_loop_exit_ready_pp0_iter1_reg <= ap_loop_exit_ready;
-        local_x_load_reg_168 <= local_x_q0;
+        storereflowmerge_reg_211 <= storereflowmerge_fu_167_p3;
     end
 end
 
 always @ (*) begin
-    if (((icmp_ln104_fu_119_p2 == 1'd0) & (1'b0 == ap_block_pp0_stage0_subdone) & (ap_enable_reg_pp0_iter0 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
+    if (((icmp_ln165_fu_144_p2 == 1'd0) & (1'b0 == ap_block_pp0_stage0_subdone) & (ap_enable_reg_pp0_iter0 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
         ap_condition_exit_pp0_iter0_stage0 = 1'b1;
     end else begin
         ap_condition_exit_pp0_iter0_stage0 = 1'b0;
@@ -253,7 +263,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((1'b0 == ap_block_pp0_stage0_subdone) & (1'b1 == ap_CS_fsm_pp0_stage0) & (ap_loop_exit_ready_pp0_iter1_reg == 1'b1))) begin
+    if (((1'b0 == ap_block_pp0_stage0_subdone) & (ap_loop_exit_ready_pp0_iter1_reg == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
         ap_done_int = 1'b1;
     end else begin
         ap_done_int = ap_done_reg;
@@ -261,7 +271,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((ap_idle_pp0 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0) & (ap_start_int == 1'b0))) begin
+    if (((ap_idle_pp0 == 1'b1) & (ap_start_int == 1'b0) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
         ap_idle = 1'b1;
     end else begin
         ap_idle = 1'b0;
@@ -286,9 +296,9 @@ end
 
 always @ (*) begin
     if (((1'b0 == ap_block_pp0_stage0) & (1'b1 == ap_CS_fsm_pp0_stage0) & (ap_loop_init == 1'b1))) begin
-        ap_sig_allocacmp_i_1 = 17'd0;
+        ap_sig_allocacmp_i_1 = 13'd0;
     end else begin
-        ap_sig_allocacmp_i_1 = i_fu_66;
+        ap_sig_allocacmp_i_1 = i_fu_72;
     end
 end
 
@@ -301,18 +311,26 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter0 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
-        local_x_ce0 = 1'b1;
-    end else begin
-        local_x_ce0 = 1'b0;
-    end
-end
-
-always @ (*) begin
     if (((1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter2 == 1'b1))) begin
         m_axi_gmem0_WVALID = 1'b1;
     end else begin
         m_axi_gmem0_WVALID = 1'b0;
+    end
+end
+
+always @ (*) begin
+    if (((1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter0 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
+        ping_ce0 = 1'b1;
+    end else begin
+        ping_ce0 = 1'b0;
+    end
+end
+
+always @ (*) begin
+    if (((1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter0 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
+        pong_ce0 = 1'b1;
+    end else begin
+        pong_ce0 = 1'b0;
     end
 end
 
@@ -327,7 +345,7 @@ always @ (*) begin
     endcase
 end
 
-assign add_ln104_fu_125_p2 = (ap_sig_allocacmp_i_1 + 17'd1);
+assign add_ln165_fu_150_p2 = (ap_sig_allocacmp_i_1 + 13'd1);
 
 assign ap_CS_fsm_pp0_stage0 = ap_CS_fsm[32'd0];
 
@@ -349,9 +367,7 @@ assign ap_enable_reg_pp0_iter0 = ap_start_int;
 
 assign ap_loop_exit_ready = ap_condition_exit_pp0_iter0_stage0;
 
-assign icmp_ln104_fu_119_p2 = (($signed(zext_ln104_1_fu_115_p1) < $signed(n)) ? 1'b1 : 1'b0);
-
-assign local_x_address0 = zext_ln104_fu_131_p1;
+assign icmp_ln165_fu_144_p2 = (($signed(zext_ln165_1_fu_140_p1) < $signed(n)) ? 1'b1 : 1'b0);
 
 assign m_axi_gmem0_ARADDR = 64'd0;
 
@@ -405,7 +421,7 @@ assign m_axi_gmem0_BREADY = 1'b0;
 
 assign m_axi_gmem0_RREADY = 1'b0;
 
-assign m_axi_gmem0_WDATA = local_x_load_reg_168;
+assign m_axi_gmem0_WDATA = storereflowmerge_reg_211;
 
 assign m_axi_gmem0_WID = 1'd0;
 
@@ -415,8 +431,14 @@ assign m_axi_gmem0_WSTRB = 4'd15;
 
 assign m_axi_gmem0_WUSER = 1'd0;
 
-assign zext_ln104_1_fu_115_p1 = ap_sig_allocacmp_i_1;
+assign ping_address0 = zext_ln165_fu_156_p1;
 
-assign zext_ln104_fu_131_p1 = ap_sig_allocacmp_i_1;
+assign pong_address0 = zext_ln165_fu_156_p1;
+
+assign storereflowmerge_fu_167_p3 = ((use_ping_as_input[0:0] == 1'b1) ? ping_q0 : pong_q0);
+
+assign zext_ln165_1_fu_140_p1 = ap_sig_allocacmp_i_1;
+
+assign zext_ln165_fu_156_p1 = ap_sig_allocacmp_i_1;
 
 endmodule //ntt_kernel_ntt_kernel_Pipeline_WRITE_BACK_LOOP

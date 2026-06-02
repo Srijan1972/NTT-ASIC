@@ -8,16 +8,16 @@ define void @apatb_ntt_kernel_ir(i32* noalias nocapture nonnull "maxi" %x, i32* 
 entry:
   %malloccall = tail call i8* @malloc(i64 262144)
   %x_copy = bitcast i8* %malloccall to [65536 x i32]*
-  %malloccall1 = tail call i8* @malloc(i64 262144)
-  %psi_powers_copy = bitcast i8* %malloccall1 to [65536 x i32]*
-  %malloccall2 = tail call i8* @malloc(i64 262140)
-  %twiddles_copy = bitcast i8* %malloccall2 to [65535 x i32]*
+  %malloccall1 = tail call i8* @malloc(i64 16384)
+  %psi_powers_copy = bitcast i8* %malloccall1 to [4096 x i32]*
+  %malloccall2 = tail call i8* @malloc(i64 16384)
+  %twiddles_copy = bitcast i8* %malloccall2 to [4096 x i32]*
   %0 = bitcast i32* %x to [65536 x i32]*
-  %1 = bitcast i32* %psi_powers to [65536 x i32]*
-  %2 = bitcast i32* %twiddles to [65535 x i32]*
-  call fastcc void @copy_in([65536 x i32]* nonnull %0, [65536 x i32]* %x_copy, [65536 x i32]* nonnull %1, [65536 x i32]* %psi_powers_copy, [65535 x i32]* nonnull %2, [65535 x i32]* %twiddles_copy)
-  call void @apatb_ntt_kernel_hw([65536 x i32]* %x_copy, [65536 x i32]* %psi_powers_copy, [65535 x i32]* %twiddles_copy, i32 %q, i32 %q_inv, i32 %batch_size, i32 %n)
-  call void @copy_back([65536 x i32]* %0, [65536 x i32]* %x_copy, [65536 x i32]* %1, [65536 x i32]* %psi_powers_copy, [65535 x i32]* %2, [65535 x i32]* %twiddles_copy)
+  %1 = bitcast i32* %psi_powers to [4096 x i32]*
+  %2 = bitcast i32* %twiddles to [4096 x i32]*
+  call fastcc void @copy_in([65536 x i32]* nonnull %0, [65536 x i32]* %x_copy, [4096 x i32]* nonnull %1, [4096 x i32]* %psi_powers_copy, [4096 x i32]* nonnull %2, [4096 x i32]* %twiddles_copy)
+  call void @apatb_ntt_kernel_hw([65536 x i32]* %x_copy, [4096 x i32]* %psi_powers_copy, [4096 x i32]* %twiddles_copy, i32 %q, i32 %q_inv, i32 %batch_size, i32 %n)
+  call void @copy_back([65536 x i32]* %0, [65536 x i32]* %x_copy, [4096 x i32]* %1, [4096 x i32]* %psi_powers_copy, [4096 x i32]* %2, [4096 x i32]* %twiddles_copy)
   tail call void @free(i8* %malloccall)
   tail call void @free(i8* %malloccall1)
   tail call void @free(i8* %malloccall2)
@@ -27,11 +27,11 @@ entry:
 declare noalias i8* @malloc(i64) local_unnamed_addr
 
 ; Function Attrs: argmemonly noinline norecurse willreturn
-define internal fastcc void @copy_in([65536 x i32]* noalias readonly, [65536 x i32]* noalias, [65536 x i32]* noalias readonly, [65536 x i32]* noalias, [65535 x i32]* noalias readonly, [65535 x i32]* noalias) unnamed_addr #1 {
+define internal fastcc void @copy_in([65536 x i32]* noalias readonly, [65536 x i32]* noalias, [4096 x i32]* noalias readonly, [4096 x i32]* noalias, [4096 x i32]* noalias readonly, [4096 x i32]* noalias) unnamed_addr #1 {
 entry:
   call fastcc void @onebyonecpy_hls.p0a65536i32([65536 x i32]* %1, [65536 x i32]* %0)
-  call fastcc void @onebyonecpy_hls.p0a65536i32([65536 x i32]* %3, [65536 x i32]* %2)
-  call fastcc void @onebyonecpy_hls.p0a65535i32([65535 x i32]* %5, [65535 x i32]* %4)
+  call fastcc void @onebyonecpy_hls.p0a4096i32([4096 x i32]* %3, [4096 x i32]* %2)
+  call fastcc void @onebyonecpy_hls.p0a4096i32([4096 x i32]* %5, [4096 x i32]* %4)
   ret void
 }
 
@@ -84,15 +84,15 @@ ret:                                              ; preds = %copy.split, %entry
 }
 
 ; Function Attrs: argmemonly noinline norecurse willreturn
-define internal fastcc void @onebyonecpy_hls.p0a65535i32([65535 x i32]* noalias %dst, [65535 x i32]* noalias readonly %src) unnamed_addr #2 {
+define internal fastcc void @onebyonecpy_hls.p0a4096i32([4096 x i32]* noalias %dst, [4096 x i32]* noalias readonly %src) unnamed_addr #2 {
 entry:
-  %0 = icmp eq [65535 x i32]* %dst, null
-  %1 = icmp eq [65535 x i32]* %src, null
+  %0 = icmp eq [4096 x i32]* %dst, null
+  %1 = icmp eq [4096 x i32]* %src, null
   %2 = or i1 %0, %1
   br i1 %2, label %ret, label %copy
 
 copy:                                             ; preds = %entry
-  call void @arraycpy_hls.p0a65535i32([65535 x i32]* nonnull %dst, [65535 x i32]* nonnull %src, i64 65535)
+  call void @arraycpy_hls.p0a4096i32([4096 x i32]* nonnull %dst, [4096 x i32]* nonnull %src, i64 4096)
   br label %ret
 
 ret:                                              ; preds = %copy, %entry
@@ -100,10 +100,10 @@ ret:                                              ; preds = %copy, %entry
 }
 
 ; Function Attrs: argmemonly noinline norecurse willreturn
-define void @arraycpy_hls.p0a65535i32([65535 x i32]* %dst, [65535 x i32]* readonly %src, i64 %num) local_unnamed_addr #3 {
+define void @arraycpy_hls.p0a4096i32([4096 x i32]* %dst, [4096 x i32]* readonly %src, i64 %num) local_unnamed_addr #3 {
 entry:
-  %0 = icmp eq [65535 x i32]* %src, null
-  %1 = icmp eq [65535 x i32]* %dst, null
+  %0 = icmp eq [4096 x i32]* %src, null
+  %1 = icmp eq [4096 x i32]* %dst, null
   %2 = or i1 %1, %0
   br i1 %2, label %ret, label %copy
 
@@ -116,8 +116,8 @@ for.loop.lr.ph:                                   ; preds = %copy
 
 for.loop:                                         ; preds = %for.loop, %for.loop.lr.ph
   %for.loop.idx2 = phi i64 [ 0, %for.loop.lr.ph ], [ %for.loop.idx.next, %for.loop ]
-  %dst.addr = getelementptr [65535 x i32], [65535 x i32]* %dst, i64 0, i64 %for.loop.idx2
-  %src.addr = getelementptr [65535 x i32], [65535 x i32]* %src, i64 0, i64 %for.loop.idx2
+  %dst.addr = getelementptr [4096 x i32], [4096 x i32]* %dst, i64 0, i64 %for.loop.idx2
+  %src.addr = getelementptr [4096 x i32], [4096 x i32]* %src, i64 0, i64 %for.loop.idx2
   %3 = load i32, i32* %src.addr, align 4
   store i32 %3, i32* %dst.addr, align 4
   %for.loop.idx.next = add nuw nsw i64 %for.loop.idx2, 1
@@ -132,33 +132,33 @@ ret:                                              ; preds = %copy.split, %entry
 }
 
 ; Function Attrs: argmemonly noinline norecurse willreturn
-define internal fastcc void @copy_out([65536 x i32]* noalias, [65536 x i32]* noalias readonly, [65536 x i32]* noalias, [65536 x i32]* noalias readonly, [65535 x i32]* noalias, [65535 x i32]* noalias readonly) unnamed_addr #4 {
+define internal fastcc void @copy_out([65536 x i32]* noalias, [65536 x i32]* noalias readonly, [4096 x i32]* noalias, [4096 x i32]* noalias readonly, [4096 x i32]* noalias, [4096 x i32]* noalias readonly) unnamed_addr #4 {
 entry:
   call fastcc void @onebyonecpy_hls.p0a65536i32([65536 x i32]* %0, [65536 x i32]* %1)
-  call fastcc void @onebyonecpy_hls.p0a65536i32([65536 x i32]* %2, [65536 x i32]* %3)
-  call fastcc void @onebyonecpy_hls.p0a65535i32([65535 x i32]* %4, [65535 x i32]* %5)
+  call fastcc void @onebyonecpy_hls.p0a4096i32([4096 x i32]* %2, [4096 x i32]* %3)
+  call fastcc void @onebyonecpy_hls.p0a4096i32([4096 x i32]* %4, [4096 x i32]* %5)
   ret void
 }
 
 declare void @free(i8*) local_unnamed_addr
 
-declare void @apatb_ntt_kernel_hw([65536 x i32]*, [65536 x i32]*, [65535 x i32]*, i32, i32, i32, i32)
+declare void @apatb_ntt_kernel_hw([65536 x i32]*, [4096 x i32]*, [4096 x i32]*, i32, i32, i32, i32)
 
 ; Function Attrs: argmemonly noinline norecurse willreturn
-define internal fastcc void @copy_back([65536 x i32]* noalias, [65536 x i32]* noalias readonly, [65536 x i32]* noalias, [65536 x i32]* noalias readonly, [65535 x i32]* noalias, [65535 x i32]* noalias readonly) unnamed_addr #4 {
+define internal fastcc void @copy_back([65536 x i32]* noalias, [65536 x i32]* noalias readonly, [4096 x i32]* noalias, [4096 x i32]* noalias readonly, [4096 x i32]* noalias, [4096 x i32]* noalias readonly) unnamed_addr #4 {
 entry:
   call fastcc void @onebyonecpy_hls.p0a65536i32([65536 x i32]* %0, [65536 x i32]* %1)
   ret void
 }
 
-define void @ntt_kernel_hw_stub_wrapper([65536 x i32]*, [65536 x i32]*, [65535 x i32]*, i32, i32, i32, i32) #5 {
+define void @ntt_kernel_hw_stub_wrapper([65536 x i32]*, [4096 x i32]*, [4096 x i32]*, i32, i32, i32, i32) #5 {
 entry:
-  call void @copy_out([65536 x i32]* null, [65536 x i32]* %0, [65536 x i32]* null, [65536 x i32]* %1, [65535 x i32]* null, [65535 x i32]* %2)
+  call void @copy_out([65536 x i32]* null, [65536 x i32]* %0, [4096 x i32]* null, [4096 x i32]* %1, [4096 x i32]* null, [4096 x i32]* %2)
   %7 = bitcast [65536 x i32]* %0 to i32*
-  %8 = bitcast [65536 x i32]* %1 to i32*
-  %9 = bitcast [65535 x i32]* %2 to i32*
+  %8 = bitcast [4096 x i32]* %1 to i32*
+  %9 = bitcast [4096 x i32]* %2 to i32*
   call void @ntt_kernel_hw_stub(i32* %7, i32* %8, i32* %9, i32 %3, i32 %4, i32 %5, i32 %6)
-  call void @copy_in([65536 x i32]* null, [65536 x i32]* %0, [65536 x i32]* null, [65536 x i32]* %1, [65535 x i32]* null, [65535 x i32]* %2)
+  call void @copy_in([65536 x i32]* null, [65536 x i32]* %0, [4096 x i32]* null, [4096 x i32]* %1, [4096 x i32]* null, [4096 x i32]* %2)
   ret void
 }
 
