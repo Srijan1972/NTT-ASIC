@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'ntt_kernel_Pipeline_WRITE_BACK_LOOP'
 ================================================================
-* Date:           Mon Jun  1 21:40:41 2026
+* Date:           Thu Jun  4 11:24:42 2026
 
 * Version:        2023.2 (Build 4023990 on Oct 11 2023)
 * Project:        hls-design
@@ -56,12 +56,12 @@
 |DSP              |        -|     -|       -|       -|    -|
 |Expression       |        -|     -|       0|      95|    -|
 |FIFO             |        -|     -|       -|       -|    -|
-|Instance         |        -|     -|       -|       -|    -|
+|Instance         |        -|     -|       0|      86|    -|
 |Memory           |        -|     -|       -|       -|    -|
 |Multiplexer      |        -|     -|       -|      45|    -|
-|Register         |        -|     -|      50|       -|    -|
+|Register         |        -|     -|      53|       -|    -|
 +-----------------+---------+------+--------+--------+-----+
-|Total            |        0|     0|      50|     140|    0|
+|Total            |        0|     0|      53|     226|    0|
 +-----------------+---------+------+--------+--------+-----+
 |Available        |      288|  1248|  234240|  117120|   64|
 +-----------------+---------+------+--------+--------+-----+
@@ -70,7 +70,14 @@
 
 + Detail: 
     * Instance: 
-    N/A
+    +---------------------------+-----------------------+---------+----+---+----+-----+
+    |          Instance         |         Module        | BRAM_18K| DSP| FF| LUT| URAM|
+    +---------------------------+-----------------------+---------+----+---+----+-----+
+    |sparsemux_17_3_32_1_1_U87  |sparsemux_17_3_32_1_1  |        0|   0|  0|  43|    0|
+    |sparsemux_17_3_32_1_1_U88  |sparsemux_17_3_32_1_1  |        0|   0|  0|  43|    0|
+    +---------------------------+-----------------------+---------+----+---+----+-----+
+    |Total                      |                       |        0|   0|  0|  86|    0|
+    +---------------------------+-----------------------+---------+----+---+----+-----+
 
     * DSP: 
     N/A
@@ -85,10 +92,10 @@
     +----------------------------+----------+----+---+----+------------+------------+
     |        Variable Name       | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
     +----------------------------+----------+----+---+----+------------+------------+
-    |add_ln165_fu_150_p2         |         +|   0|  0|  20|          13|           1|
+    |add_ln170_fu_386_p2         |         +|   0|  0|  20|          13|           1|
     |ap_block_pp0_stage0_11001   |       and|   0|  0|   2|           1|           1|
-    |icmp_ln165_fu_144_p2        |      icmp|   0|  0|  39|          32|          32|
-    |storereflowmerge_fu_167_p3  |    select|   0|  0|  32|           1|          32|
+    |icmp_ln170_fu_380_p2        |      icmp|   0|  0|  39|          32|          32|
+    |storereflowmerge_fu_509_p3  |    select|   0|  0|  32|           1|          32|
     |ap_enable_pp0               |       xor|   0|  0|   2|           1|           2|
     +----------------------------+----------+----+---+----+------------+------------+
     |Total                       |          |   0|  0|  95|          48|          68|
@@ -102,7 +109,7 @@
     |ap_enable_reg_pp0_iter1  |   9|          2|    1|          2|
     |ap_sig_allocacmp_i_1     |   9|          2|   13|         26|
     |gmem0_blk_n_W            |   9|          2|    1|          2|
-    |i_fu_72                  |   9|          2|   13|         26|
+    |i_fu_126                 |   9|          2|   13|         26|
     +-------------------------+----+-----------+-----+-----------+
     |Total                    |  45|         10|   29|         58|
     +-------------------------+----+-----------+-----+-----------+
@@ -116,10 +123,11 @@
     |ap_enable_reg_pp0_iter1           |   1|   0|    1|          0|
     |ap_enable_reg_pp0_iter2           |   1|   0|    1|          0|
     |ap_loop_exit_ready_pp0_iter1_reg  |   1|   0|    1|          0|
-    |i_fu_72                           |  13|   0|   13|          0|
-    |storereflowmerge_reg_211          |  32|   0|   32|          0|
+    |i_fu_126                          |  13|   0|   13|          0|
+    |storereflowmerge_reg_629          |  32|   0|   32|          0|
+    |trunc_ln170_reg_543               |   3|   0|    3|          0|
     +----------------------------------+----+----+-----+-----------+
-    |Total                             |  50|   0|   50|          0|
+    |Total                             |  53|   0|   53|          0|
     +----------------------------------+----+----+-----+-----------+
 
 
@@ -184,13 +192,55 @@
 |m_axi_gmem0_BID       |   in|    1|       m_axi|                                gmem0|       pointer|
 |m_axi_gmem0_BUSER     |   in|    1|       m_axi|                                gmem0|       pointer|
 |n                     |   in|   32|     ap_none|                                    n|        scalar|
-|sext_ln165            |   in|   62|     ap_none|                           sext_ln165|        scalar|
-|ping_address0         |  out|   12|   ap_memory|                                 ping|         array|
+|sext_ln170            |   in|   62|     ap_none|                           sext_ln170|        scalar|
+|ping_address0         |  out|    9|   ap_memory|                                 ping|         array|
 |ping_ce0              |  out|    1|   ap_memory|                                 ping|         array|
 |ping_q0               |   in|   32|   ap_memory|                                 ping|         array|
-|pong_address0         |  out|   12|   ap_memory|                                 pong|         array|
+|ping_1_address0       |  out|    9|   ap_memory|                               ping_1|         array|
+|ping_1_ce0            |  out|    1|   ap_memory|                               ping_1|         array|
+|ping_1_q0             |   in|   32|   ap_memory|                               ping_1|         array|
+|ping_2_address0       |  out|    9|   ap_memory|                               ping_2|         array|
+|ping_2_ce0            |  out|    1|   ap_memory|                               ping_2|         array|
+|ping_2_q0             |   in|   32|   ap_memory|                               ping_2|         array|
+|ping_3_address0       |  out|    9|   ap_memory|                               ping_3|         array|
+|ping_3_ce0            |  out|    1|   ap_memory|                               ping_3|         array|
+|ping_3_q0             |   in|   32|   ap_memory|                               ping_3|         array|
+|ping_4_address0       |  out|    9|   ap_memory|                               ping_4|         array|
+|ping_4_ce0            |  out|    1|   ap_memory|                               ping_4|         array|
+|ping_4_q0             |   in|   32|   ap_memory|                               ping_4|         array|
+|ping_5_address0       |  out|    9|   ap_memory|                               ping_5|         array|
+|ping_5_ce0            |  out|    1|   ap_memory|                               ping_5|         array|
+|ping_5_q0             |   in|   32|   ap_memory|                               ping_5|         array|
+|ping_6_address0       |  out|    9|   ap_memory|                               ping_6|         array|
+|ping_6_ce0            |  out|    1|   ap_memory|                               ping_6|         array|
+|ping_6_q0             |   in|   32|   ap_memory|                               ping_6|         array|
+|ping_7_address0       |  out|    9|   ap_memory|                               ping_7|         array|
+|ping_7_ce0            |  out|    1|   ap_memory|                               ping_7|         array|
+|ping_7_q0             |   in|   32|   ap_memory|                               ping_7|         array|
+|pong_address0         |  out|    9|   ap_memory|                                 pong|         array|
 |pong_ce0              |  out|    1|   ap_memory|                                 pong|         array|
 |pong_q0               |   in|   32|   ap_memory|                                 pong|         array|
+|pong_1_address0       |  out|    9|   ap_memory|                               pong_1|         array|
+|pong_1_ce0            |  out|    1|   ap_memory|                               pong_1|         array|
+|pong_1_q0             |   in|   32|   ap_memory|                               pong_1|         array|
+|pong_2_address0       |  out|    9|   ap_memory|                               pong_2|         array|
+|pong_2_ce0            |  out|    1|   ap_memory|                               pong_2|         array|
+|pong_2_q0             |   in|   32|   ap_memory|                               pong_2|         array|
+|pong_3_address0       |  out|    9|   ap_memory|                               pong_3|         array|
+|pong_3_ce0            |  out|    1|   ap_memory|                               pong_3|         array|
+|pong_3_q0             |   in|   32|   ap_memory|                               pong_3|         array|
+|pong_4_address0       |  out|    9|   ap_memory|                               pong_4|         array|
+|pong_4_ce0            |  out|    1|   ap_memory|                               pong_4|         array|
+|pong_4_q0             |   in|   32|   ap_memory|                               pong_4|         array|
+|pong_5_address0       |  out|    9|   ap_memory|                               pong_5|         array|
+|pong_5_ce0            |  out|    1|   ap_memory|                               pong_5|         array|
+|pong_5_q0             |   in|   32|   ap_memory|                               pong_5|         array|
+|pong_6_address0       |  out|    9|   ap_memory|                               pong_6|         array|
+|pong_6_ce0            |  out|    1|   ap_memory|                               pong_6|         array|
+|pong_6_q0             |   in|   32|   ap_memory|                               pong_6|         array|
+|pong_7_address0       |  out|    9|   ap_memory|                               pong_7|         array|
+|pong_7_ce0            |  out|    1|   ap_memory|                               pong_7|         array|
+|pong_7_q0             |   in|   32|   ap_memory|                               pong_7|         array|
 |use_ping_as_input     |   in|    1|     ap_none|                    use_ping_as_input|        scalar|
 +----------------------+-----+-----+------------+-------------------------------------+--------------+
 

@@ -1,17 +1,17 @@
 {
   "0": {
-    "basicblocks": 39,
+    "basicblocks": 198,
     "calls": "",
     "file": "ntt-kernel.cpp",
     "fileloc": 51,
-    "instructions": 210,
+    "instructions": 1187,
     "loads": {
-      "L": 9
+      "L": 142
     },
     "name": "ntt_kernel",
     "stores": {
-      "L": 8
+      "L": 122
     },
-    "total_instructions": 210
+    "total_instructions": 1187
   }
 }

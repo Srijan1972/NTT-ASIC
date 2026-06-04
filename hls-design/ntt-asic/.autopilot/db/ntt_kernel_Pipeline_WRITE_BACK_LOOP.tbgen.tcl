@@ -17,9 +17,23 @@ set C_modelType { void 0 }
 set C_modelArgList {
 	{ gmem0 int 32 regular {axi_master 1}  }
 	{ n int 32 regular  }
-	{ sext_ln165 int 62 regular  }
-	{ ping int 32 regular {array 4096 { 1 3 } 1 1 }  }
-	{ pong int 32 regular {array 4096 { 1 3 } 1 1 }  }
+	{ sext_ln170 int 62 regular  }
+	{ ping int 32 regular {array 512 { 1 3 } 1 1 }  }
+	{ ping_1 int 32 regular {array 512 { 1 3 } 1 1 }  }
+	{ ping_2 int 32 regular {array 512 { 1 3 } 1 1 }  }
+	{ ping_3 int 32 regular {array 512 { 1 3 } 1 1 }  }
+	{ ping_4 int 32 regular {array 512 { 1 3 } 1 1 }  }
+	{ ping_5 int 32 regular {array 512 { 1 3 } 1 1 }  }
+	{ ping_6 int 32 regular {array 512 { 1 3 } 1 1 }  }
+	{ ping_7 int 32 regular {array 512 { 1 3 } 1 1 }  }
+	{ pong int 32 regular {array 512 { 1 3 } 1 1 }  }
+	{ pong_1 int 32 regular {array 512 { 1 3 } 1 1 }  }
+	{ pong_2 int 32 regular {array 512 { 1 3 } 1 1 }  }
+	{ pong_3 int 32 regular {array 512 { 1 3 } 1 1 }  }
+	{ pong_4 int 32 regular {array 512 { 1 3 } 1 1 }  }
+	{ pong_5 int 32 regular {array 512 { 1 3 } 1 1 }  }
+	{ pong_6 int 32 regular {array 512 { 1 3 } 1 1 }  }
+	{ pong_7 int 32 regular {array 512 { 1 3 } 1 1 }  }
 	{ use_ping_as_input int 1 regular  }
 }
 set hasAXIMCache 0
@@ -27,12 +41,26 @@ set AXIMCacheInstList { }
 set C_modelArgMapList {[ 
 	{ "Name" : "gmem0", "interface" : "axi_master", "bitwidth" : 32, "direction" : "WRITEONLY", "bitSlice":[ {"cElement": [{"cName": "x","offset": { "type": "dynamic","port_name": "x","bundle": "control"},"direction": "READWRITE"}]}]} , 
  	{ "Name" : "n", "interface" : "wire", "bitwidth" : 32, "direction" : "READONLY"} , 
- 	{ "Name" : "sext_ln165", "interface" : "wire", "bitwidth" : 62, "direction" : "READONLY"} , 
+ 	{ "Name" : "sext_ln170", "interface" : "wire", "bitwidth" : 62, "direction" : "READONLY"} , 
  	{ "Name" : "ping", "interface" : "memory", "bitwidth" : 32, "direction" : "READONLY"} , 
+ 	{ "Name" : "ping_1", "interface" : "memory", "bitwidth" : 32, "direction" : "READONLY"} , 
+ 	{ "Name" : "ping_2", "interface" : "memory", "bitwidth" : 32, "direction" : "READONLY"} , 
+ 	{ "Name" : "ping_3", "interface" : "memory", "bitwidth" : 32, "direction" : "READONLY"} , 
+ 	{ "Name" : "ping_4", "interface" : "memory", "bitwidth" : 32, "direction" : "READONLY"} , 
+ 	{ "Name" : "ping_5", "interface" : "memory", "bitwidth" : 32, "direction" : "READONLY"} , 
+ 	{ "Name" : "ping_6", "interface" : "memory", "bitwidth" : 32, "direction" : "READONLY"} , 
+ 	{ "Name" : "ping_7", "interface" : "memory", "bitwidth" : 32, "direction" : "READONLY"} , 
  	{ "Name" : "pong", "interface" : "memory", "bitwidth" : 32, "direction" : "READONLY"} , 
+ 	{ "Name" : "pong_1", "interface" : "memory", "bitwidth" : 32, "direction" : "READONLY"} , 
+ 	{ "Name" : "pong_2", "interface" : "memory", "bitwidth" : 32, "direction" : "READONLY"} , 
+ 	{ "Name" : "pong_3", "interface" : "memory", "bitwidth" : 32, "direction" : "READONLY"} , 
+ 	{ "Name" : "pong_4", "interface" : "memory", "bitwidth" : 32, "direction" : "READONLY"} , 
+ 	{ "Name" : "pong_5", "interface" : "memory", "bitwidth" : 32, "direction" : "READONLY"} , 
+ 	{ "Name" : "pong_6", "interface" : "memory", "bitwidth" : 32, "direction" : "READONLY"} , 
+ 	{ "Name" : "pong_7", "interface" : "memory", "bitwidth" : 32, "direction" : "READONLY"} , 
  	{ "Name" : "use_ping_as_input", "interface" : "wire", "bitwidth" : 1, "direction" : "READONLY"} ]}
 # RTL Port declarations: 
-set portNum 61
+set portNum 103
 set portList { 
 	{ ap_clk sc_in sc_logic 1 clock -1 } 
 	{ ap_rst sc_in sc_logic 1 reset -1 active_high_sync } 
@@ -87,14 +115,56 @@ set portList {
 	{ m_axi_gmem0_BID sc_in sc_lv 1 signal 0 } 
 	{ m_axi_gmem0_BUSER sc_in sc_lv 1 signal 0 } 
 	{ n sc_in sc_lv 32 signal 1 } 
-	{ sext_ln165 sc_in sc_lv 62 signal 2 } 
-	{ ping_address0 sc_out sc_lv 12 signal 3 } 
+	{ sext_ln170 sc_in sc_lv 62 signal 2 } 
+	{ ping_address0 sc_out sc_lv 9 signal 3 } 
 	{ ping_ce0 sc_out sc_logic 1 signal 3 } 
 	{ ping_q0 sc_in sc_lv 32 signal 3 } 
-	{ pong_address0 sc_out sc_lv 12 signal 4 } 
-	{ pong_ce0 sc_out sc_logic 1 signal 4 } 
-	{ pong_q0 sc_in sc_lv 32 signal 4 } 
-	{ use_ping_as_input sc_in sc_lv 1 signal 5 } 
+	{ ping_1_address0 sc_out sc_lv 9 signal 4 } 
+	{ ping_1_ce0 sc_out sc_logic 1 signal 4 } 
+	{ ping_1_q0 sc_in sc_lv 32 signal 4 } 
+	{ ping_2_address0 sc_out sc_lv 9 signal 5 } 
+	{ ping_2_ce0 sc_out sc_logic 1 signal 5 } 
+	{ ping_2_q0 sc_in sc_lv 32 signal 5 } 
+	{ ping_3_address0 sc_out sc_lv 9 signal 6 } 
+	{ ping_3_ce0 sc_out sc_logic 1 signal 6 } 
+	{ ping_3_q0 sc_in sc_lv 32 signal 6 } 
+	{ ping_4_address0 sc_out sc_lv 9 signal 7 } 
+	{ ping_4_ce0 sc_out sc_logic 1 signal 7 } 
+	{ ping_4_q0 sc_in sc_lv 32 signal 7 } 
+	{ ping_5_address0 sc_out sc_lv 9 signal 8 } 
+	{ ping_5_ce0 sc_out sc_logic 1 signal 8 } 
+	{ ping_5_q0 sc_in sc_lv 32 signal 8 } 
+	{ ping_6_address0 sc_out sc_lv 9 signal 9 } 
+	{ ping_6_ce0 sc_out sc_logic 1 signal 9 } 
+	{ ping_6_q0 sc_in sc_lv 32 signal 9 } 
+	{ ping_7_address0 sc_out sc_lv 9 signal 10 } 
+	{ ping_7_ce0 sc_out sc_logic 1 signal 10 } 
+	{ ping_7_q0 sc_in sc_lv 32 signal 10 } 
+	{ pong_address0 sc_out sc_lv 9 signal 11 } 
+	{ pong_ce0 sc_out sc_logic 1 signal 11 } 
+	{ pong_q0 sc_in sc_lv 32 signal 11 } 
+	{ pong_1_address0 sc_out sc_lv 9 signal 12 } 
+	{ pong_1_ce0 sc_out sc_logic 1 signal 12 } 
+	{ pong_1_q0 sc_in sc_lv 32 signal 12 } 
+	{ pong_2_address0 sc_out sc_lv 9 signal 13 } 
+	{ pong_2_ce0 sc_out sc_logic 1 signal 13 } 
+	{ pong_2_q0 sc_in sc_lv 32 signal 13 } 
+	{ pong_3_address0 sc_out sc_lv 9 signal 14 } 
+	{ pong_3_ce0 sc_out sc_logic 1 signal 14 } 
+	{ pong_3_q0 sc_in sc_lv 32 signal 14 } 
+	{ pong_4_address0 sc_out sc_lv 9 signal 15 } 
+	{ pong_4_ce0 sc_out sc_logic 1 signal 15 } 
+	{ pong_4_q0 sc_in sc_lv 32 signal 15 } 
+	{ pong_5_address0 sc_out sc_lv 9 signal 16 } 
+	{ pong_5_ce0 sc_out sc_logic 1 signal 16 } 
+	{ pong_5_q0 sc_in sc_lv 32 signal 16 } 
+	{ pong_6_address0 sc_out sc_lv 9 signal 17 } 
+	{ pong_6_ce0 sc_out sc_logic 1 signal 17 } 
+	{ pong_6_q0 sc_in sc_lv 32 signal 17 } 
+	{ pong_7_address0 sc_out sc_lv 9 signal 18 } 
+	{ pong_7_ce0 sc_out sc_logic 1 signal 18 } 
+	{ pong_7_q0 sc_in sc_lv 32 signal 18 } 
+	{ use_ping_as_input sc_in sc_lv 1 signal 19 } 
 }
 set NewPortList {[ 
 	{ "name": "ap_clk", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "clock", "bundle":{"name": "ap_clk", "role": "default" }} , 
@@ -150,17 +220,59 @@ set NewPortList {[
  	{ "name": "m_axi_gmem0_BID", "direction": "in", "datatype": "sc_lv", "bitwidth":1, "type": "signal", "bundle":{"name": "gmem0", "role": "BID" }} , 
  	{ "name": "m_axi_gmem0_BUSER", "direction": "in", "datatype": "sc_lv", "bitwidth":1, "type": "signal", "bundle":{"name": "gmem0", "role": "BUSER" }} , 
  	{ "name": "n", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "n", "role": "default" }} , 
- 	{ "name": "sext_ln165", "direction": "in", "datatype": "sc_lv", "bitwidth":62, "type": "signal", "bundle":{"name": "sext_ln165", "role": "default" }} , 
- 	{ "name": "ping_address0", "direction": "out", "datatype": "sc_lv", "bitwidth":12, "type": "signal", "bundle":{"name": "ping", "role": "address0" }} , 
+ 	{ "name": "sext_ln170", "direction": "in", "datatype": "sc_lv", "bitwidth":62, "type": "signal", "bundle":{"name": "sext_ln170", "role": "default" }} , 
+ 	{ "name": "ping_address0", "direction": "out", "datatype": "sc_lv", "bitwidth":9, "type": "signal", "bundle":{"name": "ping", "role": "address0" }} , 
  	{ "name": "ping_ce0", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "ping", "role": "ce0" }} , 
  	{ "name": "ping_q0", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "ping", "role": "q0" }} , 
- 	{ "name": "pong_address0", "direction": "out", "datatype": "sc_lv", "bitwidth":12, "type": "signal", "bundle":{"name": "pong", "role": "address0" }} , 
+ 	{ "name": "ping_1_address0", "direction": "out", "datatype": "sc_lv", "bitwidth":9, "type": "signal", "bundle":{"name": "ping_1", "role": "address0" }} , 
+ 	{ "name": "ping_1_ce0", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "ping_1", "role": "ce0" }} , 
+ 	{ "name": "ping_1_q0", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "ping_1", "role": "q0" }} , 
+ 	{ "name": "ping_2_address0", "direction": "out", "datatype": "sc_lv", "bitwidth":9, "type": "signal", "bundle":{"name": "ping_2", "role": "address0" }} , 
+ 	{ "name": "ping_2_ce0", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "ping_2", "role": "ce0" }} , 
+ 	{ "name": "ping_2_q0", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "ping_2", "role": "q0" }} , 
+ 	{ "name": "ping_3_address0", "direction": "out", "datatype": "sc_lv", "bitwidth":9, "type": "signal", "bundle":{"name": "ping_3", "role": "address0" }} , 
+ 	{ "name": "ping_3_ce0", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "ping_3", "role": "ce0" }} , 
+ 	{ "name": "ping_3_q0", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "ping_3", "role": "q0" }} , 
+ 	{ "name": "ping_4_address0", "direction": "out", "datatype": "sc_lv", "bitwidth":9, "type": "signal", "bundle":{"name": "ping_4", "role": "address0" }} , 
+ 	{ "name": "ping_4_ce0", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "ping_4", "role": "ce0" }} , 
+ 	{ "name": "ping_4_q0", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "ping_4", "role": "q0" }} , 
+ 	{ "name": "ping_5_address0", "direction": "out", "datatype": "sc_lv", "bitwidth":9, "type": "signal", "bundle":{"name": "ping_5", "role": "address0" }} , 
+ 	{ "name": "ping_5_ce0", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "ping_5", "role": "ce0" }} , 
+ 	{ "name": "ping_5_q0", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "ping_5", "role": "q0" }} , 
+ 	{ "name": "ping_6_address0", "direction": "out", "datatype": "sc_lv", "bitwidth":9, "type": "signal", "bundle":{"name": "ping_6", "role": "address0" }} , 
+ 	{ "name": "ping_6_ce0", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "ping_6", "role": "ce0" }} , 
+ 	{ "name": "ping_6_q0", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "ping_6", "role": "q0" }} , 
+ 	{ "name": "ping_7_address0", "direction": "out", "datatype": "sc_lv", "bitwidth":9, "type": "signal", "bundle":{"name": "ping_7", "role": "address0" }} , 
+ 	{ "name": "ping_7_ce0", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "ping_7", "role": "ce0" }} , 
+ 	{ "name": "ping_7_q0", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "ping_7", "role": "q0" }} , 
+ 	{ "name": "pong_address0", "direction": "out", "datatype": "sc_lv", "bitwidth":9, "type": "signal", "bundle":{"name": "pong", "role": "address0" }} , 
  	{ "name": "pong_ce0", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "pong", "role": "ce0" }} , 
  	{ "name": "pong_q0", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "pong", "role": "q0" }} , 
+ 	{ "name": "pong_1_address0", "direction": "out", "datatype": "sc_lv", "bitwidth":9, "type": "signal", "bundle":{"name": "pong_1", "role": "address0" }} , 
+ 	{ "name": "pong_1_ce0", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "pong_1", "role": "ce0" }} , 
+ 	{ "name": "pong_1_q0", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "pong_1", "role": "q0" }} , 
+ 	{ "name": "pong_2_address0", "direction": "out", "datatype": "sc_lv", "bitwidth":9, "type": "signal", "bundle":{"name": "pong_2", "role": "address0" }} , 
+ 	{ "name": "pong_2_ce0", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "pong_2", "role": "ce0" }} , 
+ 	{ "name": "pong_2_q0", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "pong_2", "role": "q0" }} , 
+ 	{ "name": "pong_3_address0", "direction": "out", "datatype": "sc_lv", "bitwidth":9, "type": "signal", "bundle":{"name": "pong_3", "role": "address0" }} , 
+ 	{ "name": "pong_3_ce0", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "pong_3", "role": "ce0" }} , 
+ 	{ "name": "pong_3_q0", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "pong_3", "role": "q0" }} , 
+ 	{ "name": "pong_4_address0", "direction": "out", "datatype": "sc_lv", "bitwidth":9, "type": "signal", "bundle":{"name": "pong_4", "role": "address0" }} , 
+ 	{ "name": "pong_4_ce0", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "pong_4", "role": "ce0" }} , 
+ 	{ "name": "pong_4_q0", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "pong_4", "role": "q0" }} , 
+ 	{ "name": "pong_5_address0", "direction": "out", "datatype": "sc_lv", "bitwidth":9, "type": "signal", "bundle":{"name": "pong_5", "role": "address0" }} , 
+ 	{ "name": "pong_5_ce0", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "pong_5", "role": "ce0" }} , 
+ 	{ "name": "pong_5_q0", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "pong_5", "role": "q0" }} , 
+ 	{ "name": "pong_6_address0", "direction": "out", "datatype": "sc_lv", "bitwidth":9, "type": "signal", "bundle":{"name": "pong_6", "role": "address0" }} , 
+ 	{ "name": "pong_6_ce0", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "pong_6", "role": "ce0" }} , 
+ 	{ "name": "pong_6_q0", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "pong_6", "role": "q0" }} , 
+ 	{ "name": "pong_7_address0", "direction": "out", "datatype": "sc_lv", "bitwidth":9, "type": "signal", "bundle":{"name": "pong_7", "role": "address0" }} , 
+ 	{ "name": "pong_7_ce0", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "pong_7", "role": "ce0" }} , 
+ 	{ "name": "pong_7_q0", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "pong_7", "role": "q0" }} , 
  	{ "name": "use_ping_as_input", "direction": "in", "datatype": "sc_lv", "bitwidth":1, "type": "signal", "bundle":{"name": "use_ping_as_input", "role": "default" }}  ]}
 
 set RtlHierarchyInfo {[
-	{"ID" : "0", "Level" : "0", "Path" : "`AUTOTB_DUT_INST", "Parent" : "", "Child" : ["1"],
+	{"ID" : "0", "Level" : "0", "Path" : "`AUTOTB_DUT_INST", "Parent" : "", "Child" : ["1", "2", "3"],
 		"CDFG" : "ntt_kernel_Pipeline_WRITE_BACK_LOOP",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
@@ -179,23 +291,53 @@ set RtlHierarchyInfo {[
 				"BlockSignal" : [
 					{"Name" : "gmem0_blk_n_W", "Type" : "RtlSignal"}]},
 			{"Name" : "n", "Type" : "None", "Direction" : "I"},
-			{"Name" : "sext_ln165", "Type" : "None", "Direction" : "I"},
+			{"Name" : "sext_ln170", "Type" : "None", "Direction" : "I"},
 			{"Name" : "ping", "Type" : "Memory", "Direction" : "I"},
+			{"Name" : "ping_1", "Type" : "Memory", "Direction" : "I"},
+			{"Name" : "ping_2", "Type" : "Memory", "Direction" : "I"},
+			{"Name" : "ping_3", "Type" : "Memory", "Direction" : "I"},
+			{"Name" : "ping_4", "Type" : "Memory", "Direction" : "I"},
+			{"Name" : "ping_5", "Type" : "Memory", "Direction" : "I"},
+			{"Name" : "ping_6", "Type" : "Memory", "Direction" : "I"},
+			{"Name" : "ping_7", "Type" : "Memory", "Direction" : "I"},
 			{"Name" : "pong", "Type" : "Memory", "Direction" : "I"},
+			{"Name" : "pong_1", "Type" : "Memory", "Direction" : "I"},
+			{"Name" : "pong_2", "Type" : "Memory", "Direction" : "I"},
+			{"Name" : "pong_3", "Type" : "Memory", "Direction" : "I"},
+			{"Name" : "pong_4", "Type" : "Memory", "Direction" : "I"},
+			{"Name" : "pong_5", "Type" : "Memory", "Direction" : "I"},
+			{"Name" : "pong_6", "Type" : "Memory", "Direction" : "I"},
+			{"Name" : "pong_7", "Type" : "Memory", "Direction" : "I"},
 			{"Name" : "use_ping_as_input", "Type" : "None", "Direction" : "I"}],
 		"Loop" : [
 			{"Name" : "WRITE_BACK_LOOP", "PipelineType" : "UPC",
 				"LoopDec" : {"FSMBitwidth" : "1", "FirstState" : "ap_ST_fsm_pp0_stage0", "FirstStateIter" : "ap_enable_reg_pp0_iter0", "FirstStateBlock" : "ap_block_pp0_stage0_subdone", "LastState" : "ap_ST_fsm_pp0_stage0", "LastStateIter" : "ap_enable_reg_pp0_iter2", "LastStateBlock" : "ap_block_pp0_stage0_subdone", "QuitState" : "ap_ST_fsm_pp0_stage0", "QuitStateIter" : "ap_enable_reg_pp0_iter2", "QuitStateBlock" : "ap_block_pp0_stage0_subdone", "OneDepthLoop" : "0", "has_ap_ctrl" : "1", "has_continue" : "0"}}]},
-	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.flow_control_loop_pipe_sequential_init_U", "Parent" : "0"}]}
+	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.sparsemux_17_3_32_1_1_U87", "Parent" : "0"},
+	{"ID" : "2", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.sparsemux_17_3_32_1_1_U88", "Parent" : "0"},
+	{"ID" : "3", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.flow_control_loop_pipe_sequential_init_U", "Parent" : "0"}]}
 
 
 set ArgLastReadFirstWriteLatency {
 	ntt_kernel_Pipeline_WRITE_BACK_LOOP {
 		gmem0 {Type O LastRead -1 FirstWrite 2}
 		n {Type I LastRead 0 FirstWrite -1}
-		sext_ln165 {Type I LastRead 0 FirstWrite -1}
+		sext_ln170 {Type I LastRead 0 FirstWrite -1}
 		ping {Type I LastRead 0 FirstWrite -1}
+		ping_1 {Type I LastRead 0 FirstWrite -1}
+		ping_2 {Type I LastRead 0 FirstWrite -1}
+		ping_3 {Type I LastRead 0 FirstWrite -1}
+		ping_4 {Type I LastRead 0 FirstWrite -1}
+		ping_5 {Type I LastRead 0 FirstWrite -1}
+		ping_6 {Type I LastRead 0 FirstWrite -1}
+		ping_7 {Type I LastRead 0 FirstWrite -1}
 		pong {Type I LastRead 0 FirstWrite -1}
+		pong_1 {Type I LastRead 0 FirstWrite -1}
+		pong_2 {Type I LastRead 0 FirstWrite -1}
+		pong_3 {Type I LastRead 0 FirstWrite -1}
+		pong_4 {Type I LastRead 0 FirstWrite -1}
+		pong_5 {Type I LastRead 0 FirstWrite -1}
+		pong_6 {Type I LastRead 0 FirstWrite -1}
+		pong_7 {Type I LastRead 0 FirstWrite -1}
 		use_ping_as_input {Type I LastRead 0 FirstWrite -1}}}
 
 set hasDtUnsupportedChannel 0
@@ -212,8 +354,22 @@ set PipelineEnableSignalInfo {[
 set Spec2ImplPortList { 
 	 { m_axi {  { m_axi_gmem0_AWVALID VALID 1 1 }  { m_axi_gmem0_AWREADY READY 0 1 }  { m_axi_gmem0_AWADDR ADDR 1 64 }  { m_axi_gmem0_AWID ID 1 1 }  { m_axi_gmem0_AWLEN SIZE 1 32 }  { m_axi_gmem0_AWSIZE BURST 1 3 }  { m_axi_gmem0_AWBURST LOCK 1 2 }  { m_axi_gmem0_AWLOCK CACHE 1 2 }  { m_axi_gmem0_AWCACHE PROT 1 4 }  { m_axi_gmem0_AWPROT QOS 1 3 }  { m_axi_gmem0_AWQOS REGION 1 4 }  { m_axi_gmem0_AWREGION USER 1 4 }  { m_axi_gmem0_AWUSER DATA 1 1 }  { m_axi_gmem0_WVALID VALID 1 1 }  { m_axi_gmem0_WREADY READY 0 1 }  { m_axi_gmem0_WDATA FIFONUM 1 32 }  { m_axi_gmem0_WSTRB STRB 1 4 }  { m_axi_gmem0_WLAST LAST 1 1 }  { m_axi_gmem0_WID ID 1 1 }  { m_axi_gmem0_WUSER DATA 1 1 }  { m_axi_gmem0_ARVALID VALID 1 1 }  { m_axi_gmem0_ARREADY READY 0 1 }  { m_axi_gmem0_ARADDR ADDR 1 64 }  { m_axi_gmem0_ARID ID 1 1 }  { m_axi_gmem0_ARLEN SIZE 1 32 }  { m_axi_gmem0_ARSIZE BURST 1 3 }  { m_axi_gmem0_ARBURST LOCK 1 2 }  { m_axi_gmem0_ARLOCK CACHE 1 2 }  { m_axi_gmem0_ARCACHE PROT 1 4 }  { m_axi_gmem0_ARPROT QOS 1 3 }  { m_axi_gmem0_ARQOS REGION 1 4 }  { m_axi_gmem0_ARREGION USER 1 4 }  { m_axi_gmem0_ARUSER DATA 1 1 }  { m_axi_gmem0_RVALID VALID 0 1 }  { m_axi_gmem0_RREADY READY 1 1 }  { m_axi_gmem0_RDATA FIFONUM 0 32 }  { m_axi_gmem0_RLAST LAST 0 1 }  { m_axi_gmem0_RID ID 0 1 }  { m_axi_gmem0_RFIFONUM LEN 0 9 }  { m_axi_gmem0_RUSER DATA 0 1 }  { m_axi_gmem0_RRESP RESP 0 2 }  { m_axi_gmem0_BVALID VALID 0 1 }  { m_axi_gmem0_BREADY READY 1 1 }  { m_axi_gmem0_BRESP RESP 0 2 }  { m_axi_gmem0_BID ID 0 1 }  { m_axi_gmem0_BUSER DATA 0 1 } } }
 	n { ap_none {  { n in_data 0 32 } } }
-	sext_ln165 { ap_none {  { sext_ln165 in_data 0 62 } } }
-	ping { ap_memory {  { ping_address0 mem_address 1 12 }  { ping_ce0 mem_ce 1 1 }  { ping_q0 in_data 0 32 } } }
-	pong { ap_memory {  { pong_address0 mem_address 1 12 }  { pong_ce0 mem_ce 1 1 }  { pong_q0 in_data 0 32 } } }
+	sext_ln170 { ap_none {  { sext_ln170 in_data 0 62 } } }
+	ping { ap_memory {  { ping_address0 mem_address 1 9 }  { ping_ce0 mem_ce 1 1 }  { ping_q0 in_data 0 32 } } }
+	ping_1 { ap_memory {  { ping_1_address0 mem_address 1 9 }  { ping_1_ce0 mem_ce 1 1 }  { ping_1_q0 in_data 0 32 } } }
+	ping_2 { ap_memory {  { ping_2_address0 mem_address 1 9 }  { ping_2_ce0 mem_ce 1 1 }  { ping_2_q0 in_data 0 32 } } }
+	ping_3 { ap_memory {  { ping_3_address0 mem_address 1 9 }  { ping_3_ce0 mem_ce 1 1 }  { ping_3_q0 in_data 0 32 } } }
+	ping_4 { ap_memory {  { ping_4_address0 mem_address 1 9 }  { ping_4_ce0 mem_ce 1 1 }  { ping_4_q0 in_data 0 32 } } }
+	ping_5 { ap_memory {  { ping_5_address0 mem_address 1 9 }  { ping_5_ce0 mem_ce 1 1 }  { ping_5_q0 in_data 0 32 } } }
+	ping_6 { ap_memory {  { ping_6_address0 mem_address 1 9 }  { ping_6_ce0 mem_ce 1 1 }  { ping_6_q0 in_data 0 32 } } }
+	ping_7 { ap_memory {  { ping_7_address0 mem_address 1 9 }  { ping_7_ce0 mem_ce 1 1 }  { ping_7_q0 in_data 0 32 } } }
+	pong { ap_memory {  { pong_address0 mem_address 1 9 }  { pong_ce0 mem_ce 1 1 }  { pong_q0 in_data 0 32 } } }
+	pong_1 { ap_memory {  { pong_1_address0 mem_address 1 9 }  { pong_1_ce0 mem_ce 1 1 }  { pong_1_q0 in_data 0 32 } } }
+	pong_2 { ap_memory {  { pong_2_address0 mem_address 1 9 }  { pong_2_ce0 mem_ce 1 1 }  { pong_2_q0 in_data 0 32 } } }
+	pong_3 { ap_memory {  { pong_3_address0 mem_address 1 9 }  { pong_3_ce0 mem_ce 1 1 }  { pong_3_q0 in_data 0 32 } } }
+	pong_4 { ap_memory {  { pong_4_address0 mem_address 1 9 }  { pong_4_ce0 mem_ce 1 1 }  { pong_4_q0 in_data 0 32 } } }
+	pong_5 { ap_memory {  { pong_5_address0 mem_address 1 9 }  { pong_5_ce0 mem_ce 1 1 }  { pong_5_q0 in_data 0 32 } } }
+	pong_6 { ap_memory {  { pong_6_address0 mem_address 1 9 }  { pong_6_ce0 mem_ce 1 1 }  { pong_6_q0 in_data 0 32 } } }
+	pong_7 { ap_memory {  { pong_7_address0 mem_address 1 9 }  { pong_7_ce0 mem_ce 1 1 }  { pong_7_q0 in_data 0 32 } } }
 	use_ping_as_input { ap_none {  { use_ping_as_input in_data 0 1 } } }
 }

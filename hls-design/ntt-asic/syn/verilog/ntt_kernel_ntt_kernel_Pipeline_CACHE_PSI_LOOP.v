@@ -60,7 +60,7 @@ module ntt_kernel_ntt_kernel_Pipeline_CACHE_PSI_LOOP (
         m_axi_gmem1_BID,
         m_axi_gmem1_BUSER,
         n,
-        sext_ln91,
+        sext_ln94,
         local_psi_address1,
         local_psi_ce1,
         local_psi_we1,
@@ -122,7 +122,7 @@ input  [1:0] m_axi_gmem1_BRESP;
 input  [0:0] m_axi_gmem1_BID;
 input  [0:0] m_axi_gmem1_BUSER;
 input  [31:0] n;
-input  [61:0] sext_ln91;
+input  [61:0] sext_ln94;
 output  [11:0] local_psi_address1;
 output   local_psi_ce1;
 output   local_psi_we1;
@@ -141,7 +141,7 @@ reg    ap_enable_reg_pp0_iter2;
 reg    ap_idle_pp0;
 reg    ap_block_state2_pp0_stage0_iter1;
 reg    ap_block_pp0_stage0_subdone;
-wire   [0:0] icmp_ln91_fu_118_p2;
+wire   [0:0] icmp_ln94_fu_118_p2;
 reg    ap_condition_exit_pp0_iter0_stage0;
 wire    ap_loop_exit_ready;
 reg    ap_ready_int;
@@ -150,14 +150,14 @@ wire    ap_block_pp0_stage0;
 reg    ap_block_pp0_stage0_11001;
 reg   [12:0] i_reg_161;
 reg   [12:0] i_reg_161_pp0_iter1_reg;
-wire   [11:0] trunc_ln94_fu_141_p1;
-reg   [11:0] trunc_ln94_reg_170;
-wire   [63:0] zext_ln91_1_fu_145_p1;
+wire   [11:0] trunc_ln97_fu_141_p1;
+reg   [11:0] trunc_ln97_reg_170;
+wire   [63:0] zext_ln94_1_fu_145_p1;
 reg   [12:0] i_1_fu_64;
-wire   [12:0] add_ln91_fu_124_p2;
+wire   [12:0] add_ln94_fu_124_p2;
 wire    ap_loop_init;
 reg   [12:0] ap_sig_allocacmp_i;
-wire   [31:0] zext_ln91_fu_114_p1;
+wire   [31:0] zext_ln94_fu_114_p1;
 reg    ap_done_reg;
 wire    ap_continue_int;
 reg    ap_done_int;
@@ -235,8 +235,8 @@ end
 
 always @ (posedge ap_clk) begin
     if (((1'b0 == ap_block_pp0_stage0_11001) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
-        if (((icmp_ln91_fu_118_p2 == 1'd1) & (ap_enable_reg_pp0_iter0 == 1'b1))) begin
-            i_1_fu_64 <= add_ln91_fu_124_p2;
+        if (((icmp_ln94_fu_118_p2 == 1'd1) & (ap_enable_reg_pp0_iter0 == 1'b1))) begin
+            i_1_fu_64 <= add_ln94_fu_124_p2;
         end else if ((ap_loop_init == 1'b1)) begin
             i_1_fu_64 <= 13'd0;
         end
@@ -248,12 +248,12 @@ always @ (posedge ap_clk) begin
         ap_loop_exit_ready_pp0_iter1_reg <= ap_loop_exit_ready;
         i_reg_161 <= ap_sig_allocacmp_i;
         i_reg_161_pp0_iter1_reg <= i_reg_161;
-        trunc_ln94_reg_170 <= trunc_ln94_fu_141_p1;
+        trunc_ln97_reg_170 <= trunc_ln97_fu_141_p1;
     end
 end
 
 always @ (*) begin
-    if (((icmp_ln91_fu_118_p2 == 1'd0) & (1'b0 == ap_block_pp0_stage0_subdone) & (ap_enable_reg_pp0_iter0 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
+    if (((icmp_ln94_fu_118_p2 == 1'd0) & (1'b0 == ap_block_pp0_stage0_subdone) & (ap_enable_reg_pp0_iter0 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
         ap_condition_exit_pp0_iter0_stage0 = 1'b1;
     end else begin
         ap_condition_exit_pp0_iter0_stage0 = 1'b0;
@@ -343,7 +343,7 @@ always @ (*) begin
     endcase
 end
 
-assign add_ln91_fu_124_p2 = (ap_sig_allocacmp_i + 13'd1);
+assign add_ln94_fu_124_p2 = (ap_sig_allocacmp_i + 13'd1);
 
 assign ap_CS_fsm_pp0_stage0 = ap_CS_fsm[32'd0];
 
@@ -367,11 +367,11 @@ assign ap_enable_reg_pp0_iter0 = ap_start_int;
 
 assign ap_loop_exit_ready = ap_condition_exit_pp0_iter0_stage0;
 
-assign icmp_ln91_fu_118_p2 = (($signed(zext_ln91_fu_114_p1) < $signed(n)) ? 1'b1 : 1'b0);
+assign icmp_ln94_fu_118_p2 = (($signed(zext_ln94_fu_114_p1) < $signed(n)) ? 1'b1 : 1'b0);
 
-assign local_psi_address1 = zext_ln91_1_fu_145_p1;
+assign local_psi_address1 = zext_ln94_1_fu_145_p1;
 
-assign local_psi_d1 = trunc_ln94_reg_170;
+assign local_psi_d1 = trunc_ln97_reg_170;
 
 assign m_axi_gmem1_ARADDR = 64'd0;
 
@@ -435,10 +435,10 @@ assign m_axi_gmem1_WUSER = 1'd0;
 
 assign m_axi_gmem1_WVALID = 1'b0;
 
-assign trunc_ln94_fu_141_p1 = m_axi_gmem1_RDATA[11:0];
+assign trunc_ln97_fu_141_p1 = m_axi_gmem1_RDATA[11:0];
 
-assign zext_ln91_1_fu_145_p1 = i_reg_161_pp0_iter1_reg;
+assign zext_ln94_1_fu_145_p1 = i_reg_161_pp0_iter1_reg;
 
-assign zext_ln91_fu_114_p1 = ap_sig_allocacmp_i;
+assign zext_ln94_fu_114_p1 = ap_sig_allocacmp_i;
 
 endmodule //ntt_kernel_ntt_kernel_Pipeline_CACHE_PSI_LOOP

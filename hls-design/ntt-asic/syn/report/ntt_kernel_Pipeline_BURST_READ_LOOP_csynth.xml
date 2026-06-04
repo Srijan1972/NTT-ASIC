@@ -61,13 +61,13 @@
 <SummaryOfViolations>
 <IssueType>-</IssueType>
 <ViolationType>-</ViolationType>
-<SourceLocation>hls-design/ntt-kernel.cpp:103</SourceLocation>
+<SourceLocation>hls-design/ntt-kernel.cpp:106</SourceLocation>
 <SummaryOfLoopViolations>
 <BURST_READ_LOOP>
 <Name>BURST_READ_LOOP</Name>
 <IssueType>-</IssueType>
 <ViolationType>-</ViolationType>
-<SourceLocation>hls-design/ntt-kernel.cpp:103</SourceLocation>
+<SourceLocation>hls-design/ntt-kernel.cpp:106</SourceLocation>
 </BURST_READ_LOOP>
 </SummaryOfLoopViolations>
 </SummaryOfViolations>
@@ -675,8 +675,8 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>sext_ln103</name>
-<Object>sext_ln103</Object>
+<name>sext_ln106</name>
+<Object>sext_ln106</Object>
 <Type>scalar</Type>
 <Scope></Scope>
 <IOProtocol>ap_none</IOProtocol>

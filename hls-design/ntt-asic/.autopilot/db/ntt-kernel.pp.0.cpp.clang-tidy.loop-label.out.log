@@ -138,12 +138,12 @@
 /home/sg9109/Documents/hls-design/ntt-asic/.autopilot/db/ntt-kernel.pp.0.cpp:20631:55: error: Invalid Directive: for current device, ram_2p + bram is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
 #pragma HLS BIND_STORAGE variable=local_twiddles type=ram_2p impl=bram
                                                       ^
-/home/sg9109/Documents/hls-design/ntt-asic/.autopilot/db/ntt-kernel.pp.0.cpp:20633:50: error: Invalid Directive: for current device, ram_2p + bram is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+/home/sg9109/Documents/hls-design/ntt-asic/.autopilot/db/ntt-kernel.pp.0.cpp:20634:50: error: Invalid Directive: for current device, ram_2p + bram is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
 #pragma HLS BIND_STORAGE variable=local_psi type=ram_2p impl=bram
                                                  ^
-/home/sg9109/Documents/hls-design/ntt-asic/.autopilot/db/ntt-kernel.pp.0.cpp:20637:45: error: Invalid Directive: for current device, ram_2p + bram is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+/home/sg9109/Documents/hls-design/ntt-asic/.autopilot/db/ntt-kernel.pp.0.cpp:20638:45: error: Invalid Directive: for current device, ram_2p + bram is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
 #pragma HLS BIND_STORAGE variable=ping type=ram_2p impl=bram
                                             ^
-/home/sg9109/Documents/hls-design/ntt-asic/.autopilot/db/ntt-kernel.pp.0.cpp:20639:45: error: Invalid Directive: for current device, ram_2p + bram is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+/home/sg9109/Documents/hls-design/ntt-asic/.autopilot/db/ntt-kernel.pp.0.cpp:20641:45: error: Invalid Directive: for current device, ram_2p + bram is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
 #pragma HLS BIND_STORAGE variable=pong type=ram_2p impl=bram
                                             ^

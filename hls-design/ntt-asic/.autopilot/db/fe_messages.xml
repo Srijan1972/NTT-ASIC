@@ -131,65 +131,89 @@
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="hls-design/ntt-kernel.cpp:73:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="ntt_kernel" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=local_twiddles type=ram_2p impl=bram" ARG_PragmaType="bind_storage" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="hls-design/ntt-kernel.cpp:75:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="hls-design/ntt-kernel.cpp:74:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="ntt_kernel" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=local_twiddles cyclic factor=4 dim=1" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="hls-design/ntt-kernel.cpp:76:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="ntt_kernel" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=local_psi type=ram_2p impl=bram" ARG_PragmaType="bind_storage" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="hls-design/ntt-kernel.cpp:79:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="hls-design/ntt-kernel.cpp:80:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="ntt_kernel" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=ping type=ram_2p impl=bram" ARG_PragmaType="bind_storage" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="hls-design/ntt-kernel.cpp:81:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="ntt_kernel" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=ping cyclic factor=8 dim=1" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="hls-design/ntt-kernel.cpp:83:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="ntt_kernel" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=pong type=ram_2p impl=bram" ARG_PragmaType="bind_storage" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="hls-design/ntt-kernel.cpp:85:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="hls-design/ntt-kernel.cpp:84:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="ntt_kernel" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=pong cyclic factor=8 dim=1" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="hls-design/ntt-kernel.cpp:88:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="ntt_kernel" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="hls-design/ntt-kernel.cpp:86:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="hls-design/ntt-kernel.cpp:89:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="ntt_kernel" ARG_PragmaIsValid="1" ARG_PragmaOptions="min=255 max=4095" ARG_PragmaType="loop_tripcount" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="hls-design/ntt-kernel.cpp:92:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="hls-design/ntt-kernel.cpp:95:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="ntt_kernel" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="hls-design/ntt-kernel.cpp:93:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="hls-design/ntt-kernel.cpp:96:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="ntt_kernel" ARG_PragmaIsValid="1" ARG_PragmaOptions="min=256 max=4096" ARG_PragmaType="loop_tripcount" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="hls-design/ntt-kernel.cpp:98:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="hls-design/ntt-kernel.cpp:101:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="ntt_kernel" ARG_PragmaIsValid="1" ARG_PragmaOptions="min=1 max=16" ARG_PragmaType="loop_tripcount" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="hls-design/ntt-kernel.cpp:104:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="hls-design/ntt-kernel.cpp:107:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="ntt_kernel" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="hls-design/ntt-kernel.cpp:105:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="hls-design/ntt-kernel.cpp:108:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="ntt_kernel" ARG_PragmaIsValid="1" ARG_PragmaOptions="min=256 max=4096" ARG_PragmaType="loop_tripcount" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="hls-design/ntt-kernel.cpp:111:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="hls-design/ntt-kernel.cpp:114:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="ntt_kernel" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="hls-design/ntt-kernel.cpp:112:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="hls-design/ntt-kernel.cpp:115:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="ntt_kernel" ARG_PragmaIsValid="1" ARG_PragmaOptions="min=256 max=4096" ARG_PragmaType="loop_tripcount" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="hls-design/ntt-kernel.cpp:122:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="hls-design/ntt-kernel.cpp:125:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="ntt_kernel" ARG_PragmaIsValid="1" ARG_PragmaOptions="min=1 max=12" ARG_PragmaType="loop_tripcount" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="hls-design/ntt-kernel.cpp:127:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="hls-design/ntt-kernel.cpp:131:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="ntt_kernel" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="hls-design/ntt-kernel.cpp:128:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="hls-design/ntt-kernel.cpp:132:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="ntt_kernel" ARG_PragmaIsValid="1" ARG_PragmaOptions="min=128 max=2048" ARG_PragmaType="loop_tripcount" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="hls-design/ntt-kernel.cpp:166:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="hls-design/ntt-kernel.cpp:133:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="ntt_kernel" ARG_PragmaIsValid="1" ARG_PragmaOptions="factor=4" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="hls-design/ntt-kernel.cpp:171:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="ntt_kernel" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="hls-design/ntt-kernel.cpp:167:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="hls-design/ntt-kernel.cpp:172:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="ntt_kernel" ARG_PragmaIsValid="1" ARG_PragmaOptions="min=256 max=4096" ARG_PragmaType="loop_tripcount" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="hls-design/ntt-kernel.cpp:146:27" msg_body="Inlining function 'mod_mul(unsigned int, unsigned int, unsigned int, unsigned int)' into 'ntt_kernel'">
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="hls-design/ntt-kernel.cpp:151:27" msg_body="Inlining function 'mod_mul(unsigned int, unsigned int, unsigned int, unsigned int)' into 'ntt_kernel'">
         <args Callee="mod_mul(unsigned int, unsigned int, unsigned int, unsigned int)" Callee-DebugLoc="File hls-design/ntt-kernel.cpp Line 19 Column 0" Caller="ntt_kernel" Caller-DebugLoc="File hls-design/ntt-kernel.cpp Line 59 Column 0"/>
     </msg>
-    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="hls-design/ntt-kernel.cpp:148:31" msg_body="Inlining function 'mod_sub(unsigned int, unsigned int, unsigned int)' into 'ntt_kernel'">
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="hls-design/ntt-kernel.cpp:153:31" msg_body="Inlining function 'mod_sub(unsigned int, unsigned int, unsigned int)' into 'ntt_kernel'">
         <args Callee="mod_sub(unsigned int, unsigned int, unsigned int)" Callee-DebugLoc="File hls-design/ntt-kernel.cpp Line 14 Column 0" Caller="ntt_kernel" Caller-DebugLoc="File hls-design/ntt-kernel.cpp Line 59 Column 0"/>
     </msg>
-    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="hls-design/ntt-kernel.cpp:147:31" msg_body="Inlining function 'mod_add(unsigned int, unsigned int, unsigned int)' into 'ntt_kernel'">
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="hls-design/ntt-kernel.cpp:152:31" msg_body="Inlining function 'mod_add(unsigned int, unsigned int, unsigned int)' into 'ntt_kernel'">
         <args Callee="mod_add(unsigned int, unsigned int, unsigned int)" Callee-DebugLoc="File hls-design/ntt-kernel.cpp Line 8 Column 0" Caller="ntt_kernel" Caller-DebugLoc="File hls-design/ntt-kernel.cpp Line 59 Column 0"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-188" msg_severity="INFO" msg_loc="hls-design/ntt-kernel.cpp:59:0" msg_body="Unrolling loop 'FLATTENED_BUTTERFLY_LOOP' (hls-design/ntt-kernel.cpp:130:36) in function 'ntt_kernel' partially with a factor of 4">
+        <args Factor="4" LoopLoc="hls-design/ntt-kernel.cpp:130:36" LoopName="FLATTENED_BUTTERFLY_LOOP"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="hls-design/ntt-kernel.cpp:72:11" msg_body="Applying array_partition to 'local_twiddles': Cyclic partitioning with factor 4 on dimension 1.">
+        <args Dim="1" Factor="4" Mode="Cyclic" UOName="local_twiddles"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="hls-design/ntt-kernel.cpp:79:11" msg_body="Applying array_partition to 'ping': Cyclic partitioning with factor 8 on dimension 1.">
+        <args Dim="1" Factor="8" Mode="Cyclic" UOName="ping"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="hls-design/ntt-kernel.cpp:82:11" msg_body="Applying array_partition to 'pong': Cyclic partitioning with factor 8 on dimension 1.">
+        <args Dim="1" Factor="8" Mode="Cyclic" UOName="pong"/>
     </msg>
 </xilinx:hls_fe_msgs>
 

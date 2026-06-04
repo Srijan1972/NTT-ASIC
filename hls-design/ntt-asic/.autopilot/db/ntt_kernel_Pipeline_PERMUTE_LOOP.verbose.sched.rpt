@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'ntt_kernel_Pipeline_PERMUTE_LOOP'
 ================================================================
-* Date:           Mon Jun  1 21:40:40 2026
+* Date:           Thu Jun  4 11:24:39 2026
 
 * Version:        2023.2 (Build 4023990 on Oct 11 2023)
 * Project:        hls-design
@@ -86,37 +86,70 @@ IsGatedGlobalClock: 0
 * FSM state operations: 
 
 State 1 <SV = 0> <Delay = 1.85>
-ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%i = alloca i32 1" [hls-design/ntt-kernel.cpp:110]   --->   Operation 6 'alloca' 'i' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%i = alloca i32 1" [hls-design/ntt-kernel.cpp:113]   --->   Operation 6 'alloca' 'i' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i32 %ping, i64 666, i64 22, i64 18446744073709551615"   --->   Operation 7 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i12 %local_psi, i64 666, i64 22, i64 18446744073709551615"   --->   Operation 8 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%n_read = read i31 @_ssdm_op_Read.ap_auto.i31, i31 %n"   --->   Operation 9 'read' 'n_read' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 10 [1/1] (0.42ns)   --->   "%store_ln110 = store i13 0, i13 %i" [hls-design/ntt-kernel.cpp:110]   --->   Operation 10 'store' 'store_ln110' <Predicate = true> <Delay = 0.42>
-ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%br_ln0 = br void %for.inc42"   --->   Operation 11 'br' 'br_ln0' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%i_2 = load i13 %i" [hls-design/ntt-kernel.cpp:110]   --->   Operation 12 'load' 'i_2' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%zext_ln110_1 = zext i13 %i_2" [hls-design/ntt-kernel.cpp:110]   --->   Operation 13 'zext' 'zext_ln110_1' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 14 [1/1] (1.00ns)   --->   "%icmp_ln110 = icmp_eq  i31 %zext_ln110_1, i31 %n_read" [hls-design/ntt-kernel.cpp:110]   --->   Operation 14 'icmp' 'icmp_ln110' <Predicate = true> <Delay = 1.00> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.00> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
-ST_1 : Operation 15 [1/1] (0.82ns)   --->   "%add_ln110 = add i13 %i_2, i13 1" [hls-design/ntt-kernel.cpp:110]   --->   Operation 15 'add' 'add_ln110' <Predicate = true> <Delay = 0.82> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.82> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
-ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%br_ln110 = br i1 %icmp_ln110, void %for.inc42.split, void %STAGE_LOOP.loopexit.exitStub" [hls-design/ntt-kernel.cpp:110]   --->   Operation 16 'br' 'br_ln110' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 17 [1/1] (0.00ns)   --->   "%zext_ln110 = zext i13 %i_2" [hls-design/ntt-kernel.cpp:110]   --->   Operation 17 'zext' 'zext_ln110' <Predicate = (!icmp_ln110)> <Delay = 0.00>
-ST_1 : Operation 18 [1/1] (0.00ns)   --->   "%local_psi_addr = getelementptr i12 %local_psi, i64 0, i64 %zext_ln110" [hls-design/ntt-kernel.cpp:113]   --->   Operation 18 'getelementptr' 'local_psi_addr' <Predicate = (!icmp_ln110)> <Delay = 0.00>
-ST_1 : Operation 19 [2/2] (1.23ns)   --->   "%local_psi_load = load i12 %local_psi_addr" [hls-design/ntt-kernel.cpp:113]   --->   Operation 19 'load' 'local_psi_load' <Predicate = (!icmp_ln110)> <Delay = 1.23> <CoreInst = "RAM_2P_BRAM">   --->   Core 94 'RAM_2P_BRAM' <Latency = 1> <II = 1> <Delay = 1.23> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 12> <Depth = 4096> <RAM>
-ST_1 : Operation 20 [1/1] (0.42ns)   --->   "%store_ln110 = store i13 %add_ln110, i13 %i" [hls-design/ntt-kernel.cpp:110]   --->   Operation 20 'store' 'store_ln110' <Predicate = (!icmp_ln110)> <Delay = 0.42>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i32 %ping_1, i64 666, i64 22, i64 18446744073709551615"   --->   Operation 8 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i32 %ping_2, i64 666, i64 22, i64 18446744073709551615"   --->   Operation 9 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i32 %ping_3, i64 666, i64 22, i64 18446744073709551615"   --->   Operation 10 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i32 %ping_4, i64 666, i64 22, i64 18446744073709551615"   --->   Operation 11 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i32 %ping_5, i64 666, i64 22, i64 18446744073709551615"   --->   Operation 12 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i32 %ping_6, i64 666, i64 22, i64 18446744073709551615"   --->   Operation 13 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i32 %ping_7, i64 666, i64 22, i64 18446744073709551615"   --->   Operation 14 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 15 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i12 %local_psi, i64 666, i64 22, i64 18446744073709551615"   --->   Operation 15 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%n_read = read i31 @_ssdm_op_Read.ap_auto.i31, i31 %n"   --->   Operation 16 'read' 'n_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 17 [1/1] (0.42ns)   --->   "%store_ln113 = store i13 0, i13 %i" [hls-design/ntt-kernel.cpp:113]   --->   Operation 17 'store' 'store_ln113' <Predicate = true> <Delay = 0.42>
+ST_1 : Operation 18 [1/1] (0.00ns)   --->   "%br_ln0 = br void %for.inc42"   --->   Operation 18 'br' 'br_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 19 [1/1] (0.00ns)   --->   "%i_2 = load i13 %i" [hls-design/ntt-kernel.cpp:113]   --->   Operation 19 'load' 'i_2' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 20 [1/1] (0.00ns)   --->   "%zext_ln113_1 = zext i13 %i_2" [hls-design/ntt-kernel.cpp:113]   --->   Operation 20 'zext' 'zext_ln113_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 21 [1/1] (1.00ns)   --->   "%icmp_ln113 = icmp_eq  i31 %zext_ln113_1, i31 %n_read" [hls-design/ntt-kernel.cpp:113]   --->   Operation 21 'icmp' 'icmp_ln113' <Predicate = true> <Delay = 1.00> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.00> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 22 [1/1] (0.82ns)   --->   "%add_ln113 = add i13 %i_2, i13 1" [hls-design/ntt-kernel.cpp:113]   --->   Operation 22 'add' 'add_ln113' <Predicate = true> <Delay = 0.82> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.82> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 23 [1/1] (0.00ns)   --->   "%br_ln113 = br i1 %icmp_ln113, void %for.inc42.split, void %STAGE_LOOP.loopexit.exitStub" [hls-design/ntt-kernel.cpp:113]   --->   Operation 23 'br' 'br_ln113' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 24 [1/1] (0.00ns)   --->   "%zext_ln113 = zext i13 %i_2" [hls-design/ntt-kernel.cpp:113]   --->   Operation 24 'zext' 'zext_ln113' <Predicate = (!icmp_ln113)> <Delay = 0.00>
+ST_1 : Operation 25 [1/1] (0.00ns)   --->   "%trunc_ln113 = trunc i13 %i_2" [hls-design/ntt-kernel.cpp:113]   --->   Operation 25 'trunc' 'trunc_ln113' <Predicate = (!icmp_ln113)> <Delay = 0.00>
+ST_1 : Operation 26 [1/1] (0.00ns)   --->   "%lshr_ln1 = partselect i9 @_ssdm_op_PartSelect.i9.i13.i32.i32, i13 %i_2, i32 3, i32 11" [hls-design/ntt-kernel.cpp:113]   --->   Operation 26 'partselect' 'lshr_ln1' <Predicate = (!icmp_ln113)> <Delay = 0.00>
+ST_1 : Operation 27 [1/1] (0.00ns)   --->   "%local_psi_addr = getelementptr i12 %local_psi, i64 0, i64 %zext_ln113" [hls-design/ntt-kernel.cpp:116]   --->   Operation 27 'getelementptr' 'local_psi_addr' <Predicate = (!icmp_ln113)> <Delay = 0.00>
+ST_1 : Operation 28 [2/2] (1.23ns)   --->   "%local_psi_load = load i12 %local_psi_addr" [hls-design/ntt-kernel.cpp:116]   --->   Operation 28 'load' 'local_psi_load' <Predicate = (!icmp_ln113)> <Delay = 1.23> <CoreInst = "RAM_2P_BRAM">   --->   Core 94 'RAM_2P_BRAM' <Latency = 1> <II = 1> <Delay = 1.23> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 12> <Depth = 4096> <RAM>
+ST_1 : Operation 29 [1/1] (0.73ns)   --->   "%switch_ln116 = switch i3 %trunc_ln113, void %arrayidx41.case.7, i3 0, void %arrayidx41.case.0, i3 1, void %arrayidx41.case.1, i3 2, void %arrayidx41.case.2, i3 3, void %arrayidx41.case.3, i3 4, void %arrayidx41.case.4, i3 5, void %arrayidx41.case.5, i3 6, void %arrayidx41.case.6" [hls-design/ntt-kernel.cpp:116]   --->   Operation 29 'switch' 'switch_ln116' <Predicate = (!icmp_ln113)> <Delay = 0.73>
+ST_1 : Operation 30 [1/1] (0.42ns)   --->   "%store_ln113 = store i13 %add_ln113, i13 %i" [hls-design/ntt-kernel.cpp:113]   --->   Operation 30 'store' 'store_ln113' <Predicate = (!icmp_ln113)> <Delay = 0.42>
+ST_1 : Operation 31 [1/1] (0.00ns)   --->   "%br_ln113 = br void %for.inc42" [hls-design/ntt-kernel.cpp:113]   --->   Operation 31 'br' 'br_ln113' <Predicate = (!icmp_ln113)> <Delay = 0.00>
 
 State 2 <SV = 1> <Delay = 2.47>
-ST_2 : Operation 21 [1/2] (1.23ns)   --->   "%local_psi_load = load i12 %local_psi_addr" [hls-design/ntt-kernel.cpp:113]   --->   Operation 21 'load' 'local_psi_load' <Predicate = true> <Delay = 1.23> <CoreInst = "RAM_2P_BRAM">   --->   Core 94 'RAM_2P_BRAM' <Latency = 1> <II = 1> <Delay = 1.23> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 12> <Depth = 4096> <RAM>
-ST_2 : Operation 22 [1/1] (0.00ns)   --->   "%zext_ln113 = zext i12 %local_psi_load" [hls-design/ntt-kernel.cpp:113]   --->   Operation 22 'zext' 'zext_ln113' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 23 [1/1] (0.00ns)   --->   "%burst_buffer_addr = getelementptr i32 %burst_buffer, i64 0, i64 %zext_ln113" [hls-design/ntt-kernel.cpp:113]   --->   Operation 23 'getelementptr' 'burst_buffer_addr' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 24 [2/2] (1.23ns)   --->   "%burst_buffer_load = load i12 %burst_buffer_addr" [hls-design/ntt-kernel.cpp:113]   --->   Operation 24 'load' 'burst_buffer_load' <Predicate = true> <Delay = 1.23> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.23> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 4096> <RAM>
-ST_2 : Operation 32 [1/1] (0.00ns)   --->   "%ret_ln0 = ret"   --->   Operation 32 'ret' 'ret_ln0' <Predicate = (icmp_ln110)> <Delay = 0.00>
+ST_2 : Operation 32 [1/2] (1.23ns)   --->   "%local_psi_load = load i12 %local_psi_addr" [hls-design/ntt-kernel.cpp:116]   --->   Operation 32 'load' 'local_psi_load' <Predicate = true> <Delay = 1.23> <CoreInst = "RAM_2P_BRAM">   --->   Core 94 'RAM_2P_BRAM' <Latency = 1> <II = 1> <Delay = 1.23> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 12> <Depth = 4096> <RAM>
+ST_2 : Operation 33 [1/1] (0.00ns)   --->   "%zext_ln116 = zext i12 %local_psi_load" [hls-design/ntt-kernel.cpp:116]   --->   Operation 33 'zext' 'zext_ln116' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 34 [1/1] (0.00ns)   --->   "%burst_buffer_addr = getelementptr i32 %burst_buffer, i64 0, i64 %zext_ln116" [hls-design/ntt-kernel.cpp:116]   --->   Operation 34 'getelementptr' 'burst_buffer_addr' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 35 [2/2] (1.23ns)   --->   "%burst_buffer_load = load i12 %burst_buffer_addr" [hls-design/ntt-kernel.cpp:116]   --->   Operation 35 'load' 'burst_buffer_load' <Predicate = true> <Delay = 1.23> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.23> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 4096> <RAM>
+ST_2 : Operation 65 [1/1] (0.00ns)   --->   "%ret_ln0 = ret"   --->   Operation 65 'ret' 'ret_ln0' <Predicate = (icmp_ln113)> <Delay = 0.00>
 
 State 3 <SV = 2> <Delay = 2.47>
-ST_3 : Operation 25 [1/1] (0.00ns)   --->   "%specpipeline_ln111 = specpipeline void @_ssdm_op_SpecPipeline, i32 1, i32 0, i32 0, i32 0, void @empty_22" [hls-design/ntt-kernel.cpp:111]   --->   Operation 25 'specpipeline' 'specpipeline_ln111' <Predicate = true> <Delay = 0.00>
-ST_3 : Operation 26 [1/1] (0.00ns)   --->   "%speclooptripcount_ln112 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 256, i64 4096, i64 2176" [hls-design/ntt-kernel.cpp:112]   --->   Operation 26 'speclooptripcount' 'speclooptripcount_ln112' <Predicate = true> <Delay = 0.00>
-ST_3 : Operation 27 [1/1] (0.00ns)   --->   "%specloopname_ln110 = specloopname void @_ssdm_op_SpecLoopName, void @empty_23" [hls-design/ntt-kernel.cpp:110]   --->   Operation 27 'specloopname' 'specloopname_ln110' <Predicate = true> <Delay = 0.00>
-ST_3 : Operation 28 [1/2] (1.23ns)   --->   "%burst_buffer_load = load i12 %burst_buffer_addr" [hls-design/ntt-kernel.cpp:113]   --->   Operation 28 'load' 'burst_buffer_load' <Predicate = true> <Delay = 1.23> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.23> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 4096> <RAM>
-ST_3 : Operation 29 [1/1] (0.00ns)   --->   "%ping_addr = getelementptr i32 %ping, i64 0, i64 %zext_ln110" [hls-design/ntt-kernel.cpp:113]   --->   Operation 29 'getelementptr' 'ping_addr' <Predicate = true> <Delay = 0.00>
-ST_3 : Operation 30 [1/1] (1.23ns)   --->   "%store_ln113 = store i32 %burst_buffer_load, i12 %ping_addr" [hls-design/ntt-kernel.cpp:113]   --->   Operation 30 'store' 'store_ln113' <Predicate = true> <Delay = 1.23> <CoreInst = "RAM_2P_BRAM">   --->   Core 94 'RAM_2P_BRAM' <Latency = 1> <II = 1> <Delay = 1.23> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 4096> <RAM>
-ST_3 : Operation 31 [1/1] (0.00ns)   --->   "%br_ln110 = br void %for.inc42" [hls-design/ntt-kernel.cpp:110]   --->   Operation 31 'br' 'br_ln110' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 36 [1/1] (0.00ns)   --->   "%specpipeline_ln114 = specpipeline void @_ssdm_op_SpecPipeline, i32 1, i32 0, i32 0, i32 0, void @empty_14" [hls-design/ntt-kernel.cpp:114]   --->   Operation 36 'specpipeline' 'specpipeline_ln114' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 37 [1/1] (0.00ns)   --->   "%speclooptripcount_ln115 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 256, i64 4096, i64 2176" [hls-design/ntt-kernel.cpp:115]   --->   Operation 37 'speclooptripcount' 'speclooptripcount_ln115' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 38 [1/1] (0.00ns)   --->   "%specloopname_ln113 = specloopname void @_ssdm_op_SpecLoopName, void @empty_33" [hls-design/ntt-kernel.cpp:113]   --->   Operation 38 'specloopname' 'specloopname_ln113' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 39 [1/1] (0.00ns)   --->   "%zext_ln113_2 = zext i9 %lshr_ln1" [hls-design/ntt-kernel.cpp:113]   --->   Operation 39 'zext' 'zext_ln113_2' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 40 [1/2] (1.23ns)   --->   "%burst_buffer_load = load i12 %burst_buffer_addr" [hls-design/ntt-kernel.cpp:116]   --->   Operation 40 'load' 'burst_buffer_load' <Predicate = true> <Delay = 1.23> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.23> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 4096> <RAM>
+ST_3 : Operation 41 [1/1] (0.00ns)   --->   "%ping_addr = getelementptr i32 %ping, i64 0, i64 %zext_ln113_2" [hls-design/ntt-kernel.cpp:116]   --->   Operation 41 'getelementptr' 'ping_addr' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 42 [1/1] (0.00ns)   --->   "%ping_1_addr = getelementptr i32 %ping_1, i64 0, i64 %zext_ln113_2" [hls-design/ntt-kernel.cpp:116]   --->   Operation 42 'getelementptr' 'ping_1_addr' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 43 [1/1] (0.00ns)   --->   "%ping_2_addr = getelementptr i32 %ping_2, i64 0, i64 %zext_ln113_2" [hls-design/ntt-kernel.cpp:116]   --->   Operation 43 'getelementptr' 'ping_2_addr' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 44 [1/1] (0.00ns)   --->   "%ping_3_addr = getelementptr i32 %ping_3, i64 0, i64 %zext_ln113_2" [hls-design/ntt-kernel.cpp:116]   --->   Operation 44 'getelementptr' 'ping_3_addr' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 45 [1/1] (0.00ns)   --->   "%ping_4_addr = getelementptr i32 %ping_4, i64 0, i64 %zext_ln113_2" [hls-design/ntt-kernel.cpp:116]   --->   Operation 45 'getelementptr' 'ping_4_addr' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 46 [1/1] (0.00ns)   --->   "%ping_5_addr = getelementptr i32 %ping_5, i64 0, i64 %zext_ln113_2" [hls-design/ntt-kernel.cpp:116]   --->   Operation 46 'getelementptr' 'ping_5_addr' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 47 [1/1] (0.00ns)   --->   "%ping_6_addr = getelementptr i32 %ping_6, i64 0, i64 %zext_ln113_2" [hls-design/ntt-kernel.cpp:116]   --->   Operation 47 'getelementptr' 'ping_6_addr' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 48 [1/1] (0.00ns)   --->   "%ping_7_addr = getelementptr i32 %ping_7, i64 0, i64 %zext_ln113_2" [hls-design/ntt-kernel.cpp:116]   --->   Operation 48 'getelementptr' 'ping_7_addr' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 49 [1/1] (1.23ns)   --->   "%store_ln116 = store i32 %burst_buffer_load, i9 %ping_6_addr" [hls-design/ntt-kernel.cpp:116]   --->   Operation 49 'store' 'store_ln116' <Predicate = (trunc_ln113 == 6)> <Delay = 1.23> <CoreInst = "RAM_2P_BRAM">   --->   Core 94 'RAM_2P_BRAM' <Latency = 1> <II = 1> <Delay = 1.23> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 512> <RAM>
+ST_3 : Operation 50 [1/1] (0.00ns)   --->   "%br_ln116 = br void %arrayidx41.exit" [hls-design/ntt-kernel.cpp:116]   --->   Operation 50 'br' 'br_ln116' <Predicate = (trunc_ln113 == 6)> <Delay = 0.00>
+ST_3 : Operation 51 [1/1] (1.23ns)   --->   "%store_ln116 = store i32 %burst_buffer_load, i9 %ping_5_addr" [hls-design/ntt-kernel.cpp:116]   --->   Operation 51 'store' 'store_ln116' <Predicate = (trunc_ln113 == 5)> <Delay = 1.23> <CoreInst = "RAM_2P_BRAM">   --->   Core 94 'RAM_2P_BRAM' <Latency = 1> <II = 1> <Delay = 1.23> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 512> <RAM>
+ST_3 : Operation 52 [1/1] (0.00ns)   --->   "%br_ln116 = br void %arrayidx41.exit" [hls-design/ntt-kernel.cpp:116]   --->   Operation 52 'br' 'br_ln116' <Predicate = (trunc_ln113 == 5)> <Delay = 0.00>
+ST_3 : Operation 53 [1/1] (1.23ns)   --->   "%store_ln116 = store i32 %burst_buffer_load, i9 %ping_4_addr" [hls-design/ntt-kernel.cpp:116]   --->   Operation 53 'store' 'store_ln116' <Predicate = (trunc_ln113 == 4)> <Delay = 1.23> <CoreInst = "RAM_2P_BRAM">   --->   Core 94 'RAM_2P_BRAM' <Latency = 1> <II = 1> <Delay = 1.23> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 512> <RAM>
+ST_3 : Operation 54 [1/1] (0.00ns)   --->   "%br_ln116 = br void %arrayidx41.exit" [hls-design/ntt-kernel.cpp:116]   --->   Operation 54 'br' 'br_ln116' <Predicate = (trunc_ln113 == 4)> <Delay = 0.00>
+ST_3 : Operation 55 [1/1] (1.23ns)   --->   "%store_ln116 = store i32 %burst_buffer_load, i9 %ping_3_addr" [hls-design/ntt-kernel.cpp:116]   --->   Operation 55 'store' 'store_ln116' <Predicate = (trunc_ln113 == 3)> <Delay = 1.23> <CoreInst = "RAM_2P_BRAM">   --->   Core 94 'RAM_2P_BRAM' <Latency = 1> <II = 1> <Delay = 1.23> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 512> <RAM>
+ST_3 : Operation 56 [1/1] (0.00ns)   --->   "%br_ln116 = br void %arrayidx41.exit" [hls-design/ntt-kernel.cpp:116]   --->   Operation 56 'br' 'br_ln116' <Predicate = (trunc_ln113 == 3)> <Delay = 0.00>
+ST_3 : Operation 57 [1/1] (1.23ns)   --->   "%store_ln116 = store i32 %burst_buffer_load, i9 %ping_2_addr" [hls-design/ntt-kernel.cpp:116]   --->   Operation 57 'store' 'store_ln116' <Predicate = (trunc_ln113 == 2)> <Delay = 1.23> <CoreInst = "RAM_2P_BRAM">   --->   Core 94 'RAM_2P_BRAM' <Latency = 1> <II = 1> <Delay = 1.23> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 512> <RAM>
+ST_3 : Operation 58 [1/1] (0.00ns)   --->   "%br_ln116 = br void %arrayidx41.exit" [hls-design/ntt-kernel.cpp:116]   --->   Operation 58 'br' 'br_ln116' <Predicate = (trunc_ln113 == 2)> <Delay = 0.00>
+ST_3 : Operation 59 [1/1] (1.23ns)   --->   "%store_ln116 = store i32 %burst_buffer_load, i9 %ping_1_addr" [hls-design/ntt-kernel.cpp:116]   --->   Operation 59 'store' 'store_ln116' <Predicate = (trunc_ln113 == 1)> <Delay = 1.23> <CoreInst = "RAM_2P_BRAM">   --->   Core 94 'RAM_2P_BRAM' <Latency = 1> <II = 1> <Delay = 1.23> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 512> <RAM>
+ST_3 : Operation 60 [1/1] (0.00ns)   --->   "%br_ln116 = br void %arrayidx41.exit" [hls-design/ntt-kernel.cpp:116]   --->   Operation 60 'br' 'br_ln116' <Predicate = (trunc_ln113 == 1)> <Delay = 0.00>
+ST_3 : Operation 61 [1/1] (1.23ns)   --->   "%store_ln116 = store i32 %burst_buffer_load, i9 %ping_addr" [hls-design/ntt-kernel.cpp:116]   --->   Operation 61 'store' 'store_ln116' <Predicate = (trunc_ln113 == 0)> <Delay = 1.23> <CoreInst = "RAM_2P_BRAM">   --->   Core 94 'RAM_2P_BRAM' <Latency = 1> <II = 1> <Delay = 1.23> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 512> <RAM>
+ST_3 : Operation 62 [1/1] (0.00ns)   --->   "%br_ln116 = br void %arrayidx41.exit" [hls-design/ntt-kernel.cpp:116]   --->   Operation 62 'br' 'br_ln116' <Predicate = (trunc_ln113 == 0)> <Delay = 0.00>
+ST_3 : Operation 63 [1/1] (1.23ns)   --->   "%store_ln116 = store i32 %burst_buffer_load, i9 %ping_7_addr" [hls-design/ntt-kernel.cpp:116]   --->   Operation 63 'store' 'store_ln116' <Predicate = (trunc_ln113 == 7)> <Delay = 1.23> <CoreInst = "RAM_2P_BRAM">   --->   Core 94 'RAM_2P_BRAM' <Latency = 1> <II = 1> <Delay = 1.23> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 512> <RAM>
+ST_3 : Operation 64 [1/1] (0.00ns)   --->   "%br_ln116 = br void %arrayidx41.exit" [hls-design/ntt-kernel.cpp:116]   --->   Operation 64 'br' 'br_ln116' <Predicate = (trunc_ln113 == 7)> <Delay = 0.00>
 
 
 ============================================================
@@ -126,21 +159,21 @@ Target clock period: 10.000ns, clock uncertainty: 2.700ns.
 
  <State 1>: 1.860ns
 The critical path consists of the following:
-	'store' operation 0 bit ('store_ln110', hls-design/ntt-kernel.cpp:110) of constant 0 on local variable 'i', hls-design/ntt-kernel.cpp:110 [9]  (0.427 ns)
-	'load' operation 13 bit ('i', hls-design/ntt-kernel.cpp:110) on local variable 'i', hls-design/ntt-kernel.cpp:110 [12]  (0.000 ns)
-	'icmp' operation 1 bit ('icmp_ln110', hls-design/ntt-kernel.cpp:110) [14]  (1.006 ns)
-	'store' operation 0 bit ('store_ln110', hls-design/ntt-kernel.cpp:110) of variable 'add_ln110', hls-design/ntt-kernel.cpp:110 on local variable 'i', hls-design/ntt-kernel.cpp:110 [29]  (0.427 ns)
+	'store' operation 0 bit ('store_ln113', hls-design/ntt-kernel.cpp:113) of constant 0 on local variable 'i', hls-design/ntt-kernel.cpp:113 [23]  (0.427 ns)
+	'load' operation 13 bit ('i', hls-design/ntt-kernel.cpp:113) on local variable 'i', hls-design/ntt-kernel.cpp:113 [26]  (0.000 ns)
+	'icmp' operation 1 bit ('icmp_ln113', hls-design/ntt-kernel.cpp:113) [28]  (1.006 ns)
+	'store' operation 0 bit ('store_ln113', hls-design/ntt-kernel.cpp:113) of variable 'add_ln113', hls-design/ntt-kernel.cpp:113 on local variable 'i', hls-design/ntt-kernel.cpp:113 [78]  (0.427 ns)
 
  <State 2>: 2.474ns
 The critical path consists of the following:
-	'load' operation 12 bit ('local_psi_load', hls-design/ntt-kernel.cpp:113) on array 'local_psi' [23]  (1.237 ns)
-	'getelementptr' operation 12 bit ('burst_buffer_addr', hls-design/ntt-kernel.cpp:113) [25]  (0.000 ns)
-	'load' operation 32 bit ('burst_buffer_load', hls-design/ntt-kernel.cpp:113) on array 'burst_buffer' [26]  (1.237 ns)
+	'load' operation 12 bit ('local_psi_load', hls-design/ntt-kernel.cpp:116) on array 'local_psi' [40]  (1.237 ns)
+	'getelementptr' operation 12 bit ('burst_buffer_addr', hls-design/ntt-kernel.cpp:116) [42]  (0.000 ns)
+	'load' operation 32 bit ('burst_buffer_load', hls-design/ntt-kernel.cpp:116) on array 'burst_buffer' [43]  (1.237 ns)
 
  <State 3>: 2.474ns
 The critical path consists of the following:
-	'load' operation 32 bit ('burst_buffer_load', hls-design/ntt-kernel.cpp:113) on array 'burst_buffer' [26]  (1.237 ns)
-	'store' operation 0 bit ('store_ln113', hls-design/ntt-kernel.cpp:113) of variable 'burst_buffer_load', hls-design/ntt-kernel.cpp:113 on array 'ping' [28]  (1.237 ns)
+	'load' operation 32 bit ('burst_buffer_load', hls-design/ntt-kernel.cpp:116) on array 'burst_buffer' [43]  (1.237 ns)
+	'store' operation 0 bit ('store_ln116', hls-design/ntt-kernel.cpp:116) of variable 'burst_buffer_load', hls-design/ntt-kernel.cpp:116 on array 'ping_6' [54]  (1.237 ns)
 
 
 ============================================================

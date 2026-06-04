@@ -253,17 +253,17 @@ Diagnostics:
     Replacements:    
   - DiagnosticName:  clang-diagnostic-error
     Message:         'Invalid Directive: for current device, ram_2p + bram is invalid combination for BIND_STORAGE''s option ''type + impl'''
-    FileOffset:      75
+    FileOffset:      76
     FilePath:        /home/sg9109/Documents/hls-design/ntt-kernel.cpp
     Replacements:    
   - DiagnosticName:  clang-diagnostic-error
     Message:         'Invalid Directive: for current device, ram_2p + bram is invalid combination for BIND_STORAGE''s option ''type + impl'''
-    FileOffset:      79
+    FileOffset:      80
     FilePath:        /home/sg9109/Documents/hls-design/ntt-kernel.cpp
     Replacements:    
   - DiagnosticName:  clang-diagnostic-error
     Message:         'Invalid Directive: for current device, ram_2p + bram is invalid combination for BIND_STORAGE''s option ''type + impl'''
-    FileOffset:      81
+    FileOffset:      83
     FilePath:        /home/sg9109/Documents/hls-design/ntt-kernel.cpp
     Replacements:    
 ...

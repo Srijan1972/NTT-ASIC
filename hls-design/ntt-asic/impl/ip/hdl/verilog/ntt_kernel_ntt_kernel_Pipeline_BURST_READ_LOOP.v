@@ -60,7 +60,7 @@ module ntt_kernel_ntt_kernel_Pipeline_BURST_READ_LOOP (
         m_axi_gmem0_BID,
         m_axi_gmem0_BUSER,
         n,
-        sext_ln103,
+        sext_ln106,
         burst_buffer_address0,
         burst_buffer_ce0,
         burst_buffer_we0,
@@ -122,7 +122,7 @@ input  [1:0] m_axi_gmem0_BRESP;
 input  [0:0] m_axi_gmem0_BID;
 input  [0:0] m_axi_gmem0_BUSER;
 input  [30:0] n;
-input  [61:0] sext_ln103;
+input  [61:0] sext_ln106;
 output  [11:0] burst_buffer_address0;
 output   burst_buffer_ce0;
 output   burst_buffer_we0;
@@ -141,7 +141,7 @@ reg    ap_enable_reg_pp0_iter2;
 reg    ap_idle_pp0;
 reg    ap_block_state2_pp0_stage0_iter1;
 reg    ap_block_pp0_stage0_subdone;
-wire   [0:0] icmp_ln103_fu_106_p2;
+wire   [0:0] icmp_ln106_fu_106_p2;
 reg    ap_condition_exit_pp0_iter0_stage0;
 wire    ap_loop_exit_ready;
 reg    ap_ready_int;
@@ -151,12 +151,12 @@ reg    ap_block_pp0_stage0_11001;
 reg   [12:0] i_reg_145;
 reg   [12:0] i_reg_145_pp0_iter1_reg;
 reg   [31:0] gmem0_addr_read_reg_154;
-wire   [63:0] zext_ln103_fu_129_p1;
+wire   [63:0] zext_ln106_fu_129_p1;
 reg   [12:0] i_2_fu_56;
-wire   [12:0] add_ln103_fu_112_p2;
+wire   [12:0] add_ln106_fu_112_p2;
 wire    ap_loop_init;
 reg   [12:0] ap_sig_allocacmp_i;
-wire   [30:0] zext_ln103_1_fu_102_p1;
+wire   [30:0] zext_ln106_1_fu_102_p1;
 reg    ap_done_reg;
 wire    ap_continue_int;
 reg    ap_done_int;
@@ -234,8 +234,8 @@ end
 
 always @ (posedge ap_clk) begin
     if (((1'b0 == ap_block_pp0_stage0_11001) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
-        if (((icmp_ln103_fu_106_p2 == 1'd0) & (ap_enable_reg_pp0_iter0 == 1'b1))) begin
-            i_2_fu_56 <= add_ln103_fu_112_p2;
+        if (((icmp_ln106_fu_106_p2 == 1'd0) & (ap_enable_reg_pp0_iter0 == 1'b1))) begin
+            i_2_fu_56 <= add_ln106_fu_112_p2;
         end else if ((ap_loop_init == 1'b1)) begin
             i_2_fu_56 <= 13'd0;
         end
@@ -252,7 +252,7 @@ always @ (posedge ap_clk) begin
 end
 
 always @ (*) begin
-    if (((icmp_ln103_fu_106_p2 == 1'd1) & (1'b0 == ap_block_pp0_stage0_subdone) & (ap_enable_reg_pp0_iter0 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
+    if (((icmp_ln106_fu_106_p2 == 1'd1) & (1'b0 == ap_block_pp0_stage0_subdone) & (ap_enable_reg_pp0_iter0 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
         ap_condition_exit_pp0_iter0_stage0 = 1'b1;
     end else begin
         ap_condition_exit_pp0_iter0_stage0 = 1'b0;
@@ -342,7 +342,7 @@ always @ (*) begin
     endcase
 end
 
-assign add_ln103_fu_112_p2 = (ap_sig_allocacmp_i + 13'd1);
+assign add_ln106_fu_112_p2 = (ap_sig_allocacmp_i + 13'd1);
 
 assign ap_CS_fsm_pp0_stage0 = ap_CS_fsm[32'd0];
 
@@ -366,11 +366,11 @@ assign ap_enable_reg_pp0_iter0 = ap_start_int;
 
 assign ap_loop_exit_ready = ap_condition_exit_pp0_iter0_stage0;
 
-assign burst_buffer_address0 = zext_ln103_fu_129_p1;
+assign burst_buffer_address0 = zext_ln106_fu_129_p1;
 
 assign burst_buffer_d0 = gmem0_addr_read_reg_154;
 
-assign icmp_ln103_fu_106_p2 = ((zext_ln103_1_fu_102_p1 == n) ? 1'b1 : 1'b0);
+assign icmp_ln106_fu_106_p2 = ((zext_ln106_1_fu_102_p1 == n) ? 1'b1 : 1'b0);
 
 assign m_axi_gmem0_ARADDR = 64'd0;
 
@@ -434,8 +434,8 @@ assign m_axi_gmem0_WUSER = 1'd0;
 
 assign m_axi_gmem0_WVALID = 1'b0;
 
-assign zext_ln103_1_fu_102_p1 = ap_sig_allocacmp_i;
+assign zext_ln106_1_fu_102_p1 = ap_sig_allocacmp_i;
 
-assign zext_ln103_fu_129_p1 = i_reg_145_pp0_iter1_reg;
+assign zext_ln106_fu_129_p1 = i_reg_145_pp0_iter1_reg;
 
 endmodule //ntt_kernel_ntt_kernel_Pipeline_BURST_READ_LOOP

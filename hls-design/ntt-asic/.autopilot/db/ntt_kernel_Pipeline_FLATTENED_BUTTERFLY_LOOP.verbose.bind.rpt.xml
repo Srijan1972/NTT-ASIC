@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP'" level="0">
-<item name = "Date">Mon Jun  1 21:40:40 2026
+<item name = "Date">Thu Jun  4 11:24:40 2026
 </item>
 <item name = "Version">2023.2 (Build 4023990 on Oct 11 2023)</item>
 <item name = "Project">hls-design</item>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">1666, 26626, 16.660 us, 0.266 ms, 1666, 26626, no</column>
+<column name="">627, 9747, 6.270 us, 97.470 us, 627, 9747, no</column>
 </table>
 </item>
 <item name = "Detail">
@@ -35,7 +35,7 @@
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- FLATTENED_BUTTERFLY_LOOP">1664, 26624, 14, 13, 1, 128 ~ 2048, yes</column>
+<column name="- FLATTENED_BUTTERFLY_LOOP">625, 9745, 19, 19, 1, 32 ~ 512, yes</column>
 </table>
 </item>
 </section>

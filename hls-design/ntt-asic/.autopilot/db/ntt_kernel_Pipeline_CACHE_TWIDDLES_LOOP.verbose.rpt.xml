@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP'" level="0">
-<item name = "Date">Mon Jun  1 21:40:41 2026
+<item name = "Date">Thu Jun  4 11:24:41 2026
 </item>
 <item name = "Version">2023.2 (Build 4023990 on Oct 11 2023)</item>
 <item name = "Project">hls-design</item>
@@ -48,12 +48,12 @@
 <item name = "Summary"><table name="" hasTotal="1">
 <keys size="6">Name, BRAM_18K, DSP, FF, LUT, URAM</keys>
 <column name="DSP">-, -, -, -, -</column>
-<column name="Expression">-, -, 0, 63, -</column>
+<column name="Expression">-, -, 0, 81, -</column>
 <column name="FIFO">-, -, -, -, -</column>
 <column name="Instance">-, -, -, -, -</column>
 <column name="Memory">-, -, -, -, -</column>
 <column name="Multiplexer">-, -, -, 45, -</column>
-<column name="Register">-, -, 76, -, -</column>
+<column name="Register">-, -, 92, -, -</column>
 <specialColumn name="Available">288, 1248, 234240, 117120, 64</specialColumn>
 <specialColumn name="Utilization (%)">0, 0, ~0, ~0, 0</specialColumn>
 </table>
@@ -78,9 +78,9 @@
 </item>
 <item name = "Expression"><table name="" hasTotal="1">
 <keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
-<column name="add_ln84_fu_124_p2">+, 0, 0, 20, 13, 1</column>
+<column name="add_ln87_fu_193_p2">+, 0, 0, 38, 31, 1</column>
 <column name="ap_block_pp0_stage0_11001">and, 0, 0, 2, 1, 1</column>
-<column name="icmp_ln84_fu_118_p2">icmp, 0, 0, 39, 32, 32</column>
+<column name="icmp_ln87_fu_187_p2">icmp, 0, 0, 39, 32, 32</column>
 <column name="ap_enable_pp0">xor, 0, 0, 2, 1, 2</column>
 </table>
 </item>
@@ -88,9 +88,9 @@
 <keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
 <column name="ap_done_int">9, 2, 1, 2</column>
 <column name="ap_enable_reg_pp0_iter1">9, 2, 1, 2</column>
-<column name="ap_sig_allocacmp_i_3">9, 2, 13, 26</column>
+<column name="ap_sig_allocacmp_i_6">9, 2, 31, 62</column>
 <column name="gmem2_blk_n_R">9, 2, 1, 2</column>
-<column name="i_fu_64">9, 2, 13, 26</column>
+<column name="i_fu_82">9, 2, 31, 62</column>
 </table>
 </item>
 <item name = "Register"><table name="" hasTotal="1">
@@ -100,10 +100,12 @@
 <column name="ap_enable_reg_pp0_iter1">1, 0, 1, 0</column>
 <column name="ap_enable_reg_pp0_iter2">1, 0, 1, 0</column>
 <column name="ap_loop_exit_ready_pp0_iter1_reg">1, 0, 1, 0</column>
-<column name="gmem2_addr_read_reg_166">32, 0, 32, 0</column>
-<column name="i_3_reg_157">13, 0, 13, 0</column>
-<column name="i_3_reg_157_pp0_iter1_reg">13, 0, 13, 0</column>
-<column name="i_fu_64">13, 0, 13, 0</column>
+<column name="gmem2_addr_read_reg_256">32, 0, 32, 0</column>
+<column name="i_fu_82">31, 0, 31, 0</column>
+<column name="lshr_ln_reg_251">10, 0, 10, 0</column>
+<column name="lshr_ln_reg_251_pp0_iter1_reg">10, 0, 10, 0</column>
+<column name="trunc_ln87_reg_247">2, 0, 2, 0</column>
+<column name="trunc_ln87_reg_247_pp0_iter1_reg">2, 0, 2, 0</column>
 </table>
 </item>
 </section>
@@ -166,8 +168,20 @@
 <column name="m_axi_gmem2_BID">in, 1, m_axi, gmem2, pointer</column>
 <column name="m_axi_gmem2_BUSER">in, 1, m_axi, gmem2, pointer</column>
 <column name="sub">in, 32, ap_none, sub, scalar</column>
-<column name="sext_ln84">in, 62, ap_none, sext_ln84, scalar</column>
-<column name="local_twiddles_address1">out, 12, ap_memory, local_twiddles, array</column>
+<column name="sext_ln87">in, 62, ap_none, sext_ln87, scalar</column>
+<column name="local_twiddles_3_address1">out, 10, ap_memory, local_twiddles_3, array</column>
+<column name="local_twiddles_3_ce1">out, 1, ap_memory, local_twiddles_3, array</column>
+<column name="local_twiddles_3_we1">out, 1, ap_memory, local_twiddles_3, array</column>
+<column name="local_twiddles_3_d1">out, 32, ap_memory, local_twiddles_3, array</column>
+<column name="local_twiddles_2_address1">out, 10, ap_memory, local_twiddles_2, array</column>
+<column name="local_twiddles_2_ce1">out, 1, ap_memory, local_twiddles_2, array</column>
+<column name="local_twiddles_2_we1">out, 1, ap_memory, local_twiddles_2, array</column>
+<column name="local_twiddles_2_d1">out, 32, ap_memory, local_twiddles_2, array</column>
+<column name="local_twiddles_1_address1">out, 10, ap_memory, local_twiddles_1, array</column>
+<column name="local_twiddles_1_ce1">out, 1, ap_memory, local_twiddles_1, array</column>
+<column name="local_twiddles_1_we1">out, 1, ap_memory, local_twiddles_1, array</column>
+<column name="local_twiddles_1_d1">out, 32, ap_memory, local_twiddles_1, array</column>
+<column name="local_twiddles_address1">out, 10, ap_memory, local_twiddles, array</column>
 <column name="local_twiddles_ce1">out, 1, ap_memory, local_twiddles, array</column>
 <column name="local_twiddles_we1">out, 1, ap_memory, local_twiddles, array</column>
 <column name="local_twiddles_d1">out, 32, ap_memory, local_twiddles, array</column>

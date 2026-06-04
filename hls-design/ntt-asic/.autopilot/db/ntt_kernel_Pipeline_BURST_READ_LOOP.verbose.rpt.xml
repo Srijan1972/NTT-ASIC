@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'ntt_kernel_Pipeline_BURST_READ_LOOP'" level="0">
-<item name = "Date">Mon Jun  1 21:40:41 2026
+<item name = "Date">Thu Jun  4 11:24:41 2026
 </item>
 <item name = "Version">2023.2 (Build 4023990 on Oct 11 2023)</item>
 <item name = "Project">hls-design</item>
@@ -78,9 +78,9 @@
 </item>
 <item name = "Expression"><table name="" hasTotal="1">
 <keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
-<column name="add_ln103_fu_112_p2">+, 0, 0, 20, 13, 1</column>
+<column name="add_ln106_fu_112_p2">+, 0, 0, 20, 13, 1</column>
 <column name="ap_block_pp0_stage0_11001">and, 0, 0, 2, 1, 1</column>
-<column name="icmp_ln103_fu_106_p2">icmp, 0, 0, 38, 31, 31</column>
+<column name="icmp_ln106_fu_106_p2">icmp, 0, 0, 38, 31, 31</column>
 <column name="ap_enable_pp0">xor, 0, 0, 2, 1, 2</column>
 </table>
 </item>
@@ -166,7 +166,7 @@
 <column name="m_axi_gmem0_BID">in, 1, m_axi, gmem0, pointer</column>
 <column name="m_axi_gmem0_BUSER">in, 1, m_axi, gmem0, pointer</column>
 <column name="n">in, 31, ap_none, n, scalar</column>
-<column name="sext_ln103">in, 62, ap_none, sext_ln103, scalar</column>
+<column name="sext_ln106">in, 62, ap_none, sext_ln106, scalar</column>
 <column name="burst_buffer_address0">out, 12, ap_memory, burst_buffer, array</column>
 <column name="burst_buffer_ce0">out, 1, ap_memory, burst_buffer, array</column>
 <column name="burst_buffer_we0">out, 1, ap_memory, burst_buffer, array</column>

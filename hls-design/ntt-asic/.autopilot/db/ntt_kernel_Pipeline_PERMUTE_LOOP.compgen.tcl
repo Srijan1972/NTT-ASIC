@@ -11,7 +11,159 @@ if {${::AESL::PGuard_autoexp_gen}} {
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 14 \
+    id 17 \
+    name ping_7 \
+    reset_level 1 \
+    sync_rst true \
+    dir O \
+    corename ping_7 \
+    op interface \
+    ports { ping_7_address1 { O 9 vector } ping_7_ce1 { O 1 bit } ping_7_we1 { O 1 bit } ping_7_d1 { O 32 vector } } \
+} "
+} else {
+puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'ping_7'"
+}
+}
+
+
+# XIL_BRAM:
+if {${::AESL::PGuard_autoexp_gen}} {
+if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
+eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
+    id 18 \
+    name ping_6 \
+    reset_level 1 \
+    sync_rst true \
+    dir O \
+    corename ping_6 \
+    op interface \
+    ports { ping_6_address1 { O 9 vector } ping_6_ce1 { O 1 bit } ping_6_we1 { O 1 bit } ping_6_d1 { O 32 vector } } \
+} "
+} else {
+puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'ping_6'"
+}
+}
+
+
+# XIL_BRAM:
+if {${::AESL::PGuard_autoexp_gen}} {
+if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
+eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
+    id 19 \
+    name ping_5 \
+    reset_level 1 \
+    sync_rst true \
+    dir O \
+    corename ping_5 \
+    op interface \
+    ports { ping_5_address1 { O 9 vector } ping_5_ce1 { O 1 bit } ping_5_we1 { O 1 bit } ping_5_d1 { O 32 vector } } \
+} "
+} else {
+puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'ping_5'"
+}
+}
+
+
+# XIL_BRAM:
+if {${::AESL::PGuard_autoexp_gen}} {
+if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
+eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
+    id 20 \
+    name ping_4 \
+    reset_level 1 \
+    sync_rst true \
+    dir O \
+    corename ping_4 \
+    op interface \
+    ports { ping_4_address1 { O 9 vector } ping_4_ce1 { O 1 bit } ping_4_we1 { O 1 bit } ping_4_d1 { O 32 vector } } \
+} "
+} else {
+puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'ping_4'"
+}
+}
+
+
+# XIL_BRAM:
+if {${::AESL::PGuard_autoexp_gen}} {
+if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
+eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
+    id 21 \
+    name ping_3 \
+    reset_level 1 \
+    sync_rst true \
+    dir O \
+    corename ping_3 \
+    op interface \
+    ports { ping_3_address1 { O 9 vector } ping_3_ce1 { O 1 bit } ping_3_we1 { O 1 bit } ping_3_d1 { O 32 vector } } \
+} "
+} else {
+puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'ping_3'"
+}
+}
+
+
+# XIL_BRAM:
+if {${::AESL::PGuard_autoexp_gen}} {
+if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
+eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
+    id 22 \
+    name ping_2 \
+    reset_level 1 \
+    sync_rst true \
+    dir O \
+    corename ping_2 \
+    op interface \
+    ports { ping_2_address1 { O 9 vector } ping_2_ce1 { O 1 bit } ping_2_we1 { O 1 bit } ping_2_d1 { O 32 vector } } \
+} "
+} else {
+puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'ping_2'"
+}
+}
+
+
+# XIL_BRAM:
+if {${::AESL::PGuard_autoexp_gen}} {
+if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
+eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
+    id 23 \
+    name ping_1 \
+    reset_level 1 \
+    sync_rst true \
+    dir O \
+    corename ping_1 \
+    op interface \
+    ports { ping_1_address1 { O 9 vector } ping_1_ce1 { O 1 bit } ping_1_we1 { O 1 bit } ping_1_d1 { O 32 vector } } \
+} "
+} else {
+puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'ping_1'"
+}
+}
+
+
+# XIL_BRAM:
+if {${::AESL::PGuard_autoexp_gen}} {
+if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
+eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
+    id 24 \
+    name ping \
+    reset_level 1 \
+    sync_rst true \
+    dir O \
+    corename ping \
+    op interface \
+    ports { ping_address1 { O 9 vector } ping_ce1 { O 1 bit } ping_we1 { O 1 bit } ping_d1 { O 32 vector } } \
+} "
+} else {
+puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'ping'"
+}
+}
+
+
+# XIL_BRAM:
+if {${::AESL::PGuard_autoexp_gen}} {
+if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
+eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
+    id 25 \
     name local_psi \
     reset_level 1 \
     sync_rst true \
@@ -30,7 +182,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 15 \
+    id 26 \
     name burst_buffer \
     reset_level 1 \
     sync_rst true \
@@ -45,29 +197,10 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 }
 
 
-# XIL_BRAM:
-if {${::AESL::PGuard_autoexp_gen}} {
-if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
-eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 16 \
-    name ping \
-    reset_level 1 \
-    sync_rst true \
-    dir O \
-    corename ping \
-    op interface \
-    ports { ping_address1 { O 12 vector } ping_ce1 { O 1 bit } ping_we1 { O 1 bit } ping_d1 { O 32 vector } } \
-} "
-} else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'ping'"
-}
-}
-
-
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 13 \
+    id 16 \
     name n \
     type other \
     dir I \

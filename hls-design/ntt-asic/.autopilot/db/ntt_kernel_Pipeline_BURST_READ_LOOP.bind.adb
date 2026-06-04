@@ -34,7 +34,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1629888613</coreId>
+						<coreId>639657324</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>32</bitwidth>
@@ -70,7 +70,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1769238117</coreId>
+						<coreId>2147483647</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>31</bitwidth>
@@ -88,7 +88,7 @@
 					<Obj>
 						<type>1</type>
 						<id>3</id>
-						<name>sext_ln103</name>
+						<name>sext_ln106</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -106,7 +106,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1769239916</coreId>
+						<coreId>1667592992</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>62</bitwidth>
@@ -142,7 +142,7 @@
 						<coreName>RAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>875650864</coreId>
+						<coreId>1885414944</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>32</bitwidth>
@@ -167,7 +167,7 @@
 						<name>i_2</name>
 						<fileName>hls-design/ntt-kernel.cpp</fileName>
 						<fileDirectory>/home/sg9109/Documents</fileDirectory>
-						<lineNumber>103</lineNumber>
+						<lineNumber>106</lineNumber>
 						<contextFuncName>ntt_kernel</contextFuncName>
 						<contextNormFuncName>ntt_kernel</contextNormFuncName>
 						<inlineStackInfo>
@@ -183,7 +183,7 @@
 											<first>hls-design/ntt-kernel.cpp</first>
 											<second>ntt_kernel</second>
 										</first>
-										<second>103</second>
+										<second>106</second>
 									</item>
 								</second>
 							</item>
@@ -196,7 +196,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1798141044</coreId>
+						<coreId>1667592992</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>13</bitwidth>
@@ -220,7 +220,7 @@
 					<Obj>
 						<type>0</type>
 						<id>6</id>
-						<name>sext_ln103_read</name>
+						<name>sext_ln106_read</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -238,7 +238,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1731031916</coreId>
+						<coreId>1953391988</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>62</bitwidth>
@@ -281,7 +281,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1953067621</coreId>
+						<coreId>1212371803</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>31</bitwidth>
@@ -306,7 +306,7 @@
 					<Obj>
 						<type>0</type>
 						<id>8</id>
-						<name>sext_ln103_cast</name>
+						<name>sext_ln106_cast</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -324,7 +324,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1751348000</coreId>
+						<coreId>892615216</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>64</bitwidth>
@@ -348,10 +348,10 @@
 					<Obj>
 						<type>0</type>
 						<id>10</id>
-						<name>i_2_write_ln103</name>
+						<name>i_2_write_ln106</name>
 						<fileName>hls-design/ntt-kernel.cpp</fileName>
 						<fileDirectory>/home/sg9109/Documents</fileDirectory>
-						<lineNumber>103</lineNumber>
+						<lineNumber>106</lineNumber>
 						<contextFuncName>ntt_kernel</contextFuncName>
 						<contextNormFuncName>ntt_kernel</contextNormFuncName>
 						<inlineStackInfo>
@@ -367,7 +367,7 @@
 											<first>hls-design/ntt-kernel.cpp</first>
 											<second>ntt_kernel</second>
 										</first>
-										<second>103</second>
+										<second>106</second>
 									</item>
 								</second>
 							</item>
@@ -380,7 +380,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>808591443</coreId>
+						<coreId>892615216</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -423,7 +423,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1852404335</coreId>
+						<coreId>1937339168</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -450,7 +450,7 @@
 						<name>i</name>
 						<fileName>hls-design/ntt-kernel.cpp</fileName>
 						<fileDirectory>/home/sg9109/Documents</fileDirectory>
-						<lineNumber>103</lineNumber>
+						<lineNumber>106</lineNumber>
 						<contextFuncName>ntt_kernel</contextFuncName>
 						<contextNormFuncName>ntt_kernel</contextNormFuncName>
 						<inlineStackInfo>
@@ -466,7 +466,7 @@
 											<first>hls-design/ntt-kernel.cpp</first>
 											<second>ntt_kernel</second>
 										</first>
-										<second>103</second>
+										<second>106</second>
 									</item>
 								</second>
 							</item>
@@ -479,7 +479,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>539122992</coreId>
+						<coreId>1919252069</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>13</bitwidth>
@@ -504,10 +504,10 @@
 					<Obj>
 						<type>0</type>
 						<id>15</id>
-						<name>zext_ln103_1</name>
+						<name>zext_ln106_1</name>
 						<fileName>hls-design/ntt-kernel.cpp</fileName>
 						<fileDirectory>/home/sg9109/Documents</fileDirectory>
-						<lineNumber>103</lineNumber>
+						<lineNumber>106</lineNumber>
 						<contextFuncName>ntt_kernel</contextFuncName>
 						<contextNormFuncName>ntt_kernel</contextNormFuncName>
 						<inlineStackInfo>
@@ -523,7 +523,7 @@
 											<first>hls-design/ntt-kernel.cpp</first>
 											<second>ntt_kernel</second>
 										</first>
-										<second>103</second>
+										<second>106</second>
 									</item>
 								</second>
 							</item>
@@ -536,7 +536,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1634956133</coreId>
+						<coreId>574449505</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>31</bitwidth>
@@ -560,10 +560,10 @@
 					<Obj>
 						<type>0</type>
 						<id>16</id>
-						<name>icmp_ln103</name>
+						<name>icmp_ln106</name>
 						<fileName>hls-design/ntt-kernel.cpp</fileName>
 						<fileDirectory>/home/sg9109/Documents</fileDirectory>
-						<lineNumber>103</lineNumber>
+						<lineNumber>106</lineNumber>
 						<contextFuncName>ntt_kernel</contextFuncName>
 						<contextNormFuncName>ntt_kernel</contextNormFuncName>
 						<inlineStackInfo>
@@ -579,7 +579,7 @@
 											<first>hls-design/ntt-kernel.cpp</first>
 											<second>ntt_kernel</second>
 										</first>
-										<second>103</second>
+										<second>106</second>
 									</item>
 								</second>
 							</item>
@@ -617,10 +617,10 @@
 					<Obj>
 						<type>0</type>
 						<id>17</id>
-						<name>add_ln103</name>
+						<name>add_ln106</name>
 						<fileName>hls-design/ntt-kernel.cpp</fileName>
 						<fileDirectory>/home/sg9109/Documents</fileDirectory>
-						<lineNumber>103</lineNumber>
+						<lineNumber>106</lineNumber>
 						<contextFuncName>ntt_kernel</contextFuncName>
 						<contextNormFuncName>ntt_kernel</contextNormFuncName>
 						<inlineStackInfo>
@@ -636,7 +636,7 @@
 											<first>hls-design/ntt-kernel.cpp</first>
 											<second>ntt_kernel</second>
 										</first>
-										<second>103</second>
+										<second>106</second>
 									</item>
 								</second>
 							</item>
@@ -674,10 +674,10 @@
 					<Obj>
 						<type>0</type>
 						<id>18</id>
-						<name>br_ln103</name>
+						<name>br_ln106</name>
 						<fileName>hls-design/ntt-kernel.cpp</fileName>
 						<fileDirectory>/home/sg9109/Documents</fileDirectory>
-						<lineNumber>103</lineNumber>
+						<lineNumber>106</lineNumber>
 						<contextFuncName>ntt_kernel</contextFuncName>
 						<contextNormFuncName>ntt_kernel</contextNormFuncName>
 						<inlineStackInfo>
@@ -693,7 +693,7 @@
 											<first>hls-design/ntt-kernel.cpp</first>
 											<second>ntt_kernel</second>
 										</first>
-										<second>103</second>
+										<second>106</second>
 									</item>
 								</second>
 							</item>
@@ -706,7 +706,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1330007625</coreId>
+						<coreId>1953067621</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -735,7 +735,7 @@
 						<name>gmem0_addr</name>
 						<fileName>hls-design/ntt-kernel.cpp</fileName>
 						<fileDirectory>/home/sg9109/Documents</fileDirectory>
-						<lineNumber>103</lineNumber>
+						<lineNumber>106</lineNumber>
 						<contextFuncName>ntt_kernel</contextFuncName>
 						<contextNormFuncName>ntt_kernel</contextNormFuncName>
 						<inlineStackInfo>
@@ -751,7 +751,7 @@
 											<first>hls-design/ntt-kernel.cpp</first>
 											<second>ntt_kernel</second>
 										</first>
-										<second>103</second>
+										<second>106</second>
 									</item>
 								</second>
 							</item>
@@ -764,7 +764,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1952539503</coreId>
+						<coreId>757935405</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>32</bitwidth>
@@ -789,10 +789,10 @@
 					<Obj>
 						<type>0</type>
 						<id>21</id>
-						<name>zext_ln103</name>
+						<name>zext_ln106</name>
 						<fileName>hls-design/ntt-kernel.cpp</fileName>
 						<fileDirectory>/home/sg9109/Documents</fileDirectory>
-						<lineNumber>103</lineNumber>
+						<lineNumber>106</lineNumber>
 						<contextFuncName>ntt_kernel</contextFuncName>
 						<contextNormFuncName>ntt_kernel</contextNormFuncName>
 						<inlineStackInfo>
@@ -808,7 +808,7 @@
 											<first>hls-design/ntt-kernel.cpp</first>
 											<second>ntt_kernel</second>
 										</first>
-										<second>103</second>
+										<second>106</second>
 									</item>
 								</second>
 							</item>
@@ -821,7 +821,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>570456436</coreId>
+						<coreId>1634038304</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>64</bitwidth>
@@ -848,7 +848,7 @@
 						<name>gmem0_addr_read</name>
 						<fileName>hls-design/ntt-kernel.cpp</fileName>
 						<fileDirectory>/home/sg9109/Documents</fileDirectory>
-						<lineNumber>106</lineNumber>
+						<lineNumber>109</lineNumber>
 						<contextFuncName>ntt_kernel</contextFuncName>
 						<contextNormFuncName>ntt_kernel</contextNormFuncName>
 						<inlineStackInfo>
@@ -864,7 +864,7 @@
 											<first>hls-design/ntt-kernel.cpp</first>
 											<second>ntt_kernel</second>
 										</first>
-										<second>106</second>
+										<second>109</second>
 									</item>
 								</second>
 							</item>
@@ -905,7 +905,7 @@
 						<name>burst_buffer_addr</name>
 						<fileName>hls-design/ntt-kernel.cpp</fileName>
 						<fileDirectory>/home/sg9109/Documents</fileDirectory>
-						<lineNumber>106</lineNumber>
+						<lineNumber>109</lineNumber>
 						<contextFuncName>ntt_kernel</contextFuncName>
 						<contextNormFuncName>ntt_kernel</contextNormFuncName>
 						<inlineStackInfo>
@@ -921,7 +921,7 @@
 											<first>hls-design/ntt-kernel.cpp</first>
 											<second>ntt_kernel</second>
 										</first>
-										<second>106</second>
+										<second>109</second>
 									</item>
 								</second>
 							</item>
@@ -934,7 +934,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1663986789</coreId>
+						<coreId>1920295968</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>12</bitwidth>
@@ -960,10 +960,10 @@
 					<Obj>
 						<type>0</type>
 						<id>27</id>
-						<name>burst_buffer_addr_write_ln106</name>
+						<name>burst_buffer_addr_write_ln109</name>
 						<fileName>hls-design/ntt-kernel.cpp</fileName>
 						<fileDirectory>/home/sg9109/Documents</fileDirectory>
-						<lineNumber>106</lineNumber>
+						<lineNumber>109</lineNumber>
 						<contextFuncName>ntt_kernel</contextFuncName>
 						<contextNormFuncName>ntt_kernel</contextNormFuncName>
 						<inlineStackInfo>
@@ -979,7 +979,7 @@
 											<first>hls-design/ntt-kernel.cpp</first>
 											<second>ntt_kernel</second>
 										</first>
-										<second>106</second>
+										<second>109</second>
 									</item>
 								</second>
 							</item>
@@ -1017,10 +1017,10 @@
 					<Obj>
 						<type>0</type>
 						<id>28</id>
-						<name>i_2_write_ln103</name>
+						<name>i_2_write_ln106</name>
 						<fileName>hls-design/ntt-kernel.cpp</fileName>
 						<fileDirectory>/home/sg9109/Documents</fileDirectory>
-						<lineNumber>103</lineNumber>
+						<lineNumber>106</lineNumber>
 						<contextFuncName>ntt_kernel</contextFuncName>
 						<contextNormFuncName>ntt_kernel</contextNormFuncName>
 						<inlineStackInfo>
@@ -1036,7 +1036,7 @@
 											<first>hls-design/ntt-kernel.cpp</first>
 											<second>ntt_kernel</second>
 										</first>
-										<second>103</second>
+										<second>106</second>
 									</item>
 								</second>
 							</item>
@@ -1049,7 +1049,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>6107441</coreId>
+						<coreId>536888653</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -1076,10 +1076,10 @@
 					<Obj>
 						<type>0</type>
 						<id>29</id>
-						<name>br_ln103</name>
+						<name>br_ln106</name>
 						<fileName>hls-design/ntt-kernel.cpp</fileName>
 						<fileDirectory>/home/sg9109/Documents</fileDirectory>
-						<lineNumber>103</lineNumber>
+						<lineNumber>106</lineNumber>
 						<contextFuncName>ntt_kernel</contextFuncName>
 						<contextNormFuncName>ntt_kernel</contextNormFuncName>
 						<inlineStackInfo>
@@ -1095,7 +1095,7 @@
 											<first>hls-design/ntt-kernel.cpp</first>
 											<second>ntt_kernel</second>
 										</first>
-										<second>103</second>
+										<second>106</second>
 									</item>
 								</second>
 							</item>
@@ -1108,7 +1108,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1936289385</coreId>
+						<coreId>1869182051</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -1150,7 +1150,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1919252069</coreId>
+						<coreId>1297239878</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -1195,7 +1195,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1701519360</coreId>
+						<coreId>2036689696</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>32</bitwidth>
@@ -1226,7 +1226,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>997420912</coreId>
+						<coreId>1394632050</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>13</bitwidth>
@@ -1257,7 +1257,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1953067621</coreId>
+						<coreId>1415529800</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>13</bitwidth>
@@ -1288,7 +1288,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>536891206</coreId>
+						<coreId>7955819</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>64</bitwidth>
@@ -2293,7 +2293,7 @@
 		<count>8</count>
 		<item_version>0</item_version>
 		<item class_id="48" tracking_level="0" version="0">
-			<first>add_ln103_fu_112</first>
+			<first>add_ln106_fu_112</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -2325,7 +2325,7 @@
 			</second>
 		</item>
 		<item>
-			<first>icmp_ln103_fu_106</first>
+			<first>icmp_ln106_fu_106</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -2333,7 +2333,7 @@
 			</second>
 		</item>
 		<item>
-			<first>sext_ln103_cast_fu_90</first>
+			<first>sext_ln106_cast_fu_90</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -2341,7 +2341,7 @@
 			</second>
 		</item>
 		<item>
-			<first>zext_ln103_1_fu_102</first>
+			<first>zext_ln106_1_fu_102</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -2349,7 +2349,7 @@
 			</second>
 		</item>
 		<item>
-			<first>zext_ln103_fu_129</first>
+			<first>zext_ln106_fu_129</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -2389,7 +2389,7 @@
 			</second>
 		</item>
 		<item>
-			<first>sext_ln103_read_read_fu_60</first>
+			<first>sext_ln106_read_read_fu_60</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -2397,7 +2397,7 @@
 			</second>
 		</item>
 		<item>
-			<first>store_ln103_store_fu_118</first>
+			<first>store_ln106_store_fu_118</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -2405,7 +2405,7 @@
 			</second>
 		</item>
 		<item>
-			<first>store_ln103_store_fu_94</first>
+			<first>store_ln106_store_fu_94</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -2504,7 +2504,7 @@
 			</second>
 		</item>
 		<item>
-			<first>icmp_ln103_reg_150</first>
+			<first>icmp_ln106_reg_150</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -2512,7 +2512,7 @@
 			</second>
 		</item>
 		<item>
-			<first>sext_ln103_cast_reg_140</first>
+			<first>sext_ln106_cast_reg_140</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -2577,7 +2577,7 @@
 			</second>
 		</item>
 		<item>
-			<first>sext_ln103</first>
+			<first>sext_ln106</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>

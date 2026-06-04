@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'ntt_kernel_Pipeline_CACHE_PSI_LOOP'
 ================================================================
-* Date:           Mon Jun  1 21:40:41 2026
+* Date:           Thu Jun  4 11:24:41 2026
 
 * Version:        2023.2 (Build 4023990 on Oct 11 2023)
 * Project:        hls-design
@@ -85,9 +85,9 @@
     +---------------------------+----------+----+---+----+------------+------------+
     |       Variable Name       | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
     +---------------------------+----------+----+---+----+------------+------------+
-    |add_ln91_fu_124_p2         |         +|   0|  0|  20|          13|           1|
+    |add_ln94_fu_124_p2         |         +|   0|  0|  20|          13|           1|
     |ap_block_pp0_stage0_11001  |       and|   0|  0|   2|           1|           1|
-    |icmp_ln91_fu_118_p2        |      icmp|   0|  0|  39|          32|          32|
+    |icmp_ln94_fu_118_p2        |      icmp|   0|  0|  39|          32|          32|
     |ap_enable_pp0              |       xor|   0|  0|   2|           1|           2|
     +---------------------------+----------+----+---+----+------------+------------+
     |Total                      |          |   0|  0|  63|          47|          36|
@@ -118,7 +118,7 @@
     |i_1_fu_64                         |  13|   0|   13|          0|
     |i_reg_161                         |  13|   0|   13|          0|
     |i_reg_161_pp0_iter1_reg           |  13|   0|   13|          0|
-    |trunc_ln94_reg_170                |  12|   0|   12|          0|
+    |trunc_ln97_reg_170                |  12|   0|   12|          0|
     +----------------------------------+----+----+-----+-----------+
     |Total                             |  56|   0|   56|          0|
     +----------------------------------+----+----+-----+-----------+
@@ -185,7 +185,7 @@
 |m_axi_gmem1_BID       |   in|    1|       m_axi|                               gmem1|       pointer|
 |m_axi_gmem1_BUSER     |   in|    1|       m_axi|                               gmem1|       pointer|
 |n                     |   in|   32|     ap_none|                                   n|        scalar|
-|sext_ln91             |   in|   62|     ap_none|                           sext_ln91|        scalar|
+|sext_ln94             |   in|   62|     ap_none|                           sext_ln94|        scalar|
 |local_psi_address1    |  out|   12|   ap_memory|                           local_psi|         array|
 |local_psi_ce1         |  out|    1|   ap_memory|                           local_psi|         array|
 |local_psi_we1         |  out|    1|   ap_memory|                           local_psi|         array|

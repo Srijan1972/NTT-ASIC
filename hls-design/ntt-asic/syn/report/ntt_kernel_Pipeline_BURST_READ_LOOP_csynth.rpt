@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'ntt_kernel_Pipeline_BURST_READ_LOOP'
 ================================================================
-* Date:           Mon Jun  1 21:40:41 2026
+* Date:           Thu Jun  4 11:24:41 2026
 
 * Version:        2023.2 (Build 4023990 on Oct 11 2023)
 * Project:        hls-design
@@ -85,9 +85,9 @@
     +---------------------------+----------+----+---+----+------------+------------+
     |       Variable Name       | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
     +---------------------------+----------+----+---+----+------------+------------+
-    |add_ln103_fu_112_p2        |         +|   0|  0|  20|          13|           1|
+    |add_ln106_fu_112_p2        |         +|   0|  0|  20|          13|           1|
     |ap_block_pp0_stage0_11001  |       and|   0|  0|   2|           1|           1|
-    |icmp_ln103_fu_106_p2       |      icmp|   0|  0|  38|          31|          31|
+    |icmp_ln106_fu_106_p2       |      icmp|   0|  0|  38|          31|          31|
     |ap_enable_pp0              |       xor|   0|  0|   2|           1|           2|
     +---------------------------+----------+----+---+----+------------+------------+
     |Total                      |          |   0|  0|  62|          46|          35|
@@ -185,7 +185,7 @@
 |m_axi_gmem0_BID        |   in|    1|       m_axi|                                gmem0|       pointer|
 |m_axi_gmem0_BUSER      |   in|    1|       m_axi|                                gmem0|       pointer|
 |n                      |   in|   31|     ap_none|                                    n|        scalar|
-|sext_ln103             |   in|   62|     ap_none|                           sext_ln103|        scalar|
+|sext_ln106             |   in|   62|     ap_none|                           sext_ln106|        scalar|
 |burst_buffer_address0  |  out|   12|   ap_memory|                         burst_buffer|         array|
 |burst_buffer_ce0       |  out|    1|   ap_memory|                         burst_buffer|         array|
 |burst_buffer_we0       |  out|    1|   ap_memory|                         burst_buffer|         array|

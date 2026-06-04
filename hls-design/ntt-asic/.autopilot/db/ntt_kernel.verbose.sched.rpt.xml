@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'ntt_kernel'" level="0">
-<item name = "Date">Mon Jun  1 21:40:40 2026
+<item name = "Date">Thu Jun  4 11:24:41 2026
 </item>
 <item name = "Version">2023.2 (Build 4023990 on Oct 11 2023)</item>
 <item name = "Project">hls-design</item>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">2208, 5313790, 22.080 us, 53.138 ms, 2209, 5313791, no</column>
+<column name="">1169, 2073022, 11.690 us, 20.730 ms, 1170, 2073023, no</column>
 </table>
 </item>
 <item name = "Detail">
@@ -35,8 +35,8 @@
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- BATCH_LOOP">1938, 5309680, 1938 ~ 331855, -, -, 1 ~ 16, no</column>
-<column name=" + STAGE_LOOP">1668, 319536, 1668 ~ 26628, -, -, 1 ~ 12, no</column>
+<column name="- BATCH_LOOP">899, 2068912, 899 ~ 129307, -, -, 1 ~ 16, no</column>
+<column name=" + STAGE_LOOP">629, 116988, 629 ~ 9749, -, -, 1 ~ 12, no</column>
 </table>
 </item>
 </section>

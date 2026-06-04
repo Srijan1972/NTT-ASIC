@@ -22,14 +22,14 @@
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
 <unit>clock cycles</unit>
-<Best-caseLatency>2208</Best-caseLatency>
-<Average-caseLatency>716294</Average-caseLatency>
-<Worst-caseLatency>5313790</Worst-caseLatency>
-<Best-caseRealTimeLatency>22.080 us</Best-caseRealTimeLatency>
-<Average-caseRealTimeLatency>7.163 ms</Average-caseRealTimeLatency>
-<Worst-caseRealTimeLatency>53.138 ms</Worst-caseRealTimeLatency>
-<Interval-min>2209</Interval-min>
-<Interval-max>5313791</Interval-max>
+<Best-caseLatency>1169</Best-caseLatency>
+<Average-caseLatency>286262</Average-caseLatency>
+<Worst-caseLatency>2073022</Worst-caseLatency>
+<Best-caseRealTimeLatency>11.690 us</Best-caseRealTimeLatency>
+<Average-caseRealTimeLatency>2.863 ms</Average-caseRealTimeLatency>
+<Worst-caseRealTimeLatency>20.730 ms</Worst-caseRealTimeLatency>
+<Interval-min>1170</Interval-min>
+<Interval-max>2073023</Interval-max>
 </SummaryOfOverallLatency>
 <SummaryOfLoopLatency>
 <BATCH_LOOP>
@@ -42,20 +42,20 @@
 </TripCount>
 <Latency>
 <range>
-<min>1938</min>
-<max>5309680</max>
+<min>899</min>
+<max>2068912</max>
 </range>
 </Latency>
 <AbsoluteTimeLatency>
 <range>
-<min>19380</min>
-<max>53096800</max>
+<min>8990</min>
+<max>20689120</max>
 </range>
 </AbsoluteTimeLatency>
 <IterationLatency>
 <range>
-<min>1938</min>
-<max>331855</max>
+<min>899</min>
+<max>129307</max>
 </range>
 </IterationLatency>
 <InstanceList>
@@ -70,20 +70,20 @@
 </TripCount>
 <Latency>
 <range>
-<min>1668</min>
-<max>319536</max>
+<min>629</min>
+<max>116988</max>
 </range>
 </Latency>
 <AbsoluteTimeLatency>
 <range>
-<min>16680</min>
-<max>3195360</max>
+<min>6290</min>
+<max>1169880</max>
 </range>
 </AbsoluteTimeLatency>
 <IterationLatency>
 <range>
-<min>1668</min>
-<max>26628</max>
+<min>629</min>
+<max>9749</max>
 </range>
 </IterationLatency>
 <InstanceList>
@@ -94,18 +94,18 @@
 <SummaryOfViolations>
 <IssueType>-</IssueType>
 <ViolationType>-</ViolationType>
-<SourceLocation>hls-design/ntt-kernel.cpp:97</SourceLocation>
+<SourceLocation>hls-design/ntt-kernel.cpp:100</SourceLocation>
 <SummaryOfLoopViolations>
 <BATCH_LOOP>
 <Name>BATCH_LOOP</Name>
 <IssueType>-</IssueType>
 <ViolationType>-</ViolationType>
-<SourceLocation>hls-design/ntt-kernel.cpp:97</SourceLocation>
+<SourceLocation>hls-design/ntt-kernel.cpp:100</SourceLocation>
 <STAGE_LOOP>
 <Name>STAGE_LOOP</Name>
 <IssueType>-</IssueType>
 <ViolationType>-</ViolationType>
-<SourceLocation>hls-design/ntt-kernel.cpp:121</SourceLocation>
+<SourceLocation>hls-design/ntt-kernel.cpp:124</SourceLocation>
 </STAGE_LOOP>
 </BATCH_LOOP>
 </SummaryOfLoopViolations>
@@ -114,10 +114,10 @@
 
 <AreaEstimates>
 <Resources>
-<BRAM_18K>47</BRAM_18K>
+<BRAM_18K>63</BRAM_18K>
 <DSP>7</DSP>
-<FF>4670</FF>
-<LUT>5808</LUT>
+<FF>8097</FF>
+<LUT>12237</LUT>
 <URAM>0</URAM>
 </Resources>
 <AvailableResources>

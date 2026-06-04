@@ -3,12 +3,12 @@
 # SW Build 4029153 on Fri Oct 13 20:13:54 MDT 2023
 # IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
 # SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
-# Start of session at: Mon Jun  1 21:42:14 2026
-# Process ID: 3297826
+# Start of session at: Thu Jun  4 11:25:52 2026
+# Process ID: 3148177
 # Current directory: /home/sg9109/Documents/hls-design/ntt-asic/impl/ip
 # Command line: vivado -notrace -mode batch -source run_ippack.tcl
 # Log file: /home/sg9109/Documents/hls-design/ntt-asic/impl/ip/vivado.log
 # Journal file: /home/sg9109/Documents/hls-design/ntt-asic/impl/ip/vivado.jou
-# Running On: ecs02.poly.edu, OS: Linux, CPU Frequency: 1699.559 MHz, CPU Physical cores: 32, Host memory: 1064159 MB
+# Running On: ecs02.poly.edu, OS: Linux, CPU Frequency: 2200.000 MHz, CPU Physical cores: 32, Host memory: 1064159 MB
 #-----------------------------------------------------------
 source run_ippack.tcl -notrace

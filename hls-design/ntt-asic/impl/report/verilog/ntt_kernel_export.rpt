@@ -4,21 +4,21 @@ Implementation tool: Xilinx Vivado v.2023.2
 Project:             hls-design
 Solution:            ntt-asic
 Device target:       xck26-sfvc784-2LV-c
-Report date:         Mon Jun 01 21:48:19 EDT 2026
+Report date:         Thu Jun 04 11:33:25 EDT 2026
 
 #=== Post-Implementation Resource usage ===
 SLICE:            0
-LUT:           4019
-FF:            5704
+LUT:           9609
+FF:            8383
 DSP:              7
-BRAM:            31
+BRAM:            47
 URAM:             1
 LATCH:            0
 SRL:            256
-CLB:            892
+CLB:           2044
 
 #=== Final timing ===
 CP required:                     10.000
-CP achieved post-synthesis:      5.179
-CP achieved post-implementation: 7.223
+CP achieved post-synthesis:      5.932
+CP achieved post-implementation: 9.006
 Timing met

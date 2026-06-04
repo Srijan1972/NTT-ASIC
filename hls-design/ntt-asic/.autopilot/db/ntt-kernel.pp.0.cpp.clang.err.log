@@ -132,55 +132,67 @@ hls-design/ntt-kernel.cpp:70:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid
 hls-design/ntt-kernel.cpp:73:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=bind_storage_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ntt_kernel_XLX_SEP_ PragmaOptions=variable=local_twiddles type=ram_2p impl=bram_XLX_SEP_ [-Wdump-hls-pragmas]
 #pragma HLS BIND_STORAGE variable=local_twiddles type=ram_2p impl=bram
         ^
-hls-design/ntt-kernel.cpp:75:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=bind_storage_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ntt_kernel_XLX_SEP_ PragmaOptions=variable=local_psi type=ram_2p impl=bram_XLX_SEP_ [-Wdump-hls-pragmas]
+hls-design/ntt-kernel.cpp:74:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ntt_kernel_XLX_SEP_ PragmaOptions=variable=local_twiddles cyclic factor=4 dim=1_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS ARRAY_PARTITION variable=local_twiddles cyclic factor=4 dim=1
+        ^
+hls-design/ntt-kernel.cpp:76:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=bind_storage_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ntt_kernel_XLX_SEP_ PragmaOptions=variable=local_psi type=ram_2p impl=bram_XLX_SEP_ [-Wdump-hls-pragmas]
 #pragma HLS BIND_STORAGE variable=local_psi type=ram_2p impl=bram
         ^
-hls-design/ntt-kernel.cpp:79:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=bind_storage_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ntt_kernel_XLX_SEP_ PragmaOptions=variable=ping type=ram_2p impl=bram_XLX_SEP_ [-Wdump-hls-pragmas]
+hls-design/ntt-kernel.cpp:80:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=bind_storage_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ntt_kernel_XLX_SEP_ PragmaOptions=variable=ping type=ram_2p impl=bram_XLX_SEP_ [-Wdump-hls-pragmas]
 #pragma HLS BIND_STORAGE variable=ping type=ram_2p impl=bram
         ^
-hls-design/ntt-kernel.cpp:81:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=bind_storage_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ntt_kernel_XLX_SEP_ PragmaOptions=variable=pong type=ram_2p impl=bram_XLX_SEP_ [-Wdump-hls-pragmas]
+hls-design/ntt-kernel.cpp:81:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ntt_kernel_XLX_SEP_ PragmaOptions=variable=ping cyclic factor=8 dim=1_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS ARRAY_PARTITION variable=ping cyclic factor=8 dim=1
+        ^
+hls-design/ntt-kernel.cpp:83:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=bind_storage_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ntt_kernel_XLX_SEP_ PragmaOptions=variable=pong type=ram_2p impl=bram_XLX_SEP_ [-Wdump-hls-pragmas]
 #pragma HLS BIND_STORAGE variable=pong type=ram_2p impl=bram
         ^
-hls-design/ntt-kernel.cpp:85:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ntt_kernel_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_ [-Wdump-hls-pragmas]
+hls-design/ntt-kernel.cpp:84:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ntt_kernel_XLX_SEP_ PragmaOptions=variable=pong cyclic factor=8 dim=1_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS ARRAY_PARTITION variable=pong cyclic factor=8 dim=1
+        ^
+hls-design/ntt-kernel.cpp:88:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ntt_kernel_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_ [-Wdump-hls-pragmas]
 #pragma HLS PIPELINE II=1
         ^
-hls-design/ntt-kernel.cpp:86:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=loop_tripcount_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ntt_kernel_XLX_SEP_ PragmaOptions=min=255 max=4095_XLX_SEP_ [-Wdump-hls-pragmas]
+hls-design/ntt-kernel.cpp:89:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=loop_tripcount_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ntt_kernel_XLX_SEP_ PragmaOptions=min=255 max=4095_XLX_SEP_ [-Wdump-hls-pragmas]
 #pragma HLS LOOP_TRIPCOUNT min=255 max=4095
         ^
-hls-design/ntt-kernel.cpp:92:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ntt_kernel_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_ [-Wdump-hls-pragmas]
+hls-design/ntt-kernel.cpp:95:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ntt_kernel_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_ [-Wdump-hls-pragmas]
 #pragma HLS PIPELINE II=1
         ^
-hls-design/ntt-kernel.cpp:93:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=loop_tripcount_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ntt_kernel_XLX_SEP_ PragmaOptions=min=256 max=4096_XLX_SEP_ [-Wdump-hls-pragmas]
+hls-design/ntt-kernel.cpp:96:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=loop_tripcount_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ntt_kernel_XLX_SEP_ PragmaOptions=min=256 max=4096_XLX_SEP_ [-Wdump-hls-pragmas]
 #pragma HLS LOOP_TRIPCOUNT min=256 max=4096
         ^
-hls-design/ntt-kernel.cpp:98:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=loop_tripcount_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ntt_kernel_XLX_SEP_ PragmaOptions=min=1 max=16_XLX_SEP_ [-Wdump-hls-pragmas]
+hls-design/ntt-kernel.cpp:101:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=loop_tripcount_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ntt_kernel_XLX_SEP_ PragmaOptions=min=1 max=16_XLX_SEP_ [-Wdump-hls-pragmas]
 #pragma HLS LOOP_TRIPCOUNT min=1 max=16
         ^
-hls-design/ntt-kernel.cpp:104:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ntt_kernel_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_ [-Wdump-hls-pragmas]
+hls-design/ntt-kernel.cpp:107:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ntt_kernel_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_ [-Wdump-hls-pragmas]
 #pragma HLS PIPELINE II=1
         ^
-hls-design/ntt-kernel.cpp:105:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=loop_tripcount_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ntt_kernel_XLX_SEP_ PragmaOptions=min=256 max=4096_XLX_SEP_ [-Wdump-hls-pragmas]
+hls-design/ntt-kernel.cpp:108:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=loop_tripcount_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ntt_kernel_XLX_SEP_ PragmaOptions=min=256 max=4096_XLX_SEP_ [-Wdump-hls-pragmas]
 #pragma HLS LOOP_TRIPCOUNT min=256 max=4096
         ^
-hls-design/ntt-kernel.cpp:111:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ntt_kernel_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_ [-Wdump-hls-pragmas]
+hls-design/ntt-kernel.cpp:114:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ntt_kernel_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_ [-Wdump-hls-pragmas]
 #pragma HLS PIPELINE II=1
         ^
-hls-design/ntt-kernel.cpp:112:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=loop_tripcount_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ntt_kernel_XLX_SEP_ PragmaOptions=min=256 max=4096_XLX_SEP_ [-Wdump-hls-pragmas]
+hls-design/ntt-kernel.cpp:115:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=loop_tripcount_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ntt_kernel_XLX_SEP_ PragmaOptions=min=256 max=4096_XLX_SEP_ [-Wdump-hls-pragmas]
 #pragma HLS LOOP_TRIPCOUNT min=256 max=4096
         ^
-hls-design/ntt-kernel.cpp:122:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=loop_tripcount_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ntt_kernel_XLX_SEP_ PragmaOptions=min=1 max=12_XLX_SEP_ [-Wdump-hls-pragmas]
+hls-design/ntt-kernel.cpp:125:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=loop_tripcount_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ntt_kernel_XLX_SEP_ PragmaOptions=min=1 max=12_XLX_SEP_ [-Wdump-hls-pragmas]
 #pragma HLS LOOP_TRIPCOUNT min=1 max=12
         ^
-hls-design/ntt-kernel.cpp:127:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ntt_kernel_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_ [-Wdump-hls-pragmas]
+hls-design/ntt-kernel.cpp:131:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ntt_kernel_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_ [-Wdump-hls-pragmas]
 #pragma HLS PIPELINE II=1
         ^
-hls-design/ntt-kernel.cpp:128:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=loop_tripcount_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ntt_kernel_XLX_SEP_ PragmaOptions=min=128 max=2048_XLX_SEP_ [-Wdump-hls-pragmas]
+hls-design/ntt-kernel.cpp:132:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=loop_tripcount_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ntt_kernel_XLX_SEP_ PragmaOptions=min=128 max=2048_XLX_SEP_ [-Wdump-hls-pragmas]
 #pragma HLS LOOP_TRIPCOUNT min=128 max=2048
         ^
-hls-design/ntt-kernel.cpp:166:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ntt_kernel_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_ [-Wdump-hls-pragmas]
+hls-design/ntt-kernel.cpp:133:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ntt_kernel_XLX_SEP_ PragmaOptions=factor=4_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS UNROLL factor=4
+        ^
+hls-design/ntt-kernel.cpp:171:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ntt_kernel_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_ [-Wdump-hls-pragmas]
 #pragma HLS PIPELINE II=1
         ^
-hls-design/ntt-kernel.cpp:167:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=loop_tripcount_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ntt_kernel_XLX_SEP_ PragmaOptions=min=256 max=4096_XLX_SEP_ [-Wdump-hls-pragmas]
+hls-design/ntt-kernel.cpp:172:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=loop_tripcount_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ntt_kernel_XLX_SEP_ PragmaOptions=min=256 max=4096_XLX_SEP_ [-Wdump-hls-pragmas]
 #pragma HLS LOOP_TRIPCOUNT min=256 max=4096
         ^
-61 warnings generated.
+65 warnings generated.

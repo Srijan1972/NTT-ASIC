@@ -12,8 +12,8 @@ entity ntt_kernel_ping_RAM_2P_BRAM_1R1W is
     generic(
         MEM_TYPE        : string    := "block"; 
         DataWidth       : integer   := 32; 
-        AddressWidth    : integer   := 12;
-        AddressRange    : integer   := 4096
+        AddressWidth    : integer   := 9;
+        AddressRange    : integer   := 512
     ); 
     port (
         address0    : in std_logic_vector(AddressWidth-1 downto 0); 

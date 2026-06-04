@@ -17,8 +17,8 @@ module ntt_kernel_ping_RAM_2P_BRAM_1R1W (
     reset, clk);
 
 parameter DataWidth = 32;
-parameter AddressWidth = 12;
-parameter AddressRange = 4096;
+parameter AddressWidth = 9;
+parameter AddressRange = 512;
  
 input[AddressWidth-1:0] address0;
 input ce0;

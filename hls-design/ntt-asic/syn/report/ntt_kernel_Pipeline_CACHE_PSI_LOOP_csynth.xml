@@ -61,13 +61,13 @@
 <SummaryOfViolations>
 <IssueType>-</IssueType>
 <ViolationType>-</ViolationType>
-<SourceLocation>hls-design/ntt-kernel.cpp:91</SourceLocation>
+<SourceLocation>hls-design/ntt-kernel.cpp:94</SourceLocation>
 <SummaryOfLoopViolations>
 <CACHE_PSI_LOOP>
 <Name>CACHE_PSI_LOOP</Name>
 <IssueType>-</IssueType>
 <ViolationType>-</ViolationType>
-<SourceLocation>hls-design/ntt-kernel.cpp:91</SourceLocation>
+<SourceLocation>hls-design/ntt-kernel.cpp:94</SourceLocation>
 </CACHE_PSI_LOOP>
 </SummaryOfLoopViolations>
 </SummaryOfViolations>
@@ -675,8 +675,8 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>sext_ln91</name>
-<Object>sext_ln91</Object>
+<name>sext_ln94</name>
+<Object>sext_ln94</Object>
 <Type>scalar</Type>
 <Scope></Scope>
 <IOProtocol>ap_none</IOProtocol>

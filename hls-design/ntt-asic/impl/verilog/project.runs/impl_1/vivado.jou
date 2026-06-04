@@ -3,12 +3,12 @@
 # SW Build 4029153 on Fri Oct 13 20:13:54 MDT 2023
 # IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
 # SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
-# Start of session at: Mon Jun  1 21:45:41 2026
-# Process ID: 3311593
+# Start of session at: Thu Jun  4 11:30:03 2026
+# Process ID: 3180061
 # Current directory: /home/sg9109/Documents/hls-design/ntt-asic/impl/verilog/project.runs/impl_1
 # Command line: vivado -log bd_0_wrapper.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source bd_0_wrapper.tcl -notrace
 # Log file: /home/sg9109/Documents/hls-design/ntt-asic/impl/verilog/project.runs/impl_1/bd_0_wrapper.vdi
 # Journal file: /home/sg9109/Documents/hls-design/ntt-asic/impl/verilog/project.runs/impl_1/vivado.jou
-# Running On: ecs02.poly.edu, OS: Linux, CPU Frequency: 3307.088 MHz, CPU Physical cores: 32, Host memory: 1064159 MB
+# Running On: ecs02.poly.edu, OS: Linux, CPU Frequency: 985.881 MHz, CPU Physical cores: 32, Host memory: 1064159 MB
 #-----------------------------------------------------------
 source bd_0_wrapper.tcl -notrace

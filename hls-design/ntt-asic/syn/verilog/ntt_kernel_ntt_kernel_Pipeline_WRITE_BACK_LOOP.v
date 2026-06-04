@@ -60,13 +60,55 @@ module ntt_kernel_ntt_kernel_Pipeline_WRITE_BACK_LOOP (
         m_axi_gmem0_BID,
         m_axi_gmem0_BUSER,
         n,
-        sext_ln165,
+        sext_ln170,
         ping_address0,
         ping_ce0,
         ping_q0,
+        ping_1_address0,
+        ping_1_ce0,
+        ping_1_q0,
+        ping_2_address0,
+        ping_2_ce0,
+        ping_2_q0,
+        ping_3_address0,
+        ping_3_ce0,
+        ping_3_q0,
+        ping_4_address0,
+        ping_4_ce0,
+        ping_4_q0,
+        ping_5_address0,
+        ping_5_ce0,
+        ping_5_q0,
+        ping_6_address0,
+        ping_6_ce0,
+        ping_6_q0,
+        ping_7_address0,
+        ping_7_ce0,
+        ping_7_q0,
         pong_address0,
         pong_ce0,
         pong_q0,
+        pong_1_address0,
+        pong_1_ce0,
+        pong_1_q0,
+        pong_2_address0,
+        pong_2_ce0,
+        pong_2_q0,
+        pong_3_address0,
+        pong_3_ce0,
+        pong_3_q0,
+        pong_4_address0,
+        pong_4_ce0,
+        pong_4_q0,
+        pong_5_address0,
+        pong_5_ce0,
+        pong_5_q0,
+        pong_6_address0,
+        pong_6_ce0,
+        pong_6_q0,
+        pong_7_address0,
+        pong_7_ce0,
+        pong_7_q0,
         use_ping_as_input
 );
 
@@ -125,19 +167,75 @@ input  [1:0] m_axi_gmem0_BRESP;
 input  [0:0] m_axi_gmem0_BID;
 input  [0:0] m_axi_gmem0_BUSER;
 input  [31:0] n;
-input  [61:0] sext_ln165;
-output  [11:0] ping_address0;
+input  [61:0] sext_ln170;
+output  [8:0] ping_address0;
 output   ping_ce0;
 input  [31:0] ping_q0;
-output  [11:0] pong_address0;
+output  [8:0] ping_1_address0;
+output   ping_1_ce0;
+input  [31:0] ping_1_q0;
+output  [8:0] ping_2_address0;
+output   ping_2_ce0;
+input  [31:0] ping_2_q0;
+output  [8:0] ping_3_address0;
+output   ping_3_ce0;
+input  [31:0] ping_3_q0;
+output  [8:0] ping_4_address0;
+output   ping_4_ce0;
+input  [31:0] ping_4_q0;
+output  [8:0] ping_5_address0;
+output   ping_5_ce0;
+input  [31:0] ping_5_q0;
+output  [8:0] ping_6_address0;
+output   ping_6_ce0;
+input  [31:0] ping_6_q0;
+output  [8:0] ping_7_address0;
+output   ping_7_ce0;
+input  [31:0] ping_7_q0;
+output  [8:0] pong_address0;
 output   pong_ce0;
 input  [31:0] pong_q0;
+output  [8:0] pong_1_address0;
+output   pong_1_ce0;
+input  [31:0] pong_1_q0;
+output  [8:0] pong_2_address0;
+output   pong_2_ce0;
+input  [31:0] pong_2_q0;
+output  [8:0] pong_3_address0;
+output   pong_3_ce0;
+input  [31:0] pong_3_q0;
+output  [8:0] pong_4_address0;
+output   pong_4_ce0;
+input  [31:0] pong_4_q0;
+output  [8:0] pong_5_address0;
+output   pong_5_ce0;
+input  [31:0] pong_5_q0;
+output  [8:0] pong_6_address0;
+output   pong_6_ce0;
+input  [31:0] pong_6_q0;
+output  [8:0] pong_7_address0;
+output   pong_7_ce0;
+input  [31:0] pong_7_q0;
 input  [0:0] use_ping_as_input;
 
 reg ap_idle;
 reg m_axi_gmem0_WVALID;
 reg ping_ce0;
+reg ping_1_ce0;
+reg ping_2_ce0;
+reg ping_3_ce0;
+reg ping_4_ce0;
+reg ping_5_ce0;
+reg ping_6_ce0;
+reg ping_7_ce0;
 reg pong_ce0;
+reg pong_1_ce0;
+reg pong_2_ce0;
+reg pong_3_ce0;
+reg pong_4_ce0;
+reg pong_5_ce0;
+reg pong_6_ce0;
+reg pong_7_ce0;
 
 (* fsm_encoding = "none" *) reg   [0:0] ap_CS_fsm;
 wire    ap_CS_fsm_pp0_stage0;
@@ -146,22 +244,29 @@ reg    ap_enable_reg_pp0_iter1;
 reg    ap_enable_reg_pp0_iter2;
 reg    ap_idle_pp0;
 reg    ap_block_pp0_stage0_subdone;
-wire   [0:0] icmp_ln165_fu_144_p2;
+wire   [0:0] icmp_ln170_fu_380_p2;
 reg    ap_condition_exit_pp0_iter0_stage0;
 wire    ap_loop_exit_ready;
 reg    ap_ready_int;
 reg    gmem0_blk_n_W;
 wire    ap_block_pp0_stage0;
 reg    ap_block_pp0_stage0_11001;
-wire   [31:0] storereflowmerge_fu_167_p3;
-reg   [31:0] storereflowmerge_reg_211;
-wire   [63:0] zext_ln165_fu_156_p1;
+wire   [2:0] trunc_ln170_fu_392_p1;
+reg   [2:0] trunc_ln170_reg_543;
+wire   [31:0] storereflowmerge_fu_509_p3;
+reg   [31:0] storereflowmerge_reg_629;
+wire   [63:0] zext_ln170_1_fu_406_p1;
 wire    ap_block_pp0_stage0_01001;
-reg   [12:0] i_fu_72;
-wire   [12:0] add_ln165_fu_150_p2;
+reg   [12:0] i_fu_126;
+wire   [12:0] add_ln170_fu_386_p2;
 wire    ap_loop_init;
 reg   [12:0] ap_sig_allocacmp_i_1;
-wire   [31:0] zext_ln165_1_fu_140_p1;
+wire   [31:0] zext_ln170_fu_376_p1;
+wire   [8:0] lshr_ln5_fu_396_p4;
+wire   [31:0] tmp_fu_431_p17;
+wire   [31:0] tmp_1_fu_470_p17;
+wire   [31:0] tmp_fu_431_p19;
+wire   [31:0] tmp_1_fu_470_p19;
 reg    ap_done_reg;
 wire    ap_continue_int;
 reg    ap_done_int;
@@ -169,6 +274,22 @@ reg    ap_loop_exit_ready_pp0_iter1_reg;
 reg   [0:0] ap_NS_fsm;
 wire    ap_enable_pp0;
 wire    ap_start_int;
+wire   [2:0] tmp_fu_431_p1;
+wire   [2:0] tmp_fu_431_p3;
+wire   [2:0] tmp_fu_431_p5;
+wire   [2:0] tmp_fu_431_p7;
+wire  signed [2:0] tmp_fu_431_p9;
+wire  signed [2:0] tmp_fu_431_p11;
+wire  signed [2:0] tmp_fu_431_p13;
+wire  signed [2:0] tmp_fu_431_p15;
+wire   [2:0] tmp_1_fu_470_p1;
+wire   [2:0] tmp_1_fu_470_p3;
+wire   [2:0] tmp_1_fu_470_p5;
+wire   [2:0] tmp_1_fu_470_p7;
+wire  signed [2:0] tmp_1_fu_470_p9;
+wire  signed [2:0] tmp_1_fu_470_p11;
+wire  signed [2:0] tmp_1_fu_470_p13;
+wire  signed [2:0] tmp_1_fu_470_p15;
 wire    ap_ce_reg;
 
 // power-on initialization
@@ -176,9 +297,81 @@ initial begin
 #0 ap_CS_fsm = 1'd1;
 #0 ap_enable_reg_pp0_iter1 = 1'b0;
 #0 ap_enable_reg_pp0_iter2 = 1'b0;
-#0 i_fu_72 = 13'd0;
+#0 i_fu_126 = 13'd0;
 #0 ap_done_reg = 1'b0;
 end
+
+ntt_kernel_sparsemux_17_3_32_1_1 #(
+    .ID( 1 ),
+    .NUM_STAGE( 1 ),
+    .CASE0( 3'h0 ),
+    .din0_WIDTH( 32 ),
+    .CASE1( 3'h1 ),
+    .din1_WIDTH( 32 ),
+    .CASE2( 3'h2 ),
+    .din2_WIDTH( 32 ),
+    .CASE3( 3'h3 ),
+    .din3_WIDTH( 32 ),
+    .CASE4( 3'h4 ),
+    .din4_WIDTH( 32 ),
+    .CASE5( 3'h5 ),
+    .din5_WIDTH( 32 ),
+    .CASE6( 3'h6 ),
+    .din6_WIDTH( 32 ),
+    .CASE7( 3'h7 ),
+    .din7_WIDTH( 32 ),
+    .def_WIDTH( 32 ),
+    .sel_WIDTH( 3 ),
+    .dout_WIDTH( 32 ))
+sparsemux_17_3_32_1_1_U87(
+    .din0(ping_q0),
+    .din1(ping_1_q0),
+    .din2(ping_2_q0),
+    .din3(ping_3_q0),
+    .din4(ping_4_q0),
+    .din5(ping_5_q0),
+    .din6(ping_6_q0),
+    .din7(ping_7_q0),
+    .def(tmp_fu_431_p17),
+    .sel(trunc_ln170_reg_543),
+    .dout(tmp_fu_431_p19)
+);
+
+ntt_kernel_sparsemux_17_3_32_1_1 #(
+    .ID( 1 ),
+    .NUM_STAGE( 1 ),
+    .CASE0( 3'h0 ),
+    .din0_WIDTH( 32 ),
+    .CASE1( 3'h1 ),
+    .din1_WIDTH( 32 ),
+    .CASE2( 3'h2 ),
+    .din2_WIDTH( 32 ),
+    .CASE3( 3'h3 ),
+    .din3_WIDTH( 32 ),
+    .CASE4( 3'h4 ),
+    .din4_WIDTH( 32 ),
+    .CASE5( 3'h5 ),
+    .din5_WIDTH( 32 ),
+    .CASE6( 3'h6 ),
+    .din6_WIDTH( 32 ),
+    .CASE7( 3'h7 ),
+    .din7_WIDTH( 32 ),
+    .def_WIDTH( 32 ),
+    .sel_WIDTH( 3 ),
+    .dout_WIDTH( 32 ))
+sparsemux_17_3_32_1_1_U88(
+    .din0(pong_q0),
+    .din1(pong_1_q0),
+    .din2(pong_2_q0),
+    .din3(pong_3_q0),
+    .din4(pong_4_q0),
+    .din5(pong_5_q0),
+    .din6(pong_6_q0),
+    .din7(pong_7_q0),
+    .def(tmp_1_fu_470_p17),
+    .sel(trunc_ln170_reg_543),
+    .dout(tmp_1_fu_470_p19)
+);
 
 ntt_kernel_flow_control_loop_pipe_sequential_init flow_control_loop_pipe_sequential_init_U(
     .ap_clk(ap_clk),
@@ -239,10 +432,10 @@ end
 
 always @ (posedge ap_clk) begin
     if (((1'b0 == ap_block_pp0_stage0_11001) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
-        if (((icmp_ln165_fu_144_p2 == 1'd1) & (ap_enable_reg_pp0_iter0 == 1'b1))) begin
-            i_fu_72 <= add_ln165_fu_150_p2;
+        if (((icmp_ln170_fu_380_p2 == 1'd1) & (ap_enable_reg_pp0_iter0 == 1'b1))) begin
+            i_fu_126 <= add_ln170_fu_386_p2;
         end else if ((ap_loop_init == 1'b1)) begin
-            i_fu_72 <= 13'd0;
+            i_fu_126 <= 13'd0;
         end
     end
 end
@@ -250,12 +443,13 @@ end
 always @ (posedge ap_clk) begin
     if (((1'b0 == ap_block_pp0_stage0_11001) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
         ap_loop_exit_ready_pp0_iter1_reg <= ap_loop_exit_ready;
-        storereflowmerge_reg_211 <= storereflowmerge_fu_167_p3;
+        storereflowmerge_reg_629 <= storereflowmerge_fu_509_p3;
+        trunc_ln170_reg_543 <= trunc_ln170_fu_392_p1;
     end
 end
 
 always @ (*) begin
-    if (((icmp_ln165_fu_144_p2 == 1'd0) & (1'b0 == ap_block_pp0_stage0_subdone) & (ap_enable_reg_pp0_iter0 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
+    if (((icmp_ln170_fu_380_p2 == 1'd0) & (1'b0 == ap_block_pp0_stage0_subdone) & (ap_enable_reg_pp0_iter0 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
         ap_condition_exit_pp0_iter0_stage0 = 1'b1;
     end else begin
         ap_condition_exit_pp0_iter0_stage0 = 1'b0;
@@ -271,7 +465,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((ap_idle_pp0 == 1'b1) & (ap_start_int == 1'b0) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
+    if (((ap_start_int == 1'b0) & (ap_idle_pp0 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
         ap_idle = 1'b1;
     end else begin
         ap_idle = 1'b0;
@@ -295,10 +489,10 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((1'b0 == ap_block_pp0_stage0) & (1'b1 == ap_CS_fsm_pp0_stage0) & (ap_loop_init == 1'b1))) begin
+    if (((1'b0 == ap_block_pp0_stage0) & (ap_loop_init == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
         ap_sig_allocacmp_i_1 = 13'd0;
     end else begin
-        ap_sig_allocacmp_i_1 = i_fu_72;
+        ap_sig_allocacmp_i_1 = i_fu_126;
     end
 end
 
@@ -320,9 +514,121 @@ end
 
 always @ (*) begin
     if (((1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter0 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
+        ping_1_ce0 = 1'b1;
+    end else begin
+        ping_1_ce0 = 1'b0;
+    end
+end
+
+always @ (*) begin
+    if (((1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter0 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
+        ping_2_ce0 = 1'b1;
+    end else begin
+        ping_2_ce0 = 1'b0;
+    end
+end
+
+always @ (*) begin
+    if (((1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter0 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
+        ping_3_ce0 = 1'b1;
+    end else begin
+        ping_3_ce0 = 1'b0;
+    end
+end
+
+always @ (*) begin
+    if (((1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter0 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
+        ping_4_ce0 = 1'b1;
+    end else begin
+        ping_4_ce0 = 1'b0;
+    end
+end
+
+always @ (*) begin
+    if (((1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter0 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
+        ping_5_ce0 = 1'b1;
+    end else begin
+        ping_5_ce0 = 1'b0;
+    end
+end
+
+always @ (*) begin
+    if (((1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter0 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
+        ping_6_ce0 = 1'b1;
+    end else begin
+        ping_6_ce0 = 1'b0;
+    end
+end
+
+always @ (*) begin
+    if (((1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter0 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
+        ping_7_ce0 = 1'b1;
+    end else begin
+        ping_7_ce0 = 1'b0;
+    end
+end
+
+always @ (*) begin
+    if (((1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter0 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
         ping_ce0 = 1'b1;
     end else begin
         ping_ce0 = 1'b0;
+    end
+end
+
+always @ (*) begin
+    if (((1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter0 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
+        pong_1_ce0 = 1'b1;
+    end else begin
+        pong_1_ce0 = 1'b0;
+    end
+end
+
+always @ (*) begin
+    if (((1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter0 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
+        pong_2_ce0 = 1'b1;
+    end else begin
+        pong_2_ce0 = 1'b0;
+    end
+end
+
+always @ (*) begin
+    if (((1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter0 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
+        pong_3_ce0 = 1'b1;
+    end else begin
+        pong_3_ce0 = 1'b0;
+    end
+end
+
+always @ (*) begin
+    if (((1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter0 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
+        pong_4_ce0 = 1'b1;
+    end else begin
+        pong_4_ce0 = 1'b0;
+    end
+end
+
+always @ (*) begin
+    if (((1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter0 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
+        pong_5_ce0 = 1'b1;
+    end else begin
+        pong_5_ce0 = 1'b0;
+    end
+end
+
+always @ (*) begin
+    if (((1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter0 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
+        pong_6_ce0 = 1'b1;
+    end else begin
+        pong_6_ce0 = 1'b0;
+    end
+end
+
+always @ (*) begin
+    if (((1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter0 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
+        pong_7_ce0 = 1'b1;
+    end else begin
+        pong_7_ce0 = 1'b0;
     end
 end
 
@@ -345,7 +651,7 @@ always @ (*) begin
     endcase
 end
 
-assign add_ln165_fu_150_p2 = (ap_sig_allocacmp_i_1 + 13'd1);
+assign add_ln170_fu_386_p2 = (ap_sig_allocacmp_i_1 + 13'd1);
 
 assign ap_CS_fsm_pp0_stage0 = ap_CS_fsm[32'd0];
 
@@ -367,7 +673,9 @@ assign ap_enable_reg_pp0_iter0 = ap_start_int;
 
 assign ap_loop_exit_ready = ap_condition_exit_pp0_iter0_stage0;
 
-assign icmp_ln165_fu_144_p2 = (($signed(zext_ln165_1_fu_140_p1) < $signed(n)) ? 1'b1 : 1'b0);
+assign icmp_ln170_fu_380_p2 = (($signed(zext_ln170_fu_376_p1) < $signed(n)) ? 1'b1 : 1'b0);
+
+assign lshr_ln5_fu_396_p4 = {{ap_sig_allocacmp_i_1[11:3]}};
 
 assign m_axi_gmem0_ARADDR = 64'd0;
 
@@ -421,7 +729,7 @@ assign m_axi_gmem0_BREADY = 1'b0;
 
 assign m_axi_gmem0_RREADY = 1'b0;
 
-assign m_axi_gmem0_WDATA = storereflowmerge_reg_211;
+assign m_axi_gmem0_WDATA = storereflowmerge_reg_629;
 
 assign m_axi_gmem0_WID = 1'd0;
 
@@ -431,14 +739,48 @@ assign m_axi_gmem0_WSTRB = 4'd15;
 
 assign m_axi_gmem0_WUSER = 1'd0;
 
-assign ping_address0 = zext_ln165_fu_156_p1;
+assign ping_1_address0 = zext_ln170_1_fu_406_p1;
 
-assign pong_address0 = zext_ln165_fu_156_p1;
+assign ping_2_address0 = zext_ln170_1_fu_406_p1;
 
-assign storereflowmerge_fu_167_p3 = ((use_ping_as_input[0:0] == 1'b1) ? ping_q0 : pong_q0);
+assign ping_3_address0 = zext_ln170_1_fu_406_p1;
 
-assign zext_ln165_1_fu_140_p1 = ap_sig_allocacmp_i_1;
+assign ping_4_address0 = zext_ln170_1_fu_406_p1;
 
-assign zext_ln165_fu_156_p1 = ap_sig_allocacmp_i_1;
+assign ping_5_address0 = zext_ln170_1_fu_406_p1;
+
+assign ping_6_address0 = zext_ln170_1_fu_406_p1;
+
+assign ping_7_address0 = zext_ln170_1_fu_406_p1;
+
+assign ping_address0 = zext_ln170_1_fu_406_p1;
+
+assign pong_1_address0 = zext_ln170_1_fu_406_p1;
+
+assign pong_2_address0 = zext_ln170_1_fu_406_p1;
+
+assign pong_3_address0 = zext_ln170_1_fu_406_p1;
+
+assign pong_4_address0 = zext_ln170_1_fu_406_p1;
+
+assign pong_5_address0 = zext_ln170_1_fu_406_p1;
+
+assign pong_6_address0 = zext_ln170_1_fu_406_p1;
+
+assign pong_7_address0 = zext_ln170_1_fu_406_p1;
+
+assign pong_address0 = zext_ln170_1_fu_406_p1;
+
+assign storereflowmerge_fu_509_p3 = ((use_ping_as_input[0:0] == 1'b1) ? tmp_fu_431_p19 : tmp_1_fu_470_p19);
+
+assign tmp_1_fu_470_p17 = 'bx;
+
+assign tmp_fu_431_p17 = 'bx;
+
+assign trunc_ln170_fu_392_p1 = ap_sig_allocacmp_i_1[2:0];
+
+assign zext_ln170_1_fu_406_p1 = lshr_ln5_fu_396_p4;
+
+assign zext_ln170_fu_376_p1 = ap_sig_allocacmp_i_1;
 
 endmodule //ntt_kernel_ntt_kernel_Pipeline_WRITE_BACK_LOOP

@@ -356,13 +356,13 @@ set NewPortList {[
  	{ "name": "m_axi_gmem2_BUSER", "direction": "in", "datatype": "sc_lv", "bitwidth":1, "type": "signal", "bundle":{"name": "gmem2", "role": "BUSER" }}  ]}
 
 set RtlHierarchyInfo {[
-	{"ID" : "0", "Level" : "0", "Path" : "`AUTOTB_DUT_INST", "Parent" : "", "Child" : ["1", "2", "3", "4", "5", "6", "8", "10", "12", "14", "19", "21", "22", "23", "24"],
+	{"ID" : "0", "Level" : "0", "Path" : "`AUTOTB_DUT_INST", "Parent" : "", "Child" : ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "25", "27", "29", "31", "57", "61", "62", "63", "64"],
 		"CDFG" : "ntt_kernel",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
 		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
 		"II" : "0",
-		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "2208", "EstimateLatencyMax" : "5313790",
+		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "1169", "EstimateLatencyMax" : "2073022",
 		"Combinational" : "0",
 		"Datapath" : "0",
 		"ClockEnable" : "0",
@@ -377,18 +377,18 @@ set RtlHierarchyInfo {[
 					{"Name" : "gmem0_blk_n_AW", "Type" : "RtlSignal"},
 					{"Name" : "gmem0_blk_n_B", "Type" : "RtlSignal"}],
 				"SubConnect" : [
-					{"ID" : "10", "SubInstance" : "grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305", "Port" : "gmem0", "Inst_start_state" : "21", "Inst_end_state" : "22"},
-					{"ID" : "19", "SubInstance" : "grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341", "Port" : "gmem0", "Inst_start_state" : "28", "Inst_end_state" : "29"}]},
+					{"ID" : "27", "SubInstance" : "grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_364", "Port" : "gmem0", "Inst_start_state" : "21", "Inst_end_state" : "22"},
+					{"ID" : "57", "SubInstance" : "grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_423", "Port" : "gmem0", "Inst_start_state" : "28", "Inst_end_state" : "29"}]},
 			{"Name" : "gmem1", "Type" : "MAXI", "Direction" : "I",
 				"BlockSignal" : [
 					{"Name" : "gmem1_blk_n_AR", "Type" : "RtlSignal"}],
 				"SubConnect" : [
-					{"ID" : "8", "SubInstance" : "grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296", "Port" : "gmem1", "Inst_start_state" : "10", "Inst_end_state" : "11"}]},
+					{"ID" : "25", "SubInstance" : "grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_355", "Port" : "gmem1", "Inst_start_state" : "10", "Inst_end_state" : "11"}]},
 			{"Name" : "gmem2", "Type" : "MAXI", "Direction" : "I",
 				"BlockSignal" : [
 					{"Name" : "gmem2_blk_n_AR", "Type" : "RtlSignal"}],
 				"SubConnect" : [
-					{"ID" : "6", "SubInstance" : "grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287", "Port" : "gmem2", "Inst_start_state" : "10", "Inst_end_state" : "11"}]},
+					{"ID" : "23", "SubInstance" : "grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_343", "Port" : "gmem2", "Inst_start_state" : "10", "Inst_end_state" : "11"}]},
 			{"Name" : "x", "Type" : "None", "Direction" : "I"},
 			{"Name" : "psi_powers", "Type" : "None", "Direction" : "I"},
 			{"Name" : "twiddles", "Type" : "None", "Direction" : "I"},
@@ -402,11 +402,28 @@ set RtlHierarchyInfo {[
 			{"Name" : "BATCH_LOOP", "PipelineType" : "no",
 				"LoopDec" : {"FSMBitwidth" : "34", "FirstState" : "ap_ST_fsm_state12", "LastState" : ["ap_ST_fsm_state34"], "QuitState" : ["ap_ST_fsm_state12"], "PreState" : ["ap_ST_fsm_state11"], "PostState" : ["ap_ST_fsm_state1"], "OneDepthLoop" : "0", "OneStateBlock": ""}}]},
 	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.local_twiddles_U", "Parent" : "0"},
-	{"ID" : "2", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.local_psi_U", "Parent" : "0"},
-	{"ID" : "3", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.ping_U", "Parent" : "0"},
-	{"ID" : "4", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.pong_U", "Parent" : "0"},
-	{"ID" : "5", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.burst_buffer_U", "Parent" : "0"},
-	{"ID" : "6", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287", "Parent" : "0", "Child" : ["7"],
+	{"ID" : "2", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.local_twiddles_1_U", "Parent" : "0"},
+	{"ID" : "3", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.local_twiddles_2_U", "Parent" : "0"},
+	{"ID" : "4", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.local_twiddles_3_U", "Parent" : "0"},
+	{"ID" : "5", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.local_psi_U", "Parent" : "0"},
+	{"ID" : "6", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.ping_U", "Parent" : "0"},
+	{"ID" : "7", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.ping_1_U", "Parent" : "0"},
+	{"ID" : "8", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.ping_2_U", "Parent" : "0"},
+	{"ID" : "9", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.ping_3_U", "Parent" : "0"},
+	{"ID" : "10", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.ping_4_U", "Parent" : "0"},
+	{"ID" : "11", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.ping_5_U", "Parent" : "0"},
+	{"ID" : "12", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.ping_6_U", "Parent" : "0"},
+	{"ID" : "13", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.ping_7_U", "Parent" : "0"},
+	{"ID" : "14", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.pong_U", "Parent" : "0"},
+	{"ID" : "15", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.pong_1_U", "Parent" : "0"},
+	{"ID" : "16", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.pong_2_U", "Parent" : "0"},
+	{"ID" : "17", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.pong_3_U", "Parent" : "0"},
+	{"ID" : "18", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.pong_4_U", "Parent" : "0"},
+	{"ID" : "19", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.pong_5_U", "Parent" : "0"},
+	{"ID" : "20", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.pong_6_U", "Parent" : "0"},
+	{"ID" : "21", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.pong_7_U", "Parent" : "0"},
+	{"ID" : "22", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.burst_buffer_U", "Parent" : "0"},
+	{"ID" : "23", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_343", "Parent" : "0", "Child" : ["24"],
 		"CDFG" : "ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
@@ -425,13 +442,16 @@ set RtlHierarchyInfo {[
 				"BlockSignal" : [
 					{"Name" : "gmem2_blk_n_R", "Type" : "RtlSignal"}]},
 			{"Name" : "sub", "Type" : "None", "Direction" : "I"},
-			{"Name" : "sext_ln84", "Type" : "None", "Direction" : "I"},
+			{"Name" : "sext_ln87", "Type" : "None", "Direction" : "I"},
+			{"Name" : "local_twiddles_3", "Type" : "Memory", "Direction" : "O"},
+			{"Name" : "local_twiddles_2", "Type" : "Memory", "Direction" : "O"},
+			{"Name" : "local_twiddles_1", "Type" : "Memory", "Direction" : "O"},
 			{"Name" : "local_twiddles", "Type" : "Memory", "Direction" : "O"}],
 		"Loop" : [
 			{"Name" : "CACHE_TWIDDLES_LOOP", "PipelineType" : "UPC",
 				"LoopDec" : {"FSMBitwidth" : "1", "FirstState" : "ap_ST_fsm_pp0_stage0", "FirstStateIter" : "ap_enable_reg_pp0_iter0", "FirstStateBlock" : "ap_block_pp0_stage0_subdone", "LastState" : "ap_ST_fsm_pp0_stage0", "LastStateIter" : "ap_enable_reg_pp0_iter2", "LastStateBlock" : "ap_block_pp0_stage0_subdone", "QuitState" : "ap_ST_fsm_pp0_stage0", "QuitStateIter" : "ap_enable_reg_pp0_iter2", "QuitStateBlock" : "ap_block_pp0_stage0_subdone", "OneDepthLoop" : "0", "has_ap_ctrl" : "1", "has_continue" : "0"}}]},
-	{"ID" : "7", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287.flow_control_loop_pipe_sequential_init_U", "Parent" : "6"},
-	{"ID" : "8", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296", "Parent" : "0", "Child" : ["9"],
+	{"ID" : "24", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_343.flow_control_loop_pipe_sequential_init_U", "Parent" : "23"},
+	{"ID" : "25", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_355", "Parent" : "0", "Child" : ["26"],
 		"CDFG" : "ntt_kernel_Pipeline_CACHE_PSI_LOOP",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
@@ -450,13 +470,13 @@ set RtlHierarchyInfo {[
 				"BlockSignal" : [
 					{"Name" : "gmem1_blk_n_R", "Type" : "RtlSignal"}]},
 			{"Name" : "n", "Type" : "None", "Direction" : "I"},
-			{"Name" : "sext_ln91", "Type" : "None", "Direction" : "I"},
+			{"Name" : "sext_ln94", "Type" : "None", "Direction" : "I"},
 			{"Name" : "local_psi", "Type" : "Memory", "Direction" : "O"}],
 		"Loop" : [
 			{"Name" : "CACHE_PSI_LOOP", "PipelineType" : "UPC",
 				"LoopDec" : {"FSMBitwidth" : "1", "FirstState" : "ap_ST_fsm_pp0_stage0", "FirstStateIter" : "ap_enable_reg_pp0_iter0", "FirstStateBlock" : "ap_block_pp0_stage0_subdone", "LastState" : "ap_ST_fsm_pp0_stage0", "LastStateIter" : "ap_enable_reg_pp0_iter2", "LastStateBlock" : "ap_block_pp0_stage0_subdone", "QuitState" : "ap_ST_fsm_pp0_stage0", "QuitStateIter" : "ap_enable_reg_pp0_iter2", "QuitStateBlock" : "ap_block_pp0_stage0_subdone", "OneDepthLoop" : "0", "has_ap_ctrl" : "1", "has_continue" : "0"}}]},
-	{"ID" : "9", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296.flow_control_loop_pipe_sequential_init_U", "Parent" : "8"},
-	{"ID" : "10", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305", "Parent" : "0", "Child" : ["11"],
+	{"ID" : "26", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_355.flow_control_loop_pipe_sequential_init_U", "Parent" : "25"},
+	{"ID" : "27", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_364", "Parent" : "0", "Child" : ["28"],
 		"CDFG" : "ntt_kernel_Pipeline_BURST_READ_LOOP",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
@@ -475,13 +495,13 @@ set RtlHierarchyInfo {[
 				"BlockSignal" : [
 					{"Name" : "gmem0_blk_n_R", "Type" : "RtlSignal"}]},
 			{"Name" : "n", "Type" : "None", "Direction" : "I"},
-			{"Name" : "sext_ln103", "Type" : "None", "Direction" : "I"},
+			{"Name" : "sext_ln106", "Type" : "None", "Direction" : "I"},
 			{"Name" : "burst_buffer", "Type" : "Memory", "Direction" : "O"}],
 		"Loop" : [
 			{"Name" : "BURST_READ_LOOP", "PipelineType" : "UPC",
 				"LoopDec" : {"FSMBitwidth" : "1", "FirstState" : "ap_ST_fsm_pp0_stage0", "FirstStateIter" : "ap_enable_reg_pp0_iter0", "FirstStateBlock" : "ap_block_pp0_stage0_subdone", "LastState" : "ap_ST_fsm_pp0_stage0", "LastStateIter" : "ap_enable_reg_pp0_iter2", "LastStateBlock" : "ap_block_pp0_stage0_subdone", "QuitState" : "ap_ST_fsm_pp0_stage0", "QuitStateIter" : "ap_enable_reg_pp0_iter2", "QuitStateBlock" : "ap_block_pp0_stage0_subdone", "OneDepthLoop" : "0", "has_ap_ctrl" : "1", "has_continue" : "0"}}]},
-	{"ID" : "11", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305.flow_control_loop_pipe_sequential_init_U", "Parent" : "10"},
-	{"ID" : "12", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_314", "Parent" : "0", "Child" : ["13"],
+	{"ID" : "28", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_364.flow_control_loop_pipe_sequential_init_U", "Parent" : "27"},
+	{"ID" : "29", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_373", "Parent" : "0", "Child" : ["30"],
 		"CDFG" : "ntt_kernel_Pipeline_PERMUTE_LOOP",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
@@ -497,20 +517,27 @@ set RtlHierarchyInfo {[
 		"IsBlackBox" : "0",
 		"Port" : [
 			{"Name" : "n", "Type" : "None", "Direction" : "I"},
+			{"Name" : "ping_7", "Type" : "Memory", "Direction" : "O"},
+			{"Name" : "ping_6", "Type" : "Memory", "Direction" : "O"},
+			{"Name" : "ping_5", "Type" : "Memory", "Direction" : "O"},
+			{"Name" : "ping_4", "Type" : "Memory", "Direction" : "O"},
+			{"Name" : "ping_3", "Type" : "Memory", "Direction" : "O"},
+			{"Name" : "ping_2", "Type" : "Memory", "Direction" : "O"},
+			{"Name" : "ping_1", "Type" : "Memory", "Direction" : "O"},
+			{"Name" : "ping", "Type" : "Memory", "Direction" : "O"},
 			{"Name" : "local_psi", "Type" : "Memory", "Direction" : "I"},
-			{"Name" : "burst_buffer", "Type" : "Memory", "Direction" : "I"},
-			{"Name" : "ping", "Type" : "Memory", "Direction" : "O"}],
+			{"Name" : "burst_buffer", "Type" : "Memory", "Direction" : "I"}],
 		"Loop" : [
 			{"Name" : "PERMUTE_LOOP", "PipelineType" : "UPC",
 				"LoopDec" : {"FSMBitwidth" : "1", "FirstState" : "ap_ST_fsm_pp0_stage0", "FirstStateIter" : "ap_enable_reg_pp0_iter0", "FirstStateBlock" : "ap_block_pp0_stage0_subdone", "LastState" : "ap_ST_fsm_pp0_stage0", "LastStateIter" : "ap_enable_reg_pp0_iter2", "LastStateBlock" : "ap_block_pp0_stage0_subdone", "QuitState" : "ap_ST_fsm_pp0_stage0", "QuitStateIter" : "ap_enable_reg_pp0_iter2", "QuitStateBlock" : "ap_block_pp0_stage0_subdone", "OneDepthLoop" : "0", "has_ap_ctrl" : "1", "has_continue" : "0"}}]},
-	{"ID" : "13", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_314.flow_control_loop_pipe_sequential_init_U", "Parent" : "12"},
-	{"ID" : "14", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322", "Parent" : "0", "Child" : ["15", "16", "17", "18"],
+	{"ID" : "30", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_373.flow_control_loop_pipe_sequential_init_U", "Parent" : "29"},
+	{"ID" : "31", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388", "Parent" : "0", "Child" : ["32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56"],
 		"CDFG" : "ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
 		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
 		"II" : "0",
-		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "1666", "EstimateLatencyMax" : "26626",
+		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "627", "EstimateLatencyMax" : "9747",
 		"Combinational" : "0",
 		"Datapath" : "0",
 		"ClockEnable" : "0",
@@ -520,26 +547,64 @@ set RtlHierarchyInfo {[
 		"IsBlackBox" : "0",
 		"Port" : [
 			{"Name" : "half_n", "Type" : "None", "Direction" : "I"},
-			{"Name" : "sub53", "Type" : "None", "Direction" : "I"},
-			{"Name" : "stage", "Type" : "None", "Direction" : "I"},
-			{"Name" : "stage_1", "Type" : "None", "Direction" : "I"},
-			{"Name" : "empty_29", "Type" : "None", "Direction" : "I"},
-			{"Name" : "empty", "Type" : "None", "Direction" : "I"},
+			{"Name" : "add_ln127", "Type" : "None", "Direction" : "I"},
+			{"Name" : "empty_41", "Type" : "None", "Direction" : "I"},
+			{"Name" : "empty_42", "Type" : "None", "Direction" : "I"},
 			{"Name" : "local_twiddles", "Type" : "Memory", "Direction" : "I"},
+			{"Name" : "local_twiddles_1", "Type" : "Memory", "Direction" : "I"},
+			{"Name" : "local_twiddles_2", "Type" : "Memory", "Direction" : "I"},
+			{"Name" : "local_twiddles_3", "Type" : "Memory", "Direction" : "I"},
 			{"Name" : "ping", "Type" : "Memory", "Direction" : "IO"},
+			{"Name" : "ping_1", "Type" : "Memory", "Direction" : "IO"},
+			{"Name" : "ping_2", "Type" : "Memory", "Direction" : "IO"},
+			{"Name" : "ping_3", "Type" : "Memory", "Direction" : "IO"},
+			{"Name" : "ping_4", "Type" : "Memory", "Direction" : "IO"},
+			{"Name" : "ping_5", "Type" : "Memory", "Direction" : "IO"},
+			{"Name" : "ping_6", "Type" : "Memory", "Direction" : "IO"},
+			{"Name" : "ping_7", "Type" : "Memory", "Direction" : "IO"},
 			{"Name" : "pong", "Type" : "Memory", "Direction" : "IO"},
+			{"Name" : "pong_1", "Type" : "Memory", "Direction" : "IO"},
+			{"Name" : "pong_2", "Type" : "Memory", "Direction" : "IO"},
+			{"Name" : "pong_3", "Type" : "Memory", "Direction" : "IO"},
+			{"Name" : "pong_4", "Type" : "Memory", "Direction" : "IO"},
+			{"Name" : "pong_5", "Type" : "Memory", "Direction" : "IO"},
+			{"Name" : "pong_6", "Type" : "Memory", "Direction" : "IO"},
+			{"Name" : "pong_7", "Type" : "Memory", "Direction" : "IO"},
 			{"Name" : "use_ping_as_input", "Type" : "None", "Direction" : "I"},
 			{"Name" : "q_inv", "Type" : "None", "Direction" : "I"},
 			{"Name" : "conv5_i", "Type" : "None", "Direction" : "I"},
-			{"Name" : "q", "Type" : "None", "Direction" : "I"}],
+			{"Name" : "q", "Type" : "None", "Direction" : "I"},
+			{"Name" : "half_n_1", "Type" : "None", "Direction" : "I"},
+			{"Name" : "empty", "Type" : "None", "Direction" : "I"}],
 		"Loop" : [
 			{"Name" : "FLATTENED_BUTTERFLY_LOOP", "PipelineType" : "UPC",
-				"LoopDec" : {"FSMBitwidth" : "13", "FirstState" : "ap_ST_fsm_pp0_stage0", "FirstStateIter" : "ap_enable_reg_pp0_iter0", "FirstStateBlock" : "ap_block_pp0_stage0_subdone", "LastState" : "ap_ST_fsm_pp0_stage0", "LastStateIter" : "ap_enable_reg_pp0_iter1", "LastStateBlock" : "ap_block_pp0_stage0_subdone", "QuitState" : "ap_ST_fsm_pp0_stage0", "QuitStateIter" : "ap_enable_reg_pp0_iter1", "QuitStateBlock" : "ap_block_pp0_stage0_subdone", "OneDepthLoop" : "0", "has_ap_ctrl" : "1", "has_continue" : "0"}}]},
-	{"ID" : "15", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322.mul_32ns_32ns_64_4_1_U17", "Parent" : "14"},
-	{"ID" : "16", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322.mul_32s_32s_32_4_1_U18", "Parent" : "14"},
-	{"ID" : "17", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322.add_64ns_64ns_64_2_1_U19", "Parent" : "14"},
-	{"ID" : "18", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322.flow_control_loop_pipe_sequential_init_U", "Parent" : "14"},
-	{"ID" : "19", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341", "Parent" : "0", "Child" : ["20"],
+				"LoopDec" : {"FSMBitwidth" : "19", "FirstState" : "ap_ST_fsm_state1", "FirstStateIter" : "", "FirstStateBlock" : "ap_ST_fsm_state1_blk", "LastState" : "ap_ST_fsm_state19", "LastStateIter" : "", "LastStateBlock" : "ap_ST_fsm_state19_blk", "QuitState" : "ap_ST_fsm_state19", "QuitStateIter" : "", "QuitStateBlock" : "ap_ST_fsm_state19_blk", "OneDepthLoop" : "1", "has_ap_ctrl" : "1", "has_continue" : "0"}}]},
+	{"ID" : "32", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388.mul_32ns_32ns_64_4_1_U27", "Parent" : "31"},
+	{"ID" : "33", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388.mul_32s_32s_32_4_1_U28", "Parent" : "31"},
+	{"ID" : "34", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388.sparsemux_9_2_32_1_1_U29", "Parent" : "31"},
+	{"ID" : "35", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388.sparsemux_17_3_32_1_1_U30", "Parent" : "31"},
+	{"ID" : "36", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388.sparsemux_17_3_32_1_1_U31", "Parent" : "31"},
+	{"ID" : "37", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388.sparsemux_9_2_32_1_1_U32", "Parent" : "31"},
+	{"ID" : "38", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388.sparsemux_17_3_32_1_1_U33", "Parent" : "31"},
+	{"ID" : "39", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388.sparsemux_17_3_32_1_1_U34", "Parent" : "31"},
+	{"ID" : "40", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388.sparsemux_9_2_32_1_1_U35", "Parent" : "31"},
+	{"ID" : "41", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388.sparsemux_9_2_32_1_1_U36", "Parent" : "31"},
+	{"ID" : "42", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388.sparsemux_17_3_32_1_1_U37", "Parent" : "31"},
+	{"ID" : "43", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388.sparsemux_17_3_32_1_1_U38", "Parent" : "31"},
+	{"ID" : "44", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388.sparsemux_17_3_32_1_1_U39", "Parent" : "31"},
+	{"ID" : "45", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388.sparsemux_17_3_32_1_1_U40", "Parent" : "31"},
+	{"ID" : "46", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388.add_64ns_64ns_64_2_1_U41", "Parent" : "31"},
+	{"ID" : "47", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388.add_64ns_64ns_64_2_1_U42", "Parent" : "31"},
+	{"ID" : "48", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388.sparsemux_17_3_32_1_1_U43", "Parent" : "31"},
+	{"ID" : "49", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388.sparsemux_17_3_32_1_1_U44", "Parent" : "31"},
+	{"ID" : "50", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388.add_64ns_64ns_64_2_1_U45", "Parent" : "31"},
+	{"ID" : "51", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388.sparsemux_9_3_32_1_1_U46", "Parent" : "31"},
+	{"ID" : "52", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388.sparsemux_9_3_32_1_1_U47", "Parent" : "31"},
+	{"ID" : "53", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388.add_64ns_64ns_64_2_1_U48", "Parent" : "31"},
+	{"ID" : "54", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388.sparsemux_17_3_32_1_1_U49", "Parent" : "31"},
+	{"ID" : "55", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388.sparsemux_17_3_32_1_1_U50", "Parent" : "31"},
+	{"ID" : "56", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388.flow_control_loop_pipe_sequential_init_U", "Parent" : "31"},
+	{"ID" : "57", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_423", "Parent" : "0", "Child" : ["58", "59", "60"],
 		"CDFG" : "ntt_kernel_Pipeline_WRITE_BACK_LOOP",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
@@ -558,18 +623,34 @@ set RtlHierarchyInfo {[
 				"BlockSignal" : [
 					{"Name" : "gmem0_blk_n_W", "Type" : "RtlSignal"}]},
 			{"Name" : "n", "Type" : "None", "Direction" : "I"},
-			{"Name" : "sext_ln165", "Type" : "None", "Direction" : "I"},
+			{"Name" : "sext_ln170", "Type" : "None", "Direction" : "I"},
 			{"Name" : "ping", "Type" : "Memory", "Direction" : "I"},
+			{"Name" : "ping_1", "Type" : "Memory", "Direction" : "I"},
+			{"Name" : "ping_2", "Type" : "Memory", "Direction" : "I"},
+			{"Name" : "ping_3", "Type" : "Memory", "Direction" : "I"},
+			{"Name" : "ping_4", "Type" : "Memory", "Direction" : "I"},
+			{"Name" : "ping_5", "Type" : "Memory", "Direction" : "I"},
+			{"Name" : "ping_6", "Type" : "Memory", "Direction" : "I"},
+			{"Name" : "ping_7", "Type" : "Memory", "Direction" : "I"},
 			{"Name" : "pong", "Type" : "Memory", "Direction" : "I"},
+			{"Name" : "pong_1", "Type" : "Memory", "Direction" : "I"},
+			{"Name" : "pong_2", "Type" : "Memory", "Direction" : "I"},
+			{"Name" : "pong_3", "Type" : "Memory", "Direction" : "I"},
+			{"Name" : "pong_4", "Type" : "Memory", "Direction" : "I"},
+			{"Name" : "pong_5", "Type" : "Memory", "Direction" : "I"},
+			{"Name" : "pong_6", "Type" : "Memory", "Direction" : "I"},
+			{"Name" : "pong_7", "Type" : "Memory", "Direction" : "I"},
 			{"Name" : "use_ping_as_input", "Type" : "None", "Direction" : "I"}],
 		"Loop" : [
 			{"Name" : "WRITE_BACK_LOOP", "PipelineType" : "UPC",
 				"LoopDec" : {"FSMBitwidth" : "1", "FirstState" : "ap_ST_fsm_pp0_stage0", "FirstStateIter" : "ap_enable_reg_pp0_iter0", "FirstStateBlock" : "ap_block_pp0_stage0_subdone", "LastState" : "ap_ST_fsm_pp0_stage0", "LastStateIter" : "ap_enable_reg_pp0_iter2", "LastStateBlock" : "ap_block_pp0_stage0_subdone", "QuitState" : "ap_ST_fsm_pp0_stage0", "QuitStateIter" : "ap_enable_reg_pp0_iter2", "QuitStateBlock" : "ap_block_pp0_stage0_subdone", "OneDepthLoop" : "0", "has_ap_ctrl" : "1", "has_continue" : "0"}}]},
-	{"ID" : "20", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341.flow_control_loop_pipe_sequential_init_U", "Parent" : "19"},
-	{"ID" : "21", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.control_s_axi_U", "Parent" : "0"},
-	{"ID" : "22", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.gmem0_m_axi_U", "Parent" : "0"},
-	{"ID" : "23", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.gmem1_m_axi_U", "Parent" : "0"},
-	{"ID" : "24", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.gmem2_m_axi_U", "Parent" : "0"}]}
+	{"ID" : "58", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_423.sparsemux_17_3_32_1_1_U87", "Parent" : "57"},
+	{"ID" : "59", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_423.sparsemux_17_3_32_1_1_U88", "Parent" : "57"},
+	{"ID" : "60", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_423.flow_control_loop_pipe_sequential_init_U", "Parent" : "57"},
+	{"ID" : "61", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.control_s_axi_U", "Parent" : "0"},
+	{"ID" : "62", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.gmem0_m_axi_U", "Parent" : "0"},
+	{"ID" : "63", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.gmem1_m_axi_U", "Parent" : "0"},
+	{"ID" : "64", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.gmem2_m_axi_U", "Parent" : "0"}]}
 
 
 set ArgLastReadFirstWriteLatency {
@@ -587,50 +668,91 @@ set ArgLastReadFirstWriteLatency {
 	ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP {
 		gmem2 {Type I LastRead 1 FirstWrite -1}
 		sub {Type I LastRead 0 FirstWrite -1}
-		sext_ln84 {Type I LastRead 0 FirstWrite -1}
+		sext_ln87 {Type I LastRead 0 FirstWrite -1}
+		local_twiddles_3 {Type O LastRead -1 FirstWrite 2}
+		local_twiddles_2 {Type O LastRead -1 FirstWrite 2}
+		local_twiddles_1 {Type O LastRead -1 FirstWrite 2}
 		local_twiddles {Type O LastRead -1 FirstWrite 2}}
 	ntt_kernel_Pipeline_CACHE_PSI_LOOP {
 		gmem1 {Type I LastRead 1 FirstWrite -1}
 		n {Type I LastRead 0 FirstWrite -1}
-		sext_ln91 {Type I LastRead 0 FirstWrite -1}
+		sext_ln94 {Type I LastRead 0 FirstWrite -1}
 		local_psi {Type O LastRead -1 FirstWrite 2}}
 	ntt_kernel_Pipeline_BURST_READ_LOOP {
 		gmem0 {Type I LastRead 1 FirstWrite -1}
 		n {Type I LastRead 0 FirstWrite -1}
-		sext_ln103 {Type I LastRead 0 FirstWrite -1}
+		sext_ln106 {Type I LastRead 0 FirstWrite -1}
 		burst_buffer {Type O LastRead -1 FirstWrite 2}}
 	ntt_kernel_Pipeline_PERMUTE_LOOP {
 		n {Type I LastRead 0 FirstWrite -1}
+		ping_7 {Type O LastRead -1 FirstWrite 2}
+		ping_6 {Type O LastRead -1 FirstWrite 2}
+		ping_5 {Type O LastRead -1 FirstWrite 2}
+		ping_4 {Type O LastRead -1 FirstWrite 2}
+		ping_3 {Type O LastRead -1 FirstWrite 2}
+		ping_2 {Type O LastRead -1 FirstWrite 2}
+		ping_1 {Type O LastRead -1 FirstWrite 2}
+		ping {Type O LastRead -1 FirstWrite 2}
 		local_psi {Type I LastRead 0 FirstWrite -1}
-		burst_buffer {Type I LastRead 1 FirstWrite -1}
-		ping {Type O LastRead -1 FirstWrite 2}}
+		burst_buffer {Type I LastRead 1 FirstWrite -1}}
 	ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP {
 		half_n {Type I LastRead 0 FirstWrite -1}
-		sub53 {Type I LastRead 0 FirstWrite -1}
-		stage {Type I LastRead 0 FirstWrite -1}
-		stage_1 {Type I LastRead 0 FirstWrite -1}
-		empty_29 {Type I LastRead 0 FirstWrite -1}
-		empty {Type I LastRead 0 FirstWrite -1}
-		local_twiddles {Type I LastRead 0 FirstWrite -1}
-		ping {Type IO LastRead 2 FirstWrite 12}
-		pong {Type IO LastRead 2 FirstWrite 12}
+		add_ln127 {Type I LastRead 0 FirstWrite -1}
+		empty_41 {Type I LastRead 0 FirstWrite -1}
+		empty_42 {Type I LastRead 0 FirstWrite -1}
+		local_twiddles {Type I LastRead 2 FirstWrite -1}
+		local_twiddles_1 {Type I LastRead 2 FirstWrite -1}
+		local_twiddles_2 {Type I LastRead 2 FirstWrite -1}
+		local_twiddles_3 {Type I LastRead 2 FirstWrite -1}
+		ping {Type IO LastRead 4 FirstWrite 11}
+		ping_1 {Type IO LastRead 3 FirstWrite 11}
+		ping_2 {Type IO LastRead 3 FirstWrite 11}
+		ping_3 {Type IO LastRead 3 FirstWrite 11}
+		ping_4 {Type IO LastRead 4 FirstWrite 11}
+		ping_5 {Type IO LastRead 3 FirstWrite 11}
+		ping_6 {Type IO LastRead 3 FirstWrite 11}
+		ping_7 {Type IO LastRead 3 FirstWrite 11}
+		pong {Type IO LastRead 4 FirstWrite 11}
+		pong_1 {Type IO LastRead 3 FirstWrite 11}
+		pong_2 {Type IO LastRead 3 FirstWrite 11}
+		pong_3 {Type IO LastRead 3 FirstWrite 11}
+		pong_4 {Type IO LastRead 4 FirstWrite 11}
+		pong_5 {Type IO LastRead 3 FirstWrite 11}
+		pong_6 {Type IO LastRead 3 FirstWrite 11}
+		pong_7 {Type IO LastRead 3 FirstWrite 11}
 		use_ping_as_input {Type I LastRead 0 FirstWrite -1}
 		q_inv {Type I LastRead 0 FirstWrite -1}
 		conv5_i {Type I LastRead 0 FirstWrite -1}
-		q {Type I LastRead 0 FirstWrite -1}}
+		q {Type I LastRead 0 FirstWrite -1}
+		half_n_1 {Type I LastRead 0 FirstWrite -1}
+		empty {Type I LastRead 0 FirstWrite -1}}
 	ntt_kernel_Pipeline_WRITE_BACK_LOOP {
 		gmem0 {Type O LastRead -1 FirstWrite 2}
 		n {Type I LastRead 0 FirstWrite -1}
-		sext_ln165 {Type I LastRead 0 FirstWrite -1}
+		sext_ln170 {Type I LastRead 0 FirstWrite -1}
 		ping {Type I LastRead 0 FirstWrite -1}
+		ping_1 {Type I LastRead 0 FirstWrite -1}
+		ping_2 {Type I LastRead 0 FirstWrite -1}
+		ping_3 {Type I LastRead 0 FirstWrite -1}
+		ping_4 {Type I LastRead 0 FirstWrite -1}
+		ping_5 {Type I LastRead 0 FirstWrite -1}
+		ping_6 {Type I LastRead 0 FirstWrite -1}
+		ping_7 {Type I LastRead 0 FirstWrite -1}
 		pong {Type I LastRead 0 FirstWrite -1}
+		pong_1 {Type I LastRead 0 FirstWrite -1}
+		pong_2 {Type I LastRead 0 FirstWrite -1}
+		pong_3 {Type I LastRead 0 FirstWrite -1}
+		pong_4 {Type I LastRead 0 FirstWrite -1}
+		pong_5 {Type I LastRead 0 FirstWrite -1}
+		pong_6 {Type I LastRead 0 FirstWrite -1}
+		pong_7 {Type I LastRead 0 FirstWrite -1}
 		use_ping_as_input {Type I LastRead 0 FirstWrite -1}}}
 
 set hasDtUnsupportedChannel 0
 
 set PerformanceInfo {[
-	{"Name" : "Latency", "Min" : "2208", "Max" : "5313790"}
-	, {"Name" : "Interval", "Min" : "2209", "Max" : "5313791"}
+	{"Name" : "Latency", "Min" : "1169", "Max" : "2073022"}
+	, {"Name" : "Interval", "Min" : "1170", "Max" : "2073023"}
 ]}
 
 set PipelineEnableSignalInfo {[

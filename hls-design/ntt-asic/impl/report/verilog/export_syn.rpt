@@ -2,7 +2,7 @@
 == Vivado RTL Synthesis Results
 ================================================================
 + General Information:
-    * Date:            Mon Jun 01 21:48:21 EDT 2026
+    * Date:            Thu Jun 04 11:33:37 EDT 2026
     * Version:         2023.2 (Build 4023990 on Oct 11 2023)
     * Project:         hls-design
     * Solution:        ntt-asic (Vivado IP Flow Target)
@@ -30,10 +30,10 @@
 ================================================================
 == RTL Synthesis Resource Summary
 ================================================================
-LUT:              4283
-FF:               5704
+LUT:              9916
+FF:               8383
 DSP:              7
-BRAM:             31
+BRAM:             47
 URAM:             1
 SRL:              485
 
@@ -46,7 +46,7 @@ SRL:              485
 | Timing         | Period (ns) |
 +----------------+-------------+
 | Target         | 10.000      |
-| Post-Synthesis | 5.179       |
+| Post-Synthesis | 5.932       |
 +----------------+-------------+
 
 
@@ -56,35 +56,73 @@ SRL:              485
 +---------------------------------------------------------------+------+------+-----+------+------+-----+--------+------+---------+----------+--------+
 | Name                                                          | LUT  | FF   | DSP | BRAM | URAM | SRL | Pragma | Impl | Latency | Variable | Source |
 +---------------------------------------------------------------+------+------+-----+------+------+-----+--------+------+---------+----------+--------+
-| inst                                                          | 4283 | 5704 | 7   | 31   | 1    |     |        |      |         |          |        |
-|   (inst)                                                      | 123  | 970  |     |      |      |     |        |      |         |          |        |
-|   burst_buffer_U                                              | 1    |      |     |      | 1    |     |        |      |         |          |        |
-|   control_s_axi_U                                             | 443  | 376  |     |      |      |     |        |      |         |          |        |
-|   gmem0_m_axi_U                                               | 1454 | 1924 |     | 2    |      |     |        |      |         |          |        |
-|   gmem1_m_axi_U                                               | 676  | 852  |     | 1    |      |     |        |      |         |          |        |
-|   gmem2_m_axi_U                                               | 576  | 852  |     | 1    |      |     |        |      |         |          |        |
-|   grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305              | 51   | 74   |     |      |      |     |        |      |         |          |        |
-|     (grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305)          | 21   | 72   |     |      |      |     |        |      |         |          |        |
-|   grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296               | 45   | 54   |     |      |      |     |        |      |         |          |        |
-|     (grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296)           | 11   | 52   |     |      |      |     |        |      |         |          |        |
-|   grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287          | 44   | 74   |     |      |      |     |        |      |         |          |        |
-|     (grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287)      | 12   | 72   |     |      |      |     |        |      |         |          |        |
-|   grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322     | 627  | 436  | 7   |      |      |     |        |      |         |          |        |
-|     (grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322) | 101  | 222  |     |      |      |     |        |      |         |          |        |
-|     add_64ns_64ns_64_2_1_U19                                  | 259  | 65   |     |      |      |     |        |      |         |          |        |
-|     flow_control_loop_pipe_sequential_init_U                  | 157  | 2    |     |      |      |     |        |      |         |          |        |
-|     mul_32ns_32ns_64_4_1_U17                                  | 63   | 98   | 4   |      |      |     |        |      |         |          |        |
-|     mul_32s_32s_32_4_1_U18                                    | 47   | 49   | 3   |      |      |     |        |      |         |          |        |
-|   grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_314                 | 38   | 42   |     |      |      |     |        |      |         |          |        |
-|     (grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_314)             | 7    | 40   |     |      |      |     |        |      |         |          |        |
-|     flow_control_loop_pipe_sequential_init_U                  | 31   | 2    |     |      |      |     |        |      |         |          |        |
-|   grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341              | 71   | 50   |     |      |      |     |        |      |         |          |        |
-|     (grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341)          | 26   | 48   |     |      |      |     |        |      |         |          |        |
-|     flow_control_loop_pipe_sequential_init_U                  | 45   | 2    |     |      |      |     |        |      |         |          |        |
+| inst                                                          | 9916 | 8383 | 7   | 47   | 1    |     |        |      |         |          |        |
+|   (inst)                                                      | 125  | 912  |     |      |      |     |        |      |         |          |        |
+|   burst_buffer_U                                              |      |      |     |      | 1    |     |        |      |         |          |        |
+|   control_s_axi_U                                             | 444  | 376  |     |      |      |     |        |      |         |          |        |
+|   gmem0_m_axi_U                                               | 1455 | 1924 |     | 2    |      |     |        |      |         |          |        |
+|   gmem1_m_axi_U                                               | 675  | 852  |     | 1    |      |     |        |      |         |          |        |
+|   gmem2_m_axi_U                                               | 578  | 852  |     | 1    |      |     |        |      |         |          |        |
+|   grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_364              | 52   | 74   |     |      |      |     |        |      |         |          |        |
+|     (grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_364)          | 22   | 72   |     |      |      |     |        |      |         |          |        |
+|   grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_355               | 46   | 54   |     |      |      |     |        |      |         |          |        |
+|     (grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_355)           | 12   | 52   |     |      |      |     |        |      |         |          |        |
+|   grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_343          | 76   | 92   |     |      |      |     |        |      |         |          |        |
+|     (grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_343)      | 8    | 90   |     |      |      |     |        |      |         |          |        |
+|   grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388     | 5330 | 3152 | 7   |      |      |     |        |      |         |          |        |
+|     (grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388) | 922  | 2837 |     |      |      |     |        |      |         |          |        |
+|     add_64ns_64ns_64_2_1_U41                                  | 64   | 41   |     |      |      |     |        |      |         |          |        |
+|     add_64ns_64ns_64_2_1_U42                                  | 114  | 33   |     |      |      |     |        |      |         |          |        |
+|     add_64ns_64ns_64_2_1_U45                                  | 64   | 49   |     |      |      |     |        |      |         |          |        |
+|     add_64ns_64ns_64_2_1_U48                                  | 2189 | 41   |     |      |      |     |        |      |         |          |        |
+|     flow_control_loop_pipe_sequential_init_U                  | 786  | 4    |     |      |      |     |        |      |         |          |        |
+|     mul_32ns_32ns_64_4_1_U27                                  | 209  | 98   | 4   |      |      |     |        |      |         |          |        |
+|     mul_32s_32s_32_4_1_U28                                    | 47   | 49   | 3   |      |      |     |        |      |         |          |        |
+|     sparsemux_17_3_32_1_1_U30                                 | 64   |      |     |      |      |     |        |      |         |          |        |
+|     sparsemux_17_3_32_1_1_U31                                 | 64   |      |     |      |      |     |        |      |         |          |        |
+|     sparsemux_17_3_32_1_1_U33                                 | 64   |      |     |      |      |     |        |      |         |          |        |
+|     sparsemux_17_3_32_1_1_U34                                 | 64   |      |     |      |      |     |        |      |         |          |        |
+|     sparsemux_17_3_32_1_1_U37                                 | 64   |      |     |      |      |     |        |      |         |          |        |
+|     sparsemux_17_3_32_1_1_U38                                 | 64   |      |     |      |      |     |        |      |         |          |        |
+|     sparsemux_17_3_32_1_1_U39                                 | 64   |      |     |      |      |     |        |      |         |          |        |
+|     sparsemux_17_3_32_1_1_U40                                 | 64   |      |     |      |      |     |        |      |         |          |        |
+|     sparsemux_17_3_32_1_1_U43                                 | 64   |      |     |      |      |     |        |      |         |          |        |
+|     sparsemux_17_3_32_1_1_U44                                 | 64   |      |     |      |      |     |        |      |         |          |        |
+|     sparsemux_17_3_32_1_1_U49                                 | 64   |      |     |      |      |     |        |      |         |          |        |
+|     sparsemux_17_3_32_1_1_U50                                 | 64   |      |     |      |      |     |        |      |         |          |        |
+|     sparsemux_9_2_32_1_1_U29                                  | 32   |      |     |      |      |     |        |      |         |          |        |
+|     sparsemux_9_2_32_1_1_U32                                  | 32   |      |     |      |      |     |        |      |         |          |        |
+|     sparsemux_9_2_32_1_1_U35                                  | 32   |      |     |      |      |     |        |      |         |          |        |
+|     sparsemux_9_2_32_1_1_U36                                  | 32   |      |     |      |      |     |        |      |         |          |        |
+|     sparsemux_9_3_32_1_1_U46                                  | 32   |      |     |      |      |     |        |      |         |          |        |
+|     sparsemux_9_3_32_1_1_U47                                  | 32   |      |     |      |      |     |        |      |         |          |        |
+|   grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_373                 | 52   | 42   |     |      |      |     |        |      |         |          |        |
+|     (grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_373)             | 16   | 40   |     |      |      |     |        |      |         |          |        |
+|     flow_control_loop_pipe_sequential_init_U                  | 36   | 2    |     |      |      |     |        |      |         |          |        |
+|   grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_423              | 319  | 53   |     |      |      |     |        |      |         |          |        |
+|     (grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_423)          | 139  | 51   |     |      |      |     |        |      |         |          |        |
+|     flow_control_loop_pipe_sequential_init_U                  | 180  | 2    |     |      |      |     |        |      |         |          |        |
 |   local_psi_U                                                 | 1    |      |     | 3    |      |     |        |      |         |          |        |
-|   local_twiddles_U                                            |      |      |     | 8    |      |     |        |      |         |          |        |
-|   ping_U                                                      | 124  |      |     | 8    |      |     |        |      |         |          |        |
-|   pong_U                                                      | 9    |      |     | 8    |      |     |        |      |         |          |        |
+|   local_twiddles_1_U                                          |      |      |     | 2    |      |     |        |      |         |          |        |
+|   local_twiddles_2_U                                          |      |      |     | 2    |      |     |        |      |         |          |        |
+|   local_twiddles_3_U                                          |      |      |     | 2    |      |     |        |      |         |          |        |
+|   local_twiddles_U                                            | 2    |      |     | 2    |      |     |        |      |         |          |        |
+|   ping_1_U                                                    | 16   |      |     | 2    |      |     |        |      |         |          |        |
+|   ping_2_U                                                    | 121  |      |     | 2    |      |     |        |      |         |          |        |
+|   ping_3_U                                                    | 17   |      |     | 2    |      |     |        |      |         |          |        |
+|   ping_4_U                                                    | 52   |      |     | 2    |      |     |        |      |         |          |        |
+|   ping_5_U                                                    | 16   |      |     | 2    |      |     |        |      |         |          |        |
+|   ping_6_U                                                    | 16   |      |     | 2    |      |     |        |      |         |          |        |
+|   ping_7_U                                                    | 16   |      |     | 2    |      |     |        |      |         |          |        |
+|   ping_U                                                      | 40   |      |     | 2    |      |     |        |      |         |          |        |
+|   pong_1_U                                                    | 16   |      |     | 2    |      |     |        |      |         |          |        |
+|   pong_2_U                                                    | 20   |      |     | 2    |      |     |        |      |         |          |        |
+|   pong_3_U                                                    | 16   |      |     | 2    |      |     |        |      |         |          |        |
+|   pong_4_U                                                    | 96   |      |     | 2    |      |     |        |      |         |          |        |
+|   pong_5_U                                                    | 31   |      |     | 2    |      |     |        |      |         |          |        |
+|   pong_6_U                                                    | 29   |      |     | 2    |      |     |        |      |         |          |        |
+|   pong_7_U                                                    | 269  |      |     | 2    |      |     |        |      |         |          |        |
+|   pong_U                                                      | 40   |      |     | 2    |      |     |        |      |         |          |        |
 +---------------------------------------------------------------+------+------+-----+------+------+-----+--------+------+---------+----------+--------+
 
 
@@ -94,20 +132,20 @@ SRL:              485
 +-----------------------------------------------------------+-----------+--------+--------+
 | Criteria                                                  | Guideline | Actual | Status |
 +-----------------------------------------------------------+-----------+--------+--------+
-| LUT                                                       | 70%       | 3.66%  | OK     |
-| FD                                                        | 50%       | 2.44%  | OK     |
+| LUT                                                       | 70%       | 8.47%  | OK     |
+| FD                                                        | 50%       | 3.58%  | OK     |
 | LUTRAM+SRL                                                | 25%       | 0.84%  | OK     |
-| CARRY8                                                    | 25%       | 1.54%  | OK     |
-| MUXF7                                                     | 15%       | 0.01%  | OK     |
+| CARRY8                                                    | 25%       | 2.34%  | OK     |
+| MUXF7                                                     | 15%       | 0.80%  | OK     |
 | DSP                                                       | 80%       | 0.56%  | OK     |
-| RAMB/FIFO                                                 | 80%       | 10.76% | OK     |
+| RAMB/FIFO                                                 | 80%       | 16.32% | OK     |
 | URAM                                                      | 80%       | 1.56%  | OK     |
-| DSP+RAMB+URAM (Avg)                                       | 70%       | 4.29%  | OK     |
+| DSP+RAMB+URAM (Avg)                                       | 70%       | 6.15%  | OK     |
 | BUFGCE* + BUFGCTRL                                        | 24        | 0      | OK     |
 | DONT_TOUCH (cells/nets)                                   | 0         | 0      | OK     |
 | MARK_DEBUG (nets)                                         | 0         | 0      | OK     |
-| Control Sets                                              | 2196      | 149    | OK     |
-| Average Fanout for modules > 100k cells                   | 4         | 2.16   | OK     |
+| Control Sets                                              | 2196      | 179    | OK     |
+| Average Fanout for modules > 100k cells                   | 4         | 2.69   | OK     |
 | Max Average Fanout for modules > 100k cells               | 4         | 0      | OK     |
 | Non-FD high fanout nets > 10k loads                       | 0         | 0      | OK     |
 +-----------------------------------------------------------+-----------+--------+--------+
@@ -126,136 +164,167 @@ SRL:              485
 == RTL Synthesis Timing Paths
 ================================================================
 * Timing was met
-+-------+-------+-------------------------------------------------------------------------------------------------+----------------------------------+--------------+------------+----------------+----------------+--------------+
-| Path  | SLACK | STARTPOINT PIN                                                                                  | ENDPOINT PIN                     | LOGIC LEVELS | MAX FANOUT | DATAPATH DELAY | DATAPATH LOGIC | DATAPATH NET |
-|       |       |                                                                                                 |                                  |              |            |                |          DELAY |        DELAY |
-+-------+-------+-------------------------------------------------------------------------------------------------+----------------------------------+--------------+------------+----------------+----------------+--------------+
-| Path1 | 4.821 | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/carry_s1_reg/C | ping_U/ram_reg_bram_3/DINADIN[0] |           17 |         33 |          4.685 |          2.538 |        2.147 |
-| Path2 | 4.852 | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/carry_s1_reg/C | ping_U/ram_reg_bram_3/DINADIN[3] |           17 |         33 |          4.690 |          2.538 |        2.152 |
-| Path3 | 4.893 | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/carry_s1_reg/C | ping_U/ram_reg_bram_3/DINADIN[4] |           17 |         33 |          4.611 |          2.538 |        2.073 |
-| Path4 | 4.900 | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/carry_s1_reg/C | ping_U/ram_reg_bram_0/DINADIN[3] |           17 |         33 |          4.642 |          2.483 |        2.159 |
-| Path5 | 4.900 | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/carry_s1_reg/C | ping_U/ram_reg_bram_1/DINADIN[3] |           17 |         33 |          4.642 |          2.483 |        2.159 |
-+-------+-------+-------------------------------------------------------------------------------------------------+----------------------------------+--------------+------------+----------------+----------------+--------------+
++-------+-------+--------------------------------------------------------------------------------------------------+-------------------------------------+--------------+------------+----------------+----------------+--------------+
+| Path  | SLACK | STARTPOINT PIN                                                                                   | ENDPOINT PIN                        | LOGIC LEVELS | MAX FANOUT | DATAPATH DELAY | DATAPATH LOGIC | DATAPATH NET |
+|       |       |                                                                                                  |                                     |              |            |                |          DELAY |        DELAY |
++-------+-------+--------------------------------------------------------------------------------------------------+-------------------------------------+--------------+------------+----------------+----------------+--------------+
+| Path1 | 4.068 | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U45/ain_s1_reg[0]/C | ping_3_U/ram_reg_bram_0/DINADIN[30] |           24 |         61 |          5.388 |          2.863 |        2.525 |
+| Path2 | 4.068 | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U45/ain_s1_reg[0]/C | ping_5_U/ram_reg_bram_0/DINADIN[30] |           24 |         61 |          5.388 |          2.863 |        2.525 |
+| Path3 | 4.106 | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U45/ain_s1_reg[0]/C | ping_1_U/ram_reg_bram_0/DINADIN[25] |           24 |         61 |          5.443 |          2.846 |        2.597 |
+| Path4 | 4.107 | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U45/ain_s1_reg[0]/C | ping_2_U/ram_reg_bram_0/DINADIN[30] |           22 |         61 |          5.349 |          2.755 |        2.594 |
+| Path5 | 4.146 | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U45/ain_s1_reg[0]/C | ping_1_U/ram_reg_bram_0/DINADIN[30] |           22 |         61 |          5.310 |          2.779 |        2.531 |
++-------+-------+--------------------------------------------------------------------------------------------------+-------------------------------------+--------------+------------+----------------+----------------+--------------+
 
-    +-----------------------------------------------------------------------------------------------------------+------------------------+
-    | Path1 Cells                                                                                               | Primitive Type         |
-    +-----------------------------------------------------------------------------------------------------------+------------------------+
-    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/carry_s1_reg             | REGISTER.SDR.FDRE      |
-    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/dout0_carry_i_8       | CLB.LUT.LUT2           |
-    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/dout0_carry           | CLB.CARRY.CARRY8       |
-    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/dout0_carry__0        | CLB.CARRY.CARRY8       |
-    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/dout0_carry__1        | CLB.CARRY.CARRY8       |
-    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_191  | CLB.LUT.LUT4           |
-    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_184  | CLB.CARRY.CARRY8       |
-    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_167  | CLB.CARRY.CARRY8       |
-    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_175  | CLB.LUT.LUT3           |
-    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_93   | CLB.CARRY.CARRY8       |
-    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_42   | CLB.CARRY.CARRY8       |
-    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_49   | CLB.LUT.LUT4           |
-    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_34   | CLB.CARRY.CARRY8       |
-    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_40   | CLB.CARRY.CARRY8       |
-    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_57   | CLB.LUT.LUT4           |
-    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_35   | CLB.CARRY.CARRY8       |
-    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_3_i_5    | CLB.LUT.LUT6           |
-    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_3_i_5__0 | CLB.LUT.LUT3           |
-    | ping_U/ram_reg_bram_3                                                                                     | BLOCKRAM.BRAM.RAMB36E2 |
-    +-----------------------------------------------------------------------------------------------------------+------------------------+
+    +----------------------------------------------------------------------------------------------------------------+------------------------+
+    | Path1 Cells                                                                                                    | Primitive Type         |
+    +----------------------------------------------------------------------------------------------------------------+------------------------+
+    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U45/ain_s1_reg[0]                 | REGISTER.SDR.FDRE      |
+    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U45/u2/out_v_2_reg_4681[15]_i_60  | CLB.LUT.LUT2           |
+    | add_64ns_64ns_64_2_1_U45/u2/out_v_2_reg_4681_reg[15]_i_42                                                      | CLB.CARRY.CARRY8       |
+    | add_64ns_64ns_64_2_1_U45/u2/out_v_2_reg_4681_reg[23]_i_41                                                      | CLB.CARRY.CARRY8       |
+    | add_64ns_64ns_64_2_1_U45/u2/out_v_2_reg_4681_reg[31]_i_69                                                      | CLB.CARRY.CARRY8       |
+    | pong_7_U/out_v_2_reg_4681[31]_i_122                                                                            | CLB.LUT.LUT4           |
+    | pong_7_U/out_v_2_reg_4681_reg[31]_i_89                                                                         | CLB.CARRY.CARRY8       |
+    | pong_7_U/out_v_2_reg_4681[15]_i_50                                                                             | CLB.LUT.LUT3           |
+    | pong_7_U/out_v_2_reg_4681_reg[15]_i_25                                                                         | CLB.CARRY.CARRY8       |
+    | pong_7_U/out_v_2_reg_4681_reg[23]_i_25                                                                         | CLB.CARRY.CARRY8       |
+    | pong_7_U/out_v_2_reg_4681_reg[31]_i_26                                                                         | CLB.CARRY.CARRY8       |
+    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/out_v_2_reg_4681_reg[31]_i_17 | CLB.CARRY.CARRY8       |
+    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/out_v_2_reg_4681[31]_i_28     | CLB.LUT.LUT2           |
+    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/out_v_2_reg_4681[31]_i_49     | CLB.LUT.LUT3           |
+    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/out_v_2_reg_4681_reg[31]_i_19 | CLB.CARRY.CARRY8       |
+    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/out_v_2_reg_4681[7]_i_4       | CLB.LUT.LUT4           |
+    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/out_v_2_reg_4681[7]_i_12      | CLB.LUT.LUT5           |
+    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/out_v_2_reg_4681_reg[7]_i_1   | CLB.CARRY.CARRY8       |
+    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/out_v_2_reg_4681_reg[15]_i_1  | CLB.CARRY.CARRY8       |
+    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/out_v_2_reg_4681_reg[23]_i_1  | CLB.CARRY.CARRY8       |
+    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/out_v_2_reg_4681_reg[31]_i_1  | CLB.CARRY.CARRY8       |
+    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/ram_reg_bram_0_i_200__4       | CLB.LUT.LUT6           |
+    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/ram_reg_bram_0_i_140__4       | CLB.LUT.LUT6           |
+    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/ram_reg_bram_0_i_75__8        | CLB.LUT.LUT6           |
+    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/ram_reg_bram_0_i_22__12       | CLB.LUT.LUT3           |
+    | ping_3_U/ram_reg_bram_0                                                                                        | BLOCKRAM.BRAM.RAMB36E2 |
+    +----------------------------------------------------------------------------------------------------------------+------------------------+
 
-    +-----------------------------------------------------------------------------------------------------------+------------------------+
-    | Path2 Cells                                                                                               | Primitive Type         |
-    +-----------------------------------------------------------------------------------------------------------+------------------------+
-    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/carry_s1_reg             | REGISTER.SDR.FDRE      |
-    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/dout0_carry_i_8       | CLB.LUT.LUT2           |
-    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/dout0_carry           | CLB.CARRY.CARRY8       |
-    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/dout0_carry__0        | CLB.CARRY.CARRY8       |
-    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/dout0_carry__1        | CLB.CARRY.CARRY8       |
-    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_191  | CLB.LUT.LUT4           |
-    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_184  | CLB.CARRY.CARRY8       |
-    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_167  | CLB.CARRY.CARRY8       |
-    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_175  | CLB.LUT.LUT3           |
-    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_93   | CLB.CARRY.CARRY8       |
-    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_42   | CLB.CARRY.CARRY8       |
-    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_49   | CLB.LUT.LUT4           |
-    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_34   | CLB.CARRY.CARRY8       |
-    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_40   | CLB.CARRY.CARRY8       |
-    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_57   | CLB.LUT.LUT4           |
-    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_35   | CLB.CARRY.CARRY8       |
-    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_3_i_2    | CLB.LUT.LUT6           |
-    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_3_i_2__0 | CLB.LUT.LUT3           |
-    | ping_U/ram_reg_bram_3                                                                                     | BLOCKRAM.BRAM.RAMB36E2 |
-    +-----------------------------------------------------------------------------------------------------------+------------------------+
+    +----------------------------------------------------------------------------------------------------------------+------------------------+
+    | Path2 Cells                                                                                                    | Primitive Type         |
+    +----------------------------------------------------------------------------------------------------------------+------------------------+
+    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U45/ain_s1_reg[0]                 | REGISTER.SDR.FDRE      |
+    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U45/u2/out_v_2_reg_4681[15]_i_60  | CLB.LUT.LUT2           |
+    | add_64ns_64ns_64_2_1_U45/u2/out_v_2_reg_4681_reg[15]_i_42                                                      | CLB.CARRY.CARRY8       |
+    | add_64ns_64ns_64_2_1_U45/u2/out_v_2_reg_4681_reg[23]_i_41                                                      | CLB.CARRY.CARRY8       |
+    | add_64ns_64ns_64_2_1_U45/u2/out_v_2_reg_4681_reg[31]_i_69                                                      | CLB.CARRY.CARRY8       |
+    | pong_7_U/out_v_2_reg_4681[31]_i_122                                                                            | CLB.LUT.LUT4           |
+    | pong_7_U/out_v_2_reg_4681_reg[31]_i_89                                                                         | CLB.CARRY.CARRY8       |
+    | pong_7_U/out_v_2_reg_4681[15]_i_50                                                                             | CLB.LUT.LUT3           |
+    | pong_7_U/out_v_2_reg_4681_reg[15]_i_25                                                                         | CLB.CARRY.CARRY8       |
+    | pong_7_U/out_v_2_reg_4681_reg[23]_i_25                                                                         | CLB.CARRY.CARRY8       |
+    | pong_7_U/out_v_2_reg_4681_reg[31]_i_26                                                                         | CLB.CARRY.CARRY8       |
+    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/out_v_2_reg_4681_reg[31]_i_17 | CLB.CARRY.CARRY8       |
+    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/out_v_2_reg_4681[31]_i_28     | CLB.LUT.LUT2           |
+    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/out_v_2_reg_4681[31]_i_49     | CLB.LUT.LUT3           |
+    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/out_v_2_reg_4681_reg[31]_i_19 | CLB.CARRY.CARRY8       |
+    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/out_v_2_reg_4681[7]_i_4       | CLB.LUT.LUT4           |
+    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/out_v_2_reg_4681[7]_i_12      | CLB.LUT.LUT5           |
+    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/out_v_2_reg_4681_reg[7]_i_1   | CLB.CARRY.CARRY8       |
+    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/out_v_2_reg_4681_reg[15]_i_1  | CLB.CARRY.CARRY8       |
+    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/out_v_2_reg_4681_reg[23]_i_1  | CLB.CARRY.CARRY8       |
+    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/out_v_2_reg_4681_reg[31]_i_1  | CLB.CARRY.CARRY8       |
+    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/ram_reg_bram_0_i_200__6       | CLB.LUT.LUT6           |
+    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/ram_reg_bram_0_i_138__5       | CLB.LUT.LUT6           |
+    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/ram_reg_bram_0_i_75__9        | CLB.LUT.LUT6           |
+    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/ram_reg_bram_0_i_22__10       | CLB.LUT.LUT3           |
+    | ping_5_U/ram_reg_bram_0                                                                                        | BLOCKRAM.BRAM.RAMB36E2 |
+    +----------------------------------------------------------------------------------------------------------------+------------------------+
 
-    +-----------------------------------------------------------------------------------------------------------+------------------------+
-    | Path3 Cells                                                                                               | Primitive Type         |
-    +-----------------------------------------------------------------------------------------------------------+------------------------+
-    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/carry_s1_reg             | REGISTER.SDR.FDRE      |
-    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/dout0_carry_i_8       | CLB.LUT.LUT2           |
-    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/dout0_carry           | CLB.CARRY.CARRY8       |
-    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/dout0_carry__0        | CLB.CARRY.CARRY8       |
-    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/dout0_carry__1        | CLB.CARRY.CARRY8       |
-    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_191  | CLB.LUT.LUT4           |
-    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_184  | CLB.CARRY.CARRY8       |
-    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_167  | CLB.CARRY.CARRY8       |
-    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_175  | CLB.LUT.LUT3           |
-    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_93   | CLB.CARRY.CARRY8       |
-    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_42   | CLB.CARRY.CARRY8       |
-    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_49   | CLB.LUT.LUT4           |
-    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_34   | CLB.CARRY.CARRY8       |
-    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_40   | CLB.CARRY.CARRY8       |
-    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_57   | CLB.LUT.LUT4           |
-    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_35   | CLB.CARRY.CARRY8       |
-    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_3_i_1    | CLB.LUT.LUT6           |
-    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_3_i_1__0 | CLB.LUT.LUT3           |
-    | ping_U/ram_reg_bram_3                                                                                     | BLOCKRAM.BRAM.RAMB36E2 |
-    +-----------------------------------------------------------------------------------------------------------+------------------------+
+    +----------------------------------------------------------------------------------------------------------------+------------------------+
+    | Path3 Cells                                                                                                    | Primitive Type         |
+    +----------------------------------------------------------------------------------------------------------------+------------------------+
+    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U45/ain_s1_reg[0]                 | REGISTER.SDR.FDRE      |
+    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U45/u2/out_v_2_reg_4681[15]_i_60  | CLB.LUT.LUT2           |
+    | add_64ns_64ns_64_2_1_U45/u2/out_v_2_reg_4681_reg[15]_i_42                                                      | CLB.CARRY.CARRY8       |
+    | add_64ns_64ns_64_2_1_U45/u2/out_v_2_reg_4681_reg[23]_i_41                                                      | CLB.CARRY.CARRY8       |
+    | add_64ns_64ns_64_2_1_U45/u2/out_v_2_reg_4681_reg[31]_i_69                                                      | CLB.CARRY.CARRY8       |
+    | pong_7_U/out_v_2_reg_4681[31]_i_122                                                                            | CLB.LUT.LUT4           |
+    | pong_7_U/out_v_2_reg_4681_reg[31]_i_89                                                                         | CLB.CARRY.CARRY8       |
+    | pong_7_U/out_v_2_reg_4681[15]_i_50                                                                             | CLB.LUT.LUT3           |
+    | pong_7_U/out_v_2_reg_4681_reg[15]_i_25                                                                         | CLB.CARRY.CARRY8       |
+    | pong_7_U/out_v_2_reg_4681_reg[23]_i_25                                                                         | CLB.CARRY.CARRY8       |
+    | pong_7_U/out_v_2_reg_4681_reg[31]_i_26                                                                         | CLB.CARRY.CARRY8       |
+    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/out_v_2_reg_4681_reg[31]_i_17 | CLB.CARRY.CARRY8       |
+    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/out_v_2_reg_4681[31]_i_28     | CLB.LUT.LUT2           |
+    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/out_v_2_reg_4681[31]_i_49     | CLB.LUT.LUT3           |
+    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/out_v_2_reg_4681_reg[31]_i_19 | CLB.CARRY.CARRY8       |
+    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/out_v_2_reg_4681[7]_i_4       | CLB.LUT.LUT4           |
+    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/out_v_2_reg_4681[7]_i_12      | CLB.LUT.LUT5           |
+    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/out_v_2_reg_4681_reg[7]_i_1   | CLB.CARRY.CARRY8       |
+    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/out_v_2_reg_4681_reg[15]_i_1  | CLB.CARRY.CARRY8       |
+    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/out_v_2_reg_4681_reg[23]_i_1  | CLB.CARRY.CARRY8       |
+    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/out_v_2_reg_4681_reg[31]_i_1  | CLB.CARRY.CARRY8       |
+    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/ram_reg_bram_0_i_210__2       | CLB.LUT.LUT6           |
+    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/ram_reg_bram_0_i_139__4       | CLB.LUT.LUT6           |
+    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/ram_reg_bram_0_i_80__10       | CLB.LUT.LUT6           |
+    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/ram_reg_bram_0_i_27__14       | CLB.LUT.LUT3           |
+    | ping_1_U/ram_reg_bram_0                                                                                        | BLOCKRAM.BRAM.RAMB36E2 |
+    +----------------------------------------------------------------------------------------------------------------+------------------------+
 
-    +------------------------------------------------------------------------------------------------------------+------------------------+
-    | Path4 Cells                                                                                                | Primitive Type         |
-    +------------------------------------------------------------------------------------------------------------+------------------------+
-    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/carry_s1_reg              | REGISTER.SDR.FDRE      |
-    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/dout0_carry_i_8        | CLB.LUT.LUT2           |
-    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/dout0_carry            | CLB.CARRY.CARRY8       |
-    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/dout0_carry__0         | CLB.CARRY.CARRY8       |
-    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/dout0_carry__1         | CLB.CARRY.CARRY8       |
-    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_191   | CLB.LUT.LUT4           |
-    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_184   | CLB.CARRY.CARRY8       |
-    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_167   | CLB.CARRY.CARRY8       |
-    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_175   | CLB.LUT.LUT3           |
-    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_93    | CLB.CARRY.CARRY8       |
-    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_42    | CLB.CARRY.CARRY8       |
-    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_49    | CLB.LUT.LUT4           |
-    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_34    | CLB.CARRY.CARRY8       |
-    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_40    | CLB.CARRY.CARRY8       |
-    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_57    | CLB.LUT.LUT4           |
-    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_35    | CLB.CARRY.CARRY8       |
-    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_25    | CLB.LUT.LUT6           |
-    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_37__0 | CLB.LUT.LUT3           |
-    | ping_U/ram_reg_bram_0                                                                                      | BLOCKRAM.BRAM.RAMB36E2 |
-    +------------------------------------------------------------------------------------------------------------+------------------------+
+    +--------------------------------------------------------------------------------------------------------------+------------------------+
+    | Path4 Cells                                                                                                  | Primitive Type         |
+    +--------------------------------------------------------------------------------------------------------------+------------------------+
+    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U45/ain_s1_reg[0]               | REGISTER.SDR.FDRE      |
+    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U41/u2/out_v_reg_4637[15]_i_44  | CLB.LUT.LUT2           |
+    | add_64ns_64ns_64_2_1_U41/u2/out_v_reg_4637_reg[15]_i_28                                                      | CLB.CARRY.CARRY8       |
+    | add_64ns_64ns_64_2_1_U41/u2/out_v_reg_4637_reg[23]_i_27                                                      | CLB.CARRY.CARRY8       |
+    | add_64ns_64ns_64_2_1_U41/u2/out_v_reg_4637_reg[31]_i_55                                                      | CLB.CARRY.CARRY8       |
+    | pong_7_U/out_v_reg_4637[31]_i_104                                                                            | CLB.LUT.LUT4           |
+    | pong_7_U/out_v_reg_4637_reg[31]_i_89                                                                         | CLB.CARRY.CARRY8       |
+    | pong_7_U/out_v_reg_4637[15]_i_36                                                                             | CLB.LUT.LUT3           |
+    | pong_7_U/out_v_reg_4637_reg[15]_i_25                                                                         | CLB.CARRY.CARRY8       |
+    | pong_7_U/out_v_reg_4637_reg[23]_i_25                                                                         | CLB.CARRY.CARRY8       |
+    | pong_7_U/out_v_reg_4637_reg[31]_i_25                                                                         | CLB.CARRY.CARRY8       |
+    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/out_v_reg_4637[31]_i_37                              | CLB.LUT.LUT4           |
+    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/out_v_reg_4637_reg[31]_i_17 | CLB.CARRY.CARRY8       |
+    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/out_v_reg_4637[7]_i_4       | CLB.LUT.LUT4           |
+    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/out_v_reg_4637[7]_i_12      | CLB.LUT.LUT5           |
+    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/out_v_reg_4637_reg[7]_i_1   | CLB.CARRY.CARRY8       |
+    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/out_v_reg_4637_reg[15]_i_1  | CLB.CARRY.CARRY8       |
+    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/out_v_reg_4637_reg[23]_i_1  | CLB.CARRY.CARRY8       |
+    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/out_v_reg_4637_reg[31]_i_1  | CLB.CARRY.CARRY8       |
+    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/ram_reg_bram_0_i_197__1     | CLB.LUT.LUT6           |
+    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/ram_reg_bram_0_i_147__1     | CLB.LUT.LUT6           |
+    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/ram_reg_bram_0_i_75__4      | CLB.LUT.LUT6           |
+    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/ram_reg_bram_0_i_22__13     | CLB.LUT.LUT3           |
+    | ping_2_U/ram_reg_bram_0                                                                                      | BLOCKRAM.BRAM.RAMB36E2 |
+    +--------------------------------------------------------------------------------------------------------------+------------------------+
 
-    +------------------------------------------------------------------------------------------------------------+------------------------+
-    | Path5 Cells                                                                                                | Primitive Type         |
-    +------------------------------------------------------------------------------------------------------------+------------------------+
-    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/carry_s1_reg              | REGISTER.SDR.FDRE      |
-    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/dout0_carry_i_8        | CLB.LUT.LUT2           |
-    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/dout0_carry            | CLB.CARRY.CARRY8       |
-    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/dout0_carry__0         | CLB.CARRY.CARRY8       |
-    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/dout0_carry__1         | CLB.CARRY.CARRY8       |
-    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_191   | CLB.LUT.LUT4           |
-    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_184   | CLB.CARRY.CARRY8       |
-    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_167   | CLB.CARRY.CARRY8       |
-    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_175   | CLB.LUT.LUT3           |
-    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_93    | CLB.CARRY.CARRY8       |
-    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_42    | CLB.CARRY.CARRY8       |
-    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_49    | CLB.LUT.LUT4           |
-    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_34    | CLB.CARRY.CARRY8       |
-    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_40    | CLB.CARRY.CARRY8       |
-    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_57    | CLB.LUT.LUT4           |
-    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_35    | CLB.CARRY.CARRY8       |
-    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_25    | CLB.LUT.LUT6           |
-    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_37__0 | CLB.LUT.LUT3           |
-    | ping_U/ram_reg_bram_1                                                                                      | BLOCKRAM.BRAM.RAMB36E2 |
-    +------------------------------------------------------------------------------------------------------------+------------------------+
+    +--------------------------------------------------------------------------------------------------------------+------------------------+
+    | Path5 Cells                                                                                                  | Primitive Type         |
+    +--------------------------------------------------------------------------------------------------------------+------------------------+
+    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U45/ain_s1_reg[0]               | REGISTER.SDR.FDRE      |
+    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U41/u2/out_v_reg_4637[15]_i_44  | CLB.LUT.LUT2           |
+    | add_64ns_64ns_64_2_1_U41/u2/out_v_reg_4637_reg[15]_i_28                                                      | CLB.CARRY.CARRY8       |
+    | add_64ns_64ns_64_2_1_U41/u2/out_v_reg_4637_reg[23]_i_27                                                      | CLB.CARRY.CARRY8       |
+    | add_64ns_64ns_64_2_1_U41/u2/out_v_reg_4637_reg[31]_i_55                                                      | CLB.CARRY.CARRY8       |
+    | pong_7_U/out_v_reg_4637[31]_i_104                                                                            | CLB.LUT.LUT4           |
+    | pong_7_U/out_v_reg_4637_reg[31]_i_89                                                                         | CLB.CARRY.CARRY8       |
+    | pong_7_U/out_v_reg_4637[15]_i_36                                                                             | CLB.LUT.LUT3           |
+    | pong_7_U/out_v_reg_4637_reg[15]_i_25                                                                         | CLB.CARRY.CARRY8       |
+    | pong_7_U/out_v_reg_4637_reg[23]_i_25                                                                         | CLB.CARRY.CARRY8       |
+    | pong_7_U/out_v_reg_4637_reg[31]_i_25                                                                         | CLB.CARRY.CARRY8       |
+    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/out_v_reg_4637[31]_i_37                              | CLB.LUT.LUT4           |
+    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/out_v_reg_4637_reg[31]_i_17 | CLB.CARRY.CARRY8       |
+    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/out_v_reg_4637[7]_i_4       | CLB.LUT.LUT4           |
+    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/out_v_reg_4637[7]_i_12      | CLB.LUT.LUT5           |
+    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/out_v_reg_4637_reg[7]_i_1   | CLB.CARRY.CARRY8       |
+    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/out_v_reg_4637_reg[15]_i_1  | CLB.CARRY.CARRY8       |
+    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/out_v_reg_4637_reg[23]_i_1  | CLB.CARRY.CARRY8       |
+    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/out_v_reg_4637_reg[31]_i_1  | CLB.CARRY.CARRY8       |
+    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/ram_reg_bram_0_i_205__0     | CLB.LUT.LUT6           |
+    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/ram_reg_bram_0_i_134__5     | CLB.LUT.LUT6           |
+    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/ram_reg_bram_0_i_75__7      | CLB.LUT.LUT6           |
+    | grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/ram_reg_bram_0_i_22__14     | CLB.LUT.LUT3           |
+    | ping_1_U/ram_reg_bram_0                                                                                      | BLOCKRAM.BRAM.RAMB36E2 |
+    +--------------------------------------------------------------------------------------------------------------+------------------------+
 
 
 ================================================================

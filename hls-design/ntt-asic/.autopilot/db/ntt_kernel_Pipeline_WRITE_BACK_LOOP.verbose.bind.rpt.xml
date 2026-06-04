@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'ntt_kernel_Pipeline_WRITE_BACK_LOOP'" level="0">
-<item name = "Date">Mon Jun  1 21:40:40 2026
+<item name = "Date">Thu Jun  4 11:24:40 2026
 </item>
 <item name = "Version">2023.2 (Build 4023990 on Oct 11 2023)</item>
 <item name = "Project">hls-design</item>

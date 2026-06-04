@@ -60,7 +60,19 @@ module ntt_kernel_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP (
         m_axi_gmem2_BID,
         m_axi_gmem2_BUSER,
         sub,
-        sext_ln84,
+        sext_ln87,
+        local_twiddles_3_address1,
+        local_twiddles_3_ce1,
+        local_twiddles_3_we1,
+        local_twiddles_3_d1,
+        local_twiddles_2_address1,
+        local_twiddles_2_ce1,
+        local_twiddles_2_we1,
+        local_twiddles_2_d1,
+        local_twiddles_1_address1,
+        local_twiddles_1_ce1,
+        local_twiddles_1_we1,
+        local_twiddles_1_d1,
         local_twiddles_address1,
         local_twiddles_ce1,
         local_twiddles_we1,
@@ -122,14 +134,32 @@ input  [1:0] m_axi_gmem2_BRESP;
 input  [0:0] m_axi_gmem2_BID;
 input  [0:0] m_axi_gmem2_BUSER;
 input  [31:0] sub;
-input  [61:0] sext_ln84;
-output  [11:0] local_twiddles_address1;
+input  [61:0] sext_ln87;
+output  [9:0] local_twiddles_3_address1;
+output   local_twiddles_3_ce1;
+output   local_twiddles_3_we1;
+output  [31:0] local_twiddles_3_d1;
+output  [9:0] local_twiddles_2_address1;
+output   local_twiddles_2_ce1;
+output   local_twiddles_2_we1;
+output  [31:0] local_twiddles_2_d1;
+output  [9:0] local_twiddles_1_address1;
+output   local_twiddles_1_ce1;
+output   local_twiddles_1_we1;
+output  [31:0] local_twiddles_1_d1;
+output  [9:0] local_twiddles_address1;
 output   local_twiddles_ce1;
 output   local_twiddles_we1;
 output  [31:0] local_twiddles_d1;
 
 reg ap_idle;
 reg m_axi_gmem2_RREADY;
+reg local_twiddles_3_ce1;
+reg local_twiddles_3_we1;
+reg local_twiddles_2_ce1;
+reg local_twiddles_2_we1;
+reg local_twiddles_1_ce1;
+reg local_twiddles_1_we1;
 reg local_twiddles_ce1;
 reg local_twiddles_we1;
 
@@ -141,22 +171,25 @@ reg    ap_enable_reg_pp0_iter2;
 reg    ap_idle_pp0;
 reg    ap_block_state2_pp0_stage0_iter1;
 reg    ap_block_pp0_stage0_subdone;
-wire   [0:0] icmp_ln84_fu_118_p2;
+wire   [0:0] icmp_ln87_fu_187_p2;
 reg    ap_condition_exit_pp0_iter0_stage0;
 wire    ap_loop_exit_ready;
 reg    ap_ready_int;
 reg    gmem2_blk_n_R;
 wire    ap_block_pp0_stage0;
 reg    ap_block_pp0_stage0_11001;
-reg   [12:0] i_3_reg_157;
-reg   [12:0] i_3_reg_157_pp0_iter1_reg;
-reg   [31:0] gmem2_addr_read_reg_166;
-wire   [63:0] zext_ln84_1_fu_141_p1;
-reg   [12:0] i_fu_64;
-wire   [12:0] add_ln84_fu_124_p2;
+wire   [1:0] trunc_ln87_fu_199_p1;
+reg   [1:0] trunc_ln87_reg_247;
+reg   [1:0] trunc_ln87_reg_247_pp0_iter1_reg;
+reg   [9:0] lshr_ln_reg_251;
+reg   [9:0] lshr_ln_reg_251_pp0_iter1_reg;
+reg   [31:0] gmem2_addr_read_reg_256;
+wire   [63:0] zext_ln87_1_fu_224_p1;
+reg   [30:0] i_fu_82;
+wire   [30:0] add_ln87_fu_193_p2;
 wire    ap_loop_init;
-reg   [12:0] ap_sig_allocacmp_i_3;
-wire   [31:0] zext_ln84_fu_114_p1;
+reg   [30:0] ap_sig_allocacmp_i_6;
+wire   [31:0] zext_ln87_fu_183_p1;
 reg    ap_done_reg;
 wire    ap_continue_int;
 reg    ap_done_int;
@@ -171,7 +204,7 @@ initial begin
 #0 ap_CS_fsm = 1'd1;
 #0 ap_enable_reg_pp0_iter1 = 1'b0;
 #0 ap_enable_reg_pp0_iter2 = 1'b0;
-#0 i_fu_64 = 13'd0;
+#0 i_fu_82 = 31'd0;
 #0 ap_done_reg = 1'b0;
 end
 
@@ -204,7 +237,7 @@ always @ (posedge ap_clk) begin
     end else begin
         if ((ap_continue_int == 1'b1)) begin
             ap_done_reg <= 1'b0;
-        end else if (((1'b0 == ap_block_pp0_stage0_subdone) & (1'b1 == ap_CS_fsm_pp0_stage0) & (ap_loop_exit_ready_pp0_iter1_reg == 1'b1))) begin
+        end else if (((1'b0 == ap_block_pp0_stage0_subdone) & (ap_loop_exit_ready_pp0_iter1_reg == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
             ap_done_reg <= 1'b1;
         end
     end
@@ -234,10 +267,10 @@ end
 
 always @ (posedge ap_clk) begin
     if (((1'b0 == ap_block_pp0_stage0_11001) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
-        if (((icmp_ln84_fu_118_p2 == 1'd1) & (ap_enable_reg_pp0_iter0 == 1'b1))) begin
-            i_fu_64 <= add_ln84_fu_124_p2;
+        if (((icmp_ln87_fu_187_p2 == 1'd1) & (ap_enable_reg_pp0_iter0 == 1'b1))) begin
+            i_fu_82 <= add_ln87_fu_193_p2;
         end else if ((ap_loop_init == 1'b1)) begin
-            i_fu_64 <= 13'd0;
+            i_fu_82 <= 31'd0;
         end
     end
 end
@@ -245,14 +278,16 @@ end
 always @ (posedge ap_clk) begin
     if (((1'b0 == ap_block_pp0_stage0_11001) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
         ap_loop_exit_ready_pp0_iter1_reg <= ap_loop_exit_ready;
-        gmem2_addr_read_reg_166 <= m_axi_gmem2_RDATA;
-        i_3_reg_157 <= ap_sig_allocacmp_i_3;
-        i_3_reg_157_pp0_iter1_reg <= i_3_reg_157;
+        gmem2_addr_read_reg_256 <= m_axi_gmem2_RDATA;
+        lshr_ln_reg_251 <= {{ap_sig_allocacmp_i_6[11:2]}};
+        lshr_ln_reg_251_pp0_iter1_reg <= lshr_ln_reg_251;
+        trunc_ln87_reg_247 <= trunc_ln87_fu_199_p1;
+        trunc_ln87_reg_247_pp0_iter1_reg <= trunc_ln87_reg_247;
     end
 end
 
 always @ (*) begin
-    if (((icmp_ln84_fu_118_p2 == 1'd0) & (1'b0 == ap_block_pp0_stage0_subdone) & (ap_enable_reg_pp0_iter0 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
+    if (((icmp_ln87_fu_187_p2 == 1'd0) & (1'b0 == ap_block_pp0_stage0_subdone) & (ap_enable_reg_pp0_iter0 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
         ap_condition_exit_pp0_iter0_stage0 = 1'b1;
     end else begin
         ap_condition_exit_pp0_iter0_stage0 = 1'b0;
@@ -260,7 +295,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((1'b0 == ap_block_pp0_stage0_subdone) & (1'b1 == ap_CS_fsm_pp0_stage0) & (ap_loop_exit_ready_pp0_iter1_reg == 1'b1))) begin
+    if (((1'b0 == ap_block_pp0_stage0_subdone) & (ap_loop_exit_ready_pp0_iter1_reg == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
         ap_done_int = 1'b1;
     end else begin
         ap_done_int = ap_done_reg;
@@ -268,7 +303,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((ap_idle_pp0 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0) & (ap_start_int == 1'b0))) begin
+    if (((ap_idle_pp0 == 1'b1) & (ap_start_int == 1'b0) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
         ap_idle = 1'b1;
     end else begin
         ap_idle = 1'b0;
@@ -293,9 +328,9 @@ end
 
 always @ (*) begin
     if (((1'b0 == ap_block_pp0_stage0) & (1'b1 == ap_CS_fsm_pp0_stage0) & (ap_loop_init == 1'b1))) begin
-        ap_sig_allocacmp_i_3 = 13'd0;
+        ap_sig_allocacmp_i_6 = 31'd0;
     end else begin
-        ap_sig_allocacmp_i_3 = i_fu_64;
+        ap_sig_allocacmp_i_6 = i_fu_82;
     end
 end
 
@@ -309,6 +344,54 @@ end
 
 always @ (*) begin
     if (((1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter2 == 1'b1))) begin
+        local_twiddles_1_ce1 = 1'b1;
+    end else begin
+        local_twiddles_1_ce1 = 1'b0;
+    end
+end
+
+always @ (*) begin
+    if (((1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter2 == 1'b1) & (trunc_ln87_reg_247_pp0_iter1_reg == 2'd1))) begin
+        local_twiddles_1_we1 = 1'b1;
+    end else begin
+        local_twiddles_1_we1 = 1'b0;
+    end
+end
+
+always @ (*) begin
+    if (((1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter2 == 1'b1))) begin
+        local_twiddles_2_ce1 = 1'b1;
+    end else begin
+        local_twiddles_2_ce1 = 1'b0;
+    end
+end
+
+always @ (*) begin
+    if (((1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter2 == 1'b1) & (trunc_ln87_reg_247_pp0_iter1_reg == 2'd2))) begin
+        local_twiddles_2_we1 = 1'b1;
+    end else begin
+        local_twiddles_2_we1 = 1'b0;
+    end
+end
+
+always @ (*) begin
+    if (((1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter2 == 1'b1))) begin
+        local_twiddles_3_ce1 = 1'b1;
+    end else begin
+        local_twiddles_3_ce1 = 1'b0;
+    end
+end
+
+always @ (*) begin
+    if (((1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter2 == 1'b1) & (trunc_ln87_reg_247_pp0_iter1_reg == 2'd3))) begin
+        local_twiddles_3_we1 = 1'b1;
+    end else begin
+        local_twiddles_3_we1 = 1'b0;
+    end
+end
+
+always @ (*) begin
+    if (((1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter2 == 1'b1))) begin
         local_twiddles_ce1 = 1'b1;
     end else begin
         local_twiddles_ce1 = 1'b0;
@@ -316,7 +399,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter2 == 1'b1))) begin
+    if (((1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter2 == 1'b1) & (trunc_ln87_reg_247_pp0_iter1_reg == 2'd0))) begin
         local_twiddles_we1 = 1'b1;
     end else begin
         local_twiddles_we1 = 1'b0;
@@ -342,7 +425,7 @@ always @ (*) begin
     endcase
 end
 
-assign add_ln84_fu_124_p2 = (ap_sig_allocacmp_i_3 + 13'd1);
+assign add_ln87_fu_193_p2 = (ap_sig_allocacmp_i_6 + 31'd1);
 
 assign ap_CS_fsm_pp0_stage0 = ap_CS_fsm[32'd0];
 
@@ -366,11 +449,23 @@ assign ap_enable_reg_pp0_iter0 = ap_start_int;
 
 assign ap_loop_exit_ready = ap_condition_exit_pp0_iter0_stage0;
 
-assign icmp_ln84_fu_118_p2 = (($signed(zext_ln84_fu_114_p1) < $signed(sub)) ? 1'b1 : 1'b0);
+assign icmp_ln87_fu_187_p2 = (($signed(zext_ln87_fu_183_p1) < $signed(sub)) ? 1'b1 : 1'b0);
 
-assign local_twiddles_address1 = zext_ln84_1_fu_141_p1;
+assign local_twiddles_1_address1 = zext_ln87_1_fu_224_p1;
 
-assign local_twiddles_d1 = gmem2_addr_read_reg_166;
+assign local_twiddles_1_d1 = gmem2_addr_read_reg_256;
+
+assign local_twiddles_2_address1 = zext_ln87_1_fu_224_p1;
+
+assign local_twiddles_2_d1 = gmem2_addr_read_reg_256;
+
+assign local_twiddles_3_address1 = zext_ln87_1_fu_224_p1;
+
+assign local_twiddles_3_d1 = gmem2_addr_read_reg_256;
+
+assign local_twiddles_address1 = zext_ln87_1_fu_224_p1;
+
+assign local_twiddles_d1 = gmem2_addr_read_reg_256;
 
 assign m_axi_gmem2_ARADDR = 64'd0;
 
@@ -434,8 +529,10 @@ assign m_axi_gmem2_WUSER = 1'd0;
 
 assign m_axi_gmem2_WVALID = 1'b0;
 
-assign zext_ln84_1_fu_141_p1 = i_3_reg_157_pp0_iter1_reg;
+assign trunc_ln87_fu_199_p1 = ap_sig_allocacmp_i_6[1:0];
 
-assign zext_ln84_fu_114_p1 = ap_sig_allocacmp_i_3;
+assign zext_ln87_1_fu_224_p1 = lshr_ln_reg_251_pp0_iter1_reg;
+
+assign zext_ln87_fu_183_p1 = ap_sig_allocacmp_i_6;
 
 endmodule //ntt_kernel_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP

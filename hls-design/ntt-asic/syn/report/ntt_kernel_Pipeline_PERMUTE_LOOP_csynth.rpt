@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'ntt_kernel_Pipeline_PERMUTE_LOOP'
 ================================================================
-* Date:           Mon Jun  1 21:40:41 2026
+* Date:           Thu Jun  4 11:24:41 2026
 
 * Version:        2023.2 (Build 4023990 on Oct 11 2023)
 * Project:        hls-design
@@ -59,9 +59,9 @@
 |Instance         |        -|     -|       -|       -|    -|
 |Memory           |        -|     -|       -|       -|    -|
 |Multiplexer      |        -|     -|       -|      36|    -|
-|Register         |        -|     -|      44|       -|    -|
+|Register         |        -|     -|      42|       -|    -|
 +-----------------+---------+------+--------+--------+-----+
-|Total            |        0|     0|      44|      96|    0|
+|Total            |        0|     0|      42|      96|    0|
 +-----------------+---------+------+--------+--------+-----+
 |Available        |      288|  1248|  234240|  117120|   64|
 +-----------------+---------+------+--------+--------+-----+
@@ -85,8 +85,8 @@
     +----------------------+----------+----+---+----+------------+------------+
     |     Variable Name    | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
     +----------------------+----------+----+---+----+------------+------------+
-    |add_ln110_fu_116_p2   |         +|   0|  0|  20|          13|           1|
-    |icmp_ln110_fu_110_p2  |      icmp|   0|  0|  38|          31|          31|
+    |add_ln113_fu_276_p2   |         +|   0|  0|  20|          13|           1|
+    |icmp_ln113_fu_270_p2  |      icmp|   0|  0|  38|          31|          31|
     |ap_enable_pp0         |       xor|   0|  0|   2|           1|           2|
     +----------------------+----------+----+---+----+------------+------------+
     |Total                 |          |   0|  0|  60|          45|          34|
@@ -99,26 +99,28 @@
     |ap_done_int              |   9|          2|    1|          2|
     |ap_enable_reg_pp0_iter1  |   9|          2|    1|          2|
     |ap_sig_allocacmp_i_2     |   9|          2|   13|         26|
-    |i_fu_44                  |   9|          2|   13|         26|
+    |i_fu_78                  |   9|          2|   13|         26|
     +-------------------------+----+-----------+-----+-----------+
     |Total                    |  36|          8|   28|         56|
     +-------------------------+----+-----------+-----+-----------+
 
     * Register: 
-    +----------------------------------+----+----+-----+-----------+
-    |               Name               | FF | LUT| Bits| Const Bits|
-    +----------------------------------+----+----+-----+-----------+
-    |ap_CS_fsm                         |   1|   0|    1|          0|
-    |ap_done_reg                       |   1|   0|    1|          0|
-    |ap_enable_reg_pp0_iter1           |   1|   0|    1|          0|
-    |ap_enable_reg_pp0_iter2           |   1|   0|    1|          0|
-    |ap_loop_exit_ready_pp0_iter1_reg  |   1|   0|    1|          0|
-    |i_fu_44                           |  13|   0|   13|          0|
-    |zext_ln110_reg_148                |  13|   0|   64|         51|
-    |zext_ln110_reg_148_pp0_iter1_reg  |  13|   0|   64|         51|
-    +----------------------------------+----+----+-----+-----------+
-    |Total                             |  44|   0|  146|        102|
-    +----------------------------------+----+----+-----+-----------+
+    +-----------------------------------+----+----+-----+-----------+
+    |                Name               | FF | LUT| Bits| Const Bits|
+    +-----------------------------------+----+----+-----+-----------+
+    |ap_CS_fsm                          |   1|   0|    1|          0|
+    |ap_done_reg                        |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter1            |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter2            |   1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter1_reg   |   1|   0|    1|          0|
+    |i_fu_78                            |  13|   0|   13|          0|
+    |lshr_ln1_reg_337                   |   9|   0|    9|          0|
+    |lshr_ln1_reg_337_pp0_iter1_reg     |   9|   0|    9|          0|
+    |trunc_ln113_reg_333                |   3|   0|    3|          0|
+    |trunc_ln113_reg_333_pp0_iter1_reg  |   3|   0|    3|          0|
+    +-----------------------------------+----+----+-----+-----------+
+    |Total                              |  42|   0|   42|          0|
+    +-----------------------------------+----+----+-----+-----------+
 
 
 
@@ -136,15 +138,43 @@
 |ap_idle                |  out|    1|  ap_ctrl_hs|  ntt_kernel_Pipeline_PERMUTE_LOOP|  return value|
 |ap_ready               |  out|    1|  ap_ctrl_hs|  ntt_kernel_Pipeline_PERMUTE_LOOP|  return value|
 |n                      |   in|   31|     ap_none|                                 n|        scalar|
+|ping_7_address1        |  out|    9|   ap_memory|                            ping_7|         array|
+|ping_7_ce1             |  out|    1|   ap_memory|                            ping_7|         array|
+|ping_7_we1             |  out|    1|   ap_memory|                            ping_7|         array|
+|ping_7_d1              |  out|   32|   ap_memory|                            ping_7|         array|
+|ping_6_address1        |  out|    9|   ap_memory|                            ping_6|         array|
+|ping_6_ce1             |  out|    1|   ap_memory|                            ping_6|         array|
+|ping_6_we1             |  out|    1|   ap_memory|                            ping_6|         array|
+|ping_6_d1              |  out|   32|   ap_memory|                            ping_6|         array|
+|ping_5_address1        |  out|    9|   ap_memory|                            ping_5|         array|
+|ping_5_ce1             |  out|    1|   ap_memory|                            ping_5|         array|
+|ping_5_we1             |  out|    1|   ap_memory|                            ping_5|         array|
+|ping_5_d1              |  out|   32|   ap_memory|                            ping_5|         array|
+|ping_4_address1        |  out|    9|   ap_memory|                            ping_4|         array|
+|ping_4_ce1             |  out|    1|   ap_memory|                            ping_4|         array|
+|ping_4_we1             |  out|    1|   ap_memory|                            ping_4|         array|
+|ping_4_d1              |  out|   32|   ap_memory|                            ping_4|         array|
+|ping_3_address1        |  out|    9|   ap_memory|                            ping_3|         array|
+|ping_3_ce1             |  out|    1|   ap_memory|                            ping_3|         array|
+|ping_3_we1             |  out|    1|   ap_memory|                            ping_3|         array|
+|ping_3_d1              |  out|   32|   ap_memory|                            ping_3|         array|
+|ping_2_address1        |  out|    9|   ap_memory|                            ping_2|         array|
+|ping_2_ce1             |  out|    1|   ap_memory|                            ping_2|         array|
+|ping_2_we1             |  out|    1|   ap_memory|                            ping_2|         array|
+|ping_2_d1              |  out|   32|   ap_memory|                            ping_2|         array|
+|ping_1_address1        |  out|    9|   ap_memory|                            ping_1|         array|
+|ping_1_ce1             |  out|    1|   ap_memory|                            ping_1|         array|
+|ping_1_we1             |  out|    1|   ap_memory|                            ping_1|         array|
+|ping_1_d1              |  out|   32|   ap_memory|                            ping_1|         array|
+|ping_address1          |  out|    9|   ap_memory|                              ping|         array|
+|ping_ce1               |  out|    1|   ap_memory|                              ping|         array|
+|ping_we1               |  out|    1|   ap_memory|                              ping|         array|
+|ping_d1                |  out|   32|   ap_memory|                              ping|         array|
 |local_psi_address0     |  out|   12|   ap_memory|                         local_psi|         array|
 |local_psi_ce0          |  out|    1|   ap_memory|                         local_psi|         array|
 |local_psi_q0           |   in|   12|   ap_memory|                         local_psi|         array|
 |burst_buffer_address0  |  out|   12|   ap_memory|                      burst_buffer|         array|
 |burst_buffer_ce0       |  out|    1|   ap_memory|                      burst_buffer|         array|
 |burst_buffer_q0        |   in|   32|   ap_memory|                      burst_buffer|         array|
-|ping_address1          |  out|   12|   ap_memory|                              ping|         array|
-|ping_ce1               |  out|    1|   ap_memory|                              ping|         array|
-|ping_we1               |  out|    1|   ap_memory|                              ping|         array|
-|ping_d1                |  out|   32|   ap_memory|                              ping|         array|
 +-----------------------+-----+-----+------------+----------------------------------+--------------+
 

@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version      : Vivado v.2023.2 (lin64) Build 4029153 Fri Oct 13 20:13:54 MDT 2023
-| Date              : Mon Jun  1 21:45:32 2026
+| Date              : Thu Jun  4 11:29:51 2026
 | Host              : ecs02.poly.edu running 64-bit Red Hat Enterprise Linux release 8.10 (Ootpa)
 | Command           : report_timing_summary -file ./report/ntt_kernel_timing_synth.rpt
 | Design            : bd_0_wrapper
@@ -139,7 +139,7 @@ Table of Contents
 
     WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
     -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
-      4.821        0.000                      0                13497        0.084        0.000                      0                13497        4.200        0.000                       0                  6233  
+      4.068        0.000                      0                19403        0.084        0.000                      0                19403        4.200        0.000                       0                  8928  
 
 
 All user specified timing constraints are met.
@@ -162,7 +162,7 @@ ap_clk  {0.000 5.000}      10.000          100.000
 
 Clock             WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
 -----             -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
-ap_clk              4.821        0.000                      0                13497        0.084        0.000                      0                13497        4.200        0.000                       0                  6233  
+ap_clk              4.068        0.000                      0                19403        0.084        0.000                      0                19403        4.200        0.000                       0                  8928  
 
 
 ------------------------------------------------------------------------------------------------
@@ -193,7 +193,7 @@ Path Group    From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing 
 From Clock:  ap_clk
   To Clock:  ap_clk
 
-Setup :            0  Failing Endpoints,  Worst Slack        4.821ns,  Total Violation        0.000ns
+Setup :            0  Failing Endpoints,  Worst Slack        4.068ns,  Total Violation        0.000ns
 Hold  :            0  Failing Endpoints,  Worst Slack        0.084ns,  Total Violation        0.000ns
 PW    :            0  Failing Endpoints,  Worst Slack        4.200ns,  Total Violation        0.000ns
 ---------------------------------------------------------------------------------------------------
@@ -201,16 +201,16 @@ PW    :            0  Failing Endpoints,  Worst Slack        4.200ns,  Total Vio
 
 Max Delay Paths
 --------------------------------------------------------------------------------------
-Slack (MET) :             4.821ns  (required time - arrival time)
-  Source:                 bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/carry_s1_reg/C
+Slack (MET) :             4.068ns  (required time - arrival time)
+  Source:                 bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U45/ain_s1_reg[0]/C
                             (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            bd_0_i/hls_inst/inst/ping_U/ram_reg_bram_3/DINADIN[0]
+  Destination:            bd_0_i/hls_inst/inst/ping_3_U/ram_reg_bram_0/DINADIN[30]
                             (rising edge-triggered cell RAMB36E2 clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
   Path Group:             ap_clk
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            10.000ns  (ap_clk rise@10.000ns - ap_clk rise@0.000ns)
-  Data Path Delay:        4.685ns  (logic 2.538ns (54.173%)  route 2.147ns (45.827%))
-  Logic Levels:           17  (CARRY8=10 LUT2=1 LUT3=2 LUT4=3 LUT6=1)
+  Data Path Delay:        5.388ns  (logic 2.863ns (53.137%)  route 2.525ns (46.863%))
+  Logic Levels:           24  (CARRY8=13 LUT2=2 LUT3=3 LUT4=2 LUT5=1 LUT6=3)
   Clock Path Skew:        0.006ns (DCD - SCD + CPR)
     Destination Clock Delay (DCD):    0.047ns = ( 10.047 - 10.000 ) 
     Source Clock Delay      (SCD):    0.041ns
@@ -225,71 +225,88 @@ Slack (MET) :             4.821ns  (required time - arrival time)
   -------------------------------------------------------------------    -------------------
                          (clock ap_clk rise edge)     0.000     0.000 r  
                                                       0.000     0.000 r  ap_clk (IN)
-                         net (fo=6267, unset)         0.041     0.041    bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/ap_clk
-                         FDRE                                         r  bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/carry_s1_reg/C
+                         net (fo=8962, unset)         0.041     0.041    bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U45/ap_clk
+                         FDRE                                         r  bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U45/ain_s1_reg[0]/C
   -------------------------------------------------------------------    -------------------
-                         FDRE (Prop_FDRE_C_Q)         0.113     0.154 r  bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/carry_s1_reg/Q
-                         net (fo=1, unplaced)         0.154     0.308    bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/carry_s1
-                         LUT2 (Prop_LUT2_I1_O)        0.058     0.366 r  bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/dout0_carry_i_8/O
-                         net (fo=1, unplaced)         0.022     0.388    bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/dout0_carry_i_8_n_4
+                         FDRE (Prop_FDRE_C_Q)         0.114     0.155 r  bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U45/ain_s1_reg[0]/Q
+                         net (fo=8, unplaced)         0.130     0.285    bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U45/u2/add_64ns_64ns_64_2_1_U45/u2/out_v_2_reg_4681_reg[15]_i_42
+                         LUT2 (Prop_LUT2_I0_O)        0.082     0.367 r  bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U45/u2/out_v_2_reg_4681[15]_i_60/O
+                         net (fo=1, unplaced)         0.022     0.389    bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388_n_1352
                          CARRY8 (Prop_CARRY8_S[0]_CO[7])
-                                                      0.286     0.674 r  bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/dout0_carry/CO[7]
-                         net (fo=1, unplaced)         0.006     0.680    bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/dout0_carry_n_4
+                                                      0.286     0.675 r  bd_0_i/hls_inst/inst/add_64ns_64ns_64_2_1_U45/u2/out_v_2_reg_4681_reg[15]_i_42/CO[7]
+                         net (fo=1, unplaced)         0.006     0.681    bd_0_i/hls_inst/inst/add_64ns_64ns_64_2_1_U45/u2/out_v_2_reg_4681_reg[15]_i_42_n_6
                          CARRY8 (Prop_CARRY8_CI_CO[7])
-                                                      0.073     0.753 r  bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/dout0_carry__0/CO[7]
-                         net (fo=1, unplaced)         0.006     0.759    bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/dout0_carry__0_n_4
+                                                      0.073     0.754 r  bd_0_i/hls_inst/inst/add_64ns_64ns_64_2_1_U45/u2/out_v_2_reg_4681_reg[23]_i_41/CO[7]
+                         net (fo=1, unplaced)         0.006     0.760    bd_0_i/hls_inst/inst/add_64ns_64ns_64_2_1_U45/u2/out_v_2_reg_4681_reg[23]_i_41_n_6
                          CARRY8 (Prop_CARRY8_CI_O[5])
-                                                      0.161     0.920 f  bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/dout0_carry__1/O[5]
-                         net (fo=4, unplaced)         0.167     1.087    bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/t_fu_370_p4[21]
-                         LUT4 (Prop_LUT4_I1_O)        0.135     1.222 r  bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_191/O
-                         net (fo=1, unplaced)         0.228     1.450    bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_191_n_4
+                                                      0.161     0.921 f  bd_0_i/hls_inst/inst/add_64ns_64ns_64_2_1_U45/u2/out_v_2_reg_4681_reg[31]_i_69/O[5]
+                         net (fo=4, unplaced)         0.167     1.088    bd_0_i/hls_inst/inst/pong_7_U/grp_fu_3044_p2[21]
+                         LUT4 (Prop_LUT4_I1_O)        0.135     1.223 r  bd_0_i/hls_inst/inst/pong_7_U/out_v_2_reg_4681[31]_i_122/O
+                         net (fo=1, unplaced)         0.228     1.451    bd_0_i/hls_inst/inst/pong_7_U/out_v_2_reg_4681[31]_i_122_n_6
                          CARRY8 (Prop_CARRY8_DI[2]_CO[7])
-                                                      0.166     1.616 r  bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_184/CO[7]
-                         net (fo=1, unplaced)         0.006     1.622    bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/icmp_ln44_fu_380_p2
-                         CARRY8 (Prop_CARRY8_CI_O[0])
-                                                      0.078     1.700 r  bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_167/O[0]
-                         net (fo=33, unplaced)        0.271     1.971    bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_167_n_19
-                         LUT3 (Prop_LUT3_I2_O)        0.058     2.029 r  bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_175/O
-                         net (fo=1, unplaced)         0.022     2.051    bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_175_n_4
+                                                      0.166     1.617 r  bd_0_i/hls_inst/inst/pong_7_U/out_v_2_reg_4681_reg[31]_i_89/CO[7]
+                         net (fo=33, unplaced)        0.147     1.764    bd_0_i/hls_inst/inst/pong_7_U/q_read_reg_724_reg[31]_0[0]
+                         LUT3 (Prop_LUT3_I1_O)        0.058     1.822 r  bd_0_i/hls_inst/inst/pong_7_U/out_v_2_reg_4681[15]_i_50/O
+                         net (fo=1, unplaced)         0.022     1.844    bd_0_i/hls_inst/inst/pong_7_U/out_v_2_reg_4681[15]_i_50_n_6
                          CARRY8 (Prop_CARRY8_S[0]_CO[7])
-                                                      0.286     2.337 r  bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_93/CO[7]
-                         net (fo=1, unplaced)         0.006     2.343    bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_93_n_4
-                         CARRY8 (Prop_CARRY8_CI_O[1])
-                                                      0.106     2.449 r  bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_42/O[1]
-                         net (fo=6, unplaced)         0.231     2.680    bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/t_1_fu_396_p3[9]
-                         LUT4 (Prop_LUT4_I0_O)        0.058     2.738 r  bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_49/O
-                         net (fo=1, unplaced)         0.021     2.759    bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_49_n_4
-                         CARRY8 (Prop_CARRY8_S[1]_CO[7])
-                                                      0.269     3.028 r  bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_34/CO[7]
-                         net (fo=1, unplaced)         0.006     3.034    bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_34_n_4
-                         CARRY8 (Prop_CARRY8_CI_O[5])
-                                                      0.161     3.195 f  bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_40/O[5]
-                         net (fo=7, unplaced)         0.180     3.375    bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_2[5]
-                         LUT4 (Prop_LUT4_I1_O)        0.135     3.510 r  bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_57/O
-                         net (fo=1, unplaced)         0.228     3.738    bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_57_n_4
-                         CARRY8 (Prop_CARRY8_DI[2]_CO[7])
-                                                      0.166     3.904 r  bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_35/CO[7]
-                         net (fo=32, unplaced)        0.147     4.051    bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/icmp_ln11_fu_410_p2
-                         LUT6 (Prop_LUT6_I3_O)        0.137     4.188 r  bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_3_i_5/O
-                         net (fo=2, unplaced)         0.211     4.399    bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322_pong_d1[27]
-                         LUT3 (Prop_LUT3_I0_O)        0.092     4.491 r  bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_3_i_5__0/O
-                         net (fo=1, unplaced)         0.235     4.726    bd_0_i/hls_inst/inst/ping_U/ping_d1[27]
-                         RAMB36E2                                     r  bd_0_i/hls_inst/inst/ping_U/ram_reg_bram_3/DINADIN[0]
+                                                      0.286     2.130 r  bd_0_i/hls_inst/inst/pong_7_U/out_v_2_reg_4681_reg[15]_i_25/CO[7]
+                         net (fo=1, unplaced)         0.006     2.136    bd_0_i/hls_inst/inst/pong_7_U/out_v_2_reg_4681_reg[15]_i_25_n_6
+                         CARRY8 (Prop_CARRY8_CI_CO[7])
+                                                      0.073     2.209 r  bd_0_i/hls_inst/inst/pong_7_U/out_v_2_reg_4681_reg[23]_i_25/CO[7]
+                         net (fo=1, unplaced)         0.006     2.215    bd_0_i/hls_inst/inst/pong_7_U/out_v_2_reg_4681_reg[23]_i_25_n_6
+                         CARRY8 (Prop_CARRY8_CI_CO[7])
+                                                      0.073     2.288 r  bd_0_i/hls_inst/inst/pong_7_U/out_v_2_reg_4681_reg[31]_i_26/CO[7]
+                         net (fo=1, unplaced)         0.006     2.294    bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/ram_reg_bram_0_i_235_0[0]
+                         CARRY8 (Prop_CARRY8_CI_O[7])
+                                                      0.171     2.465 r  bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/out_v_2_reg_4681_reg[31]_i_17/O[7]
+                         net (fo=3, unplaced)         0.157     2.622    bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/t_5_fu_3129_p3[31]
+                         LUT2 (Prop_LUT2_I0_O)        0.058     2.680 f  bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/out_v_2_reg_4681[31]_i_28/O
+                         net (fo=2, unplaced)         0.211     2.891    bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/out_v_2_reg_4681[31]_i_28_n_6
+                         LUT3 (Prop_LUT3_I2_O)        0.058     2.949 r  bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/out_v_2_reg_4681[31]_i_49/O
+                         net (fo=1, unplaced)         0.023     2.972    bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/out_v_2_reg_4681[31]_i_49_n_6
+                         CARRY8 (Prop_CARRY8_S[7]_CO[7])
+                                                      0.180     3.152 r  bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/out_v_2_reg_4681_reg[31]_i_19/CO[7]
+                         net (fo=61, unplaced)        0.161     3.313    bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/out_v_2_reg_4681_reg[31]_i_19_n_6
+                         LUT4 (Prop_LUT4_I1_O)        0.058     3.371 r  bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/out_v_2_reg_4681[7]_i_4/O
+                         net (fo=2, unplaced)         0.211     3.582    bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/out_v_2_reg_4681[7]_i_4_n_6
+                         LUT5 (Prop_LUT5_I0_O)        0.056     3.638 r  bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/out_v_2_reg_4681[7]_i_12/O
+                         net (fo=1, unplaced)         0.023     3.661    bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/out_v_2_reg_4681[7]_i_12_n_6
+                         CARRY8 (Prop_CARRY8_S[5]_CO[7])
+                                                      0.240     3.901 r  bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/out_v_2_reg_4681_reg[7]_i_1/CO[7]
+                         net (fo=1, unplaced)         0.006     3.907    bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/out_v_2_reg_4681_reg[7]_i_1_n_6
+                         CARRY8 (Prop_CARRY8_CI_CO[7])
+                                                      0.073     3.980 r  bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/out_v_2_reg_4681_reg[15]_i_1/CO[7]
+                         net (fo=1, unplaced)         0.006     3.986    bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/out_v_2_reg_4681_reg[15]_i_1_n_6
+                         CARRY8 (Prop_CARRY8_CI_CO[7])
+                                                      0.073     4.059 r  bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/out_v_2_reg_4681_reg[23]_i_1/CO[7]
+                         net (fo=1, unplaced)         0.006     4.065    bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/out_v_2_reg_4681_reg[23]_i_1_n_6
+                         CARRY8 (Prop_CARRY8_CI_O[6])
+                                                      0.157     4.222 r  bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/out_v_2_reg_4681_reg[31]_i_1/O[6]
+                         net (fo=9, unplaced)         0.182     4.404    bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/data2[30]
+                         LUT6 (Prop_LUT6_I3_O)        0.058     4.462 r  bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/ram_reg_bram_0_i_200__4/O
+                         net (fo=1, unplaced)         0.211     4.673    bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/ram_reg_bram_0_i_200__4_n_6
+                         LUT6 (Prop_LUT6_I5_O)        0.058     4.731 r  bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/ram_reg_bram_0_i_140__4/O
+                         net (fo=1, unplaced)         0.211     4.942    bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/ram_reg_bram_0_i_140__4_n_6
+                         LUT6 (Prop_LUT6_I2_O)        0.058     5.000 r  bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/ram_reg_bram_0_i_75__8/O
+                         net (fo=1, unplaced)         0.211     5.211    bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388_ping_3_d1[30]
+                         LUT3 (Prop_LUT3_I0_O)        0.058     5.269 r  bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/ram_reg_bram_0_i_22__12/O
+                         net (fo=1, unplaced)         0.160     5.429    bd_0_i/hls_inst/inst/ping_3_U/ram_reg_bram_0_4[30]
+                         RAMB36E2                                     r  bd_0_i/hls_inst/inst/ping_3_U/ram_reg_bram_0/DINADIN[30]
   -------------------------------------------------------------------    -------------------
 
                          (clock ap_clk rise edge)    10.000    10.000 r  
                                                       0.000    10.000 r  ap_clk (IN)
-                         net (fo=6267, unset)         0.047    10.047    bd_0_i/hls_inst/inst/ping_U/ap_clk
-                         RAMB36E2                                     r  bd_0_i/hls_inst/inst/ping_U/ram_reg_bram_3/CLKARDCLK
+                         net (fo=8962, unset)         0.047    10.047    bd_0_i/hls_inst/inst/ping_3_U/ap_clk
+                         RAMB36E2                                     r  bd_0_i/hls_inst/inst/ping_3_U/ram_reg_bram_0/CLKARDCLK
                          clock pessimism              0.000    10.047    
                          clock uncertainty           -0.035    10.012    
-                         RAMB36E2 (Setup_RAMB36E2_CLKARDCLK_DINADIN[0])
-                                                     -0.465     9.547    bd_0_i/hls_inst/inst/ping_U/ram_reg_bram_3
+                         RAMB36E2 (Setup_RAMB36E2_CLKARDCLK_DINADIN[30])
+                                                     -0.515     9.497    bd_0_i/hls_inst/inst/ping_3_U/ram_reg_bram_0
   -------------------------------------------------------------------
-                         required time                          9.547    
-                         arrival time                          -4.726    
+                         required time                          9.497    
+                         arrival time                          -5.429    
   -------------------------------------------------------------------
-                         slack                                  4.821    
+                         slack                                  4.068    
 
 
 
@@ -316,7 +333,7 @@ Slack (MET) :             0.084ns  (arrival time - required time)
   -------------------------------------------------------------------    -------------------
                          (clock ap_clk rise edge)     0.000     0.000 r  
                                                       0.000     0.000 r  ap_clk (IN)
-                         net (fo=6267, unset)         0.014     0.014    bd_0_i/hls_inst/inst/gmem0_m_axi_U/load_unit/buff_rdata/U_fifo_mem/ap_clk
+                         net (fo=8962, unset)         0.014     0.014    bd_0_i/hls_inst/inst/gmem0_m_axi_U/load_unit/buff_rdata/U_fifo_mem/ap_clk
                          FDRE                                         r  bd_0_i/hls_inst/inst/gmem0_m_axi_U/load_unit/buff_rdata/U_fifo_mem/raddr_reg_reg[4]/C
   -------------------------------------------------------------------    -------------------
                          FDRE (Prop_FDRE_C_Q)         0.084     0.098 r  bd_0_i/hls_inst/inst/gmem0_m_axi_U/load_unit/buff_rdata/U_fifo_mem/raddr_reg_reg[4]/Q
@@ -326,7 +343,7 @@ Slack (MET) :             0.084ns  (arrival time - required time)
 
                          (clock ap_clk rise edge)     0.000     0.000 r  
                                                       0.000     0.000 r  ap_clk (IN)
-                         net (fo=6267, unset)         0.059     0.059    bd_0_i/hls_inst/inst/gmem0_m_axi_U/load_unit/buff_rdata/U_fifo_mem/ap_clk
+                         net (fo=8962, unset)         0.059     0.059    bd_0_i/hls_inst/inst/gmem0_m_axi_U/load_unit/buff_rdata/U_fifo_mem/ap_clk
                          RAMB18E2                                     r  bd_0_i/hls_inst/inst/gmem0_m_axi_U/load_unit/buff_rdata/U_fifo_mem/mem_reg/CLKARDCLK
                          clock pessimism              0.000     0.059    
                          RAMB18E2 (Hold_RAMB18E2_CLKARDCLK_ADDRARDADDR[9])

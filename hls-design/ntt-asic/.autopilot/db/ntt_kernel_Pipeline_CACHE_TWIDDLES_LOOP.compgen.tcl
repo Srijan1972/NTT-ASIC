@@ -12,13 +12,70 @@ if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     id 4 \
+    name local_twiddles_3 \
+    reset_level 1 \
+    sync_rst true \
+    dir O \
+    corename local_twiddles_3 \
+    op interface \
+    ports { local_twiddles_3_address1 { O 10 vector } local_twiddles_3_ce1 { O 1 bit } local_twiddles_3_we1 { O 1 bit } local_twiddles_3_d1 { O 32 vector } } \
+} "
+} else {
+puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'local_twiddles_3'"
+}
+}
+
+
+# XIL_BRAM:
+if {${::AESL::PGuard_autoexp_gen}} {
+if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
+eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
+    id 5 \
+    name local_twiddles_2 \
+    reset_level 1 \
+    sync_rst true \
+    dir O \
+    corename local_twiddles_2 \
+    op interface \
+    ports { local_twiddles_2_address1 { O 10 vector } local_twiddles_2_ce1 { O 1 bit } local_twiddles_2_we1 { O 1 bit } local_twiddles_2_d1 { O 32 vector } } \
+} "
+} else {
+puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'local_twiddles_2'"
+}
+}
+
+
+# XIL_BRAM:
+if {${::AESL::PGuard_autoexp_gen}} {
+if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
+eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
+    id 6 \
+    name local_twiddles_1 \
+    reset_level 1 \
+    sync_rst true \
+    dir O \
+    corename local_twiddles_1 \
+    op interface \
+    ports { local_twiddles_1_address1 { O 10 vector } local_twiddles_1_ce1 { O 1 bit } local_twiddles_1_we1 { O 1 bit } local_twiddles_1_d1 { O 32 vector } } \
+} "
+} else {
+puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'local_twiddles_1'"
+}
+}
+
+
+# XIL_BRAM:
+if {${::AESL::PGuard_autoexp_gen}} {
+if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
+eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
+    id 7 \
     name local_twiddles \
     reset_level 1 \
     sync_rst true \
     dir O \
     corename local_twiddles \
     op interface \
-    ports { local_twiddles_address1 { O 12 vector } local_twiddles_ce1 { O 1 bit } local_twiddles_we1 { O 1 bit } local_twiddles_d1 { O 32 vector } } \
+    ports { local_twiddles_address1 { O 10 vector } local_twiddles_ce1 { O 1 bit } local_twiddles_we1 { O 1 bit } local_twiddles_d1 { O 32 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'local_twiddles'"
@@ -60,14 +117,14 @@ eval "cg_default_interface_gen_dc { \
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
     id 3 \
-    name sext_ln84 \
+    name sext_ln87 \
     type other \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_sext_ln84 \
+    corename dc_sext_ln87 \
     op interface \
-    ports { sext_ln84 { I 62 vector } } \
+    ports { sext_ln87 { I 62 vector } } \
 } "
 }
 

@@ -11,7 +11,10 @@ set SynModuleInfo {
     SUBMODULES {
       {MODELNAME ntt_kernel_mul_32ns_32ns_64_4_1 RTLNAME ntt_kernel_mul_32ns_32ns_64_4_1 BINDTYPE op TYPE mul IMPL dsp LATENCY 3 ALLOW_PRAGMA 1}
       {MODELNAME ntt_kernel_mul_32s_32s_32_4_1 RTLNAME ntt_kernel_mul_32s_32s_32_4_1 BINDTYPE op TYPE mul IMPL dsp LATENCY 3 ALLOW_PRAGMA 1}
+      {MODELNAME ntt_kernel_sparsemux_9_2_32_1_1 RTLNAME ntt_kernel_sparsemux_9_2_32_1_1 BINDTYPE op TYPE sparsemux IMPL auto}
+      {MODELNAME ntt_kernel_sparsemux_17_3_32_1_1 RTLNAME ntt_kernel_sparsemux_17_3_32_1_1 BINDTYPE op TYPE sparsemux IMPL auto}
       {MODELNAME ntt_kernel_add_64ns_64ns_64_2_1 RTLNAME ntt_kernel_add_64ns_64ns_64_2_1 BINDTYPE op TYPE add IMPL fabric LATENCY 1}
+      {MODELNAME ntt_kernel_sparsemux_9_3_32_1_1 RTLNAME ntt_kernel_sparsemux_9_3_32_1_1 BINDTYPE op TYPE sparsemux IMPL auto}
     }
   }
   {SRCNAME ntt_kernel_Pipeline_WRITE_BACK_LOOP MODELNAME ntt_kernel_Pipeline_WRITE_BACK_LOOP RTLNAME ntt_kernel_ntt_kernel_Pipeline_WRITE_BACK_LOOP}

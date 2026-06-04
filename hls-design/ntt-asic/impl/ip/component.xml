@@ -2045,7 +2045,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>c3b4c596</spirit:value>
+            <spirit:value>c3bd0ac5</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -2061,7 +2061,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>263f8809</spirit:value>
+            <spirit:value>90c29652</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -2077,7 +2077,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>07cd336d</spirit:value>
+            <spirit:value>7653e03e</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -2093,7 +2093,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>ddb73048</spirit:value>
+            <spirit:value>fa866122</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -5213,6 +5213,18 @@
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
+        <spirit:name>hdl/verilog/ntt_kernel_sparsemux_9_2_32_1_1.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/verilog/ntt_kernel_sparsemux_9_3_32_1_1.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/verilog/ntt_kernel_sparsemux_17_3_32_1_1.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
         <spirit:name>hdl/verilog/ntt_kernel.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
@@ -5310,6 +5322,21 @@
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
+        <spirit:name>hdl/verilog/ntt_kernel_sparsemux_9_2_32_1_1.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/verilog/ntt_kernel_sparsemux_9_3_32_1_1.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/verilog/ntt_kernel_sparsemux_17_3_32_1_1.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
         <spirit:name>hdl/verilog/ntt_kernel.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
@@ -5395,9 +5422,21 @@
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
+        <spirit:name>hdl/vhdl/ntt_kernel_sparsemux_9_2_32_1_1.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/vhdl/ntt_kernel_sparsemux_9_3_32_1_1.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/vhdl/ntt_kernel_sparsemux_17_3_32_1_1.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
         <spirit:name>hdl/vhdl/ntt_kernel.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_6efbbebe</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_a3de4864</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
@@ -5489,6 +5528,21 @@
       </spirit:file>
       <spirit:file>
         <spirit:name>hdl/vhdl/ntt_kernel_ping_RAM_2P_BRAM_1R1W.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/vhdl/ntt_kernel_sparsemux_9_2_32_1_1.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/vhdl/ntt_kernel_sparsemux_9_3_32_1_1.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/vhdl/ntt_kernel_sparsemux_17_3_32_1_1.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
@@ -5920,7 +5974,7 @@
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>latency</spirit:name>
-      <spirit:value spirit:id="PARAM_VALUE.latency" spirit:order="41">2208</spirit:value>
+      <spirit:value spirit:id="PARAM_VALUE.latency" spirit:order="41">1169</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>II</spirit:name>
@@ -5937,8 +5991,8 @@
       </xilinx:taxonomies>
       <xilinx:displayName>Ntt_kernel</xilinx:displayName>
       <xilinx:definitionSource>HLS</xilinx:definitionSource>
-      <xilinx:coreRevision>2114634882</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2026-06-02T01:42:24Z</xilinx:coreCreationDateTime>
+      <xilinx:coreRevision>2114638585</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2026-06-04T15:26:02Z</xilinx:coreCreationDateTime>
       <xilinx:sdxKernelAttributes>
         <xilinx:sdx_kernel>true</xilinx:sdx_kernel>
         <xilinx:sdx_kernel_type>hls</xilinx:sdx_kernel_type>
@@ -5949,10 +6003,10 @@
       <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="1cc7995a"/>
       <xilinx:checksum xilinx:scope="addressSpaces" xilinx:value="d37294b6"/>
       <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="943e3997"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="35e3e90b"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="1183c0ca"/>
       <xilinx:checksum xilinx:scope="ports" xilinx:value="7c6b597d"/>
       <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="afb1fc98"/>
-      <xilinx:checksum xilinx:scope="parameters" xilinx:value="32df368e"/>
+      <xilinx:checksum xilinx:scope="parameters" xilinx:value="1c5f0ad9"/>
     </xilinx:packagingInfo>
   </spirit:vendorExtensions>
 </spirit:component>

@@ -71,14 +71,17 @@ void ntt_kernel(
 
 	uint32_t local_twiddles[MAX_N];
 	#pragma HLS BIND_STORAGE variable=local_twiddles type=ram_2p impl=bram
+	#pragma HLS ARRAY_PARTITION variable=local_twiddles cyclic factor=4 dim=1
 	uint32_t local_psi[MAX_N];
 	#pragma HLS BIND_STORAGE variable=local_psi type=ram_2p impl=bram
 
 	// Ping-Pong Buffers to avoid 4-port bottleneck during Butterfly
 	uint32_t ping[MAX_N];
 	#pragma HLS BIND_STORAGE variable=ping type=ram_2p impl=bram
+	#pragma HLS ARRAY_PARTITION variable=ping cyclic factor=8 dim=1
 	uint32_t pong[MAX_N];
 	#pragma HLS BIND_STORAGE variable=pong type=ram_2p impl=bram
+	#pragma HLS ARRAY_PARTITION variable=pong cyclic factor=8 dim=1
 
 	// Cache Twiddles (Strictly n - 1 elements)
 	CACHE_TWIDDLES_LOOP: for (int i = 0; i < n - 1; i++) {
@@ -121,14 +124,16 @@ void ntt_kernel(
 	    STAGE_LOOP: for (int length = 1; length < n; length *= 2) {
 	        #pragma HLS LOOP_TRIPCOUNT min=1 max=12
 	        int half_n = n >> 1;
+	        uint32_t mask = ~(length - 1);
 
 	        // Flattened inner loops (Iterates exactly n/2 times)
 	        FLATTENED_BUTTERFLY_LOOP: for (int step = 0; step < half_n; ++step) {
 	            #pragma HLS PIPELINE II=1
 	            #pragma HLS LOOP_TRIPCOUNT min=128 max=2048
+				#pragma HLS UNROLL factor=4
 	            // Calculate original i and j from the flattened 'step'
-	            int j = step & (length - 1);
-	            int i = (step >> stage) << (stage + 1);
+	            int j = step & ~mask;
+	            int i = (step & mask) << 1;
 	            int idx1 = i + j;
 	            int idx2 = i + length + j;
 	            uint32_t twiddle = local_twiddles[offset + j];

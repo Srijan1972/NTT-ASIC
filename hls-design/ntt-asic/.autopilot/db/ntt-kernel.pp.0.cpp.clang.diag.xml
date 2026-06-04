@@ -713,7 +713,23 @@
       <key>filename</key>
       <string>hls-design/ntt-kernel.cpp</string>
       <key>line</key>
-      <integer>75</integer>
+      <integer>74</integer>
+      <key>column</key>
+      <integer>9</integer>
+      <key>message</key>
+      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ntt_kernel_XLX_SEP_ PragmaOptions=variable=local_twiddles cyclic factor=4 dim=1_XLX_SEP_</string>
+      <key>ID</key>
+      <integer>5471</integer>
+      <key>WarningOption</key>
+      <string>dump-hls-pragmas</string>
+    </dict>
+    <dict>
+      <key>level</key>
+      <string>warning</string>
+      <key>filename</key>
+      <string>hls-design/ntt-kernel.cpp</string>
+      <key>line</key>
+      <integer>76</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -729,7 +745,7 @@
       <key>filename</key>
       <string>hls-design/ntt-kernel.cpp</string>
       <key>line</key>
-      <integer>79</integer>
+      <integer>80</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -749,6 +765,22 @@
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
+      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ntt_kernel_XLX_SEP_ PragmaOptions=variable=ping cyclic factor=8 dim=1_XLX_SEP_</string>
+      <key>ID</key>
+      <integer>5471</integer>
+      <key>WarningOption</key>
+      <string>dump-hls-pragmas</string>
+    </dict>
+    <dict>
+      <key>level</key>
+      <string>warning</string>
+      <key>filename</key>
+      <string>hls-design/ntt-kernel.cpp</string>
+      <key>line</key>
+      <integer>83</integer>
+      <key>column</key>
+      <integer>9</integer>
+      <key>message</key>
       <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=bind_storage_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ntt_kernel_XLX_SEP_ PragmaOptions=variable=pong type=ram_2p impl=bram_XLX_SEP_</string>
       <key>ID</key>
       <integer>5471</integer>
@@ -761,7 +793,23 @@
       <key>filename</key>
       <string>hls-design/ntt-kernel.cpp</string>
       <key>line</key>
-      <integer>85</integer>
+      <integer>84</integer>
+      <key>column</key>
+      <integer>9</integer>
+      <key>message</key>
+      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ntt_kernel_XLX_SEP_ PragmaOptions=variable=pong cyclic factor=8 dim=1_XLX_SEP_</string>
+      <key>ID</key>
+      <integer>5471</integer>
+      <key>WarningOption</key>
+      <string>dump-hls-pragmas</string>
+    </dict>
+    <dict>
+      <key>level</key>
+      <string>warning</string>
+      <key>filename</key>
+      <string>hls-design/ntt-kernel.cpp</string>
+      <key>line</key>
+      <integer>88</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -777,7 +825,7 @@
       <key>filename</key>
       <string>hls-design/ntt-kernel.cpp</string>
       <key>line</key>
-      <integer>86</integer>
+      <integer>89</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -793,7 +841,7 @@
       <key>filename</key>
       <string>hls-design/ntt-kernel.cpp</string>
       <key>line</key>
-      <integer>92</integer>
+      <integer>95</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -809,7 +857,7 @@
       <key>filename</key>
       <string>hls-design/ntt-kernel.cpp</string>
       <key>line</key>
-      <integer>93</integer>
+      <integer>96</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -825,7 +873,7 @@
       <key>filename</key>
       <string>hls-design/ntt-kernel.cpp</string>
       <key>line</key>
-      <integer>98</integer>
+      <integer>101</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -841,7 +889,7 @@
       <key>filename</key>
       <string>hls-design/ntt-kernel.cpp</string>
       <key>line</key>
-      <integer>104</integer>
+      <integer>107</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -857,7 +905,7 @@
       <key>filename</key>
       <string>hls-design/ntt-kernel.cpp</string>
       <key>line</key>
-      <integer>105</integer>
+      <integer>108</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -873,7 +921,7 @@
       <key>filename</key>
       <string>hls-design/ntt-kernel.cpp</string>
       <key>line</key>
-      <integer>111</integer>
+      <integer>114</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -889,7 +937,7 @@
       <key>filename</key>
       <string>hls-design/ntt-kernel.cpp</string>
       <key>line</key>
-      <integer>112</integer>
+      <integer>115</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -905,7 +953,7 @@
       <key>filename</key>
       <string>hls-design/ntt-kernel.cpp</string>
       <key>line</key>
-      <integer>122</integer>
+      <integer>125</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -921,7 +969,7 @@
       <key>filename</key>
       <string>hls-design/ntt-kernel.cpp</string>
       <key>line</key>
-      <integer>127</integer>
+      <integer>131</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -937,7 +985,7 @@
       <key>filename</key>
       <string>hls-design/ntt-kernel.cpp</string>
       <key>line</key>
-      <integer>128</integer>
+      <integer>132</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -953,7 +1001,23 @@
       <key>filename</key>
       <string>hls-design/ntt-kernel.cpp</string>
       <key>line</key>
-      <integer>166</integer>
+      <integer>133</integer>
+      <key>column</key>
+      <integer>9</integer>
+      <key>message</key>
+      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ntt_kernel_XLX_SEP_ PragmaOptions=factor=4_XLX_SEP_</string>
+      <key>ID</key>
+      <integer>5471</integer>
+      <key>WarningOption</key>
+      <string>dump-hls-pragmas</string>
+    </dict>
+    <dict>
+      <key>level</key>
+      <string>warning</string>
+      <key>filename</key>
+      <string>hls-design/ntt-kernel.cpp</string>
+      <key>line</key>
+      <integer>171</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -969,7 +1033,7 @@
       <key>filename</key>
       <string>hls-design/ntt-kernel.cpp</string>
       <key>line</key>
-      <integer>167</integer>
+      <integer>172</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>

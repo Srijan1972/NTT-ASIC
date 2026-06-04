@@ -1,17 +1,17 @@
 {
     "1": {
-        "name": "ntt_kernel_Pipeline_CACHE_PSI_LOOP",
+        "name": "ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP",
         "file": "hls-design\/ntt-kernel.cpp",
-        "fileloc": "91",
-        "instructions": "26",
-        "total_instructions": "26",
+        "fileloc": "130",
+        "instructions": "800",
+        "total_instructions": "800",
         "calls": "",
-        "basicblocks": "4",
+        "basicblocks": "143",
         "loads": {
-            "L": "1"
+            "L": "125"
         },
         "stores": {
-            "L": "3"
+            "L": "110"
         },
         "loops": {
             "L": "1"
@@ -20,13 +20,13 @@
     "2": {
         "name": "ntt_kernel_Pipeline_WRITE_BACK_LOOP",
         "file": "hls-design\/ntt-kernel.cpp",
-        "fileloc": "165",
-        "instructions": "30",
-        "total_instructions": "30",
+        "fileloc": "170",
+        "instructions": "76",
+        "total_instructions": "76",
         "calls": "",
         "basicblocks": "4",
         "loads": {
-            "L": "3"
+            "L": "17"
         },
         "stores": {
             "L": "2"
@@ -36,11 +36,29 @@
         }
     },
     "3": {
-        "name": "ntt_kernel_Pipeline_BURST_READ_LOOP",
+        "name": "ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP",
         "file": "hls-design\/ntt-kernel.cpp",
-        "fileloc": "103",
-        "instructions": "24",
-        "total_instructions": "24",
+        "fileloc": "87",
+        "instructions": "41",
+        "total_instructions": "41",
+        "calls": "",
+        "basicblocks": "9",
+        "loads": {
+            "L": "1"
+        },
+        "stores": {
+            "L": "6"
+        },
+        "loops": {
+            "L": "1"
+        }
+    },
+    "4": {
+        "name": "ntt_kernel_Pipeline_CACHE_PSI_LOOP",
+        "file": "hls-design\/ntt-kernel.cpp",
+        "fileloc": "94",
+        "instructions": "26",
+        "total_instructions": "26",
         "calls": "",
         "basicblocks": "4",
         "loads": {
@@ -57,9 +75,9 @@
         "name": "ntt_kernel",
         "file": "ntt-kernel.cpp",
         "fileloc": "51",
-        "instructions": "115",
-        "total_instructions": "341",
-        "calls": "6 1 3 4 5 2",
+        "instructions": "148",
+        "total_instructions": "1173",
+        "calls": "3 4 5 6 1 2",
         "basicblocks": "9",
         "loads": {
             "L": "2"
@@ -72,55 +90,37 @@
             "N": "1"
         }
     },
-    "4": {
-        "name": "ntt_kernel_Pipeline_PERMUTE_LOOP",
+    "5": {
+        "name": "ntt_kernel_Pipeline_BURST_READ_LOOP",
         "file": "hls-design\/ntt-kernel.cpp",
-        "fileloc": "110",
-        "instructions": "25",
-        "total_instructions": "25",
+        "fileloc": "106",
+        "instructions": "24",
+        "total_instructions": "24",
         "calls": "",
         "basicblocks": "4",
         "loads": {
-            "L": "3"
-        },
-        "stores": {
-            "L": "3"
-        },
-        "loops": {
             "L": "1"
-        }
-    },
-    "5": {
-        "name": "ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP",
-        "file": "hls-design\/ntt-kernel.cpp",
-        "fileloc": "126",
-        "instructions": "96",
-        "total_instructions": "96",
-        "calls": "",
-        "basicblocks": "7",
-        "loads": {
-            "L": "6"
         },
         "stores": {
-            "L": "6"
+            "L": "3"
         },
         "loops": {
             "L": "1"
         }
     },
     "6": {
-        "name": "ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP",
+        "name": "ntt_kernel_Pipeline_PERMUTE_LOOP",
         "file": "hls-design\/ntt-kernel.cpp",
-        "fileloc": "84",
-        "instructions": "25",
-        "total_instructions": "25",
+        "fileloc": "113",
+        "instructions": "58",
+        "total_instructions": "58",
         "calls": "",
-        "basicblocks": "4",
+        "basicblocks": "13",
         "loads": {
-            "L": "1"
+            "L": "3"
         },
         "stores": {
-            "L": "3"
+            "L": "10"
         },
         "loops": {
             "L": "1"

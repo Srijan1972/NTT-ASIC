@@ -6,31 +6,31 @@
 </RunData>
 <TimingReport>
   <TargetClockPeriod>10.000</TargetClockPeriod>
-  <AchievedClockPeriod>7.223</AchievedClockPeriod>
+  <AchievedClockPeriod>9.006</AchievedClockPeriod>
   <CLOCK_NAME>ap_clk</CLOCK_NAME>
-  <CP_FINAL>7.223</CP_FINAL>
-  <CP_ROUTE>7.223</CP_ROUTE>
-  <CP_SYNTH>5.179</CP_SYNTH>
+  <CP_FINAL>9.006</CP_FINAL>
+  <CP_ROUTE>9.006</CP_ROUTE>
+  <CP_SYNTH>5.932</CP_SYNTH>
   <CP_TARGET>10.000</CP_TARGET>
-  <SLACK_FINAL>2.777</SLACK_FINAL>
-  <SLACK_ROUTE>2.777</SLACK_ROUTE>
-  <SLACK_SYNTH>4.821</SLACK_SYNTH>
+  <SLACK_FINAL>0.994</SLACK_FINAL>
+  <SLACK_ROUTE>0.994</SLACK_ROUTE>
+  <SLACK_SYNTH>4.068</SLACK_SYNTH>
   <TIMING_MET>TRUE</TIMING_MET>
   <TNS_FINAL>0.000</TNS_FINAL>
   <TNS_ROUTE>0.000</TNS_ROUTE>
   <TNS_SYNTH>0.000</TNS_SYNTH>
-  <WNS_FINAL>2.777</WNS_FINAL>
-  <WNS_ROUTE>2.777</WNS_ROUTE>
-  <WNS_SYNTH>4.821</WNS_SYNTH>
+  <WNS_FINAL>0.994</WNS_FINAL>
+  <WNS_ROUTE>0.994</WNS_ROUTE>
+  <WNS_SYNTH>4.068</WNS_SYNTH>
 </TimingReport>
 <AreaReport>
   <Resources>
-    <BRAM>31</BRAM>
-    <CLB>892</CLB>
+    <BRAM>47</BRAM>
+    <CLB>2044</CLB>
     <DSP>7</DSP>
-    <FF>5704</FF>
+    <FF>8383</FF>
     <LATCH>0</LATCH>
-    <LUT>4019</LUT>
+    <LUT>9609</LUT>
     <SRL>256</SRL>
     <URAM>1</URAM>
   </Resources>
@@ -45,201 +45,331 @@
 </AreaReport>
 <RtlModules>
   <RtlModule CELL="inst" DEPTH="0" FILE_NAME="bd_0_hls_inst_0.v" ORIG_REF_NAME="ntt_kernel" TOP_CELL="bd_0_i/hls_inst/inst">
-    <SubModules count="15">burst_buffer_U control_s_axi_U gmem0_m_axi_U gmem1_m_axi_U gmem2_m_axi_U grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305 grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296 grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287 grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322 grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_314 grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341 local_psi_U local_twiddles_U ping_U pong_U</SubModules>
-    <Resources BRAM="31" DSP="7" FF="5704" LUT="4019" LogicLUT="3763" RAMB18="5" RAMB36="13" SRL="256" URAM="1"/>
-    <LocalResources FF="970" LUT="123" LogicLUT="123"/>
+    <SubModules count="32">burst_buffer_U control_s_axi_U gmem0_m_axi_U gmem1_m_axi_U gmem2_m_axi_U grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_364 grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_355 grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_343 grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388 grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_373 grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_423 local_psi_U local_twiddles_1_U local_twiddles_2_U local_twiddles_3_U local_twiddles_U ping_1_U ping_2_U ping_3_U ping_4_U ping_5_U ping_6_U ping_7_U ping_U pong_1_U pong_2_U pong_3_U pong_4_U pong_5_U pong_6_U pong_7_U pong_U</SubModules>
+    <Resources BRAM="47" DSP="7" FF="8383" LUT="9609" LogicLUT="9353" RAMB18="5" RAMB36="21" SRL="256" URAM="1"/>
+    <LocalResources FF="912" LUT="125" LogicLUT="122" SRL="3"/>
   </RtlModule>
   <RtlModule CELL="inst/burst_buffer_U" BINDMODULE="ntt_kernel_burst_buffer_RAM_AUTO_1R1W" DEPTH="1" FILE_NAME="ntt_kernel.v" ORIG_REF_NAME="ntt_kernel_burst_buffer_RAM_AUTO_1R1W">
-    <Resources LUT="1" LogicLUT="1" URAM="1"/>
+    <Resources URAM="1"/>
   </RtlModule>
   <RtlModule CELL="inst/control_s_axi_U" BINDMODULE="ntt_kernel_control_s_axi" DEPTH="1" FILE_NAME="ntt_kernel.v" ORIG_REF_NAME="ntt_kernel_control_s_axi">
-    <Resources FF="376" LUT="438" LogicLUT="438"/>
+    <Resources FF="376" LUT="439" LogicLUT="439"/>
   </RtlModule>
   <RtlModule CELL="inst/gmem0_m_axi_U" BINDMODULE="ntt_kernel_gmem0_m_axi" DEPTH="1" FILE_NAME="ntt_kernel.v" ORIG_REF_NAME="ntt_kernel_gmem0_m_axi">
-    <Resources BRAM="2" FF="1924" LUT="1300" LogicLUT="1142" RAMB18="2" SRL="158"/>
+    <Resources BRAM="2" FF="1924" LUT="1301" LogicLUT="1144" RAMB18="2" SRL="157"/>
   </RtlModule>
   <RtlModule CELL="inst/gmem1_m_axi_U" BINDMODULE="ntt_kernel_gmem1_m_axi" DEPTH="1" FILE_NAME="ntt_kernel.v" ORIG_REF_NAME="ntt_kernel_gmem1_m_axi">
-    <Resources BRAM="1" FF="852" LUT="626" LogicLUT="577" RAMB18="1" SRL="49"/>
+    <Resources BRAM="1" FF="852" LUT="627" LogicLUT="579" RAMB18="1" SRL="48"/>
   </RtlModule>
   <RtlModule CELL="inst/gmem2_m_axi_U" BINDMODULE="ntt_kernel_gmem2_m_axi" DEPTH="1" FILE_NAME="ntt_kernel.v" ORIG_REF_NAME="ntt_kernel_gmem2_m_axi">
-    <Resources BRAM="1" FF="852" LUT="528" LogicLUT="479" RAMB18="1" SRL="49"/>
+    <Resources BRAM="1" FF="852" LUT="529" LogicLUT="481" RAMB18="1" SRL="48"/>
   </RtlModule>
-  <RtlModule CELL="inst/grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305" DEPTH="1" FILE_NAME="ntt_kernel.v" ORIG_REF_NAME="ntt_kernel_ntt_kernel_Pipeline_BURST_READ_LOOP">
+  <RtlModule CELL="inst/grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_364" DEPTH="1" FILE_NAME="ntt_kernel.v" ORIG_REF_NAME="ntt_kernel_ntt_kernel_Pipeline_BURST_READ_LOOP">
     <SubModules count="1">flow_control_loop_pipe_sequential_init_U</SubModules>
-    <Resources FF="74" LUT="51" LogicLUT="51"/>
-    <LocalResources FF="72" LUT="21" LogicLUT="21"/>
+    <Resources FF="74" LUT="52" LogicLUT="52"/>
+    <LocalResources FF="72" LUT="22" LogicLUT="22"/>
   </RtlModule>
-  <RtlModule CELL="inst/grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_305/flow_control_loop_pipe_sequential_init_U" BINDMODULE="ntt_kernel_flow_control_loop_pipe_sequential_init" DEPTH="2" FILE_NAME="ntt_kernel_ntt_kernel_Pipeline_BURST_READ_LOOP.v" ORIG_REF_NAME="ntt_kernel_flow_control_loop_pipe_sequential_init">
+  <RtlModule CELL="inst/grp_ntt_kernel_Pipeline_BURST_READ_LOOP_fu_364/flow_control_loop_pipe_sequential_init_U" BINDMODULE="ntt_kernel_flow_control_loop_pipe_sequential_init" DEPTH="2" FILE_NAME="ntt_kernel_ntt_kernel_Pipeline_BURST_READ_LOOP.v" ORIG_REF_NAME="ntt_kernel_flow_control_loop_pipe_sequential_init">
     <Resources FF="2" LUT="30" LogicLUT="30"/>
   </RtlModule>
-  <RtlModule CELL="inst/grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296" DEPTH="1" FILE_NAME="ntt_kernel.v" ORIG_REF_NAME="ntt_kernel_ntt_kernel_Pipeline_CACHE_PSI_LOOP">
+  <RtlModule CELL="inst/grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_355" DEPTH="1" FILE_NAME="ntt_kernel.v" ORIG_REF_NAME="ntt_kernel_ntt_kernel_Pipeline_CACHE_PSI_LOOP">
     <SubModules count="1">flow_control_loop_pipe_sequential_init_U</SubModules>
-    <Resources FF="54" LUT="45" LogicLUT="45"/>
-    <LocalResources FF="52" LUT="11" LogicLUT="11"/>
+    <Resources FF="54" LUT="46" LogicLUT="46"/>
+    <LocalResources FF="52" LUT="12" LogicLUT="12"/>
   </RtlModule>
-  <RtlModule CELL="inst/grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_296/flow_control_loop_pipe_sequential_init_U" BINDMODULE="ntt_kernel_flow_control_loop_pipe_sequential_init" DEPTH="2" FILE_NAME="ntt_kernel_ntt_kernel_Pipeline_CACHE_PSI_LOOP.v" ORIG_REF_NAME="ntt_kernel_flow_control_loop_pipe_sequential_init">
+  <RtlModule CELL="inst/grp_ntt_kernel_Pipeline_CACHE_PSI_LOOP_fu_355/flow_control_loop_pipe_sequential_init_U" BINDMODULE="ntt_kernel_flow_control_loop_pipe_sequential_init" DEPTH="2" FILE_NAME="ntt_kernel_ntt_kernel_Pipeline_CACHE_PSI_LOOP.v" ORIG_REF_NAME="ntt_kernel_flow_control_loop_pipe_sequential_init">
     <Resources FF="2" LUT="34" LogicLUT="34"/>
   </RtlModule>
-  <RtlModule CELL="inst/grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287" DEPTH="1" FILE_NAME="ntt_kernel.v" ORIG_REF_NAME="ntt_kernel_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP">
+  <RtlModule CELL="inst/grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_343" DEPTH="1" FILE_NAME="ntt_kernel.v" ORIG_REF_NAME="ntt_kernel_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP">
     <SubModules count="1">flow_control_loop_pipe_sequential_init_U</SubModules>
-    <Resources FF="74" LUT="44" LogicLUT="44"/>
-    <LocalResources FF="72" LUT="12" LogicLUT="12"/>
+    <Resources FF="92" LUT="76" LogicLUT="76"/>
+    <LocalResources FF="90" LUT="8" LogicLUT="8"/>
   </RtlModule>
-  <RtlModule CELL="inst/grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_287/flow_control_loop_pipe_sequential_init_U" BINDMODULE="ntt_kernel_flow_control_loop_pipe_sequential_init" DEPTH="2" FILE_NAME="ntt_kernel_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP.v" ORIG_REF_NAME="ntt_kernel_flow_control_loop_pipe_sequential_init">
-    <Resources FF="2" LUT="32" LogicLUT="32"/>
+  <RtlModule CELL="inst/grp_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP_fu_343/flow_control_loop_pipe_sequential_init_U" BINDMODULE="ntt_kernel_flow_control_loop_pipe_sequential_init" DEPTH="2" FILE_NAME="ntt_kernel_ntt_kernel_Pipeline_CACHE_TWIDDLES_LOOP.v" ORIG_REF_NAME="ntt_kernel_flow_control_loop_pipe_sequential_init">
+    <Resources FF="2" LUT="68" LogicLUT="68"/>
   </RtlModule>
-  <RtlModule CELL="inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322" DEPTH="1" FILE_NAME="ntt_kernel.v" ORIG_REF_NAME="ntt_kernel_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP">
-    <SubModules count="4">add_64ns_64ns_64_2_1_U19 flow_control_loop_pipe_sequential_init_U mul_32ns_32ns_64_4_1_U17 mul_32s_32s_32_4_1_U18</SubModules>
-    <Resources DSP="7" FF="436" LUT="625" LogicLUT="625"/>
-    <LocalResources FF="222" LUT="101" LogicLUT="101"/>
+  <RtlModule CELL="inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388" DEPTH="1" FILE_NAME="ntt_kernel.v" ORIG_REF_NAME="ntt_kernel_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP">
+    <SubModules count="25">add_64ns_64ns_64_2_1_U41 add_64ns_64ns_64_2_1_U42 add_64ns_64ns_64_2_1_U45 add_64ns_64ns_64_2_1_U48 flow_control_loop_pipe_sequential_init_U mul_32ns_32ns_64_4_1_U27 mul_32s_32s_32_4_1_U28 sparsemux_17_3_32_1_1_U30 sparsemux_17_3_32_1_1_U31 sparsemux_17_3_32_1_1_U33 sparsemux_17_3_32_1_1_U34 sparsemux_17_3_32_1_1_U37 sparsemux_17_3_32_1_1_U38 sparsemux_17_3_32_1_1_U39 sparsemux_17_3_32_1_1_U40 sparsemux_17_3_32_1_1_U43 sparsemux_17_3_32_1_1_U44 sparsemux_17_3_32_1_1_U49 sparsemux_17_3_32_1_1_U50 sparsemux_9_2_32_1_1_U29 sparsemux_9_2_32_1_1_U32 sparsemux_9_2_32_1_1_U35 sparsemux_9_2_32_1_1_U36 sparsemux_9_3_32_1_1_U46 sparsemux_9_3_32_1_1_U47</SubModules>
+    <Resources DSP="7" FF="3152" LUT="5314" LogicLUT="5314"/>
+    <LocalResources FF="2837" LUT="910" LogicLUT="910"/>
   </RtlModule>
-  <RtlModule CELL="inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19" BINDMODULE="ntt_kernel_add_64ns_64ns_64_2_1" DEPTH="2" FILE_NAME="ntt_kernel_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP.v" ORIG_REF_NAME="ntt_kernel_add_64ns_64ns_64_2_1">
-    <Resources FF="65" LUT="259" LogicLUT="259"/>
-    <LocalResources FF="65" LUT="8" LogicLUT="8"/>
+  <RtlModule CELL="inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U41" BINDMODULE="ntt_kernel_add_64ns_64ns_64_2_1" DEPTH="2" FILE_NAME="ntt_kernel_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP.v" ORIG_REF_NAME="ntt_kernel_add_64ns_64ns_64_2_1">
+    <Resources FF="41" LUT="64" LogicLUT="64"/>
+    <LocalResources FF="41"/>
   </RtlModule>
-  <RtlModule CELL="inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/flow_control_loop_pipe_sequential_init_U" BINDMODULE="ntt_kernel_flow_control_loop_pipe_sequential_init" DEPTH="2" FILE_NAME="ntt_kernel_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP.v" ORIG_REF_NAME="ntt_kernel_flow_control_loop_pipe_sequential_init">
-    <Resources FF="2" LUT="156" LogicLUT="156"/>
+  <RtlModule CELL="inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U42" BINDMODULE="ntt_kernel_add_64ns_64ns_64_2_1" DEPTH="2" FILE_NAME="ntt_kernel_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP.v" ORIG_REF_NAME="ntt_kernel_add_64ns_64ns_64_2_1">
+    <Resources FF="33" LUT="114" LogicLUT="114"/>
+    <LocalResources FF="33"/>
   </RtlModule>
-  <RtlModule CELL="inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/mul_32ns_32ns_64_4_1_U17" BINDMODULE="ntt_kernel_mul_32ns_32ns_64_4_1" DEPTH="2" FILE_NAME="ntt_kernel_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP.v" ORIG_REF_NAME="ntt_kernel_mul_32ns_32ns_64_4_1">
-    <Resources DSP="4" FF="98" LUT="63" LogicLUT="63"/>
+  <RtlModule CELL="inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U45" BINDMODULE="ntt_kernel_add_64ns_64ns_64_2_1" DEPTH="2" FILE_NAME="ntt_kernel_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP.v" ORIG_REF_NAME="ntt_kernel_add_64ns_64ns_64_2_1">
+    <Resources FF="49" LUT="64" LogicLUT="64"/>
+    <LocalResources FF="49"/>
   </RtlModule>
-  <RtlModule CELL="inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/mul_32s_32s_32_4_1_U18" BINDMODULE="ntt_kernel_mul_32s_32s_32_4_1" DEPTH="2" FILE_NAME="ntt_kernel_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP.v" ORIG_REF_NAME="ntt_kernel_mul_32s_32s_32_4_1">
+  <RtlModule CELL="inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48" BINDMODULE="ntt_kernel_add_64ns_64ns_64_2_1" DEPTH="2" FILE_NAME="ntt_kernel_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP.v" ORIG_REF_NAME="ntt_kernel_add_64ns_64ns_64_2_1">
+    <Resources FF="41" LUT="2189" LogicLUT="2189"/>
+    <LocalResources FF="41" LUT="2076" LogicLUT="2076"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/flow_control_loop_pipe_sequential_init_U" BINDMODULE="ntt_kernel_flow_control_loop_pipe_sequential_init" DEPTH="2" FILE_NAME="ntt_kernel_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP.v" ORIG_REF_NAME="ntt_kernel_flow_control_loop_pipe_sequential_init">
+    <Resources FF="4" LUT="784" LogicLUT="784"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/mul_32ns_32ns_64_4_1_U27" BINDMODULE="ntt_kernel_mul_32ns_32ns_64_4_1" DEPTH="2" FILE_NAME="ntt_kernel_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP.v" ORIG_REF_NAME="ntt_kernel_mul_32ns_32ns_64_4_1">
+    <Resources DSP="4" FF="98" LUT="209" LogicLUT="209"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/mul_32s_32s_32_4_1_U28" BINDMODULE="ntt_kernel_mul_32s_32s_32_4_1" DEPTH="2" FILE_NAME="ntt_kernel_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP.v" ORIG_REF_NAME="ntt_kernel_mul_32s_32s_32_4_1">
     <Resources DSP="3" FF="49" LUT="47" LogicLUT="47"/>
   </RtlModule>
-  <RtlModule CELL="inst/grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_314" DEPTH="1" FILE_NAME="ntt_kernel.v" ORIG_REF_NAME="ntt_kernel_ntt_kernel_Pipeline_PERMUTE_LOOP">
+  <RtlModule CELL="inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/sparsemux_17_3_32_1_1_U30" BINDMODULE="ntt_kernel_sparsemux_17_3_32_1_1" DEPTH="2" FILE_NAME="ntt_kernel_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP.v" ORIG_REF_NAME="ntt_kernel_sparsemux_17_3_32_1_1">
+    <Resources LUT="64" LogicLUT="64"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/sparsemux_17_3_32_1_1_U31" BINDMODULE="ntt_kernel_sparsemux_17_3_32_1_1" DEPTH="2" FILE_NAME="ntt_kernel_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP.v" ORIG_REF_NAME="ntt_kernel_sparsemux_17_3_32_1_1">
+    <Resources LUT="64" LogicLUT="64"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/sparsemux_17_3_32_1_1_U33" BINDMODULE="ntt_kernel_sparsemux_17_3_32_1_1" DEPTH="2" FILE_NAME="ntt_kernel_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP.v" ORIG_REF_NAME="ntt_kernel_sparsemux_17_3_32_1_1">
+    <Resources LUT="64" LogicLUT="64"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/sparsemux_17_3_32_1_1_U34" BINDMODULE="ntt_kernel_sparsemux_17_3_32_1_1" DEPTH="2" FILE_NAME="ntt_kernel_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP.v" ORIG_REF_NAME="ntt_kernel_sparsemux_17_3_32_1_1">
+    <Resources LUT="64" LogicLUT="64"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/sparsemux_17_3_32_1_1_U37" BINDMODULE="ntt_kernel_sparsemux_17_3_32_1_1" DEPTH="2" FILE_NAME="ntt_kernel_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP.v" ORIG_REF_NAME="ntt_kernel_sparsemux_17_3_32_1_1">
+    <Resources LUT="64" LogicLUT="64"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/sparsemux_17_3_32_1_1_U38" BINDMODULE="ntt_kernel_sparsemux_17_3_32_1_1" DEPTH="2" FILE_NAME="ntt_kernel_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP.v" ORIG_REF_NAME="ntt_kernel_sparsemux_17_3_32_1_1">
+    <Resources LUT="64" LogicLUT="64"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/sparsemux_17_3_32_1_1_U39" BINDMODULE="ntt_kernel_sparsemux_17_3_32_1_1" DEPTH="2" FILE_NAME="ntt_kernel_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP.v" ORIG_REF_NAME="ntt_kernel_sparsemux_17_3_32_1_1">
+    <Resources LUT="64" LogicLUT="64"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/sparsemux_17_3_32_1_1_U40" BINDMODULE="ntt_kernel_sparsemux_17_3_32_1_1" DEPTH="2" FILE_NAME="ntt_kernel_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP.v" ORIG_REF_NAME="ntt_kernel_sparsemux_17_3_32_1_1">
+    <Resources LUT="64" LogicLUT="64"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/sparsemux_17_3_32_1_1_U43" BINDMODULE="ntt_kernel_sparsemux_17_3_32_1_1" DEPTH="2" FILE_NAME="ntt_kernel_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP.v" ORIG_REF_NAME="ntt_kernel_sparsemux_17_3_32_1_1">
+    <Resources LUT="64" LogicLUT="64"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/sparsemux_17_3_32_1_1_U44" BINDMODULE="ntt_kernel_sparsemux_17_3_32_1_1" DEPTH="2" FILE_NAME="ntt_kernel_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP.v" ORIG_REF_NAME="ntt_kernel_sparsemux_17_3_32_1_1">
+    <Resources LUT="64" LogicLUT="64"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/sparsemux_17_3_32_1_1_U49" BINDMODULE="ntt_kernel_sparsemux_17_3_32_1_1" DEPTH="2" FILE_NAME="ntt_kernel_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP.v" ORIG_REF_NAME="ntt_kernel_sparsemux_17_3_32_1_1">
+    <Resources LUT="64" LogicLUT="64"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/sparsemux_17_3_32_1_1_U50" BINDMODULE="ntt_kernel_sparsemux_17_3_32_1_1" DEPTH="2" FILE_NAME="ntt_kernel_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP.v" ORIG_REF_NAME="ntt_kernel_sparsemux_17_3_32_1_1">
+    <Resources LUT="64" LogicLUT="64"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/sparsemux_9_2_32_1_1_U29" BINDMODULE="ntt_kernel_sparsemux_9_2_32_1_1" DEPTH="2" FILE_NAME="ntt_kernel_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP.v" ORIG_REF_NAME="ntt_kernel_sparsemux_9_2_32_1_1">
+    <Resources LUT="32" LogicLUT="32"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/sparsemux_9_2_32_1_1_U32" BINDMODULE="ntt_kernel_sparsemux_9_2_32_1_1" DEPTH="2" FILE_NAME="ntt_kernel_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP.v" ORIG_REF_NAME="ntt_kernel_sparsemux_9_2_32_1_1">
+    <Resources LUT="32" LogicLUT="32"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/sparsemux_9_2_32_1_1_U35" BINDMODULE="ntt_kernel_sparsemux_9_2_32_1_1" DEPTH="2" FILE_NAME="ntt_kernel_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP.v" ORIG_REF_NAME="ntt_kernel_sparsemux_9_2_32_1_1">
+    <Resources LUT="32" LogicLUT="32"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/sparsemux_9_2_32_1_1_U36" BINDMODULE="ntt_kernel_sparsemux_9_2_32_1_1" DEPTH="2" FILE_NAME="ntt_kernel_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP.v" ORIG_REF_NAME="ntt_kernel_sparsemux_9_2_32_1_1">
+    <Resources LUT="32" LogicLUT="32"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/sparsemux_9_3_32_1_1_U46" BINDMODULE="ntt_kernel_sparsemux_9_3_32_1_1" DEPTH="2" FILE_NAME="ntt_kernel_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP.v" ORIG_REF_NAME="ntt_kernel_sparsemux_9_3_32_1_1">
+    <Resources LUT="32" LogicLUT="32"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/sparsemux_9_3_32_1_1_U47" BINDMODULE="ntt_kernel_sparsemux_9_3_32_1_1" DEPTH="2" FILE_NAME="ntt_kernel_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP.v" ORIG_REF_NAME="ntt_kernel_sparsemux_9_3_32_1_1">
+    <Resources LUT="32" LogicLUT="32"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_373" DEPTH="1" FILE_NAME="ntt_kernel.v" ORIG_REF_NAME="ntt_kernel_ntt_kernel_Pipeline_PERMUTE_LOOP">
     <SubModules count="1">flow_control_loop_pipe_sequential_init_U</SubModules>
-    <Resources FF="42" LUT="38" LogicLUT="38"/>
-    <LocalResources FF="40" LUT="7" LogicLUT="7"/>
+    <Resources FF="42" LUT="51" LogicLUT="51"/>
+    <LocalResources FF="40" LUT="16" LogicLUT="16"/>
   </RtlModule>
-  <RtlModule CELL="inst/grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_314/flow_control_loop_pipe_sequential_init_U" BINDMODULE="ntt_kernel_flow_control_loop_pipe_sequential_init" DEPTH="2" FILE_NAME="ntt_kernel_ntt_kernel_Pipeline_PERMUTE_LOOP.v" ORIG_REF_NAME="ntt_kernel_flow_control_loop_pipe_sequential_init">
-    <Resources FF="2" LUT="31" LogicLUT="31"/>
+  <RtlModule CELL="inst/grp_ntt_kernel_Pipeline_PERMUTE_LOOP_fu_373/flow_control_loop_pipe_sequential_init_U" BINDMODULE="ntt_kernel_flow_control_loop_pipe_sequential_init" DEPTH="2" FILE_NAME="ntt_kernel_ntt_kernel_Pipeline_PERMUTE_LOOP.v" ORIG_REF_NAME="ntt_kernel_flow_control_loop_pipe_sequential_init">
+    <Resources FF="2" LUT="35" LogicLUT="35"/>
   </RtlModule>
-  <RtlModule CELL="inst/grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341" DEPTH="1" FILE_NAME="ntt_kernel.v" ORIG_REF_NAME="ntt_kernel_ntt_kernel_Pipeline_WRITE_BACK_LOOP">
+  <RtlModule CELL="inst/grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_423" DEPTH="1" FILE_NAME="ntt_kernel.v" ORIG_REF_NAME="ntt_kernel_ntt_kernel_Pipeline_WRITE_BACK_LOOP">
     <SubModules count="1">flow_control_loop_pipe_sequential_init_U</SubModules>
-    <Resources FF="50" LUT="71" LogicLUT="71"/>
-    <LocalResources FF="48" LUT="26" LogicLUT="26"/>
+    <Resources FF="53" LUT="319" LogicLUT="319"/>
+    <LocalResources FF="51" LUT="139" LogicLUT="139"/>
   </RtlModule>
-  <RtlModule CELL="inst/grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_341/flow_control_loop_pipe_sequential_init_U" BINDMODULE="ntt_kernel_flow_control_loop_pipe_sequential_init" DEPTH="2" FILE_NAME="ntt_kernel_ntt_kernel_Pipeline_WRITE_BACK_LOOP.v" ORIG_REF_NAME="ntt_kernel_flow_control_loop_pipe_sequential_init">
-    <Resources FF="2" LUT="45" LogicLUT="45"/>
+  <RtlModule CELL="inst/grp_ntt_kernel_Pipeline_WRITE_BACK_LOOP_fu_423/flow_control_loop_pipe_sequential_init_U" BINDMODULE="ntt_kernel_flow_control_loop_pipe_sequential_init" DEPTH="2" FILE_NAME="ntt_kernel_ntt_kernel_Pipeline_WRITE_BACK_LOOP.v" ORIG_REF_NAME="ntt_kernel_flow_control_loop_pipe_sequential_init">
+    <Resources FF="2" LUT="180" LogicLUT="180"/>
   </RtlModule>
   <RtlModule CELL="inst/local_psi_U" BINDMODULE="ntt_kernel_local_psi_RAM_2P_BRAM_1R1W" DEPTH="1" FILE_NAME="ntt_kernel.v" ORIG_REF_NAME="ntt_kernel_local_psi_RAM_2P_BRAM_1R1W">
     <Resources BRAM="3" LUT="1" LogicLUT="1" RAMB18="1" RAMB36="1"/>
   </RtlModule>
+  <RtlModule CELL="inst/local_twiddles_1_U" BINDMODULE="ntt_kernel_local_twiddles_RAM_2P_BRAM_1R1W" DEPTH="1" FILE_NAME="ntt_kernel.v" ORIG_REF_NAME="ntt_kernel_local_twiddles_RAM_2P_BRAM_1R1W">
+    <Resources BRAM="2" RAMB36="1"/>
+  </RtlModule>
+  <RtlModule CELL="inst/local_twiddles_2_U" BINDMODULE="ntt_kernel_local_twiddles_RAM_2P_BRAM_1R1W" DEPTH="1" FILE_NAME="ntt_kernel.v" ORIG_REF_NAME="ntt_kernel_local_twiddles_RAM_2P_BRAM_1R1W">
+    <Resources BRAM="2" RAMB36="1"/>
+  </RtlModule>
+  <RtlModule CELL="inst/local_twiddles_3_U" BINDMODULE="ntt_kernel_local_twiddles_RAM_2P_BRAM_1R1W" DEPTH="1" FILE_NAME="ntt_kernel.v" ORIG_REF_NAME="ntt_kernel_local_twiddles_RAM_2P_BRAM_1R1W">
+    <Resources BRAM="2" RAMB36="1"/>
+  </RtlModule>
   <RtlModule CELL="inst/local_twiddles_U" BINDMODULE="ntt_kernel_local_twiddles_RAM_2P_BRAM_1R1W" DEPTH="1" FILE_NAME="ntt_kernel.v" ORIG_REF_NAME="ntt_kernel_local_twiddles_RAM_2P_BRAM_1R1W">
-    <Resources BRAM="8" RAMB36="4"/>
+    <Resources BRAM="2" LUT="2" LogicLUT="2" RAMB36="1"/>
+  </RtlModule>
+  <RtlModule CELL="inst/ping_1_U" BINDMODULE="ntt_kernel_ping_RAM_2P_BRAM_1R1W" DEPTH="1" FILE_NAME="ntt_kernel.v" ORIG_REF_NAME="ntt_kernel_ping_RAM_2P_BRAM_1R1W">
+    <Resources BRAM="2" LUT="16" LogicLUT="16" RAMB36="1"/>
+  </RtlModule>
+  <RtlModule CELL="inst/ping_2_U" BINDMODULE="ntt_kernel_ping_RAM_2P_BRAM_1R1W" DEPTH="1" FILE_NAME="ntt_kernel.v" ORIG_REF_NAME="ntt_kernel_ping_RAM_2P_BRAM_1R1W">
+    <Resources BRAM="2" LUT="121" LogicLUT="121" RAMB36="1"/>
+  </RtlModule>
+  <RtlModule CELL="inst/ping_3_U" BINDMODULE="ntt_kernel_ping_RAM_2P_BRAM_1R1W" DEPTH="1" FILE_NAME="ntt_kernel.v" ORIG_REF_NAME="ntt_kernel_ping_RAM_2P_BRAM_1R1W">
+    <Resources BRAM="2" LUT="17" LogicLUT="17" RAMB36="1"/>
+  </RtlModule>
+  <RtlModule CELL="inst/ping_4_U" BINDMODULE="ntt_kernel_ping_RAM_2P_BRAM_1R1W" DEPTH="1" FILE_NAME="ntt_kernel.v" ORIG_REF_NAME="ntt_kernel_ping_RAM_2P_BRAM_1R1W">
+    <Resources BRAM="2" LUT="52" LogicLUT="52" RAMB36="1"/>
+  </RtlModule>
+  <RtlModule CELL="inst/ping_5_U" BINDMODULE="ntt_kernel_ping_RAM_2P_BRAM_1R1W" DEPTH="1" FILE_NAME="ntt_kernel.v" ORIG_REF_NAME="ntt_kernel_ping_RAM_2P_BRAM_1R1W">
+    <Resources BRAM="2" LUT="16" LogicLUT="16" RAMB36="1"/>
+  </RtlModule>
+  <RtlModule CELL="inst/ping_6_U" BINDMODULE="ntt_kernel_ping_RAM_2P_BRAM_1R1W" DEPTH="1" FILE_NAME="ntt_kernel.v" ORIG_REF_NAME="ntt_kernel_ping_RAM_2P_BRAM_1R1W">
+    <Resources BRAM="2" LUT="16" LogicLUT="16" RAMB36="1"/>
+  </RtlModule>
+  <RtlModule CELL="inst/ping_7_U" BINDMODULE="ntt_kernel_ping_RAM_2P_BRAM_1R1W" DEPTH="1" FILE_NAME="ntt_kernel.v" ORIG_REF_NAME="ntt_kernel_ping_RAM_2P_BRAM_1R1W">
+    <Resources BRAM="2" LUT="16" LogicLUT="16" RAMB36="1"/>
   </RtlModule>
   <RtlModule CELL="inst/ping_U" BINDMODULE="ntt_kernel_ping_RAM_2P_BRAM_1R1W" DEPTH="1" FILE_NAME="ntt_kernel.v" ORIG_REF_NAME="ntt_kernel_ping_RAM_2P_BRAM_1R1W">
-    <Resources BRAM="8" LUT="124" LogicLUT="124" RAMB36="4"/>
+    <Resources BRAM="2" LUT="40" LogicLUT="40" RAMB36="1"/>
+  </RtlModule>
+  <RtlModule CELL="inst/pong_1_U" BINDMODULE="ntt_kernel_ping_RAM_2P_BRAM_1R1W" DEPTH="1" FILE_NAME="ntt_kernel.v" ORIG_REF_NAME="ntt_kernel_ping_RAM_2P_BRAM_1R1W">
+    <Resources BRAM="2" LUT="16" LogicLUT="16" RAMB36="1"/>
+  </RtlModule>
+  <RtlModule CELL="inst/pong_2_U" BINDMODULE="ntt_kernel_ping_RAM_2P_BRAM_1R1W" DEPTH="1" FILE_NAME="ntt_kernel.v" ORIG_REF_NAME="ntt_kernel_ping_RAM_2P_BRAM_1R1W">
+    <Resources BRAM="2" LUT="20" LogicLUT="20" RAMB36="1"/>
+  </RtlModule>
+  <RtlModule CELL="inst/pong_3_U" BINDMODULE="ntt_kernel_ping_RAM_2P_BRAM_1R1W" DEPTH="1" FILE_NAME="ntt_kernel.v" ORIG_REF_NAME="ntt_kernel_ping_RAM_2P_BRAM_1R1W">
+    <Resources BRAM="2" LUT="16" LogicLUT="16" RAMB36="1"/>
+  </RtlModule>
+  <RtlModule CELL="inst/pong_4_U" BINDMODULE="ntt_kernel_ping_RAM_2P_BRAM_1R1W" DEPTH="1" FILE_NAME="ntt_kernel.v" ORIG_REF_NAME="ntt_kernel_ping_RAM_2P_BRAM_1R1W">
+    <Resources BRAM="2" LUT="96" LogicLUT="96" RAMB36="1"/>
+  </RtlModule>
+  <RtlModule CELL="inst/pong_5_U" BINDMODULE="ntt_kernel_ping_RAM_2P_BRAM_1R1W" DEPTH="1" FILE_NAME="ntt_kernel.v" ORIG_REF_NAME="ntt_kernel_ping_RAM_2P_BRAM_1R1W">
+    <Resources BRAM="2" LUT="31" LogicLUT="31" RAMB36="1"/>
+  </RtlModule>
+  <RtlModule CELL="inst/pong_6_U" BINDMODULE="ntt_kernel_ping_RAM_2P_BRAM_1R1W" DEPTH="1" FILE_NAME="ntt_kernel.v" ORIG_REF_NAME="ntt_kernel_ping_RAM_2P_BRAM_1R1W">
+    <Resources BRAM="2" LUT="29" LogicLUT="29" RAMB36="1"/>
+  </RtlModule>
+  <RtlModule CELL="inst/pong_7_U" BINDMODULE="ntt_kernel_ping_RAM_2P_BRAM_1R1W" DEPTH="1" FILE_NAME="ntt_kernel.v" ORIG_REF_NAME="ntt_kernel_ping_RAM_2P_BRAM_1R1W">
+    <Resources BRAM="2" LUT="269" LogicLUT="269" RAMB36="1"/>
   </RtlModule>
   <RtlModule CELL="inst/pong_U" BINDMODULE="ntt_kernel_ping_RAM_2P_BRAM_1R1W" DEPTH="1" FILE_NAME="ntt_kernel.v" ORIG_REF_NAME="ntt_kernel_ping_RAM_2P_BRAM_1R1W">
-    <Resources BRAM="8" LUT="9" LogicLUT="9" RAMB36="4"/>
+    <Resources BRAM="2" LUT="40" LogicLUT="40" RAMB36="1"/>
   </RtlModule>
 </RtlModules>
 <TimingPaths>
-  <TPATH DATAPATH_DELAY="6.726" DATAPATH_LOGIC_DELAY="2.758" DATAPATH_NET_DELAY="3.968" ENDPOINT_PIN="bd_0_i/hls_inst/inst/ping_U/ram_reg_bram_2/DINADIN[4]" LOGIC_LEVELS="17" MAX_FANOUT="33" SLACK="2.777" STARTPOINT_PIN="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/ain_s1_reg[8]/C">
-    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/ain_s1_reg[8]" PRIMITIVE_TYPE="REGISTER.SDR.FDRE" LINE_NUMBER="69"/>
-    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/dout0_carry__0_i_8" PRIMITIVE_TYPE="CLB.LUT.LUT2" LINE_NUMBER="113"/>
-    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/dout0_carry__0" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" LINE_NUMBER="113"/>
-    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/dout0_carry__1" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" LINE_NUMBER="113"/>
-    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_201" PRIMITIVE_TYPE="CLB.LUT.LUT4" LINE_NUMBER="69"/>
-    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_184" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" LINE_NUMBER="113"/>
-    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_167" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" LINE_NUMBER="113"/>
-    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_175" PRIMITIVE_TYPE="CLB.LUT.LUT3" LINE_NUMBER="796"/>
-    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_93" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" LINE_NUMBER="113"/>
-    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_42" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" LINE_NUMBER="113"/>
-    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_49" PRIMITIVE_TYPE="CLB.LUT.LUT4" LINE_NUMBER="790"/>
-    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_34" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" LINE_NUMBER="113"/>
-    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_40" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" LINE_NUMBER="113"/>
-    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_2_i_12" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" LINE_NUMBER="113"/>
-    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_71" PRIMITIVE_TYPE="CLB.LUT.LUT6" LINE_NUMBER="69"/>
-    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_36" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" LINE_NUMBER="113"/>
-    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_2_i_5" PRIMITIVE_TYPE="CLB.LUT.LUT6" LINE_NUMBER="69"/>
-    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_2_i_6__0" PRIMITIVE_TYPE="CLB.LUT.LUT3" LINE_NUMBER="502"/>
-    <CELL  NAME="bd_0_i/hls_inst/inst/ping_U/ram_reg_bram_2" PRIMITIVE_TYPE="BLOCKRAM.BRAM.RAMB36E2" LINE_NUMBER="47"/>
+  <TPATH DATAPATH_DELAY="8.570" DATAPATH_LOGIC_DELAY="2.936" DATAPATH_NET_DELAY="5.634" ENDPOINT_PIN="bd_0_i/hls_inst/inst/ping_6_U/ram_reg_bram_0/DINADIN[11]" LOGIC_LEVELS="20" MAX_FANOUT="147" SLACK="0.994" STARTPOINT_PIN="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U45/ain_s1_reg[1]/C">
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U45/ain_s1_reg[1]" PRIMITIVE_TYPE="REGISTER.SDR.FDRE" LINE_NUMBER="9"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U42/u2/out_v_1_reg_4653[15]_i_91" PRIMITIVE_TYPE="CLB.LUT.LUT2" LINE_NUMBER="113"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/add_64ns_64ns_64_2_1_U42/u2/out_v_1_reg_4653_reg[15]_i_44" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" LINE_NUMBER="113"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/add_64ns_64ns_64_2_1_U42/u2/out_v_1_reg_4653_reg[23]_i_43" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" LINE_NUMBER="113"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/add_64ns_64ns_64_2_1_U42/u2/out_v_1_reg_4653_reg[31]_i_69" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" LINE_NUMBER="113"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U42/u2/out_v_1_reg_4653_reg[31]_i_29" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" LINE_NUMBER="113"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/out_v_1_reg_4653[31]_i_157" PRIMITIVE_TYPE="CLB.LUT.LUT4" LINE_NUMBER="69"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U42/u2/out_v_1_reg_4653_reg[31]_i_89" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" LINE_NUMBER="69"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U42/u2/out_v_1_reg_4653[15]_i_43" PRIMITIVE_TYPE="CLB.LUT.LUT1" LINE_NUMBER="69"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U42/u2/out_v_1_reg_4653_reg[15]_i_26" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" LINE_NUMBER="69"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/pong_7_U/ram_reg_bram_0_i_620" PRIMITIVE_TYPE="CLB.LUT.LUT2" LINE_NUMBER="4348"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/pong_7_U/ram_reg_bram_0_i_404" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" LINE_NUMBER="69"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/pong_7_U/ram_reg_bram_0_i_385" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" LINE_NUMBER="69"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/pong_7_U/ram_reg_bram_0_i_365" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" LINE_NUMBER="69"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/ram_reg_bram_0_i_306" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" LINE_NUMBER="69"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/ram_reg_bram_0_i_458" PRIMITIVE_TYPE="CLB.LUT.LUT4" LINE_NUMBER="69"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/ram_reg_bram_0_i_308" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" LINE_NUMBER="69"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/pong_5_U/ram_reg_bram_0_i_278__1" PRIMITIVE_TYPE="CLB.LUT.LUT4" LINE_NUMBER="69"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/ram_reg_bram_0_i_223__0" PRIMITIVE_TYPE="CLB.LUT.LUT6" LINE_NUMBER="69"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/ram_reg_bram_0_i_94__1" PRIMITIVE_TYPE="CLB.LUT.LUT6" LINE_NUMBER="69"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/ram_reg_bram_0_i_41__9" PRIMITIVE_TYPE="CLB.LUT.LUT3" LINE_NUMBER="620"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/ping_6_U/ram_reg_bram_0" PRIMITIVE_TYPE="BLOCKRAM.BRAM.RAMB36E2" LINE_NUMBER="47"/>
   </TPATH>
-  <TPATH DATAPATH_DELAY="6.741" DATAPATH_LOGIC_DELAY="2.905" DATAPATH_NET_DELAY="3.836" ENDPOINT_PIN="bd_0_i/hls_inst/inst/ping_U/ram_reg_bram_3/DINADIN[3]" LOGIC_LEVELS="17" MAX_FANOUT="33" SLACK="2.800" STARTPOINT_PIN="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/ain_s1_reg[8]/C">
-    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/ain_s1_reg[8]" PRIMITIVE_TYPE="REGISTER.SDR.FDRE" LINE_NUMBER="69"/>
-    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/dout0_carry__0_i_8" PRIMITIVE_TYPE="CLB.LUT.LUT2" LINE_NUMBER="113"/>
-    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/dout0_carry__0" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" LINE_NUMBER="113"/>
-    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/dout0_carry__1" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" LINE_NUMBER="113"/>
-    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_201" PRIMITIVE_TYPE="CLB.LUT.LUT4" LINE_NUMBER="69"/>
-    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_184" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" LINE_NUMBER="113"/>
-    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_167" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" LINE_NUMBER="113"/>
-    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_175" PRIMITIVE_TYPE="CLB.LUT.LUT3" LINE_NUMBER="796"/>
-    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_93" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" LINE_NUMBER="113"/>
-    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_42" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" LINE_NUMBER="113"/>
-    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_49" PRIMITIVE_TYPE="CLB.LUT.LUT4" LINE_NUMBER="790"/>
-    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_34" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" LINE_NUMBER="113"/>
-    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_40" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" LINE_NUMBER="113"/>
-    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_2_i_12" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" LINE_NUMBER="113"/>
-    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_71" PRIMITIVE_TYPE="CLB.LUT.LUT6" LINE_NUMBER="69"/>
-    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_36" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" LINE_NUMBER="113"/>
-    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_3_i_2" PRIMITIVE_TYPE="CLB.LUT.LUT6" LINE_NUMBER="69"/>
-    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_3_i_2__0" PRIMITIVE_TYPE="CLB.LUT.LUT3" LINE_NUMBER="502"/>
-    <CELL  NAME="bd_0_i/hls_inst/inst/ping_U/ram_reg_bram_3" PRIMITIVE_TYPE="BLOCKRAM.BRAM.RAMB36E2" LINE_NUMBER="47"/>
+  <TPATH DATAPATH_DELAY="8.586" DATAPATH_LOGIC_DELAY="3.028" DATAPATH_NET_DELAY="5.558" ENDPOINT_PIN="bd_0_i/hls_inst/inst/ping_6_U/ram_reg_bram_0/DINADIN[20]" LOGIC_LEVELS="20" MAX_FANOUT="147" SLACK="0.996" STARTPOINT_PIN="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U45/ain_s1_reg[1]/C">
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U45/ain_s1_reg[1]" PRIMITIVE_TYPE="REGISTER.SDR.FDRE" LINE_NUMBER="9"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U42/u2/out_v_1_reg_4653[15]_i_91" PRIMITIVE_TYPE="CLB.LUT.LUT2" LINE_NUMBER="113"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/add_64ns_64ns_64_2_1_U42/u2/out_v_1_reg_4653_reg[15]_i_44" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" LINE_NUMBER="113"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/add_64ns_64ns_64_2_1_U42/u2/out_v_1_reg_4653_reg[23]_i_43" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" LINE_NUMBER="113"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/add_64ns_64ns_64_2_1_U42/u2/out_v_1_reg_4653_reg[31]_i_69" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" LINE_NUMBER="113"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U42/u2/out_v_1_reg_4653_reg[31]_i_29" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" LINE_NUMBER="113"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/out_v_1_reg_4653[31]_i_157" PRIMITIVE_TYPE="CLB.LUT.LUT4" LINE_NUMBER="69"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U42/u2/out_v_1_reg_4653_reg[31]_i_89" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" LINE_NUMBER="69"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U42/u2/out_v_1_reg_4653[15]_i_43" PRIMITIVE_TYPE="CLB.LUT.LUT1" LINE_NUMBER="69"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U42/u2/out_v_1_reg_4653_reg[15]_i_26" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" LINE_NUMBER="69"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/pong_7_U/ram_reg_bram_0_i_620" PRIMITIVE_TYPE="CLB.LUT.LUT2" LINE_NUMBER="4348"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/pong_7_U/ram_reg_bram_0_i_404" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" LINE_NUMBER="69"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/pong_7_U/ram_reg_bram_0_i_385" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" LINE_NUMBER="69"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/pong_7_U/ram_reg_bram_0_i_365" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" LINE_NUMBER="69"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/ram_reg_bram_0_i_306" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" LINE_NUMBER="69"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/ram_reg_bram_0_i_458" PRIMITIVE_TYPE="CLB.LUT.LUT4" LINE_NUMBER="69"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/ram_reg_bram_0_i_308" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" LINE_NUMBER="69"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/pong_5_U/ram_reg_bram_0_i_258__2" PRIMITIVE_TYPE="CLB.LUT.LUT4" LINE_NUMBER="69"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/ram_reg_bram_0_i_187__0" PRIMITIVE_TYPE="CLB.LUT.LUT6" LINE_NUMBER="69"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/ram_reg_bram_0_i_85__4" PRIMITIVE_TYPE="CLB.LUT.LUT6" LINE_NUMBER="69"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/ram_reg_bram_0_i_32__9" PRIMITIVE_TYPE="CLB.LUT.LUT3" LINE_NUMBER="620"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/ping_6_U/ram_reg_bram_0" PRIMITIVE_TYPE="BLOCKRAM.BRAM.RAMB36E2" LINE_NUMBER="47"/>
   </TPATH>
-  <TPATH DATAPATH_DELAY="6.751" DATAPATH_LOGIC_DELAY="2.740" DATAPATH_NET_DELAY="4.011" ENDPOINT_PIN="bd_0_i/hls_inst/inst/ping_U/ram_reg_bram_1/DINADIN[12]" LOGIC_LEVELS="17" MAX_FANOUT="33" SLACK="2.838" STARTPOINT_PIN="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/ain_s1_reg[8]/C">
-    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/ain_s1_reg[8]" PRIMITIVE_TYPE="REGISTER.SDR.FDRE" LINE_NUMBER="69"/>
-    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/dout0_carry__0_i_8" PRIMITIVE_TYPE="CLB.LUT.LUT2" LINE_NUMBER="113"/>
-    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/dout0_carry__0" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" LINE_NUMBER="113"/>
-    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/dout0_carry__1" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" LINE_NUMBER="113"/>
-    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_201" PRIMITIVE_TYPE="CLB.LUT.LUT4" LINE_NUMBER="69"/>
-    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_184" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" LINE_NUMBER="113"/>
-    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_167" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" LINE_NUMBER="113"/>
-    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_175" PRIMITIVE_TYPE="CLB.LUT.LUT3" LINE_NUMBER="796"/>
-    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_93" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" LINE_NUMBER="113"/>
-    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_42" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" LINE_NUMBER="113"/>
-    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_49" PRIMITIVE_TYPE="CLB.LUT.LUT4" LINE_NUMBER="790"/>
-    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_34" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" LINE_NUMBER="113"/>
-    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_40" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" LINE_NUMBER="113"/>
-    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_2_i_12" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" LINE_NUMBER="113"/>
-    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_71" PRIMITIVE_TYPE="CLB.LUT.LUT6" LINE_NUMBER="69"/>
-    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_36" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" LINE_NUMBER="113"/>
-    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_16" PRIMITIVE_TYPE="CLB.LUT.LUT6" LINE_NUMBER="69"/>
-    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_28__0" PRIMITIVE_TYPE="CLB.LUT.LUT3" LINE_NUMBER="502"/>
-    <CELL  NAME="bd_0_i/hls_inst/inst/ping_U/ram_reg_bram_1" PRIMITIVE_TYPE="BLOCKRAM.BRAM.RAMB36E2" LINE_NUMBER="47"/>
+  <TPATH DATAPATH_DELAY="8.506" DATAPATH_LOGIC_DELAY="2.839" DATAPATH_NET_DELAY="5.667" ENDPOINT_PIN="bd_0_i/hls_inst/inst/ping_U/ram_reg_bram_0/DINADIN[24]" LOGIC_LEVELS="20" MAX_FANOUT="147" SLACK="1.035" STARTPOINT_PIN="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U45/ain_s1_reg[1]/C">
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U45/ain_s1_reg[1]" PRIMITIVE_TYPE="REGISTER.SDR.FDRE" LINE_NUMBER="9"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U42/u2/out_v_1_reg_4653[15]_i_91" PRIMITIVE_TYPE="CLB.LUT.LUT2" LINE_NUMBER="113"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/add_64ns_64ns_64_2_1_U42/u2/out_v_1_reg_4653_reg[15]_i_44" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" LINE_NUMBER="113"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/add_64ns_64ns_64_2_1_U42/u2/out_v_1_reg_4653_reg[23]_i_43" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" LINE_NUMBER="113"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/add_64ns_64ns_64_2_1_U42/u2/out_v_1_reg_4653_reg[31]_i_69" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" LINE_NUMBER="113"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U42/u2/out_v_1_reg_4653_reg[31]_i_29" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" LINE_NUMBER="113"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/out_v_1_reg_4653[31]_i_157" PRIMITIVE_TYPE="CLB.LUT.LUT4" LINE_NUMBER="69"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U42/u2/out_v_1_reg_4653_reg[31]_i_89" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" LINE_NUMBER="69"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U42/u2/out_v_1_reg_4653[15]_i_43" PRIMITIVE_TYPE="CLB.LUT.LUT1" LINE_NUMBER="69"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U42/u2/out_v_1_reg_4653_reg[15]_i_26" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" LINE_NUMBER="69"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/pong_7_U/ram_reg_bram_0_i_620" PRIMITIVE_TYPE="CLB.LUT.LUT2" LINE_NUMBER="4348"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/pong_7_U/ram_reg_bram_0_i_404" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" LINE_NUMBER="69"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/pong_7_U/ram_reg_bram_0_i_385" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" LINE_NUMBER="69"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/pong_7_U/ram_reg_bram_0_i_365" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" LINE_NUMBER="69"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/ram_reg_bram_0_i_306" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" LINE_NUMBER="69"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/ram_reg_bram_0_i_458" PRIMITIVE_TYPE="CLB.LUT.LUT4" LINE_NUMBER="69"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/ram_reg_bram_0_i_308" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" LINE_NUMBER="69"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/ram_reg_bram_0_i_248__4" PRIMITIVE_TYPE="CLB.LUT.LUT4" LINE_NUMBER="69"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/ram_reg_bram_0_i_174__3" PRIMITIVE_TYPE="CLB.LUT.LUT6" LINE_NUMBER="69"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/ram_reg_bram_0_i_81__7" PRIMITIVE_TYPE="CLB.LUT.LUT6" LINE_NUMBER="69"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/ram_reg_bram_0_i_28__15" PRIMITIVE_TYPE="CLB.LUT.LUT3" LINE_NUMBER="620"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/ping_U/ram_reg_bram_0" PRIMITIVE_TYPE="BLOCKRAM.BRAM.RAMB36E2" LINE_NUMBER="47"/>
   </TPATH>
-  <TPATH DATAPATH_DELAY="6.660" DATAPATH_LOGIC_DELAY="2.804" DATAPATH_NET_DELAY="3.856" ENDPOINT_PIN="bd_0_i/hls_inst/inst/ping_U/ram_reg_bram_3/DINADIN[0]" LOGIC_LEVELS="17" MAX_FANOUT="33" SLACK="2.845" STARTPOINT_PIN="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/ain_s1_reg[8]/C">
-    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/ain_s1_reg[8]" PRIMITIVE_TYPE="REGISTER.SDR.FDRE" LINE_NUMBER="69"/>
-    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/dout0_carry__0_i_8" PRIMITIVE_TYPE="CLB.LUT.LUT2" LINE_NUMBER="113"/>
-    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/dout0_carry__0" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" LINE_NUMBER="113"/>
-    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/dout0_carry__1" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" LINE_NUMBER="113"/>
-    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_201" PRIMITIVE_TYPE="CLB.LUT.LUT4" LINE_NUMBER="69"/>
-    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_184" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" LINE_NUMBER="113"/>
-    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_167" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" LINE_NUMBER="113"/>
-    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_175" PRIMITIVE_TYPE="CLB.LUT.LUT3" LINE_NUMBER="796"/>
-    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_93" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" LINE_NUMBER="113"/>
-    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_42" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" LINE_NUMBER="113"/>
-    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_49" PRIMITIVE_TYPE="CLB.LUT.LUT4" LINE_NUMBER="790"/>
-    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_34" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" LINE_NUMBER="113"/>
-    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_40" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" LINE_NUMBER="113"/>
-    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_2_i_12" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" LINE_NUMBER="113"/>
-    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_71" PRIMITIVE_TYPE="CLB.LUT.LUT6" LINE_NUMBER="69"/>
-    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_36" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" LINE_NUMBER="113"/>
-    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_3_i_5" PRIMITIVE_TYPE="CLB.LUT.LUT6" LINE_NUMBER="69"/>
-    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_3_i_5__0" PRIMITIVE_TYPE="CLB.LUT.LUT3" LINE_NUMBER="502"/>
-    <CELL  NAME="bd_0_i/hls_inst/inst/ping_U/ram_reg_bram_3" PRIMITIVE_TYPE="BLOCKRAM.BRAM.RAMB36E2" LINE_NUMBER="47"/>
+  <TPATH DATAPATH_DELAY="8.500" DATAPATH_LOGIC_DELAY="3.268" DATAPATH_NET_DELAY="5.232" ENDPOINT_PIN="bd_0_i/hls_inst/inst/ping_5_U/ram_reg_bram_0/DINADIN[3]" LOGIC_LEVELS="18" MAX_FANOUT="64" SLACK="1.040" STARTPOINT_PIN="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U45/ain_s1_reg[0]/C">
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U45/ain_s1_reg[0]" PRIMITIVE_TYPE="REGISTER.SDR.FDRE" LINE_NUMBER="9"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/u2/out_v_3_reg_4693[15]_i_92" PRIMITIVE_TYPE="CLB.LUT.LUT2" LINE_NUMBER="113"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/add_64ns_64ns_64_2_1_U48/u2/out_v_3_reg_4693_reg[15]_i_44" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" LINE_NUMBER="113"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/add_64ns_64ns_64_2_1_U48/u2/out_v_3_reg_4693_reg[23]_i_41" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" LINE_NUMBER="113"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/add_64ns_64ns_64_2_1_U48/u2/out_v_3_reg_4693_reg[31]_i_67" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" LINE_NUMBER="113"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/u2/out_v_3_reg_4693[31]_i_164" PRIMITIVE_TYPE="CLB.LUT.LUT4" LINE_NUMBER="69"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/u2/out_v_3_reg_4693_reg[31]_i_109" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" LINE_NUMBER="69"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/u2/out_v_3_reg_4693[15]_i_43" PRIMITIVE_TYPE="CLB.LUT.LUT1" LINE_NUMBER="69"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/u2/out_v_3_reg_4693_reg[15]_i_26" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" LINE_NUMBER="69"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/u2/out_v_3_reg_4693_reg[23]_i_25" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" LINE_NUMBER="69"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/pong_7_U/ram_reg_bram_0_i_274__2" PRIMITIVE_TYPE="CLB.LUT.LUT2" LINE_NUMBER="4352"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/pong_7_U/ram_reg_bram_0_i_198" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" LINE_NUMBER="69"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/pong_7_U/ram_reg_bram_0_i_196" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" LINE_NUMBER="69"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/ram_reg_bram_0_i_189" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" LINE_NUMBER="69"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/ram_reg_bram_0_i_224__1" PRIMITIVE_TYPE="CLB.LUT.LUT4" LINE_NUMBER="69"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/pong_7_U/ram_reg_bram_0_i_190" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" LINE_NUMBER="69"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/pong_7_U/ram_reg_bram_0_i_171__8" PRIMITIVE_TYPE="CLB.LUT.LUT4" LINE_NUMBER="69"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/ram_reg_bram_0_i_102__9" PRIMITIVE_TYPE="CLB.LUT.LUT6" LINE_NUMBER="69"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/ram_reg_bram_0_i_49__10" PRIMITIVE_TYPE="CLB.LUT.LUT3" LINE_NUMBER="620"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/ping_5_U/ram_reg_bram_0" PRIMITIVE_TYPE="BLOCKRAM.BRAM.RAMB36E2" LINE_NUMBER="47"/>
   </TPATH>
-  <TPATH DATAPATH_DELAY="6.650" DATAPATH_LOGIC_DELAY="2.846" DATAPATH_NET_DELAY="3.804" ENDPOINT_PIN="bd_0_i/hls_inst/inst/ping_U/ram_reg_bram_3/DINADIN[1]" LOGIC_LEVELS="17" MAX_FANOUT="33" SLACK="2.854" STARTPOINT_PIN="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/ain_s1_reg[8]/C">
-    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/ain_s1_reg[8]" PRIMITIVE_TYPE="REGISTER.SDR.FDRE" LINE_NUMBER="69"/>
-    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/dout0_carry__0_i_8" PRIMITIVE_TYPE="CLB.LUT.LUT2" LINE_NUMBER="113"/>
-    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/dout0_carry__0" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" LINE_NUMBER="113"/>
-    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/dout0_carry__1" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" LINE_NUMBER="113"/>
-    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_201" PRIMITIVE_TYPE="CLB.LUT.LUT4" LINE_NUMBER="69"/>
-    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_184" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" LINE_NUMBER="113"/>
-    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_167" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" LINE_NUMBER="113"/>
-    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_175" PRIMITIVE_TYPE="CLB.LUT.LUT3" LINE_NUMBER="796"/>
-    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_93" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" LINE_NUMBER="113"/>
-    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_42" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" LINE_NUMBER="113"/>
-    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_49" PRIMITIVE_TYPE="CLB.LUT.LUT4" LINE_NUMBER="790"/>
-    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_34" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" LINE_NUMBER="113"/>
-    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_40" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" LINE_NUMBER="113"/>
-    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_2_i_12" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" LINE_NUMBER="113"/>
-    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_71" PRIMITIVE_TYPE="CLB.LUT.LUT6" LINE_NUMBER="69"/>
-    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_0_i_36" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" LINE_NUMBER="113"/>
-    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_3_i_4" PRIMITIVE_TYPE="CLB.LUT.LUT6" LINE_NUMBER="69"/>
-    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_322/add_64ns_64ns_64_2_1_U19/u2/ram_reg_bram_3_i_4__0" PRIMITIVE_TYPE="CLB.LUT.LUT3" LINE_NUMBER="502"/>
-    <CELL  NAME="bd_0_i/hls_inst/inst/ping_U/ram_reg_bram_3" PRIMITIVE_TYPE="BLOCKRAM.BRAM.RAMB36E2" LINE_NUMBER="47"/>
+  <TPATH DATAPATH_DELAY="8.449" DATAPATH_LOGIC_DELAY="2.946" DATAPATH_NET_DELAY="5.503" ENDPOINT_PIN="bd_0_i/hls_inst/inst/ping_4_U/ram_reg_bram_0/DINADIN[1]" LOGIC_LEVELS="20" MAX_FANOUT="147" SLACK="1.056" STARTPOINT_PIN="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U45/ain_s1_reg[1]/C">
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U45/ain_s1_reg[1]" PRIMITIVE_TYPE="REGISTER.SDR.FDRE" LINE_NUMBER="9"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U42/u2/out_v_1_reg_4653[15]_i_91" PRIMITIVE_TYPE="CLB.LUT.LUT2" LINE_NUMBER="113"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/add_64ns_64ns_64_2_1_U42/u2/out_v_1_reg_4653_reg[15]_i_44" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" LINE_NUMBER="113"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/add_64ns_64ns_64_2_1_U42/u2/out_v_1_reg_4653_reg[23]_i_43" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" LINE_NUMBER="113"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/add_64ns_64ns_64_2_1_U42/u2/out_v_1_reg_4653_reg[31]_i_69" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" LINE_NUMBER="113"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U42/u2/out_v_1_reg_4653_reg[31]_i_29" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" LINE_NUMBER="113"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/out_v_1_reg_4653[31]_i_157" PRIMITIVE_TYPE="CLB.LUT.LUT4" LINE_NUMBER="69"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U42/u2/out_v_1_reg_4653_reg[31]_i_89" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" LINE_NUMBER="69"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U42/u2/out_v_1_reg_4653[15]_i_43" PRIMITIVE_TYPE="CLB.LUT.LUT1" LINE_NUMBER="69"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U42/u2/out_v_1_reg_4653_reg[15]_i_26" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" LINE_NUMBER="69"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/pong_7_U/ram_reg_bram_0_i_620" PRIMITIVE_TYPE="CLB.LUT.LUT2" LINE_NUMBER="4348"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/pong_7_U/ram_reg_bram_0_i_404" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" LINE_NUMBER="69"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/pong_7_U/ram_reg_bram_0_i_385" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" LINE_NUMBER="69"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/pong_7_U/ram_reg_bram_0_i_365" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" LINE_NUMBER="69"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/ram_reg_bram_0_i_306" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" LINE_NUMBER="69"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/ram_reg_bram_0_i_458" PRIMITIVE_TYPE="CLB.LUT.LUT4" LINE_NUMBER="69"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/ram_reg_bram_0_i_308" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" LINE_NUMBER="69"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/pong_7_U/ram_reg_bram_0_i_300__0" PRIMITIVE_TYPE="CLB.LUT.LUT4" LINE_NUMBER="69"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/ram_reg_bram_0_i_293__1" PRIMITIVE_TYPE="CLB.LUT.LUT6" LINE_NUMBER="69"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/ram_reg_bram_0_i_104" PRIMITIVE_TYPE="CLB.LUT.LUT5" LINE_NUMBER="69"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_ntt_kernel_Pipeline_FLATTENED_BUTTERFLY_LOOP_fu_388/add_64ns_64ns_64_2_1_U48/ram_reg_bram_0_i_51__11" PRIMITIVE_TYPE="CLB.LUT.LUT3" LINE_NUMBER="620"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/ping_4_U/ram_reg_bram_0" PRIMITIVE_TYPE="BLOCKRAM.BRAM.RAMB36E2" LINE_NUMBER="47"/>
   </TPATH>
 </TimingPaths>
 <VivadoReportFiles>
