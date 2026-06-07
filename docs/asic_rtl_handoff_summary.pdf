@@ -1,0 +1,347 @@
+%PDF-1.4
+%‚„œ”
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [5 0 R 7 0 R 9 0 R] /Count 3 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+5 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 6 0 R >>
+endobj
+6 0 obj
+<< /Length 2527 >>
+stream
+q
+BT
+/F2 18 Tf
+1 0 0 1 54 760 Tm
+(ASIC-compatible RTL handoff summary) Tj
+/F2 14 Tf
+1 0 0 1 54 713 Tm
+(Status) Tj
+/F1 10 Tf
+1 0 0 1 54 681 Tm
+(The ASIC-compatible RTL conversion milestone is complete for an initial OpenLane) Tj
+/F1 10 Tf
+1 0 0 1 54 667 Tm
+(handoff.) Tj
+/F1 10 Tf
+1 0 0 1 54 644 Tm
+(Recommended handoff top:) Tj
+/F1 10 Tf
+1 0 0 1 66 621 Tm
+(- `ntt_core_8`) Tj
+/F1 10 Tf
+1 0 0 1 54 598 Tm
+(This is a small accelerator-style 8-point NTT core with a clock, reset, start/done) Tj
+/F1 10 Tf
+1 0 0 1 54 584 Tm
+(control, load ports, readback port, internal data/twiddle storage, and the verified NTT) Tj
+/F1 10 Tf
+1 0 0 1 54 570 Tm
+(datapath.) Tj
+/F2 14 Tf
+1 0 0 1 54 541 Tm
+(What the original FPGA/HLS side contained) Tj
+/F1 10 Tf
+1 0 0 1 54 509 Tm
+(The original project contained Vitis/Vivado/HLS-generated artifacts and FPGA-oriented) Tj
+/F1 10 Tf
+1 0 0 1 54 495 Tm
+(implementation files. Those files are useful as reference material, but they are not the) Tj
+/F1 10 Tf
+1 0 0 1 54 481 Tm
+(recommended ASIC handoff path.) Tj
+/F1 10 Tf
+1 0 0 1 54 458 Tm
+(The clean ASIC handoff path is the hand-written RTL under:) Tj
+/F1 10 Tf
+1 0 0 1 66 435 Tm
+(- `rtl/`) Tj
+/F1 10 Tf
+1 0 0 1 54 412 Tm
+(The OpenLane owner should not use the generated FPGA/HLS implementation files under) Tj
+/F1 10 Tf
+1 0 0 1 54 398 Tm
+(`hls-design/` as the ASIC source unless they are deliberately comparing against the old) Tj
+/F1 10 Tf
+1 0 0 1 54 384 Tm
+(implementation.) Tj
+/F2 14 Tf
+1 0 0 1 54 355 Tm
+(Clean ASIC-oriented RTL created) Tj
+/F1 10 Tf
+1 0 0 1 54 323 Tm
+(Arithmetic/datapath RTL:) Tj
+/F1 10 Tf
+1 0 0 1 66 300 Tm
+(- `rtl/mod_add.sv`) Tj
+/F1 10 Tf
+1 0 0 1 66 286 Tm
+(- `rtl/mod_sub.sv`) Tj
+/F1 10 Tf
+1 0 0 1 66 272 Tm
+(- `rtl/modmul_montgomery.sv`) Tj
+/F1 10 Tf
+1 0 0 1 66 258 Tm
+(- `rtl/ntt_butterfly.sv`) Tj
+/F1 10 Tf
+1 0 0 1 66 244 Tm
+(- `rtl/ntt_stage_2.sv`) Tj
+/F1 10 Tf
+1 0 0 1 66 230 Tm
+(- `rtl/ntt_stage_4.sv`) Tj
+/F1 10 Tf
+1 0 0 1 66 216 Tm
+(- `rtl/ntt_stage_8.sv`) Tj
+/F1 10 Tf
+1 0 0 1 54 193 Tm
+(Memory/control/core RTL:) Tj
+/F1 10 Tf
+1 0 0 1 66 170 Tm
+(- `rtl/simple_dual_port_ram.sv`) Tj
+/F1 10 Tf
+1 0 0 1 66 156 Tm
+(- `rtl/ntt_core_8.sv`) Tj
+/F1 10 Tf
+1 0 0 1 54 133 Tm
+(OpenLane bridge/starter alternative:) Tj
+/F1 10 Tf
+1 0 0 1 66 110 Tm
+(- `rtl/ntt_stage_8_registered.sv`) Tj
+/F1 10 Tf
+1 0 0 1 54 87 Tm
+(Use `ntt_core_8` for the stronger handoff. Use `ntt_stage_8_registered` only if a) Tj
+/F1 10 Tf
+1 0 0 1 54 73 Tm
+(simpler registered datapath slice is desired.) Tj
+/F1 8 Tf
+1 0 0 1 270 32 Tm
+(Page 1 of 3) Tj
+ET
+Q
+endstream
+endobj
+7 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 8 0 R >>
+endobj
+8 0 obj
+<< /Length 2710 >>
+stream
+q
+BT
+/F2 14 Tf
+1 0 0 1 54 760 Tm
+(Verification completed) Tj
+/F1 10 Tf
+1 0 0 1 54 728 Tm
+(The following user-verified or readiness-script-verified checks passed:) Tj
+/F1 10 Tf
+1 0 0 1 66 705 Tm
+(- unit tests for earlier arithmetic/stage blocks) Tj
+/F1 10 Tf
+1 0 0 1 66 691 Tm
+(- `ntt_stage_8` testbench) Tj
+/F1 10 Tf
+1 0 0 1 66 677 Tm
+(- `ntt_core_8` testbench) Tj
+/F1 10 Tf
+1 0 0 1 66 663 Tm
+(- Verilator lint for `ntt_core_8`) Tj
+/F1 10 Tf
+1 0 0 1 66 649 Tm
+(- Yosys synthesizability check for `ntt_core_8`) Tj
+/F1 10 Tf
+1 0 0 1 66 635 Tm
+(- OpenLane handoff readiness script) Tj
+/F1 10 Tf
+1 0 0 1 54 612 Tm
+(Latest readiness output:) Tj
+/F1 10 Tf
+1 0 0 1 54 580 Tm
+(PASS: tb_ntt_core_8) Tj
+/F1 10 Tf
+1 0 0 1 54 566 Tm
+(PASS: ntt_core_8 Yosys synthesizability check completed) Tj
+/F1 10 Tf
+1 0 0 1 54 552 Tm
+(PASS: OpenLane handoff readiness checks completed) Tj
+/F2 14 Tf
+1 0 0 1 54 514 Tm
+(Handoff support files) Tj
+/F1 10 Tf
+1 0 0 1 54 482 Tm
+(Simulation/test:) Tj
+/F1 10 Tf
+1 0 0 1 66 459 Tm
+(- `sim/tb_ntt_core_8.sv`) Tj
+/F1 10 Tf
+1 0 0 1 66 445 Tm
+(- `scripts/run_ntt_core_8_tb.sh`) Tj
+/F1 10 Tf
+1 0 0 1 54 422 Tm
+(Lint/synthesis checks:) Tj
+/F1 10 Tf
+1 0 0 1 66 399 Tm
+(- `scripts/lint_rtl.sh`) Tj
+/F1 10 Tf
+1 0 0 1 66 385 Tm
+(- `scripts/synth_ntt_core_8_yosys.tcl`) Tj
+/F1 10 Tf
+1 0 0 1 66 371 Tm
+(- `scripts/run_synth_ntt_core_8.sh`) Tj
+/F1 10 Tf
+1 0 0 1 66 357 Tm
+(- `scripts/check_openlane_handoff_readiness.sh`) Tj
+/F1 10 Tf
+1 0 0 1 54 334 Tm
+(OpenLane starter files:) Tj
+/F1 10 Tf
+1 0 0 1 66 311 Tm
+(- `constraints/ntt_core_8.sdc`) Tj
+/F1 10 Tf
+1 0 0 1 66 297 Tm
+(- `openlane/ntt_core_8/config.tcl`) Tj
+/F1 10 Tf
+1 0 0 1 66 283 Tm
+(- `docs/openlane_handoff.md`) Tj
+/F2 14 Tf
+1 0 0 1 54 254 Tm
+(What remains before real ASIC physical design) Tj
+/F1 10 Tf
+1 0 0 1 54 222 Tm
+(The handoff package is ready for initial OpenLane physical-flow exploration, but it is) Tj
+/F1 10 Tf
+1 0 0 1 54 208 Tm
+(not production/tapeout complete.) Tj
+/F1 10 Tf
+1 0 0 1 54 185 Tm
+(Remaining work for the OpenLane/PDK owner:) Tj
+/F1 10 Tf
+1 0 0 1 54 162 Tm
+(1. Choose the exact OpenLane version and PDK.) Tj
+/F1 10 Tf
+1 0 0 1 54 148 Tm
+(2. Run technology-mapped synthesis with the selected standard-cell library.) Tj
+/F1 10 Tf
+1 0 0 1 54 134 Tm
+(3. Inspect timing, especially around the Montgomery multiplier.) Tj
+/F1 10 Tf
+1 0 0 1 54 120 Tm
+(4. Pipeline the datapath/multiplier if timing requires it.) Tj
+/F1 10 Tf
+1 0 0 1 54 106 Tm
+(5. Decide the final target NTT size and interface.) Tj
+/F1 10 Tf
+1 0 0 1 54 92 Tm
+(6. Replace or wrap inferred/register-array memories with process-specific SRAM macros) Tj
+/F1 10 Tf
+1 0 0 1 54 78 Tm
+(for realistic larger designs.) Tj
+/F1 8 Tf
+1 0 0 1 270 32 Tm
+(Page 2 of 3) Tj
+ET
+Q
+endstream
+endobj
+9 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 10 0 R >>
+endobj
+10 0 obj
+<< /Length 1651 >>
+stream
+q
+BT
+/F1 10 Tf
+1 0 0 1 54 760 Tm
+(7. Add final timing constraints, IO constraints, floorplan, placement, CTS, routing,) Tj
+/F1 10 Tf
+1 0 0 1 54 746 Tm
+(DRC/LVS, and signoff checks.) Tj
+/F2 14 Tf
+1 0 0 1 54 717 Tm
+(SRAM/BRAM status) Tj
+/F1 10 Tf
+1 0 0 1 54 685 Tm
+(The clean handoff RTL does not instantiate known FPGA BRAM primitives such as:) Tj
+/F1 10 Tf
+1 0 0 1 66 662 Tm
+(- `RAMB18E1`) Tj
+/F1 10 Tf
+1 0 0 1 66 648 Tm
+(- `RAMB36E1`) Tj
+/F1 10 Tf
+1 0 0 1 66 634 Tm
+(- `xpm_memory_*`) Tj
+/F1 10 Tf
+1 0 0 1 66 620 Tm
+(- Vivado block-memory IP) Tj
+/F1 10 Tf
+1 0 0 1 54 597 Tm
+(Current tiny memories in `ntt_core_8` are inferred/register-array storage. This is) Tj
+/F1 10 Tf
+1 0 0 1 54 583 Tm
+(acceptable for initial ASIC-compatible RTL bring-up and small OpenLane exploration.) Tj
+/F1 10 Tf
+1 0 0 1 54 560 Tm
+(For a realistic full-size accelerator, SRAM macro wrappers should be introduced after) Tj
+/F1 10 Tf
+1 0 0 1 54 546 Tm
+(the PDK/memory compiler is chosen.) Tj
+/F2 14 Tf
+1 0 0 1 54 517 Tm
+(Handoff statement) Tj
+/F1 10 Tf
+1 0 0 1 54 485 Tm
+(This project is ready to hand off as clean ASIC-oriented RTL for initial OpenLane work) Tj
+/F1 10 Tf
+1 0 0 1 54 471 Tm
+(using `ntt_core_8` as the top module.) Tj
+/F1 10 Tf
+1 0 0 1 54 448 Tm
+(It should be described as:) Tj
+/F1 10 Tf
+1 0 0 1 54 425 Tm
+("Clean ASIC-compatible RTL and OpenLane starter handoff package for a small 8-point NTT) Tj
+/F1 10 Tf
+1 0 0 1 54 411 Tm
+(accelerator-style core.") Tj
+/F1 10 Tf
+1 0 0 1 54 388 Tm
+(It should not be described as:) Tj
+/F1 10 Tf
+1 0 0 1 54 365 Tm
+("Final production ASIC layout" or "tapeout-ready design.") Tj
+/F1 8 Tf
+1 0 0 1 270 32 Tm
+(Page 3 of 3) Tj
+ET
+Q
+endstream
+endobj
+xref
+0 11
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000133 00000 n 
+0000000203 00000 n 
+0000000278 00000 n 
+0000000414 00000 n 
+0000002993 00000 n 
+0000003129 00000 n 
+0000005891 00000 n 
+0000006028 00000 n 
+trailer
+<< /Size 11 /Root 1 0 R >>
+startxref
+7732
+%%EOF
