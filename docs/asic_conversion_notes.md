@@ -396,13 +396,28 @@ Next functional step:
 
 Create and test a tiny 4-point NTT datapath block before building the controller.
 
-Planned files:
+Test-first files created:
 
 - `sim/tb_ntt_stage_4.sv`
 - `scripts/run_ntt_stage_4_tb.sh`
-- `rtl/ntt_stage_4.sv`
 
 The 4-point block will use two 2-point/butterfly-style operations so we can verify composition before moving to a full NTT controller.
+
+The test-first run produced the expected missing-RTL failure:
+
+```text
+rtl/ntt_stage_4.sv: No such file or directory
+sim/tb_ntt_stage_4.sv:22: error: Unknown module type: ntt_stage_4
+```
+
+Then `rtl/ntt_stage_4.sv` was created. It instantiates two verified `ntt_stage_2` blocks:
+
+```text
+out0, out1 = stage_2(in0, in1, twiddle0)
+out2, out3 = stage_2(in2, in3, twiddle1)
+```
+
+Current next step: run `./scripts/run_ntt_stage_4_tb.sh` and expect `PASS: tb_ntt_stage_4`.
 
 ## Final PDF goal
 
