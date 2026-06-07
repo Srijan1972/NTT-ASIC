@@ -630,7 +630,70 @@ Verified locally:
 PASS: tb_ntt_core_8
 ```
 
-Current next step: user should run `./scripts/run_ntt_core_8_tb.sh` from WSL and paste the result.
+Verified by user from WSL:
+
+```text
+pass
+```
+
+## Current next step
+
+Update lint and Yosys checks so the top module is now the fuller accelerator core:
+
+- top module: `ntt_core_8`
+- update `scripts/lint_rtl.sh`
+- add `scripts/synth_ntt_core_8_yosys.tcl`
+- add `scripts/run_synth_ntt_core_8.sh`
+
+Verified by user from WSL:
+
+```text
+passed
+```
+
+This confirms Verilator lint passed for the `ntt_core_8` top.
+
+## Current next step
+
+Run the Yosys synthesizability check for `ntt_core_8`.
+
+Verified by user from WSL:
+
+```text
+PASS: ntt_core_8 Yosys synthesizability check completed
+```
+
+## OpenLane handoff updated to fuller core
+
+The OpenLane handoff package now points to the fuller accelerator-style top:
+
+- top module: `ntt_core_8`
+- starter constraints: `constraints/ntt_core_8.sdc`
+- starter OpenLane config: `openlane/ntt_core_8/config.tcl`
+- handoff notes: `docs/openlane_handoff.md`
+- readiness script: `scripts/check_openlane_handoff_readiness.sh`
+
+Verified locally:
+
+```text
+PASS: tb_ntt_core_8
+PASS: ntt_core_8 Yosys synthesizability check completed
+PASS: OpenLane handoff readiness checks completed
+```
+
+Verified by user from WSL:
+
+```text
+PASS: tb_ntt_core_8
+PASS: ntt_core_8 Yosys synthesizability check completed
+PASS: OpenLane handoff readiness checks completed
+```
+
+Current status: the fuller `ntt_core_8` ASIC-compatible RTL handoff package is ready for an OpenLane owner to begin physical-flow exploration.
+
+Final summary document written:
+
+- `docs/asic_rtl_handoff_summary.md`
 
 ## Final PDF goal
 
