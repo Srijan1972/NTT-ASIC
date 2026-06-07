@@ -11,7 +11,9 @@ module modmul_montgomery #(
   reg [31:0] ab_low;
   reg [31:0] m;
   reg [63:0] mq;
+  /* verilator lint_off UNUSED */
   reg [63:0] sum;
+  /* verilator lint_on UNUSED */
   reg [31:0] t;
 
   always @* begin

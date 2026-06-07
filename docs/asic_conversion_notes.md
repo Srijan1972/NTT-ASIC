@@ -419,6 +419,219 @@ out2, out3 = stage_2(in2, in3, twiddle1)
 
 Current next step: run `./scripts/run_ntt_stage_4_tb.sh` and expect `PASS: tb_ntt_stage_4`.
 
+Verified by user from WSL:
+
+```text
+PASS: tb_ntt_stage_4
+```
+
+## Current next step
+
+Before building a larger controller, run a lint check on the clean RTL created so far.
+
+Created lint script:
+
+- `scripts/lint_rtl.sh`
+
+It runs Verilator on the current RTL files and catches syntax/synthesizability issues early.
+
+The first lint attempt showed that the installed Verilator is older:
+
+```text
+Verilator 4.038 2020-07-11
+%Error: Invalid option: --timing
+```
+
+The lint script was updated to remove the unsupported `--timing` option.
+
+The next lint run produced warnings that Verilator treats as fatal:
+
+```text
+%Warning-MULTITOP: Multiple top level modules
+%Warning-UNUSED: Bits of signal are not used
+%Error: Exiting due to 5 warning(s)
+```
+
+Fixes applied:
+
+- updated `scripts/lint_rtl.sh` to lint explicit top modules
+- simplified `rtl/mod_add.sv` to avoid an unused carry bit in `reduced_sum`
+- simplified `rtl/mod_sub.sv` to avoid unused bit 32 in diff wires
+- simplified `rtl/modmul_montgomery.sv` to avoid storing unused lower bits of `sum`
+
+Current next step: rerun the unit tests touched by these cleanup edits, then rerun lint:
+
+```bash
+./scripts/run_mod_add_tb.sh && ./scripts/run_mod_sub_tb.sh && ./scripts/run_modmul_montgomery_tb.sh && ./scripts/run_ntt_butterfly_tb.sh && ./scripts/run_ntt_stage_2_tb.sh && ./scripts/run_ntt_stage_4_tb.sh && ./scripts/lint_rtl.sh
+```
+
+The next lint run found a WIDTH warning in `rtl/modmul_montgomery.sv`:
+
+```text
+%Warning-WIDTH: Operator ASSIGN expects 32 bits ... SHIFTR generates 64 bits
+```
+
+Fix applied:
+
+- restored an explicit 64-bit `sum = ab + mq`
+- assigned `t = sum[63:32]`
+- wrapped the intentionally unused lower half of `sum` with Verilator `UNUSED` lint comments
+
+Current next step: rerun the same combined test/lint command.
+
+The user reran `./scripts/lint_rtl.sh` and it returned silently:
+
+```text
+(base) sammy@LAPTOP-10:/mnt/c/Users/sammy/Desktop/NTT-ASIC$ ./scripts/lint_rtl.sh
+(base) sammy@LAPTOP-10:/mnt/c/Users/sammy/Desktop/NTT-ASIC$
+```
+
+This indicates the current RTL lint check passed with Verilator.
+
+## Current next step
+
+Run the full unit-test chain once after lint cleanup changed arithmetic internals:
+
+```bash
+./scripts/run_mod_add_tb.sh && ./scripts/run_mod_sub_tb.sh && ./scripts/run_modmul_montgomery_tb.sh && ./scripts/run_ntt_butterfly_tb.sh && ./scripts/run_ntt_stage_2_tb.sh && ./scripts/run_ntt_stage_4_tb.sh
+```
+
+Expected result: all scripts print `PASS: ...`.
+
+Verified by user from WSL:
+
+```text
+everything passed
+```
+
+## Current next step
+
+Next ASIC-flow check:
+
+Create a basic Yosys synthesis/synthesizability script for the largest current clean top:
+
+- top module: `ntt_stage_4`
+- script: `scripts/synth_ntt_stage_4_yosys.tcl`
+- runner: `scripts/run_synth_ntt_stage_4.sh`
+
+This checks that the current RTL can be elaborated and optimized by a synthesis tool, not just simulated/linted.
+
+Verified by user from WSL:
+
+```text
+PASS: ntt_stage_4 Yosys synthesizability check completed
+```
+
+This confirms the current `ntt_stage_4` RTL hierarchy can be elaborated and optimized by Yosys with 0 reported check problems.
+
+## Current next step
+
+Next RTL block to build/test:
+
+- `rtl/ntt_stage_8.sv`
+- `sim/tb_ntt_stage_8.sv`
+- `scripts/run_ntt_stage_8_tb.sh`
+
+This extends the same compositional pattern from one 2-point butterfly stage to 4-wide and then 8-wide combinational stage wrappers before adding a full controller.
+
+Verified by user from WSL:
+
+```text
+PASS: tb_ntt_stage_8
+```
+
+## Current next step
+
+Run Verilator lint again after adding `ntt_stage_8`. The lint script has been updated so the current top module is now `ntt_stage_8`.
+
+Verified by user from WSL:
+
+```text
+lint passed
+```
+
+## Current next step
+
+Create and run a Yosys synthesizability check for the largest current clean top:
+
+- top module: `ntt_stage_8`
+- script: `scripts/synth_ntt_stage_8_yosys.tcl`
+- runner: `scripts/run_synth_ntt_stage_8.sh`
+
+Verified locally:
+
+```text
+PASS: ntt_stage_8 Yosys synthesizability check completed
+```
+
+## OpenLane handoff preparation
+
+The project is being prepared for handoff to another engineer who will run OpenLane physical implementation.
+
+A clocked OpenLane handoff top was added because the previous `ntt_stage_8` top was purely combinational:
+
+- `rtl/ntt_stage_8_registered.sv`
+- top module: `ntt_stage_8_registered`
+- ports include `clk` and active-low `rst_n`
+- outputs are registered
+
+Added handoff support files:
+
+- `sim/tb_ntt_stage_8_registered.sv`
+- `scripts/run_ntt_stage_8_registered_tb.sh`
+- `scripts/synth_ntt_stage_8_registered_yosys.tcl`
+- `scripts/run_synth_ntt_stage_8_registered.sh`
+- `constraints/ntt_stage_8_registered.sdc`
+- `openlane/ntt_stage_8_registered/config.tcl`
+- `docs/openlane_handoff.md`
+- `scripts/check_openlane_handoff_readiness.sh`
+
+Verified locally:
+
+```text
+PASS: tb_ntt_stage_8_registered
+scripts/lint_rtl.sh passed silently
+PASS: ntt_stage_8_registered Yosys synthesizability check completed
+PASS: OpenLane handoff readiness checks completed
+```
+
+Handoff boundary:
+
+- This is ready as an initial OpenLane handoff package.
+- It is not a production-complete ASIC implementation.
+- No process-specific SRAM macro replacement has been done yet.
+- The OpenLane owner should choose the exact PDK/OpenLane version, run synthesis first, inspect timing, and pipeline or SRAM-wrap as needed.
+
+## Fuller accelerator RTL path
+
+The user decided it would be more useful to hand off a small accelerator-style core rather than only the registered datapath wrapper.
+
+Created first memory/controller-style core:
+
+- `rtl/ntt_core_8.sv`
+- `sim/tb_ntt_core_8.sv`
+- `scripts/run_ntt_core_8_tb.sh`
+
+This core adds:
+
+- `clk`
+- `rst_n`
+- `start`
+- `busy`
+- `done`
+- load ports for 8 data words
+- load ports for 4 twiddle words
+- readback port for result words
+- a small FSM around the existing `ntt_stage_8` datapath
+
+Verified locally:
+
+```text
+PASS: tb_ntt_core_8
+```
+
+Current next step: user should run `./scripts/run_ntt_core_8_tb.sh` from WSL and paste the result.
+
 ## Final PDF goal
 
 At the end of the ASIC conversion work, prepare a PDF document summarizing:

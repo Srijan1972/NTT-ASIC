@@ -4,14 +4,13 @@
 // Computes result = (a + b) mod Q for inputs already reduced modulo Q.
 
 module mod_add #(
-  parameter logic [31:0] Q = 32'd8380417
+  parameter [31:0] Q = 32'd8380417
 )(
-  input  logic [31:0] a,
-  input  logic [31:0] b,
-  output logic [31:0] result
+  input  [31:0] a,
+  input  [31:0] b,
+  output [31:0] result
 );
   wire [32:0] sum = {1'b0, a} + {1'b0, b};
-  wire [32:0] reduced_sum = sum - {1'b0, Q};
 
-  assign result = (sum >= {1'b0, Q}) ? reduced_sum[31:0] : sum[31:0];
+  assign result = (sum >= {1'b0, Q}) ? (sum[31:0] - Q) : sum[31:0];
 endmodule

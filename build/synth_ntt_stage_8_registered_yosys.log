@@ -1,0 +1,737 @@
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2019  Clifford Wolf <clifford@clifford.at>           |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.9 (git sha1 1979e0b)
+
+
+-- Executing script file `scripts/synth_ntt_stage_8_registered_yosys.tcl' --
+
+1. Executing Verilog-2005 frontend: rtl/mod_add.sv
+Parsing SystemVerilog input from `rtl/mod_add.sv' to AST representation.
+Generating RTLIL representation for module `\mod_add'.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: rtl/mod_sub.sv
+Parsing SystemVerilog input from `rtl/mod_sub.sv' to AST representation.
+Generating RTLIL representation for module `\mod_sub'.
+Successfully finished Verilog frontend.
+
+3. Executing Verilog-2005 frontend: rtl/modmul_montgomery.sv
+Parsing SystemVerilog input from `rtl/modmul_montgomery.sv' to AST representation.
+Generating RTLIL representation for module `\modmul_montgomery'.
+Successfully finished Verilog frontend.
+
+4. Executing Verilog-2005 frontend: rtl/ntt_butterfly.sv
+Parsing SystemVerilog input from `rtl/ntt_butterfly.sv' to AST representation.
+Generating RTLIL representation for module `\ntt_butterfly'.
+Successfully finished Verilog frontend.
+
+5. Executing Verilog-2005 frontend: rtl/ntt_stage_2.sv
+Parsing SystemVerilog input from `rtl/ntt_stage_2.sv' to AST representation.
+Generating RTLIL representation for module `\ntt_stage_2'.
+Successfully finished Verilog frontend.
+
+6. Executing Verilog-2005 frontend: rtl/ntt_stage_4.sv
+Parsing SystemVerilog input from `rtl/ntt_stage_4.sv' to AST representation.
+Generating RTLIL representation for module `\ntt_stage_4'.
+Successfully finished Verilog frontend.
+
+7. Executing Verilog-2005 frontend: rtl/ntt_stage_8.sv
+Parsing SystemVerilog input from `rtl/ntt_stage_8.sv' to AST representation.
+Generating RTLIL representation for module `\ntt_stage_8'.
+Successfully finished Verilog frontend.
+
+8. Executing Verilog-2005 frontend: rtl/ntt_stage_8_registered.sv
+Parsing SystemVerilog input from `rtl/ntt_stage_8_registered.sv' to AST representation.
+Generating RTLIL representation for module `\ntt_stage_8_registered'.
+Successfully finished Verilog frontend.
+
+9. Executing HIERARCHY pass (managing design hierarchy).
+
+9.1. Analyzing design hierarchy..
+Top module:  \ntt_stage_8_registered
+Used module:     \ntt_stage_8
+Used module:         \ntt_stage_4
+Used module:             \ntt_stage_2
+Used module:                 \ntt_butterfly
+Used module:                     \mod_sub
+Used module:                     \mod_add
+Used module:                     \modmul_montgomery
+
+9.2. Executing AST frontend in derive mode using pre-parsed AST for module `\mod_sub'.
+Parameter \Q = 8380417
+Generating RTLIL representation for module `$paramod\mod_sub\Q=8380417'.
+
+9.3. Executing AST frontend in derive mode using pre-parsed AST for module `\mod_add'.
+Parameter \Q = 8380417
+Generating RTLIL representation for module `$paramod\mod_add\Q=8380417'.
+
+9.4. Executing AST frontend in derive mode using pre-parsed AST for module `\modmul_montgomery'.
+Parameter \Q = 8380417
+Parameter \Q_INV = 32'11111100011111111101111111111111
+Generating RTLIL representation for module `$paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111'.
+
+9.5. Executing AST frontend in derive mode using pre-parsed AST for module `\ntt_butterfly'.
+Parameter \Q = 8380417
+Parameter \Q_INV = 32'11111100011111111101111111111111
+Generating RTLIL representation for module `$paramod\ntt_butterfly\Q=8380417\Q_INV=32'11111100011111111101111111111111'.
+
+9.6. Executing AST frontend in derive mode using pre-parsed AST for module `\ntt_stage_2'.
+Parameter \Q = 8380417
+Parameter \Q_INV = 32'11111100011111111101111111111111
+Generating RTLIL representation for module `$paramod\ntt_stage_2\Q=8380417\Q_INV=32'11111100011111111101111111111111'.
+
+9.7. Executing AST frontend in derive mode using pre-parsed AST for module `\ntt_stage_2'.
+Parameter \Q = 8380417
+Parameter \Q_INV = 32'11111100011111111101111111111111
+Found cached RTLIL representation for module `$paramod\ntt_stage_2\Q=8380417\Q_INV=32'11111100011111111101111111111111'.
+
+9.8. Executing AST frontend in derive mode using pre-parsed AST for module `\ntt_stage_4'.
+Parameter \Q = 8380417
+Parameter \Q_INV = 32'11111100011111111101111111111111
+Generating RTLIL representation for module `$paramod\ntt_stage_4\Q=8380417\Q_INV=32'11111100011111111101111111111111'.
+
+9.9. Executing AST frontend in derive mode using pre-parsed AST for module `\ntt_stage_4'.
+Parameter \Q = 8380417
+Parameter \Q_INV = 32'11111100011111111101111111111111
+Found cached RTLIL representation for module `$paramod\ntt_stage_4\Q=8380417\Q_INV=32'11111100011111111101111111111111'.
+
+9.10. Executing AST frontend in derive mode using pre-parsed AST for module `\ntt_stage_8'.
+Parameter \Q = 8380417
+Parameter \Q_INV = 32'11111100011111111101111111111111
+Generating RTLIL representation for module `$paramod\ntt_stage_8\Q=8380417\Q_INV=32'11111100011111111101111111111111'.
+
+9.11. Analyzing design hierarchy..
+Top module:  \ntt_stage_8_registered
+Used module:     $paramod\ntt_stage_8\Q=8380417\Q_INV=32'11111100011111111101111111111111
+Used module:         \ntt_stage_4
+Used module:             $paramod\ntt_stage_2\Q=8380417\Q_INV=32'11111100011111111101111111111111
+Used module:                 \ntt_butterfly
+Used module:                     $paramod\mod_sub\Q=8380417
+Used module:                     $paramod\mod_add\Q=8380417
+Used module:                     $paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111
+
+9.12. Executing AST frontend in derive mode using pre-parsed AST for module `\ntt_stage_4'.
+Parameter \Q = 8380417
+Parameter \Q_INV = 32'11111100011111111101111111111111
+Found cached RTLIL representation for module `$paramod\ntt_stage_4\Q=8380417\Q_INV=32'11111100011111111101111111111111'.
+
+9.13. Executing AST frontend in derive mode using pre-parsed AST for module `\ntt_stage_4'.
+Parameter \Q = 8380417
+Parameter \Q_INV = 32'11111100011111111101111111111111
+Found cached RTLIL representation for module `$paramod\ntt_stage_4\Q=8380417\Q_INV=32'11111100011111111101111111111111'.
+
+9.14. Executing AST frontend in derive mode using pre-parsed AST for module `\ntt_butterfly'.
+Parameter \Q = 8380417
+Parameter \Q_INV = 32'11111100011111111101111111111111
+Found cached RTLIL representation for module `$paramod\ntt_butterfly\Q=8380417\Q_INV=32'11111100011111111101111111111111'.
+
+9.15. Analyzing design hierarchy..
+Top module:  \ntt_stage_8_registered
+Used module:     $paramod\ntt_stage_8\Q=8380417\Q_INV=32'11111100011111111101111111111111
+Used module:         $paramod\ntt_stage_4\Q=8380417\Q_INV=32'11111100011111111101111111111111
+Used module:             \ntt_stage_2
+Used module:                 $paramod\ntt_butterfly\Q=8380417\Q_INV=32'11111100011111111101111111111111
+Used module:                     \mod_sub
+Used module:                     \mod_add
+Used module:                     \modmul_montgomery
+
+9.16. Executing AST frontend in derive mode using pre-parsed AST for module `\mod_sub'.
+Parameter \Q = 8380417
+Found cached RTLIL representation for module `$paramod\mod_sub\Q=8380417'.
+
+9.17. Executing AST frontend in derive mode using pre-parsed AST for module `\mod_add'.
+Parameter \Q = 8380417
+Found cached RTLIL representation for module `$paramod\mod_add\Q=8380417'.
+
+9.18. Executing AST frontend in derive mode using pre-parsed AST for module `\modmul_montgomery'.
+Parameter \Q = 8380417
+Parameter \Q_INV = 32'11111100011111111101111111111111
+Found cached RTLIL representation for module `$paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111'.
+
+9.19. Executing AST frontend in derive mode using pre-parsed AST for module `\ntt_stage_2'.
+Parameter \Q = 8380417
+Parameter \Q_INV = 32'11111100011111111101111111111111
+Found cached RTLIL representation for module `$paramod\ntt_stage_2\Q=8380417\Q_INV=32'11111100011111111101111111111111'.
+
+9.20. Executing AST frontend in derive mode using pre-parsed AST for module `\ntt_stage_2'.
+Parameter \Q = 8380417
+Parameter \Q_INV = 32'11111100011111111101111111111111
+Found cached RTLIL representation for module `$paramod\ntt_stage_2\Q=8380417\Q_INV=32'11111100011111111101111111111111'.
+
+9.21. Analyzing design hierarchy..
+Top module:  \ntt_stage_8_registered
+Used module:     $paramod\ntt_stage_8\Q=8380417\Q_INV=32'11111100011111111101111111111111
+Used module:         $paramod\ntt_stage_4\Q=8380417\Q_INV=32'11111100011111111101111111111111
+Used module:             $paramod\ntt_stage_2\Q=8380417\Q_INV=32'11111100011111111101111111111111
+Used module:                 $paramod\ntt_butterfly\Q=8380417\Q_INV=32'11111100011111111101111111111111
+Used module:                     $paramod\mod_sub\Q=8380417
+Used module:                     $paramod\mod_add\Q=8380417
+Used module:                     $paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111
+
+9.22. Analyzing design hierarchy..
+Top module:  \ntt_stage_8_registered
+Used module:     $paramod\ntt_stage_8\Q=8380417\Q_INV=32'11111100011111111101111111111111
+Used module:         $paramod\ntt_stage_4\Q=8380417\Q_INV=32'11111100011111111101111111111111
+Used module:             $paramod\ntt_stage_2\Q=8380417\Q_INV=32'11111100011111111101111111111111
+Used module:                 $paramod\ntt_butterfly\Q=8380417\Q_INV=32'11111100011111111101111111111111
+Used module:                     $paramod\mod_sub\Q=8380417
+Used module:                     $paramod\mod_add\Q=8380417
+Used module:                     $paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111
+Removing unused module `\ntt_stage_8'.
+Removing unused module `\ntt_stage_4'.
+Removing unused module `\ntt_stage_2'.
+Removing unused module `\ntt_butterfly'.
+Removing unused module `\modmul_montgomery'.
+Removing unused module `\mod_sub'.
+Removing unused module `\mod_add'.
+Removed 7 unused modules.
+
+10. Executing PROC pass (convert processes to netlists).
+
+10.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+10.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 1 switch rules as full_case in process $proc$rtl/ntt_stage_8_registered.sv:64$17 in module ntt_stage_8_registered.
+Marked 1 switch rules as full_case in process $proc$rtl/modmul_montgomery.sv:19$28 in module $paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111.
+Removed a total of 0 dead cases.
+
+10.3. Executing PROC_INIT pass (extract init attributes).
+
+10.4. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \rst_n in `\ntt_stage_8_registered.$proc$rtl/ntt_stage_8_registered.sv:64$17'.
+
+10.5. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\ntt_stage_8_registered.$proc$rtl/ntt_stage_8_registered.sv:64$17'.
+     1/8: $0\out7[31:0]
+     2/8: $0\out6[31:0]
+     3/8: $0\out5[31:0]
+     4/8: $0\out4[31:0]
+     5/8: $0\out1[31:0]
+     6/8: $0\out0[31:0]
+     7/8: $0\out2[31:0]
+     8/8: $0\out3[31:0]
+Creating decoders for process `$paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111.$proc$rtl/modmul_montgomery.sv:19$28'.
+     1/8: $1\result[31:0]
+     2/8: $0\result[31:0]
+     3/8: $0\t[31:0]
+     4/8: $0\sum[63:0]
+     5/8: $0\mq[63:0]
+     6/8: $0\m[31:0]
+     7/8: $0\ab_low[31:0]
+     8/8: $0\ab[63:0]
+
+10.6. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `$paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111.\result' from process `$paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111.$proc$rtl/modmul_montgomery.sv:19$28'.
+No latch inferred for signal `$paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111.\sum' from process `$paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111.$proc$rtl/modmul_montgomery.sv:19$28'.
+No latch inferred for signal `$paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111.\ab' from process `$paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111.$proc$rtl/modmul_montgomery.sv:19$28'.
+No latch inferred for signal `$paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111.\ab_low' from process `$paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111.$proc$rtl/modmul_montgomery.sv:19$28'.
+No latch inferred for signal `$paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111.\m' from process `$paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111.$proc$rtl/modmul_montgomery.sv:19$28'.
+No latch inferred for signal `$paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111.\t' from process `$paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111.$proc$rtl/modmul_montgomery.sv:19$28'.
+No latch inferred for signal `$paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111.\mq' from process `$paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111.$proc$rtl/modmul_montgomery.sv:19$28'.
+
+10.7. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\ntt_stage_8_registered.\out3' using process `\ntt_stage_8_registered.$proc$rtl/ntt_stage_8_registered.sv:64$17'.
+  created $adff cell `$procdff$38' with positive edge clock and negative level reset.
+Creating register for signal `\ntt_stage_8_registered.\out2' using process `\ntt_stage_8_registered.$proc$rtl/ntt_stage_8_registered.sv:64$17'.
+  created $adff cell `$procdff$39' with positive edge clock and negative level reset.
+Creating register for signal `\ntt_stage_8_registered.\out0' using process `\ntt_stage_8_registered.$proc$rtl/ntt_stage_8_registered.sv:64$17'.
+  created $adff cell `$procdff$40' with positive edge clock and negative level reset.
+Creating register for signal `\ntt_stage_8_registered.\out1' using process `\ntt_stage_8_registered.$proc$rtl/ntt_stage_8_registered.sv:64$17'.
+  created $adff cell `$procdff$41' with positive edge clock and negative level reset.
+Creating register for signal `\ntt_stage_8_registered.\out4' using process `\ntt_stage_8_registered.$proc$rtl/ntt_stage_8_registered.sv:64$17'.
+  created $adff cell `$procdff$42' with positive edge clock and negative level reset.
+Creating register for signal `\ntt_stage_8_registered.\out5' using process `\ntt_stage_8_registered.$proc$rtl/ntt_stage_8_registered.sv:64$17'.
+  created $adff cell `$procdff$43' with positive edge clock and negative level reset.
+Creating register for signal `\ntt_stage_8_registered.\out6' using process `\ntt_stage_8_registered.$proc$rtl/ntt_stage_8_registered.sv:64$17'.
+  created $adff cell `$procdff$44' with positive edge clock and negative level reset.
+Creating register for signal `\ntt_stage_8_registered.\out7' using process `\ntt_stage_8_registered.$proc$rtl/ntt_stage_8_registered.sv:64$17'.
+  created $adff cell `$procdff$45' with positive edge clock and negative level reset.
+
+10.8. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Removing empty process `ntt_stage_8_registered.$proc$rtl/ntt_stage_8_registered.sv:64$17'.
+Found and cleaned up 1 empty switch in `$paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111.$proc$rtl/modmul_montgomery.sv:19$28'.
+Removing empty process `$paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111.$proc$rtl/modmul_montgomery.sv:19$28'.
+Cleaned up 1 empty switch.
+
+11. Executing OPT pass (performing simple optimizations).
+
+11.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ntt_stage_8_registered.
+Optimizing module $paramod\ntt_stage_8\Q=8380417\Q_INV=32'11111100011111111101111111111111.
+Optimizing module $paramod\ntt_stage_4\Q=8380417\Q_INV=32'11111100011111111101111111111111.
+Optimizing module $paramod\ntt_stage_2\Q=8380417\Q_INV=32'11111100011111111101111111111111.
+Optimizing module $paramod\ntt_butterfly\Q=8380417\Q_INV=32'11111100011111111101111111111111.
+Optimizing module $paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111.
+Optimizing module $paramod\mod_add\Q=8380417.
+Optimizing module $paramod\mod_sub\Q=8380417.
+
+11.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ntt_stage_8_registered'.
+Finding identical cells in module `$paramod\ntt_stage_8\Q=8380417\Q_INV=32'11111100011111111101111111111111'.
+Finding identical cells in module `$paramod\ntt_stage_4\Q=8380417\Q_INV=32'11111100011111111101111111111111'.
+Finding identical cells in module `$paramod\ntt_stage_2\Q=8380417\Q_INV=32'11111100011111111101111111111111'.
+Finding identical cells in module `$paramod\ntt_butterfly\Q=8380417\Q_INV=32'11111100011111111101111111111111'.
+Finding identical cells in module `$paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111'.
+Finding identical cells in module `$paramod\mod_add\Q=8380417'.
+Finding identical cells in module `$paramod\mod_sub\Q=8380417'.
+Removed a total of 0 cells.
+
+11.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \ntt_stage_8_registered..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module $paramod\ntt_stage_8\Q=8380417\Q_INV=32'11111100011111111101111111111111..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module $paramod\ntt_stage_4\Q=8380417\Q_INV=32'11111100011111111101111111111111..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module $paramod\ntt_stage_2\Q=8380417\Q_INV=32'11111100011111111101111111111111..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module $paramod\ntt_butterfly\Q=8380417\Q_INV=32'11111100011111111101111111111111..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module $paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\mod_add\Q=8380417..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\mod_sub\Q=8380417..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~3 debug messages>
+
+11.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \ntt_stage_8_registered.
+  Optimizing cells in module $paramod\ntt_stage_8\Q=8380417\Q_INV=32'11111100011111111101111111111111.
+  Optimizing cells in module $paramod\ntt_stage_4\Q=8380417\Q_INV=32'11111100011111111101111111111111.
+  Optimizing cells in module $paramod\ntt_stage_2\Q=8380417\Q_INV=32'11111100011111111101111111111111.
+  Optimizing cells in module $paramod\ntt_butterfly\Q=8380417\Q_INV=32'11111100011111111101111111111111.
+  Optimizing cells in module $paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111.
+  Optimizing cells in module $paramod\mod_add\Q=8380417.
+  Optimizing cells in module $paramod\mod_sub\Q=8380417.
+Performed a total of 0 changes.
+
+11.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ntt_stage_8_registered'.
+Finding identical cells in module `$paramod\ntt_stage_8\Q=8380417\Q_INV=32'11111100011111111101111111111111'.
+Finding identical cells in module `$paramod\ntt_stage_4\Q=8380417\Q_INV=32'11111100011111111101111111111111'.
+Finding identical cells in module `$paramod\ntt_stage_2\Q=8380417\Q_INV=32'11111100011111111101111111111111'.
+Finding identical cells in module `$paramod\ntt_butterfly\Q=8380417\Q_INV=32'11111100011111111101111111111111'.
+Finding identical cells in module `$paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111'.
+Finding identical cells in module `$paramod\mod_add\Q=8380417'.
+Finding identical cells in module `$paramod\mod_sub\Q=8380417'.
+Removed a total of 0 cells.
+
+11.6. Executing OPT_RMDFF pass (remove dff with constant values).
+
+11.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ntt_stage_8_registered..
+Finding unused cells or wires in module $paramod\ntt_stage_8\Q=8380417\Q_INV=32'11111100011111111101111111111111..
+Finding unused cells or wires in module $paramod\ntt_stage_4\Q=8380417\Q_INV=32'11111100011111111101111111111111..
+Finding unused cells or wires in module $paramod\ntt_stage_2\Q=8380417\Q_INV=32'11111100011111111101111111111111..
+Finding unused cells or wires in module $paramod\ntt_butterfly\Q=8380417\Q_INV=32'11111100011111111101111111111111..
+Finding unused cells or wires in module $paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111..
+Finding unused cells or wires in module $paramod\mod_add\Q=8380417..
+Finding unused cells or wires in module $paramod\mod_sub\Q=8380417..
+Removed 1 unused cells and 28 unused wires.
+<suppressed ~5 debug messages>
+
+11.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod\mod_add\Q=8380417.
+Optimizing module $paramod\mod_sub\Q=8380417.
+Optimizing module $paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111.
+Optimizing module $paramod\ntt_butterfly\Q=8380417\Q_INV=32'11111100011111111101111111111111.
+Optimizing module $paramod\ntt_stage_2\Q=8380417\Q_INV=32'11111100011111111101111111111111.
+Optimizing module $paramod\ntt_stage_4\Q=8380417\Q_INV=32'11111100011111111101111111111111.
+Optimizing module $paramod\ntt_stage_8\Q=8380417\Q_INV=32'11111100011111111101111111111111.
+Optimizing module ntt_stage_8_registered.
+
+11.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+11.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module $paramod\mod_add\Q=8380417..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\mod_sub\Q=8380417..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\ntt_butterfly\Q=8380417\Q_INV=32'11111100011111111101111111111111..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module $paramod\ntt_stage_2\Q=8380417\Q_INV=32'11111100011111111101111111111111..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module $paramod\ntt_stage_4\Q=8380417\Q_INV=32'11111100011111111101111111111111..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module $paramod\ntt_stage_8\Q=8380417\Q_INV=32'11111100011111111101111111111111..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \ntt_stage_8_registered..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+<suppressed ~3 debug messages>
+
+11.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module $paramod\mod_add\Q=8380417.
+  Optimizing cells in module $paramod\mod_sub\Q=8380417.
+  Optimizing cells in module $paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111.
+  Optimizing cells in module $paramod\ntt_butterfly\Q=8380417\Q_INV=32'11111100011111111101111111111111.
+  Optimizing cells in module $paramod\ntt_stage_2\Q=8380417\Q_INV=32'11111100011111111101111111111111.
+  Optimizing cells in module $paramod\ntt_stage_4\Q=8380417\Q_INV=32'11111100011111111101111111111111.
+  Optimizing cells in module $paramod\ntt_stage_8\Q=8380417\Q_INV=32'11111100011111111101111111111111.
+  Optimizing cells in module \ntt_stage_8_registered.
+Performed a total of 0 changes.
+
+11.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod\mod_add\Q=8380417'.
+Finding identical cells in module `$paramod\mod_sub\Q=8380417'.
+Finding identical cells in module `$paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111'.
+Finding identical cells in module `$paramod\ntt_butterfly\Q=8380417\Q_INV=32'11111100011111111101111111111111'.
+Finding identical cells in module `$paramod\ntt_stage_2\Q=8380417\Q_INV=32'11111100011111111101111111111111'.
+Finding identical cells in module `$paramod\ntt_stage_4\Q=8380417\Q_INV=32'11111100011111111101111111111111'.
+Finding identical cells in module `$paramod\ntt_stage_8\Q=8380417\Q_INV=32'11111100011111111101111111111111'.
+Finding identical cells in module `\ntt_stage_8_registered'.
+Removed a total of 0 cells.
+
+11.13. Executing OPT_RMDFF pass (remove dff with constant values).
+
+11.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod\mod_add\Q=8380417..
+Finding unused cells or wires in module $paramod\mod_sub\Q=8380417..
+Finding unused cells or wires in module $paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111..
+Finding unused cells or wires in module $paramod\ntt_butterfly\Q=8380417\Q_INV=32'11111100011111111101111111111111..
+Finding unused cells or wires in module $paramod\ntt_stage_2\Q=8380417\Q_INV=32'11111100011111111101111111111111..
+Finding unused cells or wires in module $paramod\ntt_stage_4\Q=8380417\Q_INV=32'11111100011111111101111111111111..
+Finding unused cells or wires in module $paramod\ntt_stage_8\Q=8380417\Q_INV=32'11111100011111111101111111111111..
+Finding unused cells or wires in module \ntt_stage_8_registered..
+
+11.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod\mod_add\Q=8380417.
+Optimizing module $paramod\mod_sub\Q=8380417.
+Optimizing module $paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111.
+Optimizing module $paramod\ntt_butterfly\Q=8380417\Q_INV=32'11111100011111111101111111111111.
+Optimizing module $paramod\ntt_stage_2\Q=8380417\Q_INV=32'11111100011111111101111111111111.
+Optimizing module $paramod\ntt_stage_4\Q=8380417\Q_INV=32'11111100011111111101111111111111.
+Optimizing module $paramod\ntt_stage_8\Q=8380417\Q_INV=32'11111100011111111101111111111111.
+Optimizing module ntt_stage_8_registered.
+
+11.16. Finished OPT passes. (There is nothing left to do.)
+
+12. Executing MEMORY pass.
+
+12.1. Executing MEMORY_DFF pass (merging $dff cells to $memrd and $memwr).
+
+12.2. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod\mod_add\Q=8380417..
+Finding unused cells or wires in module $paramod\mod_sub\Q=8380417..
+Finding unused cells or wires in module $paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111..
+Finding unused cells or wires in module $paramod\ntt_butterfly\Q=8380417\Q_INV=32'11111100011111111101111111111111..
+Finding unused cells or wires in module $paramod\ntt_stage_2\Q=8380417\Q_INV=32'11111100011111111101111111111111..
+Finding unused cells or wires in module $paramod\ntt_stage_4\Q=8380417\Q_INV=32'11111100011111111101111111111111..
+Finding unused cells or wires in module $paramod\ntt_stage_8\Q=8380417\Q_INV=32'11111100011111111101111111111111..
+Finding unused cells or wires in module \ntt_stage_8_registered..
+
+12.3. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+12.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod\mod_add\Q=8380417..
+Finding unused cells or wires in module $paramod\mod_sub\Q=8380417..
+Finding unused cells or wires in module $paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111..
+Finding unused cells or wires in module $paramod\ntt_butterfly\Q=8380417\Q_INV=32'11111100011111111101111111111111..
+Finding unused cells or wires in module $paramod\ntt_stage_2\Q=8380417\Q_INV=32'11111100011111111101111111111111..
+Finding unused cells or wires in module $paramod\ntt_stage_4\Q=8380417\Q_INV=32'11111100011111111101111111111111..
+Finding unused cells or wires in module $paramod\ntt_stage_8\Q=8380417\Q_INV=32'11111100011111111101111111111111..
+Finding unused cells or wires in module \ntt_stage_8_registered..
+
+12.5. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+12.6. Executing MEMORY_MAP pass (converting $mem cells to logic and flip-flops).
+
+13. Executing OPT pass (performing simple optimizations).
+
+13.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod\mod_add\Q=8380417.
+Optimizing module $paramod\mod_sub\Q=8380417.
+Optimizing module $paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111.
+Optimizing module $paramod\ntt_butterfly\Q=8380417\Q_INV=32'11111100011111111101111111111111.
+Optimizing module $paramod\ntt_stage_2\Q=8380417\Q_INV=32'11111100011111111101111111111111.
+Optimizing module $paramod\ntt_stage_4\Q=8380417\Q_INV=32'11111100011111111101111111111111.
+Optimizing module $paramod\ntt_stage_8\Q=8380417\Q_INV=32'11111100011111111101111111111111.
+Optimizing module ntt_stage_8_registered.
+
+13.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod\mod_add\Q=8380417'.
+Finding identical cells in module `$paramod\mod_sub\Q=8380417'.
+Finding identical cells in module `$paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111'.
+Finding identical cells in module `$paramod\ntt_butterfly\Q=8380417\Q_INV=32'11111100011111111101111111111111'.
+Finding identical cells in module `$paramod\ntt_stage_2\Q=8380417\Q_INV=32'11111100011111111101111111111111'.
+Finding identical cells in module `$paramod\ntt_stage_4\Q=8380417\Q_INV=32'11111100011111111101111111111111'.
+Finding identical cells in module `$paramod\ntt_stage_8\Q=8380417\Q_INV=32'11111100011111111101111111111111'.
+Finding identical cells in module `\ntt_stage_8_registered'.
+Removed a total of 0 cells.
+
+13.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module $paramod\mod_add\Q=8380417..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\mod_sub\Q=8380417..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\ntt_butterfly\Q=8380417\Q_INV=32'11111100011111111101111111111111..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module $paramod\ntt_stage_2\Q=8380417\Q_INV=32'11111100011111111101111111111111..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module $paramod\ntt_stage_4\Q=8380417\Q_INV=32'11111100011111111101111111111111..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module $paramod\ntt_stage_8\Q=8380417\Q_INV=32'11111100011111111101111111111111..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \ntt_stage_8_registered..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+<suppressed ~3 debug messages>
+
+13.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module $paramod\mod_add\Q=8380417.
+  Optimizing cells in module $paramod\mod_sub\Q=8380417.
+  Optimizing cells in module $paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111.
+  Optimizing cells in module $paramod\ntt_butterfly\Q=8380417\Q_INV=32'11111100011111111101111111111111.
+  Optimizing cells in module $paramod\ntt_stage_2\Q=8380417\Q_INV=32'11111100011111111101111111111111.
+  Optimizing cells in module $paramod\ntt_stage_4\Q=8380417\Q_INV=32'11111100011111111101111111111111.
+  Optimizing cells in module $paramod\ntt_stage_8\Q=8380417\Q_INV=32'11111100011111111101111111111111.
+  Optimizing cells in module \ntt_stage_8_registered.
+Performed a total of 0 changes.
+
+13.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod\mod_add\Q=8380417'.
+Finding identical cells in module `$paramod\mod_sub\Q=8380417'.
+Finding identical cells in module `$paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111'.
+Finding identical cells in module `$paramod\ntt_butterfly\Q=8380417\Q_INV=32'11111100011111111101111111111111'.
+Finding identical cells in module `$paramod\ntt_stage_2\Q=8380417\Q_INV=32'11111100011111111101111111111111'.
+Finding identical cells in module `$paramod\ntt_stage_4\Q=8380417\Q_INV=32'11111100011111111101111111111111'.
+Finding identical cells in module `$paramod\ntt_stage_8\Q=8380417\Q_INV=32'11111100011111111101111111111111'.
+Finding identical cells in module `\ntt_stage_8_registered'.
+Removed a total of 0 cells.
+
+13.6. Executing OPT_RMDFF pass (remove dff with constant values).
+
+13.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod\mod_add\Q=8380417..
+Finding unused cells or wires in module $paramod\mod_sub\Q=8380417..
+Finding unused cells or wires in module $paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111..
+Finding unused cells or wires in module $paramod\ntt_butterfly\Q=8380417\Q_INV=32'11111100011111111101111111111111..
+Finding unused cells or wires in module $paramod\ntt_stage_2\Q=8380417\Q_INV=32'11111100011111111101111111111111..
+Finding unused cells or wires in module $paramod\ntt_stage_4\Q=8380417\Q_INV=32'11111100011111111101111111111111..
+Finding unused cells or wires in module $paramod\ntt_stage_8\Q=8380417\Q_INV=32'11111100011111111101111111111111..
+Finding unused cells or wires in module \ntt_stage_8_registered..
+
+13.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod\mod_add\Q=8380417.
+Optimizing module $paramod\mod_sub\Q=8380417.
+Optimizing module $paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111.
+Optimizing module $paramod\ntt_butterfly\Q=8380417\Q_INV=32'11111100011111111101111111111111.
+Optimizing module $paramod\ntt_stage_2\Q=8380417\Q_INV=32'11111100011111111101111111111111.
+Optimizing module $paramod\ntt_stage_4\Q=8380417\Q_INV=32'11111100011111111101111111111111.
+Optimizing module $paramod\ntt_stage_8\Q=8380417\Q_INV=32'11111100011111111101111111111111.
+Optimizing module ntt_stage_8_registered.
+
+13.9. Finished OPT passes. (There is nothing left to do.)
+
+14. Executing CHECK pass (checking for obvious problems).
+checking module $paramod\mod_add\Q=8380417..
+checking module $paramod\mod_sub\Q=8380417..
+checking module $paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111..
+checking module $paramod\ntt_butterfly\Q=8380417\Q_INV=32'11111100011111111101111111111111..
+checking module $paramod\ntt_stage_2\Q=8380417\Q_INV=32'11111100011111111101111111111111..
+checking module $paramod\ntt_stage_4\Q=8380417\Q_INV=32'11111100011111111101111111111111..
+checking module $paramod\ntt_stage_8\Q=8380417\Q_INV=32'11111100011111111101111111111111..
+checking module ntt_stage_8_registered..
+found and reported 0 problems.
+
+15. Printing statistics.
+
+=== $paramod\mod_add\Q=8380417 ===
+
+   Number of wires:                  6
+   Number of wire bits:            162
+   Number of public wires:           4
+   Number of public wire bits:     129
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  4
+     $add                            1
+     $ge                             1
+     $mux                            1
+     $sub                            1
+
+=== $paramod\mod_sub\Q=8380417 ===
+
+   Number of wires:                  7
+   Number of wire bits:            193
+   Number of public wires:           5
+   Number of public wire bits:     160
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  5
+     $add                            1
+     $lt                             1
+     $mux                            1
+     $sub                            2
+
+=== $paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111 ===
+
+   Number of wires:                 11
+   Number of wire bits:            417
+   Number of public wires:           9
+   Number of public wire bits:     384
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  7
+     $add                            1
+     $ge                             1
+     $mul                            3
+     $mux                            1
+     $sub                            1
+
+=== $paramod\ntt_butterfly\Q=8380417\Q_INV=32'11111100011111111101111111111111 ===
+
+   Number of wires:                  6
+   Number of wire bits:            192
+   Number of public wires:           6
+   Number of public wire bits:     192
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  3
+     $paramod\mod_add\Q=8380417      1
+     $paramod\mod_sub\Q=8380417      1
+     $paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111      1
+
+=== $paramod\ntt_stage_2\Q=8380417\Q_INV=32'11111100011111111101111111111111 ===
+
+   Number of wires:                  5
+   Number of wire bits:            160
+   Number of public wires:           5
+   Number of public wire bits:     160
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  1
+     $paramod\ntt_butterfly\Q=8380417\Q_INV=32'11111100011111111101111111111111      1
+
+=== $paramod\ntt_stage_4\Q=8380417\Q_INV=32'11111100011111111101111111111111 ===
+
+   Number of wires:                 10
+   Number of wire bits:            320
+   Number of public wires:          10
+   Number of public wire bits:     320
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  2
+     $paramod\ntt_stage_2\Q=8380417\Q_INV=32'11111100011111111101111111111111      2
+
+=== $paramod\ntt_stage_8\Q=8380417\Q_INV=32'11111100011111111101111111111111 ===
+
+   Number of wires:                 20
+   Number of wire bits:            640
+   Number of public wires:          20
+   Number of public wire bits:     640
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  2
+     $paramod\ntt_stage_4\Q=8380417\Q_INV=32'11111100011111111101111111111111      2
+
+=== ntt_stage_8_registered ===
+
+   Number of wires:                 30
+   Number of wire bits:            898
+   Number of public wires:          30
+   Number of public wire bits:     898
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  9
+     $adff                           8
+     $paramod\ntt_stage_8\Q=8380417\Q_INV=32'11111100011111111101111111111111      1
+
+=== design hierarchy ===
+
+   ntt_stage_8_registered            1
+     $paramod\ntt_stage_8\Q=8380417\Q_INV=32'11111100011111111101111111111111      1
+       $paramod\ntt_stage_4\Q=8380417\Q_INV=32'11111100011111111101111111111111      2
+         $paramod\ntt_stage_2\Q=8380417\Q_INV=32'11111100011111111101111111111111      2
+           $paramod\ntt_butterfly\Q=8380417\Q_INV=32'11111100011111111101111111111111      1
+             $paramod\mod_add\Q=8380417      1
+             $paramod\mod_sub\Q=8380417      1
+             $paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111      1
+
+   Number of wires:                210
+   Number of wire bits:           6674
+   Number of public wires:         186
+   Number of public wire bits:    6278
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 72
+     $add                           12
+     $adff                           8
+     $ge                             8
+     $lt                             4
+     $mul                           12
+     $mux                           12
+     $sub                           16
+
+End of script. Logfile hash: f841accd25
+CPU: user 0.10s system 0.00s, MEM: 16.39 MB total, 10.70 MB resident
+Yosys 0.9 (git sha1 1979e0b)
+Time spent: 38% 5x opt_clean (0 sec), 15% 5x opt_expr (0 sec), ...
