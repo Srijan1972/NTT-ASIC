@@ -356,11 +356,10 @@ Next functional step:
 
 Create and test a tiny NTT stage before building the full controller.
 
-Planned files:
+Test-first files created:
 
 - `sim/tb_ntt_stage_2.sv`
 - `scripts/run_ntt_stage_2_tb.sh`
-- `rtl/ntt_stage_2.sv`
 
 This stage will use one verified butterfly to process two inputs:
 
@@ -369,6 +368,41 @@ out0, out1 = butterfly(in0, in1, twiddle)
 ```
 
 This is the smallest useful NTT datapath stage and avoids jumping straight into the full controller.
+
+The test-first run produced the expected missing-RTL failure:
+
+```text
+rtl/ntt_stage_2.sv: No such file or directory
+sim/tb_ntt_stage_2.sv:17: error: Unknown module type: ntt_stage_2
+```
+
+Then `rtl/ntt_stage_2.sv` was created. It wraps one verified `ntt_butterfly` instance:
+
+```text
+out0, out1 = butterfly(in0, in1, twiddle)
+```
+
+Current next step: run `./scripts/run_ntt_stage_2_tb.sh` and expect `PASS: tb_ntt_stage_2`.
+
+Verified by user from WSL:
+
+```text
+PASS: tb_ntt_stage_2
+```
+
+## Current next step
+
+Next functional step:
+
+Create and test a tiny 4-point NTT datapath block before building the controller.
+
+Planned files:
+
+- `sim/tb_ntt_stage_4.sv`
+- `scripts/run_ntt_stage_4_tb.sh`
+- `rtl/ntt_stage_4.sv`
+
+The 4-point block will use two 2-point/butterfly-style operations so we can verify composition before moving to a full NTT controller.
 
 ## Final PDF goal
 
