@@ -34,6 +34,8 @@ module ntt_core_8 #(
   wire [31:0] stage_out5;
   wire [31:0] stage_out6;
   wire [31:0] stage_out7;
+  reg stage_start;
+  wire stage_done;
 
   assign read_data = data_mem[read_addr];
 
@@ -41,6 +43,9 @@ module ntt_core_8 #(
     .Q(Q),
     .Q_INV(Q_INV)
   ) stage8_inst (
+    .clk(clk),
+    .rst_n(rst_n),
+    .start(stage_start),
     .in0(data_mem[0]),
     .in1(data_mem[1]),
     .in2(data_mem[2]),
@@ -60,7 +65,8 @@ module ntt_core_8 #(
     .out4(stage_out4),
     .out5(stage_out5),
     .out6(stage_out6),
-    .out7(stage_out7)
+    .out7(stage_out7),
+    .done(stage_done)
   );
 
   integer i;
@@ -70,6 +76,7 @@ module ntt_core_8 #(
       state <= STATE_IDLE;
       busy <= 0;
       done <= 0;
+      stage_start <= 0;
       for (i = 0; i < 8; i = i + 1) begin
         data_mem[i] <= 0;
       end
@@ -77,6 +84,7 @@ module ntt_core_8 #(
         twiddle_mem[i] <= 0;
       end
     end else begin
+      stage_start <= 0;
       case (state)
         STATE_IDLE: begin
           busy <= 0;
@@ -92,22 +100,25 @@ module ntt_core_8 #(
 
           if (start) begin
             busy <= 1;
+            stage_start <= 1;
             state <= STATE_RUN;
           end
         end
 
         STATE_RUN: begin
-          data_mem[0] <= stage_out0;
-          data_mem[1] <= stage_out1;
-          data_mem[2] <= stage_out2;
-          data_mem[3] <= stage_out3;
-          data_mem[4] <= stage_out4;
-          data_mem[5] <= stage_out5;
-          data_mem[6] <= stage_out6;
-          data_mem[7] <= stage_out7;
-          busy <= 0;
-          done <= 1;
-          state <= STATE_DONE;
+          if (stage_done) begin
+            data_mem[0] <= stage_out0;
+            data_mem[1] <= stage_out1;
+            data_mem[2] <= stage_out2;
+            data_mem[3] <= stage_out3;
+            data_mem[4] <= stage_out4;
+            data_mem[5] <= stage_out5;
+            data_mem[6] <= stage_out6;
+            data_mem[7] <= stage_out7;
+            busy <= 0;
+            done <= 1;
+            state <= STATE_DONE;
+          end
         end
 
         STATE_DONE: begin
@@ -123,6 +134,7 @@ module ntt_core_8 #(
           state <= STATE_IDLE;
           busy <= 0;
           done <= 0;
+          stage_start <= 0;
         end
       endcase
     end

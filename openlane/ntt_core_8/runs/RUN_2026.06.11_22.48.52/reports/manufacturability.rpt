@@ -1,0 +1,19 @@
+Design Name: ntt_core_8
+Run Directory: /Users/jui-teng/nyu/NTT-ASIC/openlane/ntt_core_8/runs/RUN_2026.06.11_22.48.52
+----------------------------------------
+
+Magic DRC Summary:
+Source: /Users/jui-teng/nyu/NTT-ASIC/openlane/ntt_core_8/runs/RUN_2026.06.11_22.48.52/reports/signoff/drc.rpt
+Total Magic DRC violations is 0
+----------------------------------------
+
+LVS Summary:
+Source: /Users/jui-teng/nyu/NTT-ASIC/openlane/ntt_core_8/runs/RUN_2026.06.11_22.48.52/logs/signoff/39-ntt_core_8.lef.lvs.log
+Number of nets: 16599                      |Number of nets: 16599                      
+Design is LVS clean.
+----------------------------------------
+
+Antenna Summary:
+Source: /Users/jui-teng/nyu/NTT-ASIC/openlane/ntt_core_8/runs/RUN_2026.06.11_22.48.52/logs/signoff/41-arc.log
+Pin violations: 92
+Net violations: 75

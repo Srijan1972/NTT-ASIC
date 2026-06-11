@@ -1,0 +1,27 @@
+
+54. Printing statistics.
+
+=== ntt_core_8 ===
+
+   Number of wires:              10727
+   Number of wire bits:          13735
+   Number of public wires:         119
+   Number of public wire bits:    2878
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:              13646
+     $_ANDNOT_                    3493
+     $_AND_                        559
+     $_DFFE_PN0P_                 2212
+     $_DFF_PN0_                     29
+     $_DFF_PN1_                      4
+     $_MUX_                       1127
+     $_NAND_                       569
+     $_NOR_                       1176
+     $_NOT_                        683
+     $_ORNOT_                      425
+     $_OR_                        1549
+     $_XNOR_                       432
+     $_XOR_                       1388
+

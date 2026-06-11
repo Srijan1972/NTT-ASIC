@@ -16,6 +16,7 @@ set ::env(VERILOG_FILES) [list \
 
 set ::env(CLOCK_PORT) clk
 set ::env(CLOCK_PERIOD) 10.000
+set ::env(SYNTH_STRATEGY) "DELAY 0"
 
 # Conservative starter values for an exploratory run.
 # The OpenLane owner should tune these for the selected PDK and utilization target.

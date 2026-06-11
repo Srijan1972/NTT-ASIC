@@ -1,0 +1,51 @@
+CVC: Log output to /Users/jui-teng/nyu/NTT-ASIC/openlane/ntt_core_8/runs/RUN_2026.06.11_22.48.52/reports/signoff/ntt_core_8.rpt
+CVC: Error output to /Users/jui-teng/nyu/NTT-ASIC/openlane/ntt_core_8/runs/RUN_2026.06.11_22.48.52/reports/signoff/ntt_core_8.rpt.error.gz
+CVC: Debug output to /Users/jui-teng/nyu/NTT-ASIC/openlane/ntt_core_8/runs/RUN_2026.06.11_22.48.52/reports/signoff/ntt_core_8.rpt.debug.gz
+CVC: Circuit Validation Check  Version 1.1.4
+CVC: Start: Thu Jun 11 23:04:07 2026
+
+Using the following parameters for CVC (Circuit Validation Check) from /Users/jui-teng/.ciel/sky130A/libs.tech/openlane/cvc/cvcrc
+CVC_TOP = 'ntt_core_8'
+CVC_NETLIST = '/Users/jui-teng/nyu/NTT-ASIC/openlane/ntt_core_8/runs/RUN_2026.06.11_22.48.52/tmp/signoff/ntt_core_8.cdl'
+CVC_MODE = 'ntt_core_8'
+CVC_MODEL_FILE = '/Users/jui-teng/.ciel/sky130A/libs.tech/openlane/cvc/models'
+CVC_POWER_FILE = '/Users/jui-teng/nyu/NTT-ASIC/openlane/ntt_core_8/runs/RUN_2026.06.11_22.48.52/tmp/signoff/ntt_core_8.power'
+CVC_FUSE_FILE = ''
+CVC_REPORT_FILE = '/Users/jui-teng/nyu/NTT-ASIC/openlane/ntt_core_8/runs/RUN_2026.06.11_22.48.52/reports/signoff/ntt_core_8.rpt'
+CVC_REPORT_TITLE = 'CVC $CVC_TOP'
+CVC_CIRCUIT_ERROR_LIMIT = '100'
+CVC_SEARCH_LIMIT = '100'
+CVC_LEAK_LIMIT = '0.0002'
+CVC_SOI = 'false'
+CVC_SCRC = 'false'
+CVC_VTH_GATES = 'false'
+CVC_MIN_VTH_GATES = 'false'
+CVC_IGNORE_VTH_FLOATING = 'false'
+CVC_IGNORE_NO_LEAK_FLOATING = 'false'
+CVC_LEAK_OVERVOLTAGE = 'true'
+CVC_LOGIC_DIODES = 'false'
+CVC_ANALOG_GATES = 'true'
+CVC_BACKUP_RESULTS = 'false'
+CVC_MOS_DIODE_ERROR_THRESHOLD = '0'
+CVC_SHORT_ERROR_THRESHOLD = '0'
+CVC_BIAS_ERROR_THRESHOLD = '0'
+CVC_FORWARD_ERROR_THRESHOLD = '0'
+CVC_FLOATING_ERROR_THRESHOLD = '0'
+CVC_GATE_ERROR_THRESHOLD = '0'
+CVC_LEAK?_ERROR_THRESHOLD = '0'
+CVC_EXPECTED_ERROR_THRESHOLD = '0'
+CVC_OVERVOLTAGE_ERROR_THRESHOLD = '0'
+CVC_PARALLEL_CIRCUIT_PORT_LIMIT = '0'
+CVC_CELL_ERROR_LIMIT_FILE = ''
+CVC_CELL_CHECKSUM_FILE = ''
+CVC_LARGE_CIRCUIT_SIZE = '10000000'
+CVC_NET_CHECK_FILE = ''
+CVC_MODEL_CHECK_FILE = ''
+End of parameters
+
+CVC: Reading device model settings...
+CVC: Reading power settings...
+CVC: Parsing netlist /Users/jui-teng/nyu/NTT-ASIC/openlane/ntt_core_8/runs/RUN_2026.06.11_22.48.52/tmp/signoff/ntt_core_8.cdl
+Cdl fixed data size 1222511
+Usage CDL: Time: 0  Memory: 87416  I/O: 4  Swap: 0
+CVC: Counting and linking...
