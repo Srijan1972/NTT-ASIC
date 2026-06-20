@@ -2,35 +2,12 @@
 #include "kyber-tables.h"
 #include <hls_stream.h>
 
-// ============================================================================
-// DATAFLOW restructure of kyber_mult.
-//
-// Old top ran load -> fwd -> basemul -> inv -> store strictly serially per
-// batch element (1447 cyc synth = sum of all five phases). fwd_ntt2 (443) and
-// inv_ntt (447) are SEPARATE hardware instances, so in the serial schedule one
-// sits idle while the other runs.
-//
-// New top makes the five phases concurrent dataflow stages, each looping over
-// the batch internally, connected by streams. Steady-state interval collapses
-// to the SLOWEST stage (inv_ntt ~447) instead of the sum. Per-multiply drops
-// toward ~479 cyc synth, ~3x.
-//
-// Inter-stage transfer is WIDE: KLANES = 2*KP = 16 coefficients per beat (one
-// beat hits all 16 cyclic banks), so a 256-coeff polynomial moves in 16 beats,
-// not 256. Copy overhead per stage ~16 cyc instead of ~256 -> nearly free.
-//
-// COMPUTE CORE BELOW IS UNCHANGED from the working bit-exact kernel. Only the
-// streaming wrappers + top-level dataflow are new.
-// ============================================================================
 
 #define KLANES   (2*KP)        // 16 coeffs per beat (matches cyclic-2P banking)
 #define KBEATS   (KN/KLANES)   // 16 beats per polynomial
 
-// One transfer beat = KLANES coefficients. Plain struct (no ap_uint packing) so
-// the native g++ test build still compiles without ap_int packing headers.
 struct kbeat_t { kcoef_t lane[KLANES]; };
 
-// ---- baked-constant Barrett: r = x*w mod q, mw = floor(w*2^K / q) precomputed ----
 static inline kdata_t cbarrett(kdata_t x, uint32_t w, uint32_t mw){
 #pragma HLS INLINE
     uint64_t xm = (uint64_t)x * mw;
@@ -51,7 +28,7 @@ static inline kdata_t subm(kdata_t a, kdata_t b){
 #pragma HLS INLINE
     return (a>=b)?(kdata_t)(a-b):(kdata_t)(a+KQ-b);
 }
-static inline kdata_t mulm(kdata_t a, kdata_t b){      // general mul mod q, NO divider
+static inline kdata_t mulm(kdata_t a, kdata_t b){    
 #pragma HLS INLINE
     uint32_t x = (uint32_t)a*b;
 #pragma HLS BIND_OP variable=x op=mul impl=dsp latency=2
@@ -65,7 +42,6 @@ static inline kdata_t mulm(kdata_t a, kdata_t b){      // general mul mod q, NO 
     return (kdata_t)r;
 }
 
-// Dual forward stage: transform sA/sB in the SAME pipelined iteration.
 template<int LEN>
 static void fwd_stage2_t(const kcoef_t sA[KN], kcoef_t dA[KN],
                          const kcoef_t sB[KN], kcoef_t dB[KN], int s){
@@ -132,7 +108,6 @@ static void inv_ntt(kcoef_t buf[KN]){
         buf[i]=mulm(tmp[i], KNINV);
     }
 }
-// Kyber 2x2 base multiply (mod x^2 - zeta), P pairs per cycle.
 static void basemul(const kcoef_t A[KN], const kcoef_t B[KN], kcoef_t C[KN]){
 #pragma HLS INLINE off
     BM: for(int i=0;i<KN/2;i+=KP){
@@ -148,12 +123,6 @@ static void basemul(const kcoef_t A[KN], const kcoef_t B[KN], kcoef_t C[KN]){
     }
 }
 
-// ============================================================================
-// Streaming dataflow stages. Each loops over the batch internally; the batch
-// pipeline overlaps stage N of element k with stage N-1 of element k+1.
-// ============================================================================
-
-// Stage 1: DDR -> streams. Packs KLANES consecutive coeffs per beat.
 static void load_all(const kdata_t* a, const kdata_t* b,
                      hls::stream<kbeat_t>& sA, hls::stream<kbeat_t>& sB,
                      int batch){
@@ -174,7 +143,6 @@ static void load_all(const kdata_t* a, const kdata_t* b,
     }
 }
 
-// Stage 2: forward NTT of both polynomials.
 static void fwd_all(hls::stream<kbeat_t>& sA_in, hls::stream<kbeat_t>& sB_in,
                     hls::stream<kbeat_t>& sA_out, hls::stream<kbeat_t>& sB_out,
                     int batch){
@@ -207,7 +175,6 @@ static void fwd_all(hls::stream<kbeat_t>& sA_in, hls::stream<kbeat_t>& sB_in,
     }
 }
 
-// Stage 3: 2x2 base multiply -> C.
 static void basemul_all(hls::stream<kbeat_t>& sA_in, hls::stream<kbeat_t>& sB_in,
                         hls::stream<kbeat_t>& sC_out, int batch){
 #pragma HLS INLINE off
@@ -239,7 +206,6 @@ static void basemul_all(hls::stream<kbeat_t>& sA_in, hls::stream<kbeat_t>& sB_in
     }
 }
 
-// Stage 4: inverse NTT (in place on C) + 1/N scale.
 static void inv_all(hls::stream<kbeat_t>& sC_in, hls::stream<kbeat_t>& sC_out,
                     int batch){
 #pragma HLS INLINE off
@@ -268,7 +234,6 @@ static void inv_all(hls::stream<kbeat_t>& sC_in, hls::stream<kbeat_t>& sC_out,
     }
 }
 
-// Stage 5: streams -> DDR.
 static void store_all(hls::stream<kbeat_t>& sC_in, kdata_t* c, int batch){
 #pragma HLS INLINE off
     ST_BLK: for(int blk=0; blk<batch; ++blk){
@@ -297,12 +262,10 @@ void kyber_mult(kdata_t *a, kdata_t *b, kdata_t *c, int batch_size){
 #pragma HLS INTERFACE s_axilite port=return bundle=control
 
 #pragma HLS DATAFLOW
-    // Channels. Depth = 2 polynomials of beats so a producer can run a full
-    // polynomial ahead without stalling -> keeps the pipeline full.
-    hls::stream<kbeat_t> sA0, sB0;   // load -> fwd
-    hls::stream<kbeat_t> sA1, sB1;   // fwd  -> basemul
-    hls::stream<kbeat_t> sC0;        // basemul -> inv
-    hls::stream<kbeat_t> sC1;        // inv  -> store
+    hls::stream<kbeat_t> sA0, sB0;   
+    hls::stream<kbeat_t> sA1, sB1;   
+    hls::stream<kbeat_t> sC0;        
+    hls::stream<kbeat_t> sC1;      
 #pragma HLS STREAM variable=sA0 depth=32
 #pragma HLS STREAM variable=sB0 depth=32
 #pragma HLS STREAM variable=sA1 depth=32
