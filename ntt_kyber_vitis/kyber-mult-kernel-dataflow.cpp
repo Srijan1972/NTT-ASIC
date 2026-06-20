@@ -3,8 +3,8 @@
 #include <hls_stream.h>
 
 
-#define KLANES   (2*KP)        // 16 coeffs per beat (matches cyclic-2P banking)
-#define KBEATS   (KN/KLANES)   // 16 beats per polynomial
+#define KLANES   (2*KP)        
+#define KBEATS   (KN/KLANES)   
 
 struct kbeat_t { kcoef_t lane[KLANES]; };
 
