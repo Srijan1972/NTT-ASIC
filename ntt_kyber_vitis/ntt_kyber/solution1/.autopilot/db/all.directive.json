@@ -1,0 +1,44 @@
+[
+  {
+    "functionLabel": "",
+    "functionName": "kyber_mult",
+    "id": 0,
+    "ifcond": "",
+    "insert_position": "",
+    "label": "",
+    "pragma": {
+      "name": "TOP",
+      "option": [
+        {
+          "name": "name",
+          "value": "kyber_mult"
+        }
+      ]
+    },
+    "slx": false,
+    "sourceFile": "/home/ak13118/ntt_kyber_vitis/ntt_kyber/solution1/directives.tcl",
+    "sourceLine": 7,
+    "success": true
+  },
+  {
+    "functionLabel": "",
+    "functionName": "kyber_mult",
+    "id": 1,
+    "ifcond": "",
+    "insert_position": "",
+    "label": "",
+    "pragma": {
+      "name": "TOP",
+      "option": [
+        {
+          "name": "name",
+          "value": "kyber_mult"
+        }
+      ]
+    },
+    "slx": false,
+    "sourceFile": "/home/ak13118/ntt_kyber_vitis/ntt_kyber/solution1/csynth.tcl",
+    "sourceLine": 18,
+    "success": true
+  }
+]

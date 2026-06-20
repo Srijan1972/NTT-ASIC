@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="kyber-mult-kernel.h" path="/home/ak13118/ntt_kyber_vitis/kyber-mult-kernel.h"/>
+    <originFiles name="kyber-tables.h" path="/home/ak13118/ntt_kyber_vitis/kyber-tables.h"/>
+  </source>
+  <testbench>
+    <originFiles name="kyber-test.cpp" path="/home/ak13118/ntt_kyber_vitis/kyber-test.cpp"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

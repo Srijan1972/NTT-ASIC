@@ -1,0 +1,239 @@
+
+
+================================================================
+== Vitis HLS Report for 'fwd_all_Pipeline_FW_RD'
+================================================================
+* Date:           Thu Jun 11 23:16:34 2026
+
+* Version:        2023.2 (Build 4023990 on Oct 11 2023)
+* Project:        ntt_kyber
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynquplus
+* Target device:  xck26-sfvc784-2LV-c
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  2.575 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |       18|       18|  0.180 us|  0.180 us|   18|   18|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------+---------+---------+----------+-----------+-----------+------+----------+
+        |          |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        | Loop Name|   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------+---------+---------+----------+-----------+-----------+------+----------+
+        |- FW_RD   |       16|       16|         2|          1|          1|    16|       yes|
+        +----------+---------+---------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 2
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 2
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 2
+* Pipeline : 1
+  Pipeline-0 : II = 1, D = 2, States = { 1 2 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.64>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%w = alloca i32 1" [kyber-mult-kernel-dataflow.cpp:187]   --->   Operation 5 'alloca' 'w' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i192 %sA0, void @empty_163, i32 0, i32 0, void @empty_246, i32 0, i32 0, void @empty_246, void @empty_246, void @empty_246, i32 0, i32 0, i32 0, i32 0, void @empty_246, void @empty_246, i32 4294967295, i32 0"   --->   Operation 6 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i192 %sB0, void @empty_163, i32 0, i32 0, void @empty_246, i32 0, i32 0, void @empty_246, void @empty_246, void @empty_246, i32 0, i32 0, i32 0, i32 0, void @empty_246, void @empty_246, i32 4294967295, i32 0"   --->   Operation 7 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (0.42ns)   --->   "%store_ln187 = store i5 0, i5 %w" [kyber-mult-kernel-dataflow.cpp:187]   --->   Operation 8 'store' 'store_ln187' <Predicate = true> <Delay = 0.42>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%br_ln0 = br void %VITIS_LOOP_190_1"   --->   Operation 9 'br' 'br_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%w_58 = load i5 %w" [kyber-mult-kernel-dataflow.cpp:187]   --->   Operation 10 'load' 'w_58' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (0.78ns)   --->   "%icmp_ln187 = icmp_eq  i5 %w_58, i5 16" [kyber-mult-kernel-dataflow.cpp:187]   --->   Operation 11 'icmp' 'icmp_ln187' <Predicate = true> <Delay = 0.78> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 12 [1/1] (0.78ns)   --->   "%add_ln187 = add i5 %w_58, i5 1" [kyber-mult-kernel-dataflow.cpp:187]   --->   Operation 12 'add' 'add_ln187' <Predicate = true> <Delay = 0.78> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%br_ln187 = br i1 %icmp_ln187, void %VITIS_LOOP_190_1.split, void %FW_WR.exitStub" [kyber-mult-kernel-dataflow.cpp:187]   --->   Operation 13 'br' 'br_ln187' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 14 [1/1] (0.42ns)   --->   "%store_ln187 = store i5 %add_ln187, i5 %w" [kyber-mult-kernel-dataflow.cpp:187]   --->   Operation 14 'store' 'store_ln187' <Predicate = (!icmp_ln187)> <Delay = 0.42>
+ST_1 : Operation 118 [1/1] (0.00ns)   --->   "%ret_ln0 = ret"   --->   Operation 118 'ret' 'ret_ln0' <Predicate = (icmp_ln187)> <Delay = 0.00>
+
+State 2 <SV = 1> <Delay = 2.57>
+ST_2 : Operation 15 [1/1] (0.00ns)   --->   "%zext_ln187 = zext i5 %w_58" [kyber-mult-kernel-dataflow.cpp:187]   --->   Operation 15 'zext' 'zext_ln187' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 16 [1/1] (0.00ns)   --->   "%specpipeline_ln188 = specpipeline void @_ssdm_op_SpecPipeline, i32 1, i32 0, i32 0, i32 0, void @empty_246" [kyber-mult-kernel-dataflow.cpp:188]   --->   Operation 16 'specpipeline' 'specpipeline_ln188' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 17 [1/1] (0.00ns)   --->   "%speclooptripcount_ln187 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 16, i64 16, i64 16" [kyber-mult-kernel-dataflow.cpp:187]   --->   Operation 17 'speclooptripcount' 'speclooptripcount_ln187' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 18 [1/1] (0.00ns)   --->   "%specloopname_ln187 = specloopname void @_ssdm_op_SpecLoopName, void @empty_164" [kyber-mult-kernel-dataflow.cpp:187]   --->   Operation 18 'specloopname' 'specloopname_ln187' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 19 [1/1] (1.89ns)   --->   "%sA0_read = read i192 @_ssdm_op_Read.ap_fifo.volatile.i192P0A, i192 %sA0" [kyber-mult-kernel-dataflow.cpp:189]   --->   Operation 19 'read' 'sA0_read' <Predicate = true> <Delay = 1.89> <CoreInst = "FIFO">   --->   Core 78 'FIFO' <Latency = 0> <II = 1> <Delay = 1.89> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 192> <Depth = 32> <FIFO>
+ST_2 : Operation 20 [1/1] (0.00ns)   --->   "%ba = trunc i192 %sA0_read" [kyber-mult-kernel-dataflow.cpp:189]   --->   Operation 20 'trunc' 'ba' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 21 [1/1] (0.00ns)   --->   "%ba_31 = partselect i12 @_ssdm_op_PartSelect.i12.i192.i32.i32, i192 %sA0_read, i32 12, i32 23" [kyber-mult-kernel-dataflow.cpp:189]   --->   Operation 21 'partselect' 'ba_31' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 22 [1/1] (0.00ns)   --->   "%ba_1 = partselect i12 @_ssdm_op_PartSelect.i12.i192.i32.i32, i192 %sA0_read, i32 24, i32 35" [kyber-mult-kernel-dataflow.cpp:189]   --->   Operation 22 'partselect' 'ba_1' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 23 [1/1] (0.00ns)   --->   "%ba_2 = partselect i12 @_ssdm_op_PartSelect.i12.i192.i32.i32, i192 %sA0_read, i32 36, i32 47" [kyber-mult-kernel-dataflow.cpp:189]   --->   Operation 23 'partselect' 'ba_2' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 24 [1/1] (0.00ns)   --->   "%ba_3 = partselect i12 @_ssdm_op_PartSelect.i12.i192.i32.i32, i192 %sA0_read, i32 48, i32 59" [kyber-mult-kernel-dataflow.cpp:189]   --->   Operation 24 'partselect' 'ba_3' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 25 [1/1] (0.00ns)   --->   "%ba_4 = partselect i12 @_ssdm_op_PartSelect.i12.i192.i32.i32, i192 %sA0_read, i32 60, i32 71" [kyber-mult-kernel-dataflow.cpp:189]   --->   Operation 25 'partselect' 'ba_4' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 26 [1/1] (0.00ns)   --->   "%ba_5 = partselect i12 @_ssdm_op_PartSelect.i12.i192.i32.i32, i192 %sA0_read, i32 72, i32 83" [kyber-mult-kernel-dataflow.cpp:189]   --->   Operation 26 'partselect' 'ba_5' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 27 [1/1] (0.00ns)   --->   "%ba_6 = partselect i12 @_ssdm_op_PartSelect.i12.i192.i32.i32, i192 %sA0_read, i32 84, i32 95" [kyber-mult-kernel-dataflow.cpp:189]   --->   Operation 27 'partselect' 'ba_6' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 28 [1/1] (0.00ns)   --->   "%ba_7 = partselect i12 @_ssdm_op_PartSelect.i12.i192.i32.i32, i192 %sA0_read, i32 96, i32 107" [kyber-mult-kernel-dataflow.cpp:189]   --->   Operation 28 'partselect' 'ba_7' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 29 [1/1] (0.00ns)   --->   "%ba_8 = partselect i12 @_ssdm_op_PartSelect.i12.i192.i32.i32, i192 %sA0_read, i32 108, i32 119" [kyber-mult-kernel-dataflow.cpp:189]   --->   Operation 29 'partselect' 'ba_8' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 30 [1/1] (0.00ns)   --->   "%ba_9 = partselect i12 @_ssdm_op_PartSelect.i12.i192.i32.i32, i192 %sA0_read, i32 120, i32 131" [kyber-mult-kernel-dataflow.cpp:189]   --->   Operation 30 'partselect' 'ba_9' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 31 [1/1] (0.00ns)   --->   "%ba_10 = partselect i12 @_ssdm_op_PartSelect.i12.i192.i32.i32, i192 %sA0_read, i32 132, i32 143" [kyber-mult-kernel-dataflow.cpp:189]   --->   Operation 31 'partselect' 'ba_10' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 32 [1/1] (0.00ns)   --->   "%ba_11 = partselect i12 @_ssdm_op_PartSelect.i12.i192.i32.i32, i192 %sA0_read, i32 144, i32 155" [kyber-mult-kernel-dataflow.cpp:189]   --->   Operation 32 'partselect' 'ba_11' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 33 [1/1] (0.00ns)   --->   "%ba_12 = partselect i12 @_ssdm_op_PartSelect.i12.i192.i32.i32, i192 %sA0_read, i32 156, i32 167" [kyber-mult-kernel-dataflow.cpp:189]   --->   Operation 33 'partselect' 'ba_12' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 34 [1/1] (0.00ns)   --->   "%ba_13 = partselect i12 @_ssdm_op_PartSelect.i12.i192.i32.i32, i192 %sA0_read, i32 168, i32 179" [kyber-mult-kernel-dataflow.cpp:189]   --->   Operation 34 'partselect' 'ba_13' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 35 [1/1] (0.00ns)   --->   "%ba_14 = partselect i12 @_ssdm_op_PartSelect.i12.i192.i32.i32, i192 %sA0_read, i32 180, i32 191" [kyber-mult-kernel-dataflow.cpp:189]   --->   Operation 35 'partselect' 'ba_14' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 36 [1/1] (1.89ns)   --->   "%sB0_read = read i192 @_ssdm_op_Read.ap_fifo.volatile.i192P0A, i192 %sB0" [kyber-mult-kernel-dataflow.cpp:189]   --->   Operation 36 'read' 'sB0_read' <Predicate = true> <Delay = 1.89> <CoreInst = "FIFO">   --->   Core 78 'FIFO' <Latency = 0> <II = 1> <Delay = 1.89> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 192> <Depth = 32> <FIFO>
+ST_2 : Operation 37 [1/1] (0.00ns)   --->   "%bb = trunc i192 %sB0_read" [kyber-mult-kernel-dataflow.cpp:189]   --->   Operation 37 'trunc' 'bb' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 38 [1/1] (0.00ns)   --->   "%bb_31 = partselect i12 @_ssdm_op_PartSelect.i12.i192.i32.i32, i192 %sB0_read, i32 12, i32 23" [kyber-mult-kernel-dataflow.cpp:189]   --->   Operation 38 'partselect' 'bb_31' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 39 [1/1] (0.00ns)   --->   "%bb_1 = partselect i12 @_ssdm_op_PartSelect.i12.i192.i32.i32, i192 %sB0_read, i32 24, i32 35" [kyber-mult-kernel-dataflow.cpp:189]   --->   Operation 39 'partselect' 'bb_1' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 40 [1/1] (0.00ns)   --->   "%bb_2 = partselect i12 @_ssdm_op_PartSelect.i12.i192.i32.i32, i192 %sB0_read, i32 36, i32 47" [kyber-mult-kernel-dataflow.cpp:189]   --->   Operation 40 'partselect' 'bb_2' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 41 [1/1] (0.00ns)   --->   "%bb_3 = partselect i12 @_ssdm_op_PartSelect.i12.i192.i32.i32, i192 %sB0_read, i32 48, i32 59" [kyber-mult-kernel-dataflow.cpp:189]   --->   Operation 41 'partselect' 'bb_3' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 42 [1/1] (0.00ns)   --->   "%bb_4 = partselect i12 @_ssdm_op_PartSelect.i12.i192.i32.i32, i192 %sB0_read, i32 60, i32 71" [kyber-mult-kernel-dataflow.cpp:189]   --->   Operation 42 'partselect' 'bb_4' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 43 [1/1] (0.00ns)   --->   "%bb_5 = partselect i12 @_ssdm_op_PartSelect.i12.i192.i32.i32, i192 %sB0_read, i32 72, i32 83" [kyber-mult-kernel-dataflow.cpp:189]   --->   Operation 43 'partselect' 'bb_5' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 44 [1/1] (0.00ns)   --->   "%bb_6 = partselect i12 @_ssdm_op_PartSelect.i12.i192.i32.i32, i192 %sB0_read, i32 84, i32 95" [kyber-mult-kernel-dataflow.cpp:189]   --->   Operation 44 'partselect' 'bb_6' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 45 [1/1] (0.00ns)   --->   "%bb_7 = partselect i12 @_ssdm_op_PartSelect.i12.i192.i32.i32, i192 %sB0_read, i32 96, i32 107" [kyber-mult-kernel-dataflow.cpp:189]   --->   Operation 45 'partselect' 'bb_7' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 46 [1/1] (0.00ns)   --->   "%bb_8 = partselect i12 @_ssdm_op_PartSelect.i12.i192.i32.i32, i192 %sB0_read, i32 108, i32 119" [kyber-mult-kernel-dataflow.cpp:189]   --->   Operation 46 'partselect' 'bb_8' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 47 [1/1] (0.00ns)   --->   "%bb_9 = partselect i12 @_ssdm_op_PartSelect.i12.i192.i32.i32, i192 %sB0_read, i32 120, i32 131" [kyber-mult-kernel-dataflow.cpp:189]   --->   Operation 47 'partselect' 'bb_9' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 48 [1/1] (0.00ns)   --->   "%bb_10 = partselect i12 @_ssdm_op_PartSelect.i12.i192.i32.i32, i192 %sB0_read, i32 132, i32 143" [kyber-mult-kernel-dataflow.cpp:189]   --->   Operation 48 'partselect' 'bb_10' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 49 [1/1] (0.00ns)   --->   "%bb_11 = partselect i12 @_ssdm_op_PartSelect.i12.i192.i32.i32, i192 %sB0_read, i32 144, i32 155" [kyber-mult-kernel-dataflow.cpp:189]   --->   Operation 49 'partselect' 'bb_11' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 50 [1/1] (0.00ns)   --->   "%bb_12 = partselect i12 @_ssdm_op_PartSelect.i12.i192.i32.i32, i192 %sB0_read, i32 156, i32 167" [kyber-mult-kernel-dataflow.cpp:189]   --->   Operation 50 'partselect' 'bb_12' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 51 [1/1] (0.00ns)   --->   "%bb_13 = partselect i12 @_ssdm_op_PartSelect.i12.i192.i32.i32, i192 %sB0_read, i32 168, i32 179" [kyber-mult-kernel-dataflow.cpp:189]   --->   Operation 51 'partselect' 'bb_13' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 52 [1/1] (0.00ns)   --->   "%bb_14 = partselect i12 @_ssdm_op_PartSelect.i12.i192.i32.i32, i192 %sB0_read, i32 180, i32 191" [kyber-mult-kernel-dataflow.cpp:189]   --->   Operation 52 'partselect' 'bb_14' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 53 [1/1] (0.00ns)   --->   "%A_addr = getelementptr i12 %A, i64 0, i64 %zext_ln187" [kyber-mult-kernel-dataflow.cpp:192]   --->   Operation 53 'getelementptr' 'A_addr' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 54 [1/1] (0.00ns)   --->   "%B_addr = getelementptr i12 %B, i64 0, i64 %zext_ln187" [kyber-mult-kernel-dataflow.cpp:193]   --->   Operation 54 'getelementptr' 'B_addr' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 55 [1/1] (0.00ns)   --->   "%A_1_addr = getelementptr i12 %A_1, i64 0, i64 %zext_ln187" [kyber-mult-kernel-dataflow.cpp:192]   --->   Operation 55 'getelementptr' 'A_1_addr' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 56 [1/1] (0.00ns)   --->   "%B_1_addr = getelementptr i12 %B_1, i64 0, i64 %zext_ln187" [kyber-mult-kernel-dataflow.cpp:193]   --->   Operation 56 'getelementptr' 'B_1_addr' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 57 [1/1] (0.00ns)   --->   "%A_2_addr = getelementptr i12 %A_2, i64 0, i64 %zext_ln187" [kyber-mult-kernel-dataflow.cpp:192]   --->   Operation 57 'getelementptr' 'A_2_addr' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 58 [1/1] (0.00ns)   --->   "%B_2_addr = getelementptr i12 %B_2, i64 0, i64 %zext_ln187" [kyber-mult-kernel-dataflow.cpp:193]   --->   Operation 58 'getelementptr' 'B_2_addr' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 59 [1/1] (0.00ns)   --->   "%A_3_addr = getelementptr i12 %A_3, i64 0, i64 %zext_ln187" [kyber-mult-kernel-dataflow.cpp:192]   --->   Operation 59 'getelementptr' 'A_3_addr' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 60 [1/1] (0.00ns)   --->   "%B_3_addr = getelementptr i12 %B_3, i64 0, i64 %zext_ln187" [kyber-mult-kernel-dataflow.cpp:193]   --->   Operation 60 'getelementptr' 'B_3_addr' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 61 [1/1] (0.00ns)   --->   "%A_4_addr = getelementptr i12 %A_4, i64 0, i64 %zext_ln187" [kyber-mult-kernel-dataflow.cpp:192]   --->   Operation 61 'getelementptr' 'A_4_addr' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 62 [1/1] (0.00ns)   --->   "%B_4_addr = getelementptr i12 %B_4, i64 0, i64 %zext_ln187" [kyber-mult-kernel-dataflow.cpp:193]   --->   Operation 62 'getelementptr' 'B_4_addr' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 63 [1/1] (0.00ns)   --->   "%A_5_addr = getelementptr i12 %A_5, i64 0, i64 %zext_ln187" [kyber-mult-kernel-dataflow.cpp:192]   --->   Operation 63 'getelementptr' 'A_5_addr' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 64 [1/1] (0.00ns)   --->   "%B_5_addr = getelementptr i12 %B_5, i64 0, i64 %zext_ln187" [kyber-mult-kernel-dataflow.cpp:193]   --->   Operation 64 'getelementptr' 'B_5_addr' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 65 [1/1] (0.00ns)   --->   "%A_6_addr = getelementptr i12 %A_6, i64 0, i64 %zext_ln187" [kyber-mult-kernel-dataflow.cpp:192]   --->   Operation 65 'getelementptr' 'A_6_addr' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 66 [1/1] (0.00ns)   --->   "%B_6_addr = getelementptr i12 %B_6, i64 0, i64 %zext_ln187" [kyber-mult-kernel-dataflow.cpp:193]   --->   Operation 66 'getelementptr' 'B_6_addr' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 67 [1/1] (0.00ns)   --->   "%A_7_addr = getelementptr i12 %A_7, i64 0, i64 %zext_ln187" [kyber-mult-kernel-dataflow.cpp:192]   --->   Operation 67 'getelementptr' 'A_7_addr' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 68 [1/1] (0.00ns)   --->   "%B_7_addr = getelementptr i12 %B_7, i64 0, i64 %zext_ln187" [kyber-mult-kernel-dataflow.cpp:193]   --->   Operation 68 'getelementptr' 'B_7_addr' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 69 [1/1] (0.00ns)   --->   "%A_8_addr = getelementptr i12 %A_8, i64 0, i64 %zext_ln187" [kyber-mult-kernel-dataflow.cpp:192]   --->   Operation 69 'getelementptr' 'A_8_addr' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 70 [1/1] (0.00ns)   --->   "%B_8_addr = getelementptr i12 %B_8, i64 0, i64 %zext_ln187" [kyber-mult-kernel-dataflow.cpp:193]   --->   Operation 70 'getelementptr' 'B_8_addr' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 71 [1/1] (0.00ns)   --->   "%A_9_addr = getelementptr i12 %A_9, i64 0, i64 %zext_ln187" [kyber-mult-kernel-dataflow.cpp:192]   --->   Operation 71 'getelementptr' 'A_9_addr' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 72 [1/1] (0.00ns)   --->   "%B_9_addr = getelementptr i12 %B_9, i64 0, i64 %zext_ln187" [kyber-mult-kernel-dataflow.cpp:193]   --->   Operation 72 'getelementptr' 'B_9_addr' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 73 [1/1] (0.00ns)   --->   "%A_10_addr = getelementptr i12 %A_10, i64 0, i64 %zext_ln187" [kyber-mult-kernel-dataflow.cpp:192]   --->   Operation 73 'getelementptr' 'A_10_addr' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 74 [1/1] (0.00ns)   --->   "%B_10_addr = getelementptr i12 %B_10, i64 0, i64 %zext_ln187" [kyber-mult-kernel-dataflow.cpp:193]   --->   Operation 74 'getelementptr' 'B_10_addr' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 75 [1/1] (0.00ns)   --->   "%A_11_addr = getelementptr i12 %A_11, i64 0, i64 %zext_ln187" [kyber-mult-kernel-dataflow.cpp:192]   --->   Operation 75 'getelementptr' 'A_11_addr' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 76 [1/1] (0.00ns)   --->   "%B_11_addr = getelementptr i12 %B_11, i64 0, i64 %zext_ln187" [kyber-mult-kernel-dataflow.cpp:193]   --->   Operation 76 'getelementptr' 'B_11_addr' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 77 [1/1] (0.00ns)   --->   "%A_12_addr = getelementptr i12 %A_12, i64 0, i64 %zext_ln187" [kyber-mult-kernel-dataflow.cpp:192]   --->   Operation 77 'getelementptr' 'A_12_addr' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 78 [1/1] (0.00ns)   --->   "%B_12_addr = getelementptr i12 %B_12, i64 0, i64 %zext_ln187" [kyber-mult-kernel-dataflow.cpp:193]   --->   Operation 78 'getelementptr' 'B_12_addr' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 79 [1/1] (0.00ns)   --->   "%A_13_addr = getelementptr i12 %A_13, i64 0, i64 %zext_ln187" [kyber-mult-kernel-dataflow.cpp:192]   --->   Operation 79 'getelementptr' 'A_13_addr' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 80 [1/1] (0.00ns)   --->   "%B_13_addr = getelementptr i12 %B_13, i64 0, i64 %zext_ln187" [kyber-mult-kernel-dataflow.cpp:193]   --->   Operation 80 'getelementptr' 'B_13_addr' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 81 [1/1] (0.00ns)   --->   "%A_14_addr = getelementptr i12 %A_14, i64 0, i64 %zext_ln187" [kyber-mult-kernel-dataflow.cpp:192]   --->   Operation 81 'getelementptr' 'A_14_addr' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 82 [1/1] (0.00ns)   --->   "%B_14_addr = getelementptr i12 %B_14, i64 0, i64 %zext_ln187" [kyber-mult-kernel-dataflow.cpp:193]   --->   Operation 82 'getelementptr' 'B_14_addr' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 83 [1/1] (0.00ns)   --->   "%A_15_addr = getelementptr i12 %A_15, i64 0, i64 %zext_ln187" [kyber-mult-kernel-dataflow.cpp:192]   --->   Operation 83 'getelementptr' 'A_15_addr' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 84 [1/1] (0.67ns)   --->   "%store_ln192 = store i12 %ba, i4 %A_addr" [kyber-mult-kernel-dataflow.cpp:192]   --->   Operation 84 'store' 'store_ln192' <Predicate = true> <Delay = 0.67> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 12> <Depth = 16> <RAM>
+ST_2 : Operation 85 [1/1] (0.67ns)   --->   "%store_ln192 = store i12 %ba_31, i4 %A_1_addr" [kyber-mult-kernel-dataflow.cpp:192]   --->   Operation 85 'store' 'store_ln192' <Predicate = true> <Delay = 0.67> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 12> <Depth = 16> <RAM>
+ST_2 : Operation 86 [1/1] (0.67ns)   --->   "%store_ln192 = store i12 %ba_1, i4 %A_2_addr" [kyber-mult-kernel-dataflow.cpp:192]   --->   Operation 86 'store' 'store_ln192' <Predicate = true> <Delay = 0.67> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 12> <Depth = 16> <RAM>
+ST_2 : Operation 87 [1/1] (0.67ns)   --->   "%store_ln192 = store i12 %ba_2, i4 %A_3_addr" [kyber-mult-kernel-dataflow.cpp:192]   --->   Operation 87 'store' 'store_ln192' <Predicate = true> <Delay = 0.67> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 12> <Depth = 16> <RAM>
+ST_2 : Operation 88 [1/1] (0.67ns)   --->   "%store_ln192 = store i12 %ba_3, i4 %A_4_addr" [kyber-mult-kernel-dataflow.cpp:192]   --->   Operation 88 'store' 'store_ln192' <Predicate = true> <Delay = 0.67> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 12> <Depth = 16> <RAM>
+ST_2 : Operation 89 [1/1] (0.67ns)   --->   "%store_ln192 = store i12 %ba_4, i4 %A_5_addr" [kyber-mult-kernel-dataflow.cpp:192]   --->   Operation 89 'store' 'store_ln192' <Predicate = true> <Delay = 0.67> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 12> <Depth = 16> <RAM>
+ST_2 : Operation 90 [1/1] (0.67ns)   --->   "%store_ln192 = store i12 %ba_5, i4 %A_6_addr" [kyber-mult-kernel-dataflow.cpp:192]   --->   Operation 90 'store' 'store_ln192' <Predicate = true> <Delay = 0.67> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 12> <Depth = 16> <RAM>
+ST_2 : Operation 91 [1/1] (0.67ns)   --->   "%store_ln192 = store i12 %ba_6, i4 %A_7_addr" [kyber-mult-kernel-dataflow.cpp:192]   --->   Operation 91 'store' 'store_ln192' <Predicate = true> <Delay = 0.67> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 12> <Depth = 16> <RAM>
+ST_2 : Operation 92 [1/1] (0.67ns)   --->   "%store_ln192 = store i12 %ba_7, i4 %A_8_addr" [kyber-mult-kernel-dataflow.cpp:192]   --->   Operation 92 'store' 'store_ln192' <Predicate = true> <Delay = 0.67> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 12> <Depth = 16> <RAM>
+ST_2 : Operation 93 [1/1] (0.67ns)   --->   "%store_ln192 = store i12 %ba_8, i4 %A_9_addr" [kyber-mult-kernel-dataflow.cpp:192]   --->   Operation 93 'store' 'store_ln192' <Predicate = true> <Delay = 0.67> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 12> <Depth = 16> <RAM>
+ST_2 : Operation 94 [1/1] (0.67ns)   --->   "%store_ln192 = store i12 %ba_9, i4 %A_10_addr" [kyber-mult-kernel-dataflow.cpp:192]   --->   Operation 94 'store' 'store_ln192' <Predicate = true> <Delay = 0.67> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 12> <Depth = 16> <RAM>
+ST_2 : Operation 95 [1/1] (0.67ns)   --->   "%store_ln192 = store i12 %ba_10, i4 %A_11_addr" [kyber-mult-kernel-dataflow.cpp:192]   --->   Operation 95 'store' 'store_ln192' <Predicate = true> <Delay = 0.67> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 12> <Depth = 16> <RAM>
+ST_2 : Operation 96 [1/1] (0.67ns)   --->   "%store_ln192 = store i12 %ba_11, i4 %A_12_addr" [kyber-mult-kernel-dataflow.cpp:192]   --->   Operation 96 'store' 'store_ln192' <Predicate = true> <Delay = 0.67> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 12> <Depth = 16> <RAM>
+ST_2 : Operation 97 [1/1] (0.67ns)   --->   "%store_ln192 = store i12 %ba_12, i4 %A_13_addr" [kyber-mult-kernel-dataflow.cpp:192]   --->   Operation 97 'store' 'store_ln192' <Predicate = true> <Delay = 0.67> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 12> <Depth = 16> <RAM>
+ST_2 : Operation 98 [1/1] (0.67ns)   --->   "%store_ln192 = store i12 %ba_13, i4 %A_14_addr" [kyber-mult-kernel-dataflow.cpp:192]   --->   Operation 98 'store' 'store_ln192' <Predicate = true> <Delay = 0.67> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 12> <Depth = 16> <RAM>
+ST_2 : Operation 99 [1/1] (0.67ns)   --->   "%store_ln192 = store i12 %ba_14, i4 %A_15_addr" [kyber-mult-kernel-dataflow.cpp:192]   --->   Operation 99 'store' 'store_ln192' <Predicate = true> <Delay = 0.67> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 12> <Depth = 16> <RAM>
+ST_2 : Operation 100 [1/1] (0.00ns)   --->   "%B_15_addr = getelementptr i12 %B_15, i64 0, i64 %zext_ln187" [kyber-mult-kernel-dataflow.cpp:193]   --->   Operation 100 'getelementptr' 'B_15_addr' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 101 [1/1] (0.67ns)   --->   "%store_ln193 = store i12 %bb, i4 %B_addr" [kyber-mult-kernel-dataflow.cpp:193]   --->   Operation 101 'store' 'store_ln193' <Predicate = true> <Delay = 0.67> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 12> <Depth = 16> <RAM>
+ST_2 : Operation 102 [1/1] (0.67ns)   --->   "%store_ln193 = store i12 %bb_31, i4 %B_1_addr" [kyber-mult-kernel-dataflow.cpp:193]   --->   Operation 102 'store' 'store_ln193' <Predicate = true> <Delay = 0.67> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 12> <Depth = 16> <RAM>
+ST_2 : Operation 103 [1/1] (0.67ns)   --->   "%store_ln193 = store i12 %bb_1, i4 %B_2_addr" [kyber-mult-kernel-dataflow.cpp:193]   --->   Operation 103 'store' 'store_ln193' <Predicate = true> <Delay = 0.67> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 12> <Depth = 16> <RAM>
+ST_2 : Operation 104 [1/1] (0.67ns)   --->   "%store_ln193 = store i12 %bb_2, i4 %B_3_addr" [kyber-mult-kernel-dataflow.cpp:193]   --->   Operation 104 'store' 'store_ln193' <Predicate = true> <Delay = 0.67> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 12> <Depth = 16> <RAM>
+ST_2 : Operation 105 [1/1] (0.67ns)   --->   "%store_ln193 = store i12 %bb_3, i4 %B_4_addr" [kyber-mult-kernel-dataflow.cpp:193]   --->   Operation 105 'store' 'store_ln193' <Predicate = true> <Delay = 0.67> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 12> <Depth = 16> <RAM>
+ST_2 : Operation 106 [1/1] (0.67ns)   --->   "%store_ln193 = store i12 %bb_4, i4 %B_5_addr" [kyber-mult-kernel-dataflow.cpp:193]   --->   Operation 106 'store' 'store_ln193' <Predicate = true> <Delay = 0.67> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 12> <Depth = 16> <RAM>
+ST_2 : Operation 107 [1/1] (0.67ns)   --->   "%store_ln193 = store i12 %bb_5, i4 %B_6_addr" [kyber-mult-kernel-dataflow.cpp:193]   --->   Operation 107 'store' 'store_ln193' <Predicate = true> <Delay = 0.67> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 12> <Depth = 16> <RAM>
+ST_2 : Operation 108 [1/1] (0.67ns)   --->   "%store_ln193 = store i12 %bb_6, i4 %B_7_addr" [kyber-mult-kernel-dataflow.cpp:193]   --->   Operation 108 'store' 'store_ln193' <Predicate = true> <Delay = 0.67> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 12> <Depth = 16> <RAM>
+ST_2 : Operation 109 [1/1] (0.67ns)   --->   "%store_ln193 = store i12 %bb_7, i4 %B_8_addr" [kyber-mult-kernel-dataflow.cpp:193]   --->   Operation 109 'store' 'store_ln193' <Predicate = true> <Delay = 0.67> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 12> <Depth = 16> <RAM>
+ST_2 : Operation 110 [1/1] (0.67ns)   --->   "%store_ln193 = store i12 %bb_8, i4 %B_9_addr" [kyber-mult-kernel-dataflow.cpp:193]   --->   Operation 110 'store' 'store_ln193' <Predicate = true> <Delay = 0.67> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 12> <Depth = 16> <RAM>
+ST_2 : Operation 111 [1/1] (0.67ns)   --->   "%store_ln193 = store i12 %bb_9, i4 %B_10_addr" [kyber-mult-kernel-dataflow.cpp:193]   --->   Operation 111 'store' 'store_ln193' <Predicate = true> <Delay = 0.67> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 12> <Depth = 16> <RAM>
+ST_2 : Operation 112 [1/1] (0.67ns)   --->   "%store_ln193 = store i12 %bb_10, i4 %B_11_addr" [kyber-mult-kernel-dataflow.cpp:193]   --->   Operation 112 'store' 'store_ln193' <Predicate = true> <Delay = 0.67> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 12> <Depth = 16> <RAM>
+ST_2 : Operation 113 [1/1] (0.67ns)   --->   "%store_ln193 = store i12 %bb_11, i4 %B_12_addr" [kyber-mult-kernel-dataflow.cpp:193]   --->   Operation 113 'store' 'store_ln193' <Predicate = true> <Delay = 0.67> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 12> <Depth = 16> <RAM>
+ST_2 : Operation 114 [1/1] (0.67ns)   --->   "%store_ln193 = store i12 %bb_12, i4 %B_13_addr" [kyber-mult-kernel-dataflow.cpp:193]   --->   Operation 114 'store' 'store_ln193' <Predicate = true> <Delay = 0.67> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 12> <Depth = 16> <RAM>
+ST_2 : Operation 115 [1/1] (0.67ns)   --->   "%store_ln193 = store i12 %bb_13, i4 %B_14_addr" [kyber-mult-kernel-dataflow.cpp:193]   --->   Operation 115 'store' 'store_ln193' <Predicate = true> <Delay = 0.67> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 12> <Depth = 16> <RAM>
+ST_2 : Operation 116 [1/1] (0.67ns)   --->   "%store_ln193 = store i12 %bb_14, i4 %B_15_addr" [kyber-mult-kernel-dataflow.cpp:193]   --->   Operation 116 'store' 'store_ln193' <Predicate = true> <Delay = 0.67> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 12> <Depth = 16> <RAM>
+ST_2 : Operation 117 [1/1] (0.00ns)   --->   "%br_ln187 = br void %VITIS_LOOP_190_1" [kyber-mult-kernel-dataflow.cpp:187]   --->   Operation 117 'br' 'br_ln187' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10.000ns, clock uncertainty: 2.700ns.
+
+ <State 1>: 1.643ns
+The critical path consists of the following:
+	'store' operation 0 bit ('store_ln187', kyber-mult-kernel-dataflow.cpp:187) of constant 0 on local variable 'w', kyber-mult-kernel-dataflow.cpp:187 [38]  (0.427 ns)
+	'load' operation 5 bit ('w', kyber-mult-kernel-dataflow.cpp:187) on local variable 'w', kyber-mult-kernel-dataflow.cpp:187 [41]  (0.000 ns)
+	'add' operation 5 bit ('add_ln187', kyber-mult-kernel-dataflow.cpp:187) [43]  (0.789 ns)
+	'store' operation 0 bit ('store_ln187', kyber-mult-kernel-dataflow.cpp:187) of variable 'add_ln187', kyber-mult-kernel-dataflow.cpp:187 on local variable 'w', kyber-mult-kernel-dataflow.cpp:187 [148]  (0.427 ns)
+
+ <State 2>: 2.575ns
+The critical path consists of the following:
+	fifo read operation ('sA0_read', kyber-mult-kernel-dataflow.cpp:189) on port 'sA0' (kyber-mult-kernel-dataflow.cpp:189) [50]  (1.898 ns)
+	'store' operation 0 bit ('store_ln192', kyber-mult-kernel-dataflow.cpp:192) of variable 'ba', kyber-mult-kernel-dataflow.cpp:189 on array 'A' [115]  (0.677 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

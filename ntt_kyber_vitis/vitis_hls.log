@@ -1,0 +1,50 @@
+INFO: [HLS 200-10] Running '/eda/xilinx/Vitis_HLS/2023.2/bin/unwrapped/lnx64.o/vitis_hls'
+INFO: [HLS 200-10] For user 'ak13118' on host 'ecs02.poly.edu' (Linux_x86_64 version 4.18.0-553.89.1.el8_10.x86_64) on Thu Jun 11 23:29:28 EDT 2026
+INFO: [HLS 200-10] On os "Red Hat Enterprise Linux release 8.10 (Ootpa)"
+INFO: [HLS 200-10] In directory '/home/ak13118/ntt_kyber_vitis'
+INFO: [HLS 200-2053] The vitis_hls executable is being deprecated. Consider using vitis-run --mode hls --tcl
+Sourcing Tcl script '/home/ak13118/ntt_kyber_vitis/ntt_kyber/solution1/export.tcl'
+INFO: [HLS 200-1510] Running: source /home/ak13118/ntt_kyber_vitis/ntt_kyber/solution1/export.tcl
+INFO: [HLS 200-1510] Running: open_project ntt_kyber 
+INFO: [HLS 200-10] Opening project '/home/ak13118/ntt_kyber_vitis/ntt_kyber'.
+INFO: [HLS 200-1510] Running: set_top kyber_mult 
+INFO: [HLS 200-1510] Running: add_files kyber-mult-kernel-dataflow.cpp 
+INFO: [HLS 200-10] Adding design file 'kyber-mult-kernel-dataflow.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files kyber-mult-kernel.h 
+INFO: [HLS 200-10] Adding design file 'kyber-mult-kernel.h' to the project
+INFO: [HLS 200-1510] Running: add_files kyber-tables.h 
+INFO: [HLS 200-10] Adding design file 'kyber-tables.h' to the project
+INFO: [HLS 200-1510] Running: add_files -tb kyber-test.cpp -cflags -Wno-unknown-pragmas 
+INFO: [HLS 200-10] Adding test bench file 'kyber-test.cpp' to the project
+INFO: [HLS 200-1510] Running: open_solution solution1 -flow_target vivado 
+INFO: [HLS 200-10] Opening solution '/home/ak13118/ntt_kyber_vitis/ntt_kyber/solution1'.
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1611] Setting target device to 'xck26-sfvc784-2LV-c'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-1464] Running solution command: config_export -format=ip_catalog
+INFO: [HLS 200-1464] Running solution command: config_export -rtl=verilog
+INFO: [HLS 200-1464] Running solution command: config_export -version=1.0.0
+INFO: [HLS 200-1510] Running: set_part xck26-sfvc784-2LV-c 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: config_export -format ip_catalog -rtl verilog -version 1.0.0 
+INFO: [HLS 200-1510] Running: source ./ntt_kyber/solution1/directives.tcl
+INFO: [HLS 200-1510] Running: set_directive_top -name kyber_mult kyber_mult 
+INFO: [HLS 200-1510] Running: export_design -rtl verilog -format ip_catalog 
+INFO: [IMPL 213-8] Exporting RTL as a Vivado IP.
+
+****** Vivado v2023.2 (64-bit)
+  **** SW Build 4029153 on Fri Oct 13 20:13:54 MDT 2023
+  **** IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+  **** SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source run_ippack.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/eda/xilinx/Vivado/2023.2/data/ip'.
+INFO: [Common 17-206] Exiting Vivado at Thu Jun 11 23:29:53 2026...
+INFO: [HLS 200-802] Generated output file ntt_kyber/solution1/impl/export.zip
+INFO: [HLS 200-111] Finished Command export_design CPU user time: 21.75 seconds. CPU system time: 1.2 seconds. Elapsed time: 26.74 seconds; current allocated memory: 23.719 MB.
+INFO: [HLS 200-112] Total CPU user time: 23.78 seconds. Total CPU system time: 1.52 seconds. Total elapsed time: 28.96 seconds; peak allocated memory: 328.914 MB.

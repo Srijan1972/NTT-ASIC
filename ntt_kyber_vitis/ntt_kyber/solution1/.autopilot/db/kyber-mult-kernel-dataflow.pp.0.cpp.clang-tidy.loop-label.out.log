@@ -1,0 +1,98 @@
+/home/ak13118/ntt_kyber_vitis/ntt_kyber/solution1/.autopilot/db/kyber-mult-kernel-dataflow.pp.0.cpp:1534:7: warning: Added loop label VITIS_LOOP_1207_1:   [xilinx-label-all-loops]
+      for (i = 0; i < __N - 1; ++i) {
+      ^~~
+      VITIS_LOOP_1207_1: 
+/home/ak13118/ntt_kyber_vitis/ntt_kyber/solution1/.autopilot/db/kyber-mult-kernel-dataflow.pp.0.cpp:1534:7: note: FIX-IT applied suggested code changes
+/home/ak13118/ntt_kyber_vitis/ntt_kyber/solution1/.autopilot/db/kyber-mult-kernel-dataflow.pp.0.cpp:2508:5: warning: Added loop label VITIS_LOOP_676_1:   [xilinx-label-all-loops]
+    for (unsigned i = low; i != high; ++i) {
+    ^~~
+    VITIS_LOOP_676_1: 
+/home/ak13118/ntt_kyber_vitis/ntt_kyber/solution1/.autopilot/db/kyber-mult-kernel-dataflow.pp.0.cpp:2508:5: note: FIX-IT applied suggested code changes
+/home/ak13118/ntt_kyber_vitis/ntt_kyber/solution1/.autopilot/db/kyber-mult-kernel-dataflow.pp.0.cpp:2522:5: warning: Added loop label VITIS_LOOP_690_1:   [xilinx-label-all-loops]
+    for (unsigned i = low; i != high; ++i) {
+    ^~~
+    VITIS_LOOP_690_1: 
+/home/ak13118/ntt_kyber_vitis/ntt_kyber/solution1/.autopilot/db/kyber-mult-kernel-dataflow.pp.0.cpp:2522:5: note: FIX-IT applied suggested code changes
+/home/ak13118/ntt_kyber_vitis/ntt_kyber/solution1/.autopilot/db/kyber-mult-kernel-dataflow.pp.0.cpp:2536:5: warning: Added loop label VITIS_LOOP_704_1:   [xilinx-label-all-loops]
+    for (unsigned i = low; i != high; ++i) {
+    ^~~
+    VITIS_LOOP_704_1: 
+/home/ak13118/ntt_kyber_vitis/ntt_kyber/solution1/.autopilot/db/kyber-mult-kernel-dataflow.pp.0.cpp:2536:5: note: FIX-IT applied suggested code changes
+/home/ak13118/ntt_kyber_vitis/ntt_kyber/solution1/.autopilot/db/kyber-mult-kernel-dataflow.pp.0.cpp:4165:7: warning: Added loop label VITIS_LOOP_1247_1:   [xilinx-label-all-loops]
+      for (i = 0; i < __N - 1; ++i) {
+      ^~~
+      VITIS_LOOP_1247_1: 
+/home/ak13118/ntt_kyber_vitis/ntt_kyber/solution1/.autopilot/db/kyber-mult-kernel-dataflow.pp.0.cpp:4165:7: note: FIX-IT applied suggested code changes
+/home/ak13118/ntt_kyber_vitis/ntt_kyber/solution1/.autopilot/db/kyber-mult-kernel-dataflow.pp.0.cpp:6165:9: error: Invalid Directive: for current device, mul + dsp is invalid combination for bind_op [clang-diagnostic-error]
+#pragma HLS BIND_OP variable=xm op=mul impl=dsp latency=2
+        ^
+/home/ak13118/ntt_kyber_vitis/ntt_kyber/solution1/.autopilot/db/kyber-mult-kernel-dataflow.pp.0.cpp:6168:9: error: Invalid Directive: for current device, mul + dsp is invalid combination for bind_op [clang-diagnostic-error]
+#pragma HLS BIND_OP variable=xw op=mul impl=dsp latency=2
+        ^
+/home/ak13118/ntt_kyber_vitis/ntt_kyber/solution1/.autopilot/db/kyber-mult-kernel-dataflow.pp.0.cpp:6170:9: error: Invalid Directive: for current device, mul + dsp is invalid combination for bind_op [clang-diagnostic-error]
+#pragma HLS BIND_OP variable=qq op=mul impl=dsp latency=2
+        ^
+/home/ak13118/ntt_kyber_vitis/ntt_kyber/solution1/.autopilot/db/kyber-mult-kernel-dataflow.pp.0.cpp:6185:9: error: Invalid Directive: for current device, mul + dsp is invalid combination for bind_op [clang-diagnostic-error]
+#pragma HLS BIND_OP variable=x op=mul impl=dsp latency=2
+        ^
+/home/ak13118/ntt_kyber_vitis/ntt_kyber/solution1/.autopilot/db/kyber-mult-kernel-dataflow.pp.0.cpp:6187:9: error: Invalid Directive: for current device, mul + dsp is invalid combination for bind_op [clang-diagnostic-error]
+#pragma HLS BIND_OP variable=xmu op=mul impl=dsp latency=2
+        ^
+/home/ak13118/ntt_kyber_vitis/ntt_kyber/solution1/.autopilot/db/kyber-mult-kernel-dataflow.pp.0.cpp:6190:9: error: Invalid Directive: for current device, mul + dsp is invalid combination for bind_op [clang-diagnostic-error]
+#pragma HLS BIND_OP variable=qq op=mul impl=dsp latency=2
+        ^
+/home/ak13118/ntt_kyber_vitis/ntt_kyber/solution1/.autopilot/db/kyber-mult-kernel-dataflow.pp.0.cpp:6203:2: warning: Added loop label VITIS_LOOP_75_1:   [xilinx-label-all-loops]
+ for(int p=0;p<8;++p){
+ ^~~
+ VITIS_LOOP_75_1: 
+/home/ak13118/ntt_kyber_vitis/ntt_kyber/solution1/.autopilot/db/kyber-mult-kernel-dataflow.pp.0.cpp:6203:2: note: FIX-IT applied suggested code changes
+/home/ak13118/ntt_kyber_vitis/ntt_kyber/solution1/.autopilot/db/kyber-mult-kernel-dataflow.pp.0.cpp:6237:2: warning: Added loop label VITIS_LOOP_109_1:   [xilinx-label-all-loops]
+ for(int p=0;p<8;++p){
+ ^~~
+ VITIS_LOOP_109_1: 
+/home/ak13118/ntt_kyber_vitis/ntt_kyber/solution1/.autopilot/db/kyber-mult-kernel-dataflow.pp.0.cpp:6237:2: note: FIX-IT applied suggested code changes
+/home/ak13118/ntt_kyber_vitis/ntt_kyber/solution1/.autopilot/db/kyber-mult-kernel-dataflow.pp.0.cpp:6268:2: warning: Added loop label VITIS_LOOP_140_1:   [xilinx-label-all-loops]
+ for(int p=0;p<8;++p){
+ ^~~
+ VITIS_LOOP_140_1: 
+/home/ak13118/ntt_kyber_vitis/ntt_kyber/solution1/.autopilot/db/kyber-mult-kernel-dataflow.pp.0.cpp:6268:2: note: FIX-IT applied suggested code changes
+/home/ak13118/ntt_kyber_vitis/ntt_kyber/solution1/.autopilot/db/kyber-mult-kernel-dataflow.pp.0.cpp:6295:13: warning: Added loop label VITIS_LOOP_167_1:   [xilinx-label-all-loops]
+            for(int l=0;l<(2*8);++l){
+            ^~~
+            VITIS_LOOP_167_1: 
+/home/ak13118/ntt_kyber_vitis/ntt_kyber/solution1/.autopilot/db/kyber-mult-kernel-dataflow.pp.0.cpp:6295:13: note: FIX-IT applied suggested code changes
+/home/ak13118/ntt_kyber_vitis/ntt_kyber/solution1/.autopilot/db/kyber-mult-kernel-dataflow.pp.0.cpp:6318:13: warning: Added loop label VITIS_LOOP_190_1:   [xilinx-label-all-loops]
+            for(int l=0;l<(2*8);++l){
+            ^~~
+            VITIS_LOOP_190_1: 
+/home/ak13118/ntt_kyber_vitis/ntt_kyber/solution1/.autopilot/db/kyber-mult-kernel-dataflow.pp.0.cpp:6318:13: note: FIX-IT applied suggested code changes
+/home/ak13118/ntt_kyber_vitis/ntt_kyber/solution1/.autopilot/db/kyber-mult-kernel-dataflow.pp.0.cpp:6328:13: warning: Added loop label VITIS_LOOP_200_2:   [xilinx-label-all-loops]
+            for(int l=0;l<(2*8);++l){
+            ^~~
+            VITIS_LOOP_200_2: 
+/home/ak13118/ntt_kyber_vitis/ntt_kyber/solution1/.autopilot/db/kyber-mult-kernel-dataflow.pp.0.cpp:6328:13: note: FIX-IT applied suggested code changes
+/home/ak13118/ntt_kyber_vitis/ntt_kyber/solution1/.autopilot/db/kyber-mult-kernel-dataflow.pp.0.cpp:6351:13: warning: Added loop label VITIS_LOOP_223_1:   [xilinx-label-all-loops]
+            for(int l=0;l<(2*8);++l){
+            ^~~
+            VITIS_LOOP_223_1: 
+/home/ak13118/ntt_kyber_vitis/ntt_kyber/solution1/.autopilot/db/kyber-mult-kernel-dataflow.pp.0.cpp:6351:13: note: FIX-IT applied suggested code changes
+/home/ak13118/ntt_kyber_vitis/ntt_kyber/solution1/.autopilot/db/kyber-mult-kernel-dataflow.pp.0.cpp:6361:13: warning: Added loop label VITIS_LOOP_233_2:   [xilinx-label-all-loops]
+            for(int l=0;l<(2*8);++l){
+            ^~~
+            VITIS_LOOP_233_2: 
+/home/ak13118/ntt_kyber_vitis/ntt_kyber/solution1/.autopilot/db/kyber-mult-kernel-dataflow.pp.0.cpp:6361:13: note: FIX-IT applied suggested code changes
+/home/ak13118/ntt_kyber_vitis/ntt_kyber/solution1/.autopilot/db/kyber-mult-kernel-dataflow.pp.0.cpp:6381:13: warning: Added loop label VITIS_LOOP_253_1:   [xilinx-label-all-loops]
+            for(int l=0;l<(2*8);++l){
+            ^~~
+            VITIS_LOOP_253_1: 
+/home/ak13118/ntt_kyber_vitis/ntt_kyber/solution1/.autopilot/db/kyber-mult-kernel-dataflow.pp.0.cpp:6381:13: note: FIX-IT applied suggested code changes
+/home/ak13118/ntt_kyber_vitis/ntt_kyber/solution1/.autopilot/db/kyber-mult-kernel-dataflow.pp.0.cpp:6390:13: warning: Added loop label VITIS_LOOP_262_2:   [xilinx-label-all-loops]
+            for(int l=0;l<(2*8);++l){
+            ^~~
+            VITIS_LOOP_262_2: 
+/home/ak13118/ntt_kyber_vitis/ntt_kyber/solution1/.autopilot/db/kyber-mult-kernel-dataflow.pp.0.cpp:6390:13: note: FIX-IT applied suggested code changes
+/home/ak13118/ntt_kyber_vitis/ntt_kyber/solution1/.autopilot/db/kyber-mult-kernel-dataflow.pp.0.cpp:6408:13: warning: Added loop label VITIS_LOOP_280_1:   [xilinx-label-all-loops]
+            for(int l=0;l<(2*8);++l){
+            ^~~
+            VITIS_LOOP_280_1: 
+/home/ak13118/ntt_kyber_vitis/ntt_kyber/solution1/.autopilot/db/kyber-mult-kernel-dataflow.pp.0.cpp:6408:13: note: FIX-IT applied suggested code changes

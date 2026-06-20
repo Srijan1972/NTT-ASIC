@@ -1,0 +1,344 @@
+{
+  "0": {
+    "basicblocks": 1,
+    "calls": "10 11 18 22 16",
+    "file": "kyber-mult-kernel-dataflow.cpp",
+    "fileloc": 289,
+    "instructions": 83,
+    "name": "kyber_mult",
+    "total_instructions": 17297
+  },
+  "1": {
+    "basicblocks": 6,
+    "calls": "",
+    "file": "kyber-mult-kernel-dataflow.cpp",
+    "fileloc": 70,
+    "instructions": 1094,
+    "loads": {
+      "G": 16,
+      "L": 64
+    },
+    "name": "fwd_stage2_t<128>",
+    "stores": {
+      "L": 64
+    },
+    "total_instructions": 1094
+  },
+  "10": {
+    "basicblocks": 7,
+    "calls": "",
+    "file": "kyber-mult-kernel-dataflow.cpp",
+    "fileloc": 157,
+    "instructions": 171,
+    "name": "load_all",
+    "total_instructions": 395
+  },
+  "11": {
+    "basicblocks": 8,
+    "calls": "20",
+    "file": "kyber-mult-kernel-dataflow.cpp",
+    "fileloc": 178,
+    "instructions": 475,
+    "loads": {
+      "L": 32
+    },
+    "name": "fwd_all",
+    "stores": {
+      "L": 32
+    },
+    "total_instructions": 9062
+  },
+  "12": {
+    "basicblocks": 48,
+    "calls": "",
+    "file": "kyber-mult-kernel-dataflow.cpp",
+    "fileloc": 105,
+    "instructions": 812,
+    "loads": {
+      "G": 16,
+      "L": 32
+    },
+    "name": "inv_stage_t<32>",
+    "stores": {
+      "L": 32
+    },
+    "total_instructions": 812
+  },
+  "13": {
+    "basicblocks": 93,
+    "calls": "",
+    "file": "kyber-mult-kernel-dataflow.cpp",
+    "fileloc": 70,
+    "instructions": 1335,
+    "loads": {
+      "G": 16,
+      "L": 64
+    },
+    "name": "fwd_stage2_t<64>",
+    "stores": {
+      "L": 64
+    },
+    "total_instructions": 1335
+  },
+  "14": {
+    "basicblocks": 93,
+    "calls": "",
+    "file": "kyber-mult-kernel-dataflow.cpp",
+    "fileloc": 70,
+    "instructions": 1335,
+    "loads": {
+      "G": 16,
+      "L": 64
+    },
+    "name": "fwd_stage2_t<16>",
+    "stores": {
+      "L": 64
+    },
+    "total_instructions": 1335
+  },
+  "15": {
+    "basicblocks": 3,
+    "calls": "",
+    "file": "kyber-mult-kernel-dataflow.cpp",
+    "fileloc": 136,
+    "instructions": 1224,
+    "loads": {
+      "G": 16,
+      "L": 32
+    },
+    "name": "basemul",
+    "stores": {
+      "L": 16
+    },
+    "total_instructions": 1224
+  },
+  "16": {
+    "basicblocks": 7,
+    "calls": "",
+    "file": "kyber-mult-kernel-dataflow.cpp",
+    "fileloc": 272,
+    "instructions": 134,
+    "name": "store_all",
+    "total_instructions": 230
+  },
+  "17": {
+    "basicblocks": 3,
+    "calls": "",
+    "file": "kyber-mult-kernel-dataflow.cpp",
+    "fileloc": 70,
+    "instructions": 934,
+    "loads": {
+      "G": 16,
+      "L": 32
+    },
+    "name": "fwd_stage2_t<4>",
+    "stores": {
+      "L": 32
+    },
+    "total_instructions": 934
+  },
+  "18": {
+    "basicblocks": 8,
+    "calls": "15",
+    "file": "kyber-mult-kernel-dataflow.cpp",
+    "fileloc": 211,
+    "instructions": 537,
+    "loads": {
+      "L": 16
+    },
+    "name": "basemul_all",
+    "stores": {
+      "L": 32
+    },
+    "total_instructions": 2065
+  },
+  "19": {
+    "basicblocks": 93,
+    "calls": "",
+    "file": "kyber-mult-kernel-dataflow.cpp",
+    "fileloc": 70,
+    "instructions": 1335,
+    "loads": {
+      "G": 16,
+      "L": 64
+    },
+    "name": "fwd_stage2_t<32>",
+    "stores": {
+      "L": 64
+    },
+    "total_instructions": 1335
+  },
+  "2": {
+    "basicblocks": 6,
+    "calls": "",
+    "file": "kyber-mult-kernel-dataflow.cpp",
+    "fileloc": 105,
+    "instructions": 662,
+    "loads": {
+      "G": 16,
+      "L": 32
+    },
+    "name": "inv_stage_t<128>",
+    "stores": {
+      "L": 32
+    },
+    "total_instructions": 662
+  },
+  "20": {
+    "basicblocks": 20,
+    "calls": "1 13 19 14 7 17 4",
+    "file": "kyber-mult-kernel-dataflow.cpp",
+    "fileloc": 90,
+    "instructions": 292,
+    "loads": {
+      "L": 32
+    },
+    "name": "fwd_ntt2",
+    "stores": {
+      "L": 32
+    },
+    "total_instructions": 8171
+  },
+  "21": {
+    "basicblocks": 48,
+    "calls": "",
+    "file": "kyber-mult-kernel-dataflow.cpp",
+    "fileloc": 105,
+    "instructions": 812,
+    "loads": {
+      "G": 16,
+      "L": 32
+    },
+    "name": "inv_stage_t<64>",
+    "stores": {
+      "L": 32
+    },
+    "total_instructions": 812
+  },
+  "22": {
+    "basicblocks": 8,
+    "calls": "8",
+    "file": "kyber-mult-kernel-dataflow.cpp",
+    "fileloc": 243,
+    "instructions": 247,
+    "loads": {
+      "L": 16
+    },
+    "name": "inv_all",
+    "stores": {
+      "L": 16
+    },
+    "total_instructions": 5462
+  },
+  "3": {
+    "basicblocks": 3,
+    "calls": "",
+    "file": "kyber-mult-kernel-dataflow.cpp",
+    "fileloc": 105,
+    "instructions": 582,
+    "loads": {
+      "G": 16,
+      "L": 16
+    },
+    "name": "inv_stage_t<2>",
+    "stores": {
+      "L": 16
+    },
+    "total_instructions": 582
+  },
+  "4": {
+    "basicblocks": 3,
+    "calls": "",
+    "file": "kyber-mult-kernel-dataflow.cpp",
+    "fileloc": 70,
+    "instructions": 934,
+    "loads": {
+      "G": 16,
+      "L": 32
+    },
+    "name": "fwd_stage2_t<2>",
+    "stores": {
+      "L": 32
+    },
+    "total_instructions": 934
+  },
+  "5": {
+    "basicblocks": 48,
+    "calls": "",
+    "file": "kyber-mult-kernel-dataflow.cpp",
+    "fileloc": 105,
+    "instructions": 812,
+    "loads": {
+      "G": 16,
+      "L": 32
+    },
+    "name": "inv_stage_t<16>",
+    "stores": {
+      "L": 32
+    },
+    "total_instructions": 812
+  },
+  "6": {
+    "basicblocks": 3,
+    "calls": "",
+    "file": "kyber-mult-kernel-dataflow.cpp",
+    "fileloc": 105,
+    "instructions": 582,
+    "loads": {
+      "G": 16,
+      "L": 16
+    },
+    "name": "inv_stage_t<4>",
+    "stores": {
+      "L": 16
+    },
+    "total_instructions": 582
+  },
+  "7": {
+    "basicblocks": 3,
+    "calls": "",
+    "file": "kyber-mult-kernel-dataflow.cpp",
+    "fileloc": 70,
+    "instructions": 912,
+    "loads": {
+      "G": 16,
+      "L": 32
+    },
+    "name": "fwd_stage2_t<8>",
+    "stores": {
+      "L": 32
+    },
+    "total_instructions": 912
+  },
+  "8": {
+    "basicblocks": 20,
+    "calls": "3 6 9 5 12 21 2",
+    "file": "kyber-mult-kernel-dataflow.cpp",
+    "fileloc": 123,
+    "instructions": 185,
+    "loads": {
+      "L": 16
+    },
+    "name": "inv_ntt",
+    "stores": {
+      "L": 16
+    },
+    "total_instructions": 5007
+  },
+  "9": {
+    "basicblocks": 3,
+    "calls": "",
+    "file": "kyber-mult-kernel-dataflow.cpp",
+    "fileloc": 105,
+    "instructions": 560,
+    "loads": {
+      "G": 16,
+      "L": 16
+    },
+    "name": "inv_stage_t<8>",
+    "stores": {
+      "L": 16
+    },
+    "total_instructions": 560
+  }
+}

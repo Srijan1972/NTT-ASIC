@@ -1,0 +1,178 @@
+---
+MainSourceFile:  /home/ak13118/ntt_kyber_vitis/ntt_kyber/solution1/.autopilot/db/kyber-mult-kernel-dataflow.pp.0.cpp
+Diagnostics:     
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_1207_1:  '
+    FileOffset:      1207
+    FilePath:        /eda/xilinx/Vitis_HLS/2023.2/common/technology/autopilot/etc/ap_int_base.h
+    Replacements:    
+      - FilePath:        /home/ak13118/ntt_kyber_vitis/ntt_kyber/solution1/.autopilot/db/kyber-mult-kernel-dataflow.pp.0.cpp
+        Offset:          60528
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_1207_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_676_1:  '
+    FileOffset:      676
+    FilePath:        /eda/xilinx/Vitis_HLS/2023.2/common/technology/autopilot/etc/ap_int_ref.h
+    Replacements:    
+      - FilePath:        /home/ak13118/ntt_kyber_vitis/ntt_kyber/solution1/.autopilot/db/kyber-mult-kernel-dataflow.pp.0.cpp
+        Offset:          287880
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_676_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_690_1:  '
+    FileOffset:      690
+    FilePath:        /eda/xilinx/Vitis_HLS/2023.2/common/technology/autopilot/etc/ap_int_ref.h
+    Replacements:    
+      - FilePath:        /home/ak13118/ntt_kyber_vitis/ntt_kyber/solution1/.autopilot/db/kyber-mult-kernel-dataflow.pp.0.cpp
+        Offset:          288344
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_690_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_704_1:  '
+    FileOffset:      704
+    FilePath:        /eda/xilinx/Vitis_HLS/2023.2/common/technology/autopilot/etc/ap_int_ref.h
+    Replacements:    
+      - FilePath:        /home/ak13118/ntt_kyber_vitis/ntt_kyber/solution1/.autopilot/db/kyber-mult-kernel-dataflow.pp.0.cpp
+        Offset:          288809
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_704_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_1247_1:  '
+    FileOffset:      1247
+    FilePath:        /eda/xilinx/Vitis_HLS/2023.2/common/technology/autopilot/etc/ap_fixed_base.h
+    Replacements:    
+      - FilePath:        /home/ak13118/ntt_kyber_vitis/ntt_kyber/solution1/.autopilot/db/kyber-mult-kernel-dataflow.pp.0.cpp
+        Offset:          572126
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_1247_1: '
+  - DiagnosticName:  clang-diagnostic-error
+    Message:         'Invalid Directive: for current device, mul + dsp is invalid combination for bind_op'
+    FileOffset:      37
+    FilePath:        kyber-mult-kernel-dataflow.cpp
+    Replacements:    
+  - DiagnosticName:  clang-diagnostic-error
+    Message:         'Invalid Directive: for current device, mul + dsp is invalid combination for bind_op'
+    FileOffset:      40
+    FilePath:        kyber-mult-kernel-dataflow.cpp
+    Replacements:    
+  - DiagnosticName:  clang-diagnostic-error
+    Message:         'Invalid Directive: for current device, mul + dsp is invalid combination for bind_op'
+    FileOffset:      42
+    FilePath:        kyber-mult-kernel-dataflow.cpp
+    Replacements:    
+  - DiagnosticName:  clang-diagnostic-error
+    Message:         'Invalid Directive: for current device, mul + dsp is invalid combination for bind_op'
+    FileOffset:      57
+    FilePath:        kyber-mult-kernel-dataflow.cpp
+    Replacements:    
+  - DiagnosticName:  clang-diagnostic-error
+    Message:         'Invalid Directive: for current device, mul + dsp is invalid combination for bind_op'
+    FileOffset:      59
+    FilePath:        kyber-mult-kernel-dataflow.cpp
+    Replacements:    
+  - DiagnosticName:  clang-diagnostic-error
+    Message:         'Invalid Directive: for current device, mul + dsp is invalid combination for bind_op'
+    FileOffset:      62
+    FilePath:        kyber-mult-kernel-dataflow.cpp
+    Replacements:    
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_75_1:  '
+    FileOffset:      75
+    FilePath:        kyber-mult-kernel-dataflow.cpp
+    Replacements:    
+      - FilePath:        /home/ak13118/ntt_kyber_vitis/ntt_kyber/solution1/.autopilot/db/kyber-mult-kernel-dataflow.pp.0.cpp
+        Offset:          979420
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_75_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_109_1:  '
+    FileOffset:      109
+    FilePath:        kyber-mult-kernel-dataflow.cpp
+    Replacements:    
+      - FilePath:        /home/ak13118/ntt_kyber_vitis/ntt_kyber/solution1/.autopilot/db/kyber-mult-kernel-dataflow.pp.0.cpp
+        Offset:          980634
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_109_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_140_1:  '
+    FileOffset:      140
+    FilePath:        kyber-mult-kernel-dataflow.cpp
+    Replacements:    
+      - FilePath:        /home/ak13118/ntt_kyber_vitis/ntt_kyber/solution1/.autopilot/db/kyber-mult-kernel-dataflow.pp.0.cpp
+        Offset:          981609
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_140_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_167_1:  '
+    FileOffset:      167
+    FilePath:        kyber-mult-kernel-dataflow.cpp
+    Replacements:    
+      - FilePath:        /home/ak13118/ntt_kyber_vitis/ntt_kyber/solution1/.autopilot/db/kyber-mult-kernel-dataflow.pp.0.cpp
+        Offset:          982327
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_167_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_190_1:  '
+    FileOffset:      190
+    FilePath:        kyber-mult-kernel-dataflow.cpp
+    Replacements:    
+      - FilePath:        /home/ak13118/ntt_kyber_vitis/ntt_kyber/solution1/.autopilot/db/kyber-mult-kernel-dataflow.pp.0.cpp
+        Offset:          983123
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_190_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_200_2:  '
+    FileOffset:      200
+    FilePath:        kyber-mult-kernel-dataflow.cpp
+    Replacements:    
+      - FilePath:        /home/ak13118/ntt_kyber_vitis/ntt_kyber/solution1/.autopilot/db/kyber-mult-kernel-dataflow.pp.0.cpp
+        Offset:          983386
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_200_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_223_1:  '
+    FileOffset:      223
+    FilePath:        kyber-mult-kernel-dataflow.cpp
+    Replacements:    
+      - FilePath:        /home/ak13118/ntt_kyber_vitis/ntt_kyber/solution1/.autopilot/db/kyber-mult-kernel-dataflow.pp.0.cpp
+        Offset:          984185
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_223_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_233_2:  '
+    FileOffset:      233
+    FilePath:        kyber-mult-kernel-dataflow.cpp
+    Replacements:    
+      - FilePath:        /home/ak13118/ntt_kyber_vitis/ntt_kyber/solution1/.autopilot/db/kyber-mult-kernel-dataflow.pp.0.cpp
+        Offset:          984445
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_233_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_253_1:  '
+    FileOffset:      253
+    FilePath:        kyber-mult-kernel-dataflow.cpp
+    Replacements:    
+      - FilePath:        /home/ak13118/ntt_kyber_vitis/ntt_kyber/solution1/.autopilot/db/kyber-mult-kernel-dataflow.pp.0.cpp
+        Offset:          984985
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_253_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_262_2:  '
+    FileOffset:      262
+    FilePath:        kyber-mult-kernel-dataflow.cpp
+    Replacements:    
+      - FilePath:        /home/ak13118/ntt_kyber_vitis/ntt_kyber/solution1/.autopilot/db/kyber-mult-kernel-dataflow.pp.0.cpp
+        Offset:          985200
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_262_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_280_1:  '
+    FileOffset:      280
+    FilePath:        kyber-mult-kernel-dataflow.cpp
+    Replacements:    
+      - FilePath:        /home/ak13118/ntt_kyber_vitis/ntt_kyber/solution1/.autopilot/db/kyber-mult-kernel-dataflow.pp.0.cpp
+        Offset:          985645
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_280_1: '
+...

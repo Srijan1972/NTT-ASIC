@@ -1,0 +1,2952 @@
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 86, Column: 40 }
+Function:        _ZL12fwd_stage2_tILi128EEvPK7ap_uintILi12EEPS1_S3_S4_i
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'subm(unsigned int, unsigned int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 50, 
+                       Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'void fwd_stage2_t<128>(ap_uint<12> const*, ap_uint<12>*, ap_uint<12> const*, ap_uint<12>*, int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 71, 
+                       Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 86, Column: 20 }
+Function:        _ZL12fwd_stage2_tILi128EEvPK7ap_uintILi12EEPS1_S3_S4_i
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'addm(unsigned int, unsigned int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 46, 
+                       Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'void fwd_stage2_t<128>(ap_uint<12> const*, ap_uint<12>*, ap_uint<12> const*, ap_uint<12>*, int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 71, 
+                       Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 85, Column: 35 }
+Function:        _ZL12fwd_stage2_tILi128EEvPK7ap_uintILi12EEPS1_S3_S4_i
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'cbarrett(unsigned int, unsigned int, unsigned int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 34, 
+                       Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'void fwd_stage2_t<128>(ap_uint<12> const*, ap_uint<12>*, ap_uint<12> const*, ap_uint<12>*, int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 71, 
+                       Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 84, Column: 40 }
+Function:        _ZL12fwd_stage2_tILi128EEvPK7ap_uintILi12EEPS1_S3_S4_i
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'subm(unsigned int, unsigned int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 50, 
+                       Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'void fwd_stage2_t<128>(ap_uint<12> const*, ap_uint<12>*, ap_uint<12> const*, ap_uint<12>*, int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 71, 
+                       Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 84, Column: 20 }
+Function:        _ZL12fwd_stage2_tILi128EEvPK7ap_uintILi12EEPS1_S3_S4_i
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'addm(unsigned int, unsigned int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 46, 
+                       Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'void fwd_stage2_t<128>(ap_uint<12> const*, ap_uint<12>*, ap_uint<12> const*, ap_uint<12>*, int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 71, 
+                       Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 83, Column: 35 }
+Function:        _ZL12fwd_stage2_tILi128EEvPK7ap_uintILi12EEPS1_S3_S4_i
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'cbarrett(unsigned int, unsigned int, unsigned int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 34, 
+                       Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'void fwd_stage2_t<128>(ap_uint<12> const*, ap_uint<12>*, ap_uint<12> const*, ap_uint<12>*, int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 71, 
+                       Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 86, Column: 40 }
+Function:        _ZL12fwd_stage2_tILi64EEvPK7ap_uintILi12EEPS1_S3_S4_i
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'subm(unsigned int, unsigned int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 50, 
+                       Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'void fwd_stage2_t<64>(ap_uint<12> const*, ap_uint<12>*, ap_uint<12> const*, ap_uint<12>*, int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 71, 
+                       Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 86, Column: 20 }
+Function:        _ZL12fwd_stage2_tILi64EEvPK7ap_uintILi12EEPS1_S3_S4_i
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'addm(unsigned int, unsigned int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 46, 
+                       Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'void fwd_stage2_t<64>(ap_uint<12> const*, ap_uint<12>*, ap_uint<12> const*, ap_uint<12>*, int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 71, 
+                       Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 85, Column: 35 }
+Function:        _ZL12fwd_stage2_tILi64EEvPK7ap_uintILi12EEPS1_S3_S4_i
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'cbarrett(unsigned int, unsigned int, unsigned int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 34, 
+                       Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'void fwd_stage2_t<64>(ap_uint<12> const*, ap_uint<12>*, ap_uint<12> const*, ap_uint<12>*, int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 71, 
+                       Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 84, Column: 40 }
+Function:        _ZL12fwd_stage2_tILi64EEvPK7ap_uintILi12EEPS1_S3_S4_i
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'subm(unsigned int, unsigned int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 50, 
+                       Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'void fwd_stage2_t<64>(ap_uint<12> const*, ap_uint<12>*, ap_uint<12> const*, ap_uint<12>*, int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 71, 
+                       Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 84, Column: 20 }
+Function:        _ZL12fwd_stage2_tILi64EEvPK7ap_uintILi12EEPS1_S3_S4_i
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'addm(unsigned int, unsigned int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 46, 
+                       Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'void fwd_stage2_t<64>(ap_uint<12> const*, ap_uint<12>*, ap_uint<12> const*, ap_uint<12>*, int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 71, 
+                       Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 83, Column: 35 }
+Function:        _ZL12fwd_stage2_tILi64EEvPK7ap_uintILi12EEPS1_S3_S4_i
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'cbarrett(unsigned int, unsigned int, unsigned int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 34, 
+                       Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'void fwd_stage2_t<64>(ap_uint<12> const*, ap_uint<12>*, ap_uint<12> const*, ap_uint<12>*, int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 71, 
+                       Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 86, Column: 40 }
+Function:        _ZL12fwd_stage2_tILi32EEvPK7ap_uintILi12EEPS1_S3_S4_i
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'subm(unsigned int, unsigned int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 50, 
+                       Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'void fwd_stage2_t<32>(ap_uint<12> const*, ap_uint<12>*, ap_uint<12> const*, ap_uint<12>*, int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 71, 
+                       Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 86, Column: 20 }
+Function:        _ZL12fwd_stage2_tILi32EEvPK7ap_uintILi12EEPS1_S3_S4_i
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'addm(unsigned int, unsigned int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 46, 
+                       Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'void fwd_stage2_t<32>(ap_uint<12> const*, ap_uint<12>*, ap_uint<12> const*, ap_uint<12>*, int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 71, 
+                       Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 85, Column: 35 }
+Function:        _ZL12fwd_stage2_tILi32EEvPK7ap_uintILi12EEPS1_S3_S4_i
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'cbarrett(unsigned int, unsigned int, unsigned int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 34, 
+                       Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'void fwd_stage2_t<32>(ap_uint<12> const*, ap_uint<12>*, ap_uint<12> const*, ap_uint<12>*, int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 71, 
+                       Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 84, Column: 40 }
+Function:        _ZL12fwd_stage2_tILi32EEvPK7ap_uintILi12EEPS1_S3_S4_i
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'subm(unsigned int, unsigned int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 50, 
+                       Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'void fwd_stage2_t<32>(ap_uint<12> const*, ap_uint<12>*, ap_uint<12> const*, ap_uint<12>*, int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 71, 
+                       Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 84, Column: 20 }
+Function:        _ZL12fwd_stage2_tILi32EEvPK7ap_uintILi12EEPS1_S3_S4_i
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'addm(unsigned int, unsigned int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 46, 
+                       Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'void fwd_stage2_t<32>(ap_uint<12> const*, ap_uint<12>*, ap_uint<12> const*, ap_uint<12>*, int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 71, 
+                       Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 83, Column: 35 }
+Function:        _ZL12fwd_stage2_tILi32EEvPK7ap_uintILi12EEPS1_S3_S4_i
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'cbarrett(unsigned int, unsigned int, unsigned int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 34, 
+                       Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'void fwd_stage2_t<32>(ap_uint<12> const*, ap_uint<12>*, ap_uint<12> const*, ap_uint<12>*, int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 71, 
+                       Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 86, Column: 40 }
+Function:        _ZL12fwd_stage2_tILi16EEvPK7ap_uintILi12EEPS1_S3_S4_i
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'subm(unsigned int, unsigned int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 50, 
+                       Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'void fwd_stage2_t<16>(ap_uint<12> const*, ap_uint<12>*, ap_uint<12> const*, ap_uint<12>*, int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 71, 
+                       Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 86, Column: 20 }
+Function:        _ZL12fwd_stage2_tILi16EEvPK7ap_uintILi12EEPS1_S3_S4_i
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'addm(unsigned int, unsigned int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 46, 
+                       Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'void fwd_stage2_t<16>(ap_uint<12> const*, ap_uint<12>*, ap_uint<12> const*, ap_uint<12>*, int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 71, 
+                       Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 85, Column: 35 }
+Function:        _ZL12fwd_stage2_tILi16EEvPK7ap_uintILi12EEPS1_S3_S4_i
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'cbarrett(unsigned int, unsigned int, unsigned int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 34, 
+                       Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'void fwd_stage2_t<16>(ap_uint<12> const*, ap_uint<12>*, ap_uint<12> const*, ap_uint<12>*, int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 71, 
+                       Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 84, Column: 40 }
+Function:        _ZL12fwd_stage2_tILi16EEvPK7ap_uintILi12EEPS1_S3_S4_i
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'subm(unsigned int, unsigned int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 50, 
+                       Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'void fwd_stage2_t<16>(ap_uint<12> const*, ap_uint<12>*, ap_uint<12> const*, ap_uint<12>*, int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 71, 
+                       Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 84, Column: 20 }
+Function:        _ZL12fwd_stage2_tILi16EEvPK7ap_uintILi12EEPS1_S3_S4_i
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'addm(unsigned int, unsigned int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 46, 
+                       Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'void fwd_stage2_t<16>(ap_uint<12> const*, ap_uint<12>*, ap_uint<12> const*, ap_uint<12>*, int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 71, 
+                       Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 83, Column: 35 }
+Function:        _ZL12fwd_stage2_tILi16EEvPK7ap_uintILi12EEPS1_S3_S4_i
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'cbarrett(unsigned int, unsigned int, unsigned int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 34, 
+                       Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'void fwd_stage2_t<16>(ap_uint<12> const*, ap_uint<12>*, ap_uint<12> const*, ap_uint<12>*, int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 71, 
+                       Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 86, Column: 40 }
+Function:        _ZL12fwd_stage2_tILi8EEvPK7ap_uintILi12EEPS1_S3_S4_i
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'subm(unsigned int, unsigned int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 50, 
+                       Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'void fwd_stage2_t<8>(ap_uint<12> const*, ap_uint<12>*, ap_uint<12> const*, ap_uint<12>*, int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 71, 
+                       Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 86, Column: 20 }
+Function:        _ZL12fwd_stage2_tILi8EEvPK7ap_uintILi12EEPS1_S3_S4_i
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'addm(unsigned int, unsigned int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 46, 
+                       Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'void fwd_stage2_t<8>(ap_uint<12> const*, ap_uint<12>*, ap_uint<12> const*, ap_uint<12>*, int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 71, 
+                       Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 85, Column: 35 }
+Function:        _ZL12fwd_stage2_tILi8EEvPK7ap_uintILi12EEPS1_S3_S4_i
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'cbarrett(unsigned int, unsigned int, unsigned int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 34, 
+                       Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'void fwd_stage2_t<8>(ap_uint<12> const*, ap_uint<12>*, ap_uint<12> const*, ap_uint<12>*, int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 71, 
+                       Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 84, Column: 40 }
+Function:        _ZL12fwd_stage2_tILi8EEvPK7ap_uintILi12EEPS1_S3_S4_i
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'subm(unsigned int, unsigned int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 50, 
+                       Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'void fwd_stage2_t<8>(ap_uint<12> const*, ap_uint<12>*, ap_uint<12> const*, ap_uint<12>*, int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 71, 
+                       Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 84, Column: 20 }
+Function:        _ZL12fwd_stage2_tILi8EEvPK7ap_uintILi12EEPS1_S3_S4_i
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'addm(unsigned int, unsigned int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 46, 
+                       Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'void fwd_stage2_t<8>(ap_uint<12> const*, ap_uint<12>*, ap_uint<12> const*, ap_uint<12>*, int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 71, 
+                       Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 83, Column: 35 }
+Function:        _ZL12fwd_stage2_tILi8EEvPK7ap_uintILi12EEPS1_S3_S4_i
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'cbarrett(unsigned int, unsigned int, unsigned int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 34, 
+                       Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'void fwd_stage2_t<8>(ap_uint<12> const*, ap_uint<12>*, ap_uint<12> const*, ap_uint<12>*, int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 71, 
+                       Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 86, Column: 40 }
+Function:        _ZL12fwd_stage2_tILi4EEvPK7ap_uintILi12EEPS1_S3_S4_i
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'subm(unsigned int, unsigned int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 50, 
+                       Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'void fwd_stage2_t<4>(ap_uint<12> const*, ap_uint<12>*, ap_uint<12> const*, ap_uint<12>*, int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 71, 
+                       Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 86, Column: 20 }
+Function:        _ZL12fwd_stage2_tILi4EEvPK7ap_uintILi12EEPS1_S3_S4_i
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'addm(unsigned int, unsigned int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 46, 
+                       Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'void fwd_stage2_t<4>(ap_uint<12> const*, ap_uint<12>*, ap_uint<12> const*, ap_uint<12>*, int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 71, 
+                       Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 85, Column: 35 }
+Function:        _ZL12fwd_stage2_tILi4EEvPK7ap_uintILi12EEPS1_S3_S4_i
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'cbarrett(unsigned int, unsigned int, unsigned int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 34, 
+                       Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'void fwd_stage2_t<4>(ap_uint<12> const*, ap_uint<12>*, ap_uint<12> const*, ap_uint<12>*, int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 71, 
+                       Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 84, Column: 40 }
+Function:        _ZL12fwd_stage2_tILi4EEvPK7ap_uintILi12EEPS1_S3_S4_i
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'subm(unsigned int, unsigned int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 50, 
+                       Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'void fwd_stage2_t<4>(ap_uint<12> const*, ap_uint<12>*, ap_uint<12> const*, ap_uint<12>*, int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 71, 
+                       Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 84, Column: 20 }
+Function:        _ZL12fwd_stage2_tILi4EEvPK7ap_uintILi12EEPS1_S3_S4_i
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'addm(unsigned int, unsigned int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 46, 
+                       Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'void fwd_stage2_t<4>(ap_uint<12> const*, ap_uint<12>*, ap_uint<12> const*, ap_uint<12>*, int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 71, 
+                       Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 83, Column: 35 }
+Function:        _ZL12fwd_stage2_tILi4EEvPK7ap_uintILi12EEPS1_S3_S4_i
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'cbarrett(unsigned int, unsigned int, unsigned int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 34, 
+                       Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'void fwd_stage2_t<4>(ap_uint<12> const*, ap_uint<12>*, ap_uint<12> const*, ap_uint<12>*, int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 71, 
+                       Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 86, Column: 40 }
+Function:        _ZL12fwd_stage2_tILi2EEvPK7ap_uintILi12EEPS1_S3_S4_i
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'subm(unsigned int, unsigned int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 50, 
+                       Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'void fwd_stage2_t<2>(ap_uint<12> const*, ap_uint<12>*, ap_uint<12> const*, ap_uint<12>*, int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 71, 
+                       Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 86, Column: 20 }
+Function:        _ZL12fwd_stage2_tILi2EEvPK7ap_uintILi12EEPS1_S3_S4_i
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'addm(unsigned int, unsigned int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 46, 
+                       Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'void fwd_stage2_t<2>(ap_uint<12> const*, ap_uint<12>*, ap_uint<12> const*, ap_uint<12>*, int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 71, 
+                       Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 85, Column: 35 }
+Function:        _ZL12fwd_stage2_tILi2EEvPK7ap_uintILi12EEPS1_S3_S4_i
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'cbarrett(unsigned int, unsigned int, unsigned int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 34, 
+                       Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'void fwd_stage2_t<2>(ap_uint<12> const*, ap_uint<12>*, ap_uint<12> const*, ap_uint<12>*, int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 71, 
+                       Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 84, Column: 40 }
+Function:        _ZL12fwd_stage2_tILi2EEvPK7ap_uintILi12EEPS1_S3_S4_i
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'subm(unsigned int, unsigned int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 50, 
+                       Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'void fwd_stage2_t<2>(ap_uint<12> const*, ap_uint<12>*, ap_uint<12> const*, ap_uint<12>*, int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 71, 
+                       Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 84, Column: 20 }
+Function:        _ZL12fwd_stage2_tILi2EEvPK7ap_uintILi12EEPS1_S3_S4_i
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'addm(unsigned int, unsigned int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 46, 
+                       Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'void fwd_stage2_t<2>(ap_uint<12> const*, ap_uint<12>*, ap_uint<12> const*, ap_uint<12>*, int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 71, 
+                       Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 83, Column: 35 }
+Function:        _ZL12fwd_stage2_tILi2EEvPK7ap_uintILi12EEPS1_S3_S4_i
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'cbarrett(unsigned int, unsigned int, unsigned int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 34, 
+                       Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'void fwd_stage2_t<2>(ap_uint<12> const*, ap_uint<12>*, ap_uint<12> const*, ap_uint<12>*, int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 71, 
+                       Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 146, Column: 26 }
+Function:        _ZL7basemulPK7ap_uintILi12EES2_PS0_
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'addm(unsigned int, unsigned int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 46, 
+                       Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'basemul(ap_uint<12> const*, ap_uint<12> const*, ap_uint<12>*)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 136, 
+                       Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 146, Column: 44 }
+Function:        _ZL7basemulPK7ap_uintILi12EES2_PS0_
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'mulm(unsigned int, unsigned int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 54, 
+                       Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'basemul(ap_uint<12> const*, ap_uint<12> const*, ap_uint<12>*)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 136, 
+                       Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 146, Column: 31 }
+Function:        _ZL7basemulPK7ap_uintILi12EES2_PS0_
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'mulm(unsigned int, unsigned int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 54, 
+                       Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'basemul(ap_uint<12> const*, ap_uint<12> const*, ap_uint<12>*)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 136, 
+                       Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 145, Column: 24 }
+Function:        _ZL7basemulPK7ap_uintILi12EES2_PS0_
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'addm(unsigned int, unsigned int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 46, 
+                       Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'basemul(ap_uint<12> const*, ap_uint<12> const*, ap_uint<12>*)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 136, 
+                       Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 145, Column: 42 }
+Function:        _ZL7basemulPK7ap_uintILi12EES2_PS0_
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'cbarrett(unsigned int, unsigned int, unsigned int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 34, 
+                       Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'basemul(ap_uint<12> const*, ap_uint<12> const*, ap_uint<12>*)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 136, 
+                       Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 145, Column: 29 }
+Function:        _ZL7basemulPK7ap_uintILi12EES2_PS0_
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'mulm(unsigned int, unsigned int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 54, 
+                       Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'basemul(ap_uint<12> const*, ap_uint<12> const*, ap_uint<12>*)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 136, 
+                       Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 144, Column: 26 }
+Function:        _ZL7basemulPK7ap_uintILi12EES2_PS0_
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'mulm(unsigned int, unsigned int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 54, 
+                       Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'basemul(ap_uint<12> const*, ap_uint<12> const*, ap_uint<12>*)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 136, 
+                       Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 119, Column: 21 }
+Function:        _ZL11inv_stage_tILi2EEvPK7ap_uintILi12EEPS1_i
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'cbarrett(unsigned int, unsigned int, unsigned int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 34, 
+                       Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'void inv_stage_t<2>(ap_uint<12> const*, ap_uint<12>*, int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 105, 
+                       Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 119, Column: 30 }
+Function:        _ZL11inv_stage_tILi2EEvPK7ap_uintILi12EEPS1_i
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'subm(unsigned int, unsigned int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 50, 
+                       Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'void inv_stage_t<2>(ap_uint<12> const*, ap_uint<12>*, int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 105, 
+                       Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 118, Column: 21 }
+Function:        _ZL11inv_stage_tILi2EEvPK7ap_uintILi12EEPS1_i
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'addm(unsigned int, unsigned int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 46, 
+                       Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'void inv_stage_t<2>(ap_uint<12> const*, ap_uint<12>*, int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 105, 
+                       Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 119, Column: 21 }
+Function:        _ZL11inv_stage_tILi4EEvPK7ap_uintILi12EEPS1_i
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'cbarrett(unsigned int, unsigned int, unsigned int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 34, 
+                       Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'void inv_stage_t<4>(ap_uint<12> const*, ap_uint<12>*, int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 105, 
+                       Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 119, Column: 30 }
+Function:        _ZL11inv_stage_tILi4EEvPK7ap_uintILi12EEPS1_i
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'subm(unsigned int, unsigned int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 50, 
+                       Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'void inv_stage_t<4>(ap_uint<12> const*, ap_uint<12>*, int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 105, 
+                       Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 118, Column: 21 }
+Function:        _ZL11inv_stage_tILi4EEvPK7ap_uintILi12EEPS1_i
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'addm(unsigned int, unsigned int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 46, 
+                       Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'void inv_stage_t<4>(ap_uint<12> const*, ap_uint<12>*, int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 105, 
+                       Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 119, Column: 21 }
+Function:        _ZL11inv_stage_tILi8EEvPK7ap_uintILi12EEPS1_i
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'cbarrett(unsigned int, unsigned int, unsigned int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 34, 
+                       Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'void inv_stage_t<8>(ap_uint<12> const*, ap_uint<12>*, int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 105, 
+                       Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 119, Column: 30 }
+Function:        _ZL11inv_stage_tILi8EEvPK7ap_uintILi12EEPS1_i
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'subm(unsigned int, unsigned int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 50, 
+                       Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'void inv_stage_t<8>(ap_uint<12> const*, ap_uint<12>*, int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 105, 
+                       Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 118, Column: 21 }
+Function:        _ZL11inv_stage_tILi8EEvPK7ap_uintILi12EEPS1_i
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'addm(unsigned int, unsigned int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 46, 
+                       Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'void inv_stage_t<8>(ap_uint<12> const*, ap_uint<12>*, int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 105, 
+                       Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 119, Column: 21 }
+Function:        _ZL11inv_stage_tILi16EEvPK7ap_uintILi12EEPS1_i
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'cbarrett(unsigned int, unsigned int, unsigned int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 34, 
+                       Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'void inv_stage_t<16>(ap_uint<12> const*, ap_uint<12>*, int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 105, 
+                       Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 119, Column: 30 }
+Function:        _ZL11inv_stage_tILi16EEvPK7ap_uintILi12EEPS1_i
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'subm(unsigned int, unsigned int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 50, 
+                       Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'void inv_stage_t<16>(ap_uint<12> const*, ap_uint<12>*, int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 105, 
+                       Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 118, Column: 21 }
+Function:        _ZL11inv_stage_tILi16EEvPK7ap_uintILi12EEPS1_i
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'addm(unsigned int, unsigned int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 46, 
+                       Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'void inv_stage_t<16>(ap_uint<12> const*, ap_uint<12>*, int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 105, 
+                       Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 119, Column: 21 }
+Function:        _ZL11inv_stage_tILi32EEvPK7ap_uintILi12EEPS1_i
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'cbarrett(unsigned int, unsigned int, unsigned int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 34, 
+                       Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'void inv_stage_t<32>(ap_uint<12> const*, ap_uint<12>*, int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 105, 
+                       Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 119, Column: 30 }
+Function:        _ZL11inv_stage_tILi32EEvPK7ap_uintILi12EEPS1_i
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'subm(unsigned int, unsigned int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 50, 
+                       Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'void inv_stage_t<32>(ap_uint<12> const*, ap_uint<12>*, int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 105, 
+                       Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 118, Column: 21 }
+Function:        _ZL11inv_stage_tILi32EEvPK7ap_uintILi12EEPS1_i
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'addm(unsigned int, unsigned int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 46, 
+                       Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'void inv_stage_t<32>(ap_uint<12> const*, ap_uint<12>*, int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 105, 
+                       Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 119, Column: 21 }
+Function:        _ZL11inv_stage_tILi64EEvPK7ap_uintILi12EEPS1_i
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'cbarrett(unsigned int, unsigned int, unsigned int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 34, 
+                       Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'void inv_stage_t<64>(ap_uint<12> const*, ap_uint<12>*, int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 105, 
+                       Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 119, Column: 30 }
+Function:        _ZL11inv_stage_tILi64EEvPK7ap_uintILi12EEPS1_i
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'subm(unsigned int, unsigned int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 50, 
+                       Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'void inv_stage_t<64>(ap_uint<12> const*, ap_uint<12>*, int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 105, 
+                       Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 118, Column: 21 }
+Function:        _ZL11inv_stage_tILi64EEvPK7ap_uintILi12EEPS1_i
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'addm(unsigned int, unsigned int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 46, 
+                       Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'void inv_stage_t<64>(ap_uint<12> const*, ap_uint<12>*, int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 105, 
+                       Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 119, Column: 21 }
+Function:        _ZL11inv_stage_tILi128EEvPK7ap_uintILi12EEPS1_i
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'cbarrett(unsigned int, unsigned int, unsigned int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 34, 
+                       Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'void inv_stage_t<128>(ap_uint<12> const*, ap_uint<12>*, int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 105, 
+                       Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 119, Column: 30 }
+Function:        _ZL11inv_stage_tILi128EEvPK7ap_uintILi12EEPS1_i
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'subm(unsigned int, unsigned int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 50, 
+                       Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'void inv_stage_t<128>(ap_uint<12> const*, ap_uint<12>*, int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 105, 
+                       Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 118, Column: 21 }
+Function:        _ZL11inv_stage_tILi128EEvPK7ap_uintILi12EEPS1_i
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'addm(unsigned int, unsigned int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 46, 
+                       Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'void inv_stage_t<128>(ap_uint<12> const*, ap_uint<12>*, int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 105, 
+                       Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 132, Column: 9 }
+Function:        _ZL7inv_nttP7ap_uintILi12EE
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'mulm(unsigned int, unsigned int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 54, 
+                       Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'inv_ntt(ap_uint<12>*)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 123, 
+                       Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 280, Column: 31 }
+Function:        _ZL9store_allRN3hls6streamI7kbeat_tLi0EEEPji
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_280_1
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 253, Column: 31 }
+Function:        _ZL7inv_allRN3hls6streamI7kbeat_tLi0EEES3_i
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_253_1
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 262, Column: 31 }
+Function:        _ZL7inv_allRN3hls6streamI7kbeat_tLi0EEES3_i
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_262_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 109, Column: 20 }
+Function:        _ZL11inv_stage_tILi128EEvPK7ap_uintILi12EEPS1_i
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_109_1
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 109, Column: 20 }
+Function:        _ZL11inv_stage_tILi64EEvPK7ap_uintILi12EEPS1_i
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_109_1
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 109, Column: 20 }
+Function:        _ZL11inv_stage_tILi32EEvPK7ap_uintILi12EEPS1_i
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_109_1
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 109, Column: 20 }
+Function:        _ZL11inv_stage_tILi16EEvPK7ap_uintILi12EEPS1_i
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_109_1
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 109, Column: 20 }
+Function:        _ZL11inv_stage_tILi8EEvPK7ap_uintILi12EEPS1_i
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_109_1
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 109, Column: 20 }
+Function:        _ZL11inv_stage_tILi4EEvPK7ap_uintILi12EEPS1_i
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_109_1
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 109, Column: 20 }
+Function:        _ZL11inv_stage_tILi2EEvPK7ap_uintILi12EEPS1_i
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_109_1
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 223, Column: 31 }
+Function:        _ZL11basemul_allRN3hls6streamI7kbeat_tLi0EEES3_S3_i
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_223_1
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 233, Column: 31 }
+Function:        _ZL11basemul_allRN3hls6streamI7kbeat_tLi0EEES3_S3_i
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_233_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 140, Column: 20 }
+Function:        _ZL7basemulPK7ap_uintILi12EES2_PS0_
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_140_1
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 190, Column: 31 }
+Function:        _ZL7fwd_allRN3hls6streamI7kbeat_tLi0EEES3_S3_S3_i
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_190_1
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 200, Column: 31 }
+Function:        _ZL7fwd_allRN3hls6streamI7kbeat_tLi0EEES3_S3_S3_i
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_200_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 75, Column: 19 }
+Function:        _ZL12fwd_stage2_tILi2EEvPK7ap_uintILi12EEPS1_S3_S4_i
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_75_1
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 75, Column: 19 }
+Function:        _ZL12fwd_stage2_tILi4EEvPK7ap_uintILi12EEPS1_S3_S4_i
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_75_1
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 75, Column: 19 }
+Function:        _ZL12fwd_stage2_tILi8EEvPK7ap_uintILi12EEPS1_S3_S4_i
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_75_1
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 75, Column: 19 }
+Function:        _ZL12fwd_stage2_tILi16EEvPK7ap_uintILi12EEPS1_S3_S4_i
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_75_1
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 75, Column: 19 }
+Function:        _ZL12fwd_stage2_tILi32EEvPK7ap_uintILi12EEPS1_S3_S4_i
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_75_1
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 75, Column: 19 }
+Function:        _ZL12fwd_stage2_tILi64EEvPK7ap_uintILi12EEPS1_S3_S4_i
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_75_1
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 75, Column: 19 }
+Function:        _ZL12fwd_stage2_tILi128EEvPK7ap_uintILi12EEPS1_S3_S4_i
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_75_1
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 167, Column: 31 }
+Function:        _ZL8load_allPKjS0_RN3hls6streamI7kbeat_tLi0EEES5_i
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_167_1
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 272, Column: 0 }
+Function:        _ZL9store_allRN3hls6streamI7kbeat_tLi0EEEPji
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_280_1
+  - String:          ''' ('
+  - LoopLoc:         'kyber-mult-kernel-dataflow.cpp:280:31'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          store_all
+  - String:          ''' completely with a factor of '
+  - Factor:          '16'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 244, Column: 0 }
+Function:        _ZL7inv_allRN3hls6streamI7kbeat_tLi0EEES3_i
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_253_1
+  - String:          ''' ('
+  - LoopLoc:         'kyber-mult-kernel-dataflow.cpp:253:31'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          inv_all
+  - String:          ''' completely with a factor of '
+  - Factor:          '16'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 244, Column: 0 }
+Function:        _ZL7inv_allRN3hls6streamI7kbeat_tLi0EEES3_i
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_262_2
+  - String:          ''' ('
+  - LoopLoc:         'kyber-mult-kernel-dataflow.cpp:262:31'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          inv_all
+  - String:          ''' completely with a factor of '
+  - Factor:          '16'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 105, Column: 0 }
+Function:        _ZL11inv_stage_tILi128EEvPK7ap_uintILi12EEPS1_i
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_109_1
+  - String:          ''' ('
+  - LoopLoc:         'kyber-mult-kernel-dataflow.cpp:109:20'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          'inv_stage_t<128>'
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 105, Column: 0 }
+Function:        _ZL11inv_stage_tILi64EEvPK7ap_uintILi12EEPS1_i
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_109_1
+  - String:          ''' ('
+  - LoopLoc:         'kyber-mult-kernel-dataflow.cpp:109:20'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          'inv_stage_t<64>'
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 105, Column: 0 }
+Function:        _ZL11inv_stage_tILi32EEvPK7ap_uintILi12EEPS1_i
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_109_1
+  - String:          ''' ('
+  - LoopLoc:         'kyber-mult-kernel-dataflow.cpp:109:20'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          'inv_stage_t<32>'
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 105, Column: 0 }
+Function:        _ZL11inv_stage_tILi16EEvPK7ap_uintILi12EEPS1_i
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_109_1
+  - String:          ''' ('
+  - LoopLoc:         'kyber-mult-kernel-dataflow.cpp:109:20'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          'inv_stage_t<16>'
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 105, Column: 0 }
+Function:        _ZL11inv_stage_tILi8EEvPK7ap_uintILi12EEPS1_i
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_109_1
+  - String:          ''' ('
+  - LoopLoc:         'kyber-mult-kernel-dataflow.cpp:109:20'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          'inv_stage_t<8>'
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 105, Column: 0 }
+Function:        _ZL11inv_stage_tILi4EEvPK7ap_uintILi12EEPS1_i
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_109_1
+  - String:          ''' ('
+  - LoopLoc:         'kyber-mult-kernel-dataflow.cpp:109:20'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          'inv_stage_t<4>'
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 105, Column: 0 }
+Function:        _ZL11inv_stage_tILi2EEvPK7ap_uintILi12EEPS1_i
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_109_1
+  - String:          ''' ('
+  - LoopLoc:         'kyber-mult-kernel-dataflow.cpp:109:20'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          'inv_stage_t<2>'
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 212, Column: 0 }
+Function:        _ZL11basemul_allRN3hls6streamI7kbeat_tLi0EEES3_S3_i
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_223_1
+  - String:          ''' ('
+  - LoopLoc:         'kyber-mult-kernel-dataflow.cpp:223:31'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          basemul_all
+  - String:          ''' completely with a factor of '
+  - Factor:          '16'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 212, Column: 0 }
+Function:        _ZL11basemul_allRN3hls6streamI7kbeat_tLi0EEES3_S3_i
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_233_2
+  - String:          ''' ('
+  - LoopLoc:         'kyber-mult-kernel-dataflow.cpp:233:31'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          basemul_all
+  - String:          ''' completely with a factor of '
+  - Factor:          '16'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 136, Column: 0 }
+Function:        _ZL7basemulPK7ap_uintILi12EES2_PS0_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_140_1
+  - String:          ''' ('
+  - LoopLoc:         'kyber-mult-kernel-dataflow.cpp:140:20'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          basemul
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 180, Column: 0 }
+Function:        _ZL7fwd_allRN3hls6streamI7kbeat_tLi0EEES3_S3_S3_i
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_190_1
+  - String:          ''' ('
+  - LoopLoc:         'kyber-mult-kernel-dataflow.cpp:190:31'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          fwd_all
+  - String:          ''' completely with a factor of '
+  - Factor:          '16'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 180, Column: 0 }
+Function:        _ZL7fwd_allRN3hls6streamI7kbeat_tLi0EEES3_S3_S3_i
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_200_2
+  - String:          ''' ('
+  - LoopLoc:         'kyber-mult-kernel-dataflow.cpp:200:31'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          fwd_all
+  - String:          ''' completely with a factor of '
+  - Factor:          '16'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 71, Column: 0 }
+Function:        _ZL12fwd_stage2_tILi2EEvPK7ap_uintILi12EEPS1_S3_S4_i
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_75_1
+  - String:          ''' ('
+  - LoopLoc:         'kyber-mult-kernel-dataflow.cpp:75:19'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          'fwd_stage2_t<2>'
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 71, Column: 0 }
+Function:        _ZL12fwd_stage2_tILi4EEvPK7ap_uintILi12EEPS1_S3_S4_i
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_75_1
+  - String:          ''' ('
+  - LoopLoc:         'kyber-mult-kernel-dataflow.cpp:75:19'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          'fwd_stage2_t<4>'
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 71, Column: 0 }
+Function:        _ZL12fwd_stage2_tILi8EEvPK7ap_uintILi12EEPS1_S3_S4_i
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_75_1
+  - String:          ''' ('
+  - LoopLoc:         'kyber-mult-kernel-dataflow.cpp:75:19'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          'fwd_stage2_t<8>'
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 71, Column: 0 }
+Function:        _ZL12fwd_stage2_tILi16EEvPK7ap_uintILi12EEPS1_S3_S4_i
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_75_1
+  - String:          ''' ('
+  - LoopLoc:         'kyber-mult-kernel-dataflow.cpp:75:19'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          'fwd_stage2_t<16>'
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 71, Column: 0 }
+Function:        _ZL12fwd_stage2_tILi32EEvPK7ap_uintILi12EEPS1_S3_S4_i
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_75_1
+  - String:          ''' ('
+  - LoopLoc:         'kyber-mult-kernel-dataflow.cpp:75:19'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          'fwd_stage2_t<32>'
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 71, Column: 0 }
+Function:        _ZL12fwd_stage2_tILi64EEvPK7ap_uintILi12EEPS1_S3_S4_i
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_75_1
+  - String:          ''' ('
+  - LoopLoc:         'kyber-mult-kernel-dataflow.cpp:75:19'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          'fwd_stage2_t<64>'
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 71, Column: 0 }
+Function:        _ZL12fwd_stage2_tILi128EEvPK7ap_uintILi12EEPS1_S3_S4_i
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_75_1
+  - String:          ''' ('
+  - LoopLoc:         'kyber-mult-kernel-dataflow.cpp:75:19'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          'fwd_stage2_t<128>'
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 159, Column: 0 }
+Function:        _ZL8load_allPKjS0_RN3hls6streamI7kbeat_tLi0EEES5_i
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_167_1
+  - String:          ''' ('
+  - LoopLoc:         'kyber-mult-kernel-dataflow.cpp:167:31'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          load_all
+  - String:          ''' completely with a factor of '
+  - Factor:          '16'
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 92, Column: 10 }
+Function:        _ZL8fwd_ntt2P7ap_uintILi12EES1_
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          tA
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Cyclic
+  - String:          ' partitioning'
+  - String:          ' with factor '
+  - Factor:          '16'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 92, Column: 19 }
+Function:        _ZL8fwd_ntt2P7ap_uintILi12EES1_
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          tB
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Cyclic
+  - String:          ' partitioning'
+  - String:          ' with factor '
+  - Factor:          '16'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 184, Column: 10 }
+Function:        _ZL7fwd_allRN3hls6streamI7kbeat_tLi0EEES3_S3_S3_i
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          A
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Cyclic
+  - String:          ' partitioning'
+  - String:          ' with factor '
+  - Factor:          '16'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 184, Column: 18 }
+Function:        _ZL7fwd_allRN3hls6streamI7kbeat_tLi0EEES3_S3_S3_i
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          B
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Cyclic
+  - String:          ' partitioning'
+  - String:          ' with factor '
+  - Factor:          '16'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 216, Column: 10 }
+Function:        _ZL11basemul_allRN3hls6streamI7kbeat_tLi0EEES3_S3_i
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          A
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Cyclic
+  - String:          ' partitioning'
+  - String:          ' with factor '
+  - Factor:          '16'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 216, Column: 18 }
+Function:        _ZL11basemul_allRN3hls6streamI7kbeat_tLi0EEES3_S3_i
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          B
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Cyclic
+  - String:          ' partitioning'
+  - String:          ' with factor '
+  - Factor:          '16'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 216, Column: 26 }
+Function:        _ZL11basemul_allRN3hls6streamI7kbeat_tLi0EEES3_S3_i
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          C
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Cyclic
+  - String:          ' partitioning'
+  - String:          ' with factor '
+  - Factor:          '16'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 125, Column: 10 }
+Function:        _ZL7inv_nttP7ap_uintILi12EE
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          tmp
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Cyclic
+  - String:          ' partitioning'
+  - String:          ' with factor '
+  - Factor:          '16'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 248, Column: 10 }
+Function:        _ZL7inv_allRN3hls6streamI7kbeat_tLi0EEES3_i
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          C
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Cyclic
+  - String:          ' partitioning'
+  - String:          ' with factor '
+  - Factor:          '16'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-aggr
+Name:            AggrSucc
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 302, Column: 23 }
+Function:        kyber_mult
+Args:            
+  - String:          'Aggregating '
+  - HwTyName:        'fifo (hls::stream)'
+  - String:          ' variable '''
+  - Name:            sA0
+  - String:          ''' with '
+  - AggregateTypeName: 'compact=bit'
+  - String:          ' mode in '
+  - Bitwidth:        '192'
+  - String:          '-bits'
+...
+--- !Passed
+Pass:            reflow-aggr
+Name:            AggrSucc
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 302, Column: 28 }
+Function:        kyber_mult
+Args:            
+  - String:          'Aggregating '
+  - HwTyName:        'fifo (hls::stream)'
+  - String:          ' variable '''
+  - Name:            sB0
+  - String:          ''' with '
+  - AggregateTypeName: 'compact=bit'
+  - String:          ' mode in '
+  - Bitwidth:        '192'
+  - String:          '-bits'
+...
+--- !Passed
+Pass:            reflow-aggr
+Name:            AggrSucc
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 303, Column: 26 }
+Function:        kyber_mult
+Args:            
+  - String:          'Aggregating '
+  - HwTyName:        'fifo (hls::stream)'
+  - String:          ' variable '''
+  - Name:            sA1
+  - String:          ''' with '
+  - AggregateTypeName: 'compact=bit'
+  - String:          ' mode in '
+  - Bitwidth:        '192'
+  - String:          '-bits'
+...
+--- !Passed
+Pass:            reflow-aggr
+Name:            AggrSucc
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 303, Column: 31 }
+Function:        kyber_mult
+Args:            
+  - String:          'Aggregating '
+  - HwTyName:        'fifo (hls::stream)'
+  - String:          ' variable '''
+  - Name:            sB1
+  - String:          ''' with '
+  - AggregateTypeName: 'compact=bit'
+  - String:          ' mode in '
+  - Bitwidth:        '192'
+  - String:          '-bits'
+...
+--- !Passed
+Pass:            reflow-aggr
+Name:            AggrSucc
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 304, Column: 26 }
+Function:        kyber_mult
+Args:            
+  - String:          'Aggregating '
+  - HwTyName:        'fifo (hls::stream)'
+  - String:          ' variable '''
+  - Name:            sC0
+  - String:          ''' with '
+  - AggregateTypeName: 'compact=bit'
+  - String:          ' mode in '
+  - Bitwidth:        '192'
+  - String:          '-bits'
+...
+--- !Passed
+Pass:            reflow-aggr
+Name:            AggrSucc
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 305, Column: 26 }
+Function:        kyber_mult
+Args:            
+  - String:          'Aggregating '
+  - HwTyName:        'fifo (hls::stream)'
+  - String:          ' variable '''
+  - Name:            sC1
+  - String:          ''' with '
+  - AggregateTypeName: 'compact=bit'
+  - String:          ' mode in '
+  - Bitwidth:        '192'
+  - String:          '-bits'
+...
+--- !Passed
+Pass:            reflow-burst-inference
+Name:            BurstInferred
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 161, Column: 10 }
+Function:        _ZL8load_allPKjS0_RN3hls6streamI7kbeat_tLi0EEES5_i
+Args:            
+  - String:          'Sequential '
+  - Direction:       read
+  - String:          ' of '
+  - Length:          variable
+  - String:          ' length'
+  - String:          ' has been inferred'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        a1seq
+  - ArrayName:       a
+  - String:          ' '
+  - BundleName:      gmem0
+  - String:          ' '
+  - LoopName:        LD_BLK
+  - String:          ' '
+  - LoopLoc:         'kyber-mult-kernel-dataflow.cpp:161:10'
+  - String:          ' '
+  - Function:        'load_all(unsigned int const*, unsigned int const*, hls::stream<kbeat_t, 0>&, hls::stream<kbeat_t, 0>&, int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 159, 
+                       Column: 0 }
+  - String:          ' '
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      load
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 169, 
+                       Column: 22 }
+  - OrigDirection:   read
+  - OrigID:          VITIS_LOOP_167_1.load.38
+  - OrigAccess:      load
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 169, 
+                       Column: 22 }
+  - OrigDirection:   read
+  - OrigID:          VITIS_LOOP_167_1.load.47
+  - OrigAccess:      load
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 169, 
+                       Column: 22 }
+  - OrigDirection:   read
+  - OrigID:          VITIS_LOOP_167_1.load.56
+  - OrigAccess:      load
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 169, 
+                       Column: 22 }
+  - OrigDirection:   read
+  - OrigID:          VITIS_LOOP_167_1.load.65
+  - OrigAccess:      load
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 169, 
+                       Column: 22 }
+  - OrigDirection:   read
+  - OrigID:          VITIS_LOOP_167_1.load.74
+  - OrigAccess:      load
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 169, 
+                       Column: 22 }
+  - OrigDirection:   read
+  - OrigID:          VITIS_LOOP_167_1.load.83
+  - OrigAccess:      load
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 169, 
+                       Column: 22 }
+  - OrigDirection:   read
+  - OrigID:          VITIS_LOOP_167_1.load.92
+  - OrigAccess:      load
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 169, 
+                       Column: 22 }
+  - OrigDirection:   read
+  - OrigID:          VITIS_LOOP_167_1.load.101
+  - OrigAccess:      load
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 169, 
+                       Column: 22 }
+  - OrigDirection:   read
+  - OrigID:          VITIS_LOOP_167_1.load.110
+  - OrigAccess:      load
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 169, 
+                       Column: 22 }
+  - OrigDirection:   read
+  - OrigID:          VITIS_LOOP_167_1.load.119
+  - OrigAccess:      load
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 169, 
+                       Column: 22 }
+  - OrigDirection:   read
+  - OrigID:          VITIS_LOOP_167_1.load.128
+  - OrigAccess:      load
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 169, 
+                       Column: 22 }
+  - OrigDirection:   read
+  - OrigID:          VITIS_LOOP_167_1.load.137
+  - OrigAccess:      load
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 169, 
+                       Column: 22 }
+  - OrigDirection:   read
+  - OrigID:          VITIS_LOOP_167_1.load.146
+  - OrigAccess:      load
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 169, 
+                       Column: 22 }
+  - OrigDirection:   read
+  - OrigID:          VITIS_LOOP_167_1.load.155
+  - OrigAccess:      load
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 169, 
+                       Column: 22 }
+  - OrigDirection:   read
+  - OrigID:          VITIS_LOOP_167_1.load.164
+  - OrigAccess:      load
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 169, 
+                       Column: 22 }
+  - OrigDirection:   read
+  - OrigID:          VITIS_LOOP_167_1.load.173
+...
+--- !Passed
+Pass:            reflow-burst-inference
+Name:            BurstInferred
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 161, Column: 10 }
+Function:        _ZL8load_allPKjS0_RN3hls6streamI7kbeat_tLi0EEES5_i
+Args:            
+  - String:          'Sequential '
+  - Direction:       read
+  - String:          ' of '
+  - Length:          variable
+  - String:          ' length'
+  - String:          ' has been inferred'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        b2seq
+  - ArrayName:       b
+  - String:          ' '
+  - BundleName:      gmem1
+  - String:          ' '
+  - LoopName:        LD_BLK
+  - String:          ' '
+  - LoopLoc:         'kyber-mult-kernel-dataflow.cpp:161:10'
+  - String:          ' '
+  - Function:        'load_all(unsigned int const*, unsigned int const*, hls::stream<kbeat_t, 0>&, hls::stream<kbeat_t, 0>&, int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 159, 
+                       Column: 0 }
+  - String:          ' '
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      load
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 170, 
+                       Column: 37 }
+  - OrigDirection:   read
+  - OrigID:          VITIS_LOOP_167_1.load.75
+  - OrigAccess:      load
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 170, 
+                       Column: 37 }
+  - OrigDirection:   read
+  - OrigID:          VITIS_LOOP_167_1.load.84
+  - OrigAccess:      load
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 170, 
+                       Column: 37 }
+  - OrigDirection:   read
+  - OrigID:          VITIS_LOOP_167_1.load.93
+  - OrigAccess:      load
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 170, 
+                       Column: 37 }
+  - OrigDirection:   read
+  - OrigID:          VITIS_LOOP_167_1.load.102
+  - OrigAccess:      load
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 170, 
+                       Column: 37 }
+  - OrigDirection:   read
+  - OrigID:          VITIS_LOOP_167_1.load.111
+  - OrigAccess:      load
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 170, 
+                       Column: 37 }
+  - OrigDirection:   read
+  - OrigID:          VITIS_LOOP_167_1.load.120
+  - OrigAccess:      load
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 170, 
+                       Column: 37 }
+  - OrigDirection:   read
+  - OrigID:          VITIS_LOOP_167_1.load.129
+  - OrigAccess:      load
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 170, 
+                       Column: 37 }
+  - OrigDirection:   read
+  - OrigID:          VITIS_LOOP_167_1.load.138
+  - OrigAccess:      load
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 170, 
+                       Column: 37 }
+  - OrigDirection:   read
+  - OrigID:          VITIS_LOOP_167_1.load.147
+  - OrigAccess:      load
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 170, 
+                       Column: 37 }
+  - OrigDirection:   read
+  - OrigID:          VITIS_LOOP_167_1.load.156
+  - OrigAccess:      load
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 170, 
+                       Column: 37 }
+  - OrigDirection:   read
+  - OrigID:          VITIS_LOOP_167_1.load.165
+  - OrigAccess:      load
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 170, 
+                       Column: 37 }
+  - OrigDirection:   read
+  - OrigID:          VITIS_LOOP_167_1.load.174
+  - OrigAccess:      load
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 170, 
+                       Column: 37 }
+  - OrigDirection:   read
+  - OrigID:          VITIS_LOOP_167_1.load.183
+  - OrigAccess:      load
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 170, 
+                       Column: 37 }
+  - OrigDirection:   read
+  - OrigID:          VITIS_LOOP_167_1.load.192
+  - OrigAccess:      load
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 170, 
+                       Column: 37 }
+  - OrigDirection:   read
+  - OrigID:          VITIS_LOOP_167_1.load.201
+  - OrigAccess:      load
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 170, 
+                       Column: 37 }
+  - OrigDirection:   read
+  - OrigID:          VITIS_LOOP_167_1.load.210
+...
+--- !Passed
+Pass:            reflow-burst-inference
+Name:            BurstInferred
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 274, Column: 10 }
+Function:        _ZL9store_allRN3hls6streamI7kbeat_tLi0EEEPji
+Args:            
+  - String:          'Sequential '
+  - Direction:       write
+  - String:          ' of '
+  - Length:          variable
+  - String:          ' length'
+  - String:          ' has been inferred'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        c1seq
+  - ArrayName:       c
+  - String:          ' '
+  - BundleName:      gmem2
+  - String:          ' '
+  - LoopName:        ST_BLK
+  - String:          ' '
+  - LoopLoc:         'kyber-mult-kernel-dataflow.cpp:274:10'
+  - String:          ' '
+  - Function:        'store_all(hls::stream<kbeat_t, 0>&, unsigned int*, int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 272, 
+                       Column: 0 }
+  - String:          ' '
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      store
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 282, 
+                       Column: 24 }
+  - OrigDirection:   write
+  - OrigID:          VITIS_LOOP_280_1.store.58
+  - OrigAccess:      store
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 282, 
+                       Column: 24 }
+  - OrigDirection:   write
+  - OrigID:          VITIS_LOOP_280_1.store.63
+  - OrigAccess:      store
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 282, 
+                       Column: 24 }
+  - OrigDirection:   write
+  - OrigID:          VITIS_LOOP_280_1.store.68
+  - OrigAccess:      store
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 282, 
+                       Column: 24 }
+  - OrigDirection:   write
+  - OrigID:          VITIS_LOOP_280_1.store.73
+  - OrigAccess:      store
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 282, 
+                       Column: 24 }
+  - OrigDirection:   write
+  - OrigID:          VITIS_LOOP_280_1.store.78
+  - OrigAccess:      store
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 282, 
+                       Column: 24 }
+  - OrigDirection:   write
+  - OrigID:          VITIS_LOOP_280_1.store.83
+  - OrigAccess:      store
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 282, 
+                       Column: 24 }
+  - OrigDirection:   write
+  - OrigID:          VITIS_LOOP_280_1.store.88
+  - OrigAccess:      store
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 282, 
+                       Column: 24 }
+  - OrigDirection:   write
+  - OrigID:          VITIS_LOOP_280_1.store.93
+  - OrigAccess:      store
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 282, 
+                       Column: 24 }
+  - OrigDirection:   write
+  - OrigID:          VITIS_LOOP_280_1.store.98
+  - OrigAccess:      store
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 282, 
+                       Column: 24 }
+  - OrigDirection:   write
+  - OrigID:          VITIS_LOOP_280_1.store.103
+  - OrigAccess:      store
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 282, 
+                       Column: 24 }
+  - OrigDirection:   write
+  - OrigID:          VITIS_LOOP_280_1.store.108
+  - OrigAccess:      store
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 282, 
+                       Column: 24 }
+  - OrigDirection:   write
+  - OrigID:          VITIS_LOOP_280_1.store.113
+  - OrigAccess:      store
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 282, 
+                       Column: 24 }
+  - OrigDirection:   write
+  - OrigID:          VITIS_LOOP_280_1.store.118
+  - OrigAccess:      store
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 282, 
+                       Column: 24 }
+  - OrigDirection:   write
+  - OrigID:          VITIS_LOOP_280_1.store.123
+  - OrigAccess:      store
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 282, 
+                       Column: 24 }
+  - OrigDirection:   write
+  - OrigID:          VITIS_LOOP_280_1.store.128
+  - OrigAccess:      store
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 282, 
+                       Column: 24 }
+  - OrigDirection:   write
+  - OrigID:          VITIS_LOOP_280_1.store.133
+...
+--- !Missed
+Pass:            reflow-burst-widen
+Name:            GreaterOrEqualThreshold
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 161, Column: 10 }
+Function:        _ZL8load_allPKjS0_RN3hls6streamI7kbeat_tLi0EEES5_i
+Args:            
+  - String:          'Could not widen since type '
+  - Type:            i32
+  - String:          ' size is greater than or equal to the max_widen_bitwidth threshold of '
+  - Threshold:       '0'
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      call
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 161, 
+                       Column: 10 }
+  - OrigDirection:   read
+  - OrigID:          a1seq
+  - ArrayName:       a
+  - String:          ' '
+  - BundleName:      gmem0
+  - String:          ' '
+  - LoopName:        LD
+  - String:          ' '
+  - LoopLoc:         'kyber-mult-kernel-dataflow.cpp:164:13'
+  - String:          ' '
+  - Function:        'load_all(unsigned int const*, unsigned int const*, hls::stream<kbeat_t, 0>&, hls::stream<kbeat_t, 0>&, int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 159, 
+                       Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-widen
+Name:            GreaterOrEqualThreshold
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 161, Column: 10 }
+Function:        _ZL8load_allPKjS0_RN3hls6streamI7kbeat_tLi0EEES5_i
+Args:            
+  - String:          'Could not widen since type '
+  - Type:            i32
+  - String:          ' size is greater than or equal to the max_widen_bitwidth threshold of '
+  - Threshold:       '0'
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      call
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 161, 
+                       Column: 10 }
+  - OrigDirection:   read
+  - OrigID:          b2seq
+  - ArrayName:       b
+  - String:          ' '
+  - BundleName:      gmem1
+  - String:          ' '
+  - LoopName:        LD
+  - String:          ' '
+  - LoopLoc:         'kyber-mult-kernel-dataflow.cpp:164:13'
+  - String:          ' '
+  - Function:        'load_all(unsigned int const*, unsigned int const*, hls::stream<kbeat_t, 0>&, hls::stream<kbeat_t, 0>&, int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 159, 
+                       Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-widen
+Name:            GreaterOrEqualThreshold
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 274, Column: 10 }
+Function:        _ZL9store_allRN3hls6streamI7kbeat_tLi0EEEPji
+Args:            
+  - String:          'Could not widen since type '
+  - Type:            i32
+  - String:          ' size is greater than or equal to the max_widen_bitwidth threshold of '
+  - Threshold:       '0'
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      call
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 274, 
+                       Column: 10 }
+  - OrigDirection:   write
+  - OrigID:          c1seq
+  - ArrayName:       c
+  - String:          ' '
+  - BundleName:      gmem2
+  - String:          ' '
+  - LoopName:        ST
+  - String:          ' '
+  - LoopLoc:         'kyber-mult-kernel-dataflow.cpp:277:13'
+  - String:          ' '
+  - Function:        'store_all(hls::stream<kbeat_t, 0>&, unsigned int*, int)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 272, 
+                       Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+DebugLoc:        { File: ./kyber-tables.h, Line: 83, Column: 0 }
+Function:        kyber_mult
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=1 type=cyclic factor=4 variable=_ZL4BM_W'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  kyber_mult
+  - String:          ' '
+  - varLoc:          './kyber-tables.h:83:0'
+  - String:          ' '
+  - PragmaSrcLoc:    'kyber-mult-kernel-dataflow.cpp:139:9'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 139, 
+                       Column: 9 }
+  - VarName:         BM_W
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 139, Column: 9 }
+Function:        kyber_mult
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            cyclic
+  - String:          ' factor='
+  - Factor:          '4'
+  - String:          ' dim='
+  - Dim:             '1'
+  - String:          ''' for array '''
+  - Name:            BM_W
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+DebugLoc:        { File: ./kyber-tables.h, Line: 84, Column: 0 }
+Function:        kyber_mult
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=1 type=cyclic factor=4 variable=_ZL5BM_MW'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  kyber_mult
+  - String:          ' '
+  - varLoc:          './kyber-tables.h:84:0'
+  - String:          ' '
+  - PragmaSrcLoc:    'kyber-mult-kernel-dataflow.cpp:139:9'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 139, 
+                       Column: 9 }
+  - VarName:         BM_MW
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 139, Column: 9 }
+Function:        kyber_mult
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            cyclic
+  - String:          ' factor='
+  - Factor:          '4'
+  - String:          ' dim='
+  - Dim:             '1'
+  - String:          ''' for array '''
+  - Name:            BM_MW
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+DebugLoc:        { File: ./kyber-tables.h, Line: 29, Column: 0 }
+Function:        kyber_mult
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=2 type=cyclic factor=4 variable=_ZL5FWD_W'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  kyber_mult
+  - String:          ' '
+  - varLoc:          './kyber-tables.h:29:0'
+  - String:          ' '
+  - PragmaSrcLoc:    'kyber-mult-kernel-dataflow.cpp:74:9'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 74, 
+                       Column: 9 }
+  - VarName:         FWD_W
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 74, Column: 9 }
+Function:        kyber_mult
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            cyclic
+  - String:          ' factor='
+  - Factor:          '4'
+  - String:          ' dim='
+  - Dim:             '2'
+  - String:          ''' for array '''
+  - Name:            FWD_W
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+DebugLoc:        { File: ./kyber-tables.h, Line: 65, Column: 0 }
+Function:        kyber_mult
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=2 type=cyclic factor=4 variable=_ZL5INV_W'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  kyber_mult
+  - String:          ' '
+  - varLoc:          './kyber-tables.h:65:0'
+  - String:          ' '
+  - PragmaSrcLoc:    'kyber-mult-kernel-dataflow.cpp:108:9'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 108, 
+                       Column: 9 }
+  - VarName:         INV_W
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 108, Column: 9 }
+Function:        kyber_mult
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            cyclic
+  - String:          ' factor='
+  - Factor:          '4'
+  - String:          ' dim='
+  - Dim:             '2'
+  - String:          ''' for array '''
+  - Name:            INV_W
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+DebugLoc:        { File: ./kyber-tables.h, Line: 38, Column: 0 }
+Function:        kyber_mult
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=2 type=cyclic factor=4 variable=_ZL6FWD_MW'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  kyber_mult
+  - String:          ' '
+  - varLoc:          './kyber-tables.h:38:0'
+  - String:          ' '
+  - PragmaSrcLoc:    'kyber-mult-kernel-dataflow.cpp:74:9'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 74, 
+                       Column: 9 }
+  - VarName:         FWD_MW
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 74, Column: 9 }
+Function:        kyber_mult
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            cyclic
+  - String:          ' factor='
+  - Factor:          '4'
+  - String:          ' dim='
+  - Dim:             '2'
+  - String:          ''' for array '''
+  - Name:            FWD_MW
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+DebugLoc:        { File: ./kyber-tables.h, Line: 74, Column: 0 }
+Function:        kyber_mult
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=2 type=cyclic factor=4 variable=_ZL6INV_MW'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  kyber_mult
+  - String:          ' '
+  - varLoc:          './kyber-tables.h:74:0'
+  - String:          ' '
+  - PragmaSrcLoc:    'kyber-mult-kernel-dataflow.cpp:108:9'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 108, 
+                       Column: 9 }
+  - VarName:         INV_MW
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 108, Column: 9 }
+Function:        kyber_mult
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            cyclic
+  - String:          ' factor='
+  - Factor:          '4'
+  - String:          ' dim='
+  - Dim:             '2'
+  - String:          ''' for array '''
+  - Name:            INV_MW
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: ./kyber-tables.h, Line: 74, Column: 0 }
+Function:        kyber_mult
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          _ZL6INV_MW
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Cyclic
+  - String:          ' partitioning'
+  - String:          ' with factor '
+  - Factor:          '4'
+  - String:          ' on dimension '
+  - Dim:             '2'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: ./kyber-tables.h, Line: 38, Column: 0 }
+Function:        kyber_mult
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          _ZL6FWD_MW
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Cyclic
+  - String:          ' partitioning'
+  - String:          ' with factor '
+  - Factor:          '4'
+  - String:          ' on dimension '
+  - Dim:             '2'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: ./kyber-tables.h, Line: 65, Column: 0 }
+Function:        kyber_mult
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          _ZL5INV_W
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Cyclic
+  - String:          ' partitioning'
+  - String:          ' with factor '
+  - Factor:          '4'
+  - String:          ' on dimension '
+  - Dim:             '2'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: ./kyber-tables.h, Line: 29, Column: 0 }
+Function:        kyber_mult
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          _ZL5FWD_W
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Cyclic
+  - String:          ' partitioning'
+  - String:          ' with factor '
+  - Factor:          '4'
+  - String:          ' on dimension '
+  - Dim:             '2'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: ./kyber-tables.h, Line: 84, Column: 0 }
+Function:        kyber_mult
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          _ZL5BM_MW
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Cyclic
+  - String:          ' partitioning'
+  - String:          ' with factor '
+  - Factor:          '4'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: ./kyber-tables.h, Line: 83, Column: 0 }
+Function:        kyber_mult
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          _ZL4BM_W
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Cyclic
+  - String:          ' partitioning'
+  - String:          ' with factor '
+  - Factor:          '4'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredVerboseSummary
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 161, Column: 10 }
+Function:        _ZL8load_allPKjS0_RN3hls6streamI7kbeat_tLi0EEES5_i.1
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       reads
+  - String:          ' of '
+  - Length:          variable
+  - String:          ' length and bit width '
+  - Width:           '32'
+  - String:          ' has been inferred.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        seq
+  - ArrayName:       ''
+  - String:          ' '
+  - BundleName:      gmem0
+  - String:          ' '
+  - LoopName:        LD
+  - String:          ' '
+  - LoopLoc:         'kyber-mult-kernel-dataflow.cpp:164:13'
+  - String:          ' '
+  - Function:        'load_all(unsigned int const*, unsigned int const*, hls::stream<kbeat_t, 0>&, hls::stream<kbeat_t, 0>&, int) (.1)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 159, 
+                       Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredSummary
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 161, Column: 10 }
+Function:        _ZL8load_allPKjS0_RN3hls6streamI7kbeat_tLi0EEES5_i.1
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       reads
+  - String:          ' of '
+  - Length:          variable
+  - String:          ' length and bit width '
+  - Width:           '32'
+  - String:          ' in loop '''
+  - LoopName:        LD
+  - String:          '''('
+  - LoopLoc:         'kyber-mult-kernel-dataflow.cpp:164:13'
+  - String:          ')'
+  - String:          ' has been inferred on bundle '''
+  - BundleName:      gmem0
+  - String:          '''.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredVerboseSummary
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 161, Column: 10 }
+Function:        _ZL8load_allPKjS0_RN3hls6streamI7kbeat_tLi0EEES5_i.1
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       reads
+  - String:          ' of '
+  - Length:          variable
+  - String:          ' length and bit width '
+  - Width:           '32'
+  - String:          ' has been inferred.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        seq1
+  - ArrayName:       ''
+  - String:          ' '
+  - BundleName:      gmem1
+  - String:          ' '
+  - LoopName:        LD
+  - String:          ' '
+  - LoopLoc:         'kyber-mult-kernel-dataflow.cpp:164:13'
+  - String:          ' '
+  - Function:        'load_all(unsigned int const*, unsigned int const*, hls::stream<kbeat_t, 0>&, hls::stream<kbeat_t, 0>&, int) (.1)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 159, 
+                       Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredSummary
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 161, Column: 10 }
+Function:        _ZL8load_allPKjS0_RN3hls6streamI7kbeat_tLi0EEES5_i.1
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       reads
+  - String:          ' of '
+  - Length:          variable
+  - String:          ' length and bit width '
+  - Width:           '32'
+  - String:          ' in loop '''
+  - LoopName:        LD
+  - String:          '''('
+  - LoopLoc:         'kyber-mult-kernel-dataflow.cpp:164:13'
+  - String:          ')'
+  - String:          ' has been inferred on bundle '''
+  - BundleName:      gmem1
+  - String:          '''.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredVerboseSummary
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 274, Column: 10 }
+Function:        _ZL9store_allRN3hls6streamI7kbeat_tLi0EEEPji.1
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       writes
+  - String:          ' of '
+  - Length:          variable
+  - String:          ' length and bit width '
+  - Width:           '32'
+  - String:          ' has been inferred.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        seq
+  - ArrayName:       ''
+  - String:          ' '
+  - BundleName:      gmem2
+  - String:          ' '
+  - LoopName:        ST
+  - String:          ' '
+  - LoopLoc:         'kyber-mult-kernel-dataflow.cpp:277:13'
+  - String:          ' '
+  - Function:        'store_all(hls::stream<kbeat_t, 0>&, unsigned int*, int) (.1)'
+    DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 272, 
+                       Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredSummary
+DebugLoc:        { File: kyber-mult-kernel-dataflow.cpp, Line: 274, Column: 10 }
+Function:        _ZL9store_allRN3hls6streamI7kbeat_tLi0EEEPji.1
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       writes
+  - String:          ' of '
+  - Length:          variable
+  - String:          ' length and bit width '
+  - Width:           '32'
+  - String:          ' in loop '''
+  - LoopName:        ST
+  - String:          '''('
+  - LoopLoc:         'kyber-mult-kernel-dataflow.cpp:277:13'
+  - String:          ')'
+  - String:          ' has been inferred on bundle '''
+  - BundleName:      gmem2
+  - String:          '''.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+...
