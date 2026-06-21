@@ -35,6 +35,7 @@ module modmul_montgomery #(
   wire [32:0] low_sum =
       {1'b0, acc_low} +
       (multiplier[0] ? {1'b0, multiplicand_low} : 33'd0);
+  /* verilator lint_off UNUSED */
   wire [32:0] high_sum =
       {1'b0, acc_high} +
       (multiplier[0] ? {1'b0, multiplicand_high} : 33'd0) +
@@ -45,6 +46,7 @@ module modmul_montgomery #(
       {1'b0, ab_reg[63:32]} +
       {1'b0, mq_reg[63:32]} +
       {32'd0, carry_reg};
+  /* verilator lint_on UNUSED */
 
   always @(posedge clk or negedge rst_n) begin
     if (!rst_n) begin
