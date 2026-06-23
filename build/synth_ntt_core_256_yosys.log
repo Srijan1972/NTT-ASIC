@@ -6210,6 +6210,6 @@ found and reported 0 problems.
 
 Warnings: 5 unique messages, 5 total
 End of script. Logfile hash: dfbc934da9
-CPU: user 43.88s system 0.24s, MEM: 282.36 MB total, 266.79 MB resident
+CPU: user 39.31s system 0.12s, MEM: 282.35 MB total, 267.18 MB resident
 Yosys 0.9 (git sha1 1979e0b)
-Time spent: 23% 1x proc_arst (10 sec), 17% 1x proc_mux (7 sec), ...
+Time spent: 25% 1x proc_arst (9 sec), 18% 1x proc_mux (7 sec), ...

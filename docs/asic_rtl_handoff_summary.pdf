@@ -16,7 +16,7 @@ endobj
 << /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 6 0 R >>
 endobj
 6 0 obj
-<< /Length 2454 >>
+<< /Length 2348 >>
 stream
 q
 BT
@@ -28,97 +28,94 @@ BT
 (Status) Tj
 /F1 10 Tf
 1 0 0 1 54 681 Tm
-(The project now contains a full 256-point NTT ASIC-compatible RTL handoff top.) Tj
+(The project now contains a full 256-point NTT ASIC-compatible RTL handoff top with a) Tj
 /F1 10 Tf
-1 0 0 1 54 658 Tm
+1 0 0 1 54 667 Tm
+(generic SRAM macro-wrapper boundary.) Tj
+/F1 10 Tf
+1 0 0 1 54 644 Tm
 (Recommended handoff top:) Tj
 /F1 10 Tf
-1 0 0 1 66 635 Tm
-(- `ntt_core_256`) Tj
-/F1 10 Tf
-1 0 0 1 54 612 Tm
-(This supersedes the earlier `ntt_core_8` prototype. The 8-point core remains in the) Tj
+1 0 0 1 66 621 Tm
+(- `ntt_core_256_sram`) Tj
 /F1 10 Tf
 1 0 0 1 54 598 Tm
-(repository as a bring-up/reference block, but it is not the final target.) Tj
+(This supersedes:) Tj
+/F1 10 Tf
+1 0 0 1 66 575 Tm
+(- `ntt_core_8` ? earlier 8-point prototype) Tj
+/F1 10 Tf
+1 0 0 1 66 561 Tm
+(- `ntt_core_256` ? full 256-point top using direct inferred/register-array storage) Tj
 /F2 14 Tf
-1 0 0 1 54 569 Tm
+1 0 0 1 54 532 Tm
 (Original FPGA/HLS context) Tj
 /F1 10 Tf
-1 0 0 1 54 537 Tm
+1 0 0 1 54 500 Tm
 (The original project used Vitis/Vivado/HLS-style implementation files with FPGA-oriented) Tj
 /F1 10 Tf
-1 0 0 1 54 523 Tm
+1 0 0 1 54 486 Tm
 (constructs such as HLS pragmas, AXI interface inference, BRAM binding directives, and) Tj
 /F1 10 Tf
-1 0 0 1 54 509 Tm
+1 0 0 1 54 472 Tm
 (generated implementation artifacts.) Tj
 /F1 10 Tf
-1 0 0 1 54 486 Tm
+1 0 0 1 54 449 Tm
 (Those files remain useful as algorithm/interface reference material, but the clean ASIC) Tj
 /F1 10 Tf
-1 0 0 1 54 472 Tm
+1 0 0 1 54 435 Tm
 (handoff path is the hand-written RTL under:) Tj
 /F1 10 Tf
-1 0 0 1 66 449 Tm
+1 0 0 1 66 412 Tm
 (- `rtl/`) Tj
 /F1 10 Tf
-1 0 0 1 54 426 Tm
+1 0 0 1 54 389 Tm
 (The OpenLane owner should not use generated FPGA/HLS implementation files under `hls-) Tj
 /F1 10 Tf
-1 0 0 1 54 412 Tm
+1 0 0 1 54 375 Tm
 (design/` as the physical-design source unless deliberately comparing against the old) Tj
 /F1 10 Tf
-1 0 0 1 54 398 Tm
+1 0 0 1 54 361 Tm
 (implementation.) Tj
 /F2 14 Tf
-1 0 0 1 54 369 Tm
+1 0 0 1 54 332 Tm
 (Clean ASIC-oriented RTL created) Tj
 /F1 10 Tf
-1 0 0 1 54 337 Tm
+1 0 0 1 54 300 Tm
 (Arithmetic/datapath RTL:) Tj
 /F1 10 Tf
-1 0 0 1 66 314 Tm
+1 0 0 1 66 277 Tm
 (- `rtl/mod_add.sv`) Tj
 /F1 10 Tf
-1 0 0 1 66 300 Tm
+1 0 0 1 66 263 Tm
 (- `rtl/mod_sub.sv`) Tj
 /F1 10 Tf
-1 0 0 1 66 286 Tm
+1 0 0 1 66 249 Tm
 (- `rtl/modmul_montgomery.sv`) Tj
 /F1 10 Tf
-1 0 0 1 66 272 Tm
+1 0 0 1 66 235 Tm
 (- `rtl/ntt_butterfly.sv`) Tj
 /F1 10 Tf
-1 0 0 1 54 249 Tm
+1 0 0 1 54 212 Tm
+(SRAM wrapper:) Tj
+/F1 10 Tf
+1 0 0 1 66 189 Tm
+(- `rtl/asic_sram_1rw.sv`) Tj
+/F1 10 Tf
+1 0 0 1 54 166 Tm
 (Full target RTL:) Tj
 /F1 10 Tf
-1 0 0 1 66 226 Tm
-(- `rtl/ntt_core_256.sv`) Tj
+1 0 0 1 66 143 Tm
+(- `rtl/ntt_core_256_sram.sv`) Tj
 /F1 10 Tf
-1 0 0 1 54 203 Tm
+1 0 0 1 54 120 Tm
 (Bring-up/reference RTL retained:) Tj
 /F1 10 Tf
-1 0 0 1 66 180 Tm
+1 0 0 1 66 97 Tm
+(- `rtl/ntt_core_256.sv`) Tj
+/F1 10 Tf
+1 0 0 1 66 83 Tm
 (- `rtl/simple_dual_port_ram.sv`) Tj
-/F1 10 Tf
-1 0 0 1 66 166 Tm
-(- `rtl/ntt_stage_2.sv`) Tj
-/F1 10 Tf
-1 0 0 1 66 152 Tm
-(- `rtl/ntt_stage_4.sv`) Tj
-/F1 10 Tf
-1 0 0 1 66 138 Tm
-(- `rtl/ntt_stage_8.sv`) Tj
-/F1 10 Tf
-1 0 0 1 66 124 Tm
-(- `rtl/ntt_core_8.sv`) Tj
-/F1 10 Tf
-1 0 0 1 66 110 Tm
-(- `rtl/ntt_stage_8_registered.sv`) Tj
-/F1 10 Tf
-1 0 0 1 54 87 Tm
-(Use `ntt_core_256` for the full-design handoff.) Tj
 /F1 8 Tf
 1 0 0 1 270 32 Tm
 (Page 1 of 4) Tj
@@ -130,118 +127,127 @@ endobj
 << /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 8 0 R >>
 endobj
 8 0 obj
-<< /Length 2674 >>
+<< /Length 3063 >>
 stream
 q
 BT
+/F1 10 Tf
+1 0 0 1 66 760 Tm
+(- `rtl/ntt_stage_2.sv`) Tj
+/F1 10 Tf
+1 0 0 1 66 746 Tm
+(- `rtl/ntt_stage_4.sv`) Tj
+/F1 10 Tf
+1 0 0 1 66 732 Tm
+(- `rtl/ntt_stage_8.sv`) Tj
+/F1 10 Tf
+1 0 0 1 66 718 Tm
+(- `rtl/ntt_core_8.sv`) Tj
+/F1 10 Tf
+1 0 0 1 66 704 Tm
+(- `rtl/ntt_stage_8_registered.sv`) Tj
+/F1 10 Tf
+1 0 0 1 54 681 Tm
+(Use `ntt_core_256_sram` for the full-design handoff.) Tj
 /F2 14 Tf
-1 0 0 1 54 760 Tm
-(What `ntt_core_256` implements) Tj
+1 0 0 1 54 652 Tm
+(What `ntt_core_256_sram` implements) Tj
 /F1 10 Tf
-1 0 0 1 54 728 Tm
-(`ntt_core_256` implements a fixed 256-point HLS-style NTT schedule with:) Tj
+1 0 0 1 54 620 Tm
+(`ntt_core_256_sram` implements a fixed 256-point HLS-style NTT schedule with:) Tj
 /F1 10 Tf
-1 0 0 1 66 705 Tm
+1 0 0 1 66 597 Tm
 (- `N = 256`) Tj
 /F1 10 Tf
-1 0 0 1 66 691 Tm
+1 0 0 1 66 583 Tm
 (- `Q = 8380417`) Tj
 /F1 10 Tf
-1 0 0 1 66 677 Tm
+1 0 0 1 66 569 Tm
 (- `Q_INV = 4236238847`) Tj
 /F1 10 Tf
-1 0 0 1 66 663 Tm
+1 0 0 1 66 555 Tm
 (- load interface for 256 input data words) Tj
 /F1 10 Tf
-1 0 0 1 66 649 Tm
+1 0 0 1 66 541 Tm
 (- load interface for 256 bit-reversal table entries) Tj
 /F1 10 Tf
-1 0 0 1 66 635 Tm
+1 0 0 1 66 527 Tm
 (- load interface for 255 twiddle values) Tj
 /F1 10 Tf
-1 0 0 1 66 621 Tm
+1 0 0 1 66 513 Tm
 (- `start`, `busy`, and `done` control) Tj
 /F1 10 Tf
-1 0 0 1 66 607 Tm
+1 0 0 1 66 499 Tm
 (- readback interface for 256 result words) Tj
 /F1 10 Tf
-1 0 0 1 66 593 Tm
+1 0 0 1 66 485 Tm
 (- one shared butterfly datapath) Tj
 /F1 10 Tf
-1 0 0 1 66 579 Tm
-(- ping/pong internal storage for stage results) Tj
+1 0 0 1 66 471 Tm
+(- synchronous SRAM-wrapper storage) Tj
 /F1 10 Tf
-1 0 0 1 66 565 Tm
+1 0 0 1 66 457 Tm
+(- ping/pong SRAM-wrapper memories for stage results) Tj
+/F1 10 Tf
+1 0 0 1 66 443 Tm
 (- 8 NTT stages) Tj
 /F1 10 Tf
-1 0 0 1 66 551 Tm
+1 0 0 1 66 429 Tm
 (- 128 butterflies per stage) Tj
 /F1 10 Tf
-1 0 0 1 54 528 Tm
+1 0 0 1 54 406 Tm
 (The controller performs:) Tj
 /F1 10 Tf
-1 0 0 1 54 505 Tm
+1 0 0 1 54 383 Tm
 (1. Input permutation into ping storage using the bit-reversal table.) Tj
 /F1 10 Tf
-1 0 0 1 54 491 Tm
+1 0 0 1 54 369 Tm
 (2. Stage iteration from length 1 through length 128.) Tj
 /F1 10 Tf
-1 0 0 1 54 477 Tm
+1 0 0 1 54 355 Tm
 (3. HLS-style flattened butterfly index generation.) Tj
 /F1 10 Tf
-1 0 0 1 54 463 Tm
+1 0 0 1 54 341 Tm
 (4. Twiddle lookup using the stage offset and butterfly-local index.) Tj
 /F1 10 Tf
-1 0 0 1 54 449 Tm
-(5. Butterfly execution through the verified modular multiplier/add/sub datapath.) Tj
+1 0 0 1 54 327 Tm
+(5. SRAM-style reads for `u`, `v`, and twiddle data.) Tj
 /F1 10 Tf
-1 0 0 1 54 435 Tm
-(6. Ping-pong writes between internal buffers.) Tj
+1 0 0 1 54 313 Tm
+(6. Butterfly execution through the verified modular multiplier/add/sub datapath.) Tj
 /F1 10 Tf
-1 0 0 1 54 421 Tm
-(7. Final result readback through `read_addr` and `read_data`.) Tj
+1 0 0 1 54 299 Tm
+(7. SRAM-style writes into the inactive ping/pong result memory.) Tj
+/F1 10 Tf
+1 0 0 1 54 285 Tm
+(8. Final result readback through `read_addr` and `read_data`.) Tj
 /F2 14 Tf
-1 0 0 1 54 392 Tm
-(Verification completed) Tj
+1 0 0 1 54 256 Tm
+(SRAM macro boundary) Tj
 /F1 10 Tf
-1 0 0 1 54 360 Tm
-(The following checks passed locally:) Tj
+1 0 0 1 54 224 Tm
+(The design now uses:) Tj
 /F1 10 Tf
-1 0 0 1 54 328 Tm
-(PASS: tb_ntt_core_256) Tj
+1 0 0 1 66 201 Tm
+(- `rtl/asic_sram_1rw.sv`) Tj
 /F1 10 Tf
-1 0 0 1 54 314 Tm
-(PASS: ntt_core_256 Yosys synthesizability check completed) Tj
+1 0 0 1 54 178 Tm
+(as a generic 1-read/write SRAM wrapper and behavioral simulation model.) Tj
 /F1 10 Tf
-1 0 0 1 54 300 Tm
-(PASS: Full NTT OpenLane handoff readiness checks completed) Tj
+1 0 0 1 54 155 Tm
+(This wrapper is the intended macro-binding boundary. Because no exact PDK/SRAM macro) Tj
 /F1 10 Tf
-1 0 0 1 54 268 Tm
-(The readiness script is:) Tj
+1 0 0 1 54 141 Tm
+(library was specified, the RTL does not hard-code a Sky130/GF180/etc. macro name.) Tj
 /F1 10 Tf
-1 0 0 1 66 245 Tm
-(- `scripts/check_openlane_handoff_readiness.sh`) Tj
+1 0 0 1 54 118 Tm
+(For a real tapeout flow, the physical-design owner should bind or replace) Tj
 /F1 10 Tf
-1 0 0 1 54 222 Tm
-(It runs:) Tj
+1 0 0 1 54 104 Tm
+(`asic_sram_1rw` with process-specific SRAM macro instances and provide the matching:) Tj
 /F1 10 Tf
-1 0 0 1 66 199 Tm
-(- `scripts/run_ntt_core_256_tb.sh`) Tj
-/F1 10 Tf
-1 0 0 1 66 185 Tm
-(- `scripts/lint_rtl.sh`) Tj
-/F1 10 Tf
-1 0 0 1 66 171 Tm
-(- `scripts/run_synth_ntt_core_256.sh`) Tj
-/F2 14 Tf
-1 0 0 1 54 142 Tm
-(Golden model and vectors) Tj
-/F1 10 Tf
-1 0 0 1 54 110 Tm
-(The full 256-point RTL testbench uses the Python golden model:) Tj
-/F1 10 Tf
-1 0 0 1 66 87 Tm
-(- `sim/ntt_golden.py`) Tj
+1 0 0 1 66 81 Tm
+(- Verilog model) Tj
 /F1 8 Tf
 1 0 0 1 270 32 Tm
 (Page 2 of 4) Tj
@@ -253,115 +259,109 @@ endobj
 << /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 10 0 R >>
 endobj
 10 0 obj
-<< /Length 2542 >>
+<< /Length 2192 >>
 stream
 q
 BT
 /F1 10 Tf
-1 0 0 1 54 760 Tm
-(Generated vectors:) Tj
+1 0 0 1 66 760 Tm
+(- Liberty `.lib`) Tj
 /F1 10 Tf
-1 0 0 1 66 737 Tm
-(- `sim/test_vectors/input_256.hex`) Tj
+1 0 0 1 66 746 Tm
+(- LEF abstract) Tj
 /F1 10 Tf
-1 0 0 1 66 723 Tm
-(- `sim/test_vectors/bitrev_256.hex`) Tj
+1 0 0 1 66 732 Tm
+(- GDS layout) Tj
 /F1 10 Tf
-1 0 0 1 66 709 Tm
-(- `sim/test_vectors/twiddles_256.hex`) Tj
-/F1 10 Tf
-1 0 0 1 66 695 Tm
-(- `sim/test_vectors/expected_256.hex`) Tj
-/F1 10 Tf
-1 0 0 1 66 681 Tm
-(- `sim/test_vectors/params_256.txt`) Tj
-/F1 10 Tf
-1 0 0 1 54 658 Tm
-(The testbench is:) Tj
-/F1 10 Tf
-1 0 0 1 66 635 Tm
-(- `sim/tb_ntt_core_256.sv`) Tj
+1 0 0 1 66 718 Tm
+(- OpenLane/PDK setup files) Tj
 /F2 14 Tf
-1 0 0 1 54 606 Tm
-(Handoff support files) Tj
+1 0 0 1 54 689 Tm
+(Verification completed) Tj
 /F1 10 Tf
-1 0 0 1 54 574 Tm
-(Simulation/test:) Tj
+1 0 0 1 54 657 Tm
+(The following checks passed locally:) Tj
 /F1 10 Tf
-1 0 0 1 66 551 Tm
-(- `scripts/run_ntt_core_256_tb.sh`) Tj
+1 0 0 1 54 625 Tm
+(PASS: tb_ntt_core_256_sram) Tj
 /F1 10 Tf
-1 0 0 1 54 528 Tm
-(Lint/synthesis:) Tj
+1 0 0 1 54 611 Tm
+(PASS: ntt_core_256_sram Yosys synthesizability check completed) Tj
 /F1 10 Tf
-1 0 0 1 66 505 Tm
+1 0 0 1 54 597 Tm
+(PASS: SRAM-backed full NTT OpenLane handoff readiness checks completed) Tj
+/F1 10 Tf
+1 0 0 1 54 565 Tm
+(The readiness script is:) Tj
+/F1 10 Tf
+1 0 0 1 66 542 Tm
+(- `scripts/check_openlane_handoff_readiness.sh`) Tj
+/F1 10 Tf
+1 0 0 1 54 519 Tm
+(It runs:) Tj
+/F1 10 Tf
+1 0 0 1 66 496 Tm
+(- `scripts/run_ntt_core_256_sram_tb.sh`) Tj
+/F1 10 Tf
+1 0 0 1 66 482 Tm
 (- `scripts/lint_rtl.sh`) Tj
 /F1 10 Tf
-1 0 0 1 66 491 Tm
-(- `scripts/synth_ntt_core_256_yosys.tcl`) Tj
-/F1 10 Tf
-1 0 0 1 66 477 Tm
-(- `scripts/run_synth_ntt_core_256.sh`) Tj
-/F1 10 Tf
-1 0 0 1 66 463 Tm
-(- `build/synth_ntt_core_256_yosys.log`) Tj
-/F1 10 Tf
-1 0 0 1 54 440 Tm
-(OpenLane starter files:) Tj
-/F1 10 Tf
-1 0 0 1 66 417 Tm
-(- `constraints/ntt_core_256.sdc`) Tj
-/F1 10 Tf
-1 0 0 1 66 403 Tm
-(- `openlane/ntt_core_256/config.tcl`) Tj
-/F1 10 Tf
-1 0 0 1 66 389 Tm
-(- `docs/openlane_handoff.md`) Tj
+1 0 0 1 66 468 Tm
+(- `scripts/run_synth_ntt_core_256_sram.sh`) Tj
 /F2 14 Tf
-1 0 0 1 54 360 Tm
-(SRAM/BRAM status) Tj
+1 0 0 1 54 439 Tm
+(Golden model and vectors) Tj
 /F1 10 Tf
-1 0 0 1 54 328 Tm
-(The clean handoff RTL does not instantiate known FPGA BRAM primitives such as:) Tj
+1 0 0 1 54 407 Tm
+(The full 256-point RTL testbench uses the Python golden model:) Tj
 /F1 10 Tf
-1 0 0 1 66 305 Tm
-(- `RAMB18E1`) Tj
+1 0 0 1 66 384 Tm
+(- `sim/ntt_golden.py`) Tj
 /F1 10 Tf
-1 0 0 1 66 291 Tm
-(- `RAMB36E1`) Tj
+1 0 0 1 54 361 Tm
+(Generated vectors:) Tj
 /F1 10 Tf
-1 0 0 1 66 277 Tm
-(- `xpm_memory_*`) Tj
+1 0 0 1 66 338 Tm
+(- `sim/test_vectors/input_256.hex`) Tj
 /F1 10 Tf
-1 0 0 1 66 263 Tm
-(- Vivado block-memory IP) Tj
+1 0 0 1 66 324 Tm
+(- `sim/test_vectors/bitrev_256.hex`) Tj
 /F1 10 Tf
-1 0 0 1 54 240 Tm
-(The full top currently uses inferred/register-array storage for functional RTL handoff) Tj
+1 0 0 1 66 310 Tm
+(- `sim/test_vectors/twiddles_256.hex`) Tj
 /F1 10 Tf
-1 0 0 1 54 226 Tm
-(and OpenLane bring-up. This is ASIC-compatible RTL, but a production tapeout flow should) Tj
+1 0 0 1 66 296 Tm
+(- `sim/test_vectors/expected_256.hex`) Tj
 /F1 10 Tf
-1 0 0 1 54 212 Tm
-(review the memory architecture and replace or wrap larger memories with process-specific) Tj
+1 0 0 1 66 282 Tm
+(- `sim/test_vectors/params_256.txt`) Tj
 /F1 10 Tf
-1 0 0 1 54 198 Tm
-(SRAM macros once the target PDK and macro library are selected.) Tj
+1 0 0 1 54 259 Tm
+(The testbench is:) Tj
+/F1 10 Tf
+1 0 0 1 66 236 Tm
+(- `sim/tb_ntt_core_256_sram.sv`) Tj
 /F2 14 Tf
-1 0 0 1 54 169 Tm
-(What remains before real tapeout) Tj
+1 0 0 1 54 207 Tm
+(Handoff support files) Tj
 /F1 10 Tf
-1 0 0 1 54 137 Tm
-(The project is ready for full-design OpenLane physical-flow exploration, but not) Tj
+1 0 0 1 54 175 Tm
+(Simulation/test:) Tj
 /F1 10 Tf
-1 0 0 1 54 123 Tm
-(automatic manufacturing signoff.) Tj
+1 0 0 1 66 152 Tm
+(- `scripts/run_ntt_core_256_sram_tb.sh`) Tj
 /F1 10 Tf
-1 0 0 1 54 100 Tm
-(Remaining work for the physical-design owner:) Tj
+1 0 0 1 54 129 Tm
+(Lint/synthesis:) Tj
 /F1 10 Tf
-1 0 0 1 54 77 Tm
-(1. Select exact PDK and standard-cell library.) Tj
+1 0 0 1 66 106 Tm
+(- `scripts/lint_rtl.sh`) Tj
+/F1 10 Tf
+1 0 0 1 66 92 Tm
+(- `scripts/synth_ntt_core_256_sram_yosys.tcl`) Tj
+/F1 10 Tf
+1 0 0 1 66 78 Tm
+(- `scripts/run_synth_ntt_core_256_sram.sh`) Tj
 /F1 8 Tf
 1 0 0 1 270 32 Tm
 (Page 3 of 4) Tj
@@ -373,51 +373,111 @@ endobj
 << /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 12 0 R >>
 endobj
 12 0 obj
-<< /Length 1188 >>
+<< /Length 2772 >>
 stream
 q
 BT
 /F1 10 Tf
-1 0 0 1 54 760 Tm
-(2. Run technology-mapped synthesis.) Tj
+1 0 0 1 66 760 Tm
+(- `build/synth_ntt_core_256_sram_yosys.log`) Tj
 /F1 10 Tf
-1 0 0 1 54 746 Tm
-(3. Review timing, especially around the Montgomery multiplier and controller/memory) Tj
+1 0 0 1 54 737 Tm
+(OpenLane starter files:) Tj
 /F1 10 Tf
-1 0 0 1 54 732 Tm
-(paths.) Tj
+1 0 0 1 66 714 Tm
+(- `constraints/ntt_core_256_sram.sdc`) Tj
 /F1 10 Tf
-1 0 0 1 54 718 Tm
-(4. Pipeline or restructure datapath if timing requires it.) Tj
+1 0 0 1 66 700 Tm
+(- `openlane/ntt_core_256_sram/config.tcl`) Tj
 /F1 10 Tf
-1 0 0 1 54 704 Tm
-(5. Decide final SRAM macro strategy and replace/wrap inferred memories if needed.) Tj
+1 0 0 1 66 686 Tm
+(- `docs/openlane_handoff.md`) Tj
+/F2 14 Tf
+1 0 0 1 54 657 Tm
+(BRAM/DRAM/SRAM status) Tj
 /F1 10 Tf
-1 0 0 1 54 690 Tm
-(6. Tune floorplan, utilization, IO constraints, and clock period.) Tj
+1 0 0 1 54 625 Tm
+(The clean handoff RTL does not instantiate known FPGA BRAM primitives such as:) Tj
 /F1 10 Tf
-1 0 0 1 54 676 Tm
-(7. Run placement, CTS, routing, DRC, LVS, antenna checks, extraction, STA, and signoff) Tj
+1 0 0 1 66 602 Tm
+(- `RAMB18E1`) Tj
 /F1 10 Tf
-1 0 0 1 54 662 Tm
+1 0 0 1 66 588 Tm
+(- `RAMB36E1`) Tj
+/F1 10 Tf
+1 0 0 1 66 574 Tm
+(- `xpm_memory_*`) Tj
+/F1 10 Tf
+1 0 0 1 66 560 Tm
+(- Vivado block-memory IP) Tj
+/F1 10 Tf
+1 0 0 1 54 537 Tm
+(The design does not use DRAM. It now uses a generic SRAM wrapper boundary.) Tj
+/F1 10 Tf
+1 0 0 1 54 514 Tm
+(The wrapper must still be connected to real PDK-specific SRAM macro views before) Tj
+/F1 10 Tf
+1 0 0 1 54 500 Tm
+(production tapeout.) Tj
+/F2 14 Tf
+1 0 0 1 54 471 Tm
+(What remains before real tapeout) Tj
+/F1 10 Tf
+1 0 0 1 54 439 Tm
+(The project is ready for SRAM-aware full-design OpenLane physical-flow exploration, but) Tj
+/F1 10 Tf
+1 0 0 1 54 425 Tm
+(not automatic manufacturing signoff.) Tj
+/F1 10 Tf
+1 0 0 1 54 402 Tm
+(Remaining work for the physical-design owner:) Tj
+/F1 10 Tf
+1 0 0 1 54 379 Tm
+(1. Select exact PDK, standard-cell library, and SRAM macro library.) Tj
+/F1 10 Tf
+1 0 0 1 54 365 Tm
+(2. Bind `asic_sram_1rw` to real SRAM macros or replace it with macro-specific wrappers.) Tj
+/F1 10 Tf
+1 0 0 1 54 351 Tm
+(3. Add SRAM macro `.lib`, `.lef`, `.gds`, and Verilog model views.) Tj
+/F1 10 Tf
+1 0 0 1 54 337 Tm
+(4. Run technology-mapped synthesis.) Tj
+/F1 10 Tf
+1 0 0 1 54 323 Tm
+(5. Review timing, especially around the Montgomery multiplier and SRAM access paths.) Tj
+/F1 10 Tf
+1 0 0 1 54 309 Tm
+(6. Pipeline or restructure datapath if timing requires it.) Tj
+/F1 10 Tf
+1 0 0 1 54 295 Tm
+(7. Tune floorplan, SRAM macro placement, utilization, IO constraints, and clock period.) Tj
+/F1 10 Tf
+1 0 0 1 54 281 Tm
+(8. Run placement, CTS, routing, DRC, LVS, antenna checks, extraction, STA, and signoff) Tj
+/F1 10 Tf
+1 0 0 1 54 267 Tm
 (checks.) Tj
 /F1 10 Tf
-1 0 0 1 54 648 Tm
-(8. Generate and review final GDSII only after the above checks pass.) Tj
+1 0 0 1 54 253 Tm
+(9. Generate and review final GDSII only after the above checks pass.) Tj
 /F2 14 Tf
-1 0 0 1 54 619 Tm
+1 0 0 1 54 224 Tm
 (Correct handoff statement) Tj
 /F1 10 Tf
-1 0 0 1 54 587 Tm
+1 0 0 1 54 192 Tm
 (Use this wording:) Tj
 /F1 10 Tf
-1 0 0 1 54 564 Tm
-("Full 256-point NTT ASIC-compatible RTL and OpenLane starter handoff package.") Tj
+1 0 0 1 54 169 Tm
+("Full 256-point NTT ASIC-compatible RTL with generic SRAM macro-wrapper boundary and) Tj
 /F1 10 Tf
-1 0 0 1 54 541 Tm
+1 0 0 1 54 155 Tm
+(OpenLane starter handoff package.") Tj
+/F1 10 Tf
+1 0 0 1 54 132 Tm
 (Do not describe it as:) Tj
 /F1 10 Tf
-1 0 0 1 54 518 Tm
+1 0 0 1 54 109 Tm
 ("Final tapeout-ready GDSII.") Tj
 /F1 8 Tf
 1 0 0 1 270 32 Tm
@@ -435,14 +495,14 @@ xref
 0000000210 00000 n 
 0000000285 00000 n 
 0000000421 00000 n 
-0000002927 00000 n 
-0000003063 00000 n 
-0000005789 00000 n 
-0000005926 00000 n 
-0000008521 00000 n 
-0000008659 00000 n 
+0000002821 00000 n 
+0000002957 00000 n 
+0000006072 00000 n 
+0000006209 00000 n 
+0000008454 00000 n 
+0000008592 00000 n 
 trailer
 << /Size 13 /Root 1 0 R >>
 startxref
-9900
+11417
 %%EOF
