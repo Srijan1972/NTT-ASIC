@@ -1,94 +1,131 @@
 # OpenLane handoff notes
 
-Recommended design top for OpenLane handoff:
+Recommended design top for full NTT OpenLane handoff:
 
-- `ntt_core_8`
+- `ntt_core_256_sram`
 
-This is stronger than the earlier starter wrapper `ntt_stage_8_registered` because it includes a small accelerator-style interface and FSM around the verified datapath.
+This is the SRAM-wrapper-backed version of the full 256-point NTT design. It supersedes both:
 
-RTL files needed, in dependency order:
+- `ntt_core_8` — earlier 8-point bring-up prototype
+- `ntt_core_256` — full 256-point design using direct inferred/register-array storage
 
+## RTL source files
+
+Use these clean ASIC-oriented RTL files:
+
+- `rtl/asic_sram_1rw.sv`
 - `rtl/mod_add.sv`
 - `rtl/mod_sub.sv`
 - `rtl/modmul_montgomery.sv`
 - `rtl/ntt_butterfly.sv`
-- `rtl/ntt_stage_2.sv`
-- `rtl/ntt_stage_4.sv`
-- `rtl/ntt_stage_8.sv`
-- `rtl/ntt_core_8.sv`
+- `rtl/ntt_core_256_sram.sv`
 
-Top-level interface summary:
+Do not use the old FPGA/HLS generated files under `hls-design/` as the OpenLane source unless deliberately comparing against the original implementation.
+
+## SRAM macro boundary
+
+`rtl/asic_sram_1rw.sv` is a generic 1-read/write SRAM wrapper and behavioral simulation model.
+
+It is intended as the macro-binding boundary. For a real tapeout flow, the physical-design owner should bind or replace this wrapper with a PDK-specific SRAM macro and provide the required macro views:
+
+- Verilog simulation model
+- Liberty timing/power `.lib`
+- LEF abstract
+- GDS layout
+- any required setup files for the selected OpenLane/PDK flow
+
+Because no exact PDK/SRAM macro library was specified, the repository now uses a generic wrapper rather than hard-coding a Sky130/GF180/etc. macro name.
+
+## Top-level interface
+
+`ntt_core_256_sram` provides:
 
 - `clk`
-- `rst_n`, active low
+- `rst_n`
 - `start`
 - `busy`
 - `done`
-- data load interface:
-  - `load_data_en`
-  - `load_data_addr[2:0]`
-  - `load_data[31:0]`
-- twiddle load interface:
-  - `load_twiddle_en`
-  - `load_twiddle_addr[1:0]`
-  - `load_twiddle[31:0]`
-- result readback interface:
-  - `read_addr[2:0]`
-  - `read_data[31:0]`
+- load interface for 256 input data words
+- load interface for 256 bit-reversal table entries
+- load interface for 255 twiddle words
+- readback interface for 256 output words
 
-Important boundary:
+The core implements the HLS-style 256-point NTT schedule using synchronous SRAM-style accesses:
 
-- This handoff is for an initial physical-flow/OpenLane run on a small 8-point NTT-style core.
-- It is not a full production accelerator for the target NTT size.
-- It is ASIC-oriented RTL, not final tapeout-ready RTL.
-- The current small memories are inferred register arrays inside `ntt_core_8`.
-- For a realistic larger accelerator, the next owner should introduce SRAM macro wrappers after choosing a PDK/memory compiler.
+1. Load input, bit-reversal table, and twiddles into SRAM-wrapper memories.
+2. Permute input into ping SRAM using the bit-reversal table.
+3. Run 8 NTT stages.
+4. Execute 128 butterflies per stage using one shared butterfly datapath.
+5. Ping-pong intermediate results between SRAM-wrapper memories.
+6. Expose final output through synchronous readback from the final ping/pong memory.
 
-Clock/reset:
+## Verification commands
 
-- clock port: `clk`
-- reset port: `rst_n`, active low
-- starter clock period: `10.000 ns`
-- starter SDC: `constraints/ntt_core_8.sdc`
+From the project root:
 
-Verification scripts:
+```bash
+bash scripts/run_ntt_core_256_sram_tb.sh
+bash scripts/lint_rtl.sh
+bash scripts/run_synth_ntt_core_256_sram.sh
+bash scripts/check_openlane_handoff_readiness.sh
+```
 
-- `scripts/run_ntt_core_8_tb.sh`
-- `scripts/lint_rtl.sh`
-- `scripts/run_synth_ntt_core_8.sh`
-- `scripts/check_openlane_handoff_readiness.sh`
+Latest verified readiness output:
 
-Expected pass messages:
+```text
+PASS: tb_ntt_core_256_sram
+PASS: ntt_core_256_sram Yosys synthesizability check completed
+PASS: SRAM-backed full NTT OpenLane handoff readiness checks completed
+```
 
-- `PASS: tb_ntt_core_8`
-- `scripts/lint_rtl.sh` returns silently
-- `PASS: ntt_core_8 Yosys synthesizability check completed`
-- `PASS: OpenLane handoff readiness checks completed`
+## Test vectors
 
-OpenLane starter config:
+The 256-point RTL testbench regenerates vectors from:
 
-- `openlane/ntt_core_8/config.tcl`
+- `sim/ntt_golden.py`
 
-Older starter-block handoff files also exist:
+Generated vector files live under:
 
-- `rtl/ntt_stage_8_registered.sv`
-- `openlane/ntt_stage_8_registered/config.tcl`
-- `constraints/ntt_stage_8_registered.sdc`
+- `sim/test_vectors/input_256.hex`
+- `sim/test_vectors/bitrev_256.hex`
+- `sim/test_vectors/twiddles_256.hex`
+- `sim/test_vectors/expected_256.hex`
+- `sim/test_vectors/params_256.txt`
 
-Use `ntt_core_8` unless you specifically want the simpler registered datapath slice.
+The golden model uses:
 
-Memory/SRAM status:
+- `N = 256`
+- `Q = 8380417`
+- `Q_INV = 4236238847`
 
-- The clean RTL does not instantiate Xilinx FPGA RAM primitives such as `RAMB18E1`, `RAMB36E1`, or `xpm_memory_*`.
-- `ntt_core_8` currently uses small inferred register arrays for 8 data words and 4 twiddle words.
-- This is acceptable for an initial OpenLane run.
-- For realistic area/timing at larger NTT sizes, replace/wrap memory with process-specific SRAM macros.
+## OpenLane starter files
 
-Suggested next owner actions:
+Use:
 
-1. Choose the exact OpenLane version and PDK.
-2. Use `openlane/ntt_core_8/config.tcl` as the starter config.
-3. Run synthesis first before full place/route.
-4. Inspect timing around the Montgomery multiplier; it is the likely critical path.
-5. If timing fails, pipeline/register the multiplier/datapath before serious floorplanning.
-6. For larger NTT sizes, replace inferred memories with SRAM macro wrappers and plan macro placement.
+- `constraints/ntt_core_256_sram.sdc`
+- `openlane/ntt_core_256_sram/config.tcl`
+
+The starter OpenLane config points to the SRAM-backed full 256-point top. It is not final tapeout signoff until the generic SRAM wrapper is bound to real process macros and the physical checks pass.
+
+## Remaining physical-design work
+
+The design can now enter OpenLane physical-flow exploration, but the OpenLane/PDK owner must still do:
+
+- choose the exact PDK and SRAM macro library
+- bind `asic_sram_1rw` to real SRAM macros or replace the wrapper with macro-specific instances
+- provide SRAM macro `.lib`, `.lef`, `.gds`, and Verilog views
+- run technology-mapped synthesis
+- review timing, especially the Montgomery multiplier datapath and SRAM access paths
+- pipeline or restructure the datapath if timing fails
+- tune floorplan, utilization, IO constraints, macro placement, and clock period
+- run place, CTS, route, DRC, LVS, antenna checks, STA, and signoff checks
+
+## Correct handoff statement
+
+Use this wording:
+
+"Full 256-point NTT ASIC-compatible RTL with generic SRAM macro-wrapper boundary and OpenLane starter handoff package."
+
+Do not claim:
+
+"Final tapeout-ready GDSII."

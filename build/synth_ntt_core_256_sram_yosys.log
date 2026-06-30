@@ -1,0 +1,1243 @@
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2019  Clifford Wolf <clifford@clifford.at>           |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.9 (git sha1 1979e0b)
+
+
+-- Executing script file `scripts/synth_ntt_core_256_sram_yosys.tcl' --
+
+1. Executing Verilog-2005 frontend: rtl/asic_sram_1rw.sv
+Parsing SystemVerilog input from `rtl/asic_sram_1rw.sv' to AST representation.
+Generating RTLIL representation for module `\asic_sram_1rw'.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: rtl/mod_add.sv
+Parsing SystemVerilog input from `rtl/mod_add.sv' to AST representation.
+Generating RTLIL representation for module `\mod_add'.
+Successfully finished Verilog frontend.
+
+3. Executing Verilog-2005 frontend: rtl/mod_sub.sv
+Parsing SystemVerilog input from `rtl/mod_sub.sv' to AST representation.
+Generating RTLIL representation for module `\mod_sub'.
+Successfully finished Verilog frontend.
+
+4. Executing Verilog-2005 frontend: rtl/modmul_montgomery.sv
+Parsing SystemVerilog input from `rtl/modmul_montgomery.sv' to AST representation.
+Generating RTLIL representation for module `\modmul_montgomery'.
+Successfully finished Verilog frontend.
+
+5. Executing Verilog-2005 frontend: rtl/ntt_butterfly.sv
+Parsing SystemVerilog input from `rtl/ntt_butterfly.sv' to AST representation.
+Generating RTLIL representation for module `\ntt_butterfly'.
+Successfully finished Verilog frontend.
+
+6. Executing Verilog-2005 frontend: rtl/ntt_core_256_sram.sv
+Parsing SystemVerilog input from `rtl/ntt_core_256_sram.sv' to AST representation.
+Generating RTLIL representation for module `\ntt_core_256_sram'.
+Successfully finished Verilog frontend.
+
+7. Executing HIERARCHY pass (managing design hierarchy).
+
+7.1. Analyzing design hierarchy..
+Top module:  \ntt_core_256_sram
+Used module:     \ntt_butterfly
+Used module:         \mod_sub
+Used module:         \mod_add
+Used module:         \modmul_montgomery
+Used module:     \asic_sram_1rw
+
+7.2. Executing AST frontend in derive mode using pre-parsed AST for module `\mod_sub'.
+Parameter \Q = 8380417
+Generating RTLIL representation for module `$paramod\mod_sub\Q=8380417'.
+
+7.3. Executing AST frontend in derive mode using pre-parsed AST for module `\mod_add'.
+Parameter \Q = 8380417
+Generating RTLIL representation for module `$paramod\mod_add\Q=8380417'.
+
+7.4. Executing AST frontend in derive mode using pre-parsed AST for module `\modmul_montgomery'.
+Parameter \Q = 8380417
+Parameter \Q_INV = 32'11111100011111111101111111111111
+Generating RTLIL representation for module `$paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111'.
+
+7.5. Executing AST frontend in derive mode using pre-parsed AST for module `\ntt_butterfly'.
+Parameter \Q = 8380417
+Parameter \Q_INV = 32'11111100011111111101111111111111
+Generating RTLIL representation for module `$paramod\ntt_butterfly\Q=8380417\Q_INV=32'11111100011111111101111111111111'.
+
+7.6. Executing AST frontend in derive mode using pre-parsed AST for module `\asic_sram_1rw'.
+Parameter \DATA_WIDTH = 32
+Parameter \ADDR_WIDTH = 8
+Parameter \DEPTH = 256
+Generating RTLIL representation for module `$paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=256'.
+
+7.7. Executing AST frontend in derive mode using pre-parsed AST for module `\asic_sram_1rw'.
+Parameter \DATA_WIDTH = 32
+Parameter \ADDR_WIDTH = 8
+Parameter \DEPTH = 256
+Found cached RTLIL representation for module `$paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=256'.
+
+7.8. Executing AST frontend in derive mode using pre-parsed AST for module `\asic_sram_1rw'.
+Parameter \DATA_WIDTH = 32
+Parameter \ADDR_WIDTH = 8
+Parameter \DEPTH = 255
+Generating RTLIL representation for module `$paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=255'.
+
+7.9. Executing AST frontend in derive mode using pre-parsed AST for module `\asic_sram_1rw'.
+Parameter \DATA_WIDTH = 8
+Parameter \ADDR_WIDTH = 8
+Parameter \DEPTH = 256
+Generating RTLIL representation for module `$paramod\asic_sram_1rw\DATA_WIDTH=8\ADDR_WIDTH=8\DEPTH=256'.
+
+7.10. Executing AST frontend in derive mode using pre-parsed AST for module `\asic_sram_1rw'.
+Parameter \DATA_WIDTH = 32
+Parameter \ADDR_WIDTH = 8
+Parameter \DEPTH = 256
+Found cached RTLIL representation for module `$paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=256'.
+
+7.11. Analyzing design hierarchy..
+Top module:  \ntt_core_256_sram
+Used module:     $paramod\ntt_butterfly\Q=8380417\Q_INV=32'11111100011111111101111111111111
+Used module:         \mod_sub
+Used module:         \mod_add
+Used module:         \modmul_montgomery
+Used module:     $paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=256
+Used module:     $paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=255
+Used module:     $paramod\asic_sram_1rw\DATA_WIDTH=8\ADDR_WIDTH=8\DEPTH=256
+
+7.12. Executing AST frontend in derive mode using pre-parsed AST for module `\mod_sub'.
+Parameter \Q = 8380417
+Found cached RTLIL representation for module `$paramod\mod_sub\Q=8380417'.
+
+7.13. Executing AST frontend in derive mode using pre-parsed AST for module `\mod_add'.
+Parameter \Q = 8380417
+Found cached RTLIL representation for module `$paramod\mod_add\Q=8380417'.
+
+7.14. Executing AST frontend in derive mode using pre-parsed AST for module `\modmul_montgomery'.
+Parameter \Q = 8380417
+Parameter \Q_INV = 32'11111100011111111101111111111111
+Found cached RTLIL representation for module `$paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111'.
+
+7.15. Analyzing design hierarchy..
+Top module:  \ntt_core_256_sram
+Used module:     $paramod\ntt_butterfly\Q=8380417\Q_INV=32'11111100011111111101111111111111
+Used module:         $paramod\mod_sub\Q=8380417
+Used module:         $paramod\mod_add\Q=8380417
+Used module:         $paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111
+Used module:     $paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=256
+Used module:     $paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=255
+Used module:     $paramod\asic_sram_1rw\DATA_WIDTH=8\ADDR_WIDTH=8\DEPTH=256
+
+7.16. Analyzing design hierarchy..
+Top module:  \ntt_core_256_sram
+Used module:     $paramod\ntt_butterfly\Q=8380417\Q_INV=32'11111100011111111101111111111111
+Used module:         $paramod\mod_sub\Q=8380417
+Used module:         $paramod\mod_add\Q=8380417
+Used module:         $paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111
+Used module:     $paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=256
+Used module:     $paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=255
+Used module:     $paramod\asic_sram_1rw\DATA_WIDTH=8\ADDR_WIDTH=8\DEPTH=256
+Removing unused module `\ntt_butterfly'.
+Removing unused module `\modmul_montgomery'.
+Removing unused module `\mod_sub'.
+Removing unused module `\mod_add'.
+Removing unused module `\asic_sram_1rw'.
+Removed 5 unused modules.
+
+8. Executing PROC pass (convert processes to netlists).
+
+8.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+8.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 5 switch rules as full_case in process $proc$rtl/ntt_core_256_sram.sv:267$59 in module ntt_core_256_sram.
+Marked 15 switch rules as full_case in process $proc$rtl/ntt_core_256_sram.sv:147$48 in module ntt_core_256_sram.
+Marked 1 switch rules as full_case in process $proc$rtl/asic_sram_1rw.sv:18$123 in module $paramod\asic_sram_1rw\DATA_WIDTH=8\ADDR_WIDTH=8\DEPTH=256.
+Marked 1 switch rules as full_case in process $proc$rtl/asic_sram_1rw.sv:18$116 in module $paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=255.
+Marked 1 switch rules as full_case in process $proc$rtl/asic_sram_1rw.sv:18$109 in module $paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=256.
+Marked 1 switch rules as full_case in process $proc$rtl/ntt_butterfly.sv:53$104 in module $paramod\ntt_butterfly\Q=8380417\Q_INV=32'11111100011111111101111111111111.
+Marked 7 switch rules as full_case in process $proc$rtl/modmul_montgomery.sv:51$93 in module $paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111.
+Removed a total of 0 dead cases.
+
+8.3. Executing PROC_INIT pass (extract init attributes).
+
+8.4. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \rst_n in `\ntt_core_256_sram.$proc$rtl/ntt_core_256_sram.sv:267$59'.
+Found async reset \rst_n in `$paramod\ntt_butterfly\Q=8380417\Q_INV=32'11111100011111111101111111111111.$proc$rtl/ntt_butterfly.sv:53$104'.
+Found async reset \rst_n in `$paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111.$proc$rtl/modmul_montgomery.sv:51$93'.
+
+8.5. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\ntt_core_256_sram.$proc$rtl/ntt_core_256_sram.sv:267$59'.
+     1/15: $0\butterfly_start[0:0]
+     2/15: $0\v_hold[31:0]
+     3/15: $0\u_hold[31:0]
+     4/15: $0\twiddle_idx[7:0]
+     5/15: $0\idx2[7:0]
+     6/15: $0\idx1[7:0]
+     7/15: $0\stage[2:0]
+     8/15: $0\offset[7:0]
+     9/15: $0\length[7:0]
+    10/15: $0\step[7:0]
+    11/15: $0\permute_idx[7:0]
+    12/15: $0\use_ping_as_input[0:0]
+    13/15: $0\state[4:0]
+    14/15: $0\done[0:0]
+    15/15: $0\busy[0:0]
+Creating decoders for process `\ntt_core_256_sram.$proc$rtl/ntt_core_256_sram.sv:147$48'.
+     1/98: $11\ping_addr[7:0]
+     2/98: $11\ping_cs[0:0]
+     3/98: $10\pong_addr[7:0]
+     4/98: $10\pong_cs[0:0]
+     5/98: $9\pong_addr[7:0]
+     6/98: $9\pong_cs[0:0]
+     7/98: $10\ping_addr[7:0]
+     8/98: $10\ping_cs[0:0]
+     9/98: $4\pong_wdata[31:0]
+    10/98: $8\pong_addr[7:0]
+    11/98: $4\pong_we[0:0]
+    12/98: $8\pong_cs[0:0]
+    13/98: $5\ping_wdata[31:0]
+    14/98: $9\ping_addr[7:0]
+    15/98: $5\ping_we[0:0]
+    16/98: $9\ping_cs[0:0]
+    17/98: $3\pong_wdata[31:0]
+    18/98: $7\pong_addr[7:0]
+    19/98: $3\pong_we[0:0]
+    20/98: $7\pong_cs[0:0]
+    21/98: $4\ping_wdata[31:0]
+    22/98: $8\ping_addr[7:0]
+    23/98: $4\ping_we[0:0]
+    24/98: $8\ping_cs[0:0]
+    25/98: $2\pong_wdata[31:0]
+    26/98: $6\pong_addr[7:0]
+    27/98: $2\pong_we[0:0]
+    28/98: $6\pong_cs[0:0]
+    29/98: $3\ping_wdata[31:0]
+    30/98: $7\ping_addr[7:0]
+    31/98: $3\ping_we[0:0]
+    32/98: $7\ping_cs[0:0]
+    33/98: $1\pong_wdata[31:0]
+    34/98: $5\pong_addr[7:0]
+    35/98: $1\pong_we[0:0]
+    36/98: $5\pong_cs[0:0]
+    37/98: $2\ping_wdata[31:0]
+    38/98: $6\ping_addr[7:0]
+    39/98: $2\ping_we[0:0]
+    40/98: $6\ping_cs[0:0]
+    41/98: $2\twiddle_addr[7:0]
+    42/98: $2\twiddle_cs[0:0]
+    43/98: $5\ping_addr[7:0]
+    44/98: $5\ping_cs[0:0]
+    45/98: $4\pong_addr[7:0]
+    46/98: $4\pong_cs[0:0]
+    47/98: $3\pong_addr[7:0]
+    48/98: $3\pong_cs[0:0]
+    49/98: $4\ping_addr[7:0]
+    50/98: $4\ping_cs[0:0]
+    51/98: $3\ping_addr[7:0]
+    52/98: $3\ping_cs[0:0]
+    53/98: $2\pong_addr[7:0]
+    54/98: $2\pong_cs[0:0]
+    55/98: $1\pong_addr[7:0]
+    56/98: $1\pong_cs[0:0]
+    57/98: $2\ping_addr[7:0]
+    58/98: $2\ping_cs[0:0]
+    59/98: $1\ping_wdata[31:0]
+    60/98: $1\ping_addr[7:0]
+    61/98: $1\ping_we[0:0]
+    62/98: $1\ping_cs[0:0]
+    63/98: $2\input_addr[7:0]
+    64/98: $2\input_cs[0:0]
+    65/98: $2\bitrev_addr[7:0]
+    66/98: $2\bitrev_cs[0:0]
+    67/98: $1\twiddle_wdata[31:0]
+    68/98: $1\twiddle_addr[7:0]
+    69/98: $1\twiddle_we[0:0]
+    70/98: $1\twiddle_cs[0:0]
+    71/98: $1\bitrev_wdata[7:0]
+    72/98: $1\bitrev_addr[7:0]
+    73/98: $1\bitrev_we[0:0]
+    74/98: $1\bitrev_cs[0:0]
+    75/98: $1\input_wdata[31:0]
+    76/98: $1\input_addr[7:0]
+    77/98: $1\input_we[0:0]
+    78/98: $1\input_cs[0:0]
+    79/98: $0\pong_addr[7:0]
+    80/98: $0\pong_cs[0:0]
+    81/98: $0\ping_addr[7:0]
+    82/98: $0\ping_cs[0:0]
+    83/98: $0\pong_wdata[31:0]
+    84/98: $0\pong_we[0:0]
+    85/98: $0\ping_wdata[31:0]
+    86/98: $0\ping_we[0:0]
+    87/98: $0\twiddle_addr[7:0]
+    88/98: $0\twiddle_cs[0:0]
+    89/98: $0\input_addr[7:0]
+    90/98: $0\input_cs[0:0]
+    91/98: $0\bitrev_addr[7:0]
+    92/98: $0\bitrev_cs[0:0]
+    93/98: $0\twiddle_wdata[31:0]
+    94/98: $0\twiddle_we[0:0]
+    95/98: $0\bitrev_wdata[7:0]
+    96/98: $0\bitrev_we[0:0]
+    97/98: $0\input_wdata[31:0]
+    98/98: $0\input_we[0:0]
+Creating decoders for process `$paramod\asic_sram_1rw\DATA_WIDTH=8\ADDR_WIDTH=8\DEPTH=256.$proc$rtl/asic_sram_1rw.sv:18$123'.
+     1/4: $0$memwr$\mem$rtl/asic_sram_1rw.sv:21$122_EN[7:0]$124
+     2/4: $0$memwr$\mem$rtl/asic_sram_1rw.sv:21$122_DATA[7:0]$125
+     3/4: $0$memwr$\mem$rtl/asic_sram_1rw.sv:21$122_ADDR[7:0]$126
+     4/4: $0\rdata[7:0]
+Creating decoders for process `$paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=255.$proc$rtl/asic_sram_1rw.sv:18$116'.
+     1/4: $0$memwr$\mem$rtl/asic_sram_1rw.sv:21$115_EN[31:0]$117
+     2/4: $0$memwr$\mem$rtl/asic_sram_1rw.sv:21$115_DATA[31:0]$118
+     3/4: $0$memwr$\mem$rtl/asic_sram_1rw.sv:21$115_ADDR[7:0]$119
+     4/4: $0\rdata[31:0]
+Creating decoders for process `$paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=256.$proc$rtl/asic_sram_1rw.sv:18$109'.
+     1/4: $0$memwr$\mem$rtl/asic_sram_1rw.sv:21$108_EN[31:0]$112
+     2/4: $0$memwr$\mem$rtl/asic_sram_1rw.sv:21$108_DATA[31:0]$111
+     3/4: $0$memwr$\mem$rtl/asic_sram_1rw.sv:21$108_ADDR[7:0]$110
+     4/4: $0\rdata[31:0]
+Creating decoders for process `$paramod\ntt_butterfly\Q=8380417\Q_INV=32'11111100011111111101111111111111.$proc$rtl/ntt_butterfly.sv:53$104'.
+     1/4: $0\u_reg[31:0]
+     2/4: $0\out_a[31:0]
+     3/4: $0\out_b[31:0]
+     4/4: $0\done[0:0]
+Creating decoders for process `$paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111.$proc$rtl/modmul_montgomery.sv:51$93'.
+     1/15: $0\t_reg[31:0]
+     2/15: $0\carry_reg[0:0]
+     3/15: $0\mq_reg[63:0]
+     4/15: $0\ab_reg[63:0]
+     5/15: $0\multiplier[31:0]
+     6/15: $0\multiplicand_high[31:0]
+     7/15: $0\multiplicand_low[31:0]
+     8/15: $0\done[0:0]
+     9/15: $0\acc_low[31:0]
+    10/15: $0\step_high[0:0]
+    11/15: $0\bit_idx[5:0]
+    12/15: $0\phase[2:0]
+    13/15: $0\busy[0:0]
+    14/15: $0\acc_high[31:0]
+    15/15: $0\result[31:0]
+
+8.6. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\ntt_core_256_sram.\input_cs' from process `\ntt_core_256_sram.$proc$rtl/ntt_core_256_sram.sv:147$48'.
+No latch inferred for signal `\ntt_core_256_sram.\input_we' from process `\ntt_core_256_sram.$proc$rtl/ntt_core_256_sram.sv:147$48'.
+No latch inferred for signal `\ntt_core_256_sram.\input_addr' from process `\ntt_core_256_sram.$proc$rtl/ntt_core_256_sram.sv:147$48'.
+No latch inferred for signal `\ntt_core_256_sram.\input_wdata' from process `\ntt_core_256_sram.$proc$rtl/ntt_core_256_sram.sv:147$48'.
+No latch inferred for signal `\ntt_core_256_sram.\bitrev_cs' from process `\ntt_core_256_sram.$proc$rtl/ntt_core_256_sram.sv:147$48'.
+No latch inferred for signal `\ntt_core_256_sram.\bitrev_we' from process `\ntt_core_256_sram.$proc$rtl/ntt_core_256_sram.sv:147$48'.
+No latch inferred for signal `\ntt_core_256_sram.\bitrev_addr' from process `\ntt_core_256_sram.$proc$rtl/ntt_core_256_sram.sv:147$48'.
+No latch inferred for signal `\ntt_core_256_sram.\bitrev_wdata' from process `\ntt_core_256_sram.$proc$rtl/ntt_core_256_sram.sv:147$48'.
+No latch inferred for signal `\ntt_core_256_sram.\twiddle_cs' from process `\ntt_core_256_sram.$proc$rtl/ntt_core_256_sram.sv:147$48'.
+No latch inferred for signal `\ntt_core_256_sram.\twiddle_we' from process `\ntt_core_256_sram.$proc$rtl/ntt_core_256_sram.sv:147$48'.
+No latch inferred for signal `\ntt_core_256_sram.\twiddle_addr' from process `\ntt_core_256_sram.$proc$rtl/ntt_core_256_sram.sv:147$48'.
+No latch inferred for signal `\ntt_core_256_sram.\twiddle_wdata' from process `\ntt_core_256_sram.$proc$rtl/ntt_core_256_sram.sv:147$48'.
+No latch inferred for signal `\ntt_core_256_sram.\ping_cs' from process `\ntt_core_256_sram.$proc$rtl/ntt_core_256_sram.sv:147$48'.
+No latch inferred for signal `\ntt_core_256_sram.\ping_we' from process `\ntt_core_256_sram.$proc$rtl/ntt_core_256_sram.sv:147$48'.
+No latch inferred for signal `\ntt_core_256_sram.\ping_addr' from process `\ntt_core_256_sram.$proc$rtl/ntt_core_256_sram.sv:147$48'.
+No latch inferred for signal `\ntt_core_256_sram.\ping_wdata' from process `\ntt_core_256_sram.$proc$rtl/ntt_core_256_sram.sv:147$48'.
+No latch inferred for signal `\ntt_core_256_sram.\pong_cs' from process `\ntt_core_256_sram.$proc$rtl/ntt_core_256_sram.sv:147$48'.
+No latch inferred for signal `\ntt_core_256_sram.\pong_we' from process `\ntt_core_256_sram.$proc$rtl/ntt_core_256_sram.sv:147$48'.
+No latch inferred for signal `\ntt_core_256_sram.\pong_addr' from process `\ntt_core_256_sram.$proc$rtl/ntt_core_256_sram.sv:147$48'.
+No latch inferred for signal `\ntt_core_256_sram.\pong_wdata' from process `\ntt_core_256_sram.$proc$rtl/ntt_core_256_sram.sv:147$48'.
+
+8.7. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\ntt_core_256_sram.\busy' using process `\ntt_core_256_sram.$proc$rtl/ntt_core_256_sram.sv:267$59'.
+  created $adff cell `$procdff$978' with positive edge clock and negative level reset.
+Creating register for signal `\ntt_core_256_sram.\done' using process `\ntt_core_256_sram.$proc$rtl/ntt_core_256_sram.sv:267$59'.
+  created $adff cell `$procdff$979' with positive edge clock and negative level reset.
+Creating register for signal `\ntt_core_256_sram.\state' using process `\ntt_core_256_sram.$proc$rtl/ntt_core_256_sram.sv:267$59'.
+  created $adff cell `$procdff$980' with positive edge clock and negative level reset.
+Creating register for signal `\ntt_core_256_sram.\use_ping_as_input' using process `\ntt_core_256_sram.$proc$rtl/ntt_core_256_sram.sv:267$59'.
+  created $adff cell `$procdff$981' with positive edge clock and negative level reset.
+Creating register for signal `\ntt_core_256_sram.\permute_idx' using process `\ntt_core_256_sram.$proc$rtl/ntt_core_256_sram.sv:267$59'.
+  created $adff cell `$procdff$982' with positive edge clock and negative level reset.
+Creating register for signal `\ntt_core_256_sram.\step' using process `\ntt_core_256_sram.$proc$rtl/ntt_core_256_sram.sv:267$59'.
+  created $adff cell `$procdff$983' with positive edge clock and negative level reset.
+Creating register for signal `\ntt_core_256_sram.\length' using process `\ntt_core_256_sram.$proc$rtl/ntt_core_256_sram.sv:267$59'.
+  created $adff cell `$procdff$984' with positive edge clock and negative level reset.
+Creating register for signal `\ntt_core_256_sram.\offset' using process `\ntt_core_256_sram.$proc$rtl/ntt_core_256_sram.sv:267$59'.
+  created $adff cell `$procdff$985' with positive edge clock and negative level reset.
+Creating register for signal `\ntt_core_256_sram.\stage' using process `\ntt_core_256_sram.$proc$rtl/ntt_core_256_sram.sv:267$59'.
+  created $adff cell `$procdff$986' with positive edge clock and negative level reset.
+Creating register for signal `\ntt_core_256_sram.\idx1' using process `\ntt_core_256_sram.$proc$rtl/ntt_core_256_sram.sv:267$59'.
+  created $adff cell `$procdff$987' with positive edge clock and negative level reset.
+Creating register for signal `\ntt_core_256_sram.\idx2' using process `\ntt_core_256_sram.$proc$rtl/ntt_core_256_sram.sv:267$59'.
+  created $adff cell `$procdff$988' with positive edge clock and negative level reset.
+Creating register for signal `\ntt_core_256_sram.\twiddle_idx' using process `\ntt_core_256_sram.$proc$rtl/ntt_core_256_sram.sv:267$59'.
+  created $adff cell `$procdff$989' with positive edge clock and negative level reset.
+Creating register for signal `\ntt_core_256_sram.\u_hold' using process `\ntt_core_256_sram.$proc$rtl/ntt_core_256_sram.sv:267$59'.
+  created $adff cell `$procdff$990' with positive edge clock and negative level reset.
+Creating register for signal `\ntt_core_256_sram.\v_hold' using process `\ntt_core_256_sram.$proc$rtl/ntt_core_256_sram.sv:267$59'.
+  created $adff cell `$procdff$991' with positive edge clock and negative level reset.
+Creating register for signal `\ntt_core_256_sram.\butterfly_start' using process `\ntt_core_256_sram.$proc$rtl/ntt_core_256_sram.sv:267$59'.
+  created $adff cell `$procdff$992' with positive edge clock and negative level reset.
+Creating register for signal `$paramod\asic_sram_1rw\DATA_WIDTH=8\ADDR_WIDTH=8\DEPTH=256.\rdata' using process `$paramod\asic_sram_1rw\DATA_WIDTH=8\ADDR_WIDTH=8\DEPTH=256.$proc$rtl/asic_sram_1rw.sv:18$123'.
+  created $dff cell `$procdff$993' with positive edge clock.
+Creating register for signal `$paramod\asic_sram_1rw\DATA_WIDTH=8\ADDR_WIDTH=8\DEPTH=256.$memwr$\mem$rtl/asic_sram_1rw.sv:21$122_EN' using process `$paramod\asic_sram_1rw\DATA_WIDTH=8\ADDR_WIDTH=8\DEPTH=256.$proc$rtl/asic_sram_1rw.sv:18$123'.
+  created $dff cell `$procdff$994' with positive edge clock.
+Creating register for signal `$paramod\asic_sram_1rw\DATA_WIDTH=8\ADDR_WIDTH=8\DEPTH=256.$memwr$\mem$rtl/asic_sram_1rw.sv:21$122_DATA' using process `$paramod\asic_sram_1rw\DATA_WIDTH=8\ADDR_WIDTH=8\DEPTH=256.$proc$rtl/asic_sram_1rw.sv:18$123'.
+  created $dff cell `$procdff$995' with positive edge clock.
+Creating register for signal `$paramod\asic_sram_1rw\DATA_WIDTH=8\ADDR_WIDTH=8\DEPTH=256.$memwr$\mem$rtl/asic_sram_1rw.sv:21$122_ADDR' using process `$paramod\asic_sram_1rw\DATA_WIDTH=8\ADDR_WIDTH=8\DEPTH=256.$proc$rtl/asic_sram_1rw.sv:18$123'.
+  created $dff cell `$procdff$996' with positive edge clock.
+Creating register for signal `$paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=255.\rdata' using process `$paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=255.$proc$rtl/asic_sram_1rw.sv:18$116'.
+  created $dff cell `$procdff$997' with positive edge clock.
+Creating register for signal `$paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=255.$memwr$\mem$rtl/asic_sram_1rw.sv:21$115_EN' using process `$paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=255.$proc$rtl/asic_sram_1rw.sv:18$116'.
+  created $dff cell `$procdff$998' with positive edge clock.
+Creating register for signal `$paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=255.$memwr$\mem$rtl/asic_sram_1rw.sv:21$115_DATA' using process `$paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=255.$proc$rtl/asic_sram_1rw.sv:18$116'.
+  created $dff cell `$procdff$999' with positive edge clock.
+Creating register for signal `$paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=255.$memwr$\mem$rtl/asic_sram_1rw.sv:21$115_ADDR' using process `$paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=255.$proc$rtl/asic_sram_1rw.sv:18$116'.
+  created $dff cell `$procdff$1000' with positive edge clock.
+Creating register for signal `$paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=256.\rdata' using process `$paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=256.$proc$rtl/asic_sram_1rw.sv:18$109'.
+  created $dff cell `$procdff$1001' with positive edge clock.
+Creating register for signal `$paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=256.$memwr$\mem$rtl/asic_sram_1rw.sv:21$108_ADDR' using process `$paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=256.$proc$rtl/asic_sram_1rw.sv:18$109'.
+  created $dff cell `$procdff$1002' with positive edge clock.
+Creating register for signal `$paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=256.$memwr$\mem$rtl/asic_sram_1rw.sv:21$108_DATA' using process `$paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=256.$proc$rtl/asic_sram_1rw.sv:18$109'.
+  created $dff cell `$procdff$1003' with positive edge clock.
+Creating register for signal `$paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=256.$memwr$\mem$rtl/asic_sram_1rw.sv:21$108_EN' using process `$paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=256.$proc$rtl/asic_sram_1rw.sv:18$109'.
+  created $dff cell `$procdff$1004' with positive edge clock.
+Creating register for signal `$paramod\ntt_butterfly\Q=8380417\Q_INV=32'11111100011111111101111111111111.\done' using process `$paramod\ntt_butterfly\Q=8380417\Q_INV=32'11111100011111111101111111111111.$proc$rtl/ntt_butterfly.sv:53$104'.
+  created $adff cell `$procdff$1005' with positive edge clock and negative level reset.
+Creating register for signal `$paramod\ntt_butterfly\Q=8380417\Q_INV=32'11111100011111111101111111111111.\out_b' using process `$paramod\ntt_butterfly\Q=8380417\Q_INV=32'11111100011111111101111111111111.$proc$rtl/ntt_butterfly.sv:53$104'.
+  created $adff cell `$procdff$1006' with positive edge clock and negative level reset.
+Creating register for signal `$paramod\ntt_butterfly\Q=8380417\Q_INV=32'11111100011111111101111111111111.\out_a' using process `$paramod\ntt_butterfly\Q=8380417\Q_INV=32'11111100011111111101111111111111.$proc$rtl/ntt_butterfly.sv:53$104'.
+  created $adff cell `$procdff$1007' with positive edge clock and negative level reset.
+Creating register for signal `$paramod\ntt_butterfly\Q=8380417\Q_INV=32'11111100011111111101111111111111.\u_reg' using process `$paramod\ntt_butterfly\Q=8380417\Q_INV=32'11111100011111111101111111111111.$proc$rtl/ntt_butterfly.sv:53$104'.
+  created $adff cell `$procdff$1008' with positive edge clock and negative level reset.
+Creating register for signal `$paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111.\result' using process `$paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111.$proc$rtl/modmul_montgomery.sv:51$93'.
+  created $adff cell `$procdff$1009' with positive edge clock and negative level reset.
+Creating register for signal `$paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111.\acc_high' using process `$paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111.$proc$rtl/modmul_montgomery.sv:51$93'.
+  created $adff cell `$procdff$1010' with positive edge clock and negative level reset.
+Creating register for signal `$paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111.\busy' using process `$paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111.$proc$rtl/modmul_montgomery.sv:51$93'.
+  created $adff cell `$procdff$1011' with positive edge clock and negative level reset.
+Creating register for signal `$paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111.\phase' using process `$paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111.$proc$rtl/modmul_montgomery.sv:51$93'.
+  created $adff cell `$procdff$1012' with positive edge clock and negative level reset.
+Creating register for signal `$paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111.\bit_idx' using process `$paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111.$proc$rtl/modmul_montgomery.sv:51$93'.
+  created $adff cell `$procdff$1013' with positive edge clock and negative level reset.
+Creating register for signal `$paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111.\step_high' using process `$paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111.$proc$rtl/modmul_montgomery.sv:51$93'.
+  created $adff cell `$procdff$1014' with positive edge clock and negative level reset.
+Creating register for signal `$paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111.\acc_low' using process `$paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111.$proc$rtl/modmul_montgomery.sv:51$93'.
+  created $adff cell `$procdff$1015' with positive edge clock and negative level reset.
+Creating register for signal `$paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111.\done' using process `$paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111.$proc$rtl/modmul_montgomery.sv:51$93'.
+  created $adff cell `$procdff$1016' with positive edge clock and negative level reset.
+Creating register for signal `$paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111.\multiplicand_low' using process `$paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111.$proc$rtl/modmul_montgomery.sv:51$93'.
+  created $adff cell `$procdff$1017' with positive edge clock and negative level reset.
+Creating register for signal `$paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111.\multiplicand_high' using process `$paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111.$proc$rtl/modmul_montgomery.sv:51$93'.
+  created $adff cell `$procdff$1018' with positive edge clock and negative level reset.
+Creating register for signal `$paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111.\multiplier' using process `$paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111.$proc$rtl/modmul_montgomery.sv:51$93'.
+  created $adff cell `$procdff$1019' with positive edge clock and negative level reset.
+Creating register for signal `$paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111.\ab_reg' using process `$paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111.$proc$rtl/modmul_montgomery.sv:51$93'.
+  created $adff cell `$procdff$1020' with positive edge clock and negative level reset.
+Creating register for signal `$paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111.\mq_reg' using process `$paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111.$proc$rtl/modmul_montgomery.sv:51$93'.
+  created $adff cell `$procdff$1021' with positive edge clock and negative level reset.
+Creating register for signal `$paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111.\carry_reg' using process `$paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111.$proc$rtl/modmul_montgomery.sv:51$93'.
+  created $adff cell `$procdff$1022' with positive edge clock and negative level reset.
+Creating register for signal `$paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111.\t_reg' using process `$paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111.$proc$rtl/modmul_montgomery.sv:51$93'.
+  created $adff cell `$procdff$1023' with positive edge clock and negative level reset.
+
+8.8. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 7 empty switches in `\ntt_core_256_sram.$proc$rtl/ntt_core_256_sram.sv:267$59'.
+Removing empty process `ntt_core_256_sram.$proc$rtl/ntt_core_256_sram.sv:267$59'.
+Found and cleaned up 15 empty switches in `\ntt_core_256_sram.$proc$rtl/ntt_core_256_sram.sv:147$48'.
+Removing empty process `ntt_core_256_sram.$proc$rtl/ntt_core_256_sram.sv:147$48'.
+Found and cleaned up 2 empty switches in `$paramod\asic_sram_1rw\DATA_WIDTH=8\ADDR_WIDTH=8\DEPTH=256.$proc$rtl/asic_sram_1rw.sv:18$123'.
+Removing empty process `$paramod\asic_sram_1rw\DATA_WIDTH=8\ADDR_WIDTH=8\DEPTH=256.$proc$rtl/asic_sram_1rw.sv:18$123'.
+Found and cleaned up 2 empty switches in `$paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=255.$proc$rtl/asic_sram_1rw.sv:18$116'.
+Removing empty process `$paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=255.$proc$rtl/asic_sram_1rw.sv:18$116'.
+Found and cleaned up 2 empty switches in `$paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=256.$proc$rtl/asic_sram_1rw.sv:18$109'.
+Removing empty process `$paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=256.$proc$rtl/asic_sram_1rw.sv:18$109'.
+Found and cleaned up 2 empty switches in `$paramod\ntt_butterfly\Q=8380417\Q_INV=32'11111100011111111101111111111111.$proc$rtl/ntt_butterfly.sv:53$104'.
+Removing empty process `$paramod\ntt_butterfly\Q=8380417\Q_INV=32'11111100011111111101111111111111.$proc$rtl/ntt_butterfly.sv:53$104'.
+Found and cleaned up 7 empty switches in `$paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111.$proc$rtl/modmul_montgomery.sv:51$93'.
+Removing empty process `$paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111.$proc$rtl/modmul_montgomery.sv:51$93'.
+Cleaned up 37 empty switches.
+
+9. Executing OPT pass (performing simple optimizations).
+
+9.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod\mod_add\Q=8380417.
+Optimizing module $paramod\mod_sub\Q=8380417.
+Optimizing module ntt_core_256_sram.
+<suppressed ~11 debug messages>
+Optimizing module $paramod\asic_sram_1rw\DATA_WIDTH=8\ADDR_WIDTH=8\DEPTH=256.
+Optimizing module $paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=255.
+Optimizing module $paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=256.
+Optimizing module $paramod\ntt_butterfly\Q=8380417\Q_INV=32'11111100011111111101111111111111.
+Optimizing module $paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111.
+<suppressed ~33 debug messages>
+
+9.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod\mod_add\Q=8380417'.
+Finding identical cells in module `$paramod\mod_sub\Q=8380417'.
+Finding identical cells in module `\ntt_core_256_sram'.
+<suppressed ~195 debug messages>
+Finding identical cells in module `$paramod\asic_sram_1rw\DATA_WIDTH=8\ADDR_WIDTH=8\DEPTH=256'.
+Finding identical cells in module `$paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=255'.
+Finding identical cells in module `$paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=256'.
+Finding identical cells in module `$paramod\ntt_butterfly\Q=8380417\Q_INV=32'11111100011111111101111111111111'.
+Finding identical cells in module `$paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111'.
+<suppressed ~213 debug messages>
+Removed a total of 136 cells.
+
+9.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module $paramod\mod_add\Q=8380417..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\mod_sub\Q=8380417..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \ntt_core_256_sram..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+    dead port 2/2 on $mux $procmux$511.
+    dead port 2/2 on $mux $procmux$505.
+    dead port 2/2 on $mux $procmux$499.
+    dead port 2/2 on $mux $procmux$493.
+    dead port 2/2 on $mux $procmux$487.
+    dead port 2/2 on $mux $procmux$481.
+    dead port 2/2 on $mux $procmux$475.
+    dead port 2/2 on $mux $procmux$469.
+    dead port 2/2 on $mux $procmux$439.
+    dead port 2/2 on $mux $procmux$433.
+    dead port 2/2 on $mux $procmux$427.
+    dead port 2/2 on $mux $procmux$421.
+    dead port 2/2 on $mux $procmux$415.
+    dead port 2/2 on $mux $procmux$409.
+    dead port 2/2 on $mux $procmux$403.
+    dead port 2/2 on $mux $procmux$397.
+    dead port 2/2 on $mux $procmux$379.
+    dead port 2/2 on $mux $procmux$373.
+    dead port 2/2 on $mux $procmux$367.
+    dead port 2/2 on $mux $procmux$361.
+    dead port 2/2 on $mux $procmux$601.
+    dead port 2/2 on $mux $procmux$595.
+    dead port 2/2 on $mux $procmux$589.
+    dead port 2/2 on $mux $procmux$583.
+    dead port 2/2 on $mux $procmux$565.
+    dead port 2/2 on $mux $procmux$559.
+    dead port 2/2 on $mux $procmux$553.
+    dead port 2/2 on $mux $procmux$547.
+Running muxtree optimizer on module $paramod\asic_sram_1rw\DATA_WIDTH=8\ADDR_WIDTH=8\DEPTH=256..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=255..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=256..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\ntt_butterfly\Q=8380417\Q_INV=32'11111100011111111101111111111111..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+      Replacing known input bits on port A of cell $procmux$944: \busy -> 1'0
+      Replacing known input bits on port B of cell $procmux$940: { \busy \busy \busy } -> 3'111
+  Analyzing evaluation results.
+Removed 28 multiplexer ports.
+<suppressed ~102 debug messages>
+
+9.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module $paramod\mod_add\Q=8380417.
+  Optimizing cells in module $paramod\mod_sub\Q=8380417.
+  Optimizing cells in module \ntt_core_256_sram.
+    New ctrl vector for $pmux cell $procmux$335: { $procmux$356_CMP $auto$opt_reduce.cc:132:opt_mux$1025 $procmux$343_CMP $procmux$336_CMP }
+    New ctrl vector for $pmux cell $procmux$313: { $auto$opt_reduce.cc:132:opt_mux$1027 $procmux$343_CMP $procmux$336_CMP }
+    New input vector for $reduce_or cell $auto$opt_reduce.cc:126:opt_mux$1024: { $procmux$344_CMP $procmux$345_CMP $procmux$346_CMP $procmux$347_CMP $procmux$348_CMP $procmux$349_CMP $procmux$350_CMP $procmux$351_CMP $procmux$352_CMP $procmux$353_CMP }
+    New input vector for $reduce_or cell $auto$opt_reduce.cc:126:opt_mux$1026: { $procmux$344_CMP $procmux$345_CMP $procmux$346_CMP $procmux$347_CMP $procmux$348_CMP $procmux$349_CMP $procmux$350_CMP $procmux$351_CMP $procmux$352_CMP $procmux$353_CMP }
+  Optimizing cells in module \ntt_core_256_sram.
+  Optimizing cells in module $paramod\asic_sram_1rw\DATA_WIDTH=8\ADDR_WIDTH=8\DEPTH=256.
+    Consolidated identical input bits for $mux cell $procmux$676:
+      Old ports: A=8'00000000, B=8'11111111, Y=$procmux$676_Y
+      New ports: A=1'0, B=1'1, Y=$procmux$676_Y [0]
+      New connections: $procmux$676_Y [7:1] = { $procmux$676_Y [0] $procmux$676_Y [0] $procmux$676_Y [0] $procmux$676_Y [0] $procmux$676_Y [0] $procmux$676_Y [0] $procmux$676_Y [0] }
+  Optimizing cells in module $paramod\asic_sram_1rw\DATA_WIDTH=8\ADDR_WIDTH=8\DEPTH=256.
+    Consolidated identical input bits for $mux cell $procmux$678:
+      Old ports: A=8'00000000, B=$procmux$676_Y, Y=$procmux$678_Y
+      New ports: A=1'0, B=$procmux$676_Y [0], Y=$procmux$678_Y [0]
+      New connections: $procmux$678_Y [7:1] = { $procmux$678_Y [0] $procmux$678_Y [0] $procmux$678_Y [0] $procmux$678_Y [0] $procmux$678_Y [0] $procmux$678_Y [0] $procmux$678_Y [0] }
+  Optimizing cells in module $paramod\asic_sram_1rw\DATA_WIDTH=8\ADDR_WIDTH=8\DEPTH=256.
+  Optimizing cells in module $paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=255.
+    Consolidated identical input bits for $mux cell $procmux$696:
+      Old ports: A=0, B=32'11111111111111111111111111111111, Y=$procmux$696_Y
+      New ports: A=1'0, B=1'1, Y=$procmux$696_Y [0]
+      New connections: $procmux$696_Y [31:1] = { $procmux$696_Y [0] $procmux$696_Y [0] $procmux$696_Y [0] $procmux$696_Y [0] $procmux$696_Y [0] $procmux$696_Y [0] $procmux$696_Y [0] $procmux$696_Y [0] $procmux$696_Y [0] $procmux$696_Y [0] $procmux$696_Y [0] $procmux$696_Y [0] $procmux$696_Y [0] $procmux$696_Y [0] $procmux$696_Y [0] $procmux$696_Y [0] $procmux$696_Y [0] $procmux$696_Y [0] $procmux$696_Y [0] $procmux$696_Y [0] $procmux$696_Y [0] $procmux$696_Y [0] $procmux$696_Y [0] $procmux$696_Y [0] $procmux$696_Y [0] $procmux$696_Y [0] $procmux$696_Y [0] $procmux$696_Y [0] $procmux$696_Y [0] $procmux$696_Y [0] $procmux$696_Y [0] }
+  Optimizing cells in module $paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=255.
+    Consolidated identical input bits for $mux cell $procmux$698:
+      Old ports: A=0, B=$procmux$696_Y, Y=$procmux$698_Y
+      New ports: A=1'0, B=$procmux$696_Y [0], Y=$procmux$698_Y [0]
+      New connections: $procmux$698_Y [31:1] = { $procmux$698_Y [0] $procmux$698_Y [0] $procmux$698_Y [0] $procmux$698_Y [0] $procmux$698_Y [0] $procmux$698_Y [0] $procmux$698_Y [0] $procmux$698_Y [0] $procmux$698_Y [0] $procmux$698_Y [0] $procmux$698_Y [0] $procmux$698_Y [0] $procmux$698_Y [0] $procmux$698_Y [0] $procmux$698_Y [0] $procmux$698_Y [0] $procmux$698_Y [0] $procmux$698_Y [0] $procmux$698_Y [0] $procmux$698_Y [0] $procmux$698_Y [0] $procmux$698_Y [0] $procmux$698_Y [0] $procmux$698_Y [0] $procmux$698_Y [0] $procmux$698_Y [0] $procmux$698_Y [0] $procmux$698_Y [0] $procmux$698_Y [0] $procmux$698_Y [0] $procmux$698_Y [0] }
+  Optimizing cells in module $paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=255.
+  Optimizing cells in module $paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=256.
+    Consolidated identical input bits for $mux cell $procmux$716:
+      Old ports: A=0, B=32'11111111111111111111111111111111, Y=$procmux$716_Y
+      New ports: A=1'0, B=1'1, Y=$procmux$716_Y [0]
+      New connections: $procmux$716_Y [31:1] = { $procmux$716_Y [0] $procmux$716_Y [0] $procmux$716_Y [0] $procmux$716_Y [0] $procmux$716_Y [0] $procmux$716_Y [0] $procmux$716_Y [0] $procmux$716_Y [0] $procmux$716_Y [0] $procmux$716_Y [0] $procmux$716_Y [0] $procmux$716_Y [0] $procmux$716_Y [0] $procmux$716_Y [0] $procmux$716_Y [0] $procmux$716_Y [0] $procmux$716_Y [0] $procmux$716_Y [0] $procmux$716_Y [0] $procmux$716_Y [0] $procmux$716_Y [0] $procmux$716_Y [0] $procmux$716_Y [0] $procmux$716_Y [0] $procmux$716_Y [0] $procmux$716_Y [0] $procmux$716_Y [0] $procmux$716_Y [0] $procmux$716_Y [0] $procmux$716_Y [0] $procmux$716_Y [0] }
+  Optimizing cells in module $paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=256.
+    Consolidated identical input bits for $mux cell $procmux$718:
+      Old ports: A=0, B=$procmux$716_Y, Y=$procmux$718_Y
+      New ports: A=1'0, B=$procmux$716_Y [0], Y=$procmux$718_Y [0]
+      New connections: $procmux$718_Y [31:1] = { $procmux$718_Y [0] $procmux$718_Y [0] $procmux$718_Y [0] $procmux$718_Y [0] $procmux$718_Y [0] $procmux$718_Y [0] $procmux$718_Y [0] $procmux$718_Y [0] $procmux$718_Y [0] $procmux$718_Y [0] $procmux$718_Y [0] $procmux$718_Y [0] $procmux$718_Y [0] $procmux$718_Y [0] $procmux$718_Y [0] $procmux$718_Y [0] $procmux$718_Y [0] $procmux$718_Y [0] $procmux$718_Y [0] $procmux$718_Y [0] $procmux$718_Y [0] $procmux$718_Y [0] $procmux$718_Y [0] $procmux$718_Y [0] $procmux$718_Y [0] $procmux$718_Y [0] $procmux$718_Y [0] $procmux$718_Y [0] $procmux$718_Y [0] $procmux$718_Y [0] $procmux$718_Y [0] }
+  Optimizing cells in module $paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=256.
+  Optimizing cells in module $paramod\ntt_butterfly\Q=8380417\Q_INV=32'11111100011111111101111111111111.
+  Optimizing cells in module $paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111.
+    New input vector for $reduce_or cell $procmux$913_ANY: { $procmux$972_CMP [0] $procmux$972_CMP [1] $procmux$972_CMP [2] }
+    New ctrl vector for $pmux cell $procmux$865: $auto$opt_reduce.cc:132:opt_mux$1029
+    New ctrl vector for $pmux cell $procmux$849: $auto$opt_reduce.cc:132:opt_mux$1031
+    New ctrl vector for $pmux cell $procmux$829: $auto$opt_reduce.cc:132:opt_mux$1033
+    New ctrl vector for $pmux cell $procmux$940: $auto$opt_reduce.cc:132:opt_mux$1035
+    New ctrl vector for $pmux cell $procmux$769: $auto$opt_reduce.cc:132:opt_mux$1037
+    New ctrl vector for $pmux cell $procmux$969: $auto$opt_reduce.cc:132:opt_mux$1039
+    New input vector for $reduce_or cell $auto$opt_reduce.cc:126:opt_mux$1028: { $procmux$972_CMP [0] $procmux$972_CMP [1] $procmux$972_CMP [2] $procmux$970_CMP $procmux$971_CMP }
+    New input vector for $reduce_or cell $auto$opt_reduce.cc:126:opt_mux$1034: { $procmux$972_CMP [0] $procmux$972_CMP [1] $procmux$972_CMP [2] $procmux$970_CMP $procmux$971_CMP }
+    New input vector for $reduce_or cell $auto$opt_reduce.cc:126:opt_mux$1038: { $procmux$972_CMP [0] $procmux$972_CMP [1] $procmux$972_CMP [2] $procmux$970_CMP $procmux$971_CMP }
+    New input vector for $reduce_or cell $auto$opt_reduce.cc:126:opt_mux$1028: { $procmux$970_CMP $procmux$971_CMP $procmux$972_CMP [0] $procmux$972_CMP [1] $procmux$972_CMP [2] }
+    New input vector for $reduce_or cell $auto$opt_reduce.cc:126:opt_mux$1034: { $procmux$970_CMP $procmux$971_CMP $procmux$972_CMP [0] $procmux$972_CMP [1] $procmux$972_CMP [2] }
+    New input vector for $reduce_or cell $auto$opt_reduce.cc:126:opt_mux$1038: { $procmux$970_CMP $procmux$971_CMP $procmux$972_CMP [0] $procmux$972_CMP [1] $procmux$972_CMP [2] }
+  Optimizing cells in module $paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111.
+Performed a total of 23 changes.
+
+9.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod\mod_add\Q=8380417'.
+Finding identical cells in module `$paramod\mod_sub\Q=8380417'.
+Finding identical cells in module `\ntt_core_256_sram'.
+<suppressed ~42 debug messages>
+Finding identical cells in module `$paramod\asic_sram_1rw\DATA_WIDTH=8\ADDR_WIDTH=8\DEPTH=256'.
+Finding identical cells in module `$paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=255'.
+Finding identical cells in module `$paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=256'.
+Finding identical cells in module `$paramod\ntt_butterfly\Q=8380417\Q_INV=32'11111100011111111101111111111111'.
+Finding identical cells in module `$paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111'.
+<suppressed ~12 debug messages>
+Removed a total of 18 cells.
+
+9.6. Executing OPT_RMDFF pass (remove dff with constant values).
+
+9.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod\mod_add\Q=8380417..
+Finding unused cells or wires in module $paramod\mod_sub\Q=8380417..
+Finding unused cells or wires in module \ntt_core_256_sram..
+Finding unused cells or wires in module $paramod\asic_sram_1rw\DATA_WIDTH=8\ADDR_WIDTH=8\DEPTH=256..
+Finding unused cells or wires in module $paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=255..
+Finding unused cells or wires in module $paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=256..
+Finding unused cells or wires in module $paramod\ntt_butterfly\Q=8380417\Q_INV=32'11111100011111111101111111111111..
+Finding unused cells or wires in module $paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111..
+Removed 4 unused cells and 569 unused wires.
+<suppressed ~12 debug messages>
+
+9.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=255.
+Optimizing module $paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=256.
+Optimizing module $paramod\asic_sram_1rw\DATA_WIDTH=8\ADDR_WIDTH=8\DEPTH=256.
+Optimizing module $paramod\mod_add\Q=8380417.
+Optimizing module $paramod\mod_sub\Q=8380417.
+Optimizing module $paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111.
+Optimizing module $paramod\ntt_butterfly\Q=8380417\Q_INV=32'11111100011111111101111111111111.
+Optimizing module ntt_core_256_sram.
+
+9.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+9.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module $paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=255..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=256..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\asic_sram_1rw\DATA_WIDTH=8\ADDR_WIDTH=8\DEPTH=256..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\mod_add\Q=8380417..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\mod_sub\Q=8380417..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\ntt_butterfly\Q=8380417\Q_INV=32'11111100011111111101111111111111..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \ntt_core_256_sram..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~98 debug messages>
+
+9.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module $paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=255.
+  Optimizing cells in module $paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=256.
+  Optimizing cells in module $paramod\asic_sram_1rw\DATA_WIDTH=8\ADDR_WIDTH=8\DEPTH=256.
+  Optimizing cells in module $paramod\mod_add\Q=8380417.
+  Optimizing cells in module $paramod\mod_sub\Q=8380417.
+  Optimizing cells in module $paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111.
+  Optimizing cells in module $paramod\ntt_butterfly\Q=8380417\Q_INV=32'11111100011111111101111111111111.
+  Optimizing cells in module \ntt_core_256_sram.
+    New input vector for $reduce_or cell $auto$opt_reduce.cc:126:opt_mux$1026: { $eq$rtl/ntt_core_256_sram.sv:203$53_Y $eq$rtl/ntt_core_256_sram.sv:186$50_Y $eq$rtl/ntt_core_256_sram.sv:191$51_Y $eq$rtl/ntt_core_256_sram.sv:196$52_Y $eq$rtl/ntt_core_256_sram.sv:213$54_Y $eq$rtl/ntt_core_256_sram.sv:223$55_Y $eq$rtl/ntt_core_256_sram.sv:228$56_Y $eq$rtl/ntt_core_256_sram.sv:242$57_Y $procmux$136_CMP $procmux$296_CMP }
+    New ctrl vector for $pmux cell $procmux$201: { $procmux$165_CMP $auto$opt_reduce.cc:132:opt_mux$1041 }
+    New ctrl vector for $pmux cell $procmux$216: { $procmux$165_CMP $auto$opt_reduce.cc:132:opt_mux$1043 }
+    New ctrl vector for $pmux cell $procmux$228: { $procmux$165_CMP $auto$opt_reduce.cc:132:opt_mux$1045 }
+    New ctrl vector for $pmux cell $procmux$243: { $eq$rtl/ntt_core_256_sram.sv:196$52_Y $procmux$165_CMP $auto$opt_reduce.cc:132:opt_mux$1047 }
+    New ctrl vector for $pmux cell $procmux$259: { $eq$rtl/ntt_core_256_sram.sv:196$52_Y $auto$opt_reduce.cc:132:opt_mux$1049 }
+    New ctrl vector for $pmux cell $procmux$271: { $procmux$165_CMP $auto$opt_reduce.cc:132:opt_mux$1051 }
+    New ctrl vector for $pmux cell $procmux$283: { $eq$rtl/ntt_core_256_sram.sv:186$50_Y $eq$rtl/ntt_core_256_sram.sv:191$51_Y $eq$rtl/ntt_core_256_sram.sv:196$52_Y $eq$rtl/ntt_core_256_sram.sv:203$53_Y $eq$rtl/ntt_core_256_sram.sv:213$54_Y $eq$rtl/ntt_core_256_sram.sv:223$55_Y $procmux$136_CMP $procmux$296_CMP $eq$rtl/ntt_core_256_sram.sv:228$56_Y $eq$rtl/ntt_core_256_sram.sv:242$57_Y $procmux$165_CMP $auto$opt_reduce.cc:132:opt_mux$1053 }
+    New ctrl vector for $pmux cell $procmux$335: { $auto$opt_reduce.cc:132:opt_mux$1025 $procmux$165_CMP $auto$opt_reduce.cc:132:opt_mux$1055 }
+  Optimizing cells in module \ntt_core_256_sram.
+Performed a total of 9 changes.
+
+9.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=255'.
+Finding identical cells in module `$paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=256'.
+Finding identical cells in module `$paramod\asic_sram_1rw\DATA_WIDTH=8\ADDR_WIDTH=8\DEPTH=256'.
+Finding identical cells in module `$paramod\mod_add\Q=8380417'.
+Finding identical cells in module `$paramod\mod_sub\Q=8380417'.
+Finding identical cells in module `$paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111'.
+Finding identical cells in module `$paramod\ntt_butterfly\Q=8380417\Q_INV=32'11111100011111111101111111111111'.
+Finding identical cells in module `\ntt_core_256_sram'.
+<suppressed ~21 debug messages>
+Removed a total of 7 cells.
+
+9.13. Executing OPT_RMDFF pass (remove dff with constant values).
+
+9.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=255..
+Finding unused cells or wires in module $paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=256..
+Finding unused cells or wires in module $paramod\asic_sram_1rw\DATA_WIDTH=8\ADDR_WIDTH=8\DEPTH=256..
+Finding unused cells or wires in module $paramod\mod_add\Q=8380417..
+Finding unused cells or wires in module $paramod\mod_sub\Q=8380417..
+Finding unused cells or wires in module $paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111..
+Finding unused cells or wires in module $paramod\ntt_butterfly\Q=8380417\Q_INV=32'11111100011111111101111111111111..
+Finding unused cells or wires in module \ntt_core_256_sram..
+Removed 0 unused cells and 7 unused wires.
+<suppressed ~1 debug messages>
+
+9.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=255.
+Optimizing module $paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=256.
+Optimizing module $paramod\asic_sram_1rw\DATA_WIDTH=8\ADDR_WIDTH=8\DEPTH=256.
+Optimizing module $paramod\mod_add\Q=8380417.
+Optimizing module $paramod\mod_sub\Q=8380417.
+Optimizing module $paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111.
+Optimizing module $paramod\ntt_butterfly\Q=8380417\Q_INV=32'11111100011111111101111111111111.
+Optimizing module ntt_core_256_sram.
+
+9.16. Rerunning OPT passes. (Maybe there is more to do..)
+
+9.17. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module $paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=255..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=256..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\asic_sram_1rw\DATA_WIDTH=8\ADDR_WIDTH=8\DEPTH=256..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\mod_add\Q=8380417..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\mod_sub\Q=8380417..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\ntt_butterfly\Q=8380417\Q_INV=32'11111100011111111101111111111111..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \ntt_core_256_sram..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~98 debug messages>
+
+9.18. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module $paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=255.
+  Optimizing cells in module $paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=256.
+  Optimizing cells in module $paramod\asic_sram_1rw\DATA_WIDTH=8\ADDR_WIDTH=8\DEPTH=256.
+  Optimizing cells in module $paramod\mod_add\Q=8380417.
+  Optimizing cells in module $paramod\mod_sub\Q=8380417.
+  Optimizing cells in module $paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111.
+  Optimizing cells in module $paramod\ntt_butterfly\Q=8380417\Q_INV=32'11111100011111111101111111111111.
+  Optimizing cells in module \ntt_core_256_sram.
+Performed a total of 0 changes.
+
+9.19. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=255'.
+Finding identical cells in module `$paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=256'.
+Finding identical cells in module `$paramod\asic_sram_1rw\DATA_WIDTH=8\ADDR_WIDTH=8\DEPTH=256'.
+Finding identical cells in module `$paramod\mod_add\Q=8380417'.
+Finding identical cells in module `$paramod\mod_sub\Q=8380417'.
+Finding identical cells in module `$paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111'.
+Finding identical cells in module `$paramod\ntt_butterfly\Q=8380417\Q_INV=32'11111100011111111101111111111111'.
+Finding identical cells in module `\ntt_core_256_sram'.
+Removed a total of 0 cells.
+
+9.20. Executing OPT_RMDFF pass (remove dff with constant values).
+
+9.21. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=255..
+Finding unused cells or wires in module $paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=256..
+Finding unused cells or wires in module $paramod\asic_sram_1rw\DATA_WIDTH=8\ADDR_WIDTH=8\DEPTH=256..
+Finding unused cells or wires in module $paramod\mod_add\Q=8380417..
+Finding unused cells or wires in module $paramod\mod_sub\Q=8380417..
+Finding unused cells or wires in module $paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111..
+Finding unused cells or wires in module $paramod\ntt_butterfly\Q=8380417\Q_INV=32'11111100011111111101111111111111..
+Finding unused cells or wires in module \ntt_core_256_sram..
+
+9.22. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=255.
+Optimizing module $paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=256.
+Optimizing module $paramod\asic_sram_1rw\DATA_WIDTH=8\ADDR_WIDTH=8\DEPTH=256.
+Optimizing module $paramod\mod_add\Q=8380417.
+Optimizing module $paramod\mod_sub\Q=8380417.
+Optimizing module $paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111.
+Optimizing module $paramod\ntt_butterfly\Q=8380417\Q_INV=32'11111100011111111101111111111111.
+Optimizing module ntt_core_256_sram.
+
+9.23. Finished OPT passes. (There is nothing left to do.)
+
+10. Executing MEMORY pass.
+
+10.1. Executing MEMORY_DFF pass (merging $dff cells to $memrd and $memwr).
+Checking cell `$memwr$\mem$rtl/asic_sram_1rw.sv:21$121' in module `$paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=255': merged $dff to cell.
+Checking cell `$memrd$\mem$rtl/asic_sram_1rw.sv:23$120' in module `$paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=255': merged data $dff with rd enable to cell.
+Checking cell `$memwr$\mem$rtl/asic_sram_1rw.sv:21$114' in module `$paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=256': merged $dff to cell.
+Checking cell `$memrd$\mem$rtl/asic_sram_1rw.sv:23$113' in module `$paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=256': merged data $dff with rd enable to cell.
+Checking cell `$memwr$\mem$rtl/asic_sram_1rw.sv:21$128' in module `$paramod\asic_sram_1rw\DATA_WIDTH=8\ADDR_WIDTH=8\DEPTH=256': merged $dff to cell.
+Checking cell `$memrd$\mem$rtl/asic_sram_1rw.sv:23$127' in module `$paramod\asic_sram_1rw\DATA_WIDTH=8\ADDR_WIDTH=8\DEPTH=256': merged data $dff with rd enable to cell.
+
+10.2. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=255..
+Finding unused cells or wires in module $paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=256..
+Finding unused cells or wires in module $paramod\asic_sram_1rw\DATA_WIDTH=8\ADDR_WIDTH=8\DEPTH=256..
+Finding unused cells or wires in module $paramod\mod_add\Q=8380417..
+Finding unused cells or wires in module $paramod\mod_sub\Q=8380417..
+Finding unused cells or wires in module $paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111..
+Finding unused cells or wires in module $paramod\ntt_butterfly\Q=8380417\Q_INV=32'11111100011111111101111111111111..
+Finding unused cells or wires in module \ntt_core_256_sram..
+Removed 18 unused cells and 21 unused wires.
+<suppressed ~21 debug messages>
+
+10.3. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+10.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=255..
+Finding unused cells or wires in module $paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=256..
+Finding unused cells or wires in module $paramod\asic_sram_1rw\DATA_WIDTH=8\ADDR_WIDTH=8\DEPTH=256..
+Finding unused cells or wires in module $paramod\mod_add\Q=8380417..
+Finding unused cells or wires in module $paramod\mod_sub\Q=8380417..
+Finding unused cells or wires in module $paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111..
+Finding unused cells or wires in module $paramod\ntt_butterfly\Q=8380417\Q_INV=32'11111100011111111101111111111111..
+Finding unused cells or wires in module \ntt_core_256_sram..
+
+10.5. Executing MEMORY_COLLECT pass (generating $mem cells).
+Collecting $memrd, $memwr and $meminit for memory `\mem' in module `$paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=255':
+  $memwr$\mem$rtl/asic_sram_1rw.sv:21$121 ($memwr)
+  $memrd$\mem$rtl/asic_sram_1rw.sv:23$120 ($memrd)
+Collecting $memrd, $memwr and $meminit for memory `\mem' in module `$paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=256':
+  $memwr$\mem$rtl/asic_sram_1rw.sv:21$114 ($memwr)
+  $memrd$\mem$rtl/asic_sram_1rw.sv:23$113 ($memrd)
+Collecting $memrd, $memwr and $meminit for memory `\mem' in module `$paramod\asic_sram_1rw\DATA_WIDTH=8\ADDR_WIDTH=8\DEPTH=256':
+  $memwr$\mem$rtl/asic_sram_1rw.sv:21$128 ($memwr)
+  $memrd$\mem$rtl/asic_sram_1rw.sv:23$127 ($memrd)
+
+10.6. Executing MEMORY_MAP pass (converting $mem cells to logic and flip-flops).
+Mapping memory cell \mem in module $paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=255:
+  created 255 $dff cells and 0 static cells of width 32.
+  read interface: 1 $dff and 255 $mux cells.
+  write interface: 255 write mux blocks.
+Mapping memory cell \mem in module $paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=256:
+  created 256 $dff cells and 0 static cells of width 32.
+  read interface: 1 $dff and 255 $mux cells.
+  write interface: 256 write mux blocks.
+Mapping memory cell \mem in module $paramod\asic_sram_1rw\DATA_WIDTH=8\ADDR_WIDTH=8\DEPTH=256:
+  created 256 $dff cells and 0 static cells of width 8.
+  read interface: 1 $dff and 255 $mux cells.
+  write interface: 256 write mux blocks.
+
+11. Executing OPT pass (performing simple optimizations).
+
+11.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=255.
+<suppressed ~16 debug messages>
+Optimizing module $paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=256.
+<suppressed ~16 debug messages>
+Optimizing module $paramod\asic_sram_1rw\DATA_WIDTH=8\ADDR_WIDTH=8\DEPTH=256.
+<suppressed ~16 debug messages>
+Optimizing module $paramod\mod_add\Q=8380417.
+Optimizing module $paramod\mod_sub\Q=8380417.
+Optimizing module $paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111.
+Optimizing module $paramod\ntt_butterfly\Q=8380417\Q_INV=32'11111100011111111101111111111111.
+Optimizing module ntt_core_256_sram.
+
+11.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=255'.
+Finding identical cells in module `$paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=256'.
+Finding identical cells in module `$paramod\asic_sram_1rw\DATA_WIDTH=8\ADDR_WIDTH=8\DEPTH=256'.
+Finding identical cells in module `$paramod\mod_add\Q=8380417'.
+Finding identical cells in module `$paramod\mod_sub\Q=8380417'.
+Finding identical cells in module `$paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111'.
+Finding identical cells in module `$paramod\ntt_butterfly\Q=8380417\Q_INV=32'11111100011111111101111111111111'.
+Finding identical cells in module `\ntt_core_256_sram'.
+Removed a total of 0 cells.
+
+11.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module $paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=255..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=256..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\asic_sram_1rw\DATA_WIDTH=8\ADDR_WIDTH=8\DEPTH=256..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\mod_add\Q=8380417..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\mod_sub\Q=8380417..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\ntt_butterfly\Q=8380417\Q_INV=32'11111100011111111101111111111111..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \ntt_core_256_sram..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~865 debug messages>
+
+11.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module $paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=255.
+  Optimizing cells in module $paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=256.
+  Optimizing cells in module $paramod\asic_sram_1rw\DATA_WIDTH=8\ADDR_WIDTH=8\DEPTH=256.
+  Optimizing cells in module $paramod\mod_add\Q=8380417.
+  Optimizing cells in module $paramod\mod_sub\Q=8380417.
+  Optimizing cells in module $paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111.
+  Optimizing cells in module $paramod\ntt_butterfly\Q=8380417\Q_INV=32'11111100011111111101111111111111.
+  Optimizing cells in module \ntt_core_256_sram.
+Performed a total of 0 changes.
+
+11.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=255'.
+Finding identical cells in module `$paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=256'.
+Finding identical cells in module `$paramod\asic_sram_1rw\DATA_WIDTH=8\ADDR_WIDTH=8\DEPTH=256'.
+Finding identical cells in module `$paramod\mod_add\Q=8380417'.
+Finding identical cells in module `$paramod\mod_sub\Q=8380417'.
+Finding identical cells in module `$paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111'.
+Finding identical cells in module `$paramod\ntt_butterfly\Q=8380417\Q_INV=32'11111100011111111101111111111111'.
+Finding identical cells in module `\ntt_core_256_sram'.
+Removed a total of 0 cells.
+
+11.6. Executing OPT_RMDFF pass (remove dff with constant values).
+
+11.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=255..
+Finding unused cells or wires in module $paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=256..
+Finding unused cells or wires in module $paramod\asic_sram_1rw\DATA_WIDTH=8\ADDR_WIDTH=8\DEPTH=256..
+Finding unused cells or wires in module $paramod\mod_add\Q=8380417..
+Finding unused cells or wires in module $paramod\mod_sub\Q=8380417..
+Finding unused cells or wires in module $paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111..
+Finding unused cells or wires in module $paramod\ntt_butterfly\Q=8380417\Q_INV=32'11111100011111111101111111111111..
+Finding unused cells or wires in module \ntt_core_256_sram..
+Removed 0 unused cells and 1558 unused wires.
+<suppressed ~3 debug messages>
+
+11.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=255.
+Optimizing module $paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=256.
+Optimizing module $paramod\asic_sram_1rw\DATA_WIDTH=8\ADDR_WIDTH=8\DEPTH=256.
+Optimizing module $paramod\mod_add\Q=8380417.
+Optimizing module $paramod\mod_sub\Q=8380417.
+Optimizing module $paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111.
+Optimizing module $paramod\ntt_butterfly\Q=8380417\Q_INV=32'11111100011111111101111111111111.
+Optimizing module ntt_core_256_sram.
+
+11.9. Finished OPT passes. (There is nothing left to do.)
+
+12. Executing CHECK pass (checking for obvious problems).
+checking module $paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=255..
+Warning: Wire $paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=255.$memory\mem$rdmux[0][7][127]$b$2352 [31] is used but has no driver.
+Warning: Wire $paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=255.$memory\mem$rdmux[0][7][127]$b$2352 [30] is used but has no driver.
+Warning: Wire $paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=255.$memory\mem$rdmux[0][7][127]$b$2352 [29] is used but has no driver.
+Warning: Wire $paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=255.$memory\mem$rdmux[0][7][127]$b$2352 [28] is used but has no driver.
+Warning: Wire $paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=255.$memory\mem$rdmux[0][7][127]$b$2352 [27] is used but has no driver.
+Warning: Wire $paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=255.$memory\mem$rdmux[0][7][127]$b$2352 [26] is used but has no driver.
+Warning: Wire $paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=255.$memory\mem$rdmux[0][7][127]$b$2352 [25] is used but has no driver.
+Warning: Wire $paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=255.$memory\mem$rdmux[0][7][127]$b$2352 [24] is used but has no driver.
+Warning: Wire $paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=255.$memory\mem$rdmux[0][7][127]$b$2352 [23] is used but has no driver.
+Warning: Wire $paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=255.$memory\mem$rdmux[0][7][127]$b$2352 [22] is used but has no driver.
+Warning: Wire $paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=255.$memory\mem$rdmux[0][7][127]$b$2352 [21] is used but has no driver.
+Warning: Wire $paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=255.$memory\mem$rdmux[0][7][127]$b$2352 [20] is used but has no driver.
+Warning: Wire $paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=255.$memory\mem$rdmux[0][7][127]$b$2352 [19] is used but has no driver.
+Warning: Wire $paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=255.$memory\mem$rdmux[0][7][127]$b$2352 [18] is used but has no driver.
+Warning: Wire $paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=255.$memory\mem$rdmux[0][7][127]$b$2352 [17] is used but has no driver.
+Warning: Wire $paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=255.$memory\mem$rdmux[0][7][127]$b$2352 [16] is used but has no driver.
+Warning: Wire $paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=255.$memory\mem$rdmux[0][7][127]$b$2352 [15] is used but has no driver.
+Warning: Wire $paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=255.$memory\mem$rdmux[0][7][127]$b$2352 [14] is used but has no driver.
+Warning: Wire $paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=255.$memory\mem$rdmux[0][7][127]$b$2352 [13] is used but has no driver.
+Warning: Wire $paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=255.$memory\mem$rdmux[0][7][127]$b$2352 [12] is used but has no driver.
+Warning: Wire $paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=255.$memory\mem$rdmux[0][7][127]$b$2352 [11] is used but has no driver.
+Warning: Wire $paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=255.$memory\mem$rdmux[0][7][127]$b$2352 [10] is used but has no driver.
+Warning: Wire $paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=255.$memory\mem$rdmux[0][7][127]$b$2352 [9] is used but has no driver.
+Warning: Wire $paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=255.$memory\mem$rdmux[0][7][127]$b$2352 [8] is used but has no driver.
+Warning: Wire $paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=255.$memory\mem$rdmux[0][7][127]$b$2352 [7] is used but has no driver.
+Warning: Wire $paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=255.$memory\mem$rdmux[0][7][127]$b$2352 [6] is used but has no driver.
+Warning: Wire $paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=255.$memory\mem$rdmux[0][7][127]$b$2352 [5] is used but has no driver.
+Warning: Wire $paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=255.$memory\mem$rdmux[0][7][127]$b$2352 [4] is used but has no driver.
+Warning: Wire $paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=255.$memory\mem$rdmux[0][7][127]$b$2352 [3] is used but has no driver.
+Warning: Wire $paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=255.$memory\mem$rdmux[0][7][127]$b$2352 [2] is used but has no driver.
+Warning: Wire $paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=255.$memory\mem$rdmux[0][7][127]$b$2352 [1] is used but has no driver.
+Warning: Wire $paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=255.$memory\mem$rdmux[0][7][127]$b$2352 [0] is used but has no driver.
+checking module $paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=256..
+checking module $paramod\asic_sram_1rw\DATA_WIDTH=8\ADDR_WIDTH=8\DEPTH=256..
+checking module $paramod\mod_add\Q=8380417..
+checking module $paramod\mod_sub\Q=8380417..
+checking module $paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111..
+checking module $paramod\ntt_butterfly\Q=8380417\Q_INV=32'11111100011111111101111111111111..
+checking module ntt_core_256_sram..
+found and reported 32 problems.
+
+13. Printing statistics.
+
+=== $paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=255 ===
+
+   Number of wires:               1347
+   Number of wire bits:          25331
+   Number of public wires:         261
+   Number of public wire bits:    8235
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               1341
+     $and                          558
+     $dff                          256
+     $logic_not                      1
+     $mux                          517
+     $not                            8
+     $reduce_and                     1
+
+=== $paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=256 ===
+
+   Number of wires:               1350
+   Number of wire bits:          25365
+   Number of public wires:         262
+   Number of public wire bits:    8267
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               1345
+     $and                          560
+     $dff                          257
+     $logic_not                      1
+     $mux                          518
+     $not                            8
+     $reduce_and                     1
+
+=== $paramod\asic_sram_1rw\DATA_WIDTH=8\ADDR_WIDTH=8\DEPTH=256 ===
+
+   Number of wires:               1350
+   Number of wire bits:           6789
+   Number of public wires:         262
+   Number of public wire bits:    2075
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               1345
+     $and                          560
+     $dff                          257
+     $logic_not                      1
+     $mux                          518
+     $not                            8
+     $reduce_and                     1
+
+=== $paramod\mod_add\Q=8380417 ===
+
+   Number of wires:                  6
+   Number of wire bits:            162
+   Number of public wires:           4
+   Number of public wire bits:     129
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  4
+     $add                            1
+     $ge                             1
+     $mux                            1
+     $sub                            1
+
+=== $paramod\mod_sub\Q=8380417 ===
+
+   Number of wires:                  7
+   Number of wire bits:            193
+   Number of public wires:           5
+   Number of public wire bits:     160
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  5
+     $add                            1
+     $lt                             1
+     $mux                            1
+     $sub                            2
+
+=== $paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111 ===
+
+   Number of wires:                112
+   Number of wire bits:           2696
+   Number of public wires:          24
+   Number of public wire bits:     564
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                109
+     $add                            7
+     $adff                          15
+     $eq                             5
+     $ge                             1
+     $logic_and                      1
+     $logic_not                      2
+     $mux                           70
+     $pmux                           4
+     $reduce_or                      3
+     $sub                            1
+
+=== $paramod\ntt_butterfly\Q=8380417\Q_INV=32'11111100011111111101111111111111 ===
+
+   Number of wires:                 21
+   Number of wire bits:            393
+   Number of public wires:          15
+   Number of public wire bits:     294
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 13
+     $adff                           4
+     $logic_and                      1
+     $logic_not                      1
+     $mux                            4
+     $paramod\mod_add\Q=8380417      1
+     $paramod\mod_sub\Q=8380417      1
+     $paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111      1
+
+=== ntt_core_256_sram ===
+
+   Number of wires:                194
+   Number of wire bits:           1557
+   Number of public wires:          61
+   Number of public wire bits:     717
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                178
+     $add                            9
+     $adff                          15
+     $and                            1
+     $eq                            15
+     $logic_not                      1
+     $mux                          113
+     $not                            1
+     $paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=255      1
+     $paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=256      3
+     $paramod\asic_sram_1rw\DATA_WIDTH=8\ADDR_WIDTH=8\DEPTH=256      1
+     $paramod\ntt_butterfly\Q=8380417\Q_INV=32'11111100011111111101111111111111      1
+     $pmux                          12
+     $reduce_or                      2
+     $shl                            1
+     $shr                            1
+     $sub                            1
+
+=== design hierarchy ===
+
+   ntt_core_256_sram                 1
+     $paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=255      1
+     $paramod\asic_sram_1rw\DATA_WIDTH=32\ADDR_WIDTH=8\DEPTH=256      3
+     $paramod\asic_sram_1rw\DATA_WIDTH=8\ADDR_WIDTH=8\DEPTH=256      1
+     $paramod\ntt_butterfly\Q=8380417\Q_INV=32'11111100011111111101111111111111      1
+       $paramod\mod_add\Q=8380417      1
+       $paramod\mod_sub\Q=8380417      1
+       $paramod\modmul_montgomery\Q=8380417\Q_INV=32'11111100011111111101111111111111      1
+
+   Number of wires:               7087
+   Number of wire bits:         113216
+   Number of public wires:        1418
+   Number of public wire bits:   36975
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               7021
+     $add                           18
+     $adff                          34
+     $and                         2799
+     $dff                         1284
+     $eq                            20
+     $ge                             2
+     $logic_and                      2
+     $logic_not                      9
+     $lt                             1
+     $mux                         2778
+     $not                           41
+     $pmux                          16
+     $reduce_and                     5
+     $reduce_or                      5
+     $shl                            1
+     $shr                            1
+     $sub                            5
+
+Warnings: 32 unique messages, 32 total
+End of script. Logfile hash: 907739a6cf
+CPU: user 1.79s system 0.02s, MEM: 48.43 MB total, 40.28 MB resident
+Yosys 0.9 (git sha1 1979e0b)
+Time spent: 26% 1x check (0 sec), 25% 6x opt_clean (0 sec), ...
