@@ -1,0 +1,200 @@
+Note:  Implicit pin VGND in instance FILLER_0_645_3693 of sky130_fd_sc_hd__decap_3 in cell ntt_core_256_sram
+Note:  Implicit pin VNB in instance FILLER_0_645_3693 of sky130_fd_sc_hd__decap_3 in cell ntt_core_256_sram
+Note:  Implicit pin VPB in instance FILLER_0_645_3693 of sky130_fd_sc_hd__decap_3 in cell ntt_core_256_sram
+Note:  Implicit pin VPWR in instance FILLER_0_645_3693 of sky130_fd_sc_hd__decap_3 in cell ntt_core_256_sram
+Warning:  Cell sky130_ef_sc_hd__decap_12 has no pins
+Note:  Implicit pin (no pins) in instance FILLER_0_645_3697 of sky130_ef_sc_hd__decap_12 in cell ntt_core_256_sram
+Warning:  Cell sky130_ef_sc_hd__decap_12 has no pins
+Note:  Implicit pin (no pins) in instance FILLER_0_645_3709 of sky130_ef_sc_hd__decap_12 in cell ntt_core_256_sram
+Warning:  Cell sky130_fd_sc_hd__decap_3 has no pins
+Note:  Implicit pin VGND in instance FILLER_0_645_3721 of sky130_fd_sc_hd__decap_3 in cell ntt_core_256_sram
+Note:  Implicit pin VNB in instance FILLER_0_645_3721 of sky130_fd_sc_hd__decap_3 in cell ntt_core_256_sram
+Note:  Implicit pin VPB in instance FILLER_0_645_3721 of sky130_fd_sc_hd__decap_3 in cell ntt_core_256_sram
+Note:  Implicit pin VPWR in instance FILLER_0_645_3721 of sky130_fd_sc_hd__decap_3 in cell ntt_core_256_sram
+Warning:  Cell sky130_ef_sc_hd__decap_12 has no pins
+Note:  Implicit pin (no pins) in instance FILLER_0_645_3725 of sky130_ef_sc_hd__decap_12 in cell ntt_core_256_sram
+Warning:  Cell sky130_ef_sc_hd__decap_12 has no pins
+Note:  Implicit pin (no pins) in instance FILLER_0_645_3737 of sky130_ef_sc_hd__decap_12 in cell ntt_core_256_sram
+Warning:  Cell sky130_fd_sc_hd__decap_3 has no pins
+Note:  Implicit pin VGND in instance FILLER_0_645_3749 of sky130_fd_sc_hd__decap_3 in cell ntt_core_256_sram
+Note:  Implicit pin VNB in instance FILLER_0_645_3749 of sky130_fd_sc_hd__decap_3 in cell ntt_core_256_sram
+Note:  Implicit pin VPB in instance FILLER_0_645_3749 of sky130_fd_sc_hd__decap_3 in cell ntt_core_256_sram
+Note:  Implicit pin VPWR in instance FILLER_0_645_3749 of sky130_fd_sc_hd__decap_3 in cell ntt_core_256_sram
+Warning:  Cell sky130_fd_sc_hd__decap_4 has no pins
+Note:  Implicit pin VGND in instance FILLER_0_645_3753 of sky130_fd_sc_hd__decap_4 in cell ntt_core_256_sram
+Note:  Implicit pin VNB in instance FILLER_0_645_3753 of sky130_fd_sc_hd__decap_4 in cell ntt_core_256_sram
+Note:  Implicit pin VPB in instance FILLER_0_645_3753 of sky130_fd_sc_hd__decap_4 in cell ntt_core_256_sram
+Note:  Implicit pin VPWR in instance FILLER_0_645_3753 of sky130_fd_sc_hd__decap_4 in cell ntt_core_256_sram
+Warning:  Cell sky130_fd_sc_hd__fill_1 has no pins
+Note:  Implicit pin VGND in instance FILLER_0_645_3757 of sky130_fd_sc_hd__fill_1 in cell ntt_core_256_sram
+Note:  Implicit pin VNB in instance FILLER_0_645_3757 of sky130_fd_sc_hd__fill_1 in cell ntt_core_256_sram
+Note:  Implicit pin VPB in instance FILLER_0_645_3757 of sky130_fd_sc_hd__fill_1 in cell ntt_core_256_sram
+Note:  Implicit pin VPWR in instance FILLER_0_645_3757 of sky130_fd_sc_hd__fill_1 in cell ntt_core_256_sram
+Warning:  Cell sky130_fd_sc_hd__decap_6 has no pins
+Note:  Implicit pin VGND in instance FILLER_0_645_3774 of sky130_fd_sc_hd__decap_6 in cell ntt_core_256_sram
+Note:  Implicit pin VNB in instance FILLER_0_645_3774 of sky130_fd_sc_hd__decap_6 in cell ntt_core_256_sram
+Note:  Implicit pin VPB in instance FILLER_0_645_3774 of sky130_fd_sc_hd__decap_6 in cell ntt_core_256_sram
+Note:  Implicit pin VPWR in instance FILLER_0_645_3774 of sky130_fd_sc_hd__decap_6 in cell ntt_core_256_sram
+Warning:  Cell sky130_ef_sc_hd__decap_12 has no pins
+Note:  Implicit pin (no pins) in instance FILLER_0_645_3781 of sky130_ef_sc_hd__decap_12 in cell ntt_core_256_sram
+Warning:  Cell sky130_ef_sc_hd__decap_12 has no pins
+Note:  Implicit pin (no pins) in instance FILLER_0_645_3793 of sky130_ef_sc_hd__decap_12 in cell ntt_core_256_sram
+Warning:  Cell sky130_fd_sc_hd__decap_3 has no pins
+Note:  Implicit pin VGND in instance FILLER_0_645_3805 of sky130_fd_sc_hd__decap_3 in cell ntt_core_256_sram
+Note:  Implicit pin VNB in instance FILLER_0_645_3805 of sky130_fd_sc_hd__decap_3 in cell ntt_core_256_sram
+Note:  Implicit pin VPB in instance FILLER_0_645_3805 of sky130_fd_sc_hd__decap_3 in cell ntt_core_256_sram
+Note:  Implicit pin VPWR in instance FILLER_0_645_3805 of sky130_fd_sc_hd__decap_3 in cell ntt_core_256_sram
+Warning:  Cell sky130_ef_sc_hd__decap_12 has no pins
+Note:  Implicit pin (no pins) in instance FILLER_0_645_3809 of sky130_ef_sc_hd__decap_12 in cell ntt_core_256_sram
+Warning:  Cell sky130_fd_sc_hd__fill_1 has no pins
+Note:  Implicit pin VGND in instance FILLER_0_645_3821 of sky130_fd_sc_hd__fill_1 in cell ntt_core_256_sram
+Note:  Implicit pin VNB in instance FILLER_0_645_3821 of sky130_fd_sc_hd__fill_1 in cell ntt_core_256_sram
+Note:  Implicit pin VPB in instance FILLER_0_645_3821 of sky130_fd_sc_hd__fill_1 in cell ntt_core_256_sram
+Note:  Implicit pin VPWR in instance FILLER_0_645_3821 of sky130_fd_sc_hd__fill_1 in cell ntt_core_256_sram
+
+Reading setup file /pdk/sky130A/libs.tech/netgen/sky130A_setup.tcl
+
+Model sky130_fd_pr__res_generic_po pin 1 == 2
+No property value found for device sky130_fd_pr__res_generic_po
+No property mult found for device sky130_fd_pr__res_generic_po
+Model sky130_fd_pr__res_generic_po pin 1 == 2
+No property value found for device sky130_fd_pr__res_generic_po
+No property mult found for device sky130_fd_pr__res_generic_po
+Model sky130_fd_pr__nfet_01v8 pin 1 == 3
+No property mult found for device sky130_fd_pr__nfet_01v8
+No property sa found for device sky130_fd_pr__nfet_01v8
+No property sb found for device sky130_fd_pr__nfet_01v8
+No property sd found for device sky130_fd_pr__nfet_01v8
+No property nf found for device sky130_fd_pr__nfet_01v8
+No property nrd found for device sky130_fd_pr__nfet_01v8
+No property nrs found for device sky130_fd_pr__nfet_01v8
+No property area found for device sky130_fd_pr__nfet_01v8
+No property perim found for device sky130_fd_pr__nfet_01v8
+No property topography found for device sky130_fd_pr__nfet_01v8
+Model sky130_fd_pr__nfet_01v8 pin 1 == 3
+No property as found for device sky130_fd_pr__nfet_01v8
+No property ad found for device sky130_fd_pr__nfet_01v8
+No property ps found for device sky130_fd_pr__nfet_01v8
+No property pd found for device sky130_fd_pr__nfet_01v8
+No property mult found for device sky130_fd_pr__nfet_01v8
+No property sa found for device sky130_fd_pr__nfet_01v8
+No property sb found for device sky130_fd_pr__nfet_01v8
+No property sd found for device sky130_fd_pr__nfet_01v8
+No property nf found for device sky130_fd_pr__nfet_01v8
+No property nrd found for device sky130_fd_pr__nfet_01v8
+No property nrs found for device sky130_fd_pr__nfet_01v8
+No property area found for device sky130_fd_pr__nfet_01v8
+No property perim found for device sky130_fd_pr__nfet_01v8
+No property topography found for device sky130_fd_pr__nfet_01v8
+Model sky130_fd_pr__pfet_01v8 pin 1 == 3
+No property mult found for device sky130_fd_pr__pfet_01v8
+No property sa found for device sky130_fd_pr__pfet_01v8
+No property sb found for device sky130_fd_pr__pfet_01v8
+No property sd found for device sky130_fd_pr__pfet_01v8
+No property nf found for device sky130_fd_pr__pfet_01v8
+No property nrd found for device sky130_fd_pr__pfet_01v8
+No property nrs found for device sky130_fd_pr__pfet_01v8
+No property area found for device sky130_fd_pr__pfet_01v8
+No property perim found for device sky130_fd_pr__pfet_01v8
+No property topography found for device sky130_fd_pr__pfet_01v8
+Model sky130_fd_pr__pfet_01v8_hvt pin 1 == 3
+No property mult found for device sky130_fd_pr__pfet_01v8_hvt
+No property sa found for device sky130_fd_pr__pfet_01v8_hvt
+No property sb found for device sky130_fd_pr__pfet_01v8_hvt
+No property sd found for device sky130_fd_pr__pfet_01v8_hvt
+No property nf found for device sky130_fd_pr__pfet_01v8_hvt
+No property nrd found for device sky130_fd_pr__pfet_01v8_hvt
+No property nrs found for device sky130_fd_pr__pfet_01v8_hvt
+No property area found for device sky130_fd_pr__pfet_01v8_hvt
+No property perim found for device sky130_fd_pr__pfet_01v8_hvt
+No property topography found for device sky130_fd_pr__pfet_01v8_hvt
+Model sky130_fd_pr__pfet_01v8_hvt pin 1 == 3
+No property as found for device sky130_fd_pr__pfet_01v8_hvt
+No property ad found for device sky130_fd_pr__pfet_01v8_hvt
+No property ps found for device sky130_fd_pr__pfet_01v8_hvt
+No property pd found for device sky130_fd_pr__pfet_01v8_hvt
+No property mult found for device sky130_fd_pr__pfet_01v8_hvt
+No property sa found for device sky130_fd_pr__pfet_01v8_hvt
+No property sb found for device sky130_fd_pr__pfet_01v8_hvt
+No property sd found for device sky130_fd_pr__pfet_01v8_hvt
+No property nf found for device sky130_fd_pr__pfet_01v8_hvt
+No property nrd found for device sky130_fd_pr__pfet_01v8_hvt
+No property nrs found for device sky130_fd_pr__pfet_01v8_hvt
+No property area found for device sky130_fd_pr__pfet_01v8_hvt
+No property perim found for device sky130_fd_pr__pfet_01v8_hvt
+No property topography found for device sky130_fd_pr__pfet_01v8_hvt
+Model sky130_fd_pr__special_nfet_latch pin 1 == 3
+No property mult found for device sky130_fd_pr__special_nfet_latch
+No property sa found for device sky130_fd_pr__special_nfet_latch
+No property sb found for device sky130_fd_pr__special_nfet_latch
+No property sd found for device sky130_fd_pr__special_nfet_latch
+No property nf found for device sky130_fd_pr__special_nfet_latch
+No property nrd found for device sky130_fd_pr__special_nfet_latch
+No property nrs found for device sky130_fd_pr__special_nfet_latch
+No property area found for device sky130_fd_pr__special_nfet_latch
+No property perim found for device sky130_fd_pr__special_nfet_latch
+No property topography found for device sky130_fd_pr__special_nfet_latch
+Model sky130_fd_pr__special_pfet_latch pin 1 == 3
+No property mult found for device sky130_fd_pr__special_pfet_latch
+No property sa found for device sky130_fd_pr__special_pfet_latch
+No property sb found for device sky130_fd_pr__special_pfet_latch
+No property sd found for device sky130_fd_pr__special_pfet_latch
+No property nf found for device sky130_fd_pr__special_pfet_latch
+No property nrd found for device sky130_fd_pr__special_pfet_latch
+No property nrs found for device sky130_fd_pr__special_pfet_latch
+No property area found for device sky130_fd_pr__special_pfet_latch
+No property perim found for device sky130_fd_pr__special_pfet_latch
+No property topography found for device sky130_fd_pr__special_pfet_latch
+Model sky130_fd_pr__special_nfet_01v8 pin 1 == 3
+No property mult found for device sky130_fd_pr__special_nfet_01v8
+No property sa found for device sky130_fd_pr__special_nfet_01v8
+No property sb found for device sky130_fd_pr__special_nfet_01v8
+No property sd found for device sky130_fd_pr__special_nfet_01v8
+No property nf found for device sky130_fd_pr__special_nfet_01v8
+No property nrd found for device sky130_fd_pr__special_nfet_01v8
+No property nrs found for device sky130_fd_pr__special_nfet_01v8
+No property area found for device sky130_fd_pr__special_nfet_01v8
+No property perim found for device sky130_fd_pr__special_nfet_01v8
+No property topography found for device sky130_fd_pr__special_nfet_01v8
+Model sky130_fd_pr__special_nfet_01v8 pin 1 == 3
+No property as found for device sky130_fd_pr__special_nfet_01v8
+No property ad found for device sky130_fd_pr__special_nfet_01v8
+No property ps found for device sky130_fd_pr__special_nfet_01v8
+No property pd found for device sky130_fd_pr__special_nfet_01v8
+No property mult found for device sky130_fd_pr__special_nfet_01v8
+No property sa found for device sky130_fd_pr__special_nfet_01v8
+No property sb found for device sky130_fd_pr__special_nfet_01v8
+No property sd found for device sky130_fd_pr__special_nfet_01v8
+No property nf found for device sky130_fd_pr__special_nfet_01v8
+No property nrd found for device sky130_fd_pr__special_nfet_01v8
+No property nrs found for device sky130_fd_pr__special_nfet_01v8
+No property area found for device sky130_fd_pr__special_nfet_01v8
+No property perim found for device sky130_fd_pr__special_nfet_01v8
+No property topography found for device sky130_fd_pr__special_nfet_01v8
+Model sky130_fd_pr__special_pfet_01v8_hvt pin 1 == 3
+No property as found for device sky130_fd_pr__special_pfet_01v8_hvt
+No property ad found for device sky130_fd_pr__special_pfet_01v8_hvt
+No property ps found for device sky130_fd_pr__special_pfet_01v8_hvt
+No property pd found for device sky130_fd_pr__special_pfet_01v8_hvt
+No property mult found for device sky130_fd_pr__special_pfet_01v8_hvt
+No property sa found for device sky130_fd_pr__special_pfet_01v8_hvt
+No property sb found for device sky130_fd_pr__special_pfet_01v8_hvt
+No property sd found for device sky130_fd_pr__special_pfet_01v8_hvt
+No property nf found for device sky130_fd_pr__special_pfet_01v8_hvt
+No property nrd found for device sky130_fd_pr__special_pfet_01v8_hvt
+No property nrs found for device sky130_fd_pr__special_pfet_01v8_hvt
+No property area found for device sky130_fd_pr__special_pfet_01v8_hvt
+No property perim found for device sky130_fd_pr__special_pfet_01v8_hvt
+No property topography found for device sky130_fd_pr__special_pfet_01v8_hvt
+No property value found for device sky130_fd_pr__diode_pw2nd_05v5
+No property mult found for device sky130_fd_pr__diode_pw2nd_05v5
+No property value found for device sky130_fd_pr__diode_pw2nd_05v5
+No property mult found for device sky130_fd_pr__diode_pw2nd_05v5
+Comparison output logged to file /work/openlane/ntt_core_256_sram/runs/RUN_2026.07.01_lvs_final_gds/logs/signoff/2-ntt_core_256_sram.gds.lvs.log
+Logging to file "/work/openlane/ntt_core_256_sram/runs/RUN_2026.07.01_lvs_final_gds/logs/signoff/2-ntt_core_256_sram.gds.lvs.log" enabled
+Circuit sky130_fd_pr__special_nfet_01v8 contains no devices.
+Circuit sky130_fd_pr__nfet_01v8 contains no devices.
+Circuit sky130_fd_pr__pfet_01v8_hvt contains no devices.
+Circuit sky130_fd_pr__diode_pw2nd_05v5 contains no devices.
+Circuit sky130_fd_pr__res_generic_po contains no devices.
+Circuit sky130_ef_sc_hd__decap_12 contains no devices.
