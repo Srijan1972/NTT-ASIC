@@ -49,13 +49,30 @@ pong_sram.gen_32x256.sram32 VPWR VGND vccd1 vssd1"
 set ::env(CLOCK_PORT) clk
 set ::env(CLOCK_PERIOD) 10.000
 
-set ::env(FP_CORE_UTIL) 25
-set ::env(PL_TARGET_DENSITY) 0.45
+# Keep power pins explicit through LVS/macro views.  The RTL and SRAM
+# blackbox stubs expose conditional VPWR/VGND ports under USE_POWER_PINS,
+# while the OpenRAM macros use vccd1/vssd1 internally.
+set ::env(VERILOG_POWER_DEFINE) USE_POWER_PINS
+set ::env(LVS_INSERT_POWER_PINS) 1
+
+set ::env(FP_CORE_UTIL) 20
+set ::env(PL_TARGET_DENSITY) 0.35
 set ::env(FP_SIZING) absolute
 set ::env(DIE_AREA) "0 0 1800 1800"
 set ::env(CORE_AREA) "20 20 1780 1780"
 set ::env(PL_MACRO_HALO) {10 10}
 set ::env(PL_MACRO_CHANNEL) {20 20}
+
+# Conservative cleanup settings for the current physical-flow blockers:
+# remaining antenna violations, max slew warnings, and max fanout warnings.
+# If an older OpenLane build rejects one of these knobs, remove that one line
+# and keep the rest of the configuration.
+set ::env(SYNTH_MAX_FANOUT) 8
+set ::env(SYNTH_BUFFERING) 1
+set ::env(SYNTH_SIZING) 1
+set ::env(DIODE_INSERTION_STRATEGY) 3
+set ::env(GLB_RESIZER_TIMING_OPTIMIZATIONS) 1
+set ::env(PL_RESIZER_TIMING_OPTIMIZATIONS) 1
 # Keep XOR disabled for now because the committed run notes say KLayout XOR
 # was killed by memory pressure on the SRAM-macro GDS. LVS should be enabled
 # while debugging the reported unmatched-net issue.
