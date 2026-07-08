@@ -1,0 +1,21 @@
+Design Name: ntt_core_256_sram
+Run Directory: /work/openlane/ntt_core_256_sram/runs/RUN_2026.07.08_asic_conversion_pulled_openlane
+----------------------------------------
+
+Magic DRC Summary:
+Source: /work/openlane/ntt_core_256_sram/runs/RUN_2026.07.08_asic_conversion_pulled_openlane/reports/signoff/drc.rpt
+Total Magic DRC violations is 0
+----------------------------------------
+
+LVS Summary:
+Source: /work/openlane/ntt_core_256_sram/runs/RUN_2026.07.08_asic_conversion_pulled_openlane/logs/signoff/41-ntt_core_256_sram.lef.lvs.log
+Number of nets: 5620 **Mismatch**          |Number of nets: 5621 **Mismatch**          
+Net: net501                                |Net: net501                                
+(no matching net)                          |Net: dummy_5621                            
+Design is LVS clean.
+----------------------------------------
+
+Antenna Summary:
+Source: /work/openlane/ntt_core_256_sram/runs/RUN_2026.07.08_asic_conversion_pulled_openlane/logs/signoff/43-arc.log
+Pin violations: 35
+Net violations: 34
