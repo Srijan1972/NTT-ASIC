@@ -1,0 +1,7 @@
+Partial/Required:  3.25, Required:    400.0, Partial:  1301.22, Net: butterfly_inst.u\[26\], Pin: _5459_/A1, Layer: met1
+Partial/Required:  3.09, Required:    400.0, Partial:  1235.78, Net: butterfly_inst.u\[24\], Pin: _5455_/A1, Layer: met1
+Partial/Required:  1.94, Required:    400.0, Partial:   776.44, Net: net203, Pin: wire202/A, Layer: met1
+Partial/Required:  1.83, Required:    400.0, Partial:   730.11, Net: net344, Pin: _3854_/A, Layer: met1
+Partial/Required:  1.44, Required:    400.0, Partial:    577.2, Net: _0976_, Pin: _5804_/A, Layer: met1
+Partial/Required:  1.21, Required:    400.0, Partial:   484.89, Net: butterfly_inst.mul_inst.t_reg\[6\], Pin: _5473_/B, Layer: met1
+Partial/Required:  1.06, Required:    400.0, Partial:   425.32, Net: net317, Pin: wire316/A, Layer: met1
