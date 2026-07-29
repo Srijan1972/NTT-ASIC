@@ -1,0 +1,15 @@
+  violation type: Metal3_minimum_area_lt_0dot24umpow2_met3dot6
+    srcs: N/A N/A
+    bbox = ( 206.605, 80.060 ) - ( 206.935, 80.065 ) on Layer met3
+  violation type: Metal3_minimum_area_lt_0dot24umpow2_met3dot6
+    srcs: N/A N/A
+    bbox = ( 206.350, 80.000 ) - ( 206.380, 80.060 ) on Layer met3
+  violation type: Metal3_minimum_area_lt_0dot24umpow2_met3dot6
+    srcs: N/A N/A
+    bbox = ( 351.045, 80.060 ) - ( 351.375, 80.065 ) on Layer met3
+  violation type: Metal3_minimum_area_lt_0dot24umpow2_met3dot6
+    srcs: N/A N/A
+    bbox = ( 350.790, 80.000 ) - ( 350.820, 80.060 ) on Layer met3
+  violation type: Metal3_minimum_area_lt_0dot24umpow2_met3dot6
+    srcs: N/A N/A
+    bbox = ( [INFO]:, Should ) - ( be, divided ) on Layer met3
