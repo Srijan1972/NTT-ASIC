@@ -1,0 +1,17 @@
+LVS regression status
+---------------------
+The post-ECO Magic-extracted SPICE netlist is byte-identical to the accepted
+August 1 reloc8 extraction.  Therefore this routing-only area ECO introduces
+no LVS delta and inherits the existing baseline result:
+
+    net count difference = 1
+    device count difference = 0
+    unmatched nets = 1
+    unmatched devices = 0
+    unmatched pins = 0
+    property failures = 0
+
+Total existing errors = 2
+
+This is connectivity-regression evidence, not a claim that the pre-existing
+SRAM-interface LVS mismatch has been fixed.

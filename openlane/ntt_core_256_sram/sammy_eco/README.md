@@ -41,3 +41,10 @@ DEF in OpenROAD and runs the antenna check. `extract_candidate_spef.tcl` perform
 extraction on the candidate so the electrical effect can be compared with the
 committed ECO3 SPEF. `run_candidate_sta.tcl` runs nominal-corner STA with that
 newly extracted SPEF.
+
+`make_met3_min_area_eco.tcl` repairs the two undersized met3 islands reported
+as four Magic markers at the bottom of the input SRAM.  On
+`input_sram.wdata[3]` and `input_sram.wdata[28]`, it adds a 0.460-micron
+horizontal met3 stub from the existing M3M4 via toward the met4 SRAM-pin
+connection.  The via locations, routed endpoints, and connectivity remain
+unchanged.

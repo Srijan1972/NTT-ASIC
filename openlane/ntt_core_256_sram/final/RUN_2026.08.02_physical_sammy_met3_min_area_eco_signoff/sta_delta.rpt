@@ -1,0 +1,9 @@
+Nominal OpenSTA regression summary
+----------------------------------
+TNS:               -39.37 ns
+WNS:                -1.67 ns
+Worst setup slack:  -1.67 ns
+Worst hold slack:   +0.21 ns
+
+Result: unchanged from the August 1 sink-side diode ECO package.
+Scope: lightweight nominal delta check, not full multi-corner signoff.

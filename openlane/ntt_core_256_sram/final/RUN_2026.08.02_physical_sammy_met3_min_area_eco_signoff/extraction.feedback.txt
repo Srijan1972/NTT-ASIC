@@ -1,0 +1,2 @@
+box 127541 105417 127575 105451
+feedback add "Illegal overlap between obsli1 and viali (types do not connect)" medium

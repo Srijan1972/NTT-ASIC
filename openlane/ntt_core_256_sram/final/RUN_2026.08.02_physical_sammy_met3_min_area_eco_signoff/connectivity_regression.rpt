@@ -1,0 +1,10 @@
+Baseline extraction:
+  runs/RUN_2026.08.01_sammy_u26_reloc8/checks/candidate.spice
+Candidate extraction:
+  runs/RUN_2026.08.02_sammy_met3_area3/checks/candidate.spice
+
+Baseline SHA256:  7281d2d1d99cf9a10bff5530c94133e46075c08b0221f865dd866e9131bd17ac
+Candidate SHA256: 7281d2d1d99cf9a10bff5530c94133e46075c08b0221f865dd866e9131bd17ac
+Byte comparison: identical
+
+Conclusion: the Metal3 area ECO introduces no extracted connectivity change.

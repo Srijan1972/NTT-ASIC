@@ -1,0 +1,12 @@
+metric,value
+magic_drc_markers,0
+antenna_violating_nets,0
+antenna_violating_pins,0
+extracted_spice_matches_baseline,1
+existing_lvs_total_errors,2
+input_sram_wdata3_capacitance_pf,0.0662019
+input_sram_wdata28_capacitance_pf,0.0508561
+nominal_tns_ns,-39.37
+nominal_wns_ns,-1.67
+nominal_worst_setup_slack_ns,-1.67
+nominal_worst_hold_slack_ns,0.21
