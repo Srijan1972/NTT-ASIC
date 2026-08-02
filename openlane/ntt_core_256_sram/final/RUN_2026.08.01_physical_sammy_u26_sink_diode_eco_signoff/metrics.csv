@@ -1,0 +1,11 @@
+metric,baseline,candidate,delta,status
+antenna_net_violations,1,0,-1,clean
+antenna_pin_violations,1,0,-1,clean
+magic_drc_markers,4,4,0,no_regression
+lvs_total_errors,2,2,0,no_regression
+lvs_device_mismatches,0,0,0,no_regression
+u26_capacitance_pf,0.0305482,0.0307357,0.0001875,accepted
+nominal_tns_ns,-39.37,-39.37,0.00,no_regression
+nominal_wns_ns,-1.67,-1.67,0.00,no_regression
+nominal_setup_worst_slack_ns,-1.67,-1.67,0.00,no_regression
+nominal_hold_worst_slack_ns,0.21,0.21,0.00,no_regression

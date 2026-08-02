@@ -1,0 +1,10 @@
+Nominal OpenSTA apples-to-apples comparison
+metric,baseline,candidate,delta
+tns_ns,-39.37,-39.37,0.00
+wns_ns,-1.67,-1.67,0.00
+setup_worst_slack_ns,-1.67,-1.67,0.00
+hold_worst_slack_ns,0.21,0.21,0.00
+
+The baseline and candidate use the same nominal libraries, netlist, SDC, and
+OpenSTA script. Only the SPEF differs. This is an ECO delta check, not a
+replacement for the archived multi-corner signoff reports.
