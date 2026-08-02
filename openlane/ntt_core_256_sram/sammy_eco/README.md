@@ -48,3 +48,12 @@ as four Magic markers at the bottom of the input SRAM.  On
 horizontal met3 stub from the existing M3M4 via toward the met4 SRAM-pin
 connection.  The via locations, routed endpoints, and connectivity remain
 unchanged.
+
+`make_lvs_reference.tcl` generates an LVS-only powered reference netlist for
+the 8x1024 SRAM.  It replaces the inferred scalar `.wmask0({net})` connection
+with the macro abstract's exact escaped bit-pin name, `.\wmask0[0] (net)`.
+This prevents Netgen 1.5.255 from creating a synthetic disconnected proxy net;
+it does not alter the synthesized logic or physical layout.  The generator
+requires exactly one target SRAM instance and refuses to overwrite its input
+or an existing output.  `run_lvs_model_fix.tcl` reproduces the clean Netgen
+comparison for the accepted signoff package.

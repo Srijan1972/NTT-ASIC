@@ -1,17 +1,14 @@
-LVS regression status
----------------------
-The post-ECO Magic-extracted SPICE netlist is byte-identical to the accepted
-August 1 reloc8 extraction.  Therefore this routing-only area ECO introduces
-no LVS delta and inherits the existing baseline result:
+LVS reports no net, device, pin, or property mismatches.
 
-    net count difference = 1
-    device count difference = 0
-    unmatched nets = 1
-    unmatched devices = 0
-    unmatched pins = 0
-    property failures = 0
+Total errors = 0
 
-Total existing errors = 2
+Final result: Circuits match uniquely.
 
-This is connectivity-regression evidence, not a claim that the pre-existing
-SRAM-interface LVS mismatch has been fixed.
+Layout: ntt_core_256_sram.spice
+Reference: runs/RUN_2026.08.02_sammy_lvs_model_fix/checks/ntt_core_256_sram.lvs.v
+Netgen: 1.5.255
+
+The reference is the accepted powered gate netlist with one LVS-only interface
+normalization on the 8x1024 SRAM: `.wmask0({net472})` becomes
+`.\wmask0[0] (net472)`.  This matches the LEF/SPICE bit-pin name and avoids a
+Netgen synthetic proxy net; it does not change logical connectivity.

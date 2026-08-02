@@ -25,6 +25,9 @@ No cells, vias, routed endpoints, or net assignments move.
 - OpenROAD antenna: 0 violating nets and 0 violating pins.
 - Magic-extracted SPICE is byte-identical to the accepted `reloc8` extraction
   (`SHA256 7281d2d1d99cf9a10bff5530c94133e46075c08b0221f865dd866e9131bd17ac`).
+- Netgen LVS: 0 total errors; the circuits match uniquely after normalizing
+  the 8x1024 SRAM mask port to its LEF/SPICE bit-pin name, `wmask0[0]`, in the
+  LVS-only powered reference view.
 - The pre-existing Magic extraction feedback marker at
   `(637.705, 527.085)-(637.875, 527.255)` is unchanged.
 - `input_sram.wdata[3]` capacitance changes from 0.0661030 pF to
@@ -35,10 +38,16 @@ No cells, vias, routed endpoints, or net assignments move.
   -1.67 ns, and hold +0.21 ns.  As in the August 1 package, this is a
   regression comparison rather than full multi-corner signoff.
 
-Because the extracted layout netlist is byte-identical to the August 1
-baseline, its previously documented LVS result is unchanged: two total errors
-from one unmatched SRAM-interface net.  This ECO fixes the Magic minimum-area
-markers only; it does not claim to fix that separate LVS issue.
+The prior two LVS errors were not a physical open or short.  Netgen inferred a
+scalar `wmask0` pin from the powered Verilog instance while the SRAM LEF and
+Magic-extracted SPICE expose the one-bit bus pin as `wmask0[0]`.  That created
+an otherwise disconnected `proxywmask0[0]` net on the reference side.  The
+source blackbox now declares `wmask0` as `[0:0]`, consistent with the PDK
+behavioral model.  Because Netgen 1.5.255 still infers the pin directly from
+the powered instance, the included LVS-only reference view spells that named
+connection as `.\wmask0[0] (net472)` and removes the redundant one-element
+concatenation.  No synthesized net, placement, route, DEF, ODB, GDS, or
+extracted-layout connectivity changed.
 
 The included GDS was generated from this verified DEF using the same
 OpenLane/Magic settings as the previous package.  The zero-marker result is
@@ -56,9 +65,16 @@ GDS signoff remains a separate tapeout task.
 - `antenna_violators.rpt`: empty zero-violation antenna report
 - `connectivity_regression.rpt`: extracted-netlist identity evidence
 - `sta_delta.rpt`: nominal timing regression summary
-- `lvs.rpt`: inherited LVS status and rationale
+- `lvs.log`: complete Netgen comparison log
+- `lvs.json`: machine-readable Netgen result
+- `lvs.rpt`: zero-error LVS summary and normalization rationale
 - `metrics.csv`: concise metrics
 - `SHA256SUMS.txt`: package checksums
 
 The reproducible DEF transformation is
 `../../sammy_eco/make_met3_min_area_eco.tcl`.
+The reproducible LVS reference transformation and comparison are
+`../../sammy_eco/make_lvs_reference.tcl` and
+`../../sammy_eco/run_lvs_model_fix.tcl`.  The latter generates the 24 MB
+LVS-only reference under the ignored `runs/` workspace, so the package does
+not duplicate the otherwise identical accepted powered netlist.
