@@ -36,6 +36,19 @@ module asic_sram_1rw1r_sky130 (
         .addr1  (raddr1),
         .dout1  (rdata1)
     );
+`ifdef ANT_DIODES
+    (* keep *) sky130_fd_sc_hd__diode_2 ant_rd0_1   (.DIODE(rdata0[1]));
+    (* keep *) sky130_fd_sc_hd__diode_2 ant_rd0_6   (.DIODE(rdata0[6]));
+    (* keep *) sky130_fd_sc_hd__diode_2 ant_rd0_8   (.DIODE(rdata0[8]));
+    (* keep *) sky130_fd_sc_hd__diode_2 ant_rd0_27  (.DIODE(rdata0[27]));
+    (* keep *) sky130_fd_sc_hd__diode_2 ant_rd0_28  (.DIODE(rdata0[28]));
+    (* keep *) sky130_fd_sc_hd__diode_2 ant_rd0_29  (.DIODE(rdata0[29]));
+    (* keep *) sky130_fd_sc_hd__diode_2 ant_rd1_1   (.DIODE(rdata1[1]));
+    (* keep *) sky130_fd_sc_hd__diode_2 ant_rd1_6   (.DIODE(rdata1[6]));
+    (* keep *) sky130_fd_sc_hd__diode_2 ant_rd1_10  (.DIODE(rdata1[10]));
+    (* keep *) sky130_fd_sc_hd__diode_2 ant_rd1_11  (.DIODE(rdata1[11]));
+`endif
+
 endmodule
 
 `default_nettype wire

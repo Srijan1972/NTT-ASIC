@@ -1,12 +1,4 @@
-// ============================================================================
-//  zeta_rom.sv -- Dilithium forward-NTT twiddle ROM. GENERATED FILE:
-//  golden/gen_zeta_rom.py (values = center(MONT * psi^brv8(k)), anchored to
-//  the published reference table). Do not edit by hand.
-//
-//  Dual registered read ports (the len==1 stage needs two zetas per cycle).
-//  Read latency 1 cycle, matching the coefficient bank read latency so
-//  zeta and operands arrive at the butterfly together.
-// ============================================================================
+
 `default_nettype none
 
 module zeta_rom (

@@ -59,6 +59,19 @@ module zeta_store (
     assign e_l2 = $signed(rd_l2[0]);
     assign o_l2 = $signed(rd_l2[1]);
 
+`ifdef ANT_DIODES
+    (* keep *) sky130_fd_sc_hd__diode_2 ant_e_l1_19  (.DIODE(e_l1[19]));
+    (* keep *) sky130_fd_sc_hd__diode_2 ant_e_l1_21  (.DIODE(e_l1[21]));
+    (* keep *) sky130_fd_sc_hd__diode_2 ant_e_l1_23  (.DIODE(e_l1[23]));
+    (* keep *) sky130_fd_sc_hd__diode_2 ant_e_l1_24  (.DIODE(e_l1[24]));
+    (* keep *) sky130_fd_sc_hd__diode_2 ant_e_l2_11  (.DIODE(e_l2[11]));
+    (* keep *) sky130_fd_sc_hd__diode_2 ant_e_l2_13  (.DIODE(e_l2[13]));
+    (* keep *) sky130_fd_sc_hd__diode_2 ant_e_l2_27  (.DIODE(e_l2[27]));
+    (* keep *) sky130_fd_sc_hd__diode_2 ant_e_l2_28  (.DIODE(e_l2[28]));
+    (* keep *) sky130_fd_sc_hd__diode_2 ant_e_l2_30  (.DIODE(e_l2[30]));
+    (* keep *) sky130_fd_sc_hd__diode_2 ant_e_l2_31  (.DIODE(e_l2[31]));
+`endif
+
 endmodule
 
 `default_nettype wire

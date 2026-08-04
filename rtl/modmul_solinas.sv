@@ -63,6 +63,17 @@ module modmul_solinas (
 
     assign p         = p_s4;
     assign out_valid = vpipe[LAT-1];
+`ifdef ANT_DIODES
+    (* keep *) sky130_fd_sc_hd__diode_2 ant_a_16     (.DIODE(a[16]));
+    (* keep *) sky130_fd_sc_hd__diode_2 ant_a_30     (.DIODE(a[30]));
+    (* keep *) sky130_fd_sc_hd__diode_2 ant_b_lo_15  (.DIODE(b_lo[15]));
+    (* keep *) sky130_fd_sc_hd__diode_2 ant_p0s0_47  (.DIODE(p0_s0[47]));
+    (* keep *) sky130_fd_sc_hd__diode_2 ant_ts1_40   (.DIODE(t_s1[40]));
+    (* keep *) sky130_fd_sc_hd__diode_2 ant_ts3_45   (.DIODE(t_s3[45]));
+    (* keep *) sky130_fd_sc_hd__diode_2 ant_ts3_52   (.DIODE(t_s3[52]));
+    (* keep *) sky130_fd_sc_hd__diode_2 ant_ts3_55   (.DIODE(t_s3[55]));
+`endif
+
 endmodule
 
 `default_nettype wire
