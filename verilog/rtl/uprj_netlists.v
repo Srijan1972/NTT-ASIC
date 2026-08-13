@@ -21,8 +21,14 @@
     // Assume default net type to be wire because GL netlists don't have the wire definitions
     `default_nettype wire
     `include "gl/user_project_wrapper.v"
-    `include "gl/user_proj_example.v"
+    `include "gl/ntt.v"
 `else
+    `include "bank_ram_1r1w.v"
+    `include "bank_ram_1rw1r.v"
+    `include "modmul_solinas.v"
+    `include "ntt_butterfly_ct.v"
+    `include "zeta_store.v"
+    `include "ntt_engine_256.v"
+    `include "ntt.v"
     `include "user_project_wrapper.v"
-    `include "user_proj_example.v"
 `endif

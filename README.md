@@ -8,3 +8,6 @@
 ## Please fill in your project documentation in this README.md file 
 
 Refer to [README](docs/source/index.md) for this sample project documentation.
+
+The SRAM-backed NTT integration and its required hardening order are documented
+in [docs/caravel2.md](docs/caravel2.md).
