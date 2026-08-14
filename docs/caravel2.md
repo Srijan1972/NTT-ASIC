@@ -4,6 +4,30 @@ This branch hardens the NTT as a leaf macro before placing it in
 `user_project_wrapper`. Do not flatten the NTT RTL into the wrapper: the engine
 contains six 1 KiB SRAMs and requires their Sky130 physical views.
 
+## Current branch status
+
+- [x] Caravel user-project repository structure and wrapper pinout
+- [x] Wishbone register bridge and SRAM-backed NTT integration
+- [x] Valid power-on GPIO defaults for GPIO 5 through 37
+- [x] Leaf self-checking RTL test
+- [x] Full Caravel RTL firmware test (`wb_port`)
+- [x] NTT cocotb test definition and RISC-V firmware syntax check
+- [x] OpenLane leaf/wrapper configuration and standalone LVS configuration
+- [x] Project metadata (`info.yaml`; replace its placeholder project ID before submission)
+- [x] Non-layout prechecks: license/SPDX, Makefile, defaults, documentation, GPIO definitions
+- [ ] Clean NTT leaf physical signoff
+- [ ] Export signed-off NTT GDS/LEF/Liberty/netlist/SDF views
+- [ ] Harden and sign off `user_project_wrapper`
+- [ ] Full Caravel gate-level and SDF regressions
+- [ ] Multicorner Caravel STA, standalone LVS, and MPW precheck
+
+The latest leaf attempt is
+`openlane/ntt/runs/caravel2_ntt_r4`. OpenROAD detailed routing reported zero
+violations, but Magic extraction reported 741,902 illegal `obsli1`/`locali`
+overlaps and LVS did not match (including disconnected duplicate power ports).
+That run is diagnostic only: do not copy its final views into the repository or
+use them to harden the wrapper.
+
 ## Required order
 
 1. Run the RTL regression.
@@ -11,6 +35,12 @@ contains six 1 KiB SRAMs and requires their Sky130 physical views.
 3. Harden `openlane/user_project_wrapper` using the generated NTT views.
 4. Run Caravel RTL and gate-level verification.
 5. Run the full harness, precheck, DRC, LVS, antenna, timing, and XOR checks.
+
+The next command in this branch is `make setup` because `caravel/`,
+`mgmt_core_wrapper/`, `dependencies/pdks/`, and `dependencies/openlane_src/`
+are not installed in this checkout. Then rerun `make ntt`: the Wishbone RTL was
+updated after the diagnostic physical run, so that old run cannot be exported
+even if its extraction problem is repaired manually.
 
 With a standard Caravel project environment:
 
@@ -21,6 +51,11 @@ make verify-all-rtl
 make verify-all-gl
 make run-precheck
 ```
+
+After `make ntt`, stop unless the new run has clean detailed-routing, Magic and
+KLayout DRC, LVS, antenna, and timing reports. Only then copy the run's final
+views to the repository (the OpenLane `-save` flow normally does this), run
+`make lvs-ntt`, and proceed to `make user_project_wrapper`.
 
 `make ntt` must produce or update at least:
 
@@ -57,11 +92,13 @@ Offsets use `wbs_adr_i[7:0]`:
 | `0x0c` | `EXT_WR_DAT` | 32-bit coefficient write data |
 | `0x10` | `ZLOAD_DAT` | 32-bit zeta write data |
 | `0x14` | `ZLOAD_CTL` | `[0]` write pulse, `[9:1]` zeta address |
-| `0x18` | `STATUS` | `[0]` busy, `[1]` done, `[2]` external-read valid |
-| `0x1c` | `EXT_RD_DAT` | 32-bit coefficient read data |
+| `0x18` | `STATUS` | `[0]` busy, `[1]` done, `[2]` external-read-valid pending |
+| `0x1c` | `EXT_RD_DAT` | 32-bit coefficient read data; reading clears status bit 2 |
 
 The `start`, external read/write, and zeta-write bits are one-cycle strobes.
-The byte-select inputs are honored for writable register bytes.
+The byte-select inputs are honored for writable register bytes. External-read
+valid is latched so management firmware cannot miss the engine's one-cycle
+pulse; starting another external read or reading `EXT_RD_DAT` clears it.
 
 ## Local RTL regression
 

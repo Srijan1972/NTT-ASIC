@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: 2026 Srijan1972
+// SPDX-License-Identifier: Apache-2.0
 // ============================================================================
 //  zeta_rom.sv -- Dilithium forward-NTT twiddle ROM. GENERATED FILE:
 //  golden/gen_zeta_rom.py (values = center(MONT * psi^brv8(k)), anchored to

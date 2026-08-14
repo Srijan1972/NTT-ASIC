@@ -125,7 +125,10 @@ blocks=$(shell cd openlane && find * -maxdepth 0 -type d)
 $(blocks): % :
 	$(MAKE) -C openlane $*
 
-dv_patterns=$(shell cd verilog/dv && find * -maxdepth 0 -type d)
+# Only these regressions describe the NTT integration.  The other directories
+# are untouched Caravel template examples and are intentionally not part of
+# verify-all-*.
+dv_patterns=wb_port
 cocotb-dv_patterns=$(shell cd verilog/dv/cocotb && find . -name "*.c"  | sed -e 's|^.*/||' -e 's/.c//')
 dv-targets-rtl=$(dv_patterns:%=verify-%-rtl)
 cocotb-dv-targets-rtl=$(cocotb-dv_patterns:%=cocotb-verify-%-rtl)

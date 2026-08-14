@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: 2026 Srijan1972
+# SPDX-License-Identifier: Apache-2.0
+
 RTL := ../../rtl
 SOURCES := \
 	$(RTL)/bank_ram_1r1w.v \

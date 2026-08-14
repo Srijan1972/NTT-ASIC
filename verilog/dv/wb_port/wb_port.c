@@ -19,12 +19,39 @@
 #include <defs.h>
 #include <stub.c>
 
-#define reg_mprj_slave (*(volatile uint32_t*)0x30000000)
+#define NTT_BASE       0x30000000u
+#define NTT_CMD        (*(volatile uint32_t *)(NTT_BASE + 0x00u))
+#define NTT_EXT_WR_CTL (*(volatile uint32_t *)(NTT_BASE + 0x04u))
+#define NTT_EXT_RD_CTL (*(volatile uint32_t *)(NTT_BASE + 0x08u))
+#define NTT_EXT_WR_DAT (*(volatile uint32_t *)(NTT_BASE + 0x0cu))
+#define NTT_STATUS     (*(volatile uint32_t *)(NTT_BASE + 0x18u))
+#define NTT_EXT_RD_DAT (*(volatile uint32_t *)(NTT_BASE + 0x1cu))
+
+#define NTT_STATUS_BUSY        0x1u
+#define NTT_STATUS_DONE        0x2u
+#define NTT_STATUS_EXT_RVALID  0x4u
+#define NTT_TEST_ADDR          0x2au
+#define NTT_TEST_SLOT          2u
+#define NTT_TEST_WORD          0xdeadbeefu
+#define NTT_POLL_LIMIT         2048u
+#define NTT_CTL(slot, addr)    (((addr) << 3) | ((slot) << 1) | 1u)
+#define NTT_COPY_CMD(src, dst) (1u | (1u << 1) | ((src) << 4) | ((dst) << 8))
+
+static uint32_t wait_for_status(uint32_t mask, uint32_t expected)
+{
+    uint32_t timeout = NTT_POLL_LIMIT;
+
+    while (timeout-- != 0u) {
+        if ((NTT_STATUS & mask) == expected)
+            return 1u;
+    }
+    return 0u;
+}
 
 /*
-	Wishbone Test:
-		- Configures MPRJ lower 8-IO pins as outputs
-		- Checks counter value through the wishbone port
+	NTT Wishbone Test:
+		- Writes and reads a coefficient through the Caravel user bus
+		- Starts an NTT-engine COPY operation and verifies its result
 */
 
 void main()
@@ -82,9 +109,37 @@ void main()
     // Flag start of the test
 	reg_mprj_datal = 0xAB600000;
 
-    reg_mprj_slave = 0x00002710;
-    reg_mprj_datal = 0xAB610000;
-    if (reg_mprj_slave == 0x2B3D) {
-        reg_mprj_datal = 0xAB610000;
+    NTT_EXT_WR_DAT = NTT_TEST_WORD;
+    NTT_EXT_WR_CTL = NTT_CTL(NTT_TEST_SLOT, NTT_TEST_ADDR);
+
+    NTT_EXT_RD_CTL = NTT_CTL(NTT_TEST_SLOT, NTT_TEST_ADDR);
+    if (!wait_for_status(NTT_STATUS_EXT_RVALID, NTT_STATUS_EXT_RVALID)) {
+        reg_mprj_datal = 0xAB620000;
+        return;
     }
+    if (NTT_EXT_RD_DAT != NTT_TEST_WORD) {
+        reg_mprj_datal = 0xAB630000;
+        return;
+    }
+
+    // COPY slot 2 to slot 1 and wait for completion.  Do not poll for BUSY to
+    // become high: the engine can finish before the management CPU's next
+    // Wishbone read.  DONE remains asserted until another command starts.
+    NTT_CMD = NTT_COPY_CMD(2u, 1u);
+    if (!wait_for_status(NTT_STATUS_DONE, NTT_STATUS_DONE)) {
+        reg_mprj_datal = 0xAB650000;
+        return;
+    }
+
+    NTT_EXT_RD_CTL = NTT_CTL(1u, NTT_TEST_ADDR);
+    if (!wait_for_status(NTT_STATUS_EXT_RVALID, NTT_STATUS_EXT_RVALID)) {
+        reg_mprj_datal = 0xAB660000;
+        return;
+    }
+    if (NTT_EXT_RD_DAT != NTT_TEST_WORD) {
+        reg_mprj_datal = 0xAB670000;
+        return;
+    }
+
+    reg_mprj_datal = 0xAB610000;
 }

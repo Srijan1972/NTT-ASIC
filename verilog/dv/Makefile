@@ -20,7 +20,9 @@
 .SILENT: clean all
 
 
-PATTERNS = io_ports la_test1 la_test2 wb_port mprj_stimulus
+# The template counter tests under io_ports/la_test*/mprj_stimulus are retained
+# as references, but they do not describe the Wishbone-only NTT wrapper.
+PATTERNS = wb_port
 
 all:  ${PATTERNS}
 

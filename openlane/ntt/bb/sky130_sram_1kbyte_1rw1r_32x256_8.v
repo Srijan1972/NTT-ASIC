@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: 2026 Srijan1972
+// SPDX-License-Identifier: Apache-2.0
 // sta-blackbox
 module sky130_sram_1kbyte_1rw1r_32x256_8 (
 `ifdef USE_POWER_PINS

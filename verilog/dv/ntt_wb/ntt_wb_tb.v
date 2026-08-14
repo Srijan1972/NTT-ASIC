@@ -1,3 +1,6 @@
+// SPDX-FileCopyrightText: 2026 Srijan1972
+// SPDX-License-Identifier: Apache-2.0
+
 `timescale 1ns/1ps
 
 module ntt_wb_tb;

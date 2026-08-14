@@ -1,0 +1,20 @@
+---
+project:
+  description: "SRAM-backed 256-point NTT accelerator integrated with the Caravel Wishbone user bus"
+  foundry: "SkyWater"
+  git_url: "https://github.com/Srijan1972/NTT-ASIC.git"
+  organization: "Srijan1972"
+  organization_url: "https://github.com/Srijan1972"
+  owner: "Srijan1972"
+  process: "SKY130"
+  project_name: "NTT-ASIC"
+  project_id: "00000000"
+  tags:
+    - "Open MPW"
+    - "NTT"
+    - "post-quantum cryptography"
+  category: "Digital Accelerator"
+  top_level_netlist: "caravel/verilog/gl/caravel.v"
+  user_level_netlist: "verilog/gl/user_project_wrapper.v"
+  version: "0.1"
+  cover_image: "docs/source/_static/layout.png"

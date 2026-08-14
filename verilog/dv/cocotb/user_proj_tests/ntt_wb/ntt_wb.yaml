@@ -1,5 +1,5 @@
 # SPDX-FileCopyrightText: 2026 Srijan1972
 # SPDX-License-Identifier: Apache-2.0
----
+
 Tests:
-    - {name: ntt_wb, sim: GL}
+    - {name: ntt_wb, sim: RTL}

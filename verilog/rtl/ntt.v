@@ -57,7 +57,8 @@ module ntt (
     wire        ext_rvalid;
     wire        busy;
     wire        done;
-    wire [31:0] status_word = {29'b0, ext_rvalid, done, busy};
+    reg         ext_rvalid_seen;
+    wire [31:0] status_word = {29'b0, ext_rvalid_seen, done, busy};
     reg  [31:0] wb_data_out_r;
 
     // Register offsets are decoded from the low address byte.  The Caravel
@@ -98,12 +99,21 @@ module ntt (
             zload_we_reg   <= 1'b0;
             zload_addr_reg <= 9'b0;
             zload_data_reg <= 32'b0;
+            ext_rvalid_seen <= 1'b0;
         end else begin
             wb_ack_r     <= wb_fire;
             start_reg    <= 1'b0;
             ext_we_reg   <= 1'b0;
             ext_re_reg   <= 1'b0;
             zload_we_reg <= 1'b0;
+
+            // The engine's read-valid indication is a one-cycle pulse.  Latch
+            // it for software polling and clear it when a new read is issued
+            // or the completed read data is consumed.
+            if (ext_rvalid)
+                ext_rvalid_seen <= 1'b1;
+            if (wb_fire && !wbs_we_i && wbs_adr_i[7:0] == REG_EXT_RD_DAT)
+                ext_rvalid_seen <= 1'b0;
 
             if (wb_fire && wbs_we_i) begin
                 case (wbs_adr_i[7:0])
@@ -131,6 +141,8 @@ module ntt (
                     REG_EXT_RD_CTL: begin
                         if (wbs_sel_i[0]) begin
                             ext_re_reg    <= wbs_dat_i[0];
+                            if (wbs_dat_i[0])
+                                ext_rvalid_seen <= 1'b0;
                             ext_rslot_reg <= wbs_dat_i[2:1];
                             ext_raddr_reg[4:0] <= wbs_dat_i[7:3];
                         end

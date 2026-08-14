@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: 2026 Srijan1972
+// SPDX-License-Identifier: Apache-2.0
 // ============================================================================
 //  ntt_engine_256.sv -- N=256 Dilithium polynomial engine, MERGED-LAYER
 //  radix-2^2 NTT/INTT (two stages per memory pass).
