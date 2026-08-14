@@ -52,15 +52,24 @@ module tb_ntt_polymul;
         end
     endtask
 
+    // ---- merged load/store channel adapter --------------------------------
+    //   Legacy sequential phases unchanged; only mapped onto the unified port.
+    wire        mem_we     = ext_we | zload_we;
+    wire        mem_re     = ext_re;
+    wire        mem_target = zload_we;                 // 1 = zeta, 0 = coeff
+    wire [1:0]  mem_slot   = ext_we ? ext_wslot : ext_rslot;
+    wire [8:0]  mem_addr   = zload_we ? zload_addr :
+                             ext_we   ? {1'b0, ext_waddr} :
+                                        {1'b0, ext_raddr};
+    wire [31:0] mem_wdata  = zload_we ? zload_data : ext_wdata;
+
     ntt_engine_256 dut (
         .clk(clk), .rst_n(rst_n),
         .start(start), .op(op), .slot_a(slot_a), .slot_b(slot_b),
         .slot_c(slot_c), .mac_init(mac_init), .busy(busy), .done(done),
-        .ext_we(ext_we), .ext_wslot(ext_wslot), .ext_waddr(ext_waddr),
-        .ext_wdata(ext_wdata),
-        .ext_re(ext_re), .ext_rslot(ext_rslot), .ext_raddr(ext_raddr),
-                .ext_rdata(ext_rdata), .ext_rvalid(ext_rvalid),
-        .zload_we(zload_we), .zload_addr(zload_addr), .zload_data(zload_data)
+        .mem_we(mem_we), .mem_re(mem_re), .mem_target(mem_target),
+        .mem_slot(mem_slot), .mem_addr(mem_addr), .mem_wdata(mem_wdata),
+        .mem_rdata(ext_rdata), .mem_rvalid(ext_rvalid)
     );
 
     always #5 clk = ~clk;

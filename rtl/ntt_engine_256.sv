@@ -17,19 +17,15 @@ module ntt_engine_256 (
     output wire        busy,
     output reg         done,
 
-    input  wire        ext_we,
-    input  wire [1:0]  ext_wslot,
-    input  wire [7:0]  ext_waddr,
-    input  wire [31:0] ext_wdata,
-    input  wire        ext_re,
-    input  wire [1:0]  ext_rslot,
-    input  wire [7:0]  ext_raddr,
-    output wire [31:0] ext_rdata,
-    output reg         ext_rvalid,
-
-    input  wire        zload_we,
-    input  wire [8:0]  zload_addr,
-    input  wire [31:0] zload_data
+    // --- unified external load/store channel (merged ext_* + zload_*) ---
+    input  wire        mem_we,      // write strobe
+    input  wire        mem_re,      // read strobe (coeff read-back only)
+    input  wire        mem_target,  // 0 = coeff banks (MEM_COEFF), 1 = zeta store (MEM_ZETA)
+    input  wire [1:0]  mem_slot,    // coeff slot; ignored when mem_target = MEM_ZETA
+    input  wire [8:0]  mem_addr,    // [7:0] used for coeff, full [8:0] for zeta
+    input  wire [31:0] mem_wdata,   // shared write data (coeff / zeta)
+    output wire [31:0] mem_rdata,   // coeff read data
+    output wire        mem_rvalid   // coeff read-data valid
 );
     localparam PIPE1    = 8;
     localparam PIPE     = 15;
@@ -239,6 +235,32 @@ module ntt_engine_256 (
     reg  [7:0]  bank_waddr [0:3];
     reg  [31:0] bank_wdata [0:3];
     reg  [3:0]  bank_we;
+
+    // ---- merged-channel decode: reconstruct legacy internal control -------
+    //   Two firmware invariants (enforced by the driver / dv sequence):
+    //     1. mem_we & mem_re are never both high in the same cycle
+    //        (external coeff read and write share mem_addr).
+    //     2. coeff loads and zeta loads never overlap (share mem_wdata/mem_addr).
+    //   Internal butterfly access keeps full concurrency; only the *external*
+    //   port is time-shared. Below re-derives the original internal nets so the
+    //   proven datapath (unchanged) drives exactly as before.
+    localparam MEM_COEFF = 1'b0, MEM_ZETA = 1'b1;
+
+    wire        ext_we    = mem_we && (mem_target == MEM_COEFF);
+    wire [1:0]  ext_wslot = mem_slot;
+    wire [7:0]  ext_waddr = mem_addr[7:0];
+    wire [31:0] ext_wdata = mem_wdata;
+    wire        ext_re    = mem_re && (mem_target == MEM_COEFF);
+    wire [1:0]  ext_rslot = mem_slot;
+    wire [7:0]  ext_raddr = mem_addr[7:0];
+    wire [31:0] ext_rdata;                 // assigned in the coeff read-back block
+    reg         ext_rvalid;                // assigned in the coeff read-back block
+    assign      mem_rdata  = ext_rdata;
+    assign      mem_rvalid = ext_rvalid;
+
+    wire        zload_we   = mem_we && (mem_target == MEM_ZETA);
+    wire [8:0]  zload_addr = mem_addr;
+    wire [31:0] zload_data = mem_wdata;
 
     wire [1:0] ext_wbank = bank_of(ext_waddr) ^ ext_wslot;
     wire [1:0] ext_rbank = bank_of(ext_raddr) ^ ext_rslot;

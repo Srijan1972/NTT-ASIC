@@ -1,1 +1,5 @@
 *.gds filter=lfs diff=lfs merge=lfs -text
+*.gds.gz filter=lfs diff=lfs merge=lfs -text
+results/**/final/gds/*.gds filter=lfs diff=lfs merge=lfs -text
+results/**/final/gds/*.gds.gz filter=lfs diff=lfs merge=lfs -text
+results/**/final/verilog/gl/ntt_engine_256.v filter=lfs diff=lfs merge=lfs -text

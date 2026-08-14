@@ -31,9 +31,10 @@ set ::env(RT_MAX_LAYER) "met5"
 set ::env(GRT_ADJUSTMENT) 0.2
 set ::env(GRT_ALLOW_CONGESTION) 0
 set ::env(ROUTING_CORES) 6
+set ::env(FP_PDN_VWIDTH) 2.8
+set ::env(FP_PDN_HWIDTH) 2.8
 
 # --- antenna repair ---
-set ::env(PL_RESIZER_MAX_WIRE_LENGTH) 500
 set ::env(GRT_REPAIR_ANTENNAS) 1
 set ::env(RUN_HEURISTIC_DIODE_INSERTION) 1
 set ::env(GRT_ANT_ITERS) 10

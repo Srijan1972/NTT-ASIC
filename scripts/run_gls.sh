@@ -27,7 +27,7 @@ if [ -z "$RUN_DIR" ]; then echo "usage: $0 <openlane-run-dir>"; exit 1; fi
 
 : "${PDK_ROOT:=$HOME/.ciel}"
 CELLS="$PDK_ROOT/sky130A/libs.ref/sky130_fd_sc_hd/verilog"
-NETLIST="$RUN_DIR/results/final/verilog/gl/ntt_engine_256.v"
+NETLIST="$RUN_DIR/results/final/verilog/gl/ntt_engine_256.nl.v"
 
 for f in "$NETLIST" "$CELLS/primitives.v" "$CELLS/sky130_fd_sc_hd.v"; do
     [ -f "$f" ] || { echo "missing: $f"; exit 1; }

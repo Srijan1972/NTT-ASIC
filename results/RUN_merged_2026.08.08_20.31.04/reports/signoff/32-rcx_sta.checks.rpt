@@ -1,0 +1,839 @@
+
+===========================================================================
+report_checks -unconstrained
+===========================================================================
+======================= Typical Corner ===================================
+
+Startpoint: _101214_ (rising edge-triggered flip-flop clocked by clk)
+Endpoint: _101796_ (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: max
+
+Fanout     Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------------
+                          0.00    0.00   clock clk (rise edge)
+                          0.00    0.00   clock source latency
+                  0.00    0.00    0.00 ^ clk (in)
+     5    0.26                           clk (net)
+                  0.31    0.15    0.15 ^ clkbuf_0_clk/A (sky130_fd_sc_hd__clkbuf_16)
+                  0.13    0.28    0.43 ^ clkbuf_0_clk/X (sky130_fd_sc_hd__clkbuf_16)
+     4    0.12                           clknet_0_clk (net)
+                  0.13    0.01    0.44 ^ clkbuf_1_0_0_clk/A (sky130_fd_sc_hd__clkbuf_8)
+                  0.26    0.32    0.76 ^ clkbuf_1_0_0_clk/X (sky130_fd_sc_hd__clkbuf_8)
+     5    0.15                           clknet_1_0_0_clk (net)
+                  0.26    0.01    0.76 ^ clkbuf_2_0_0_clk/A (sky130_fd_sc_hd__clkbuf_8)
+                  0.13    0.27    1.03 ^ clkbuf_2_0_0_clk/X (sky130_fd_sc_hd__clkbuf_8)
+     4    0.07                           clknet_2_0_0_clk (net)
+                  0.13    0.00    1.04 ^ clkbuf_3_1_0_clk/A (sky130_fd_sc_hd__clkbuf_8)
+                  0.20    0.27    1.31 ^ clkbuf_3_1_0_clk/X (sky130_fd_sc_hd__clkbuf_8)
+     4    0.11                           clknet_3_1_0_clk (net)
+                  0.20    0.01    1.31 ^ clkbuf_4_2_0_clk/A (sky130_fd_sc_hd__clkbuf_8)
+                  0.20    0.29    1.61 ^ clkbuf_4_2_0_clk/X (sky130_fd_sc_hd__clkbuf_8)
+     8    0.11                           clknet_4_2_0_clk (net)
+                  0.20    0.01    1.61 ^ clkbuf_6_11__f_clk/A (sky130_fd_sc_hd__clkbuf_16)
+                  0.13    0.24    1.86 ^ clkbuf_6_11__f_clk/X (sky130_fd_sc_hd__clkbuf_16)
+    14    0.11                           clknet_6_11__leaf_clk (net)
+                  0.13    0.01    1.86 ^ clkbuf_leaf_37_clk/A (sky130_fd_sc_hd__clkbuf_16)
+                  0.04    0.16    2.02 ^ clkbuf_leaf_37_clk/X (sky130_fd_sc_hd__clkbuf_16)
+     7    0.02                           clknet_leaf_37_clk (net)
+                  0.05    0.00    2.02 ^ _101214_/CLK (sky130_fd_sc_hd__dfxtp_1)
+                  0.23    0.43    2.45 ^ _101214_/Q (sky130_fd_sc_hd__dfxtp_1)
+     4    0.02                           sc_pipe[1] (net)
+                  0.23    0.00    2.46 ^ wire2151/A (sky130_fd_sc_hd__buf_4)
+                  0.34    0.37    2.83 ^ wire2151/X (sky130_fd_sc_hd__buf_4)
+     6    0.13                           net2151 (net)
+                  0.34    0.01    2.84 ^ _054483_/A (sky130_fd_sc_hd__clkbuf_4)
+                  0.19    0.33    3.18 ^ _054483_/X (sky130_fd_sc_hd__clkbuf_4)
+    12    0.06                           _048996_ (net)
+                  0.19    0.01    3.18 ^ _054484_/A (sky130_fd_sc_hd__clkbuf_4)
+                  0.21    0.30    3.48 ^ _054484_/X (sky130_fd_sc_hd__clkbuf_4)
+    12    0.07                           _048997_ (net)
+                  0.21    0.01    3.49 ^ _054485_/A (sky130_fd_sc_hd__clkbuf_4)
+                  0.18    0.29    3.78 ^ _054485_/X (sky130_fd_sc_hd__clkbuf_4)
+    12    0.06                           _048998_ (net)
+                  0.18    0.00    3.78 ^ _054511_/A (sky130_fd_sc_hd__buf_2)
+                  0.23    0.28    4.06 ^ _054511_/X (sky130_fd_sc_hd__buf_2)
+    12    0.05                           _049022_ (net)
+                  0.23    0.00    4.07 ^ _054512_/A (sky130_fd_sc_hd__buf_4)
+                  0.29    0.33    4.40 ^ _054512_/X (sky130_fd_sc_hd__buf_4)
+    12    0.11                           _049023_ (net)
+                  0.30    0.02    4.42 ^ _054513_/A (sky130_fd_sc_hd__clkbuf_4)
+                  0.18    0.32    4.74 ^ _054513_/X (sky130_fd_sc_hd__clkbuf_4)
+    12    0.06                           _049024_ (net)
+                  0.18    0.00    4.74 ^ _054514_/A (sky130_fd_sc_hd__clkbuf_4)
+                  0.20    0.29    5.03 ^ _054514_/X (sky130_fd_sc_hd__clkbuf_4)
+    12    0.07                           _049025_ (net)
+                  0.20    0.00    5.03 ^ _054515_/A (sky130_fd_sc_hd__clkbuf_4)
+                  0.25    0.34    5.37 ^ _054515_/X (sky130_fd_sc_hd__clkbuf_4)
+    12    0.08                           _049026_ (net)
+                  0.25    0.00    5.37 ^ _054516_/A (sky130_fd_sc_hd__clkbuf_4)
+                  0.27    0.36    5.74 ^ _054516_/X (sky130_fd_sc_hd__clkbuf_4)
+    12    0.09                           _049027_ (net)
+                  0.27    0.00    5.74 ^ _054517_/A (sky130_fd_sc_hd__buf_2)
+                  0.25    0.32    6.06 ^ _054517_/X (sky130_fd_sc_hd__buf_2)
+    12    0.05                           _049028_ (net)
+                  0.25    0.00    6.06 ^ _054518_/A (sky130_fd_sc_hd__clkbuf_4)
+                  0.23    0.33    6.39 ^ _054518_/X (sky130_fd_sc_hd__clkbuf_4)
+    12    0.08                           _049029_ (net)
+                  0.23    0.01    6.41 ^ _054519_/A (sky130_fd_sc_hd__buf_4)
+                  0.30    0.35    6.75 ^ _054519_/X (sky130_fd_sc_hd__buf_4)
+    12    0.11                           _049030_ (net)
+                  0.30    0.02    6.77 ^ _054520_/A (sky130_fd_sc_hd__buf_4)
+                  0.32    0.37    7.14 ^ _054520_/X (sky130_fd_sc_hd__buf_4)
+    12    0.11                           _049031_ (net)
+                  0.32    0.01    7.15 ^ _054521_/A (sky130_fd_sc_hd__clkbuf_4)
+                  0.27    0.38    7.52 ^ _054521_/X (sky130_fd_sc_hd__clkbuf_4)
+    12    0.09                           _049032_ (net)
+                  0.27    0.01    7.54 ^ _054522_/A (sky130_fd_sc_hd__buf_4)
+                  0.26    0.33    7.86 ^ _054522_/X (sky130_fd_sc_hd__buf_4)
+    12    0.09                           _049033_ (net)
+                  0.26    0.01    7.87 ^ _054523_/A (sky130_fd_sc_hd__clkbuf_2)
+                  0.13    0.23    8.10 ^ _054523_/X (sky130_fd_sc_hd__clkbuf_2)
+     6    0.02                           _049034_ (net)
+                  0.13    0.00    8.10 ^ _054524_/A (sky130_fd_sc_hd__clkbuf_4)
+                  0.23    0.30    8.40 ^ _054524_/X (sky130_fd_sc_hd__clkbuf_4)
+    12    0.08                           _049035_ (net)
+                  0.23    0.00    8.41 ^ _054525_/A (sky130_fd_sc_hd__clkbuf_4)
+                  0.28    0.36    8.77 ^ _054525_/X (sky130_fd_sc_hd__clkbuf_4)
+    12    0.09                           _049036_ (net)
+                  0.28    0.00    8.77 ^ _054832_/A (sky130_fd_sc_hd__clkbuf_8)
+                  0.26    0.36    9.13 ^ _054832_/X (sky130_fd_sc_hd__clkbuf_8)
+    12    0.15                           _049318_ (net)
+                  0.26    0.01    9.14 ^ _054833_/A (sky130_fd_sc_hd__buf_6)
+                  0.21    0.27    9.41 ^ _054833_/X (sky130_fd_sc_hd__buf_6)
+     6    0.10                           _049319_ (net)
+                  0.21    0.00    9.41 ^ wire474/A (sky130_fd_sc_hd__buf_4)
+                  0.29    0.32    9.73 ^ wire474/X (sky130_fd_sc_hd__buf_4)
+     8    0.10                           net474 (net)
+                  0.30    0.03    9.76 ^ _101077_/A (sky130_fd_sc_hd__buf_2)
+                  0.15    0.26   10.02 ^ _101077_/X (sky130_fd_sc_hd__buf_2)
+     6    0.03                           _045885_ (net)
+                  0.15    0.00   10.02 ^ _101082_/C1 (sky130_fd_sc_hd__a311o_2)
+                  0.26    0.30   10.32 ^ _101082_/X (sky130_fd_sc_hd__a311o_2)
+     2    0.05                           _001183_ (net)
+                  0.26    0.00   10.32 ^ _101796_/D (sky130_fd_sc_hd__dfxtp_1)
+                                 10.32   data arrival time
+
+                         10.00   10.00   clock clk (rise edge)
+                          0.00   10.00   clock source latency
+                  0.00    0.00   10.00 ^ clk (in)
+     5    0.26                           clk (net)
+                  0.31    0.15   10.15 ^ clkbuf_0_clk/A (sky130_fd_sc_hd__clkbuf_16)
+                  0.13    0.28   10.43 ^ clkbuf_0_clk/X (sky130_fd_sc_hd__clkbuf_16)
+     4    0.12                           clknet_0_clk (net)
+                  0.13    0.01   10.44 ^ clkbuf_1_1_0_clk/A (sky130_fd_sc_hd__clkbuf_8)
+                  0.23    0.29   10.73 ^ clkbuf_1_1_0_clk/X (sky130_fd_sc_hd__clkbuf_8)
+     4    0.13                           clknet_1_1_0_clk (net)
+                  0.23    0.01   10.74 ^ clkbuf_2_2_0_clk/A (sky130_fd_sc_hd__clkbuf_8)
+                  0.10    0.24   10.98 ^ clkbuf_2_2_0_clk/X (sky130_fd_sc_hd__clkbuf_8)
+     4    0.05                           clknet_2_2_0_clk (net)
+                  0.10    0.00   10.98 ^ clkbuf_3_4_0_clk/A (sky130_fd_sc_hd__clkbuf_8)
+                  0.18    0.25   11.23 ^ clkbuf_3_4_0_clk/X (sky130_fd_sc_hd__clkbuf_8)
+     4    0.10                           clknet_3_4_0_clk (net)
+                  0.18    0.00   11.24 ^ clkbuf_4_9_0_clk/A (sky130_fd_sc_hd__clkbuf_8)
+                  0.14    0.24   11.48 ^ clkbuf_4_9_0_clk/X (sky130_fd_sc_hd__clkbuf_8)
+     8    0.07                           clknet_4_9_0_clk (net)
+                  0.14    0.00   11.48 ^ clkbuf_6_38__f_clk/A (sky130_fd_sc_hd__clkbuf_16)
+                  0.08    0.19   11.67 ^ clkbuf_6_38__f_clk/X (sky130_fd_sc_hd__clkbuf_16)
+     8    0.06                           clknet_6_38__leaf_clk (net)
+                  0.08    0.00   11.67 ^ clkbuf_leaf_121_clk/A (sky130_fd_sc_hd__clkbuf_16)
+                  0.06    0.15   11.83 ^ clkbuf_leaf_121_clk/X (sky130_fd_sc_hd__clkbuf_16)
+    13    0.04                           clknet_leaf_121_clk (net)
+                  0.06    0.00   11.83 ^ _101796_/CLK (sky130_fd_sc_hd__dfxtp_1)
+                         -0.25   11.58   clock uncertainty
+                          0.00   11.58   clock reconvergence pessimism
+                         -0.10   11.48   library setup time
+                                 11.48   data required time
+-----------------------------------------------------------------------------
+                                 11.48   data required time
+                                -10.32   data arrival time
+-----------------------------------------------------------------------------
+                                  1.15   slack (MET)
+
+
+
+
+===========================================================================
+report_checks --slack_max -0.01
+============================================================================
+======================= Typical Corner ===================================
+
+No paths found.
+
+
+===========================================================================
+ report_check_types -max_slew -max_cap -max_fanout -violators
+============================================================================
+======================= Typical Corner ===================================
+
+
+
+===========================================================================
+report_parasitic_annotation -report_unannotated
+============================================================================
+Found 30 unannotated drivers.
+ g_banks\[0\].u_ram.u_macro_2370/HI
+ g_banks\[0\].u_ram.u_macro_2376/LO
+ g_banks\[0\].u_ram.u_macro_2377/LO
+ g_banks\[0\].u_ram.u_macro_2378/LO
+ g_banks\[0\].u_ram.u_macro_2379/LO
+ g_banks\[1\].u_ram.u_macro_2371/HI
+ g_banks\[1\].u_ram.u_macro_2380/LO
+ g_banks\[1\].u_ram.u_macro_2381/LO
+ g_banks\[1\].u_ram.u_macro_2382/LO
+ g_banks\[1\].u_ram.u_macro_2383/LO
+ g_banks\[2\].u_ram.u_macro_2372/HI
+ g_banks\[2\].u_ram.u_macro_2384/LO
+ g_banks\[2\].u_ram.u_macro_2385/LO
+ g_banks\[2\].u_ram.u_macro_2386/LO
+ g_banks\[2\].u_ram.u_macro_2387/LO
+ g_banks\[3\].u_ram.u_macro_2373/HI
+ g_banks\[3\].u_ram.u_macro_2388/LO
+ g_banks\[3\].u_ram.u_macro_2389/LO
+ g_banks\[3\].u_ram.u_macro_2390/LO
+ g_banks\[3\].u_ram.u_macro_2391/LO
+ u_zstore.g_zrams\[0\].u_ram.u_macro_2374/HI
+ u_zstore.g_zrams\[0\].u_ram.u_macro_2392/LO
+ u_zstore.g_zrams\[0\].u_ram.u_macro_2393/LO
+ u_zstore.g_zrams\[0\].u_ram.u_macro_2394/LO
+ u_zstore.g_zrams\[0\].u_ram.u_macro_2395/LO
+ u_zstore.g_zrams\[1\].u_ram.u_macro_2375/HI
+ u_zstore.g_zrams\[1\].u_ram.u_macro_2396/LO
+ u_zstore.g_zrams\[1\].u_ram.u_macro_2397/LO
+ u_zstore.g_zrams\[1\].u_ram.u_macro_2398/LO
+ u_zstore.g_zrams\[1\].u_ram.u_macro_2399/LO
+Found 312 partially unannotated drivers.
+ _054011_/X
+  g_banks\[3\].u_ram.u_macro/din0[21]
+ _054064_/X
+  g_banks\[3\].u_ram.u_macro/din0[19]
+ _099749_/X
+  g_banks\[0\].u_ram.u_macro/din0[29]
+ _099767_/X
+  g_banks\[0\].u_ram.u_macro/din0[28]
+ _099782_/X
+  g_banks\[0\].u_ram.u_macro/din0[27]
+ _099801_/X
+  g_banks\[0\].u_ram.u_macro/din0[26]
+ _099821_/X
+  g_banks\[0\].u_ram.u_macro/din0[25]
+ _099868_/X
+  g_banks\[0\].u_ram.u_macro/din0[23]
+ _099889_/X
+  g_banks\[0\].u_ram.u_macro/din0[22]
+ _099904_/X
+  g_banks\[0\].u_ram.u_macro/din0[21]
+ _099917_/X
+  g_banks\[0\].u_ram.u_macro/din0[20]
+ _099930_/X
+  g_banks\[0\].u_ram.u_macro/din0[19]
+ _099970_/X
+  g_banks\[0\].u_ram.u_macro/din0[16]
+ _099986_/X
+  g_banks\[0\].u_ram.u_macro/din0[15]
+ _100361_/X
+  g_banks\[1\].u_ram.u_macro/din0[31]
+ _100384_/X
+  g_banks\[1\].u_ram.u_macro/din0[30]
+ _100400_/X
+  g_banks\[1\].u_ram.u_macro/din0[29]
+ _100416_/X
+  g_banks\[1\].u_ram.u_macro/din0[28]
+ _100428_/X
+  g_banks\[1\].u_ram.u_macro/din0[27]
+ _100442_/X
+  g_banks\[1\].u_ram.u_macro/din0[26]
+ _100459_/X
+  g_banks\[1\].u_ram.u_macro/din0[25]
+ _100496_/X
+  g_banks\[1\].u_ram.u_macro/din0[23]
+ _100513_/X
+  g_banks\[1\].u_ram.u_macro/din0[22]
+ _100529_/X
+  g_banks\[1\].u_ram.u_macro/din0[21]
+ _100541_/X
+  g_banks\[1\].u_ram.u_macro/din0[20]
+ _100553_/X
+  g_banks\[1\].u_ram.u_macro/din0[19]
+ _100592_/X
+  g_banks\[1\].u_ram.u_macro/din0[16]
+ _100604_/X
+  g_banks\[1\].u_ram.u_macro/din0[15]
+ _100616_/X
+  g_banks\[1\].u_ram.u_macro/din0[14]
+ _100897_/X
+  g_banks\[2\].u_ram.u_macro/din0[31]
+ _100909_/X
+  g_banks\[2\].u_ram.u_macro/din0[30]
+ _100922_/X
+  g_banks\[2\].u_ram.u_macro/din0[29]
+ _100952_/X
+  g_banks\[2\].u_ram.u_macro/din0[27]
+ _100980_/X
+  g_banks\[2\].u_ram.u_macro/din0[25]
+ _101006_/X
+  g_banks\[2\].u_ram.u_macro/din0[23]
+ _101031_/X
+  g_banks\[2\].u_ram.u_macro/din0[21]
+ _101043_/X
+  g_banks\[2\].u_ram.u_macro/din0[20]
+ g_banks\[0\].u_ram.u_macro_2376/HI
+  g_banks\[0\].u_ram.u_macro/wmask0[3]
+ g_banks\[0\].u_ram.u_macro_2377/HI
+  g_banks\[0\].u_ram.u_macro/wmask0[2]
+ g_banks\[0\].u_ram.u_macro_2378/HI
+  g_banks\[0\].u_ram.u_macro/wmask0[1]
+ g_banks\[0\].u_ram.u_macro_2379/HI
+  g_banks\[0\].u_ram.u_macro/wmask0[0]
+ g_banks\[1\].u_ram.u_macro_2380/HI
+  g_banks\[1\].u_ram.u_macro/wmask0[3]
+ g_banks\[1\].u_ram.u_macro_2381/HI
+  g_banks\[1\].u_ram.u_macro/wmask0[2]
+ g_banks\[1\].u_ram.u_macro_2382/HI
+  g_banks\[1\].u_ram.u_macro/wmask0[1]
+ g_banks\[1\].u_ram.u_macro_2383/HI
+  g_banks\[1\].u_ram.u_macro/wmask0[0]
+ g_banks\[2\].u_ram.u_macro_2384/HI
+  g_banks\[2\].u_ram.u_macro/wmask0[3]
+ g_banks\[2\].u_ram.u_macro_2385/HI
+  g_banks\[2\].u_ram.u_macro/wmask0[2]
+ g_banks\[2\].u_ram.u_macro_2386/HI
+  g_banks\[2\].u_ram.u_macro/wmask0[1]
+ g_banks\[2\].u_ram.u_macro_2387/HI
+  g_banks\[2\].u_ram.u_macro/wmask0[0]
+ g_banks\[3\].u_ram.u_macro_2388/HI
+  g_banks\[3\].u_ram.u_macro/wmask0[3]
+ g_banks\[3\].u_ram.u_macro_2389/HI
+  g_banks\[3\].u_ram.u_macro/wmask0[2]
+ g_banks\[3\].u_ram.u_macro_2390/HI
+  g_banks\[3\].u_ram.u_macro/wmask0[1]
+ g_banks\[3\].u_ram.u_macro_2391/HI
+  g_banks\[3\].u_ram.u_macro/wmask0[0]
+ input45/X
+  u_zstore.g_zrams\[0\].u_ram.u_macro/din0[23]
+ max_length2267/X
+  u_zstore.g_zrams\[1\].u_ram.u_macro/din0[6]
+ max_length2340/X
+  u_zstore.g_zrams\[0\].u_ram.u_macro/din0[21]
+ u_zstore.g_zrams\[0\].u_ram.u_macro_2392/HI
+  u_zstore.g_zrams\[0\].u_ram.u_macro/wmask0[3]
+ u_zstore.g_zrams\[0\].u_ram.u_macro_2393/HI
+  u_zstore.g_zrams\[0\].u_ram.u_macro/wmask0[2]
+ u_zstore.g_zrams\[0\].u_ram.u_macro_2394/HI
+  u_zstore.g_zrams\[0\].u_ram.u_macro/wmask0[1]
+ u_zstore.g_zrams\[0\].u_ram.u_macro_2395/HI
+  u_zstore.g_zrams\[0\].u_ram.u_macro/wmask0[0]
+ u_zstore.g_zrams\[1\].u_ram.u_macro_2396/HI
+  u_zstore.g_zrams\[1\].u_ram.u_macro/wmask0[3]
+ u_zstore.g_zrams\[1\].u_ram.u_macro_2397/HI
+  u_zstore.g_zrams\[1\].u_ram.u_macro/wmask0[2]
+ u_zstore.g_zrams\[1\].u_ram.u_macro_2398/HI
+  u_zstore.g_zrams\[1\].u_ram.u_macro/wmask0[1]
+ u_zstore.g_zrams\[1\].u_ram.u_macro_2399/HI
+  u_zstore.g_zrams\[1\].u_ram.u_macro/wmask0[0]
+ wire1/X
+  g_banks\[1\].u_ram.u_macro/addr1[2]
+ wire10/X
+  g_banks\[1\].u_ram.u_macro/addr1[6]
+ wire100/X
+  g_banks\[0\].u_ram.u_macro/din0[2]
+ wire102/X
+  g_banks\[0\].u_ram.u_macro/din0[4]
+ wire104/X
+  g_banks\[0\].u_ram.u_macro/din0[5]
+ wire106/X
+  g_banks\[0\].u_ram.u_macro/din0[14]
+ wire108/X
+  g_banks\[3\].u_ram.u_macro/din0[2]
+ wire11/X
+  g_banks\[1\].u_ram.u_macro/addr1[7]
+ wire110/X
+  g_banks\[3\].u_ram.u_macro/din0[5]
+ wire114/X
+  g_banks\[3\].u_ram.u_macro/din0[7]
+ wire118/X
+  g_banks\[2\].u_ram.u_macro/din0[2]
+ wire119/X
+  g_banks\[2\].u_ram.u_macro/din0[7]
+ wire12/X
+  g_banks\[0\].u_ram.u_macro/addr1[2]
+ wire122/X
+  g_banks\[2\].u_ram.u_macro/din0[14]
+ wire124/X
+  g_banks\[1\].u_ram.u_macro/din0[1]
+ wire129/X
+  g_banks\[1\].u_ram.u_macro/din0[3]
+ wire13/X
+  g_banks\[3\].u_ram.u_macro/addr1[7]
+ wire132/X
+  g_banks\[1\].u_ram.u_macro/din0[4]
+ wire135/X
+  g_banks\[1\].u_ram.u_macro/din0[6]
+ wire138/X
+  g_banks\[1\].u_ram.u_macro/din0[8]
+ wire14/X
+  g_banks\[2\].u_ram.u_macro/addr1[6]
+ wire141/X
+  g_banks\[0\].u_ram.u_macro/din0[3]
+ wire143/X
+  g_banks\[0\].u_ram.u_macro/din0[6]
+ wire145/X
+  g_banks\[0\].u_ram.u_macro/din0[8]
+ wire147/X
+  g_banks\[3\].u_ram.u_macro/din0[1]
+ wire15/X
+  g_banks\[2\].u_ram.u_macro/addr1[4]
+ wire152/X
+  g_banks\[3\].u_ram.u_macro/din0[3]
+ wire156/X
+  g_banks\[3\].u_ram.u_macro/din0[4]
+ wire16/X
+  g_banks\[0\].u_ram.u_macro/addr1[3]
+ wire160/X
+  g_banks\[3\].u_ram.u_macro/din0[6]
+ wire164/X
+  g_banks\[3\].u_ram.u_macro/din0[8]
+ wire168/X
+  g_banks\[3\].u_ram.u_macro/din0[9]
+ wire17/X
+  g_banks\[2\].u_ram.u_macro/addr1[5]
+ wire172/X
+  g_banks\[3\].u_ram.u_macro/din0[10]
+ wire176/X
+  g_banks\[3\].u_ram.u_macro/din0[12]
+ wire178/X
+  g_banks\[3\].u_ram.u_macro/din0[14]
+ wire18/X
+  g_banks\[2\].u_ram.u_macro/addr1[3]
+ wire180/X
+  g_banks\[2\].u_ram.u_macro/din0[1]
+ wire184/X
+  g_banks\[2\].u_ram.u_macro/din0[3]
+ wire187/X
+  g_banks\[2\].u_ram.u_macro/din0[4]
+ wire19/X
+  g_banks\[0\].u_ram.u_macro/addr1[4]
+ wire190/X
+  g_banks\[2\].u_ram.u_macro/din0[5]
+ wire193/X
+  g_banks\[2\].u_ram.u_macro/din0[6]
+ wire196/X
+  g_banks\[2\].u_ram.u_macro/din0[9]
+ wire199/X
+  g_banks\[2\].u_ram.u_macro/din0[10]
+ wire2/X
+  g_banks\[3\].u_ram.u_macro/addr1[6]
+ wire20/X
+  g_banks\[2\].u_ram.u_macro/addr1[7]
+ wire202/X
+  g_banks\[2\].u_ram.u_macro/din0[12]
+ wire204/X
+  g_banks\[1\].u_ram.u_macro/din0[7]
+ wire207/X
+  g_banks\[1\].u_ram.u_macro/din0[9]
+ wire21/X
+  g_banks\[0\].u_ram.u_macro/addr1[6]
+ wire210/X
+  g_banks\[1\].u_ram.u_macro/din0[10]
+ wire213/X
+  g_banks\[1\].u_ram.u_macro/din0[11]
+ wire216/X
+  g_banks\[1\].u_ram.u_macro/din0[12]
+ wire219/X
+  g_banks\[1\].u_ram.u_macro/din0[13]
+ wire22/X
+  g_banks\[0\].u_ram.u_macro/addr1[5]
+ wire2204/X
+  u_zstore.g_zrams\[1\].u_ram.u_macro/din0[22]
+ wire2207/X
+  u_zstore.g_zrams\[0\].u_ram.u_macro/din0[22]
+ wire2208/X
+  u_zstore.g_zrams\[1\].u_ram.u_macro/din0[23]
+ wire2211/X
+  u_zstore.g_zrams\[1\].u_ram.u_macro/din0[24]
+ wire2213/X
+  u_zstore.g_zrams\[0\].u_ram.u_macro/din0[24]
+ wire2214/X
+  u_zstore.g_zrams\[0\].u_ram.u_macro/din0[25]
+ wire2216/X
+  u_zstore.g_zrams\[1\].u_ram.u_macro/din0[25]
+ wire2219/X
+  u_zstore.g_zrams\[0\].u_ram.u_macro/din0[26]
+ wire222/X
+  g_banks\[0\].u_ram.u_macro/din0[7]
+ wire2221/X
+  u_zstore.g_zrams\[1\].u_ram.u_macro/din0[26]
+ wire2225/X
+  u_zstore.g_zrams\[0\].u_ram.u_macro/din0[27]
+ wire2227/X
+  u_zstore.g_zrams\[1\].u_ram.u_macro/din0[27]
+ wire2229/X
+  u_zstore.g_zrams\[0\].u_ram.u_macro/din0[28]
+ wire2231/X
+  u_zstore.g_zrams\[1\].u_ram.u_macro/din0[28]
+ wire2238/X
+  u_zstore.g_zrams\[0\].u_ram.u_macro/din0[0]
+ wire224/X
+  g_banks\[0\].u_ram.u_macro/din0[9]
+ wire2240/X
+  u_zstore.g_zrams\[1\].u_ram.u_macro/din0[0]
+ wire2243/X
+  u_zstore.g_zrams\[1\].u_ram.u_macro/din0[1]
+ wire2245/X
+  u_zstore.g_zrams\[0\].u_ram.u_macro/din0[1]
+ wire2247/X
+  u_zstore.g_zrams\[1\].u_ram.u_macro/din0[29]
+ wire2250/X
+  u_zstore.g_zrams\[0\].u_ram.u_macro/din0[29]
+ wire2251/X
+  u_zstore.g_zrams\[1\].u_ram.u_macro/din0[2]
+ wire2254/X
+  u_zstore.g_zrams\[0\].u_ram.u_macro/din0[2]
+ wire2255/X
+  u_zstore.g_zrams\[1\].u_ram.u_macro/din0[3]
+ wire2257/X
+  u_zstore.g_zrams\[0\].u_ram.u_macro/din0[3]
+ wire2258/X
+  u_zstore.g_zrams\[1\].u_ram.u_macro/din0[4]
+ wire2259/X
+  u_zstore.g_zrams\[0\].u_ram.u_macro/din0[4]
+ wire226/X
+  g_banks\[0\].u_ram.u_macro/din0[10]
+ wire2262/X
+  u_zstore.g_zrams\[1\].u_ram.u_macro/din0[5]
+ wire2264/X
+  u_zstore.g_zrams\[0\].u_ram.u_macro/din0[5]
+ wire2266/X
+  u_zstore.g_zrams\[0\].u_ram.u_macro/din0[6]
+ wire2269/X
+  u_zstore.g_zrams\[1\].u_ram.u_macro/din0[7]
+ wire2271/X
+  u_zstore.g_zrams\[0\].u_ram.u_macro/din0[7]
+ wire2273/X
+  u_zstore.g_zrams\[0\].u_ram.u_macro/din0[8]
+ wire2274/X
+  u_zstore.g_zrams\[1\].u_ram.u_macro/din0[8]
+ wire2279/X
+  u_zstore.g_zrams\[1\].u_ram.u_macro/din0[9]
+ wire228/X
+  g_banks\[0\].u_ram.u_macro/din0[11]
+ wire2281/X
+  u_zstore.g_zrams\[0\].u_ram.u_macro/din0[9]
+ wire2284/X
+  u_zstore.g_zrams\[1\].u_ram.u_macro/din0[10]
+ wire2286/X
+  u_zstore.g_zrams\[0\].u_ram.u_macro/din0[10]
+ wire2288/X
+  u_zstore.g_zrams\[0\].u_ram.u_macro/din0[11]
+ wire2289/X
+  u_zstore.g_zrams\[1\].u_ram.u_macro/din0[11]
+ wire2291/X
+  u_zstore.g_zrams\[0\].u_ram.u_macro/din0[30]
+ wire2294/X
+  u_zstore.g_zrams\[1\].u_ram.u_macro/din0[30]
+ wire2296/X
+  u_zstore.g_zrams\[1\].u_ram.u_macro/din0[12]
+ wire23/X
+  g_banks\[3\].u_ram.u_macro/addr0[2]
+ wire230/X
+  g_banks\[0\].u_ram.u_macro/din0[12]
+ wire2300/X
+  u_zstore.g_zrams\[0\].u_ram.u_macro/din0[12]
+ wire2301/X
+  u_zstore.g_zrams\[0\].u_ram.u_macro/din0[13]
+ wire2302/X
+  u_zstore.g_zrams\[1\].u_ram.u_macro/din0[13]
+ wire2303/X
+  u_zstore.g_zrams\[0\].u_ram.u_macro/din0[14]
+ wire2304/X
+  u_zstore.g_zrams\[1\].u_ram.u_macro/din0[14]
+ wire2308/X
+  u_zstore.g_zrams\[0\].u_ram.u_macro/din0[15]
+ wire2310/X
+  u_zstore.g_zrams\[1\].u_ram.u_macro/din0[15]
+ wire2313/X
+  u_zstore.g_zrams\[1\].u_ram.u_macro/din0[16]
+ wire2316/X
+  u_zstore.g_zrams\[0\].u_ram.u_macro/din0[16]
+ wire2319/X
+  u_zstore.g_zrams\[1\].u_ram.u_macro/din0[17]
+ wire232/X
+  g_banks\[0\].u_ram.u_macro/din0[17]
+ wire2322/X
+  u_zstore.g_zrams\[0\].u_ram.u_macro/din0[17]
+ wire2328/X
+  u_zstore.g_zrams\[0\].u_ram.u_macro/din0[18]
+ wire2329/X
+  u_zstore.g_zrams\[1\].u_ram.u_macro/din0[18]
+ wire2331/X
+  u_zstore.g_zrams\[0\].u_ram.u_macro/din0[19]
+ wire2333/X
+  u_zstore.g_zrams\[1\].u_ram.u_macro/din0[19]
+ wire2334/X
+  u_zstore.g_zrams\[0\].u_ram.u_macro/din0[20]
+ wire2336/X
+  u_zstore.g_zrams\[1\].u_ram.u_macro/din0[20]
+ wire2338/X
+  u_zstore.g_zrams\[1\].u_ram.u_macro/din0[21]
+ wire2343/X
+  u_zstore.g_zrams\[1\].u_ram.u_macro/din0[31]
+ wire2346/X
+  u_zstore.g_zrams\[0\].u_ram.u_macro/din0[31]
+ wire238/X
+  g_banks\[3\].u_ram.u_macro/din0[11]
+ wire24/X
+  g_banks\[0\].u_ram.u_macro/addr1[7]
+ wire243/X
+  g_banks\[3\].u_ram.u_macro/din0[13]
+ wire248/X
+  g_banks\[3\].u_ram.u_macro/din0[16]
+ wire25/X
+  g_banks\[3\].u_ram.u_macro/addr0[3]
+ wire250/X
+  g_banks\[2\].u_ram.u_macro/din0[8]
+ wire253/X
+  g_banks\[2\].u_ram.u_macro/din0[11]
+ wire256/X
+  g_banks\[2\].u_ram.u_macro/din0[13]
+ wire259/X
+  g_banks\[2\].u_ram.u_macro/din0[17]
+ wire26/X
+  g_banks\[0\].u_ram.u_macro/addr0[2]
+ wire262/X
+  g_banks\[1\].u_ram.u_macro/din0[0]
+ wire27/X
+  g_banks\[1\].u_ram.u_macro/addr0[7]
+ wire271/X
+  g_banks\[1\].u_ram.u_macro/din0[17]
+ wire274/X
+  g_banks\[0\].u_ram.u_macro/din0[0]
+ wire276/X
+  g_banks\[0\].u_ram.u_macro/din0[13]
+ wire28/X
+  g_banks\[3\].u_ram.u_macro/addr0[7]
+ wire286/X
+  g_banks\[3\].u_ram.u_macro/din0[0]
+ wire29/X
+  g_banks\[3\].u_ram.u_macro/addr0[6]
+ wire291/X
+  g_banks\[3\].u_ram.u_macro/din0[17]
+ wire295/X
+  g_banks\[2\].u_ram.u_macro/din0[0]
+ wire298/X
+  g_banks\[2\].u_ram.u_macro/din0[16]
+ wire3/X
+  g_banks\[3\].u_ram.u_macro/addr1[4]
+ wire30/X
+  g_banks\[3\].u_ram.u_macro/addr0[5]
+ wire300/X
+  g_banks\[2\].u_ram.u_macro/din0[19]
+ wire305/X
+  g_banks\[1\].u_ram.u_macro/din0[18]
+ wire308/X
+  g_banks\[0\].u_ram.u_macro/din0[18]
+ wire31/X
+  g_banks\[3\].u_ram.u_macro/addr0[4]
+ wire32/X
+  g_banks\[1\].u_ram.u_macro/addr0[2]
+ wire323/X
+  g_banks\[3\].u_ram.u_macro/din0[15]
+ wire325/X
+  g_banks\[3\].u_ram.u_macro/din0[18]
+ wire33/X
+  g_banks\[2\].u_ram.u_macro/addr0[7]
+ wire331/X
+  g_banks\[3\].u_ram.u_macro/din0[20]
+ wire333/X
+  g_banks\[2\].u_ram.u_macro/din0[15]
+ wire335/X
+  g_banks\[2\].u_ram.u_macro/din0[18]
+ wire339/X
+  g_banks\[2\].u_ram.u_macro/din0[22]
+ wire34/X
+  g_banks\[2\].u_ram.u_macro/addr0[6]
+ wire35/X
+  g_banks\[2\].u_ram.u_macro/addr0[2]
+ wire36/X
+  g_banks\[0\].u_ram.u_macro/addr0[3]
+ wire364/X
+  g_banks\[3\].u_ram.u_macro/din0[22]
+ wire37/X
+  g_banks\[1\].u_ram.u_macro/addr0[6]
+ wire376/X
+  g_banks\[3\].u_ram.u_macro/din0[23]
+ wire378/X
+  g_banks\[3\].u_ram.u_macro/din0[25]
+ wire38/X
+  g_banks\[1\].u_ram.u_macro/addr0[5]
+ wire39/X
+  g_banks\[3\].u_ram.u_macro/addr1[0]
+ wire390/X
+  g_banks\[2\].u_ram.u_macro/din0[26]
+ wire395/X
+  g_banks\[0\].u_ram.u_macro/din0[24]
+ wire4/X
+  g_banks\[1\].u_ram.u_macro/addr1[5]
+ wire40/X
+  g_banks\[1\].u_ram.u_macro/addr1[0]
+ wire404/X
+  g_banks\[3\].u_ram.u_macro/din0[26]
+ wire406/X
+  g_banks\[3\].u_ram.u_macro/din0[27]
+ wire409/X
+  g_banks\[2\].u_ram.u_macro/din0[24]
+ wire41/X
+  g_banks\[0\].u_ram.u_macro/addr0[7]
+ wire417/X
+  g_banks\[1\].u_ram.u_macro/din0[24]
+ wire42/X
+  g_banks\[0\].u_ram.u_macro/addr0[6]
+ wire43/X
+  g_banks\[0\].u_ram.u_macro/addr0[5]
+ wire430/X
+  g_banks\[3\].u_ram.u_macro/din0[24]
+ wire434/X
+  g_banks\[3\].u_ram.u_macro/din0[28]
+ wire436/X
+  g_banks\[2\].u_ram.u_macro/din0[28]
+ wire44/X
+  g_banks\[0\].u_ram.u_macro/addr0[4]
+ wire449/X
+  g_banks\[3\].u_ram.u_macro/din0[29]
+ wire45/X
+  g_banks\[1\].u_ram.u_macro/addr0[4]
+ wire456/X
+  g_banks\[0\].u_ram.u_macro/din0[30]
+ wire459/X
+  g_banks\[3\].u_ram.u_macro/din0[30]
+ wire46/X
+  g_banks\[1\].u_ram.u_macro/addr0[3]
+ wire47/X
+  g_banks\[2\].u_ram.u_macro/addr0[5]
+ wire475/X
+  g_banks\[3\].u_ram.u_macro/din0[31]
+ wire48/X
+  g_banks\[2\].u_ram.u_macro/addr0[4]
+ wire49/X
+  g_banks\[2\].u_ram.u_macro/addr0[3]
+ wire5/X
+  g_banks\[1\].u_ram.u_macro/addr1[4]
+ wire50/X
+  g_banks\[3\].u_ram.u_macro/addr1[1]
+ wire51/X
+  g_banks\[1\].u_ram.u_macro/addr1[1]
+ wire52/X
+  u_zstore.g_zrams\[1\].u_ram.u_macro/addr1[4]
+ wire53/X
+  g_banks\[3\].u_ram.u_macro/addr0[1]
+ wire536/X
+  g_banks\[0\].u_ram.u_macro/din0[31]
+ wire54/X
+  g_banks\[3\].u_ram.u_macro/addr0[0]
+ wire55/X
+  u_zstore.g_zrams\[1\].u_ram.u_macro/addr1[7]
+ wire56/X
+  u_zstore.g_zrams\[1\].u_ram.u_macro/addr1[6]
+ wire562/X
+  g_banks\[2\].u_ram.u_macro/addr1[2]
+ wire57/X
+  u_zstore.g_zrams\[1\].u_ram.u_macro/addr1[5]
+ wire58/X
+  u_zstore.g_zrams\[1\].u_ram.u_macro/addr1[3]
+ wire59/X
+  u_zstore.g_zrams\[1\].u_ram.u_macro/addr1[2]
+ wire6/X
+  g_banks\[1\].u_ram.u_macro/addr1[3]
+ wire60/X
+  g_banks\[1\].u_ram.u_macro/addr0[1]
+ wire61/X
+  g_banks\[1\].u_ram.u_macro/addr0[0]
+ wire62/X
+  g_banks\[0\].u_ram.u_macro/addr1[0]
+ wire63/X
+  u_zstore.g_zrams\[1\].u_ram.u_macro/addr1[1]
+ wire64/X
+  g_banks\[0\].u_ram.u_macro/addr0[1]
+ wire65/X
+  g_banks\[0\].u_ram.u_macro/addr0[0]
+ wire66/X
+  g_banks\[0\].u_ram.u_macro/addr1[1]
+ wire67/X
+  g_banks\[2\].u_ram.u_macro/addr0[1]
+ wire68/X
+  g_banks\[2\].u_ram.u_macro/addr0[0]
+ wire69/X
+  u_zstore.g_zrams\[0\].u_ram.u_macro/addr1[4]
+ wire7/X
+  g_banks\[3\].u_ram.u_macro/addr1[5]
+ wire70/X
+  u_zstore.g_zrams\[0\].u_ram.u_macro/addr1[7]
+ wire71/X
+  u_zstore.g_zrams\[0\].u_ram.u_macro/addr1[6]
+ wire72/X
+  u_zstore.g_zrams\[0\].u_ram.u_macro/addr1[5]
+ wire73/X
+  u_zstore.g_zrams\[0\].u_ram.u_macro/addr1[3]
+ wire74/X
+  u_zstore.g_zrams\[0\].u_ram.u_macro/addr1[2]
+ wire75/X
+  u_zstore.g_zrams\[1\].u_ram.u_macro/addr0[0]
+ wire76/X
+  u_zstore.g_zrams\[0\].u_ram.u_macro/addr1[1]
+ wire761/X
+  g_banks\[2\].u_ram.u_macro/addr1[0]
+ wire764/X
+  g_banks\[2\].u_ram.u_macro/addr1[1]
+ wire77/X
+  u_zstore.g_zrams\[1\].u_ram.u_macro/addr1[0]
+ wire78/X
+  u_zstore.g_zrams\[0\].u_ram.u_macro/addr0[0]
+ wire79/X
+  u_zstore.g_zrams\[0\].u_ram.u_macro/addr0[7]
+ wire8/X
+  g_banks\[3\].u_ram.u_macro/addr1[3]
+ wire80/X
+  u_zstore.g_zrams\[0\].u_ram.u_macro/addr0[6]
+ wire81/X
+  u_zstore.g_zrams\[0\].u_ram.u_macro/addr0[5]
+ wire82/X
+  u_zstore.g_zrams\[0\].u_ram.u_macro/addr0[4]
+ wire83/X
+  u_zstore.g_zrams\[0\].u_ram.u_macro/addr0[3]
+ wire84/X
+  u_zstore.g_zrams\[0\].u_ram.u_macro/addr0[2]
+ wire85/X
+  u_zstore.g_zrams\[0\].u_ram.u_macro/addr0[1]
+ wire86/X
+  u_zstore.g_zrams\[1\].u_ram.u_macro/addr0[7]
+ wire87/X
+  u_zstore.g_zrams\[1\].u_ram.u_macro/addr0[6]
+ wire88/X
+  u_zstore.g_zrams\[1\].u_ram.u_macro/addr0[5]
+ wire89/X
+  u_zstore.g_zrams\[1\].u_ram.u_macro/addr0[4]
+ wire9/X
+  g_banks\[3\].u_ram.u_macro/addr1[2]
+ wire90/X
+  u_zstore.g_zrams\[1\].u_ram.u_macro/addr0[3]
+ wire91/X
+  u_zstore.g_zrams\[1\].u_ram.u_macro/addr0[2]
+ wire92/X
+  u_zstore.g_zrams\[1\].u_ram.u_macro/addr0[1]
+ wire93/X
+  u_zstore.g_zrams\[0\].u_ram.u_macro/addr1[0]
+ wire94/X
+  g_banks\[1\].u_ram.u_macro/din0[2]
+ wire95/X
+  g_banks\[1\].u_ram.u_macro/din0[5]
+ wire98/X
+  g_banks\[0\].u_ram.u_macro/din0[1]
+
+===========================================================================
+max slew violation count 0
+max fanout violation count 0
+max cap violation count 0
+============================================================================
+
+===========================================================================
+check_setup -verbose -unconstrained_endpoints -multiple_clock -no_clock -no_input_delay -loops -generated_clocks
+===========================================================================
