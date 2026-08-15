@@ -20,6 +20,10 @@ export UPRJ_ROOT?=$(PWD)
 PRECHECK_ROOT?=${HOME}/mpw_precheck
 export MCW_ROOT?=$(PWD)/mgmt_core_wrapper
 SIM?=RTL
+DV_IMAGE?=efabless/dv:cocotb
+DV_TOOLS?=/opt/riscv
+DV_GCC_PREFIX?=riscv32-unknown-elf
+DV_CPUFLAGS?=-march=rv32i_zicsr -mabi=ilp32 -D__vexriscv__
 
 # Install lite version of caravel, (1): caravel-lite, (0): caravel
 CARAVEL_LITE?=1
@@ -109,7 +113,7 @@ install:
 # Install DV setup
 .PHONY: simenv
 simenv:
-	docker pull efabless/dv:latest
+	docker pull $(DV_IMAGE)
 
 # Install cocotb docker
 .PHONY: simenv-cocotb
@@ -137,7 +141,7 @@ cocotb-dv-targets-gl=$(cocotb-dv_patterns:%=cocotb-verify-%-gl)
 dv-targets-gl-sdf=$(dv_patterns:%=verify-%-gl-sdf)
 
 TARGET_PATH=$(shell pwd)
-verify_command="source ~/.bashrc && cd ${TARGET_PATH}/verilog/dv/$* && export SIM=${SIM} && make"
+verify_command="cd ${TARGET_PATH}/verilog/dv/$* && export SIM=${SIM} && make CPUFLAGS='$(DV_CPUFLAGS)'"
 dv_base_dependencies=simenv
 docker_run_verify=\
 	docker run \
@@ -147,14 +151,15 @@ docker_run_verify=\
 		-v ${MCW_ROOT}:${MCW_ROOT} \
 		-e TARGET_PATH=${TARGET_PATH} -e PDK_ROOT=${PDK_ROOT} \
 		-e CARAVEL_ROOT=${CARAVEL_ROOT} \
-		-e TOOLS=/foss/tools/riscv-gnu-toolchain-rv32i/217e7f3debe424d61374d31e33a091a630535937 \
+		-e TOOLS=$(DV_TOOLS) \
+		-e GCC_PREFIX=$(DV_GCC_PREFIX) \
 		-e DESIGNS=$(TARGET_PATH) \
 		-e USER_PROJECT_VERILOG=$(TARGET_PATH)/verilog \
 		-e PDK=$(PDK) \
 		-e CORE_VERILOG_PATH=$(TARGET_PATH)/mgmt_core_wrapper/verilog \
 		-e CARAVEL_VERILOG_PATH=$(TARGET_PATH)/caravel/verilog \
 		-e MCW_ROOT=$(MCW_ROOT) \
-		efabless/dv:latest \
+		$(DV_IMAGE) \
 		sh -c $(verify_command)
 
 .PHONY: harden
