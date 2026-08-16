@@ -1,0 +1,5 @@
+# SPDX-License-Identifier: Apache-2.0
+
+# Tests run by `cf verify --all` from verilog/dv/cocotb.
+includes:
+    - ../hello_world/hello_world.yaml
