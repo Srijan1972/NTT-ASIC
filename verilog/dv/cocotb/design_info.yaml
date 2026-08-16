@@ -1,11 +1,8 @@
-# SPDX-FileCopyrightText: 2026 Srijan1972
-# SPDX-License-Identifier: Apache-2.0
-
-CARAVEL_ROOT: /usr/caravel_user_project/caravel
-MCW_ROOT: /usr/caravel_user_project/mgmt_core_wrapper
+CARAVEL_ROOT: /home/singularity1/NTT-ASIC/caravel
+MCW_ROOT: /home/singularity1/NTT-ASIC/mgmt_core_wrapper
 PDK: sky130A
-PDK_ROOT: /usr/pdk
-USER_PROJECT_ROOT: /usr/caravel_user_project
+PDK_ROOT: /home/singularity1/NTT-ASIC/dependencies/pdks
+USER_PROJECT_ROOT: /home/singularity1/NTT-ASIC
 caravan: false
 clk: 25
 emailto:
