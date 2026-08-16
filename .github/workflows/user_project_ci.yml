@@ -10,10 +10,16 @@ jobs:
     timeout-minutes: 720
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
         pdk: ["sky130A", "sky130B"]
     steps:
       - uses: actions/checkout@v4
+
+      - name: Fetch SRAM GDS
+        run: |
+          git lfs install --local
+          git lfs pull --include="macros/sky130_sram_1kbyte_1rw1r_32x256_8/sky130_sram_1kbyte_1rw1r_32x256_8.gds" --exclude=""
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1
@@ -39,6 +45,7 @@ jobs:
           project_json = Path('.cf/project.json')
           
           data = {
+              "pdk": "${{ matrix.pdk }}",
               "project": {
                   "name": project_name,
                   "type": "digital",
@@ -108,6 +115,7 @@ jobs:
           project_json = Path('.cf/project.json')
           
           data = {
+              "pdk": "${{ matrix.pdk }}",
               "project": {
                   "name": project_name,
                   "type": "digital",
