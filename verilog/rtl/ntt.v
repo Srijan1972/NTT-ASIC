@@ -206,8 +206,13 @@ module ntt (
 
     ntt_engine_256 u_engine (
 `ifdef USE_POWER_PINS
+`ifdef HARDENED_ENGINE_MACRO
+        .VPWR(vccd1),
+        .VGND(vssd1),
+`else
         .vccd1(vccd1),
         .vssd1(vssd1),
+`endif
 `endif
         .clk(wb_clk_i),
         .rst_n(~wb_rst_i),

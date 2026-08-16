@@ -2,28 +2,33 @@
     "DESIGN_NAME": "user_project_wrapper",
     "VERILOG_FILES": [
         "dir::../../verilog/rtl/defines.v",
-        "dir::../../verilog/rtl/user_project_wrapper.v"
+        "dir::../../verilog/rtl/user_project_wrapper.v",
+        "dir::../../verilog/rtl/ntt.v"
     ],
     "ROUTING_CORES": 1,
+    "GRT_ADJUSTMENT": 0.3,
+    "RUN_IRDROP_REPORT": 0,
     "CLOCK_PERIOD": 25,
     "CLOCK_PORT": "wb_clk_i",
-    "CLOCK_NET": "ntt.wb_clk_i",
-    "FP_PDN_MACRO_HOOKS": "ntt vccd1 vssd1 vccd1 vssd1",
+    "CLOCK_NET": "ntt.u_engine.clk",
+    "FP_PDN_MACRO_HOOKS": "ntt.u_engine vccd1 vssd1 VPWR VGND",
     "MACRO_PLACEMENT_CFG": "dir::macro.cfg",
     "MAGIC_DEF_LABELS": 0,
     "VERILOG_FILES_BLACKBOX": [
-        "dir::../../verilog/gl/ntt.v"
+        "dir::../../verilog/gl/ntt_engine_256.v"
     ],
-    "EXTRA_LEFS": "dir::../../lef/ntt.lef",
-    "EXTRA_GDS_FILES": "dir::../../gds/ntt.gds",
-    "EXTRA_LIBS": "dir::../../lib/ntt.lib",
+    "EXTRA_LEFS": "dir::../../lef/ntt_engine_256.lef",
+    "EXTRA_GDS_FILES": "dir::../../gds/ntt_engine_256.gds.gz",
+    "EXTRA_LIBS": "dir::../../lib/ntt_engine_256.lib",
+    "SYNTH_DEFINES": [
+        "HARDENED_ENGINE_MACRO"
+    ],
     "BASE_SDC_FILE": "dir::base_user_project_wrapper.sdc",
     "IO_SYNC": 0,
     "MAX_TRANSITION_CONSTRAINT": 1.5,
     "RUN_LINTER": 0,
     "QUIT_ON_SYNTH_CHECKS": 0,
     "FP_PDN_CHECK_NODES": 0,
-    "SYNTH_ELABORATE_ONLY": 1,
     "PL_RANDOM_GLB_PLACEMENT": 1,
     "PL_RESIZER_DESIGN_OPTIMIZATIONS": 0,
     "PL_RESIZER_TIMING_OPTIMIZATIONS": 0,
