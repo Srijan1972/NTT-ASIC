@@ -1,9 +1,0 @@
-# Synthesizability check with the SRAM macro blackboxed, mirroring what
-# OpenLane's synth step sees (macro treated as a hard block).
-read_verilog -sv -DUSE_SRAM_MACRO rtl/modmul_solinas.sv rtl/ntt_butterfly_ct.sv rtl/zeta_store.sv rtl/asic_sram_1r1w_sky130.v rtl/asic_sram_1rw1r_sky130.v sim/sky130_sram_beh.v rtl/ntt_engine_256.sv
-blackbox sky130_sram_1kbyte_1rw1r_32x256_8
-hierarchy -check -top ntt_engine_256
-proc; opt; fsm; opt; memory; opt
-techmap; opt
-stat
-check -assert

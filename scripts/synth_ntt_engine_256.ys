@@ -1,6 +1,0 @@
-read_verilog -sv rtl/modmul_solinas.sv rtl/ntt_butterfly_ct.sv rtl/zeta_store.sv rtl/bank_ram_1r1w.sv rtl/bank_ram_1rw1r.sv rtl/ntt_engine_256.sv
-hierarchy -check -top ntt_engine_256
-proc; opt; fsm; opt; memory; opt
-techmap; opt
-stat
-check -assert

@@ -1,0 +1,1021 @@
+
+===========================================================================
+report_checks -unconstrained
+===========================================================================
+======================= nom_ff_n40C_1v95 Corner ===================================
+
+Startpoint: u_engine.g_banks[0].u_ram.u_macro
+            (falling edge-triggered flip-flop clocked by wb_clk)
+Endpoint: _74332_ (rising edge-triggered flip-flop clocked by wb_clk)
+Path Group: wb_clk
+Path Type: max
+
+Fanout         Cap        Slew       Delay        Time   Description
+---------------------------------------------------------------------------------------------
+                                 12.500000   12.500000   clock wb_clk (fall edge)
+                                  0.000000   12.500000   clock source latency
+     2    0.243368    0.000000    0.000000   12.500000 v wb_clk_i (in)
+                                                         wb_clk_i (net)
+                      0.064916    0.032458   12.532458 v clkbuf_0_wb_clk_i/A (sky130_fd_sc_hd__clkbuf_16)
+     3    0.120456    0.071880    0.147896   12.680354 v clkbuf_0_wb_clk_i/X (sky130_fd_sc_hd__clkbuf_16)
+                                                         clknet_0_wb_clk_i (net)
+                      0.077239    0.015254   12.695607 v clkbuf_1_0_0_wb_clk_i/A (sky130_fd_sc_hd__clkbuf_8)
+     3    0.118494    0.093246    0.169019   12.864626 v clkbuf_1_0_0_wb_clk_i/X (sky130_fd_sc_hd__clkbuf_8)
+                                                         clknet_1_0_0_wb_clk_i (net)
+                      0.095520    0.011532   12.876159 v clkbuf_2_0_0_wb_clk_i/A (sky130_fd_sc_hd__clkbuf_8)
+     2    0.104204    0.084471    0.164423   13.040582 v clkbuf_2_0_0_wb_clk_i/X (sky130_fd_sc_hd__clkbuf_8)
+                                                         clknet_2_0_0_wb_clk_i (net)
+                      0.088905    0.015000   13.055582 v clkbuf_3_0_0_wb_clk_i/A (sky130_fd_sc_hd__clkbuf_8)
+     3    0.085404    0.074133    0.158780   13.214361 v clkbuf_3_0_0_wb_clk_i/X (sky130_fd_sc_hd__clkbuf_8)
+                                                         clknet_3_0_0_wb_clk_i (net)
+                      0.075000    0.006507   13.220868 v clkbuf_4_0_0_wb_clk_i/A (sky130_fd_sc_hd__clkbuf_8)
+     4    0.070041    0.063177    0.144587   13.365455 v clkbuf_4_0_0_wb_clk_i/X (sky130_fd_sc_hd__clkbuf_8)
+                                                         clknet_4_0_0_wb_clk_i (net)
+                      0.063261    0.001947   13.367402 v clkbuf_6_2_0_wb_clk_i/A (sky130_fd_sc_hd__clkbuf_8)
+    13    0.109282    0.086172    0.160650   13.528052 v clkbuf_6_2_0_wb_clk_i/X (sky130_fd_sc_hd__clkbuf_8)
+                                                         clknet_6_2_0_wb_clk_i (net)
+                      0.115177    0.003531   13.531583 v u_engine.g_banks[0].u_ram.u_macro/clk1 (sky130_sram_1kbyte_1rw1r_32x256_8)
+     2    0.028379    0.016436    0.488598   14.020181 ^ u_engine.g_banks[0].u_ram.u_macro/dout1[4] (sky130_sram_1kbyte_1rw1r_32x256_8)
+                                                         u_engine.bank_rdata[0][4] (net)
+                      0.012327    0.003193   14.023374 ^ wire2338/A (sky130_fd_sc_hd__clkbuf_2)
+     1    0.026082    0.112124    0.117216   14.140590 ^ wire2338/X (sky130_fd_sc_hd__clkbuf_2)
+                                                         net2338 (net)
+                      0.112273    0.003310   14.143900 ^ wire2337/A (sky130_fd_sc_hd__clkbuf_4)
+     3    0.167048    0.376586    0.326839   14.470738 ^ wire2337/X (sky130_fd_sc_hd__clkbuf_4)
+                                                         net2337 (net)
+                      0.389186    0.054295   14.525034 ^ wire2336/A (sky130_fd_sc_hd__buf_4)
+     1    0.008245    0.036118    0.100823   14.625857 ^ wire2336/X (sky130_fd_sc_hd__buf_4)
+                                                         net2336 (net)
+                      0.036124    0.000403   14.626261 ^ fanout2334/A (sky130_fd_sc_hd__buf_4)
+     2    0.049819    0.107814    0.125648   14.751908 ^ fanout2334/X (sky130_fd_sc_hd__buf_4)
+                                                         net2334 (net)
+                      0.108765    0.008125   14.760034 ^ wire2335/A (sky130_fd_sc_hd__buf_4)
+     3    0.112730    0.233771    0.229605   14.989638 ^ wire2335/X (sky130_fd_sc_hd__buf_4)
+                                                         net2335 (net)
+                      0.233973    0.005700   14.995338 ^ fanout2332/A (sky130_fd_sc_hd__buf_1)
+     2    0.018934    0.168482    0.154328   15.149667 ^ fanout2332/X (sky130_fd_sc_hd__buf_1)
+                                                         net2332 (net)
+                      0.168493    0.001101   15.150768 ^ fanout2331/A (sky130_fd_sc_hd__buf_1)
+     2    0.016294    0.146223    0.139643   15.290411 ^ fanout2331/X (sky130_fd_sc_hd__buf_1)
+                                                         net2331 (net)
+                      0.146231    0.000897   15.291308 ^ fanout2330/A (sky130_fd_sc_hd__clkbuf_1)
+     2    0.009093    0.085137    0.097746   15.389054 ^ fanout2330/X (sky130_fd_sc_hd__clkbuf_1)
+                                                         net2330 (net)
+                      0.085137    0.000121   15.389174 ^ fanout2329/A (sky130_fd_sc_hd__buf_1)
+     4    0.015109    0.136223    0.130676   15.519851 ^ fanout2329/X (sky130_fd_sc_hd__buf_1)
+                                                         net2329 (net)
+                      0.136226    0.000488   15.520339 ^ _64972_/A1 (sky130_fd_sc_hd__o22a_1)
+     3    0.010506    0.082830    0.129090   15.649429 ^ _64972_/X (sky130_fd_sc_hd__o22a_1)
+                                                         _24791_ (net)
+                      0.082830    0.000252   15.649681 ^ _64973_/A1 (sky130_fd_sc_hd__mux2_2)
+     4    0.017563    0.076348    0.141551   15.791232 ^ _64973_/X (sky130_fd_sc_hd__mux2_2)
+                                                         u_engine.l1b_b[4] (net)
+                      0.076352    0.000609   15.791842 ^ _64981_/A (sky130_fd_sc_hd__xor2_1)
+     3    0.012159    0.068594    0.074735   15.866576 v _64981_/X (sky130_fd_sc_hd__xor2_1)
+                                                         _24798_ (net)
+                      0.068598    0.000457   15.867033 v _65017_/A1 (sky130_fd_sc_hd__o211ai_2)
+     3    0.013094    0.156865    0.171978   16.039011 ^ _65017_/Y (sky130_fd_sc_hd__o211ai_2)
+                                                         _24828_ (net)
+                      0.156865    0.000369   16.039379 ^ _65031_/A3 (sky130_fd_sc_hd__a31o_4)
+     2    0.028693    0.077729    0.142624   16.182003 ^ _65031_/X (sky130_fd_sc_hd__a31o_4)
+                                                         _24839_ (net)
+                      0.077871    0.002256   16.184259 ^ _65048_/A2 (sky130_fd_sc_hd__a21boi_4)
+     3    0.012427    0.046067    0.043663   16.227922 v _65048_/Y (sky130_fd_sc_hd__a21boi_4)
+                                                         _24853_ (net)
+                      0.046067    0.000320   16.228243 v _65086_/A1 (sky130_fd_sc_hd__o211a_1)
+     2    0.009983    0.050470    0.168050   16.396294 v _65086_/X (sky130_fd_sc_hd__o211a_1)
+                                                         _24885_ (net)
+                      0.050472    0.000313   16.396605 v _65123_/C (sky130_fd_sc_hd__or4_4)
+     2    0.030620    0.087938    0.331973   16.728579 v _65123_/X (sky130_fd_sc_hd__or4_4)
+                                                         _24916_ (net)
+                      0.088260    0.003444   16.732023 v _65161_/A2 (sky130_fd_sc_hd__a211o_1)
+     2    0.008566    0.053112    0.219840   16.951862 v _65161_/X (sky130_fd_sc_hd__a211o_1)
+                                                         _24948_ (net)
+                      0.053113    0.000290   16.952152 v _65195_/A2 (sky130_fd_sc_hd__a311o_1)
+     2    0.009591    0.062818    0.225624   17.177776 v _65195_/X (sky130_fd_sc_hd__a311o_1)
+                                                         _24976_ (net)
+                      0.062820    0.000384   17.178160 v _65230_/A2 (sky130_fd_sc_hd__a211o_1)
+     2    0.007359    0.048687    0.206732   17.384892 v _65230_/X (sky130_fd_sc_hd__a211o_1)
+                                                         _25005_ (net)
+                      0.048687    0.000171   17.385063 v _65268_/A2 (sky130_fd_sc_hd__a311o_1)
+     2    0.024533    0.110099    0.270255   17.655317 v _65268_/X (sky130_fd_sc_hd__a311o_1)
+                                                         _25037_ (net)
+                      0.110140    0.001982   17.657301 v _65303_/A2 (sky130_fd_sc_hd__a211oi_4)
+     3    0.020337    0.222750    0.259863   17.917164 ^ _65303_/Y (sky130_fd_sc_hd__a211oi_4)
+                                                         _25066_ (net)
+                      0.222752    0.001348   17.918512 ^ _65344_/A1 (sky130_fd_sc_hd__o2111a_4)
+     3    0.024254    0.069970    0.178634   18.097145 ^ _65344_/X (sky130_fd_sc_hd__o2111a_4)
+                                                         _25101_ (net)
+                      0.070018    0.001638   18.098783 ^ _65379_/A3 (sky130_fd_sc_hd__o31ai_4)
+     3    0.016073    0.059353    0.047882   18.146666 v _65379_/Y (sky130_fd_sc_hd__o31ai_4)
+                                                         _25130_ (net)
+                      0.059357    0.000913   18.147577 v _65395_/A2 (sky130_fd_sc_hd__o21a_1)
+     3    0.012582    0.054127    0.144237   18.291815 v _65395_/X (sky130_fd_sc_hd__o21a_1)
+                                                         _25143_ (net)
+                      0.054129    0.000421   18.292236 v _65399_/A (sky130_fd_sc_hd__nor2_2)
+     2    0.008349    0.082618    0.100918   18.393154 ^ _65399_/Y (sky130_fd_sc_hd__nor2_2)
+                                                         _25147_ (net)
+                      0.082618    0.000213   18.393368 ^ _65416_/A2 (sky130_fd_sc_hd__o21ba_4)
+     2    0.007302    0.032759    0.088615   18.481983 ^ _65416_/X (sky130_fd_sc_hd__o21ba_4)
+                                                         _25161_ (net)
+                      0.032759    0.000192   18.482174 ^ _65430_/B1 (sky130_fd_sc_hd__a21o_1)
+     2    0.014617    0.100434    0.098773   18.580948 ^ _65430_/X (sky130_fd_sc_hd__a21o_1)
+                                                         _25172_ (net)
+                      0.100436    0.000606   18.581553 ^ _65448_/A1 (sky130_fd_sc_hd__a21bo_4)
+     2    0.017214    0.052021    0.101997   18.683550 ^ _65448_/X (sky130_fd_sc_hd__a21bo_4)
+                                                         _25187_ (net)
+                      0.052034    0.000792   18.684341 ^ _65449_/B (sky130_fd_sc_hd__nand2b_4)
+     2    0.007631    0.028465    0.032349   18.716690 v _65449_/Y (sky130_fd_sc_hd__nand2b_4)
+                                                         _25188_ (net)
+                      0.028465    0.000295   18.716986 v _65462_/A (sky130_fd_sc_hd__and3_1)
+     1    0.003663    0.030274    0.089466   18.806452 v _65462_/X (sky130_fd_sc_hd__and3_1)
+                                                         _25198_ (net)
+                      0.030274    0.000123   18.806574 v _65464_/C (sky130_fd_sc_hd__or3_4)
+     1    0.005553    0.047009    0.194028   19.000603 v _65464_/X (sky130_fd_sc_hd__or3_4)
+                                                         _25200_ (net)
+                      0.047010    0.000181   19.000784 v _65465_/A (sky130_fd_sc_hd__xnor2_1)
+     1    0.002983    0.036311    0.084050   19.084833 v _65465_/Y (sky130_fd_sc_hd__xnor2_1)
+                                                         u_engine.u_bf_l1b.mm_b[31] (net)
+                      0.036311    0.000096   19.084930 v _74332_/D (sky130_fd_sc_hd__dfxtp_2)
+                                             19.084930   data arrival time
+
+                                 25.000000   25.000000   clock wb_clk (rise edge)
+                                  0.000000   25.000000   clock source latency
+     2    0.244364    0.000000    0.000000   25.000000 ^ wb_clk_i (in)
+                                                         wb_clk_i (net)
+                      0.065424    0.032712   25.032711 ^ clkbuf_0_wb_clk_i/A (sky130_fd_sc_hd__clkbuf_16)
+     3    0.121421    0.105914    0.145178   25.177889 ^ clkbuf_0_wb_clk_i/X (sky130_fd_sc_hd__clkbuf_16)
+                                                         clknet_0_wb_clk_i (net)
+                      0.107761    0.011093   25.188982 ^ clkbuf_1_1_0_wb_clk_i/A (sky130_fd_sc_hd__clkbuf_8)
+     3    0.091134    0.124688    0.166347   25.355330 ^ clkbuf_1_1_0_wb_clk_i/X (sky130_fd_sc_hd__clkbuf_8)
+                                                         clknet_1_1_0_wb_clk_i (net)
+                      0.128021    0.016133   25.371462 ^ clkbuf_2_2_0_wb_clk_i/A (sky130_fd_sc_hd__clkbuf_8)
+     2    0.023548    0.042987    0.116845   25.488308 ^ clkbuf_2_2_0_wb_clk_i/X (sky130_fd_sc_hd__clkbuf_8)
+                                                         clknet_2_2_0_wb_clk_i (net)
+                      0.043186    0.002066   25.490374 ^ clkbuf_3_4_0_wb_clk_i/A (sky130_fd_sc_hd__clkbuf_8)
+     3    0.103095    0.139860    0.155961   25.646334 ^ clkbuf_3_4_0_wb_clk_i/X (sky130_fd_sc_hd__clkbuf_8)
+                                                         clknet_3_4_0_wb_clk_i (net)
+                      0.143424    0.017701   25.664036 ^ clkbuf_4_8_0_wb_clk_i/A (sky130_fd_sc_hd__clkbuf_8)
+     4    0.112272    0.150841    0.195614   25.859650 ^ clkbuf_4_8_0_wb_clk_i/X (sky130_fd_sc_hd__clkbuf_8)
+                                                         clknet_4_8_0_wb_clk_i (net)
+                      0.150997    0.004006   25.863655 ^ clkbuf_6_33_0_wb_clk_i/A (sky130_fd_sc_hd__clkbuf_8)
+     7    0.062539    0.089935    0.154785   26.018440 ^ clkbuf_6_33_0_wb_clk_i/X (sky130_fd_sc_hd__clkbuf_8)
+                                                         clknet_6_33_0_wb_clk_i (net)
+                      0.090088    0.002526   26.020966 ^ clkbuf_leaf_89_wb_clk_i/A (sky130_fd_sc_hd__clkbuf_8)
+    10    0.039789    0.061323    0.122627   26.143593 ^ clkbuf_leaf_89_wb_clk_i/X (sky130_fd_sc_hd__clkbuf_8)
+                                                         clknet_leaf_89_wb_clk_i (net)
+                      0.061328    0.000611   26.144203 ^ _74332_/CLK (sky130_fd_sc_hd__dfxtp_2)
+                                 -0.250000   25.894205   clock uncertainty
+                                  0.000000   25.894205   clock reconvergence pessimism
+                                 -0.069939   25.824266   library setup time
+                                             25.824266   data required time
+---------------------------------------------------------------------------------------------
+                                             25.824266   data required time
+                                            -19.084930   data arrival time
+---------------------------------------------------------------------------------------------
+                                              6.739336   slack (MET)
+
+
+
+
+===========================================================================
+report_checks --slack_max -0.01
+============================================================================
+======================= nom_ff_n40C_1v95 Corner ===================================
+
+No paths found.
+
+
+===========================================================================
+ report_check_types -max_slew -max_cap -max_fanout -violators
+============================================================================
+======================= nom_ff_n40C_1v95 Corner ===================================
+
+max capacitance
+
+Pin                                        Limit         Cap       Slack
+------------------------------------------------------------------------
+u_engine.u_zstore.g_zrams[0].u_ram.u_macro/dout0[21]    0.027560    0.063993   -0.036433 (VIOLATED)
+u_engine.u_zstore.g_zrams[1].u_ram.u_macro/dout0[3]    0.027560    0.062466   -0.034906 (VIOLATED)
+u_engine.u_zstore.g_zrams[0].u_ram.u_macro/dout0[20]    0.027560    0.059697   -0.032137 (VIOLATED)
+u_engine.u_zstore.g_zrams[1].u_ram.u_macro/dout1[2]    0.027560    0.058838   -0.031278 (VIOLATED)
+u_engine.u_zstore.g_zrams[0].u_ram.u_macro/dout0[4]    0.027560    0.054108   -0.026548 (VIOLATED)
+u_engine.u_zstore.g_zrams[1].u_ram.u_macro/dout1[0]    0.027560    0.054108   -0.026548 (VIOLATED)
+u_engine.u_zstore.g_zrams[1].u_ram.u_macro/dout1[4]    0.027560    0.052695   -0.025135 (VIOLATED)
+u_engine.u_zstore.g_zrams[1].u_ram.u_macro/dout0[22]    0.027560    0.052261   -0.024701 (VIOLATED)
+u_engine.u_zstore.g_zrams[0].u_ram.u_macro/dout0[19]    0.027560    0.052178   -0.024618 (VIOLATED)
+u_engine.u_zstore.g_zrams[0].u_ram.u_macro/dout0[2]    0.027560    0.051635   -0.024075 (VIOLATED)
+u_engine.u_zstore.g_zrams[1].u_ram.u_macro/dout1[3]    0.027560    0.050914   -0.023354 (VIOLATED)
+u_engine.u_zstore.g_zrams[0].u_ram.u_macro/dout1[9]    0.027560    0.050713   -0.023153 (VIOLATED)
+u_engine.u_zstore.g_zrams[0].u_ram.u_macro/dout1[5]    0.027560    0.050577   -0.023017 (VIOLATED)
+u_engine.u_zstore.g_zrams[1].u_ram.u_macro/dout1[17]    0.027560    0.048987   -0.021427 (VIOLATED)
+u_engine.u_zstore.g_zrams[1].u_ram.u_macro/dout1[20]    0.027560    0.048315   -0.020755 (VIOLATED)
+u_engine.u_zstore.g_zrams[1].u_ram.u_macro/dout0[19]    0.027560    0.047914   -0.020354 (VIOLATED)
+u_engine.u_zstore.g_zrams[1].u_ram.u_macro/dout1[8]    0.027560    0.047538   -0.019978 (VIOLATED)
+u_engine.u_zstore.g_zrams[1].u_ram.u_macro/dout1[13]    0.027560    0.046880   -0.019320 (VIOLATED)
+u_engine.g_banks[3].u_ram.u_macro/dout1[24]    0.027560    0.046797   -0.019237 (VIOLATED)
+u_engine.u_zstore.g_zrams[0].u_ram.u_macro/dout0[1]    0.027560    0.046567   -0.019007 (VIOLATED)
+u_engine.u_zstore.g_zrams[0].u_ram.u_macro/dout1[17]    0.027560    0.045253   -0.017693 (VIOLATED)
+u_engine.u_zstore.g_zrams[1].u_ram.u_macro/dout1[6]    0.027560    0.044399   -0.016839 (VIOLATED)
+u_engine.u_zstore.g_zrams[0].u_ram.u_macro/dout1[20]    0.027560    0.044172   -0.016612 (VIOLATED)
+u_engine.u_zstore.g_zrams[0].u_ram.u_macro/dout1[13]    0.027560    0.043851   -0.016291 (VIOLATED)
+u_engine.u_zstore.g_zrams[1].u_ram.u_macro/dout1[22]    0.027560    0.043120   -0.015560 (VIOLATED)
+u_engine.g_banks[3].u_ram.u_macro/dout1[15]    0.027560    0.042940   -0.015380 (VIOLATED)
+u_engine.u_zstore.g_zrams[0].u_ram.u_macro/dout1[0]    0.027560    0.042917   -0.015357 (VIOLATED)
+u_engine.u_zstore.g_zrams[0].u_ram.u_macro/dout1[22]    0.027560    0.042656   -0.015096 (VIOLATED)
+u_engine.u_zstore.g_zrams[0].u_ram.u_macro/dout0[5]    0.027560    0.042499   -0.014939 (VIOLATED)
+u_engine.u_zstore.g_zrams[0].u_ram.u_macro/dout0[3]    0.027560    0.042180   -0.014620 (VIOLATED)
+u_engine.u_zstore.g_zrams[0].u_ram.u_macro/dout1[6]    0.027560    0.042001   -0.014441 (VIOLATED)
+u_engine.u_zstore.g_zrams[1].u_ram.u_macro/dout0[20]    0.027560    0.041821   -0.014261 (VIOLATED)
+u_engine.u_zstore.g_zrams[0].u_ram.u_macro/dout0[10]    0.027560    0.041753   -0.014193 (VIOLATED)
+u_engine.u_zstore.g_zrams[0].u_ram.u_macro/dout1[4]    0.027560    0.041544   -0.013984 (VIOLATED)
+u_engine.u_zstore.g_zrams[1].u_ram.u_macro/dout0[4]    0.027560    0.041448   -0.013888 (VIOLATED)
+u_engine.u_zstore.g_zrams[0].u_ram.u_macro/dout1[29]    0.027560    0.041403   -0.013843 (VIOLATED)
+u_engine.u_zstore.g_zrams[0].u_ram.u_macro/dout0[6]    0.027560    0.040327   -0.012767 (VIOLATED)
+u_engine.u_zstore.g_zrams[0].u_ram.u_macro/dout1[8]    0.027560    0.040238   -0.012678 (VIOLATED)
+u_engine.u_zstore.g_zrams[1].u_ram.u_macro/dout0[2]    0.027560    0.039359   -0.011799 (VIOLATED)
+u_engine.u_zstore.g_zrams[0].u_ram.u_macro/dout0[22]    0.027560    0.038875   -0.011315 (VIOLATED)
+u_engine.u_zstore.g_zrams[0].u_ram.u_macro/dout0[0]    0.027560    0.038085   -0.010525 (VIOLATED)
+u_engine.u_zstore.g_zrams[0].u_ram.u_macro/dout0[7]    0.027560    0.037902   -0.010342 (VIOLATED)
+u_engine.u_zstore.g_zrams[0].u_ram.u_macro/dout1[2]    0.027560    0.037836   -0.010276 (VIOLATED)
+u_engine.u_zstore.g_zrams[0].u_ram.u_macro/dout1[1]    0.027560    0.037562   -0.010002 (VIOLATED)
+u_engine.u_zstore.g_zrams[1].u_ram.u_macro/dout1[5]    0.027560    0.037209   -0.009649 (VIOLATED)
+u_engine.u_zstore.g_zrams[1].u_ram.u_macro/dout0[18]    0.027560    0.037147   -0.009587 (VIOLATED)
+u_engine.g_banks[1].u_ram.u_macro/dout1[25]    0.027560    0.036805   -0.009245 (VIOLATED)
+u_engine.u_zstore.g_zrams[0].u_ram.u_macro/dout1[3]    0.027560    0.036783   -0.009223 (VIOLATED)
+u_engine.u_zstore.g_zrams[0].u_ram.u_macro/dout0[23]    0.027560    0.036699   -0.009139 (VIOLATED)
+u_engine.u_zstore.g_zrams[1].u_ram.u_macro/dout1[9]    0.027560    0.036493   -0.008933 (VIOLATED)
+u_engine.u_zstore.g_zrams[1].u_ram.u_macro/dout0[17]    0.027560    0.036296   -0.008736 (VIOLATED)
+u_engine.u_zstore.g_zrams[0].u_ram.u_macro/dout0[8]    0.027560    0.036116   -0.008556 (VIOLATED)
+u_engine.u_zstore.g_zrams[1].u_ram.u_macro/dout1[16]    0.027560    0.035845   -0.008285 (VIOLATED)
+u_engine.u_zstore.g_zrams[0].u_ram.u_macro/dout1[19]    0.027560    0.035790   -0.008230 (VIOLATED)
+u_engine.g_banks[1].u_ram.u_macro/dout1[18]    0.027560    0.035730   -0.008170 (VIOLATED)
+u_engine.g_banks[3].u_ram.u_macro/dout1[9]    0.027560    0.035445   -0.007885 (VIOLATED)
+u_engine.g_banks[3].u_ram.u_macro/dout1[8]    0.027560    0.035375   -0.007815 (VIOLATED)
+u_engine.g_banks[3].u_ram.u_macro/dout1[13]    0.027560    0.035054   -0.007494 (VIOLATED)
+u_engine.u_zstore.g_zrams[0].u_ram.u_macro/dout1[30]    0.027560    0.034662   -0.007102 (VIOLATED)
+u_engine.u_zstore.g_zrams[0].u_ram.u_macro/dout1[27]    0.027560    0.034307   -0.006747 (VIOLATED)
+u_engine.g_banks[1].u_ram.u_macro/dout1[19]    0.027560    0.034069   -0.006509 (VIOLATED)
+u_engine.g_banks[1].u_ram.u_macro/dout1[16]    0.027560    0.034038   -0.006478 (VIOLATED)
+u_engine.u_zstore.g_zrams[1].u_ram.u_macro/dout1[15]    0.027560    0.033921   -0.006361 (VIOLATED)
+u_engine.g_banks[3].u_ram.u_macro/dout1[0]    0.027560    0.033491   -0.005931 (VIOLATED)
+u_engine.g_banks[2].u_ram.u_macro/dout1[13]    0.027560    0.033429   -0.005869 (VIOLATED)
+u_engine.u_zstore.g_zrams[0].u_ram.u_macro/dout1[28]    0.027560    0.032950   -0.005390 (VIOLATED)
+u_engine.u_zstore.g_zrams[0].u_ram.u_macro/dout1[18]    0.027560    0.032691   -0.005131 (VIOLATED)
+u_engine.u_zstore.g_zrams[0].u_ram.u_macro/dout1[24]    0.027560    0.032486   -0.004926 (VIOLATED)
+u_engine.u_zstore.g_zrams[0].u_ram.u_macro/dout0[24]    0.027560    0.032321   -0.004761 (VIOLATED)
+u_engine.g_banks[1].u_ram.u_macro/dout1[13]    0.027560    0.031997   -0.004437 (VIOLATED)
+u_engine.g_banks[0].u_ram.u_macro/dout1[7]    0.027560    0.031987   -0.004427 (VIOLATED)
+u_engine.u_zstore.g_zrams[0].u_ram.u_macro/dout1[12]    0.027560    0.031708   -0.004148 (VIOLATED)
+u_engine.g_banks[0].u_ram.u_macro/dout1[15]    0.027560    0.031370   -0.003810 (VIOLATED)
+u_engine.g_banks[3].u_ram.u_macro/dout1[23]    0.027560    0.031212   -0.003652 (VIOLATED)
+u_engine.g_banks[1].u_ram.u_macro/dout1[10]    0.027560    0.031047   -0.003487 (VIOLATED)
+u_engine.u_zstore.g_zrams[0].u_ram.u_macro/dout0[9]    0.027560    0.030886   -0.003326 (VIOLATED)
+u_engine.u_zstore.g_zrams[1].u_ram.u_macro/dout1[1]    0.027560    0.030810   -0.003250 (VIOLATED)
+u_engine.u_zstore.g_zrams[1].u_ram.u_macro/dout0[14]    0.027560    0.030800   -0.003240 (VIOLATED)
+u_engine.g_banks[3].u_ram.u_macro/dout1[2]    0.027560    0.030793   -0.003233 (VIOLATED)
+u_engine.g_banks[3].u_ram.u_macro/dout1[5]    0.027560    0.030161   -0.002601 (VIOLATED)
+u_engine.g_banks[0].u_ram.u_macro/dout1[18]    0.027560    0.030030   -0.002470 (VIOLATED)
+u_engine.u_zstore.g_zrams[0].u_ram.u_macro/dout1[21]    0.027560    0.030028   -0.002468 (VIOLATED)
+u_engine.u_zstore.g_zrams[1].u_ram.u_macro/dout0[12]    0.027560    0.029897   -0.002337 (VIOLATED)
+u_engine.g_banks[3].u_ram.u_macro/dout1[6]    0.027560    0.029702   -0.002142 (VIOLATED)
+u_engine.g_banks[1].u_ram.u_macro/dout1[21]    0.027560    0.029390   -0.001830 (VIOLATED)
+u_engine.g_banks[2].u_ram.u_macro/dout1[14]    0.027560    0.029374   -0.001814 (VIOLATED)
+u_engine.u_zstore.g_zrams[1].u_ram.u_macro/dout0[31]    0.027560    0.029368   -0.001808 (VIOLATED)
+u_engine.u_zstore.g_zrams[0].u_ram.u_macro/dout1[31]    0.027560    0.029307   -0.001747 (VIOLATED)
+u_engine.u_zstore.g_zrams[0].u_ram.u_macro/dout0[25]    0.027560    0.029116   -0.001556 (VIOLATED)
+u_engine.u_zstore.g_zrams[0].u_ram.u_macro/dout0[26]    0.027560    0.029098   -0.001538 (VIOLATED)
+u_engine.g_banks[2].u_ram.u_macro/dout1[12]    0.027560    0.029046   -0.001486 (VIOLATED)
+u_engine.u_zstore.g_zrams[0].u_ram.u_macro/dout1[23]    0.027560    0.028912   -0.001352 (VIOLATED)
+u_engine.g_banks[3].u_ram.u_macro/dout1[4]    0.027560    0.028897   -0.001337 (VIOLATED)
+u_engine.u_zstore.g_zrams[1].u_ram.u_macro/dout0[15]    0.027560    0.028752   -0.001192 (VIOLATED)
+u_engine.g_banks[1].u_ram.u_macro/dout1[2]    0.027560    0.028737   -0.001177 (VIOLATED)
+u_engine.g_banks[1].u_ram.u_macro/dout1[12]    0.027560    0.028639   -0.001079 (VIOLATED)
+u_engine.u_zstore.g_zrams[1].u_ram.u_macro/dout0[13]    0.027560    0.028489   -0.000929 (VIOLATED)
+u_engine.g_banks[0].u_ram.u_macro/dout1[4]    0.027560    0.028379   -0.000819 (VIOLATED)
+u_engine.u_zstore.g_zrams[0].u_ram.u_macro/dout1[7]    0.027560    0.028345   -0.000785 (VIOLATED)
+u_engine.g_banks[2].u_ram.u_macro/dout1[15]    0.027560    0.028038   -0.000478 (VIOLATED)
+u_engine.u_zstore.g_zrams[0].u_ram.u_macro/dout1[25]    0.027560    0.027679   -0.000119 (VIOLATED)
+u_engine.u_zstore.g_zrams[1].u_ram.u_macro/dout1[14]    0.027560    0.027646   -0.000086 (VIOLATED)
+
+
+
+===========================================================================
+report_parasitic_annotation -report_unannotated
+============================================================================
+Found 669 unannotated drivers.
+ clkload0/Y
+ clkload1/Y
+ clkload10/X
+ clkload100/Y
+ clkload101/Y
+ clkload102/Y
+ clkload103/Y
+ clkload104/Y
+ clkload105/X
+ clkload106/X
+ clkload107/Y
+ clkload108/Y
+ clkload109/X
+ clkload11/X
+ clkload110/Y
+ clkload111/Y
+ clkload112/Y
+ clkload113/Y
+ clkload114/Y
+ clkload115/Y
+ clkload116/Y
+ clkload117/Y
+ clkload118/Y
+ clkload119/X
+ clkload12/Y
+ clkload120/Y
+ clkload121/X
+ clkload122/X
+ clkload123/X
+ clkload124/X
+ clkload125/Y
+ clkload126/Y
+ clkload127/Y
+ clkload128/Y
+ clkload129/Y
+ clkload13/Y
+ clkload130/Y
+ clkload131/Y
+ clkload132/Y
+ clkload133/Y
+ clkload134/Y
+ clkload135/X
+ clkload136/Y
+ clkload137/Y
+ clkload138/Y
+ clkload139/Y
+ clkload14/Y
+ clkload140/Y
+ clkload141/Y
+ clkload142/Y
+ clkload143/Y
+ clkload144/Y
+ clkload145/Y
+ clkload146/Y
+ clkload147/Y
+ clkload148/Y
+ clkload149/Y
+ clkload15/Y
+ clkload150/Y
+ clkload151/Y
+ clkload152/Y
+ clkload153/Y
+ clkload154/Y
+ clkload155/Y
+ clkload156/Y
+ clkload157/Y
+ clkload158/Y
+ clkload159/Y
+ clkload16/X
+ clkload160/Y
+ clkload161/Y
+ clkload162/Y
+ clkload163/Y
+ clkload164/Y
+ clkload165/Y
+ clkload166/X
+ clkload167/Y
+ clkload168/Y
+ clkload169/Y
+ clkload17/Y
+ clkload170/Y
+ clkload171/Y
+ clkload172/Y
+ clkload173/Y
+ clkload174/Y
+ clkload175/Y
+ clkload176/Y
+ clkload177/Y
+ clkload178/Y
+ clkload179/Y
+ clkload18/Y
+ clkload180/Y
+ clkload181/Y
+ clkload182/Y
+ clkload183/Y
+ clkload184/Y
+ clkload185/Y
+ clkload186/Y
+ clkload187/Y
+ clkload188/Y
+ clkload189/Y
+ clkload19/Y
+ clkload190/Y
+ clkload191/X
+ clkload192/Y
+ clkload193/Y
+ clkload194/Y
+ clkload195/Y
+ clkload196/Y
+ clkload197/Y
+ clkload198/Y
+ clkload199/Y
+ clkload2/Y
+ clkload20/Y
+ clkload200/Y
+ clkload201/Y
+ clkload202/Y
+ clkload203/Y
+ clkload204/Y
+ clkload205/Y
+ clkload206/Y
+ clkload207/Y
+ clkload208/X
+ clkload209/Y
+ clkload21/Y
+ clkload210/Y
+ clkload211/Y
+ clkload212/X
+ clkload213/X
+ clkload214/Y
+ clkload215/Y
+ clkload216/Y
+ clkload217/Y
+ clkload218/Y
+ clkload219/Y
+ clkload22/Y
+ clkload220/Y
+ clkload221/Y
+ clkload222/Y
+ clkload223/Y
+ clkload224/Y
+ clkload225/Y
+ clkload226/Y
+ clkload227/Y
+ clkload228/Y
+ clkload229/Y
+ clkload23/Y
+ clkload230/Y
+ clkload231/Y
+ clkload232/Y
+ clkload233/X
+ clkload234/X
+ clkload235/Y
+ clkload236/Y
+ clkload237/Y
+ clkload238/X
+ clkload239/Y
+ clkload24/Y
+ clkload240/Y
+ clkload241/Y
+ clkload242/Y
+ clkload243/Y
+ clkload244/Y
+ clkload245/Y
+ clkload246/Y
+ clkload247/Y
+ clkload248/Y
+ clkload249/Y
+ clkload25/Y
+ clkload250/Y
+ clkload251/Y
+ clkload252/Y
+ clkload253/Y
+ clkload254/Y
+ clkload255/Y
+ clkload256/Y
+ clkload257/Y
+ clkload258/Y
+ clkload259/Y
+ clkload26/Y
+ clkload260/Y
+ clkload261/X
+ clkload262/Y
+ clkload263/Y
+ clkload264/Y
+ clkload265/X
+ clkload266/Y
+ clkload267/Y
+ clkload268/Y
+ clkload269/Y
+ clkload27/Y
+ clkload270/Y
+ clkload271/Y
+ clkload272/Y
+ clkload273/Y
+ clkload274/X
+ clkload275/Y
+ clkload276/Y
+ clkload277/Y
+ clkload278/Y
+ clkload279/Y
+ clkload28/Y
+ clkload280/Y
+ clkload281/Y
+ clkload282/Y
+ clkload283/Y
+ clkload284/X
+ clkload285/X
+ clkload286/Y
+ clkload287/Y
+ clkload288/Y
+ clkload289/Y
+ clkload29/Y
+ clkload290/Y
+ clkload291/Y
+ clkload292/Y
+ clkload293/Y
+ clkload294/Y
+ clkload295/Y
+ clkload296/Y
+ clkload297/Y
+ clkload298/Y
+ clkload299/Y
+ clkload3/Y
+ clkload30/X
+ clkload300/Y
+ clkload301/X
+ clkload302/X
+ clkload303/Y
+ clkload304/Y
+ clkload305/Y
+ clkload306/Y
+ clkload307/X
+ clkload308/Y
+ clkload309/Y
+ clkload31/Y
+ clkload310/Y
+ clkload311/Y
+ clkload312/Y
+ clkload313/Y
+ clkload314/Y
+ clkload315/Y
+ clkload316/X
+ clkload317/Y
+ clkload318/Y
+ clkload319/Y
+ clkload32/X
+ clkload320/Y
+ clkload321/Y
+ clkload322/X
+ clkload323/Y
+ clkload324/Y
+ clkload325/Y
+ clkload326/Y
+ clkload327/Y
+ clkload328/Y
+ clkload329/X
+ clkload33/Y
+ clkload330/Y
+ clkload331/Y
+ clkload332/Y
+ clkload333/Y
+ clkload334/Y
+ clkload335/Y
+ clkload336/Y
+ clkload337/Y
+ clkload338/Y
+ clkload339/Y
+ clkload34/Y
+ clkload340/Y
+ clkload341/Y
+ clkload342/Y
+ clkload343/X
+ clkload344/Y
+ clkload345/X
+ clkload346/Y
+ clkload347/Y
+ clkload348/Y
+ clkload349/Y
+ clkload35/Y
+ clkload350/Y
+ clkload351/Y
+ clkload352/Y
+ clkload353/Y
+ clkload354/Y
+ clkload355/Y
+ clkload356/Y
+ clkload357/Y
+ clkload358/Y
+ clkload359/Y
+ clkload36/Y
+ clkload360/Y
+ clkload361/Y
+ clkload362/Y
+ clkload363/Y
+ clkload364/Y
+ clkload365/Y
+ clkload366/Y
+ clkload367/Y
+ clkload368/Y
+ clkload369/Y
+ clkload37/Y
+ clkload370/Y
+ clkload371/Y
+ clkload372/Y
+ clkload373/X
+ clkload374/Y
+ clkload375/Y
+ clkload376/Y
+ clkload377/Y
+ clkload378/Y
+ clkload379/Y
+ clkload38/Y
+ clkload380/Y
+ clkload381/Y
+ clkload382/Y
+ clkload383/X
+ clkload384/Y
+ clkload385/X
+ clkload386/Y
+ clkload387/Y
+ clkload388/X
+ clkload389/Y
+ clkload39/Y
+ clkload390/Y
+ clkload391/Y
+ clkload392/Y
+ clkload393/Y
+ clkload394/Y
+ clkload395/Y
+ clkload396/Y
+ clkload397/Y
+ clkload398/Y
+ clkload399/Y
+ clkload4/Y
+ clkload40/Y
+ clkload400/Y
+ clkload401/Y
+ clkload402/X
+ clkload403/X
+ clkload404/Y
+ clkload405/Y
+ clkload406/Y
+ clkload407/Y
+ clkload408/X
+ clkload409/X
+ clkload41/Y
+ clkload410/X
+ clkload411/Y
+ clkload412/Y
+ clkload413/Y
+ clkload414/Y
+ clkload415/Y
+ clkload416/Y
+ clkload417/Y
+ clkload418/X
+ clkload419/Y
+ clkload42/Y
+ clkload420/Y
+ clkload421/Y
+ clkload422/Y
+ clkload423/Y
+ clkload424/Y
+ clkload425/Y
+ clkload426/Y
+ clkload427/Y
+ clkload428/Y
+ clkload429/X
+ clkload43/Y
+ clkload430/Y
+ clkload431/Y
+ clkload432/Y
+ clkload433/X
+ clkload434/Y
+ clkload435/Y
+ clkload436/Y
+ clkload437/Y
+ clkload438/Y
+ clkload439/Y
+ clkload44/Y
+ clkload440/Y
+ clkload441/Y
+ clkload442/Y
+ clkload443/Y
+ clkload444/Y
+ clkload445/Y
+ clkload446/Y
+ clkload447/Y
+ clkload448/Y
+ clkload449/Y
+ clkload45/Y
+ clkload450/Y
+ clkload451/Y
+ clkload452/Y
+ clkload453/Y
+ clkload454/Y
+ clkload455/Y
+ clkload456/Y
+ clkload457/Y
+ clkload458/Y
+ clkload459/Y
+ clkload46/Y
+ clkload460/Y
+ clkload461/Y
+ clkload462/Y
+ clkload463/Y
+ clkload464/Y
+ clkload465/X
+ clkload466/Y
+ clkload467/Y
+ clkload468/Y
+ clkload469/Y
+ clkload47/Y
+ clkload470/X
+ clkload471/X
+ clkload472/Y
+ clkload473/Y
+ clkload474/Y
+ clkload475/Y
+ clkload476/Y
+ clkload477/Y
+ clkload478/Y
+ clkload479/Y
+ clkload48/Y
+ clkload480/Y
+ clkload481/Y
+ clkload482/X
+ clkload483/Y
+ clkload484/Y
+ clkload485/X
+ clkload486/Y
+ clkload487/Y
+ clkload488/Y
+ clkload489/Y
+ clkload49/Y
+ clkload490/Y
+ clkload491/Y
+ clkload492/Y
+ clkload493/Y
+ clkload494/Y
+ clkload495/Y
+ clkload496/Y
+ clkload497/Y
+ clkload498/Y
+ clkload499/Y
+ clkload5/Y
+ clkload50/X
+ clkload500/X
+ clkload501/Y
+ clkload502/Y
+ clkload503/Y
+ clkload504/Y
+ clkload505/Y
+ clkload506/X
+ clkload507/X
+ clkload508/X
+ clkload51/Y
+ clkload52/Y
+ clkload53/Y
+ clkload54/Y
+ clkload55/Y
+ clkload56/Y
+ clkload57/Y
+ clkload58/Y
+ clkload59/Y
+ clkload6/Y
+ clkload60/Y
+ clkload61/Y
+ clkload62/Y
+ clkload63/Y
+ clkload64/Y
+ clkload65/Y
+ clkload66/Y
+ clkload67/Y
+ clkload68/Y
+ clkload69/Y
+ clkload7/Y
+ clkload70/Y
+ clkload71/Y
+ clkload72/Y
+ clkload73/Y
+ clkload74/X
+ clkload75/X
+ clkload76/Y
+ clkload77/X
+ clkload78/Y
+ clkload79/Y
+ clkload8/Y
+ clkload80/X
+ clkload81/Y
+ clkload82/Y
+ clkload83/Y
+ clkload84/Y
+ clkload85/Y
+ clkload86/X
+ clkload87/Y
+ clkload88/Y
+ clkload89/Y
+ clkload9/Y
+ clkload90/Y
+ clkload91/Y
+ clkload92/Y
+ clkload93/X
+ clkload94/Y
+ clkload95/Y
+ clkload96/Y
+ clkload97/Y
+ clkload98/Y
+ clkload99/Y
+ ntt_user_macro_3322/HI
+ ntt_user_macro_3323/HI
+ u_engine.g_banks\[0\].u_ram.u_macro/dout0[0]
+ u_engine.g_banks\[0\].u_ram.u_macro/dout0[10]
+ u_engine.g_banks\[0\].u_ram.u_macro/dout0[11]
+ u_engine.g_banks\[0\].u_ram.u_macro/dout0[12]
+ u_engine.g_banks\[0\].u_ram.u_macro/dout0[13]
+ u_engine.g_banks\[0\].u_ram.u_macro/dout0[14]
+ u_engine.g_banks\[0\].u_ram.u_macro/dout0[15]
+ u_engine.g_banks\[0\].u_ram.u_macro/dout0[16]
+ u_engine.g_banks\[0\].u_ram.u_macro/dout0[17]
+ u_engine.g_banks\[0\].u_ram.u_macro/dout0[18]
+ u_engine.g_banks\[0\].u_ram.u_macro/dout0[19]
+ u_engine.g_banks\[0\].u_ram.u_macro/dout0[1]
+ u_engine.g_banks\[0\].u_ram.u_macro/dout0[20]
+ u_engine.g_banks\[0\].u_ram.u_macro/dout0[21]
+ u_engine.g_banks\[0\].u_ram.u_macro/dout0[22]
+ u_engine.g_banks\[0\].u_ram.u_macro/dout0[23]
+ u_engine.g_banks\[0\].u_ram.u_macro/dout0[24]
+ u_engine.g_banks\[0\].u_ram.u_macro/dout0[25]
+ u_engine.g_banks\[0\].u_ram.u_macro/dout0[26]
+ u_engine.g_banks\[0\].u_ram.u_macro/dout0[27]
+ u_engine.g_banks\[0\].u_ram.u_macro/dout0[28]
+ u_engine.g_banks\[0\].u_ram.u_macro/dout0[29]
+ u_engine.g_banks\[0\].u_ram.u_macro/dout0[2]
+ u_engine.g_banks\[0\].u_ram.u_macro/dout0[30]
+ u_engine.g_banks\[0\].u_ram.u_macro/dout0[31]
+ u_engine.g_banks\[0\].u_ram.u_macro/dout0[3]
+ u_engine.g_banks\[0\].u_ram.u_macro/dout0[4]
+ u_engine.g_banks\[0\].u_ram.u_macro/dout0[5]
+ u_engine.g_banks\[0\].u_ram.u_macro/dout0[6]
+ u_engine.g_banks\[0\].u_ram.u_macro/dout0[7]
+ u_engine.g_banks\[0\].u_ram.u_macro/dout0[8]
+ u_engine.g_banks\[0\].u_ram.u_macro/dout0[9]
+ u_engine.g_banks\[0\].u_ram.u_macro_3316/HI
+ u_engine.g_banks\[0\].u_ram.u_macro_3324/LO
+ u_engine.g_banks\[0\].u_ram.u_macro_3325/LO
+ u_engine.g_banks\[0\].u_ram.u_macro_3326/LO
+ u_engine.g_banks\[0\].u_ram.u_macro_3327/LO
+ u_engine.g_banks\[1\].u_ram.u_macro/dout0[0]
+ u_engine.g_banks\[1\].u_ram.u_macro/dout0[10]
+ u_engine.g_banks\[1\].u_ram.u_macro/dout0[11]
+ u_engine.g_banks\[1\].u_ram.u_macro/dout0[12]
+ u_engine.g_banks\[1\].u_ram.u_macro/dout0[13]
+ u_engine.g_banks\[1\].u_ram.u_macro/dout0[14]
+ u_engine.g_banks\[1\].u_ram.u_macro/dout0[15]
+ u_engine.g_banks\[1\].u_ram.u_macro/dout0[16]
+ u_engine.g_banks\[1\].u_ram.u_macro/dout0[17]
+ u_engine.g_banks\[1\].u_ram.u_macro/dout0[18]
+ u_engine.g_banks\[1\].u_ram.u_macro/dout0[19]
+ u_engine.g_banks\[1\].u_ram.u_macro/dout0[1]
+ u_engine.g_banks\[1\].u_ram.u_macro/dout0[20]
+ u_engine.g_banks\[1\].u_ram.u_macro/dout0[21]
+ u_engine.g_banks\[1\].u_ram.u_macro/dout0[22]
+ u_engine.g_banks\[1\].u_ram.u_macro/dout0[23]
+ u_engine.g_banks\[1\].u_ram.u_macro/dout0[24]
+ u_engine.g_banks\[1\].u_ram.u_macro/dout0[25]
+ u_engine.g_banks\[1\].u_ram.u_macro/dout0[26]
+ u_engine.g_banks\[1\].u_ram.u_macro/dout0[27]
+ u_engine.g_banks\[1\].u_ram.u_macro/dout0[28]
+ u_engine.g_banks\[1\].u_ram.u_macro/dout0[29]
+ u_engine.g_banks\[1\].u_ram.u_macro/dout0[2]
+ u_engine.g_banks\[1\].u_ram.u_macro/dout0[30]
+ u_engine.g_banks\[1\].u_ram.u_macro/dout0[31]
+ u_engine.g_banks\[1\].u_ram.u_macro/dout0[3]
+ u_engine.g_banks\[1\].u_ram.u_macro/dout0[4]
+ u_engine.g_banks\[1\].u_ram.u_macro/dout0[5]
+ u_engine.g_banks\[1\].u_ram.u_macro/dout0[6]
+ u_engine.g_banks\[1\].u_ram.u_macro/dout0[7]
+ u_engine.g_banks\[1\].u_ram.u_macro/dout0[8]
+ u_engine.g_banks\[1\].u_ram.u_macro/dout0[9]
+ u_engine.g_banks\[1\].u_ram.u_macro_3317/HI
+ u_engine.g_banks\[1\].u_ram.u_macro_3328/LO
+ u_engine.g_banks\[1\].u_ram.u_macro_3329/LO
+ u_engine.g_banks\[1\].u_ram.u_macro_3330/LO
+ u_engine.g_banks\[1\].u_ram.u_macro_3331/LO
+ u_engine.g_banks\[2\].u_ram.u_macro/dout0[0]
+ u_engine.g_banks\[2\].u_ram.u_macro/dout0[10]
+ u_engine.g_banks\[2\].u_ram.u_macro/dout0[11]
+ u_engine.g_banks\[2\].u_ram.u_macro/dout0[12]
+ u_engine.g_banks\[2\].u_ram.u_macro/dout0[13]
+ u_engine.g_banks\[2\].u_ram.u_macro/dout0[14]
+ u_engine.g_banks\[2\].u_ram.u_macro/dout0[15]
+ u_engine.g_banks\[2\].u_ram.u_macro/dout0[16]
+ u_engine.g_banks\[2\].u_ram.u_macro/dout0[17]
+ u_engine.g_banks\[2\].u_ram.u_macro/dout0[18]
+ u_engine.g_banks\[2\].u_ram.u_macro/dout0[19]
+ u_engine.g_banks\[2\].u_ram.u_macro/dout0[1]
+ u_engine.g_banks\[2\].u_ram.u_macro/dout0[20]
+ u_engine.g_banks\[2\].u_ram.u_macro/dout0[21]
+ u_engine.g_banks\[2\].u_ram.u_macro/dout0[22]
+ u_engine.g_banks\[2\].u_ram.u_macro/dout0[23]
+ u_engine.g_banks\[2\].u_ram.u_macro/dout0[24]
+ u_engine.g_banks\[2\].u_ram.u_macro/dout0[25]
+ u_engine.g_banks\[2\].u_ram.u_macro/dout0[26]
+ u_engine.g_banks\[2\].u_ram.u_macro/dout0[27]
+ u_engine.g_banks\[2\].u_ram.u_macro/dout0[28]
+ u_engine.g_banks\[2\].u_ram.u_macro/dout0[29]
+ u_engine.g_banks\[2\].u_ram.u_macro/dout0[2]
+ u_engine.g_banks\[2\].u_ram.u_macro/dout0[30]
+ u_engine.g_banks\[2\].u_ram.u_macro/dout0[31]
+ u_engine.g_banks\[2\].u_ram.u_macro/dout0[3]
+ u_engine.g_banks\[2\].u_ram.u_macro/dout0[4]
+ u_engine.g_banks\[2\].u_ram.u_macro/dout0[5]
+ u_engine.g_banks\[2\].u_ram.u_macro/dout0[6]
+ u_engine.g_banks\[2\].u_ram.u_macro/dout0[7]
+ u_engine.g_banks\[2\].u_ram.u_macro/dout0[8]
+ u_engine.g_banks\[2\].u_ram.u_macro/dout0[9]
+ u_engine.g_banks\[2\].u_ram.u_macro_3318/HI
+ u_engine.g_banks\[2\].u_ram.u_macro_3332/LO
+ u_engine.g_banks\[2\].u_ram.u_macro_3333/LO
+ u_engine.g_banks\[2\].u_ram.u_macro_3334/LO
+ u_engine.g_banks\[2\].u_ram.u_macro_3335/LO
+ u_engine.g_banks\[3\].u_ram.u_macro/dout0[0]
+ u_engine.g_banks\[3\].u_ram.u_macro/dout0[10]
+ u_engine.g_banks\[3\].u_ram.u_macro/dout0[11]
+ u_engine.g_banks\[3\].u_ram.u_macro/dout0[12]
+ u_engine.g_banks\[3\].u_ram.u_macro/dout0[13]
+ u_engine.g_banks\[3\].u_ram.u_macro/dout0[14]
+ u_engine.g_banks\[3\].u_ram.u_macro/dout0[15]
+ u_engine.g_banks\[3\].u_ram.u_macro/dout0[16]
+ u_engine.g_banks\[3\].u_ram.u_macro/dout0[17]
+ u_engine.g_banks\[3\].u_ram.u_macro/dout0[18]
+ u_engine.g_banks\[3\].u_ram.u_macro/dout0[19]
+ u_engine.g_banks\[3\].u_ram.u_macro/dout0[1]
+ u_engine.g_banks\[3\].u_ram.u_macro/dout0[20]
+ u_engine.g_banks\[3\].u_ram.u_macro/dout0[21]
+ u_engine.g_banks\[3\].u_ram.u_macro/dout0[22]
+ u_engine.g_banks\[3\].u_ram.u_macro/dout0[23]
+ u_engine.g_banks\[3\].u_ram.u_macro/dout0[24]
+ u_engine.g_banks\[3\].u_ram.u_macro/dout0[25]
+ u_engine.g_banks\[3\].u_ram.u_macro/dout0[26]
+ u_engine.g_banks\[3\].u_ram.u_macro/dout0[27]
+ u_engine.g_banks\[3\].u_ram.u_macro/dout0[28]
+ u_engine.g_banks\[3\].u_ram.u_macro/dout0[29]
+ u_engine.g_banks\[3\].u_ram.u_macro/dout0[2]
+ u_engine.g_banks\[3\].u_ram.u_macro/dout0[30]
+ u_engine.g_banks\[3\].u_ram.u_macro/dout0[31]
+ u_engine.g_banks\[3\].u_ram.u_macro/dout0[3]
+ u_engine.g_banks\[3\].u_ram.u_macro/dout0[4]
+ u_engine.g_banks\[3\].u_ram.u_macro/dout0[5]
+ u_engine.g_banks\[3\].u_ram.u_macro/dout0[6]
+ u_engine.g_banks\[3\].u_ram.u_macro/dout0[7]
+ u_engine.g_banks\[3\].u_ram.u_macro/dout0[8]
+ u_engine.g_banks\[3\].u_ram.u_macro/dout0[9]
+ u_engine.g_banks\[3\].u_ram.u_macro_3319/HI
+ u_engine.g_banks\[3\].u_ram.u_macro_3336/LO
+ u_engine.g_banks\[3\].u_ram.u_macro_3337/LO
+ u_engine.g_banks\[3\].u_ram.u_macro_3338/LO
+ u_engine.g_banks\[3\].u_ram.u_macro_3339/LO
+ u_engine.u_zstore.g_zrams\[0\].u_ram.u_macro_3320/HI
+ u_engine.u_zstore.g_zrams\[0\].u_ram.u_macro_3340/LO
+ u_engine.u_zstore.g_zrams\[0\].u_ram.u_macro_3341/LO
+ u_engine.u_zstore.g_zrams\[0\].u_ram.u_macro_3342/LO
+ u_engine.u_zstore.g_zrams\[0\].u_ram.u_macro_3343/LO
+ u_engine.u_zstore.g_zrams\[1\].u_ram.u_macro_3321/HI
+ u_engine.u_zstore.g_zrams\[1\].u_ram.u_macro_3344/LO
+ u_engine.u_zstore.g_zrams\[1\].u_ram.u_macro_3345/LO
+ u_engine.u_zstore.g_zrams\[1\].u_ram.u_macro_3346/LO
+ u_engine.u_zstore.g_zrams\[1\].u_ram.u_macro_3347/LO
+Found 0 partially unannotated drivers.
+
+===========================================================================
+max slew violation count 0
+max fanout violation count 0
+max cap violation count 102
+============================================================================
+
+===========================================================================
+check_setup -verbose -unconstrained_endpoints -multiple_clock -no_clock -no_input_delay -loops -generated_clocks
+===========================================================================
+Warning: There is 1 input port missing set_input_delay.
+  wb_rst_i
+Warning: There are 32 unconstrained endpoints.
+  irq[1]
+  irq[2]
+  u_engine.g_banks[0].u_ram.u_macro/csb1
+  u_engine.g_banks[0].u_ram.u_macro/wmask0[0]
+  u_engine.g_banks[0].u_ram.u_macro/wmask0[1]
+  u_engine.g_banks[0].u_ram.u_macro/wmask0[2]
+  u_engine.g_banks[0].u_ram.u_macro/wmask0[3]
+  u_engine.g_banks[1].u_ram.u_macro/csb1
+  u_engine.g_banks[1].u_ram.u_macro/wmask0[0]
+  u_engine.g_banks[1].u_ram.u_macro/wmask0[1]
+  u_engine.g_banks[1].u_ram.u_macro/wmask0[2]
+  u_engine.g_banks[1].u_ram.u_macro/wmask0[3]
+  u_engine.g_banks[2].u_ram.u_macro/csb1
+  u_engine.g_banks[2].u_ram.u_macro/wmask0[0]
+  u_engine.g_banks[2].u_ram.u_macro/wmask0[1]
+  u_engine.g_banks[2].u_ram.u_macro/wmask0[2]
+  u_engine.g_banks[2].u_ram.u_macro/wmask0[3]
+  u_engine.g_banks[3].u_ram.u_macro/csb1
+  u_engine.g_banks[3].u_ram.u_macro/wmask0[0]
+  u_engine.g_banks[3].u_ram.u_macro/wmask0[1]
+  u_engine.g_banks[3].u_ram.u_macro/wmask0[2]
+  u_engine.g_banks[3].u_ram.u_macro/wmask0[3]
+  u_engine.u_zstore.g_zrams[0].u_ram.u_macro/csb1
+  u_engine.u_zstore.g_zrams[0].u_ram.u_macro/wmask0[0]
+  u_engine.u_zstore.g_zrams[0].u_ram.u_macro/wmask0[1]
+  u_engine.u_zstore.g_zrams[0].u_ram.u_macro/wmask0[2]
+  u_engine.u_zstore.g_zrams[0].u_ram.u_macro/wmask0[3]
+  u_engine.u_zstore.g_zrams[1].u_ram.u_macro/csb1
+  u_engine.u_zstore.g_zrams[1].u_ram.u_macro/wmask0[0]
+  u_engine.u_zstore.g_zrams[1].u_ram.u_macro/wmask0[1]
+  u_engine.u_zstore.g_zrams[1].u_ram.u_macro/wmask0[2]
+  u_engine.u_zstore.g_zrams[1].u_ram.u_macro/wmask0[3]

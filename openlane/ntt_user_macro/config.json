@@ -1,0 +1,82 @@
+{
+    "DESIGN_NAME": "ntt_user_macro",
+    "VERILOG_FILES": [
+        "dir::../../verilog/rtl/ntt_user_macro.v",
+        "dir::../../verilog/rtl/ntt/asic_sram_1r1w_sky130.v",
+        "dir::../../verilog/rtl/ntt/asic_sram_1rw1r_sky130.v",
+        "dir::../../verilog/rtl/ntt/bank_ram_1r1w.sv",
+        "dir::../../verilog/rtl/ntt/bank_ram_1rw1r.sv",
+        "dir::../../verilog/rtl/ntt/modmul_solinas.sv",
+        "dir::../../verilog/rtl/ntt/ntt_butterfly_ct.sv",
+        "dir::../../verilog/rtl/ntt/zeta_store.sv",
+        "dir::../../verilog/rtl/ntt/ntt_engine_256.sv"
+    ],
+    "EXTRA_VERILOG_MODELS": [
+        "dir::../../macros/sky130_sram_1kbyte_1rw1r_32x256_8/sky130_sram_1kbyte_1rw1r_32x256_8_bb.v"
+    ],
+    "MACROS": {
+        "sky130_sram_1kbyte_1rw1r_32x256_8": {
+            "gds": [
+                "dir::../../macros/sky130_sram_1kbyte_1rw1r_32x256_8/sky130_sram_1kbyte_1rw1r_32x256_8.gds"
+            ],
+            "lef": [
+                "dir::../../macros/sky130_sram_1kbyte_1rw1r_32x256_8/sky130_sram_1kbyte_1rw1r_32x256_8.lef"
+            ],
+            "instances": {
+                "u_engine.g_banks[0].u_ram.u_macro": {"location": [150, 150], "orientation": "N"},
+                "u_engine.g_banks[1].u_ram.u_macro": {"location": [1550, 150], "orientation": "N"},
+                "u_engine.u_zstore.g_zrams[0].u_ram.u_macro": {"location": [150, 975], "orientation": "N"},
+                "u_engine.u_zstore.g_zrams[1].u_ram.u_macro": {"location": [1550, 975], "orientation": "N"},
+                "u_engine.g_banks[2].u_ram.u_macro": {"location": [150, 1800], "orientation": "FS"},
+                "u_engine.g_banks[3].u_ram.u_macro": {"location": [1550, 1800], "orientation": "FS"}
+            },
+            "lib": {
+                "*": [
+                    "dir::../../macros/sky130_sram_1kbyte_1rw1r_32x256_8/sky130_sram_1kbyte_1rw1r_32x256_8_TT_1p8V_25C_relaxed_slew.lib"
+                ]
+            }
+        }
+    },
+    "VERILOG_DEFINES": [
+        "USE_POWER_PINS",
+        "USE_SRAM_MACRO",
+        "ANT_DIODES"
+    ],
+    "CLOCK_PORT": "wb_clk_i",
+    "CLOCK_PERIOD": 25,
+    "MAX_TRANSITION_CONSTRAINT": 1.0,
+    "PNR_SDC_FILE": "dir::ntt_user_macro.sdc",
+    "SIGNOFF_SDC_FILE": "dir::ntt_user_macro.sdc",
+    "FP_SIZING": "absolute",
+    "DIE_AREA": [0, 0, 2400, 2400],
+    "FP_CORE_UTIL": 25,
+    "PL_TARGET_DENSITY_PCT": 35,
+    "PDN_MACRO_CONNECTIONS": [
+        ".*u_ram.u_macro vccd1 vssd1 vccd1 vssd1"
+    ],
+    "FP_PDN_ENABLE_RAILS": true,
+    "VDD_NETS": ["vccd1"],
+    "GND_NETS": ["vssd1"],
+    "RT_MAX_LAYER": "met5",
+    "GRT_ADJUSTMENT": 0.2,
+    "GRT_ALLOW_CONGESTION": false,
+    "DESIGN_REPAIR_MAX_WIRE_LENGTH": 500,
+    "RUN_HEURISTIC_DIODE_INSERTION": false,
+    "HEURISTIC_ANTENNA_THRESHOLD": 90,
+    "RUN_ANTENNA_REPAIR": true,
+    "GRT_ANTENNA_ITERS": 10,
+    "GRT_ANTENNA_MARGIN": 25,
+    "MAX_FANOUT_CONSTRAINT": 8,
+    "PRIMARY_GDSII_STREAMOUT_TOOL": "klayout",
+    "RUN_MAGIC_STREAMOUT": false,
+    "RUN_KLAYOUT_STREAMOUT": true,
+    "RUN_POST_GRT_DESIGN_REPAIR": true,
+    "RUN_POST_GRT_RESIZER_TIMING": true,
+    "RUN_MAGIC_DRC": false,
+    "MAGIC_CAPTURE_ERRORS": false,
+    "MAGIC_DRC_USE_GDS": false,
+    "RUN_KLAYOUT_XOR": false,
+    "meta": {
+        "version": 2
+    }
+}

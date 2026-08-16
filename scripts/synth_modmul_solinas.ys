@@ -1,6 +1,0 @@
-read_verilog -sv rtl/modmul_solinas.sv
-hierarchy -check -top modmul_solinas
-proc; opt; fsm; opt; memory; opt
-techmap; opt
-stat
-check -assert
