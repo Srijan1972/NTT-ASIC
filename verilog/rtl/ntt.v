@@ -29,9 +29,9 @@ module ntt (
     output wire        ext_rvalid_o
 );
 
+    reg  wb_ack_r;
     wire wb_valid = wbs_cyc_i && wbs_stb_i;
     wire wb_fire  = wb_valid && !wb_ack_r;
-    reg  wb_ack_r;
 
     reg         start_reg;
     reg  [2:0]  op_reg;
@@ -57,6 +57,17 @@ module ntt (
     wire        ext_rvalid;
     wire        busy;
     wire        done;
+    // Adapt Caravel's legacy register strobes to the Dilithium engine's
+    // unified memory channel.  The register map guarantees that coefficient
+    // reads, coefficient writes, and zeta loads are issued separately.
+    wire        mem_we     = ext_we_reg | zload_we_reg;
+    wire        mem_re     = ext_re_reg;
+    wire        mem_target = zload_we_reg;
+    wire [1:0]  mem_slot   = ext_re_reg ? ext_rslot_reg : ext_wslot_reg;
+    wire [8:0]  mem_addr   = zload_we_reg ? zload_addr_reg :
+                              ext_re_reg ? {1'b0, ext_raddr_reg} :
+                                            {1'b0, ext_waddr_reg};
+    wire [31:0] mem_wdata  = zload_we_reg ? zload_data_reg : ext_wdata_reg;
     reg         ext_rvalid_seen;
     wire [31:0] status_word = {29'b0, ext_rvalid_seen, done, busy};
     reg  [31:0] wb_data_out_r;
@@ -208,18 +219,14 @@ module ntt (
         .mac_init(mac_init_reg),
         .busy(busy),
         .done(done),
-        .ext_we(ext_we_reg),
-        .ext_wslot(ext_wslot_reg),
-        .ext_waddr(ext_waddr_reg),
-        .ext_wdata(ext_wdata_reg),
-        .ext_re(ext_re_reg),
-        .ext_rslot(ext_rslot_reg),
-        .ext_raddr(ext_raddr_reg),
-        .ext_rdata(ext_rdata),
-        .ext_rvalid(ext_rvalid),
-        .zload_we(zload_we_reg),
-        .zload_addr(zload_addr_reg),
-        .zload_data(zload_data_reg)
+        .mem_we(mem_we),
+        .mem_re(mem_re),
+        .mem_target(mem_target),
+        .mem_slot(mem_slot),
+        .mem_addr(mem_addr),
+        .mem_wdata(mem_wdata),
+        .mem_rdata(ext_rdata),
+        .mem_rvalid(ext_rvalid)
     );
 
 endmodule

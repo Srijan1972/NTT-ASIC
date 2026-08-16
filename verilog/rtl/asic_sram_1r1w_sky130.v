@@ -1,5 +1,3 @@
-// SPDX-FileCopyrightText: 2026 Srijan1972
-// SPDX-License-Identifier: Apache-2.0
 
 `default_nettype none
 
@@ -35,6 +33,13 @@ module asic_sram_1r1w_sky130 (
         .addr1  (raddr),
         .dout1  (rdata)
     );
+`ifdef ANT_DIODES
+    (* keep *) sky130_fd_sc_hd__diode_2 ant_rdata_1   (.DIODE(rdata[1]));
+    (* keep *) sky130_fd_sc_hd__diode_2 ant_rdata_3   (.DIODE(rdata[3]));
+    (* keep *) sky130_fd_sc_hd__diode_2 ant_rdata_20  (.DIODE(rdata[20]));
+    (* keep *) sky130_fd_sc_hd__diode_2 ant_waddr_5   (.DIODE(waddr[5]));
+`endif
+
 endmodule
 
 `default_nettype wire

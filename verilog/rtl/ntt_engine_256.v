@@ -1,56 +1,3 @@
-// SPDX-FileCopyrightText: 2026 Srijan1972
-// SPDX-License-Identifier: Apache-2.0
-// ============================================================================
-//  ntt_engine_256.sv -- N=256 Dilithium polynomial engine, MERGED-LAYER
-//  radix-2^2 NTT/INTT (two stages per memory pass).
-//  Ops:
-//    0 NTT    forward NTT, slot 0, 4 passes x 64 groups, in-place
-//    1 COPY   slot_a -> slot_c, 4 coefficients/cycle
-//    2 MAC    slot_c (+)= slot_a o slot_b (reference pointwise_montgomery
-//             semantics; mac_init zeroes the accumulator)
-//    3 INTT   inverse NTT + tomont scaling, slot 0 (reference
-//             invntt_tomont; REQUIRES |input| < q -- run REDUCE on
-//             lazy/accumulated data first)
-//    4 REDUCE slot_a -> slot_c with reference reduce32 applied
-//
-//  Memory: 4 banks x 256 x 32. (slot s, coeff j) -> bank bank_of(j)^s,
-//  row {s, row_of(j)}; row_of(j) = j[7:2].
-//  bank_of(j) = {o, e}: e = j0^j2^j4^j6, o = j1^j3^j5^j7 (two-bit
-//  XOR-fold). The legacy {parity, j[0]} map FAILS merged radix-2^2
-//  groups; this map puts every group {j, j+S, j+2S, j+3S} in 4 distinct
-//  banks for all pass geometries AND keeps COPY/MAC/scale conflict-free
-//  (all re-proven: golden/dilithium_merged_sched.py P1/P5,
-//  dilithium_engine_sched.py, dilithium_intt.py, dilithium_pointwise.py).
-//
-//  Merged pass structure (proof: golden/dilithium_merged_sched.py):
-//    forward pass p (stages 2p, 2p+1): S = 2^(6-2p),
-//      group {j, j+S, j+2S, j+3S}, parent zeta k = 2^(2p) + b
-//      layer 1: BF(d0,d2) and BF(d1,d3), both ZETAS[k]
-//      layer 2: BF(x0,x1) ZETAS[2k]; BF(x2,x3) ZETAS[2k+1]
-//    inverse pass p (stages 2p, 2p+1): S = 2^(2p),
-//      group {j, j+S, j+2S, j+3S}, parent k2 = (255>>(2p+1)) - b
-//      layer 1: GS(d0,d1) -ZETAS[2k2+1]; GS(d2,d3) -ZETAS[2k2]
-//      layer 2: GS(x0,x2) and GS(x1,x3), both -ZETAS[k2]
-//    issue decode (proven vs golden generators, all 512 issues):
-//      tb = fwd ? 6-2p : 2p; b = issue>>tb; t = issue & (2^tb - 1);
-//      j = (b << (tb+2)) | t
-//
-//  Zeta store: 2 pair rows read per issue. row_l1 feeds layer 1 at c+1;
-//  the layer-2 ROW ADDRESS is delayed BF_LAT cycles in the engine so its
-//  data lands at c+1+BF_LAT, exactly when layer-1 results reach layer-2.
-//    fwd: row_l1 = k>>1 (lane sel k&1), row_l2 = k
-//    inv: row_l1 = k2 (both lanes),     row_l2 = k2>>1 (lane sel k2&1)
-//  GS sign is an address bit (negated bank) -- no negate carry chain.
-//
-//  Pipelines (issue at cycle c):
-//    NTT/INTT pass : read c -> layer1 c+1..c+7 -> layer2 c+8..c+14
-//                    -> 4 writes end of c+15   (PIPE  = 15)
-//    MAC           : read c -> BF(L1A) -> 1 write end of c+8 (PIPE1 = 8)
-//    INTT scale    : read c -> BF(L1A/L1B), a=0, zeta=f -> 2 writes c+8
-//    COPY/REDUCE   : read c -> write end of c+1
-//  DRAIN = 17 after merged passes (> PIPE), 10 otherwise. Port budget /
-//  in-place safety proven at PIPE=15 with margin (P5 sweep 8..20).
-// ============================================================================
 `default_nettype none
 
 module ntt_engine_256 (
@@ -61,9 +8,8 @@ module ntt_engine_256 (
     input  wire        clk,
     input  wire        rst_n,
 
-    // command
     input  wire        start,
-    input  wire [2:0]  op,          // see header
+    input  wire [2:0]  op,
     input  wire [1:0]  slot_a,
     input  wire [1:0]  slot_b,
     input  wire [1:0]  slot_c,
@@ -71,34 +17,26 @@ module ntt_engine_256 (
     output wire        busy,
     output reg         done,
 
-    // external access, honored only when not busy
-    input  wire        ext_we,
-    input  wire [1:0]  ext_wslot,
-    input  wire [7:0]  ext_waddr,
-    input  wire [31:0] ext_wdata,
-    input  wire        ext_re,
-    input  wire [1:0]  ext_rslot,
-    input  wire [7:0]  ext_raddr,
-    output wire [31:0] ext_rdata,
-    output reg         ext_rvalid,
-
-    // zeta boot-load port (paired SRAM twiddle store; honored only when
-    // not busy; 512 writes {neg,k} before the first NTT/INTT command)
-    input  wire        zload_we,
-    input  wire [8:0]  zload_addr,   // {neg, k}: +/-ZETAS
-    input  wire [31:0] zload_data
+    // --- unified external load/store channel (merged ext_* + zload_*) ---
+    input  wire        mem_we,      // write strobe
+    input  wire        mem_re,      // read strobe (coeff read-back only)
+    input  wire        mem_target,  // 0 = coeff banks (MEM_COEFF), 1 = zeta store (MEM_ZETA)
+    input  wire [1:0]  mem_slot,    // coeff slot; ignored when mem_target = MEM_ZETA
+    input  wire [8:0]  mem_addr,    // [7:0] used for coeff, full [8:0] for zeta
+    input  wire [31:0] mem_wdata,   // shared write data (coeff / zeta)
+    output wire [31:0] mem_rdata,   // coeff read data
+    output wire        mem_rvalid   // coeff read-data valid
 );
-    localparam PIPE1    = 8;    // read + 1 butterfly (MAC, scale writes)
-    localparam PIPE     = 15;   // read + 2 chained butterflies (merged)
-    localparam DRAIN_BF = 17;   // after merged passes (must be > PIPE)
-    localparam DRAIN    = 10;   // after MAC / scale / COPY / REDUCE
+    localparam PIPE1    = 8;
+    localparam PIPE     = 15;
+    localparam DRAIN_BF = 17;
+    localparam DRAIN    = 10;
 
     localparam [2:0] OP_NTT = 3'd0, OP_COPY = 3'd1, OP_MAC = 3'd2,
                      OP_INTT = 3'd3, OP_REDUCE = 3'd4;
 
-    localparam signed [31:0] F_TOMONT = 32'sd41978;  // mont^2/256 mod q
+    localparam signed [31:0] F_TOMONT = 32'sd41978;
 
-    // two-bit XOR-fold bank map (canonical: golden/dilithium_engine_sched.py)
     function automatic [1:0] bank_of(input [7:0] a);
         bank_of = {a[1]^a[3]^a[5]^a[7], a[0]^a[2]^a[4]^a[6]};
     endfunction
@@ -107,7 +45,6 @@ module ntt_engine_256 (
         row_of = a[7:2];
     endfunction
 
-    // reference reduce32, t*q via the Solinas shift-add
     function automatic signed [31:0] reduce32(input signed [31:0] x);
         reg signed [31:0] t;
         begin
@@ -116,16 +53,13 @@ module ntt_engine_256 (
         end
     endfunction
 
-    // ------------------------------------------------------------------
-    // command latch + FSM
-    // ------------------------------------------------------------------
     localparam [1:0] S_IDLE = 2'd0, S_RUN = 2'd1, S_DRAIN = 2'd2;
     reg [1:0]  state;
     reg [2:0]  op_r;
     reg [1:0]  sa_r, sb_r, sc_r;
     reg        init_r;
 
-    reg [2:0]  stage;        // NTT: pass 0..3; INTT: pass 0..3 + 4 = scale
+    reg [2:0]  stage;
     reg [7:0]  issue;
     reg [4:0]  drain_cnt;
 
@@ -186,23 +120,16 @@ module ntt_engine_256 (
     wire bf_issue    = issue_valid && (is_ntt || is_intt || is_mac);
     wire cp_issue    = issue_valid && is_copyish;
 
-    // ------------------------------------------------------------------
-    // merged-pass group address / zeta generation
-    //   proven decode: tb = fwd ? 6-2p : 2p; b = issue >> tb;
-    //   t = issue & (2^tb - 1); j = (b << (tb+2)) | t; group step 2^tb
-    // ------------------------------------------------------------------
     wire [2:0] tb   = is_intt ? {pass, 1'b0} : (3'd6 - {pass, 1'b0});
     wire [7:0] gstep = 8'd1 << tb;
     wire [7:0] gb   = issue >> tb;
     wire [7:0] gt   = issue & (gstep - 8'd1);
     wire [7:0] gj   = (gb << (tb + 3'd2)) | gt;
 
-    // parent zeta index (7 bits used; fwd k in 1..127, inv k2 in 1..127)
     wire [7:0] par_fwd = (8'd1 << (3'd6 - tb)) + gb;
     wire [7:0] par_inv = (8'd255 >> (tb + 3'd1)) - gb;
     wire [7:0] parent  = is_intt ? par_inv : par_fwd;
 
-    // group addresses (also carries scale-stage j0/j1 in lanes 0/2)
     wire [7:0] sj0 = {issue[6:0], 1'b0};
     wire [7:0] sj1 = {issue[6:0], 1'b1};
 
@@ -211,9 +138,6 @@ module ntt_engine_256 (
     wire [7:0] i2 = is_scale ? sj1 : (gj + (gstep << 1));
     wire [7:0] i3 = gj + (gstep << 1) + gstep;
 
-    // ------------------------------------------------------------------
-    // read routing
-    // ------------------------------------------------------------------
     wire [7:0] op_addr [0:3];
     assign op_addr[0] = i0;
     assign op_addr[1] = i1;
@@ -246,7 +170,7 @@ module ntt_engine_256 (
         end else if (is_copyish) begin
             for (o = 0; o < 4; o = o + 1)
                 bank_raddr[bank_of(cp_addr[o]) ^ sa_r] = {sa_r, row_of(cp_addr[o])};
-        end else begin // MAC
+        end else begin
             bank_raddr[mac_ba] = {sa_r, row_of(mj)};
             if (sb_r != sa_r) bank_raddr[mac_bb] = {sb_r, row_of(mj)};
             if (!init_r)      bank_raddr[mac_bc] = {sc_r, row_of(mj)};
@@ -264,12 +188,9 @@ module ntt_engine_256 (
         mac_bc_q <= mac_bc;
     end
 
-    // ------------------------------------------------------------------
-    // control pipes (depth PIPE = 15; MAC/scale tap at PIPE1 = 8)
-    // ------------------------------------------------------------------
     reg           v_pipe   [1:PIPE];
-    reg           sc_pipe  [1:PIPE];   // scale-stage flag
-    reg           mg_pipe  [1:PIPE];   // merged-pass flag
+    reg           sc_pipe  [1:PIPE];
+    reg           mg_pipe  [1:PIPE];
     reg [7:0]     i0_pipe  [1:PIPE];
     reg [7:0]     i1_pipe  [1:PIPE];
     reg [7:0]     i2_pipe  [1:PIPE];
@@ -277,10 +198,10 @@ module ntt_engine_256 (
     integer p;
     always @(posedge clk or negedge rst_n) begin
         if (!rst_n) begin
-            for (p = 1; p <= 15; p = p + 1) v_pipe[p] <= 1'b0;  // literal = PIPE
+            for (p = 1; p <= 15; p = p + 1) v_pipe[p] <= 1'b0;
         end else begin
             v_pipe[1] <= bf_issue;
-            for (p = 2; p <= 15; p = p + 1) v_pipe[p] <= v_pipe[p-1];  // literal = PIPE
+            for (p = 2; p <= 15; p = p + 1) v_pipe[p] <= v_pipe[p-1];
         end
     end
     integer p2;
@@ -289,7 +210,7 @@ module ntt_engine_256 (
         i1_pipe[1] <= i1; i2_pipe[1] <= i2; i3_pipe[1] <= i3;
         sc_pipe[1] <= is_scale;
         mg_pipe[1] <= is_merged;
-        for (p2 = 2; p2 <= 15; p2 = p2 + 1) begin  // literal = PIPE
+        for (p2 = 2; p2 <= 15; p2 = p2 + 1) begin
             i0_pipe[p2] <= i0_pipe[p2-1];
             i1_pipe[p2] <= i1_pipe[p2-1];
             i2_pipe[p2] <= i2_pipe[p2-1];
@@ -310,13 +231,36 @@ module ntt_engine_256 (
         for (o3 = 0; o3 < 4; o3 = o3 + 1) cp_addr_q[o3] <= cp_addr[o3];
     end
 
-    // ------------------------------------------------------------------
-    // banks
-    // ------------------------------------------------------------------
     wire [31:0] bank_rdata [0:3];
     reg  [7:0]  bank_waddr [0:3];
     reg  [31:0] bank_wdata [0:3];
     reg  [3:0]  bank_we;
+
+    // ---- merged-channel decode: reconstruct legacy internal control -------
+    //   Two firmware invariants (enforced by the driver / dv sequence):
+    //     1. mem_we & mem_re are never both high in the same cycle
+    //        (external coeff read and write share mem_addr).
+    //     2. coeff loads and zeta loads never overlap (share mem_wdata/mem_addr).
+    //   Internal butterfly access keeps full concurrency; only the *external*
+    //   port is time-shared. Below re-derives the original internal nets so the
+    //   proven datapath (unchanged) drives exactly as before.
+    localparam MEM_COEFF = 1'b0, MEM_ZETA = 1'b1;
+
+    wire        ext_we    = mem_we && (mem_target == MEM_COEFF);
+    wire [1:0]  ext_wslot = mem_slot;
+    wire [7:0]  ext_waddr = mem_addr[7:0];
+    wire [31:0] ext_wdata = mem_wdata;
+    wire        ext_re    = mem_re && (mem_target == MEM_COEFF);
+    wire [1:0]  ext_rslot = mem_slot;
+    wire [7:0]  ext_raddr = mem_addr[7:0];
+    wire [31:0] ext_rdata;                 // assigned in the coeff read-back block
+    reg         ext_rvalid;                // assigned in the coeff read-back block
+    assign      mem_rdata  = ext_rdata;
+    assign      mem_rvalid = ext_rvalid;
+
+    wire        zload_we   = mem_we && (mem_target == MEM_ZETA);
+    wire [8:0]  zload_addr = mem_addr;
+    wire [31:0] zload_data = mem_wdata;
 
     wire [1:0] ext_wbank = bank_of(ext_waddr) ^ ext_wslot;
     wire [1:0] ext_rbank = bank_of(ext_raddr) ^ ext_rslot;
@@ -356,14 +300,10 @@ module ntt_engine_256 (
         end
     endgenerate
 
-    // ------------------------------------------------------------------
-    // zeta store: layer-1 row read at issue; layer-2 row address delayed
-    // BF_LAT (= PIPE1 - 1 = 7) cycles so data lands with layer-1 results
-    // ------------------------------------------------------------------
     wire [6:0] row_l1_now = is_intt ? parent[6:0] : parent[7:1];
     wire [6:0] row_l2_raw = is_intt ? parent[7:1] : parent[6:0];
 
-    reg [6:0] drow_pipe [1:7];   // depth = PIPE1 - 1
+    reg [6:0] drow_pipe [1:7];
     integer dz;
     always @(posedge clk) begin
         drow_pipe[1] <= row_l2_raw;
@@ -371,15 +311,13 @@ module ntt_engine_256 (
             drow_pipe[dz] <= drow_pipe[dz-1];
     end
 
-    // lane-select pipes: fwd layer-1 sel k&1 (1 cycle);
-    // inv layer-2 sel k2&1 (PIPE1 cycles)
     reg       psel_q1;
-    reg       psel_pipe [1:8];   // depth = PIPE1
+    reg       psel_pipe [1:8];
     integer sz;
     always @(posedge clk) begin
         psel_q1 <= parent[0];
         psel_pipe[1] <= parent[0];
-        for (sz = 2; sz <= 8; sz = sz + 1)  // literal = PIPE1
+        for (sz = 2; sz <= 8; sz = sz + 1)
             psel_pipe[sz] <= psel_pipe[sz-1];
     end
 
@@ -390,14 +328,11 @@ module ntt_engine_256 (
 `endif
         .clk(clk),
         .zwe(zload_we && !busy), .zaddr(zload_addr), .zdata(zload_data),
-        .gs_sel(is_intt && !is_scale),   // address-phase sign select
+        .gs_sel(is_intt && !is_scale),
         .row_l1(row_l1_now), .row_l2(drow_pipe[7]),
         .e_l1(ze_l1), .o_l1(zo_l1), .e_l2(ze_l2), .o_l2(zo_l2)
     );
 
-    // ------------------------------------------------------------------
-    // read-data unshuffle (cycle c+1), butterfly network
-    // ------------------------------------------------------------------
     wire signed [31:0] d0 = bank_rdata[op_bank_q[0]];
     wire signed [31:0] d1 = bank_rdata[op_bank_q[1]];
     wire signed [31:0] d2 = bank_rdata[op_bank_q[2]];
@@ -419,12 +354,8 @@ module ntt_engine_256 (
     wire mac_d1   = (op_q1 == OP_MAC);
     wire intt_d1  = (op_q1 == OP_INTT);
     wire gs_d1    = intt_d1 && !scale_q1;
-    wire fwd_d1   = !intt_d1;   // during merged NTT (MAC/scale gate elsewhere)
+    wire fwd_d1   = !intt_d1;
 
-    // layer-1 zetas (data valid c+1). GS negation is in the STORE
-    // (negated bank, address-selected): no negate carry chain here.
-    //   fwd:  both butterflies ZETAS[parent] = lane sel psel_q1 of row k>>1
-    //   inv:  L1A -ZETAS[2k2+1] = o_l1;  L1B -ZETAS[2k2] = e_l1
     wire signed [31:0] z_l1_fwd = psel_q1 ? zo_l1 : ze_l1;
     wire signed [31:0] z_l1a = mac_d1   ? mac_b    :
                                scale_q1 ? F_TOMONT :
@@ -432,9 +363,6 @@ module ntt_engine_256 (
     wire signed [31:0] z_l1b = scale_q1 ? F_TOMONT :
                                gs_d1    ? ze_l1    : z_l1_fwd;
 
-    // layer-1 inputs
-    //   fwd pairs (d0,d2),(d1,d3); inv pairs (d0,d1),(d2,d3)
-    //   MAC:   L1A = (acc, a-hat, b-hat)      scale: L1A/L1B = (0, x, f)
     wire signed [31:0] l1a_a = mac_d1 ? mac_acc : (scale_q1 ? 32'sd0 : d0);
     wire signed [31:0] l1a_b = mac_d1 ? mac_a   :
                                scale_q1 ? d0    :
@@ -442,8 +370,6 @@ module ntt_engine_256 (
     wire signed [31:0] l1b_a = scale_q1 ? 32'sd0 : (fwd_d1 ? d1 : d2);
     wire signed [31:0] l1b_b = scale_q1 ? d2     : d3;
 
-    // butterfly mode: GS only for inverse butterfly stages (scale uses CT
-    // form: out_a = 0 + mr(f*x)); stable across drains
     wire bf_mode = gs_d1;
 
     wire               l1a_ov, l1b_ov;
@@ -460,29 +386,21 @@ module ntt_engine_256 (
         .out_valid(l1b_ov), .out_a(l1b_oa), .out_b(l1b_ob)
     );
 
-    // layer-1 -> layer-2 lane mapping (group lane space x0..x3)
-    //   fwd: L1A -> (x0,x2), L1B -> (x1,x3)
-    //   inv: L1A -> (x0,x1), L1B -> (x2,x3)
     wire signed [31:0] x0 = l1a_oa;
     wire signed [31:0] x1 = fwd_d1 ? l1b_oa : l1a_ob;
     wire signed [31:0] x2 = fwd_d1 ? l1a_ob : l1b_oa;
     wire signed [31:0] x3 = l1b_ob;
 
-    // layer-2 zetas (data valid c+PIPE1, from the delayed row read)
-    //   fwd: L2C ZETAS[2k] = e_l2, L2D ZETAS[2k+1] = o_l2
-    //   inv: both -ZETAS[k2] = lane sel psel_pipe[PIPE1] of row k2>>1
-    wire signed [31:0] z_l2_inv = psel_pipe[8] ? zo_l2 : ze_l2;  // literal = PIPE1
+    wire signed [31:0] z_l2_inv = psel_pipe[8] ? zo_l2 : ze_l2;
     wire signed [31:0] z_l2c = fwd_d1 ? ze_l2 : z_l2_inv;
     wire signed [31:0] z_l2d = fwd_d1 ? zo_l2 : z_l2_inv;
 
-    // layer-2 inputs
-    //   fwd pairs (x0,x1),(x2,x3); inv pairs (x0,x2),(x1,x3)
     wire signed [31:0] l2c_a = x0;
     wire signed [31:0] l2c_b = fwd_d1 ? x1 : x2;
     wire signed [31:0] l2d_a = fwd_d1 ? x2 : x1;
     wire signed [31:0] l2d_b = x3;
 
-    wire l2_iv = v_pipe[8] && mg_pipe[8];  // literal = PIPE1
+    wire l2_iv = v_pipe[8] && mg_pipe[8];
 
     wire               l2c_ov, l2d_ov;
     wire signed [31:0] l2c_oa, l2c_ob, l2d_oa, l2d_ob;
@@ -498,20 +416,11 @@ module ntt_engine_256 (
         .out_valid(l2d_ov), .out_a(l2d_oa), .out_b(l2d_ob)
     );
 
-    // layer-2 -> write lane mapping (group lane space y0..y3)
-    //   fwd: L2C -> (y0,y1), L2D -> (y2,y3)
-    //   inv: L2C -> (y0,y2), L2D -> (y1,y3)
     wire signed [31:0] y0 = l2c_oa;
     wire signed [31:0] y1 = fwd_d1 ? l2c_ob : l2d_oa;
     wire signed [31:0] y2 = fwd_d1 ? l2d_oa : l2c_ob;
     wire signed [31:0] y3 = l2d_ob;
 
-    // ------------------------------------------------------------------
-    // write stage
-    //   merged passes: 4 writes at tap PIPE (y lanes -> group addresses)
-    //   scale:         2 writes at tap PIPE1 (L1A/L1B out_a -> lanes 0/2)
-    //   MAC:           1 write  at tap PIPE1 (L1A out_a, slot-swizzled)
-    // ------------------------------------------------------------------
     wire [7:0] wm_addr [0:3];
     assign wm_addr[0] = i0_pipe[PIPE];
     assign wm_addr[1] = i1_pipe[PIPE];
@@ -537,7 +446,7 @@ module ntt_engine_256 (
         end
         if (op_r == OP_NTT || op_r == OP_INTT) begin
             if (w_scale) begin
-                // two writes: out_a of L1A/L1B back to lanes 0/2
+
                 bank_waddr[bank_of(i0_pipe[PIPE1])] = {2'b00, row_of(i0_pipe[PIPE1])};
                 bank_wdata[bank_of(i0_pipe[PIPE1])] = l1a_oa;
                 bank_we[bank_of(i0_pipe[PIPE1])]    = 1'b1;
@@ -561,14 +470,13 @@ module ntt_engine_256 (
                         : bank_rdata[bank_of(cp_addr_q[w]) ^ sa_r];
                 bank_we[bank_of(cp_addr_q[w]) ^ sc_r] = cp_v_q;
             end
-        end else begin // MAC
+        end else begin
             bank_waddr[bank_of(i0_pipe[PIPE1]) ^ sc_r] = {sc_r, row_of(i0_pipe[PIPE1])};
             bank_wdata[bank_of(i0_pipe[PIPE1]) ^ sc_r] = l1a_oa;
             bank_we[bank_of(i0_pipe[PIPE1]) ^ sc_r]    = w_mac;
         end
     end
 
-    // synthesis translate_off
     always @(posedge clk) begin
         if (start && state == S_IDLE && op == OP_MAC && !mac_init &&
             (slot_c == slot_a || slot_c == slot_b))
@@ -576,8 +484,7 @@ module ntt_engine_256 (
         if (start && state == S_IDLE && (op == OP_COPY || op == OP_REDUCE) &&
             slot_c == slot_a)
             $display("ENGINE MISUSE: COPY/REDUCE src slot == dst slot");
-        // merged-group banking invariant (golden P1): the 4 group
-        // addresses must land in 4 distinct banks under the XOR-fold map
+
         if (state == S_RUN && is_merged &&
             ((bank_of(i0) == bank_of(i1)) || (bank_of(i0) == bank_of(i2)) ||
              (bank_of(i0) == bank_of(i3)) || (bank_of(i1) == bank_of(i2)) ||
@@ -585,7 +492,10 @@ module ntt_engine_256 (
             $display("ENGINE MISUSE: merged group bank conflict j=%0d step=%0d",
                      gj, gstep);
     end
-    // synthesis translate_on
+
+`ifdef ANT_DIODES
+    (* keep *) sky130_fd_sc_hd__diode_2 ant_mac_bc_1 (.DIODE(mac_bc[1]));
+`endif
 
 endmodule
 

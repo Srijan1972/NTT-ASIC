@@ -1,5 +1,3 @@
-// SPDX-FileCopyrightText: 2026 Srijan1972
-// SPDX-License-Identifier: Apache-2.0
 
 `default_nettype none
 
@@ -55,6 +53,24 @@ module ntt_butterfly_ct (
     assign out_a     = oa_r;
     assign out_b     = ob_r;
     assign out_valid = vld_r;
+`ifdef ANT_DIODES
+    (* keep *) sky130_fd_sc_hd__diode_2 ant_oa_r_1   (.DIODE(oa_r[1]));
+    (* keep *) sky130_fd_sc_hd__diode_2 ant_oa_r_5   (.DIODE(oa_r[5]));
+    (* keep *) sky130_fd_sc_hd__diode_2 ant_oa_r_10  (.DIODE(oa_r[10]));
+    (* keep *) sky130_fd_sc_hd__diode_2 ant_oa_r_17  (.DIODE(oa_r[17]));
+    (* keep *) sky130_fd_sc_hd__diode_2 ant_oa_r_19  (.DIODE(oa_r[19]));
+    (* keep *) sky130_fd_sc_hd__diode_2 ant_oa_r_21  (.DIODE(oa_r[21]));
+    (* keep *) sky130_fd_sc_hd__diode_2 ant_ob_r_21  (.DIODE(ob_r[21]));
+    (* keep *) sky130_fd_sc_hd__diode_2 ant_t_5      (.DIODE(t[5]));
+    (* keep *) sky130_fd_sc_hd__diode_2 ant_t_13     (.DIODE(t[13]));
+    (* keep *) sky130_fd_sc_hd__diode_2 ant_t_19     (.DIODE(t[19]));
+    (* keep *) sky130_fd_sc_hd__diode_2 ant_t_24     (.DIODE(t[24]));
+    (* keep *) sky130_fd_sc_hd__diode_2 ant_t_30     (.DIODE(t[30]));
+    (* keep *) sky130_fd_sc_hd__diode_2 ant_t_31     (.DIODE(t[31]));
+    (* keep *) sky130_fd_sc_hd__diode_2 ant_a_al_11  (.DIODE(a_al[11]));
+    (* keep *) sky130_fd_sc_hd__diode_2 ant_mm_b_19  (.DIODE(mm_b[19]));
+`endif
+
 endmodule
 
 `default_nettype wire

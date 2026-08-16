@@ -1,12 +1,10 @@
-// SPDX-FileCopyrightText: 2026 Srijan1972
-// SPDX-License-Identifier: Apache-2.0
 
 `default_nettype none
 
 module bank_ram_1r1w #(
-    parameter integer DEPTH = 64,
-    parameter integer AW    = 6,
-    parameter integer W     = 32
+    parameter int DEPTH = 64,
+    parameter int AW    = 6,
+    parameter int W     = 32
 ) (
     input  wire          clk,
     input  wire          re,
