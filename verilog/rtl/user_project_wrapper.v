@@ -82,17 +82,6 @@ module user_project_wrapper #(
 /* User project is instantiated  here   */
 /*--------------------------------------*/
 
-wire ntt_busy;
-wire ntt_done;
-wire ntt_ext_rvalid;
-
-// The accelerator is controlled through Wishbone.  Keeping the LA and GPIO
-// buses outside the hard macro substantially reduces macro pin-access pressure.
-assign la_data_out = {125'b0, ntt_ext_rvalid, ntt_done, ntt_busy};
-assign io_out      = {`MPRJ_IO_PADS{1'b0}};
-assign io_oeb      = {`MPRJ_IO_PADS{1'b1}};
-assign user_irq    = {1'b0, ntt_ext_rvalid, ntt_done};
-
 ntt ntt (
 `ifdef USE_POWER_PINS
     .vccd1(vccd1),
@@ -109,9 +98,10 @@ ntt ntt (
     .wbs_adr_i(wbs_adr_i),
     .wbs_ack_o(wbs_ack_o),
     .wbs_dat_o(wbs_dat_o),
-    .busy_o(ntt_busy),
-    .done_o(ntt_done),
-    .ext_rvalid_o(ntt_ext_rvalid)
+    .la_data_out_o(la_data_out),
+    .io_out_o(io_out),
+    .io_oeb_o(io_oeb),
+    .user_irq_o(user_irq)
 );
 
 endmodule	// user_project_wrapper

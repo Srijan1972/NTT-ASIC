@@ -11,6 +11,7 @@ SOURCES := \
 	$(RTL)/ntt_butterfly_ct.v \
 	$(RTL)/zeta_store.v \
 	$(RTL)/ntt_engine_256.v \
+	$(RTL)/ntt_wb_bridge.v \
 	$(RTL)/ntt.v \
 	ntt_wb_tb.v
 

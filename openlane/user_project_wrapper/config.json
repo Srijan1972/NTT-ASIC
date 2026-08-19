@@ -5,31 +5,45 @@
         "dir::../../verilog/rtl/user_project_wrapper.v",
         "dir::../../verilog/rtl/ntt.v"
     ],
-    "ROUTING_CORES": 1,
+    "ROUTING_CORES": 4,
     "GRT_ADJUSTMENT": 0.3,
     "RUN_IRDROP_REPORT": 0,
-    "CLOCK_PERIOD": 25,
+    "CLOCK_PERIOD": 10,
     "CLOCK_PORT": "wb_clk_i",
-    "CLOCK_NET": "ntt.u_engine.clk",
-    "FP_PDN_MACRO_HOOKS": "ntt.u_engine vccd1 vssd1 VPWR VGND",
+    "CLOCK_NET": "wb_clk_i",
+    "FP_PDN_MACRO_HOOKS": "ntt.u_engine vccd1 vssd1 VPWR VGND, ntt.u_bridge vccd1 vssd1 vccd1 vssd1",
     "MACRO_PLACEMENT_CFG": "dir::macro.cfg",
     "MAGIC_DEF_LABELS": 0,
     "VERILOG_FILES_BLACKBOX": [
-        "dir::../../verilog/gl/ntt_engine_256.v"
+        "dir::../../verilog/gl/ntt_engine_256.v",
+        "dir::../ntt_wb_bridge/ntt_wb_bridge.blackbox.v"
     ],
-    "EXTRA_LEFS": "dir::../../lef/ntt_engine_256.lef",
-    "EXTRA_GDS_FILES": "dir::../../gds/ntt_engine_256.gds.gz",
-    "EXTRA_LIBS": "dir::../../lib/ntt_engine_256.lib",
+    "EXTRA_LEFS": [
+        "dir::../../lef/ntt_engine_256.lef",
+        "dir::../../lef/ntt_wb_bridge.lef"
+    ],
+    "EXTRA_GDS_FILES": [
+        "dir::../../gds/ntt_engine_256.gds.gz",
+        "dir::../../gds/ntt_wb_bridge.gds.gz"
+    ],
+    "EXTRA_LIBS": [
+        "dir::../../lib/ntt_engine_256.lib",
+        "dir::../../lib/ntt_wb_bridge.lib"
+    ],
     "SYNTH_DEFINES": [
         "HARDENED_ENGINE_MACRO"
     ],
     "BASE_SDC_FILE": "dir::base_user_project_wrapper.sdc",
     "IO_SYNC": 0,
     "MAX_TRANSITION_CONSTRAINT": 1.5,
+    "MAX_FANOUT_CONSTRAINT": 256,
+    "SYNTH_BUFFERING": 0,
+    "SYNTH_SIZING": 0,
+    "SYNTH_BUFFER_DIRECT_WIRES": 0,
     "RUN_LINTER": 0,
     "QUIT_ON_SYNTH_CHECKS": 0,
     "FP_PDN_CHECK_NODES": 0,
-    "PL_RANDOM_GLB_PLACEMENT": 1,
+    "PL_RANDOM_GLB_PLACEMENT": 0,
     "PL_RESIZER_DESIGN_OPTIMIZATIONS": 0,
     "PL_RESIZER_TIMING_OPTIMIZATIONS": 0,
     "GLB_RESIZER_DESIGN_OPTIMIZATIONS": 0,
@@ -47,6 +61,7 @@
     "MAGIC_ZEROIZE_ORIGIN": 0,
     "FP_SIZING": "absolute",
     "RUN_CVC": 0,
+    "RUN_KLAYOUT_XOR": 0,
     "UNIT": 2.4,
     "FP_IO_VEXTEND": "expr::2 * $UNIT",
     "FP_IO_HEXTEND": "expr::2 * $UNIT",
@@ -83,7 +98,7 @@
         "DIE_AREA": "0 0 2920 3520",
         "FP_DEF_TEMPLATE": "dir::fixed_dont_change/user_project_wrapper.def",
         "scl::sky130_fd_sc_hd": {
-            "CLOCK_PERIOD": 25
+            "CLOCK_PERIOD": 10
         },
         "scl::sky130_fd_sc_hdll": {
             "CLOCK_PERIOD": 10
