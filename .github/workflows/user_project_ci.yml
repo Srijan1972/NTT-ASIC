@@ -51,6 +51,8 @@ jobs:
   
   download_deps:
     runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     strategy:
       matrix:
         targets: ["pdk-with-volare", "install_mcw", "openlane", "setup-timing-scripts", "precheck"]
