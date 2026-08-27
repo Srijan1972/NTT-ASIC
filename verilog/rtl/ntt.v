@@ -54,8 +54,8 @@ module ntt (
 
     ntt_wb_bridge u_bridge (
 `ifdef USE_POWER_PINS
-        .vccd1(vccd1),
-        .vssd1(vssd1),
+        .VPWR(vccd1),
+        .VGND(vssd1),
 `endif
         .wb_clk_i(wb_clk_i),
         .wb_rst_i(wb_rst_i),

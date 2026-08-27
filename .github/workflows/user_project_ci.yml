@@ -12,6 +12,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+        with:
+          lfs: true
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1
@@ -55,6 +57,8 @@ jobs:
     needs: [download_caravel]
     steps:
       - uses: actions/checkout@v2
+        with:
+          lfs: true
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1
@@ -132,6 +136,8 @@ jobs:
     needs: [download_deps]
     steps:
       - uses: actions/checkout@v2
+        with:
+          lfs: true
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1
@@ -215,6 +221,8 @@ jobs:
     needs: [download_deps]
     steps:
       - uses: actions/checkout@v2
+        with:
+          lfs: true
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1
@@ -291,6 +299,8 @@ jobs:
     needs: [hardening]
     steps:
       - uses: actions/checkout@v2
+        with:
+          lfs: true
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1
 
@@ -369,6 +379,8 @@ jobs:
     needs: [hardening]
     steps:
       - uses: actions/checkout@v2
+        with:
+          lfs: true
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1
 

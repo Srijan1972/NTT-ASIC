@@ -3,8 +3,8 @@
 
 (* blackbox *)
 module ntt_wb_bridge (
-    inout  wire        vccd1,
-    inout  wire        vssd1,
+    inout  wire        VPWR,
+    inout  wire        VGND,
     input  wire        wb_clk_i,
     input  wire        wb_rst_i,
     input  wire        wbs_stb_i,

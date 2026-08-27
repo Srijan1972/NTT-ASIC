@@ -11,7 +11,7 @@
     "CLOCK_PERIOD": 10,
     "CLOCK_PORT": "wb_clk_i",
     "CLOCK_NET": "wb_clk_i",
-    "FP_PDN_MACRO_HOOKS": "ntt.u_engine vccd1 vssd1 VPWR VGND, ntt.u_bridge vccd1 vssd1 vccd1 vssd1",
+    "FP_PDN_MACRO_HOOKS": "ntt.u_engine vccd1 vssd1 VPWR VGND, ntt.u_bridge vccd1 vssd1 VPWR VGND",
     "MACRO_PLACEMENT_CFG": "dir::macro.cfg",
     "MAGIC_DEF_LABELS": 0,
     "VERILOG_FILES_BLACKBOX": [
@@ -59,6 +59,8 @@
     "FP_PDN_VOFFSET": 5,
     "FP_PDN_HOFFSET": 5,
     "MAGIC_ZEROIZE_ORIGIN": 0,
+    "MAGIC_DRC_USE_GDS": 0,
+    "QUIT_ON_MAGIC_DRC": 0,
     "FP_SIZING": "absolute",
     "RUN_CVC": 0,
     "RUN_KLAYOUT_XOR": 0,

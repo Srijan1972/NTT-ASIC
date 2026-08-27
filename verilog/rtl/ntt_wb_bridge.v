@@ -7,8 +7,8 @@
 // separate macro so the fixed Caravel wrapper contains no standard cells.
 module ntt_wb_bridge (
 `ifdef USE_POWER_PINS
-    inout  wire        vccd1,
-    inout  wire        vssd1,
+    inout  wire        VPWR,
+    inout  wire        VGND,
 `endif
     input  wire        wb_clk_i,
     input  wire        wb_rst_i,
