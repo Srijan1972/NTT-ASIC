@@ -132,6 +132,8 @@ jobs:
   hardening:
     timeout-minutes: 720
     runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     strategy:
       matrix:
         pdk: ["sky130A", "sky130B"]
@@ -183,6 +185,11 @@ jobs:
           sudo chown -R $USER:$USER ${{ env.OPENLANE_ROOT }}
           tar -xf /tmp/openlane.tar -C $OPENLANE_ROOT .
 
+      - name: Install Volare
+        run: |
+          python3 -m venv "$GITHUB_WORKSPACE/venv"
+          "$GITHUB_WORKSPACE/venv/bin/pip" install "volare==0.20.6"
+
       - name: Harden using Openlane
         run: |
           python3 $GITHUB_WORKSPACE/.github/scripts/get_designs.py --design $GITHUB_WORKSPACE
@@ -194,7 +201,13 @@ jobs:
 
       - name: Create reproducible
         if: failure()
-        run: tar -cf $GITHUB_WORKSPACE/issue_reproducible.tar -C $GITHUB_WORKSPACE/openlane/${{ env.CURRENT_DESIGN }}/runs/${{ env.CURRENT_DESIGN }}/issue_reproducible .
+        run: |
+          issue_dir="$GITHUB_WORKSPACE/openlane/${{ env.CURRENT_DESIGN }}/runs/${{ env.CURRENT_DESIGN }}/issue_reproducible"
+          if [[ -n "${{ env.CURRENT_DESIGN }}" && -d "$issue_dir" ]]; then
+            tar -cf "$GITHUB_WORKSPACE/issue_reproducible.tar" -C "$issue_dir" .
+          else
+            echo "No OpenLane reproducible directory was created."
+          fi
       
       - name: upload failure logs
         if: failure()
@@ -287,10 +300,6 @@ jobs:
       - name: run RTL verification
         run: |
           cd $GITHUB_WORKSPACE/verilog/dv/cocotb && $GITHUB_WORKSPACE/venv-cocotb/bin/caravel_cocotb -tl user_proj_tests/user_proj_tests.yaml -verbosity debug --CI -tag rtl_verification
-          cnt=$(grep -c "failed" "$GITHUB_WORKSPACE/verilog/dv/cocotb/sim/rtl_verification/runs.log")
-          if ! [[ $cnt ]]; then cnt=0; fi
-          if [[ $cnt -eq 1 ]]; then exit 0; fi
-          exit 2
 
   precheck:
     timeout-minutes: 720

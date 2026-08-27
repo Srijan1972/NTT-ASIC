@@ -15,4 +15,6 @@
 
 // Caravel user project includes
 $USER_PROJECT_VERILOG/gl/ntt.v
+$USER_PROJECT_VERILOG/gl/ntt_engine_256.v
+$USER_PROJECT_VERILOG/gl/ntt_wb_bridge.v
 $USER_PROJECT_VERILOG/gl/user_project_wrapper.v
