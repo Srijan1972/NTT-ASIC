@@ -9,33 +9,74 @@ implementation uses six `sky130_sram_1kbyte_1rw1r_32x256_8` macros.
 
 ## Integration status
 
-The RTL, Wishbone wrapper, SRAM macro configuration, wrapper integration, GPIO
-defaults, and RTL regression are present. Physical signoff is **not complete**:
-the latest leaf run routed with zero OpenROAD detailed-routing violations, but
-Magic extraction/LVS failed. Do not submit or treat the checked-in placeholder
-physical views as final until a clean leaf run replaces them.
+The `caravel3` implementation uses two separately hardened leaf macros:
+`ntt_engine_256` and `ntt_wb_bridge`. These macros are instantiated in the
+Caravel `user_project_wrapper`. RTL verification and local wrapper hardening
+have completed successfully; the checked-in physical views correspond to this
+two-macro hierarchy.
 
-## Build order
+## Caravel3 setup and hardening
 
-After installing the exact Caravel/OpenLane/PDK dependencies with `make setup`:
+Docker must be running. From a clean checkout of this branch, fetch the Git LFS
+objects and install the pinned Caravel, OpenLane, Sky130 PDK, and verification
+dependencies:
 
 ```sh
-make -C verilog/dv/ntt_wb
-make ntt
+git checkout caravel3
+git lfs pull
+make setup
+```
+
+Run the RTL regression before hardening:
+
+```sh
+make setup-cocotb
+make cocotb-verify-all-rtl
+```
+
+Harden the two leaf macros first, followed by the Caravel wrapper. Do not change
+this order:
+
+```sh
+make ntt_engine_256
+make ntt_wb_bridge
 make user_project_wrapper
-make verify-all-rtl
-make verify-all-gl
-make verify-all-gl-sdf
+```
+
+`user_project_wrapper` consumes the generated LEF, GDS, Liberty, and gate-level
+Verilog views from both leaf macros. Running only `make user_project_wrapper` is
+appropriate only when those checked-in or previously generated macro views are
+already present and trusted.
+
+After hardening, run the Caravel signoff steps:
+
+```sh
 make extract-parasitics
 make create-spef-mapping
 make caravel-sta
 make run-precheck
 ```
 
-The leaf must pass routing, DRC, LVS, antenna, and timing checks before hardening
-`user_project_wrapper`. Full details, the register map, and signoff criteria are
-in [docs/caravel2.md](docs/caravel2.md). The upstream harness workflow is in the
-[Caravel user-project documentation](https://caravel-user-project.readthedocs.io/en/latest/#starting-your-project).
+Each leaf must complete routing, DRC, LVS, antenna, and timing checks before the
+wrapper is treated as reproducible.
+
+### Legacy target warning
+
+Do **not** use `make ntt` or `make harden` for Caravel3. `make ntt` selects the
+older monolithic Caravel2 configuration under `openlane/ntt`; it is not part of
+the Caravel3 physical hierarchy. `make harden` also discovers legacy/template
+OpenLane directories and therefore runs targets that are not part of the
+Caravel3 sequence.
+
+The supported Caravel3 sequence is exactly:
+
+```text
+ntt_engine_256 -> ntt_wb_bridge -> user_project_wrapper
+```
+
+The CI workflow derives the same sequence from
+`lvs/user_project_wrapper/lvs_config.json`. The upstream harness workflow is in
+the [Caravel user-project documentation](https://caravel-user-project.readthedocs.io/en/latest/#starting-your-project).
 
 ## Wishbone interface
 
