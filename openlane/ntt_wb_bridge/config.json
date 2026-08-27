@@ -7,6 +7,7 @@
     "SYNTH_DEFINES": [
         "USE_POWER_PINS"
     ],
+    "SYNTH_USE_PG_PINS_DEFINES": "USE_POWER_PINS",
     "CLOCK_PORT": "wb_clk_i",
     "CLOCK_NET": "wb_clk_i",
     "CLOCK_PERIOD": 10,

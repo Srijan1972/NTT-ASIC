@@ -128,6 +128,10 @@ blocks=$(shell cd openlane && find * -maxdepth 0 -type d)
 .PHONY: $(blocks)
 $(blocks): % :
 	$(MAKE) -C openlane $*
+	@if [ "$*" = "ntt_wb_bridge" ]; then \
+		$(PYTHON_BIN) scripts/annotate_lef_pg_pins.py lef/ntt_wb_bridge.lef \
+			--power VPWR --ground VGND; \
+	fi
 
 # Only these regressions describe the NTT integration.  The other directories
 # are untouched Caravel template examples and are intentionally not part of

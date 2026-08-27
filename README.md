@@ -11,9 +11,10 @@ implementation uses six `sky130_sram_1kbyte_1rw1r_32x256_8` macros.
 
 The `caravel3` implementation uses two separately hardened leaf macros:
 `ntt_engine_256` and `ntt_wb_bridge`. These macros are instantiated in the
-Caravel `user_project_wrapper`. RTL verification and local wrapper hardening
-have completed successfully; the checked-in physical views correspond to this
-two-macro hierarchy.
+Caravel `user_project_wrapper`. RTL verification passes, and local OpenLane
+runs have produced the complete two-macro hierarchy with clean detailed routing,
+LVS, and setup/hold timing. Residual antenna and foundry-precheck markers remain,
+so a completed OpenLane run must not be interpreted as final tapeout approval.
 
 ## Caravel3 setup and hardening
 
@@ -42,6 +43,11 @@ make ntt_engine_256
 make ntt_wb_bridge
 make user_project_wrapper
 ```
+
+The `ntt_wb_bridge` target also validates and annotates the generated bridge
+LEF so `VPWR` and `VGND` are exported as power and ground pins. Do not bypass
+the top-level target with `make -C openlane ntt_wb_bridge`, because that skips
+this required Caravel3 post-export step.
 
 `user_project_wrapper` consumes the generated LEF, GDS, Liberty, and gate-level
 Verilog views from both leaf macros. Running only `make user_project_wrapper` is
