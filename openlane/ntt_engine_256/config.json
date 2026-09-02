@@ -1,0 +1,100 @@
+{
+    "DESIGN_NAME": "ntt_engine_256",
+    "DESIGN_IS_CORE": 0,
+    "VERILOG_FILES": [
+        "dir::../../verilog/rtl/asic_sram_1r1w_sky130.v",
+        "dir::../../verilog/rtl/asic_sram_1rw1r_sky130.v",
+        "dir::../../verilog/rtl/bank_ram_1r1w.v",
+        "dir::../../verilog/rtl/bank_ram_1rw1r.v",
+        "dir::../../verilog/rtl/modmul_solinas.v",
+        "dir::../../verilog/rtl/ntt_butterfly_ct.v",
+        "dir::../../verilog/rtl/zeta_store.v",
+        "dir::../../verilog/rtl/ntt_engine_256.v"
+    ],
+    "SYNTH_DEFINES": [
+        "USE_SRAM_MACRO",
+        "ANT_DIODES"
+    ],
+    "SYNTH_READ_BLACKBOX": 1,
+    "VERILOG_FILES_BLACKBOX": [
+        "dir::../ntt/bb/sky130_sram_1kbyte_1rw1r_32x256_8.v",
+        "dir::diode_bb.v"
+    ],
+    "EXTRA_LEFS": [
+        "pdk_dir::libs.ref/sky130_sram_macros/lef/sky130_sram_1kbyte_1rw1r_32x256_8.lef"
+    ],
+    "EXTRA_GDS_FILES": [
+        "pdk_dir::libs.ref/sky130_sram_macros/gds/sky130_sram_1kbyte_1rw1r_32x256_8.gds"
+    ],
+    "EXTRA_LIBS": [
+        "pdk_dir::libs.ref/sky130_sram_macros/lib/sky130_sram_1kbyte_1rw1r_32x256_8_TT_1p8V_25C.lib"
+    ],
+    "CLOCK_PORT": "clk",
+    "CLOCK_NET": "clk",
+    "CLOCK_PERIOD": 10,
+    "BASE_SDC_FILE": "dir::ntt_engine_256.sdc",
+    "FP_SIZING": "absolute",
+    "DIE_AREA": "0 0 2400 2400",
+    "FP_CORE_UTIL": 25,
+    "PL_TARGET_DENSITY": 0.35,
+    "MACRO_PLACEMENT_CFG": "dir::macro_placement.cfg",
+    "PL_MACRO_HALO": "20 20",
+    "GPL_CELL_PADDING": 0,
+    "DPL_CELL_PADDING": 0,
+    "FP_PDN_MACRO_HOOKS": ".*u_ram.u_macro VPWR VGND vccd1 vssd1",
+    "FP_PDN_CFG": "dir::pdn.tcl",
+    "FP_PDN_ENABLE_RAILS": 1,
+    "FP_PDN_VERTICAL_LAYER": "met4",
+    "FP_PDN_HORIZONTAL_LAYER": "met5",
+    "FP_PDN_VWIDTH": 2.8,
+    "FP_PDN_HWIDTH": 2.8,
+    "VDD_NETS": [
+        "VPWR"
+    ],
+    "GND_NETS": [
+        "VGND"
+    ],
+    "RT_MAX_LAYER": "met5",
+    "RT_CLOCK_MIN_LAYER": "met3",
+    "GRT_ADJUSTMENT": 0.20,
+    "GRT_MACRO_EXTENSION": 0,
+    "GRT_ALLOW_CONGESTION": 0,
+    "ROUTING_CORES": 6,
+    "MAX_FANOUT_CONSTRAINT": 6,
+    "SYNTH_STRATEGY": "DELAY 1",
+    "PL_RANDOM_GLB_PLACEMENT": 0,
+    "PL_RESIZER_BUFFER_INPUT_PORTS": 1,
+    "PL_RESIZER_BUFFER_OUTPUT_PORTS": 1,
+    "PL_RESIZER_DESIGN_OPTIMIZATIONS": 1,
+    "PL_RESIZER_TIMING_OPTIMIZATIONS": 1,
+    "GLB_RESIZER_DESIGN_OPTIMIZATIONS": 1,
+    "GLB_RESIZER_TIMING_OPTIMIZATIONS": 0,
+    "PL_RESIZER_MAX_WIRE_LENGTH": 380,
+    "PL_RESIZER_SETUP_SLACK_MARGIN": 1.0,
+    "PL_RESIZER_HOLD_SLACK_MARGIN": 0.1,
+    "GLB_RESIZER_SETUP_SLACK_MARGIN": 0.025,
+    "GLB_RESIZER_HOLD_SLACK_MARGIN": 0.05,
+    "PL_RESIZER_MAX_SLEW_MARGIN": 20,
+    "PL_RESIZER_MAX_CAP_MARGIN": 20,
+    "GLB_RESIZER_MAX_SLEW_MARGIN": 10,
+    "GLB_RESIZER_MAX_CAP_MARGIN": 10,
+    "RUN_CTS": 1,
+    "RUN_TAP_DECAP_INSERTION": 1,
+    "RUN_FILL_INSERTION": 1,
+    "GRT_REPAIR_ANTENNAS": 1,
+    "RUN_HEURISTIC_DIODE_INSERTION": 1,
+    "GRT_ANT_ITERS": 10,
+    "GRT_MAX_DIODE_INS_ITERS": 1,
+    "GRT_ANT_MARGIN": 15,
+    "DIODE_PADDING": 2,
+    "RUN_IRDROP_REPORT": 1,
+    "RUN_CVC": 1,
+    "RUN_KLAYOUT_DRC": 1,
+    "RUN_KLAYOUT_XOR": 0,
+    "MAGIC_DRC_USE_GDS": 0,
+    "QUIT_ON_TIMING_VIOLATIONS": 0,
+    "QUIT_ON_MAGIC_DRC": 0,
+    "QUIT_ON_LVS_ERROR": 1,
+    "QUIT_ON_TR_DRC": 0,
+    "RUN_LINTER": 0
+}

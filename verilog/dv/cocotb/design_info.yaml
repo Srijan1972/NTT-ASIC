@@ -1,0 +1,9 @@
+CARAVEL_ROOT: /home/khan/NTT-ASIC/caravel
+MCW_ROOT: /home/khan/NTT-ASIC/mgmt_core_wrapper
+PDK: sky130A
+PDK_ROOT: /home/khan/NTT-ASIC/pdk
+USER_PROJECT_ROOT: /home/khan/NTT-ASIC
+caravan: false
+clk: 25
+emailto:
+- null

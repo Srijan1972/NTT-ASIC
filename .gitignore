@@ -1,0 +1,33 @@
+/.idea/
+/precheck_results/
+*/tmp
+*/*/tmp
+*.hex*
+*.lst
+*.vcd
+*.gtkw
+/env
+/venv
+/venv-cocotb
+/caravel
+/dependencies
+/mgmt_core_wrapper
+/logs
+
+# Haseeb - exclude large/generated dirs
+caravel/
+dependencies/
+env/
+logs/
+mgmt_core_wrapper/
+openlane_src/
+pdk/
+precheck_results/
+sdf/
+venv/
+venv-cocotb/
+
+# Exclude runs folders inside openlane subdirs
+openlane/ntt_engine_256/runs/
+openlane/ntt_wb_bridge/runs/
+openlane/user_project_wrapper/runs/

@@ -1,0 +1,287 @@
+// SPDX-FileCopyrightText: 2026 Srijan1972
+// SPDX-License-Identifier: Apache-2.0
+// ============================================================================
+//  zeta_rom.sv -- Dilithium forward-NTT twiddle ROM. GENERATED FILE:
+//  golden/gen_zeta_rom.py (values = center(MONT * psi^brv8(k)), anchored to
+//  the published reference table). Do not edit by hand.
+//
+//  Dual registered read ports (the len==1 stage needs two zetas per cycle).
+//  Read latency 1 cycle, matching the coefficient bank read latency so
+//  zeta and operands arrive at the butterfly together.
+// ============================================================================
+`default_nettype none
+
+module zeta_rom (
+    input  wire        clk,
+    input  wire [7:0]  addr0,
+    input  wire [7:0]  addr1,
+    output reg  signed [31:0] dout0,
+    output reg  signed [31:0] dout1
+);
+    reg signed [31:0] rom [0:255];
+    initial begin
+        rom[  0] = 32'shFFC01DFF;
+        rom[  1] = 32'sh000064F7;
+        rom[  2] = 32'shFFD83102;
+        rom[  3] = 32'shFFF81503;
+        rom[  4] = 32'sh00039E44;
+        rom[  5] = 32'shFFF42118;
+        rom[  6] = 32'shFFF2A128;
+        rom[  7] = 32'sh00071E24;
+        rom[  8] = 32'sh001BDE2B;
+        rom[  9] = 32'sh0023E92B;
+        rom[ 10] = 32'shFFFA84AD;
+        rom[ 11] = 32'shFFE0147F;
+        rom[ 12] = 32'sh002F9A75;
+        rom[ 13] = 32'shFFD3FB09;
+        rom[ 14] = 32'sh002F7A49;
+        rom[ 15] = 32'sh0028E527;
+        rom[ 16] = 32'sh00299658;
+        rom[ 17] = 32'sh000FA070;
+        rom[ 18] = 32'shFFEF85A4;
+        rom[ 19] = 32'sh0036B788;
+        rom[ 20] = 32'shFFF79D90;
+        rom[ 21] = 32'shFFEEEAA0;
+        rom[ 22] = 32'sh0027F968;
+        rom[ 23] = 32'shFFDFD37B;
+        rom[ 24] = 32'shFFDFADD6;
+        rom[ 25] = 32'shFFC51AE7;
+        rom[ 26] = 32'shFFEAA4F7;
+        rom[ 27] = 32'shFFCDFC98;
+        rom[ 28] = 32'sh001AD035;
+        rom[ 29] = 32'shFFFFB422;
+        rom[ 30] = 32'sh003D3201;
+        rom[ 31] = 32'sh000445C5;
+        rom[ 32] = 32'sh00294A67;
+        rom[ 33] = 32'sh00017620;
+        rom[ 34] = 32'sh002EF4CD;
+        rom[ 35] = 32'sh0035DEC5;
+        rom[ 36] = 32'shFFE6A503;
+        rom[ 37] = 32'shFFC9302C;
+        rom[ 38] = 32'shFFD947D4;
+        rom[ 39] = 32'sh003BBEAF;
+        rom[ 40] = 32'shFFC51585;
+        rom[ 41] = 32'shFFD18E7C;
+        rom[ 42] = 32'sh00368A96;
+        rom[ 43] = 32'shFFD43E41;
+        rom[ 44] = 32'sh00360400;
+        rom[ 45] = 32'shFFFB6A4D;
+        rom[ 46] = 32'sh0023D69C;
+        rom[ 47] = 32'shFFF7C55D;
+        rom[ 48] = 32'shFFE6123D;
+        rom[ 49] = 32'shFFE6EAD6;
+        rom[ 50] = 32'sh00357E1E;
+        rom[ 51] = 32'shFFC5AF59;
+        rom[ 52] = 32'sh0035843F;
+        rom[ 53] = 32'shFFDF5617;
+        rom[ 54] = 32'shFFE7945C;
+        rom[ 55] = 32'sh0038738C;
+        rom[ 56] = 32'sh000C63A8;
+        rom[ 57] = 32'sh00081B9A;
+        rom[ 58] = 32'sh000E8F76;
+        rom[ 59] = 32'sh003B3853;
+        rom[ 60] = 32'sh003B8534;
+        rom[ 61] = 32'shFFD8FC30;
+        rom[ 62] = 32'sh001F9D54;
+        rom[ 63] = 32'shFFD54F2D;
+        rom[ 64] = 32'shFFC406E5;
+        rom[ 65] = 32'shFFE8AC81;
+        rom[ 66] = 32'shFFC7E1CF;
+        rom[ 67] = 32'shFFD19819;
+        rom[ 68] = 32'shFFE9D65D;
+        rom[ 69] = 32'sh003509EE;
+        rom[ 70] = 32'sh002135C7;
+        rom[ 71] = 32'shFFE7CFBB;
+        rom[ 72] = 32'shFFECCF75;
+        rom[ 73] = 32'sh001D9772;
+        rom[ 74] = 32'shFFC1B072;
+        rom[ 75] = 32'shFFF0BCF6;
+        rom[ 76] = 32'shFFCF5280;
+        rom[ 77] = 32'shFFCFD2AE;
+        rom[ 78] = 32'shFFC890E0;
+        rom[ 79] = 32'sh0001EFCA;
+        rom[ 80] = 32'sh003410F2;
+        rom[ 81] = 32'shFFF0FE85;
+        rom[ 82] = 32'sh0020C638;
+        rom[ 83] = 32'sh00296E9F;
+        rom[ 84] = 32'shFFD2B7A3;
+        rom[ 85] = 32'shFFC7A44B;
+        rom[ 86] = 32'shFFF9BA6D;
+        rom[ 87] = 32'shFFDA3409;
+        rom[ 88] = 32'shFFF5C282;
+        rom[ 89] = 32'shFFED4113;
+        rom[ 90] = 32'shFFFFA63B;
+        rom[ 91] = 32'shFFEC09F7;
+        rom[ 92] = 32'shFFFA2BDD;
+        rom[ 93] = 32'sh001495D4;
+        rom[ 94] = 32'sh001C4563;
+        rom[ 95] = 32'shFFEA2C62;
+        rom[ 96] = 32'shFFCCFBE9;
+        rom[ 97] = 32'sh00040AF0;
+        rom[ 98] = 32'sh0007C417;
+        rom[ 99] = 32'sh002F4588;
+        rom[100] = 32'sh0000AD00;
+        rom[101] = 32'shFFEF36BE;
+        rom[102] = 32'sh000DCD44;
+        rom[103] = 32'sh003C675A;
+        rom[104] = 32'shFFC72BCA;
+        rom[105] = 32'shFFFFDE7E;
+        rom[106] = 32'sh00193948;
+        rom[107] = 32'shFFCE69C0;
+        rom[108] = 32'sh0024756C;
+        rom[109] = 32'shFFFCC7DF;
+        rom[110] = 32'sh000B98A1;
+        rom[111] = 32'shFFEBE808;
+        rom[112] = 32'sh0002E46C;
+        rom[113] = 32'shFFC9C808;
+        rom[114] = 32'sh003036C2;
+        rom[115] = 32'shFFE3BFF6;
+        rom[116] = 32'shFFDB3C93;
+        rom[117] = 32'shFFFD4AE0;
+        rom[118] = 32'sh00141305;
+        rom[119] = 32'sh00147792;
+        rom[120] = 32'sh00139E25;
+        rom[121] = 32'shFFE7D0E0;
+        rom[122] = 32'shFFF39944;
+        rom[123] = 32'shFFEA0802;
+        rom[124] = 32'shFFD1EEA2;
+        rom[125] = 32'shFFC4C79C;
+        rom[126] = 32'shFFC8A057;
+        rom[127] = 32'sh003A97D9;
+        rom[128] = 32'sh001FEA93;
+        rom[129] = 32'sh0033FF5A;
+        rom[130] = 32'sh002358D4;
+        rom[131] = 32'sh003A41F8;
+        rom[132] = 32'shFFCCFF72;
+        rom[133] = 32'sh00223DFB;
+        rom[134] = 32'shFFDAAB9F;
+        rom[135] = 32'shFFC9A422;
+        rom[136] = 32'sh000412F5;
+        rom[137] = 32'sh00252587;
+        rom[138] = 32'shFFED24F0;
+        rom[139] = 32'sh00359B5D;
+        rom[140] = 32'shFFCA48A0;
+        rom[141] = 32'shFFC6A2FC;
+        rom[142] = 32'shFFEDBB56;
+        rom[143] = 32'shFFCF45DE;
+        rom[144] = 32'sh000DBE5E;
+        rom[145] = 32'sh001C5E1A;
+        rom[146] = 32'sh000DE0E6;
+        rom[147] = 32'sh000C7F5A;
+        rom[148] = 32'sh00078F83;
+        rom[149] = 32'shFFE7628A;
+        rom[150] = 32'shFFFF5704;
+        rom[151] = 32'shFFF806FC;
+        rom[152] = 32'shFFF60021;
+        rom[153] = 32'shFFD05AF6;
+        rom[154] = 32'sh001F0084;
+        rom[155] = 32'sh0030EF86;
+        rom[156] = 32'shFFC9B97D;
+        rom[157] = 32'shFFF7FCD6;
+        rom[158] = 32'shFFF44592;
+        rom[159] = 32'shFFC921C2;
+        rom[160] = 32'sh00053919;
+        rom[161] = 32'sh0004610C;
+        rom[162] = 32'shFFDACD41;
+        rom[163] = 32'sh003EB01B;
+        rom[164] = 32'sh003472E7;
+        rom[165] = 32'shFFCD003B;
+        rom[166] = 32'sh001A7CC7;
+        rom[167] = 32'sh00031924;
+        rom[168] = 32'sh002B5EE5;
+        rom[169] = 32'sh00291199;
+        rom[170] = 32'shFFD87A3A;
+        rom[171] = 32'sh00134D71;
+        rom[172] = 32'sh003DE11C;
+        rom[173] = 32'sh00130984;
+        rom[174] = 32'sh0025F051;
+        rom[175] = 32'sh00185A46;
+        rom[176] = 32'shFFC68518;
+        rom[177] = 32'sh001314BE;
+        rom[178] = 32'sh00283891;
+        rom[179] = 32'shFFC9DB90;
+        rom[180] = 32'shFFD25089;
+        rom[181] = 32'sh001C853F;
+        rom[182] = 32'sh001D0B4B;
+        rom[183] = 32'shFFEFF6A6;
+        rom[184] = 32'shFFEBA8BE;
+        rom[185] = 32'sh0012E11B;
+        rom[186] = 32'shFFCD5E3E;
+        rom[187] = 32'shFFEA2D2F;
+        rom[188] = 32'shFFF91DE4;
+        rom[189] = 32'sh001406C7;
+        rom[190] = 32'sh00327283;
+        rom[191] = 32'shFFE20D6E;
+        rom[192] = 32'shFFEC7953;
+        rom[193] = 32'sh001D4099;
+        rom[194] = 32'shFFD92578;
+        rom[195] = 32'shFFEB05AD;
+        rom[196] = 32'sh0016E405;
+        rom[197] = 32'sh000BDBE7;
+        rom[198] = 32'sh00221DE8;
+        rom[199] = 32'sh0033F8CF;
+        rom[200] = 32'shFFF7B934;
+        rom[201] = 32'shFFD4CA0C;
+        rom[202] = 32'shFFE67FF8;
+        rom[203] = 32'shFFE3D157;
+        rom[204] = 32'shFFD8911B;
+        rom[205] = 32'shFFC72C12;
+        rom[206] = 32'sh000910D8;
+        rom[207] = 32'shFFC65E1F;
+        rom[208] = 32'shFFE14658;
+        rom[209] = 32'sh00251D8B;
+        rom[210] = 32'sh002573B7;
+        rom[211] = 32'shFFFD7C8F;
+        rom[212] = 32'sh001DDD98;
+        rom[213] = 32'sh00336898;
+        rom[214] = 32'sh0002D4BB;
+        rom[215] = 32'shFFED93A7;
+        rom[216] = 32'shFFCF6CBE;
+        rom[217] = 32'sh00027C1C;
+        rom[218] = 32'sh0018AA08;
+        rom[219] = 32'sh002DFD71;
+        rom[220] = 32'sh000C5CA5;
+        rom[221] = 32'sh0019379A;
+        rom[222] = 32'shFFC7A167;
+        rom[223] = 32'shFFE48C3D;
+        rom[224] = 32'shFFD1A13C;
+        rom[225] = 32'sh0035C539;
+        rom[226] = 32'sh003B0115;
+        rom[227] = 32'sh00041DC0;
+        rom[228] = 32'sh0021C4F7;
+        rom[229] = 32'shFFF11BF4;
+        rom[230] = 32'sh001A35E7;
+        rom[231] = 32'sh0007340E;
+        rom[232] = 32'shFFF97D45;
+        rom[233] = 32'sh001A4CD0;
+        rom[234] = 32'shFFE47CAE;
+        rom[235] = 32'sh001D2668;
+        rom[236] = 32'shFFE68E98;
+        rom[237] = 32'shFFEF2633;
+        rom[238] = 32'shFFFC05DA;
+        rom[239] = 32'shFFC57FDB;
+        rom[240] = 32'shFFD32764;
+        rom[241] = 32'shFFDDE1AF;
+        rom[242] = 32'shFFF993DD;
+        rom[243] = 32'shFFDD1D09;
+        rom[244] = 32'sh0002CC93;
+        rom[245] = 32'shFFF11805;
+        rom[246] = 32'sh00189C2A;
+        rom[247] = 32'shFFC9E5A9;
+        rom[248] = 32'shFFF78A50;
+        rom[249] = 32'sh003BCF2C;
+        rom[250] = 32'shFFFF434E;
+        rom[251] = 32'shFFEB36DF;
+        rom[252] = 32'sh003C15CA;
+        rom[253] = 32'sh00155E68;
+        rom[254] = 32'shFFF316B6;
+        rom[255] = 32'sh001E29CE;
+    end
+
+    always @(posedge clk) begin
+        dout0 <= rom[addr0];
+        dout1 <= rom[addr1];
+    end
+endmodule
+
+`default_nettype wire
