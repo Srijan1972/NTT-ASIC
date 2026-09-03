@@ -1,0 +1,34 @@
+{
+	"TOP_SOURCE": "user_project_wrapper",
+	"TOP_LAYOUT": "$TOP_SOURCE",
+	"EXTRACT_FLATGLOB": [
+		""
+	],
+	"EXTRACT_ABSTRACT": [
+		"*__fill_*",
+		"*__fakediode_*",
+		"*__tapvpwrvgnd_*",
+		"ntt_engine_256",
+		"ntt_wb_bridge"
+	],
+	"LVS_FLATTEN": [
+		""
+	],
+	"LVS_NOFLATTEN": [
+		"ntt_engine_256",
+		"ntt_wb_bridge"
+	],
+	"LVS_IGNORE": [
+		""
+	],
+	"LVS_SPICE_FILES": [
+		"$PDK_ROOT/$PDK/libs.ref/sky130_fd_sc_hd/spice/sky130_ef_sc_hd__decap_12.spice",
+		"$PDK_ROOT/$PDK/libs.ref/sky130_fd_sc_hd/spice/sky130_fd_sc_hd.spice"
+	],
+	"LVS_VERILOG_FILES": [
+		"$UPRJ_ROOT/verilog/gl/ntt_engine_256.v",
+		"$UPRJ_ROOT/verilog/gl/ntt_wb_bridge.v",
+		"$UPRJ_ROOT/verilog/gl/$TOP_SOURCE.v"
+	],
+	"LAYOUT_FILE": "$UPRJ_ROOT/gds/$TOP_LAYOUT.gds"
+}
