@@ -91,6 +91,15 @@ concurrent full-chip OpenSTA processes can exceed Docker Desktop's memory limit
 on a Mac. A machine with sufficient RAM can opt in to parallel corners with
 `make caravel-sta STA_JOBS=3`.
 
+The STA preparation helper treats `ntt_engine_256` and `ntt_wb_bridge` as
+hardened macros: it loads their Liberty timing models and does not expand their
+large internal gate-level netlists or annotate their internal SPEFs at the
+Caravel level. Leaf timing and parasitics are checked during each macro's own
+OpenLane run. Messages about missing top-level Caravel, padframe, POR, or user-ID
+SPEFs are inherited from the upstream Caravel timing flow and are allowed by
+`ALLOW_MISSING_SPEF=1`; the pass/fail result is the nine-corner summary printed
+at the end of `make caravel-sta`.
+
 Run the current ChipFoundry geometry precheck locally. On Apple Silicon, the
 flattened LVS/OEB extractor can spend hours deleting hundreds of thousands of
 physical-only objects under x86 emulation, so run those two checks remotely:
