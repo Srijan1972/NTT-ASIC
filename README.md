@@ -13,8 +13,10 @@ The `caravel3` implementation uses two separately hardened leaf macros:
 `ntt_engine_256` and `ntt_wb_bridge`. These macros are instantiated in the
 Caravel `user_project_wrapper`. RTL verification passes, and local OpenLane
 runs have produced the complete two-macro hierarchy with clean detailed routing,
-LVS, and setup/hold timing. Residual antenna and foundry-precheck markers remain,
-so a completed OpenLane run must not be interpreted as final tapeout approval.
+LVS, and setup/hold timing. The current ChipFoundry precheck has no real FEOL or
+BEOL violations; it reports only the two false-positive rule families that
+ChipFoundry explicitly approved for this design. ChipFoundry must still rerun
+its proprietary poly and diffusion/tap density checks before tapeout approval.
 
 ## Caravel3 setup and hardening
 
@@ -28,10 +30,26 @@ git lfs pull
 make setup
 ```
 
+On macOS with Homebrew Python 3.14, run the setup as
+`make setup PYTHON_BIN=/usr/bin/python3` instead.
+
+This branch pins open_pdks/Volare revision
+`8afc8346a57fe1ab7934ba5a6056ea8b43078e71`. That revision is required because
+it contains `sky130_ef_sc_hd__decap_40_12` and the precompiled PDK OpenRAM view
+used by the NTT engine. Do not substitute the older `78b7bc32...` PDK.
+
 Run the RTL regression before hardening:
 
 ```sh
 make setup-cocotb
+make cocotb-verify-all-rtl
+```
+
+`caravel-cocotb` currently requires Python 3.13 or older. On macOS systems
+where Homebrew `python3` is 3.14, use the system Python 3.9 explicitly:
+
+```sh
+make setup-cocotb PYTHON_BIN=/usr/bin/python3
 make cocotb-verify-all-rtl
 ```
 
@@ -43,6 +61,11 @@ make ntt_engine_256
 make ntt_wb_bridge
 make user_project_wrapper
 ```
+
+The two leaf targets automatically refresh their checked-in `.gds.gz` views.
+This is required because `user_project_wrapper` consumes the compressed GDS
+files; manually invoking the OpenLane subdirectory target would leave stale
+compressed macro views.
 
 The `ntt_wb_bridge` target also validates and annotates the generated bridge
 LEF so `VPWR` and `VGND` are exported as power and ground pins. Do not bypass
@@ -63,8 +86,29 @@ make caravel-sta
 make run-precheck
 ```
 
-Each leaf must complete routing, DRC, LVS, antenna, and timing checks before the
-wrapper is treated as reproducible.
+`caravel-sta` runs timing corners sequentially by default because three
+concurrent full-chip OpenSTA processes can exceed Docker Desktop's memory limit
+on a Mac. A machine with sufficient RAM can opt in to parallel corners with
+`make caravel-sta STA_JOBS=3`.
+
+Run the current ChipFoundry geometry precheck locally. On Apple Silicon, the
+flattened LVS/OEB extractor can spend hours deleting hundreds of thousands of
+physical-only objects under x86 emulation, so run those two checks remotely:
+
+```sh
+cf precheck --skip-checks lvs --skip-checks oeb
+cf precheck --remote --poll --git-ref caravel3
+```
+
+For this design, `MR_licon.SP.6` and `MR_mcon.CON.10` are known false positives
+that ChipFoundry has explicitly said can be ignored. Any other FEOL or BEOL rule
+category is a real blocker and must be fixed before upload. Local precheck does
+not replace ChipFoundry's proprietary poly-density and diffusion/tap-density
+PV; request a new platform PV report after uploading the corrected project.
+
+Each leaf must complete routing, DRC, LVS, and timing checks before the wrapper
+is treated as reproducible. Review leaf antenna reports against the foundry PV;
+the wrapper-level OpenROAD antenna check is clean in the current build.
 
 ### Legacy target warning
 

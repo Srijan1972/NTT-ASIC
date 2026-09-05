@@ -9,14 +9,16 @@
     "GRT_ADJUSTMENT": 0.3,
     "RUN_IRDROP_REPORT": 0,
     "CLOCK_PERIOD": 10,
+    "WIRE_RC_LAYER": "met1",
     "CLOCK_PORT": "wb_clk_i",
     "CLOCK_NET": "wb_clk_i",
     "FP_PDN_MACRO_HOOKS": "ntt.u_engine vccd1 vssd1 VPWR VGND, ntt.u_bridge vccd1 vssd1 VPWR VGND",
     "MACRO_PLACEMENT_CFG": "dir::macro.cfg",
     "MAGIC_DEF_LABELS": 0,
     "VERILOG_FILES_BLACKBOX": [
-        "dir::../../verilog/gl/ntt_engine_256.v",
-        "dir::../ntt_wb_bridge/ntt_wb_bridge.blackbox.v"
+        "dir::../ntt_engine_256/ntt_engine_256.blackbox.v",
+        "dir::../ntt_wb_bridge/ntt_wb_bridge.blackbox.v",
+        "dir::../ntt_engine_256/diode_bb.v"
     ],
     "EXTRA_LEFS": [
         "dir::../../lef/ntt_engine_256.lef",
@@ -31,8 +33,10 @@
         "dir::../../lib/ntt_wb_bridge.lib"
     ],
     "SYNTH_DEFINES": [
-        "HARDENED_ENGINE_MACRO"
+        "HARDENED_ENGINE_MACRO",
+        "ANT_DIODES"
     ],
+    "SYNTH_READ_BLACKBOX": 1,
     "BASE_SDC_FILE": "dir::base_user_project_wrapper.sdc",
     "IO_SYNC": 0,
     "MAX_TRANSITION_CONSTRAINT": 1.5,
@@ -49,10 +53,18 @@
     "GLB_RESIZER_DESIGN_OPTIMIZATIONS": 0,
     "GLB_RESIZER_TIMING_OPTIMIZATIONS": 0,
     "PL_RESIZER_BUFFER_INPUT_PORTS": 0,
-    "FP_PDN_ENABLE_RAILS": 0,
-    "GRT_REPAIR_ANTENNAS": 0,
-    "RUN_FILL_INSERTION": 0,
-    "RUN_TAP_DECAP_INSERTION": 0,
+    "FP_PDN_ENABLE_RAILS": 1,
+    "GRT_REPAIR_ANTENNAS": 1,
+    "DIODE_ON_PORTS": "in",
+    "RUN_HEURISTIC_DIODE_INSERTION": 1,
+    "GRT_ANT_ITERS": 15,
+    "GRT_MAX_DIODE_INS_ITERS": 10,
+    "GRT_ANT_MARGIN": 50,
+    "DIODE_PADDING": 2,
+    "RUN_FILL_INSERTION": 1,
+    "DECAP_CELL": "sky130_ef_sc_hd__decap_40_12",
+    "FILL_CELL": "sky130_ef_sc_hd__fill_8 sky130_fd_sc_hd__fill_4 sky130_fd_sc_hd__fill_2 sky130_fd_sc_hd__fill_1",
+    "RUN_TAP_DECAP_INSERTION": 1,
     "FP_PDN_VPITCH": 180,
     "FP_PDN_HPITCH": 180,
     "RUN_CTS": 0,

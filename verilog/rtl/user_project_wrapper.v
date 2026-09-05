@@ -82,6 +82,13 @@ module user_project_wrapper #(
 /* User project is instantiated  here   */
 /*--------------------------------------*/
 
+// Keep one clock-net antenna diode under explicit placement control.  The
+// generic wrapper diode pass otherwise places a diode at both hardened clock
+// inputs, which forces the clock route onto an engine power stripe.
+`ifdef ANT_DIODES
+(* keep *) sky130_fd_sc_hd__diode_2 ant_wb_clk_i (.DIODE(wb_clk_i));
+`endif
+
 ntt ntt (
 `ifdef USE_POWER_PINS
     .vccd1(vccd1),

@@ -34,6 +34,7 @@ export PDK?=sky130A
 export PDKPATH?=$(PDK_ROOT)/$(PDK)
 
 PYTHON_BIN ?= python3
+STA_JOBS ?= 1
 
 ROOTLESS ?= 0
 USER_ARGS = -u $$(id -u $$USER):$$(id -g $$USER)
@@ -48,8 +49,8 @@ export ROOTLESS
 
 ifeq ($(PDK),sky130A)
 	SKYWATER_COMMIT=f70d8ca46961ff92719d8870a18a076370b85f6c
-	export OPEN_PDKS_COMMIT_LVS?=6d4d11780c40b20ee63cc98e645307a9bf2b2ab8
-	export OPEN_PDKS_COMMIT?=78b7bc32ddb4b6f14f76883c2e2dc5b5de9d1cbc
+	export OPEN_PDKS_COMMIT_LVS?=8afc8346a57fe1ab7934ba5a6056ea8b43078e71
+	export OPEN_PDKS_COMMIT?=8afc8346a57fe1ab7934ba5a6056ea8b43078e71
 	export OPENLANE_TAG?=2023.07.19-1
 	MPW_TAG ?= 2024.09.12-1
 
@@ -67,8 +68,8 @@ endif
 
 ifeq ($(PDK),sky130B)
 	SKYWATER_COMMIT=f70d8ca46961ff92719d8870a18a076370b85f6c
-	export OPEN_PDKS_COMMIT_LVS?=6d4d11780c40b20ee63cc98e645307a9bf2b2ab8
-	export OPEN_PDKS_COMMIT?=78b7bc32ddb4b6f14f76883c2e2dc5b5de9d1cbc
+	export OPEN_PDKS_COMMIT_LVS?=8afc8346a57fe1ab7934ba5a6056ea8b43078e71
+	export OPEN_PDKS_COMMIT?=8afc8346a57fe1ab7934ba5a6056ea8b43078e71
 	export OPENLANE_TAG?=2023.07.19-1
 	MPW_TAG ?= 2024.09.12-1
 
@@ -128,6 +129,9 @@ blocks=$(shell cd openlane && find * -maxdepth 0 -type d)
 .PHONY: $(blocks)
 $(blocks): % :
 	$(MAKE) -C openlane $*
+	@if [ "$*" = "ntt_engine_256" ] || [ "$*" = "ntt_wb_bridge" ]; then \
+		gzip -kf gds/$*.gds; \
+	fi
 	@if [ "$*" = "ntt_wb_bridge" ]; then \
 		$(PYTHON_BIN) scripts/annotate_lef_pg_pins.py lef/ntt_wb_bridge.lef \
 			--power VPWR --ground VGND; \
@@ -356,12 +360,12 @@ setup-timing-scripts: $(TIMING_ROOT)
 install-caravel-cocotb:
 	rm -rf ./venv-cocotb
 	$(PYTHON_BIN) -m venv ./venv-cocotb
-	./venv-cocotb/bin/$(PYTHON_BIN) -m pip install --upgrade --no-cache-dir pip
-	./venv-cocotb/bin/$(PYTHON_BIN) -m pip install --upgrade --no-cache-dir caravel-cocotb
+	./venv-cocotb/bin/python3 -m pip install --upgrade --no-cache-dir pip
+	./venv-cocotb/bin/python3 -m pip install --upgrade --no-cache-dir caravel-cocotb
 
 .PHONY: setup-cocotb-env
 setup-cocotb-env:
-	@(python3 $(PROJECT_ROOT)/verilog/dv/setup-cocotb.py $(CARAVEL_ROOT) $(MCW_ROOT) $(PDK_ROOT) $(PDK) $(PROJECT_ROOT))
+	@(./venv-cocotb/bin/python3 $(PROJECT_ROOT)/verilog/dv/setup-cocotb.py $(CARAVEL_ROOT) $(MCW_ROOT) $(PDK_ROOT) $(PDK) $(PROJECT_ROOT))
 
 .PHONY: setup-cocotb
 setup-cocotb: install-caravel-cocotb setup-cocotb-env simenv-cocotb
@@ -372,13 +376,13 @@ cocotb-verify-all-rtl:
 	
 .PHONY: cocotb-verify-all-gl
 cocotb-verify-all-gl:
-	@(cd $(PROJECT_ROOT)/verilog/dv/cocotb && $(PROJECT_ROOT)/venv-cocotb/bin/caravel_cocotb -tl user_proj_tests/user_proj_tests_gl.yaml -sim GL)
+	@(cd $(PROJECT_ROOT)/verilog/dv/cocotb && $(PROJECT_ROOT)/venv-cocotb/bin/caravel_cocotb -tl user_proj_tests/user_proj_tests_gl.yaml -sim GL -no_gen_defaults)
 
 $(cocotb-dv-targets-rtl): cocotb-verify-%-rtl: 
 	@(cd $(PROJECT_ROOT)/verilog/dv/cocotb && $(PROJECT_ROOT)/venv-cocotb/bin/caravel_cocotb -t $*  )
 	
 $(cocotb-dv-targets-gl): cocotb-verify-%-gl:
-	@(cd $(PROJECT_ROOT)/verilog/dv/cocotb && $(PROJECT_ROOT)/venv-cocotb/bin/caravel_cocotb -t $* -sim GL)
+	@(cd $(PROJECT_ROOT)/verilog/dv/cocotb && $(PROJECT_ROOT)/venv-cocotb/bin/caravel_cocotb -t $* -sim GL -no_gen_defaults)
 
 ./verilog/gl/user_project_wrapper.v:
 	$(error you don't have $@)
@@ -407,6 +411,10 @@ create-spef-mapping: ./verilog/gl/user_project_wrapper.v
 			--pdk-path $(PDK_ROOT)/$(PDK) \
 			--macro-parent chip_core/mprj \
 			--project-root "$(CUP_ROOT)"
+	$(PYTHON_BIN) scripts/prepare_caravel_sta.py \
+		--timing-common $(TIMING_ROOT)/env/common.tcl \
+		--spef-mapping ./env/spef-mapping.tcl \
+		--project-root $(CUP_ROOT)
 
 
 .PHONY: extract-parasitics
@@ -435,9 +443,13 @@ extract-parasitics: ./verilog/gl/user_project_wrapper.v
 	
 .PHONY: caravel-sta
 caravel-sta: ./env/spef-mapping.tcl
-	@$(MAKE) -C $(TIMING_ROOT) -f $(TIMING_ROOT)/timing.mk caravel-timing-typ -j3
-	@$(MAKE) -C $(TIMING_ROOT) -f $(TIMING_ROOT)/timing.mk caravel-timing-fast -j3
-	@$(MAKE) -C $(TIMING_ROOT) -f $(TIMING_ROOT)/timing.mk caravel-timing-slow -j3
+	@$(PYTHON_BIN) scripts/prepare_caravel_sta.py \
+		--timing-common $(TIMING_ROOT)/env/common.tcl \
+		--spef-mapping ./env/spef-mapping.tcl \
+		--project-root $(CUP_ROOT)
+	@$(MAKE) -C $(TIMING_ROOT) -f $(TIMING_ROOT)/timing.mk caravel-timing-typ -j$(STA_JOBS)
+	@$(MAKE) -C $(TIMING_ROOT) -f $(TIMING_ROOT)/timing.mk caravel-timing-fast -j$(STA_JOBS)
+	@$(MAKE) -C $(TIMING_ROOT) -f $(TIMING_ROOT)/timing.mk caravel-timing-slow -j$(STA_JOBS)
 	@echo =============================================Summary=============================================
 	@find $(PROJECT_ROOT)/signoff/caravel/openlane-signoff/timing/*/ -name "summary.log" | head -n1 \
 		| xargs head -n5 | tail -n1

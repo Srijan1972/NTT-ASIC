@@ -48,6 +48,69 @@ module ntt (
     wire        busy;
     wire        done;
 
+`ifdef ANT_DIODES
+    // Extra diffusion area for wrapper-level nets that remain above the
+    // antenna ratio after the generic one-diode-per-macro-input pass.  The
+    // bank sizes include margin over the worst ratio reported by ARC.
+    genvar ant_i;
+    generate
+        for (ant_i = 0; ant_i < 7; ant_i = ant_i + 1) begin : g_ant_mem_wdata_8
+            (* keep *) sky130_fd_sc_hd__diode_2 ant (.DIODE(mem_wdata[8]));
+        end
+        for (ant_i = 0; ant_i < 7; ant_i = ant_i + 1) begin : g_ant_mem_slot_1
+            (* keep *) sky130_fd_sc_hd__diode_2 ant (.DIODE(mem_slot[1]));
+        end
+        for (ant_i = 0; ant_i < 7; ant_i = ant_i + 1) begin : g_ant_busy
+            (* keep *) sky130_fd_sc_hd__diode_2 ant (.DIODE(busy));
+        end
+        for (ant_i = 0; ant_i < 5; ant_i = ant_i + 1) begin : g_ant_mem_wdata_22
+            (* keep *) sky130_fd_sc_hd__diode_2 ant (.DIODE(mem_wdata[22]));
+        end
+        for (ant_i = 0; ant_i < 4; ant_i = ant_i + 1) begin : g_ant_mem_addr_7
+            (* keep *) sky130_fd_sc_hd__diode_2 ant (.DIODE(mem_addr[7]));
+        end
+        for (ant_i = 0; ant_i < 3; ant_i = ant_i + 1) begin : g_ant_mem_addr_4
+            (* keep *) sky130_fd_sc_hd__diode_2 ant (.DIODE(mem_addr[4]));
+        end
+        for (ant_i = 0; ant_i < 5; ant_i = ant_i + 1) begin : g_ant_mem_addr_5
+            (* keep *) sky130_fd_sc_hd__diode_2 ant (.DIODE(mem_addr[5]));
+        end
+        for (ant_i = 0; ant_i < 3; ant_i = ant_i + 1) begin : g_ant_mem_wdata_26
+            (* keep *) sky130_fd_sc_hd__diode_2 ant (.DIODE(mem_wdata[26]));
+        end
+        for (ant_i = 0; ant_i < 2; ant_i = ant_i + 1) begin : g_ant_mem_wdata_3
+            (* keep *) sky130_fd_sc_hd__diode_2 ant (.DIODE(mem_wdata[3]));
+        end
+        for (ant_i = 0; ant_i < 2; ant_i = ant_i + 1) begin : g_ant_mem_wdata_17
+            (* keep *) sky130_fd_sc_hd__diode_2 ant (.DIODE(mem_wdata[17]));
+        end
+        for (ant_i = 0; ant_i < 2; ant_i = ant_i + 1) begin : g_ant_mem_wdata_31
+            (* keep *) sky130_fd_sc_hd__diode_2 ant (.DIODE(mem_wdata[31]));
+        end
+        for (ant_i = 0; ant_i < 2; ant_i = ant_i + 1) begin : g_ant_mem_target
+            (* keep *) sky130_fd_sc_hd__diode_2 ant (.DIODE(mem_target));
+        end
+        for (ant_i = 0; ant_i < 7; ant_i = ant_i + 1) begin : g_ant_mem_wdata_29
+            (* keep *) sky130_fd_sc_hd__diode_2 ant (.DIODE(mem_wdata[29]));
+        end
+        for (ant_i = 0; ant_i < 7; ant_i = ant_i + 1) begin : g_ant_mem_rdata_14
+            (* keep *) sky130_fd_sc_hd__diode_2 ant (.DIODE(mem_rdata[14]));
+        end
+        for (ant_i = 0; ant_i < 6; ant_i = ant_i + 1) begin : g_ant_mem_rdata_22
+            (* keep *) sky130_fd_sc_hd__diode_2 ant (.DIODE(mem_rdata[22]));
+        end
+        for (ant_i = 0; ant_i < 3; ant_i = ant_i + 1) begin : g_ant_mem_wdata_2
+            (* keep *) sky130_fd_sc_hd__diode_2 ant (.DIODE(mem_wdata[2]));
+        end
+        for (ant_i = 0; ant_i < 3; ant_i = ant_i + 1) begin : g_ant_mem_wdata_21
+            (* keep *) sky130_fd_sc_hd__diode_2 ant (.DIODE(mem_wdata[21]));
+        end
+        for (ant_i = 0; ant_i < 7; ant_i = ant_i + 1) begin : g_ant_mem_wdata_28
+            (* keep *) sky130_fd_sc_hd__diode_2 ant (.DIODE(mem_wdata[28]));
+        end
+    endgenerate
+`endif
+
     assign busy_o       = busy;
     assign done_o       = done;
     assign ext_rvalid_o = mem_rvalid;

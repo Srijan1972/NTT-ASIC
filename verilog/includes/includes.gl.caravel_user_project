@@ -18,8 +18,9 @@
 -v $(USER_PROJECT_VERILOG)/gl/ntt_engine_256.v
 -v $(USER_PROJECT_VERILOG)/gl/ntt_wb_bridge.v
 -v $(USER_PROJECT_VERILOG)/gl/user_project_wrapper.v
+-v $(PDK_ROOT)/sky130A/libs.ref/sky130_sram_macros/verilog/sky130_sram_1kbyte_1rw1r_32x256_8.v
 
--v $(USER_PROJECT_VERILOG)/gl/caravel_core.v
+-v $(CARAVEL_PATH)/gl/caravel_core.v
 
 # default should be added according to the defaults used
 
