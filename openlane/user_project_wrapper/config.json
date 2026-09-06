@@ -128,5 +128,6 @@
         "PL_OPENPHYSYN_OPTIMIZATIONS": 0,
         "DIODE_INSERTION_STRATEGY": 0,
         "MAGIC_WRITE_FULL_LEF": 0
-    }
+    },
+    "FILL_CELL": "sky130_fd_sc_hd__fill_1 sky130_fd_sc_hd__fill_2 sky130_fd_sc_hd__fill_4 sky130_ef_sc_hd__fill_8"
 }

@@ -69,5 +69,6 @@
     "RUN_KLAYOUT_XOR": 1,
     "MAGIC_DRC_USE_GDS": 1,
     "QUIT_ON_TIMING_VIOLATIONS": 0,
-    "RUN_LINTER": 0
+    "RUN_LINTER": 0,
+    "FILL_CELL": "sky130_fd_sc_hd__fill_1 sky130_fd_sc_hd__fill_2 sky130_fd_sc_hd__fill_4 sky130_ef_sc_hd__fill_8"
 }

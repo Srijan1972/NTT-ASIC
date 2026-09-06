@@ -56,7 +56,7 @@
     ],
     "RT_MAX_LAYER": "met5",
     "RT_CLOCK_MIN_LAYER": "met3",
-    "GRT_ADJUSTMENT": 0.20,
+    "GRT_ADJUSTMENT": 0.2,
     "GRT_MACRO_EXTENSION": 0,
     "GRT_ALLOW_CONGESTION": 0,
     "ROUTING_CORES": 6,
@@ -96,5 +96,6 @@
     "QUIT_ON_MAGIC_DRC": 0,
     "QUIT_ON_LVS_ERROR": 1,
     "QUIT_ON_TR_DRC": 0,
-    "RUN_LINTER": 0
+    "RUN_LINTER": 0,
+    "FILL_CELL": "sky130_fd_sc_hd__fill_1 sky130_fd_sc_hd__fill_2 sky130_fd_sc_hd__fill_4 sky130_ef_sc_hd__fill_8"
 }
