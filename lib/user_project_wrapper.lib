@@ -117,7 +117,7 @@ library (user_project_wrapper) {
     }
     pin("wb_clk_i") {
       direction : input;
-      capacitance : 0.0097;
+      capacitance : 0.0088;
     }
     pin("wb_rst_i") {
       direction : input;
