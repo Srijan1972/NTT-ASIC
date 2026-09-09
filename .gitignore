@@ -32,3 +32,4 @@ openlane/ntt_engine_256/runs/
 openlane/ntt_wb_bridge/runs/
 openlane/user_project_wrapper/runs/
 feol_check/
+*.pre_decap
