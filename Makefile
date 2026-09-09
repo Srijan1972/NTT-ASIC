@@ -426,7 +426,7 @@ extract-parasitics: ./verilog/gl/user_project_wrapper.v
 			-o ./tmp-macros-list \
 			--project-root "$(CUP_ROOT)" \
 			--pdk-path $(PDK_ROOT)/$(PDK)
-	@cat ./tmp-macros-list | cut -d " " -f2 \
+	@cat ./tmp-macros-list | cut -d " " -f2 | sort -u \
 		| xargs -I % bash -c "$(MAKE) -C $(TIMING_ROOT) \
 			-f $(TIMING_ROOT)/timing.mk rcx-% || echo 'Cannot extract %. Probably no def for this macro'"
 	@$(MAKE) -C $(TIMING_ROOT) -f $(TIMING_ROOT)/timing.mk rcx-user_project_wrapper

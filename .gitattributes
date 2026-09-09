@@ -5,3 +5,4 @@ gds/user_project_wrapper.gds filter=lfs diff=lfs merge=lfs -text
 spef/multicorner/*.spef filter=lfs diff=lfs merge=lfs -text
 spef/**/*.spef filter=lfs diff=lfs merge=lfs -text
 *.gds.gz filter=lfs diff=lfs merge=lfs -text
+signoff/**/*.spef filter=lfs diff=lfs merge=lfs -text

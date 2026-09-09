@@ -33,3 +33,6 @@ openlane/ntt_wb_bridge/runs/
 openlane/user_project_wrapper/runs/
 feol_check/
 *.pre_decap
+Makefile.bak
+env/spef-mapping.tcl.orig
+env/spef-mapping.tcl.full
