@@ -7,7 +7,7 @@ set engine_inputs [get_ports {rst_n start op[*] slot_a[*] slot_b[*] slot_c[*] ma
 set_input_delay 2.0 -clock clk $engine_inputs
 set_output_delay 2.0 -clock clk [all_outputs]
 set_input_transition 0.15 $engine_inputs
-set_load 0.10 [all_outputs]
+set_load 1.2 [all_outputs]
 
 set_false_path -from [get_ports rst_n]
 set_max_transition $::env(MAX_TRANSITION_CONSTRAINT) [current_design]
