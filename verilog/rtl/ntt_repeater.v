@@ -13,6 +13,8 @@ module ntt_repeater (
     input  wire [39:0] a,
     output wire [39:0] y
 );
+`ifdef SYNTHESIS
+    // Hardened view: explicit clkbuf_16 per bit (this is what OpenLane synthesised).
     genvar i;
     generate
         for (i = 0; i < 40; i = i + 1) begin : g_buf
@@ -24,6 +26,10 @@ module ntt_repeater (
             );
         end
     endgenerate
+`else
+    // Simulation view: functionally a wire. Gate-level sim uses verilog/gl/ntt_repeater.v.
+    assign y = a;
+`endif
 endmodule
 
 `default_nettype wire

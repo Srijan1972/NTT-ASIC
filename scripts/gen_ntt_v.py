@@ -152,7 +152,8 @@ A('    // ---- direct (south-edge) connections ----')
 for s in sig:
     if s['chain'] is None:
         if s['dir'] == 'in': A(f"    assign {enet(s['port'],s['idx'])} = {bnet(s['port'],s['idx'])};")
-        else:                A(f"    assign {bnet(s['port'],s['idx'])} = {enet(s['port'],s['idx'])};")
+        elif bnet(s['port'],s['idx']) != enet(s['port'],s['idx']):
+            A(f"    assign {bnet(s['port'],s['idx'])} = {enet(s['port'],s['idx'])};")
 A('')
 # chains
 for chain in ('w', 'e'):

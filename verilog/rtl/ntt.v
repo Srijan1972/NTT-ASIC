@@ -175,14 +175,12 @@ module ntt (
     assign e_mem_wdata[23] = mem_wdata[23];
     assign e_mem_wdata[25] = mem_wdata[25];
     assign e_mem_wdata[30] = mem_wdata[30];
-    assign done = done;
     assign mem_rdata_b[0] = mem_rdata_e[0];
     assign mem_rdata_b[5] = mem_rdata_e[5];
     assign mem_rdata_b[17] = mem_rdata_e[17];
     assign mem_rdata_b[19] = mem_rdata_e[19];
     assign mem_rdata_b[26] = mem_rdata_e[26];
     assign mem_rdata_b[31] = mem_rdata_e[31];
-    assign mem_rvalid = mem_rvalid;
 
     // ---- west chain ----
     assign w0_a[0] = slot_a[1];
