@@ -128,8 +128,8 @@ blocks=$(shell cd openlane && find * -maxdepth 0 -type d)
 .PHONY: $(blocks)
 $(blocks): % :
 	$(MAKE) -C openlane $*
-	@if [ "$*" = "ntt_wb_bridge" ]; then \
-		$(PYTHON_BIN) scripts/annotate_lef_pg_pins.py lef/ntt_wb_bridge.lef \
+	@if [ "$*" = "ntt_wb_bridge" ] || [ "$*" = "ntt_repeater" ]; then \
+		$(PYTHON_BIN) scripts/annotate_lef_pg_pins.py lef/$*.lef \
 			--power VPWR --ground VGND; \
 	fi
 

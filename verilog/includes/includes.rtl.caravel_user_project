@@ -21,5 +21,6 @@
 -v $(USER_PROJECT_VERILOG)/rtl/zeta_store.v
 -v $(USER_PROJECT_VERILOG)/rtl/ntt_engine_256.v
 -v $(USER_PROJECT_VERILOG)/rtl/ntt_wb_bridge.v
+-v $(USER_PROJECT_VERILOG)/rtl/ntt_repeater.v
 -v $(USER_PROJECT_VERILOG)/rtl/ntt.v
 -v $(USER_PROJECT_VERILOG)/rtl/user_project_wrapper.v
