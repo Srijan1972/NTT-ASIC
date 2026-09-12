@@ -46,66 +46,66 @@
   },
   "precheck": {
     "version": "1.3.6",
-    "timestamp": "2026-09-06T21:02:50.610360+00:00",
+    "timestamp": "2026-09-11T07:55:09.454546+00:00",
     "pdk": "sky130A",
     "passed": false,
     "checks": {
       "topcell_check": {
         "status": "pass",
-        "duration_s": 3.49
+        "duration_s": 3.45
       },
       "gpio_defines": {
         "status": "pass",
-        "duration_s": 0.75
+        "duration_s": 0.73
       },
       "xor": {
         "status": "pass",
-        "duration_s": 117.78
+        "duration_s": 155.01
       },
       "klayout_feol": {
         "status": "fail",
-        "duration_s": 376.32,
-        "details": "3 DRC violations. See /home/khan/NTT-ASIC/precheck_results/06_SEP_2026___17_23_35/outputs/reports/klayout_feol_check.xml"
+        "duration_s": 857.25,
+        "details": "3 DRC violations. See /home/khan/NTT-ASIC/precheck_results/11_SEP_2026___05_02_20/outputs/reports/klayout_feol_check.xml"
       },
       "klayout_beol": {
         "status": "fail",
-        "duration_s": 1047.65,
-        "details": "264 DRC violations. See /home/khan/NTT-ASIC/precheck_results/06_SEP_2026___17_23_35/outputs/reports/klayout_beol_check.xml"
+        "duration_s": 2130.71,
+        "details": "264 DRC violations. See /home/khan/NTT-ASIC/precheck_results/11_SEP_2026___05_02_20/outputs/reports/klayout_beol_check.xml"
       },
       "klayout_offgrid": {
         "status": "pass",
-        "duration_s": 296.05
+        "duration_s": 259.16
       },
       "klayout_met_min_ca_density": {
         "status": "pass",
-        "duration_s": 129.25
+        "duration_s": 95.35
       },
       "klayout_pin_label_purposes_overlapping_drawing": {
         "status": "pass",
-        "duration_s": 44.84
+        "duration_s": 49.79
       },
       "klayout_zeroarea": {
         "status": "pass",
-        "duration_s": 15.18
+        "duration_s": 17.88
       },
       "spike_check": {
         "status": "pass",
-        "duration_s": 19.03
+        "duration_s": 21.48
       },
       "illegal_cellname_check": {
         "status": "pass",
-        "duration_s": 4.43
+        "duration_s": 5.06
       },
       "lvs": {
         "status": "pass",
-        "duration_s": 11099.18
+        "duration_s": 6770.21
       },
       "oeb": {
         "status": "pass",
-        "duration_s": 0.15,
+        "duration_s": 0.18,
         "details": "0 errors, 0 warnings across 38 GPIOs",
         "report": {
-          "report_relpath": "/home/khan/NTT-ASIC/precheck_results/06_SEP_2026___17_23_35/outputs/reports/cvc.oeb.report",
+          "report_relpath": "/home/khan/NTT-ASIC/precheck_results/11_SEP_2026___05_02_20/outputs/reports/cvc.oeb.report",
           "design_type": "caravel",
           "gpios": [
             {
@@ -193,8 +193,8 @@
               "oeb_min": null,
               "oeb_sim": null,
               "oeb_max": null,
-              "configuration": "MGMT_STD_INPUT_PULLUP",
-              "resolved_mode": "MGMT_STD_INPUT_PULLUP",
+              "configuration": "MGMT_STD_INPUT_NOPULL",
+              "resolved_mode": "MGMT_STD_INPUT_NOPULL",
               "warning_count": 0,
               "error_count": 0
             },
@@ -208,8 +208,8 @@
               "oeb_min": null,
               "oeb_sim": null,
               "oeb_max": null,
-              "configuration": "MGMT_STD_INPUT_PULLUP",
-              "resolved_mode": "MGMT_STD_INPUT_PULLUP",
+              "configuration": "MGMT_STD_INPUT_NOPULL",
+              "resolved_mode": "MGMT_STD_INPUT_NOPULL",
               "warning_count": 0,
               "error_count": 0
             },
@@ -223,8 +223,8 @@
               "oeb_min": null,
               "oeb_sim": null,
               "oeb_max": null,
-              "configuration": "MGMT_STD_INPUT_PULLUP",
-              "resolved_mode": "MGMT_STD_INPUT_PULLUP",
+              "configuration": "MGMT_STD_INPUT_NOPULL",
+              "resolved_mode": "MGMT_STD_INPUT_NOPULL",
               "warning_count": 0,
               "error_count": 0
             },
@@ -238,8 +238,8 @@
               "oeb_min": null,
               "oeb_sim": null,
               "oeb_max": null,
-              "configuration": "MGMT_STD_INPUT_PULLUP",
-              "resolved_mode": "MGMT_STD_INPUT_PULLUP",
+              "configuration": "MGMT_STD_INPUT_NOPULL",
+              "resolved_mode": "MGMT_STD_INPUT_NOPULL",
               "warning_count": 0,
               "error_count": 0
             },
@@ -253,8 +253,8 @@
               "oeb_min": null,
               "oeb_sim": null,
               "oeb_max": null,
-              "configuration": "MGMT_STD_INPUT_PULLUP",
-              "resolved_mode": "MGMT_STD_INPUT_PULLUP",
+              "configuration": "MGMT_STD_INPUT_NOPULL",
+              "resolved_mode": "MGMT_STD_INPUT_NOPULL",
               "warning_count": 0,
               "error_count": 0
             },
@@ -268,8 +268,8 @@
               "oeb_min": null,
               "oeb_sim": null,
               "oeb_max": null,
-              "configuration": "MGMT_STD_INPUT_PULLUP",
-              "resolved_mode": "MGMT_STD_INPUT_PULLUP",
+              "configuration": "MGMT_STD_INPUT_NOPULL",
+              "resolved_mode": "MGMT_STD_INPUT_NOPULL",
               "warning_count": 0,
               "error_count": 0
             },
@@ -283,8 +283,8 @@
               "oeb_min": null,
               "oeb_sim": null,
               "oeb_max": null,
-              "configuration": "MGMT_STD_INPUT_PULLUP",
-              "resolved_mode": "MGMT_STD_INPUT_PULLUP",
+              "configuration": "MGMT_STD_INPUT_NOPULL",
+              "resolved_mode": "MGMT_STD_INPUT_NOPULL",
               "warning_count": 0,
               "error_count": 0
             },
@@ -298,8 +298,8 @@
               "oeb_min": null,
               "oeb_sim": null,
               "oeb_max": null,
-              "configuration": "MGMT_STD_INPUT_PULLUP",
-              "resolved_mode": "MGMT_STD_INPUT_PULLUP",
+              "configuration": "MGMT_STD_INPUT_NOPULL",
+              "resolved_mode": "MGMT_STD_INPUT_NOPULL",
               "warning_count": 0,
               "error_count": 0
             },
@@ -313,8 +313,8 @@
               "oeb_min": null,
               "oeb_sim": null,
               "oeb_max": null,
-              "configuration": "MGMT_STD_INPUT_PULLUP",
-              "resolved_mode": "MGMT_STD_INPUT_PULLUP",
+              "configuration": "MGMT_STD_INPUT_NOPULL",
+              "resolved_mode": "MGMT_STD_INPUT_NOPULL",
               "warning_count": 0,
               "error_count": 0
             },
@@ -328,8 +328,8 @@
               "oeb_min": null,
               "oeb_sim": null,
               "oeb_max": null,
-              "configuration": "MGMT_STD_INPUT_PULLUP",
-              "resolved_mode": "MGMT_STD_INPUT_PULLUP",
+              "configuration": "MGMT_STD_INPUT_NOPULL",
+              "resolved_mode": "MGMT_STD_INPUT_NOPULL",
               "warning_count": 0,
               "error_count": 0
             },
@@ -343,8 +343,8 @@
               "oeb_min": null,
               "oeb_sim": null,
               "oeb_max": null,
-              "configuration": "MGMT_STD_INPUT_PULLUP",
-              "resolved_mode": "MGMT_STD_INPUT_PULLUP",
+              "configuration": "MGMT_STD_INPUT_NOPULL",
+              "resolved_mode": "MGMT_STD_INPUT_NOPULL",
               "warning_count": 0,
               "error_count": 0
             },
@@ -358,8 +358,8 @@
               "oeb_min": null,
               "oeb_sim": null,
               "oeb_max": null,
-              "configuration": "MGMT_STD_INPUT_PULLUP",
-              "resolved_mode": "MGMT_STD_INPUT_PULLUP",
+              "configuration": "MGMT_STD_INPUT_NOPULL",
+              "resolved_mode": "MGMT_STD_INPUT_NOPULL",
               "warning_count": 0,
               "error_count": 0
             },
@@ -373,8 +373,8 @@
               "oeb_min": null,
               "oeb_sim": null,
               "oeb_max": null,
-              "configuration": "MGMT_STD_INPUT_PULLUP",
-              "resolved_mode": "MGMT_STD_INPUT_PULLUP",
+              "configuration": "MGMT_STD_INPUT_NOPULL",
+              "resolved_mode": "MGMT_STD_INPUT_NOPULL",
               "warning_count": 0,
               "error_count": 0
             },
@@ -388,8 +388,8 @@
               "oeb_min": null,
               "oeb_sim": null,
               "oeb_max": null,
-              "configuration": "MGMT_STD_INPUT_PULLUP",
-              "resolved_mode": "MGMT_STD_INPUT_PULLUP",
+              "configuration": "MGMT_STD_INPUT_NOPULL",
+              "resolved_mode": "MGMT_STD_INPUT_NOPULL",
               "warning_count": 0,
               "error_count": 0
             },
@@ -403,8 +403,8 @@
               "oeb_min": null,
               "oeb_sim": null,
               "oeb_max": null,
-              "configuration": "MGMT_STD_INPUT_PULLUP",
-              "resolved_mode": "MGMT_STD_INPUT_PULLUP",
+              "configuration": "MGMT_STD_INPUT_NOPULL",
+              "resolved_mode": "MGMT_STD_INPUT_NOPULL",
               "warning_count": 0,
               "error_count": 0
             },
@@ -418,8 +418,8 @@
               "oeb_min": null,
               "oeb_sim": null,
               "oeb_max": null,
-              "configuration": "MGMT_STD_INPUT_PULLUP",
-              "resolved_mode": "MGMT_STD_INPUT_PULLUP",
+              "configuration": "MGMT_STD_INPUT_NOPULL",
+              "resolved_mode": "MGMT_STD_INPUT_NOPULL",
               "warning_count": 0,
               "error_count": 0
             },
@@ -433,8 +433,8 @@
               "oeb_min": null,
               "oeb_sim": null,
               "oeb_max": null,
-              "configuration": "MGMT_STD_INPUT_PULLUP",
-              "resolved_mode": "MGMT_STD_INPUT_PULLUP",
+              "configuration": "MGMT_STD_INPUT_NOPULL",
+              "resolved_mode": "MGMT_STD_INPUT_NOPULL",
               "warning_count": 0,
               "error_count": 0
             },
@@ -448,8 +448,8 @@
               "oeb_min": null,
               "oeb_sim": null,
               "oeb_max": null,
-              "configuration": "MGMT_STD_INPUT_PULLUP",
-              "resolved_mode": "MGMT_STD_INPUT_PULLUP",
+              "configuration": "MGMT_STD_INPUT_NOPULL",
+              "resolved_mode": "MGMT_STD_INPUT_NOPULL",
               "warning_count": 0,
               "error_count": 0
             },
@@ -463,8 +463,8 @@
               "oeb_min": null,
               "oeb_sim": null,
               "oeb_max": null,
-              "configuration": "MGMT_STD_INPUT_PULLUP",
-              "resolved_mode": "MGMT_STD_INPUT_PULLUP",
+              "configuration": "MGMT_STD_INPUT_NOPULL",
+              "resolved_mode": "MGMT_STD_INPUT_NOPULL",
               "warning_count": 0,
               "error_count": 0
             },
@@ -478,8 +478,8 @@
               "oeb_min": null,
               "oeb_sim": null,
               "oeb_max": null,
-              "configuration": "MGMT_STD_INPUT_PULLUP",
-              "resolved_mode": "MGMT_STD_INPUT_PULLUP",
+              "configuration": "MGMT_STD_INPUT_NOPULL",
+              "resolved_mode": "MGMT_STD_INPUT_NOPULL",
               "warning_count": 0,
               "error_count": 0
             },
@@ -493,8 +493,8 @@
               "oeb_min": null,
               "oeb_sim": null,
               "oeb_max": null,
-              "configuration": "MGMT_STD_INPUT_PULLUP",
-              "resolved_mode": "MGMT_STD_INPUT_PULLUP",
+              "configuration": "MGMT_STD_INPUT_NOPULL",
+              "resolved_mode": "MGMT_STD_INPUT_NOPULL",
               "warning_count": 0,
               "error_count": 0
             },
@@ -508,8 +508,8 @@
               "oeb_min": null,
               "oeb_sim": null,
               "oeb_max": null,
-              "configuration": "MGMT_STD_INPUT_PULLUP",
-              "resolved_mode": "MGMT_STD_INPUT_PULLUP",
+              "configuration": "MGMT_STD_INPUT_NOPULL",
+              "resolved_mode": "MGMT_STD_INPUT_NOPULL",
               "warning_count": 0,
               "error_count": 0
             },
@@ -523,8 +523,8 @@
               "oeb_min": null,
               "oeb_sim": null,
               "oeb_max": null,
-              "configuration": "MGMT_STD_INPUT_PULLUP",
-              "resolved_mode": "MGMT_STD_INPUT_PULLUP",
+              "configuration": "MGMT_STD_INPUT_NOPULL",
+              "resolved_mode": "MGMT_STD_INPUT_NOPULL",
               "warning_count": 0,
               "error_count": 0
             },
@@ -538,8 +538,8 @@
               "oeb_min": null,
               "oeb_sim": null,
               "oeb_max": null,
-              "configuration": "MGMT_STD_INPUT_PULLUP",
-              "resolved_mode": "MGMT_STD_INPUT_PULLUP",
+              "configuration": "MGMT_STD_INPUT_NOPULL",
+              "resolved_mode": "MGMT_STD_INPUT_NOPULL",
               "warning_count": 0,
               "error_count": 0
             },
@@ -553,8 +553,8 @@
               "oeb_min": null,
               "oeb_sim": null,
               "oeb_max": null,
-              "configuration": "MGMT_STD_INPUT_PULLUP",
-              "resolved_mode": "MGMT_STD_INPUT_PULLUP",
+              "configuration": "MGMT_STD_INPUT_NOPULL",
+              "resolved_mode": "MGMT_STD_INPUT_NOPULL",
               "warning_count": 0,
               "error_count": 0
             },
@@ -568,8 +568,8 @@
               "oeb_min": null,
               "oeb_sim": null,
               "oeb_max": null,
-              "configuration": "MGMT_STD_INPUT_PULLUP",
-              "resolved_mode": "MGMT_STD_INPUT_PULLUP",
+              "configuration": "MGMT_STD_INPUT_NOPULL",
+              "resolved_mode": "MGMT_STD_INPUT_NOPULL",
               "warning_count": 0,
               "error_count": 0
             },
@@ -583,8 +583,8 @@
               "oeb_min": null,
               "oeb_sim": null,
               "oeb_max": null,
-              "configuration": "MGMT_STD_INPUT_PULLUP",
-              "resolved_mode": "MGMT_STD_INPUT_PULLUP",
+              "configuration": "MGMT_STD_INPUT_NOPULL",
+              "resolved_mode": "MGMT_STD_INPUT_NOPULL",
               "warning_count": 0,
               "error_count": 0
             },
@@ -598,8 +598,8 @@
               "oeb_min": null,
               "oeb_sim": null,
               "oeb_max": null,
-              "configuration": "MGMT_STD_INPUT_PULLUP",
-              "resolved_mode": "MGMT_STD_INPUT_PULLUP",
+              "configuration": "MGMT_STD_INPUT_NOPULL",
+              "resolved_mode": "MGMT_STD_INPUT_NOPULL",
               "warning_count": 0,
               "error_count": 0
             },
@@ -613,8 +613,8 @@
               "oeb_min": null,
               "oeb_sim": null,
               "oeb_max": null,
-              "configuration": "MGMT_STD_INPUT_PULLUP",
-              "resolved_mode": "MGMT_STD_INPUT_PULLUP",
+              "configuration": "MGMT_STD_INPUT_NOPULL",
+              "resolved_mode": "MGMT_STD_INPUT_NOPULL",
               "warning_count": 0,
               "error_count": 0
             },
@@ -628,8 +628,8 @@
               "oeb_min": null,
               "oeb_sim": null,
               "oeb_max": null,
-              "configuration": "MGMT_STD_INPUT_PULLUP",
-              "resolved_mode": "MGMT_STD_INPUT_PULLUP",
+              "configuration": "MGMT_STD_INPUT_NOPULL",
+              "resolved_mode": "MGMT_STD_INPUT_NOPULL",
               "warning_count": 0,
               "error_count": 0
             },
@@ -643,8 +643,8 @@
               "oeb_min": null,
               "oeb_sim": null,
               "oeb_max": null,
-              "configuration": "MGMT_STD_INPUT_PULLUP",
-              "resolved_mode": "MGMT_STD_INPUT_PULLUP",
+              "configuration": "MGMT_STD_INPUT_NOPULL",
+              "resolved_mode": "MGMT_STD_INPUT_NOPULL",
               "warning_count": 0,
               "error_count": 0
             },
@@ -658,8 +658,8 @@
               "oeb_min": null,
               "oeb_sim": null,
               "oeb_max": null,
-              "configuration": "MGMT_STD_INPUT_PULLUP",
-              "resolved_mode": "MGMT_STD_INPUT_PULLUP",
+              "configuration": "MGMT_STD_INPUT_NOPULL",
+              "resolved_mode": "MGMT_STD_INPUT_NOPULL",
               "warning_count": 0,
               "error_count": 0
             },
@@ -673,8 +673,8 @@
               "oeb_min": null,
               "oeb_sim": null,
               "oeb_max": null,
-              "configuration": "MGMT_STD_INPUT_PULLUP",
-              "resolved_mode": "MGMT_STD_INPUT_PULLUP",
+              "configuration": "MGMT_STD_INPUT_NOPULL",
+              "resolved_mode": "MGMT_STD_INPUT_NOPULL",
               "warning_count": 0,
               "error_count": 0
             }
@@ -694,6 +694,6 @@
         "reason": "optional (use --magic-drc to include)"
       }
     },
-    "input_file_hash": "b59094afd10cf3b7c466a1075f57ed6eed4e0180"
+    "input_file_hash": "3d2c6f1aca4af359a23a24efdd0f799b5dd8cec1"
   }
 }
